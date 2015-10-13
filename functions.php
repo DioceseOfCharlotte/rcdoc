@@ -50,7 +50,7 @@ function rcdoc_setup() {
 
 		'entry_header'            	=> 'mdl-card__title',
 		'entry_content'           	=> 'mdl-card__supporting-text',
-		'entry_content_wide'      	=> '',
+		'entry_content_wide'      	=> 'mdl-card__supporting-text',
 		'entry_summary'           	=> 'mdl-card__supporting-text',
 		'entry_footer'            	=> 'u-mt-auto mdl-card__actions mdl-card--border',
 
