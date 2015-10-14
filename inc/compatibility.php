@@ -54,11 +54,3 @@ function index_acf_google_map_address( $params, $class ) {
     return $params;
 }
 add_filter( 'facetwp_index_row', 'index_acf_google_map_address', 10, 2 );
-
-
-add_action( 'init', function() {
-    add_post_type_support( 'parish', 'archive' );
-	add_post_type_support( 'school', 'archive' );
-	add_post_type_support( 'department', 'archive' );
-	add_post_type_support( 'vocation', 'archive' );
-} );

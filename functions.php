@@ -212,3 +212,10 @@ function mdl_search_form() {
 function header_right_widget() {
 	return hybrid_get_sidebar('header-right');
 }
+
+add_action( 'init', function() {
+    add_post_type_support( 'parish', 'archive' );
+	add_post_type_support( 'school', 'archive' );
+	add_post_type_support( 'department', 'archive' );
+	add_post_type_support( 'vocation', 'archive' );
+} );
