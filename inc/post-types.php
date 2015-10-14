@@ -511,7 +511,7 @@ function doc_vocations_register_post_types() {
 				'search_items'       => __( 'Search Vocations Posts',            'rcdoc' ),
 				'not_found'          => __( 'No Vocations Posts found',          'rcdoc' ),
 				'not_found_in_trash' => __( 'No Vocations Posts found in trash', 'rcdoc' ),
-				'all_items'          => __( 'Vocations Posts',                   'rcdoc' ),
+				'all_items'          => __( 'Vocations',                        'rcdoc' ),
 			)
 		)
 	);
