@@ -78,7 +78,7 @@ function rcdoc_setup() {
 		'comments_area'           	=> '',
 
 		// FOOTER
-		'footer'                  	=> 'u-bg-light-1-glass u-text-white u-color-inherit mdl-mega-footer',
+		'footer'                  	=> 'u-bg-1-glass-light u-text-white u-color-inherit mdl-mega-footer',
 
 		'menu_item'                 => 'u-list-reset u-p0 u-color-inherit',
 		'menu_link'                 => 'u-hover-frost-2 u-opacity1 mdl-navigation__link',
