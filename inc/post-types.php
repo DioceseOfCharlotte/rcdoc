@@ -499,7 +499,7 @@ function doc_vocations_register_post_types() {
 
 			/* Labels used when displaying the posts. */
 			'labels' => array(
-				'name'               => __( 'Vocations Posts',                   'rcdoc' ),
+				'name'               => __( 'Vocations',                   		'rcdoc' ),
 				'singular_name'      => __( 'Vocations Post',                    'rcdoc' ),
 				'menu_name'          => __( 'Vocations',                   		'rcdoc' ),
 				'name_admin_bar'     => __( 'Vocations',                    	'rcdoc' ),
