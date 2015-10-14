@@ -10615,6 +10615,12 @@ select#facetwp-radius
     width: 72px;
 }
 
+.tile
+{
+    width: 256px;
+    height: 256px;
+}
+
 .tile-icon
 {
     max-width: 90px; 
