@@ -2,7 +2,7 @@
 
 
 add_action( 'after_setup_theme', 'rcdoc_setup' );
-add_action( 'wp_enqueue_scripts', 'wpmdl_scripts' );
+add_action( 'wp_enqueue_scripts', 'rcdoc_scripts' );
 add_action( 'tha_header_after', 'logged_in_drawer' );
 //add_action( 'tha_header_bottom', 'mdl_search_form' );
 add_action( 'tha_header_before', 'header_right_widget' );
@@ -17,7 +17,7 @@ function rcdoc_setup() {
 	attr_trumps( array(
 
 
-		'body'                    	=> '',
+		'body'                    	=> 'u-bg-cover',
 		'site_container'          	=> 'mdl-layout mdl-js-layout mdl-layout--fixed-header u-bg-frost-2',
 		'site_container_loggedin' 	=> 'mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer u-bg-frost-2',
 		'layout'       		        => 'mdl-layout__content',
@@ -41,6 +41,7 @@ function rcdoc_setup() {
 		'post'                    	=> 'mdl-cell u-mx0 u-1/1 mdl-card u-py4 u-px3 u-text-gray u-overflow-visible',
 		'post_archive'            	=> 'mdl-cell mdl-cell--6-col-desktop mdl-card mdl-shadow--2dp u-overflow-visible',
         'post_featured'           	=> 'u-flexed-first u-1/1',
+		'post_wide'					=> 'u-bg-transparent',
 
 		'page_header'             	=> 'page-header u-1/1 u-text-center',
 
@@ -101,9 +102,9 @@ function rcdoc_setup() {
 			'default-image' => '',
 		)
 	);
-	add_filter( 'theme_mod_primary_color', 'wpmdl_primary_color' );
-	add_filter( 'theme_mod_secondary_color', 'wpmdl_secondary_color' );
-	add_filter( 'theme_mod_accent_color', 'wpmdl_accent_color' );
+	add_filter( 'theme_mod_primary_color', 'rcdoc_primary_color' );
+	add_filter( 'theme_mod_secondary_color', 'rcdoc_secondary_color' );
+	add_filter( 'theme_mod_accent_color', 'rcdoc_accent_color' );
 
 }
 
@@ -112,7 +113,7 @@ function rcdoc_setup() {
 /**
  * Enqueue scripts and styles.
  */
-function wpmdl_scripts() {
+function rcdoc_scripts() {
 	wp_enqueue_script(
         'mdl-script',
         '//storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js',
@@ -136,14 +137,14 @@ function wpmdl_scripts() {
 }
 
 
-function wpmdl_primary_color( $hex ) {
-    return $hex ? $hex : '#3F51B5';
+function rcdoc_primary_color( $hex ) {
+    return $hex ? $hex : '3F51B5';
 }
-function wpmdl_secondary_color( $hex ) {
-    return $hex ? $hex : '#009688';
+function rcdoc_secondary_color( $hex ) {
+    return $hex ? $hex : '009688';
 }
-function wpmdl_accent_color( $hex ) {
-    return $hex ? $hex : '#C62828';
+function rcdoc_accent_color( $hex ) {
+    return $hex ? $hex : 'C62828';
 }
 
 
