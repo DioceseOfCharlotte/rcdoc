@@ -10506,9 +10506,6 @@ button.simplefavorite-button
     list-style: none;
 }
 
-/*ul.mdl-menu {
-    width: 300px;
-}*/
 .acf-map
 {
     width: 100%;
@@ -10616,4 +10613,10 @@ button.simplefavorite-button
 select#facetwp-radius
 {
     width: 72px;
+}
+
+.tile-icon
+{
+    max-width: 90px; 
+    max-height: 90px;
 }
