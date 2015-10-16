@@ -5,24 +5,23 @@
 global $mehsc_atts;
 ?>
 
-<div id="post-<?php the_ID(); ?>" class="<?php echo esc_attr($mehsc_atts['width']); ?> mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+<div id="post-<?php the_ID(); ?>" class="<?php echo esc_attr($mehsc_atts['width']); ?> mdl-cell mdl-card mdl-shadow--2dp">
 
-    <?php if ('show_img' === $mehsc_atts['show_image']) : ?>
-    <?php
-    if ('card-block' === $mehsc_atts['block_type']) {
-        get_the_image(array(
-            'size'   => 'abraham-sm',
-            'before' => '<div class="mdl-card__media">',
-            'after'  => '</div>',
-        ));
-    }
-    ?>
-    <?php endif; ?>
-    <div class="mdl-card__title">
-       <a class="mdl-card__title-text" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-    </div>
-    <div class="mdl-card__supporting-text">
-      <span class="mdl-typography--font-light mdl-typography--subhead">
+
+        <?php
+
+        if ( 'show_img' === $mehsc_atts['show_image'] && has_post_thumbnail() ) {
+        $feat_image_url = wp_get_attachment_url( get_post_thumbnail_id() );
+        ?>
+        <div class="mdl-card__media mdl-color-text--grey-50 u-flex u-flex-row u-flex-end u-flexed-grow" style="background-image: url(<?php echo $feat_image_url ?>)">
+          <h3><a class="mdl-card__title-text" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+        </div>
+        <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+
+        <?php } else { ?>
+        <div class="mdl-card__supporting-text">
+            <h4><a class="mdl-card__title-text" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+        <?php } ?>
         <?php
         if ('excerpt' === $mehsc_atts['show_content']) {
           the_excerpt();
@@ -30,9 +29,8 @@ global $mehsc_atts;
           the_content();
         }
         ?>
-
-      </span>
     </div>
+
     <div class="mdl-card__actions mdl-card--border">
       <a href="<?php the_permalink(); ?>" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
       Go to section
