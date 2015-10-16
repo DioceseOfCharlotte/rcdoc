@@ -28,7 +28,7 @@ function rcdoc_setup() {
 		'grid_2c-l'    				=> 'u-p0 mdl-grid u-max-width',
 
 		// SITE HEADER
-		'header'                  	=> 'u-bg-1-glass u-static mdl-layout__header mdl-layout__header--waterfall',
+		'header'                  	=> 'u-bg-1-glass u-static u-border-b mdl-layout__header mdl-layout__header--waterfall',
 		'branding'                	=> 'mdl-layout__header-row',
 		'site_title'              	=> 'mdl-layout-title color-inherit u-m0 u-h1 u-z4',
 		'site_description'        	=> 'site-description u-h1 u-m0 u-text-3 hidden@sm',
@@ -51,7 +51,7 @@ function rcdoc_setup() {
 
 		'entry_header'            	=> 'mdl-card__title',
 		'entry_content'           	=> 'u-px2 u-pb2',
-		'entry_content_wide'      	=> 'u-px2 u-pb2',
+		'entry_content_wide'      	=> '',
 		'entry_summary'           	=> 'u-px2 u-pb2',
 		'entry_footer'            	=> 'u-mt-auto mdl-card__actions mdl-card--border',
 
@@ -69,7 +69,7 @@ function rcdoc_setup() {
 
 		// SIDEBAR
 		'sidebar_primary'         	=> 'mdl-cell mdl-grid u-m0 u-p0',
-		'sidebar_footer'          	=> 'mdl-mega-footer--middle-section',
+		'sidebar_footer'          	=> 'mdl-mega-footer--middle-section u-flex@md',
 		'sidebar_horizontal'      	=> 'mdl-grid mdl-cell u-1/1',
 		'sidebar_right'           	=> 'u-1/1 u-1/3@md',
 		'sidebar_left'            	=> 'u-1/1 u-1/3@md',
@@ -78,7 +78,7 @@ function rcdoc_setup() {
 		'comments_area'           	=> '',
 
 		// FOOTER
-		'footer'                  	=> 'u-bg-1-glass-light u-text-white u-color-inherit mdl-mega-footer',
+		'footer'                  	=> 'u-bg-1-glass-light u-border-t u-text-white u-color-inherit mdl-mega-footer',
 
 		'menu_item'                 => 'u-list-reset u-p0 u-color-inherit',
 		'menu_link'                 => 'u-hover-frost-2 u-opacity1 mdl-navigation__link',
@@ -181,7 +181,7 @@ function abraham_widgets() {
 	register_sidebar(array(
 		'id'            => 'footer',
 		'name'          => __( 'Footer', 'abraham' ),
-		'before_widget' => '<section class="mdl-mega-footer__drop-down-section u-p2"><div>',
+		'before_widget' => '<section class="mdl-mega-footer__drop-down-section u-p2 u-flexed-grow"><div>',
 		'before_title'  => '</div><input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked><h2 class="widget-title u-mt0 mdl-mega-footer--heading">',
 		'after_title'   => '</h2><div class="mdl-mega-footer--link-list">',
 		'after_widget'  => '</div></section>',
