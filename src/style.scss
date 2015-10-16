@@ -34,17 +34,19 @@
 @import "footer/mini_footer";
 @import "icon-toggle/icon-toggle";
 @import "menu/menu";
-@import "progress/progress";
+//@import "progress/progress";
 @import "layout/layout";
 @import "radio/radio";
-@import "slider/slider";
-@import "spinner/spinner";
+//@import "slider/slider";
+//@import "spinner/spinner";
 @import "switch/switch";
 @import "tabs/tabs";
 @import "textfield/textfield";
 @import "tooltip/tooltip";
 @import "shadow/shadow";
 @import "grid/grid";
+
+@import 'motion-ui';
 
 
 
@@ -256,4 +258,21 @@ select#facetwp-radius {
 .tile-icon {
     max-height: 90px;
     max-width: 90px;
+}
+
+
+.collapse {
+    max-height: 0;
+    min-width: 100%;
+    opacity: 0;
+}
+
+
+.collapse.mui-enter-active {
+    max-height: 100%;
+    opacity: 1;
+}
+
+.toggles .tile-icon {
+    max-height: 48px;
 }

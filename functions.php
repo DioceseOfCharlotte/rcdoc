@@ -38,10 +38,10 @@ function rcdoc_setup() {
 		'content_with_sidebar'    	=> 'mdl-cell mdl-grid u-m0 u-p0 u-1/1 u-2/3@md',
 		'content_archive'         	=> 'facetwp-template',
 		// ENTRY
-		'post'                    	=> 'mdl-cell u-mx0 u-1/1 mdl-card u-py4 u-px3 u-text-gray u-overflow-visible',
+		'post'                    	=> 'mdl-cell u-m0 u-1/1 mdl-card u-py4 u-px3 u-text-gray u-overflow-visible',
 		'post_archive'            	=> 'mdl-cell mdl-cell--6-col-desktop mdl-card mdl-shadow--2dp u-overflow-visible',
         'post_featured'           	=> 'u-flexed-first u-1/1',
-		'post_wide'					=> 'u-bg-transparent',
+		'post_wide'					=> 'u-bg-transparent u-p0',
 
 		'page_header'             	=> 'page-header u-1/1 u-text-center',
 
@@ -50,9 +50,9 @@ function rcdoc_setup() {
 		'archive_description'     	=> '',
 
 		'entry_header'            	=> 'mdl-card__title',
-		'entry_content'           	=> 'mdl-card__supporting-text',
-		'entry_content_wide'      	=> 'mdl-card__supporting-text',
-		'entry_summary'           	=> 'mdl-card__supporting-text',
+		// 'entry_content'           	=> 'mdl-card__supporting-text',
+		// 'entry_content_wide'      	=> 'mdl-card__supporting-text',
+		// 'entry_summary'           	=> 'mdl-card__supporting-text',
 		'entry_footer'            	=> 'u-mt-auto mdl-card__actions mdl-card--border',
 
 		'nav_single'              	=> '',
@@ -124,6 +124,12 @@ function rcdoc_scripts() {
         'abraham_js',
         trailingslashit(get_stylesheet_directory_uri())."assets/js/main.js",
         false, false, true
+    );
+
+	wp_enqueue_script(
+        'motion_js',
+        trailingslashit(get_stylesheet_directory_uri())."assets/js/motion-ui.min.js",
+        array( 'jquery' ), null, true
     );
 
 	// if (get_post_type() == 'parish') {
