@@ -50,9 +50,9 @@ function rcdoc_setup() {
 		'archive_description'     	=> '',
 
 		'entry_header'            	=> 'mdl-card__title',
-		// 'entry_content'           	=> 'mdl-card__supporting-text',
-		// 'entry_content_wide'      	=> 'mdl-card__supporting-text',
-		// 'entry_summary'           	=> 'mdl-card__supporting-text',
+		'entry_content'           	=> 'u-px2 u-pb2',
+		'entry_content_wide'      	=> 'u-px2 u-pb2',
+		'entry_summary'           	=> 'u-px2 u-pb2',
 		'entry_footer'            	=> 'u-mt-auto mdl-card__actions mdl-card--border',
 
 		'nav_single'              	=> '',
