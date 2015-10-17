@@ -19,7 +19,7 @@ function rcdoc_setup() {
 
 		'body'                    	=> 'u-bg-cover',
 		'site_container'          	=> 'mdl-layout mdl-js-layout mdl-layout--fixed-header u-bg-frost-2',
-		'site_container_loggedin' 	=> 'mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer u-bg-frost-2',
+		'site_container_loggedin' 	=> 'mdl-layout mdl-js-layout mdl-layout--fixed-header u-bg-frost-2',
 		'layout'       		        => 'mdl-layout__content',
 		'layout_wide'   	        => 'mdl-layout__content',
 		'grid'              		=> 'u-p0 mdl-grid u-max-width',
