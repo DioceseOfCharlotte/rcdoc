@@ -9893,16 +9893,10 @@ button.simplefavorite-button
     max-width: 300px;
     margin: 0 auto; 
 
-    color: #fff;
-
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
             align-items: center;
-}
-.pagination > .nav-links a
-{
-    color: #fff;
 }
 
 .facetwp-type-proximity
