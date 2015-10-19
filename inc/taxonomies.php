@@ -1,9 +1,73 @@
 <?php
 
-add_action( 'init', 'prefix_schools_register_taxonomies' );
-add_action( 'init', 'prefix_agencies_register_taxonomies' );
+add_action( 'init', 'doc_schools_register_taxonomies' );
+add_action( 'init', 'doc_agencies_register_taxonomies' );
+add_action( 'init', 'doc_department_home_register_taxonomies' );
 
-function prefix_agencies_register_taxonomies() {
+
+
+
+function doc_department_home_register_taxonomies() {
+
+	/* Register the Department Home taxonomy. */
+
+	register_taxonomy(
+		'department_home',
+		array( 'vocation','tribunal','property','planning','multicultural','liturgy','info_tech','housing','hispanic_ministry','finance','development','deacon','chancery','archive', ),
+		array(
+			'public'            => true,
+			'show_ui'           => true,
+			'show_in_nav_menus' => true,
+			'show_tagcloud'     => true,
+			'show_admin_column' => true,
+			'hierarchical'      => true,
+			'query_var'         => 'department_home',
+
+			/* Capabilities. */
+			'capabilities' => array(
+				'manage_terms' => 'manage_departments',
+				'edit_terms'   => 'manage_departments',
+				'delete_terms' => 'manage_departments',
+				'assign_terms' => 'edit_departments',
+			),
+
+			/* The rewrite handles the URL structure. */
+			'rewrite' => array(
+				'slug'         => 'agencies',
+				'with_front'   => false,
+				'hierarchical' => true,
+				'ep_mask'      => EP_NONE
+			),
+
+			/* Labels used when displaying taxonomy and terms. */
+			'labels' => array(
+				'name'                       => __( 'Department Home Pages',           'rcdoc' ),
+				'singular_name'              => __( 'Department Home',                'rcdoc' ),
+				'menu_name'                  => __( 'Department Home Pages',             'rcdoc' ),
+				'name_admin_bar'             => __( 'Department Home',               'rcdoc' ),
+				'search_items'               => __( 'Search Department Home Pages',      'rcdoc' ),
+				'popular_items'              => __( 'Popular Department Home Pages',     'rcdoc' ),
+				'all_items'                  => __( 'All Department Home Pages',         'rcdoc' ),
+				'edit_item'                  => __( 'Edit Department Home',          'rcdoc' ),
+				'view_item'                  => __( 'View Department Home',          'rcdoc' ),
+				'update_item'                => __( 'Update Department Home',        'rcdoc' ),
+				'add_new_item'               => __( 'Add New Department Home',       'rcdoc' ),
+				'new_item_name'              => __( 'New Department Home Name',      'rcdoc' ),
+				'parent_item'                => __( 'Parent Department Home',        'rcdoc' ),
+				'parent_item_colon'          => __( 'Parent Department Home:',       'rcdoc' ),
+				'separate_items_with_commas' => null,
+				'add_or_remove_items'        => null,
+				'choose_from_most_used'      => null,
+				'not_found'                  => null,
+			)
+		)
+	);
+}
+
+
+
+
+function doc_agencies_register_taxonomies() {
 
 	/* Register the Department Agency taxonomy. */
 
@@ -62,7 +126,7 @@ function prefix_agencies_register_taxonomies() {
 
 
 
-function prefix_schools_register_taxonomies() {
+function doc_schools_register_taxonomies() {
 
 	/* Register the School System taxonomy. */
 
