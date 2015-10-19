@@ -87,8 +87,8 @@ function rcdoc_setup() {
 		'menu-item-has-children'    => 'has-dropdown js-dropdown',
 		'sub-menu'                  => 'dropdown animated slideInUp',
 
-		'gv_container'              => 'mdl-grid',
-		'gv_entry'                  => 'mdl-cell u-mx4@lg mdl-cell--3-col-desktop mdl-card mdl-shadow--2dp',
+		'gv_container'              => 'mdl-grid u-mx4@lg',
+		'gv_entry'                  => 'mdl-cell mdl-cell--3-col-desktop mdl-card mdl-shadow--2dp',
 
 	));
 
