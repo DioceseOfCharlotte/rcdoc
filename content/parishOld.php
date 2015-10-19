@@ -13,7 +13,7 @@
             <header <?php hybrid_attr('entry-header'); ?>>
                 <?php
                     get_the_image(array(
-                        'size' => 'abraham-lg',
+                    'size' => 'abraham-lg',
                     ));
                 ?>
                 <h2 <?php hybrid_attr('entry-title'); ?>>
@@ -24,6 +24,7 @@
             <div <?php hybrid_attr('entry-summary'); ?>>
                 <?php tha_entry_content_before(); ?>
                 <?php the_excerpt(); ?>
+                <?php get_template_part('components/acf-parish-contact'); ?>
                 <?php tha_entry_content_after(); ?>
             </div>
 
@@ -42,14 +43,10 @@
 
     <?php tha_content_while_after(); ?>
 
-<div class="u-1/1 u-text-center">
-    <?php
-    the_posts_pagination( array(
-        'next_text' =>  '<span class="meta-nav mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored" aria-hidden="true"><i class="material-icons">&#xE409;</i></span> ',
-        'prev_text' => '<span class="meta-nav mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored" aria-hidden="true"><i class="material-icons">&#xE408;</i></span> ',
-        'before_page_number' => '<span class="u-text-white meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
-    ) );
-    ?>
-</div>
+    <?php the_posts_navigation( array(
+    'prev_text'          => __( 'Previous page', 'abraham' ),
+    'next_text'          => __( 'Next page', 'abraham' ),
+    ) ); ?>
+
 <?php
 endif;
