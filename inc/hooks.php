@@ -6,6 +6,10 @@ add_action( 'tha_header_after', 'logged_in_drawer' );
 add_action( 'tha_header_before', 'header_right_widget' );
 add_action( 'tha_content_before', 'rcdoc_facet_parish_prox' );
 
+
+
+
+
 function rcdoc_parish_footer() {
     if ( 'parish' !== get_post_type() ) {
 		return;
@@ -14,9 +18,14 @@ function rcdoc_parish_footer() {
 }
 
 
+
+
 function logged_in_drawer() {
 	hybrid_get_sidebar('drawer');
 }
+
+
+
 
 function mdl_search_form() {
 ?>
@@ -30,9 +39,13 @@ function mdl_search_form() {
 }
 
 
+
+
 function header_right_widget() {
 	return hybrid_get_sidebar('header-right');
 }
+
+
 
 
 function rcdoc_facet_parish_prox() {

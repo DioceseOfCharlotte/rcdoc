@@ -182,3 +182,145 @@ function doc_schools_register_taxonomies() {
 		)
 	);
 }
+
+
+
+// Auto-assigned custom taxonomies
+function doc_vocation_post( $post_id ) {
+    $current_post = get_post( $post_id );
+
+    if ( $current_post->post_date == $current_post->post_modified ) {
+        wp_set_object_terms( $post_id, vocation, 'department_home', true );
+    }
+}
+add_action( 'save_post_vocation', 'doc_vocation_post' );
+
+
+function doc_tribunal_post( $post_id ) {
+    $current_post = get_post( $post_id );
+
+    if ( $current_post->post_date == $current_post->post_modified ) {
+        wp_set_object_terms( $post_id, tribunal, 'department_home', true );
+    }
+}
+add_action( 'save_post_tribunal', 'doc_tribunal_post' );
+
+
+function doc_property_post( $post_id ) {
+    $current_post = get_post( $post_id );
+
+    if ( $current_post->post_date == $current_post->post_modified ) {
+        wp_set_object_terms( $post_id, property, 'department_home', true );
+    }
+}
+add_action( 'save_post_property', 'doc_property_post' );
+
+
+function doc_planning_post( $post_id ) {
+    $current_post = get_post( $post_id );
+
+    if ( $current_post->post_date == $current_post->post_modified ) {
+        wp_set_object_terms( $post_id, planning, 'department_home', true );
+    }
+}
+add_action( 'save_post_planning', 'doc_planning_post' );
+
+
+function doc_multicultural_post( $post_id ) {
+    $current_post = get_post( $post_id );
+
+    if ( $current_post->post_date == $current_post->post_modified ) {
+        wp_set_object_terms( $post_id, multicultural, 'department_home', true );
+    }
+}
+add_action( 'save_post_multicultural', 'doc_multicultural_post' );
+
+
+function doc_liturgy_post( $post_id ) {
+    $current_post = get_post( $post_id );
+
+    if ( $current_post->post_date == $current_post->post_modified ) {
+        wp_set_object_terms( $post_id, liturgy, 'department_home', true );
+    }
+}
+add_action( 'save_post_liturgy', 'doc_liturgy_post' );
+
+
+function doc_info_tech_post( $post_id ) {
+    $current_post = get_post( $post_id );
+
+    if ( $current_post->post_date == $current_post->post_modified ) {
+        wp_set_object_terms( $post_id, info_tech, 'department_home', true );
+    }
+}
+add_action( 'save_post_info_tech', 'doc_info_tech_post' );
+
+
+function doc_housing_post( $post_id ) {
+    $current_post = get_post( $post_id );
+
+    if ( $current_post->post_date == $current_post->post_modified ) {
+        wp_set_object_terms( $post_id, housing, 'department_home', true );
+    }
+}
+add_action( 'save_post_housing', 'doc_housing_post' );
+
+
+function doc_hispanic_ministry_post( $post_id ) {
+    $current_post = get_post( $post_id );
+
+    if ( $current_post->post_date == $current_post->post_modified ) {
+        wp_set_object_terms( $post_id, hispanic_ministry, 'department_home', true );
+    }
+}
+add_action( 'save_post_hispanic_ministry', 'doc_hispanic_ministry_post' );
+
+
+function doc_finance_post( $post_id ) {
+    $current_post = get_post( $post_id );
+
+    if ( $current_post->post_date == $current_post->post_modified ) {
+        wp_set_object_terms( $post_id, finance, 'department_home', true );
+    }
+}
+add_action( 'save_post_finance', 'doc_finance_post' );
+
+
+function doc_development_post( $post_id ) {
+    $current_post = get_post( $post_id );
+
+    if ( $current_post->post_date == $current_post->post_modified ) {
+        wp_set_object_terms( $post_id, development, 'department_home', true );
+    }
+}
+add_action( 'save_post_development', 'doc_development_post' );
+
+
+function doc_deacon_post( $post_id ) {
+    $current_post = get_post( $post_id );
+
+    if ( $current_post->post_date == $current_post->post_modified ) {
+        wp_set_object_terms( $post_id, deacon, 'department_home', true );
+    }
+}
+add_action( 'save_post_deacon', 'doc_deacon_post' );
+
+
+function doc_chancery_post( $post_id ) {
+    $current_post = get_post( $post_id );
+
+    if ( $current_post->post_date == $current_post->post_modified ) {
+        wp_set_object_terms( $post_id, chancery, 'department_home', true );
+    }
+}
+add_action( 'save_post_chancery', 'doc_chancery_post' );
+
+
+function doc_archive_post( $post_id ) {
+    $current_post = get_post( $post_id );
+
+    if ( $current_post->post_date == $current_post->post_modified ) {
+        wp_set_object_terms( $post_id, archive, 'department_home', true );
+    }
+}
+add_action( 'save_post_archive', 'doc_archive_post' );
