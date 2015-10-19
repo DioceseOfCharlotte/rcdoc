@@ -10,6 +10,7 @@ add_action( 'tha_header_before', 'header_right_widget' );
 require get_stylesheet_directory() . '/inc/post-types.php';
 require get_stylesheet_directory() . '/inc/taxonomies.php';
 require get_stylesheet_directory() . '/inc/compatibility.php';
+require get_stylesheet_directory() . '/inc/hooks.php';
 
 
 
