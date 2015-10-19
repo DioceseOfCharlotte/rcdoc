@@ -1,4 +1,4 @@
-<div class="u-1/1 u-text-center u-mb2 u-p1 u-bg-white u-color-inherit mdl-shadow--2dp u-br">
+<div class="u-1/1 u-text-center u-mb2 u-p1 u-mt1 u-mx1 u-bg-white u-color-inherit mdl-shadow--2dp u-br">
 
     <?php
     the_posts_pagination( array(
