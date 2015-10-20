@@ -12,16 +12,15 @@ require get_stylesheet_directory() . '/inc/hooks.php';
 
 
 function rcdoc_setup() {
+
+	add_theme_support('soil-clean-up');
+	//add_theme_support('soil-disable-asset-versioning');
+	add_theme_support('soil-disable-trackbacks');
+	add_theme_support('soil-nice-search');
+	add_theme_support('soil-jquery-cdn');
+	add_theme_support('soil-js-to-footer');
+
 	attr_trumps( array(
-
-
-		add_theme_support('soil-clean-up');
-		//add_theme_support('soil-disable-asset-versioning');
-		add_theme_support('soil-disable-trackbacks');
-		add_theme_support('soil-nice-search');
-		add_theme_support('soil-jquery-cdn');
-		add_theme_support('soil-js-to-footer');
-
 		'body'                    	=> 'u-bg-cover',
 		'site_container'          	=> 'mdl-layout mdl-js-layout mdl-layout--fixed-header u-bg-frost-2',
 		'site_container_loggedin' 	=> 'mdl-layout mdl-js-layout mdl-layout--fixed-header u-bg-frost-2',
