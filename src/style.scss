@@ -179,12 +179,12 @@ button.simplefavorite-button {
 }
 
 
-.svg-logo, .is-compact .svg-logo {
+.site-logo, .is-compact .site-logo {
     height: 50px;
 }
 
 @media screen and (min-width: 760px) {
-.svg-logo {
+.site-logo {
     height: 100px;
     transition: all .25s;
 }

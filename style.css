@@ -9820,15 +9820,15 @@ button.simplefavorite-button
     border: #ccc solid 1px;
 }
 
-.svg-logo,
-.is-compact .svg-logo
+.site-logo,
+.is-compact .site-logo
 {
     height: 50px;
 }
 
 @media screen and (min-width: 760px)
 {
-    .svg-logo
+    .site-logo
     {
         height: 100px;
 
