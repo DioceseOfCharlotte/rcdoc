@@ -286,5 +286,5 @@ select#facetwp-radius {
 .tile:nth-child(1) { @include mui-queue(.8s, -0.5s, slide($direction: right), zoom); }
 .tile:nth-child(2) {  @include mui-queue(.8s, -0.5s, slide($direction: up), zoom); }
 .tile:nth-child(3) { @include mui-queue(.8s, -0.5s, slide($direction: down), zoom); }
-.tile:nth-child(3) { @include mui-queue(.8s, -0.5s, slide($direction: left), zoom); }
+.tile:nth-child(4) { @include mui-queue(.8s, -0.5s, slide($direction: left), zoom); }
 }
