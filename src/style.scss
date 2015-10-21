@@ -273,3 +273,11 @@ select#facetwp-radius {
 .toggles .tile-icon {
     max-height: 48px;
 }
+
+
+
+@include mui-series {
+.tile:nth-child(1) { @include mui-queue(.8s, -0.5s, slide($direction: right)); }
+.tile:nth-child(2) { @include mui-queue(.8s, 0s, slide, zoom); }
+.tile:nth-child(3) { @include mui-queue(1s, 0s, fade, zoom); }
+}

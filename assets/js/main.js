@@ -347,3 +347,5 @@ componentHandler.register({
     classAsString: 'DropPanel',
     cssClass: 'js-drop-panel'
 });
+
+document.querySelector('.mdl-grid').classList.add('is-animating');

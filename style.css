@@ -6024,7 +6024,7 @@ input.mdl-button[type='submit']
     overflow-x: scroll; 
     overflow-y: hidden;
 
-    width: calc(100% -         112px);
+    width: calc(100% - 112px);
     height: 96px;
     margin: 0;
     padding: 0 0 0 56px;
@@ -6039,7 +6039,7 @@ input.mdl-button[type='submit']
 {
     .mdl-layout__tab-bar
     {
-        width: calc(100% -           60px);
+        width: calc(100% - 60px);
         padding: 0 0 0 60px;
     }
 }
@@ -8724,6 +8724,20 @@ input.mdl-button[type='submit']
     }
 }
 
+.tile:nth-child(1)
+{
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+}
+.is-animating .tile:nth-child(1)
+{
+    -webkit-animation-play-state: running;
+            animation-play-state: running;
+}
+
 .slideInDown.mui-enter,
 .slideInLeft.mui-enter,
 .slideInUp.mui-enter,
@@ -8764,7 +8778,6 @@ input.mdl-button[type='submit']
 .slideInDown.mui-enter
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: translateY(-100%);
         -ms-transform: translateY(-100%);
@@ -8784,7 +8797,6 @@ input.mdl-button[type='submit']
 .slideInLeft.mui-enter
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: translateX(-100%);
         -ms-transform: translateX(-100%);
@@ -8804,7 +8816,6 @@ input.mdl-button[type='submit']
 .slideInUp.mui-enter
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: translateY(100%);
         -ms-transform: translateY(100%);
@@ -8824,7 +8835,6 @@ input.mdl-button[type='submit']
 .slideInRight.mui-enter
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: translateX(100%);
         -ms-transform: translateX(100%);
@@ -8844,7 +8854,6 @@ input.mdl-button[type='submit']
 .slideOutDown.mui-leave
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
@@ -8864,7 +8873,6 @@ input.mdl-button[type='submit']
 .slideOutRight.mui-leave
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
@@ -8884,7 +8892,6 @@ input.mdl-button[type='submit']
 .slideOutUp.mui-leave
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
@@ -8904,7 +8911,6 @@ input.mdl-button[type='submit']
 .slideOutLeft.mui-leave
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
@@ -8950,7 +8956,6 @@ input.mdl-button[type='submit']
 .hingeInFromTop.mui-enter
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: perspective(2000px) rotateX(-90deg);
             transform: perspective(2000px) rotateX(-90deg);
@@ -8972,7 +8977,6 @@ input.mdl-button[type='submit']
 .hingeInFromRight.mui-enter
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: perspective(2000px) rotateY(-90deg);
             transform: perspective(2000px) rotateY(-90deg);
@@ -8994,7 +8998,6 @@ input.mdl-button[type='submit']
 .hingeInFromBottom.mui-enter
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: perspective(2000px) rotateX(90deg);
             transform: perspective(2000px) rotateX(90deg);
@@ -9016,7 +9019,6 @@ input.mdl-button[type='submit']
 .hingeInFromLeft.mui-enter
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: perspective(2000px) rotateY(90deg);
             transform: perspective(2000px) rotateY(90deg);
@@ -9038,7 +9040,6 @@ input.mdl-button[type='submit']
 .hingeInFromMiddleX.mui-enter
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: perspective(2000px) rotateX(-90deg);
             transform: perspective(2000px) rotateX(-90deg);
@@ -9060,7 +9061,6 @@ input.mdl-button[type='submit']
 .hingeInFromMiddleY.mui-enter
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: perspective(2000px) rotateY(-90deg);
             transform: perspective(2000px) rotateY(-90deg);
@@ -9082,7 +9082,6 @@ input.mdl-button[type='submit']
 .hingeOutFromTop.mui-leave
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: perspective(2000px) rotate(0deg);
             transform: perspective(2000px) rotate(0deg);
@@ -9104,7 +9103,6 @@ input.mdl-button[type='submit']
 .hingeOutFromRight.mui-leave
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: perspective(2000px) rotate(0deg);
             transform: perspective(2000px) rotate(0deg);
@@ -9126,7 +9124,6 @@ input.mdl-button[type='submit']
 .hingeOutFromBottom.mui-leave
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: perspective(2000px) rotate(0deg);
             transform: perspective(2000px) rotate(0deg);
@@ -9148,7 +9145,6 @@ input.mdl-button[type='submit']
 .hingeOutFromLeft.mui-leave
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: perspective(2000px) rotate(0deg);
             transform: perspective(2000px) rotate(0deg);
@@ -9170,7 +9166,6 @@ input.mdl-button[type='submit']
 .hingeOutFromMiddleX.mui-leave
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: perspective(2000px) rotate(0deg);
             transform: perspective(2000px) rotate(0deg);
@@ -9192,7 +9187,6 @@ input.mdl-button[type='submit']
 .hingeOutFromMiddleY.mui-leave
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: perspective(2000px) rotate(0deg);
             transform: perspective(2000px) rotate(0deg);
@@ -9214,7 +9208,6 @@ input.mdl-button[type='submit']
 .scaleInUp.mui-enter
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: scale(.5);
         -ms-transform: scale(.5);
@@ -9235,7 +9228,6 @@ input.mdl-button[type='submit']
 .scaleInDown.mui-enter
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: scale(1.5);
         -ms-transform: scale(1.5);
@@ -9256,7 +9248,6 @@ input.mdl-button[type='submit']
 .scaleOutUp.mui-leave
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
@@ -9277,7 +9268,6 @@ input.mdl-button[type='submit']
 .scaleOutDown.mui-leave
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: scale(1);
         -ms-transform: scale(1);
@@ -9298,11 +9288,10 @@ input.mdl-button[type='submit']
 .spinIn.mui-enter
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
-    -webkit-transform: rotate(-270deg);
-        -ms-transform: rotate(-270deg);
-            transform: rotate(-270deg);
+    -webkit-transform: rotate(-.75turn);
+        -ms-transform: rotate(-.75turn);
+            transform: rotate(-.75turn);
 
     opacity: 0;
 }
@@ -9319,7 +9308,6 @@ input.mdl-button[type='submit']
 .spinOut.mui-leave
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: rotate(0);
         -ms-transform: rotate(0);
@@ -9330,9 +9318,9 @@ input.mdl-button[type='submit']
 
 .spinOut.mui-leave.mui-leave-active
 {
-    -webkit-transform: rotate(270deg);
-        -ms-transform: rotate(270deg);
-            transform: rotate(270deg);
+    -webkit-transform: rotate(.75turn);
+        -ms-transform: rotate(.75turn);
+            transform: rotate(.75turn);
 
     opacity: 0;
 }
@@ -9340,11 +9328,10 @@ input.mdl-button[type='submit']
 .spinInCCW.mui-enter
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
-    -webkit-transform: rotate(270deg);
-        -ms-transform: rotate(270deg);
-            transform: rotate(270deg);
+    -webkit-transform: rotate(.75turn);
+        -ms-transform: rotate(.75turn);
+            transform: rotate(.75turn);
 
     opacity: 0;
 }
@@ -9361,7 +9348,6 @@ input.mdl-button[type='submit']
 .spinOutCCW.mui-leave
 {
     -webkit-transition-property: -webkit-transform, opacity;
-            transition-property: -webkit-transform, opacity;
             transition-property:         transform, opacity;
     -webkit-transform: rotate(0);
         -ms-transform: rotate(0);
@@ -9372,9 +9358,9 @@ input.mdl-button[type='submit']
 
 .spinOutCCW.mui-leave.mui-leave-active
 {
-    -webkit-transform: rotate(-270deg);
-        -ms-transform: rotate(-270deg);
-            transform: rotate(-270deg);
+    -webkit-transform: rotate(-.75turn);
+        -ms-transform: rotate(-.75turn);
+            transform: rotate(-.75turn);
 
     opacity: 0;
 }
@@ -9453,18 +9439,36 @@ input.mdl-button[type='submit']
 
 .shake
 {
-    -webkit-animation-name: 'shake-7';
-            animation-name: 'shake-7';
+    -webkit-animation-name: shake-7;
+            animation-name: shake-7;
 }
 
 @-webkit-keyframes shake-7
 {
-    '0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%'
+    0%,
+    10%,
+    20%,
+    30%,
+    40%,
+    50%,
+    60%,
+    70%,
+    80%,
+    90%
     {
         -webkit-transform: translateX(7%);
                 transform: translateX(7%);
     }
-    '5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95%'
+    5%,
+    15%,
+    25%,
+    35%,
+    45%,
+    55%,
+    65%,
+    75%,
+    85%,
+    95%
     {
         -webkit-transform: translateX(-7%);
                 transform: translateX(-7%);
@@ -9473,12 +9477,30 @@ input.mdl-button[type='submit']
 
 @keyframes shake-7
 {
-    '0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%'
+    0%,
+    10%,
+    20%,
+    30%,
+    40%,
+    50%,
+    60%,
+    70%,
+    80%,
+    90%
     {
         -webkit-transform: translateX(7%);
                 transform: translateX(7%);
     }
-    '5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95%'
+    5%,
+    15%,
+    25%,
+    35%,
+    45%,
+    55%,
+    65%,
+    75%,
+    85%,
+    95%
     {
         -webkit-transform: translateX(-7%);
                 transform: translateX(-7%);
@@ -9487,32 +9509,32 @@ input.mdl-button[type='submit']
 
 .spin-cw
 {
-    -webkit-animation-name: 'spin-cw-360deg';
-            animation-name: 'spin-cw-360deg';
+    -webkit-animation-name: spin-cw-1turn;
+            animation-name: spin-cw-1turn;
 }
 
-@-webkit-keyframes spin-cw-360deg
+@-webkit-keyframes spin-cw-1turn
 {
-    '0%'
+    0%
     {
-        -webkit-transform: rotate(-360deg);
-                transform: rotate(-360deg);
+        -webkit-transform: rotate(-1turn);
+                transform: rotate(-1turn);
     }
-    '100%'
+    100%
     {
         -webkit-transform: rotate(0);
                 transform: rotate(0);
     }
 }
 
-@keyframes spin-cw-360deg
+@keyframes spin-cw-1turn
 {
-    '0%'
+    0%
     {
-        -webkit-transform: rotate(-360deg);
-                transform: rotate(-360deg);
+        -webkit-transform: rotate(-1turn);
+                transform: rotate(-1turn);
     }
-    '100%'
+    100%
     {
         -webkit-transform: rotate(0);
                 transform: rotate(0);
@@ -9521,43 +9543,51 @@ input.mdl-button[type='submit']
 
 .spin-ccw
 {
-    -webkit-animation-name: 'spin-cw-360deg';
-            animation-name: 'spin-cw-360deg';
+    -webkit-animation-name: spin-cw-1turn;
+            animation-name: spin-cw-1turn;
 }
 
-@keyframes spin-cw-360deg
+@keyframes spin-cw-1turn
 {
-    '0%'
+    0%
     {
         -webkit-transform: rotate(0);
                 transform: rotate(0);
     }
-    '100%'
+    100%
     {
-        -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
+        -webkit-transform: rotate(1turn);
+                transform: rotate(1turn);
     }
 }
 
 .wiggle
 {
-    -webkit-animation-name: 'wiggle-7deg';
-            animation-name: 'wiggle-7deg';
+    -webkit-animation-name: wiggle-7deg;
+            animation-name: wiggle-7deg;
 }
 
 @-webkit-keyframes wiggle-7deg
 {
-    '40%, 50%, 60%'
+    40%,
+    50%,
+    60%
     {
         -webkit-transform: rotate(7deg);
                 transform: rotate(7deg);
     }
-    '35%, 45%, 55%, 65%'
+    35%,
+    45%,
+    55%,
+    65%
     {
         -webkit-transform: rotate(-7deg);
                 transform: rotate(-7deg);
     }
-    '0%, 30%, 70%, 100%'
+    0%,
+    30%,
+    70%,
+    100%
     {
         -webkit-transform: rotate(0);
                 transform: rotate(0);
@@ -9566,17 +9596,25 @@ input.mdl-button[type='submit']
 
 @keyframes wiggle-7deg
 {
-    '40%, 50%, 60%'
+    40%,
+    50%,
+    60%
     {
         -webkit-transform: rotate(7deg);
                 transform: rotate(7deg);
     }
-    '35%, 45%, 55%, 65%'
+    35%,
+    45%,
+    55%,
+    65%
     {
         -webkit-transform: rotate(-7deg);
                 transform: rotate(-7deg);
     }
-    '0%, 30%, 70%, 100%'
+    0%,
+    30%,
+    70%,
+    100%
     {
         -webkit-transform: rotate(0);
                 transform: rotate(0);
@@ -9947,4 +9985,126 @@ select#facetwp-radius
 .toggles .tile-icon
 {
     max-height: 48px;
+}
+
+.tile:nth-child(1)
+{
+    -webkit-animation-name: slide-in-right-100;
+            animation-name: slide-in-right-100;
+    -webkit-animation-duration: .8s;
+            animation-duration: .8s;
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+}
+
+@-webkit-keyframes slide-in-right-100
+{
+    0%
+    {
+        -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-right-100
+{
+    0%
+    {
+        -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+    }
+}
+
+.tile:nth-child(2)
+{
+    -webkit-animation-name: custom-1;
+            animation-name: custom-1;
+    -webkit-animation-duration: .8s;
+            animation-duration: .8s;
+    -webkit-animation-delay: .3s;
+            animation-delay: .3s;
+}
+
+@-webkit-keyframes custom-1
+{
+    0%
+    {
+        -webkit-transform: translateY(100%) scale(0);
+                transform: translateY(100%) scale(0);
+    }
+    100%
+    {
+        -webkit-transform: translateY(0) scale(1);
+                transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes custom-1
+{
+    0%
+    {
+        -webkit-transform: translateY(100%) scale(0);
+                transform: translateY(100%) scale(0);
+    }
+    100%
+    {
+        -webkit-transform: translateY(0) scale(1);
+                transform: translateY(0) scale(1);
+    }
+}
+
+.tile:nth-child(3)
+{
+    -webkit-animation-name: custom-2;
+            animation-name: custom-2;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-delay: 1.1s;
+            animation-delay: 1.1s;
+}
+
+@-webkit-keyframes custom-2
+{
+    0%
+    {
+        -webkit-transform: scale(0);
+                transform: scale(0); 
+
+        opacity: 0;
+    }
+    100%
+    {
+        -webkit-transform: scale(1);
+                transform: scale(1); 
+
+        opacity: 1;
+    }
+}
+
+@keyframes custom-2
+{
+    0%
+    {
+        -webkit-transform: scale(0);
+                transform: scale(0); 
+
+        opacity: 0;
+    }
+    100%
+    {
+        -webkit-transform: scale(1);
+                transform: scale(1); 
+
+        opacity: 1;
+    }
 }

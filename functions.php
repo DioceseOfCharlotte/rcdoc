@@ -128,7 +128,7 @@ function rcdoc_scripts() {
 	wp_enqueue_script(
         'abraham_js',
         trailingslashit(get_stylesheet_directory_uri())."assets/js/main.js",
-        false, false, true
+        array( 'jquery' ), null, true
     );
 
 	wp_enqueue_script(
