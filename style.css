@@ -8724,7 +8724,10 @@ input.mdl-button[type='submit']
     }
 }
 
-.tile:nth-child(1)
+.tile:nth-child(1),
+.shake,
+.spin,
+.wiggle
 {
     -webkit-animation-play-state: paused;
             animation-play-state: paused;
@@ -8732,7 +8735,10 @@ input.mdl-button[type='submit']
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both;
 }
-.is-animating .tile:nth-child(1)
+.is-animating .tile:nth-child(1),
+.is-animating .shake,
+.is-animating .spin,
+.is-animating .wiggle
 {
     -webkit-animation-play-state: running;
             animation-play-state: running;
@@ -10029,8 +10035,8 @@ select#facetwp-radius
 {
     -webkit-animation-name: custom-1;
             animation-name: custom-1;
-    -webkit-animation-duration: .8s;
-            animation-duration: .8s;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
     -webkit-animation-delay: .3s;
             animation-delay: .3s;
 }
@@ -10039,13 +10045,13 @@ select#facetwp-radius
 {
     0%
     {
-        -webkit-transform: translateY(100%) scale(0);
-                transform: translateY(100%) scale(0);
+        -webkit-transform: rotate(1turn) translateY(100%);
+                transform: rotate(1turn) translateY(100%);
     }
     100%
     {
-        -webkit-transform: translateY(0) scale(1);
-                transform: translateY(0) scale(1);
+        -webkit-transform: rotate(0) translateY(0);
+                transform: rotate(0) translateY(0);
     }
 }
 
@@ -10053,13 +10059,13 @@ select#facetwp-radius
 {
     0%
     {
-        -webkit-transform: translateY(100%) scale(0);
-                transform: translateY(100%) scale(0);
+        -webkit-transform: rotate(1turn) translateY(100%);
+                transform: rotate(1turn) translateY(100%);
     }
     100%
     {
-        -webkit-transform: translateY(0) scale(1);
-                transform: translateY(0) scale(1);
+        -webkit-transform: rotate(0) translateY(0);
+                transform: rotate(0) translateY(0);
     }
 }
 
@@ -10069,8 +10075,8 @@ select#facetwp-radius
             animation-name: custom-2;
     -webkit-animation-duration: 1s;
             animation-duration: 1s;
-    -webkit-animation-delay: 1.1s;
-            animation-delay: 1.1s;
+    -webkit-animation-delay: 2.3s;
+            animation-delay: 2.3s;
 }
 
 @-webkit-keyframes custom-2
@@ -10107,4 +10113,88 @@ select#facetwp-radius
 
         opacity: 1;
     }
+}
+
+.shake
+{
+    -webkit-animation-name: shake-7;
+            animation-name: shake-7;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+}
+
+@keyframes shake-7
+{
+    0%,
+    10%,
+    20%,
+    30%,
+    40%,
+    50%,
+    60%,
+    70%,
+    80%,
+    90%
+    {
+        -webkit-transform: translateX(7%);
+                transform: translateX(7%);
+    }
+    5%,
+    15%,
+    25%,
+    35%,
+    45%,
+    55%,
+    65%,
+    75%,
+    85%,
+    95%
+    {
+        -webkit-transform: translateX(-7%);
+                transform: translateX(-7%);
+    }
+}
+
+.spin
+{
+    -webkit-animation-name: spin-cw-1turn;
+            animation-name: spin-cw-1turn;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-delay: 4s;
+            animation-delay: 4s;
+}
+
+@keyframes spin-cw-1turn
+{
+    0%
+    {
+        -webkit-transform: rotate(-1turn);
+                transform: rotate(-1turn);
+    }
+    100%
+    {
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+    }
+}
+
+.wiggle
+{
+    -webkit-animation-name: custom-3;
+            animation-name: custom-3;
+    -webkit-animation-duration: wiggle;
+            animation-duration: wiggle;
+    -webkit-animation-delay: 7s;
+            animation-delay: 7s;
+}
+
+@-webkit-keyframes custom-3
+{
+}
+
+@keyframes custom-3
+{
 }
