@@ -119,9 +119,15 @@ function rcdoc_setup() {
  * Enqueue scripts and styles.
  */
 function rcdoc_scripts() {
+	// wp_enqueue_script(
+    //     'mdl-script',
+    //     '//storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js',
+    //     false, null, true
+    // );
+
 	wp_enqueue_script(
         'mdl-script',
-        '//storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js',
+        trailingslashit(get_stylesheet_directory_uri())."assets/js/material.min.js",
         false, null, true
     );
 

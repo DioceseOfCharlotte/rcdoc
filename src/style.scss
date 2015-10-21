@@ -287,10 +287,3 @@ select#facetwp-radius {
 .tile:nth-child(2) {  @include mui-queue(2s, 0s, spin($direction: ccw), slide($direction: up)); }
 .tile:nth-child(3) { @include mui-queue(1s, 0s, fade, zoom); }
 }
-
-
-@include mui-series(2s) {
-  .shake  { @include mui-queue(2s, 0s, shake()); }
-  .spin   { @include mui-queue(1s, 2s, spin()); }
-  .wiggle { @include mui-queue(wiggle()); }
-}
