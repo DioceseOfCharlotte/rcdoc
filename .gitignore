@@ -6,8 +6,10 @@
 # Development files
 /node_modules
 
-src/**/*.js
 src/**/*.html
+src/**/snippets/*
+src/**/demo.css
+src/**/demo.js
 
 # Generated theme files
 *.map
