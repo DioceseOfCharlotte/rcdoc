@@ -5,7 +5,7 @@
 
 # Development files
 /node_modules
-
+/.tmp
 src/**/*.html
 src/**/snippets/*
 src/**/demo.css

@@ -283,7 +283,8 @@ select#facetwp-radius {
 
 
 @include mui-series {
-.tile:nth-child(1) { @include mui-queue(.8s, -0.5s, slide($direction: right)); }
-.tile:nth-child(2) {  @include mui-queue(2s, 0s, spin($direction: ccw), slide($direction: up)); }
-.tile:nth-child(3) { @include mui-queue(1s, 0s, fade, zoom); }
+.tile:nth-child(1) { @include mui-queue(.8s, -0.5s, slide($direction: right), zoom); }
+.tile:nth-child(2) {  @include mui-queue(.8s, -0.5s, slide($direction: up), zoom); }
+.tile:nth-child(3) { @include mui-queue(.8s, -0.5s, slide($direction: down), zoom); }
+.tile:nth-child(3) { @include mui-queue(.8s, -0.5s, slide($direction: left), zoom); }
 }
