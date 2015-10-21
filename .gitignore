@@ -5,8 +5,10 @@
 
 # Development files
 /node_modules
-/src/**/*.js
-/src/**/*.html
+
+src/**/*.js
+src/**/*.html
+
 # Generated theme files
 *.map
 *.lock

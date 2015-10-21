@@ -99,6 +99,16 @@
   };
 
   /**
+   * Handle reset event from out side.
+   *
+   * @param {Event} event The event that fired.
+   * @private
+   */
+  MaterialTextfield.prototype.onReset_ = function(event) {
+    this.updateClasses_();
+  };
+
+  /**
    * Handle class updates.
    *
    * @private
@@ -132,10 +142,12 @@
    * @public
    */
   MaterialTextfield.prototype.checkValidity = function() {
-    if (this.input_.validity.valid) {
-      this.element_.classList.remove(this.CssClasses_.IS_INVALID);
-    } else {
-      this.element_.classList.add(this.CssClasses_.IS_INVALID);
+    if (this.input_.validity) {
+      if (this.input_.validity.valid) {
+        this.element_.classList.remove(this.CssClasses_.IS_INVALID);
+      } else {
+        this.element_.classList.add(this.CssClasses_.IS_INVALID);
+      }
     }
   };
   MaterialTextfield.prototype['checkValidity'] =
@@ -186,11 +198,7 @@
    */
   MaterialTextfield.prototype.change = function(value) {
 
-    if (value) {
-      this.input_.value = value;
-    } else {
-      this.input_.value = '';
-    }
+    this.input_.value = value || '';
     this.updateClasses_();
   };
   MaterialTextfield.prototype['change'] = MaterialTextfield.prototype.change;
@@ -217,9 +225,11 @@
         this.boundUpdateClassesHandler = this.updateClasses_.bind(this);
         this.boundFocusHandler = this.onFocus_.bind(this);
         this.boundBlurHandler = this.onBlur_.bind(this);
+        this.boundResetHandler = this.onReset_.bind(this);
         this.input_.addEventListener('input', this.boundUpdateClassesHandler);
         this.input_.addEventListener('focus', this.boundFocusHandler);
         this.input_.addEventListener('blur', this.boundBlurHandler);
+        this.input_.addEventListener('reset', this.boundResetHandler);
 
         if (this.maxRows !== this.Constant_.NO_MAX_ROWS) {
           // TODO: This should handle pasting multi line text.
@@ -227,9 +237,13 @@
           this.boundKeyDownHandler = this.onKeyDown_.bind(this);
           this.input_.addEventListener('keydown', this.boundKeyDownHandler);
         }
-
+        var invalid = this.element_.classList
+          .contains(this.CssClasses_.IS_INVALID);
         this.updateClasses_();
         this.element_.classList.add(this.CssClasses_.IS_UPGRADED);
+        if (invalid) {
+          this.element_.classList.add(this.CssClasses_.IS_INVALID);
+        }
       }
     }
   };
@@ -243,6 +257,7 @@
     this.input_.removeEventListener('input', this.boundUpdateClassesHandler);
     this.input_.removeEventListener('focus', this.boundFocusHandler);
     this.input_.removeEventListener('blur', this.boundBlurHandler);
+    this.input_.removeEventListener('reset', this.boundResetHandler);
     if (this.boundKeyDownHandler) {
       this.input_.removeEventListener('keydown', this.boundKeyDownHandler);
     }
