@@ -52,7 +52,7 @@
 @import "shadow/shadow";
 @import "grid/grid";
 
-@import 'motion-ui';
+//@import 'motion-ui';
 
 
 
@@ -280,17 +280,18 @@ select#facetwp-radius {
     max-height: 48px;
 }
 
-.tile {
-    opacity: 0;
-}
-
-.mdl-js .tile {
-    opacity: 1;
-}
-
-@include mui-series {
-.tile:nth-child(1) { @include mui-queue(.8s, -0.5s, slide($direction: down), fade); }
-.tile:nth-child(2) {  @include mui-queue(.8s, -0.5s, slide($direction: down), fade); }
-.tile:nth-child(3) { @include mui-queue(.8s, -0.5s, slide($direction: down), fade); }
-.tile:nth-child(4) { @include mui-queue(1s, -0.5s, slide($direction: down), fade); }
-}
+// .tile {
+//     opacity: 0;
+//     transition: 10s!important;
+// }
+//
+// .mdl-js .tile {
+//     opacity: 1;
+// }
+//
+// @include mui-series {
+// .tile-wrap:nth-child(1) { @include mui-queue(.8s, -0.5s, slide($direction: down)); }
+// .tile-wrap:nth-child(2) {  @include mui-queue(.8s, -0.5s, slide($direction: down)); }
+// .tile-wrap:nth-child(3) { @include mui-queue(.8s, -0.5s, slide($direction: down)); }
+// .tile-wrap:nth-child(4) { @include mui-queue(1s, -0.5s, slide($direction: down)); }
+// }

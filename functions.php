@@ -132,17 +132,17 @@ function rcdoc_scripts() {
     );
 
 	wp_enqueue_script(
-        'abraham_js',
-        trailingslashit(get_stylesheet_directory_uri())."assets/js/main.js",
+        'motion_js',
+        'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js',
         array( 'jquery' ), null, true
     );
 
 	wp_enqueue_script(
-        'motion_js',
-        trailingslashit(get_stylesheet_directory_uri())."assets/js/motion-ui.min.js",
+        'abraham_js',
+        trailingslashit(get_stylesheet_directory_uri())."assets/js/main.js",
         array( 'jquery' ), null, true
     );
-
+	
 	// if (get_post_type() == 'parish') {
     //     wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array(), '3', true );
     //     wp_enqueue_script(

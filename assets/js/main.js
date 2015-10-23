@@ -348,4 +348,25 @@ componentHandler.register({
     cssClass: 'js-drop-panel'
 });
 
-document.querySelector('.mdl-grid').classList.add('is-animating');
+//document.querySelector('.mdl-grid').classList.add('is-animating');
+
+var $ = jQuery.noConflict();
+//
+// $( document ).ready(function() {
+//   var $yeti = $('.tile');
+//
+// $('.tile').each(function() {
+//     MotionUI.animateIn($yeti, 'fadeIn');
+// 	})
+// });
+
+
+
+TweenMax.staggerFrom(".tile", 1, {y:-550}, 0.5);
+TweenMax.staggerFrom(".tile", 0.2, {opacity:0}, 0.5);
+
+
+
+$(".tile").click(function(){
+  TweenMax.staggerTo(".tile", 0.5, {opacity:0, y:-100, ease:Back.easeIn}, 0.1);
+});
