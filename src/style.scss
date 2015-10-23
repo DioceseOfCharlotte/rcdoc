@@ -35,7 +35,7 @@
 @import "card/card";
 //@import "checkbox/checkbox";
 @import "data-table/data-table";
-//@import "footer/mega_footer";
+@import "footer/mega_footer";
 @import "footer/mini_footer";
 @import "icon-toggle/icon-toggle";
 @import "menu/menu";
@@ -255,7 +255,7 @@ select#facetwp-radius {
 .tile {
     width: 256px;
     height: 256px;
-	transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+	transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),opacity 1s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
 }
 
 .tile-icon {
@@ -289,8 +289,8 @@ select#facetwp-radius {
 }
 
 @include mui-series {
-.tile:nth-child(1) { @include mui-queue(.8s, -0.5s, slide($direction: down), zoom); }
-.tile:nth-child(2) {  @include mui-queue(.8s, -0.5s, slide($direction: down), zoom); }
-.tile:nth-child(3) { @include mui-queue(.8s, -0.5s, slide($direction: down), zoom); }
-.tile:nth-child(4) { @include mui-queue(1s, -0.5s, slide($direction: down), zoom); }
+.tile:nth-child(1) { @include mui-queue(.8s, -0.5s, slide($direction: down), fade); }
+.tile:nth-child(2) {  @include mui-queue(.8s, -0.5s, slide($direction: down), fade); }
+.tile:nth-child(3) { @include mui-queue(.8s, -0.5s, slide($direction: down), fade); }
+.tile:nth-child(4) { @include mui-queue(1s, -0.5s, slide($direction: down), fade); }
 }
