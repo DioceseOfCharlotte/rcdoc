@@ -362,11 +362,22 @@ var $ = jQuery.noConflict();
 
 
 
-TweenMax.staggerFrom(".tile", 1, {y:-550}, 0.5);
-TweenMax.staggerFrom(".tile", 0.2, {opacity:0}, 0.5);
+TweenMax.staggerFrom(".tile", 1, {
+	y:-550,
+	ease:Back.easeOut.config(1),
+}, 0.3);
+TweenMax.staggerFrom(".tile", 0.5, {
+	opacity:0.5
+}, 0.1);
 
 
 
 $(".tile").click(function(){
-  TweenMax.staggerTo(".tile", 0.5, {opacity:0, y:-100, ease:Back.easeIn}, 0.1);
+	TweenMax.staggerTo(".tile", 0.1, {
+		opacity:0
+	}, 0.1);
+  TweenMax.staggerTo(".tile", 0.5, {
+		y:-550,
+		ease:Back.easeIn
+	}, 0.1);
 });
