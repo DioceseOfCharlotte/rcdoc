@@ -362,7 +362,7 @@ var $ = jQuery.noConflict();
 
 
 
-TweenMax.staggerFrom(".tile", 0.7, {
+TweenMax.staggerFrom(".tile", 1, {
 	y:-550,
 	ease:Back.easeOut.config(0.7),
 }, 0.3);
