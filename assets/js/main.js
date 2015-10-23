@@ -364,7 +364,7 @@ var $ = jQuery.noConflict();
 
 TweenMax.staggerFrom(".tile", 1, {
 	y:-550,
-	ease:Back.easeOut.config(1),
+	ease:Back.easeOut.config(0.7),
 }, 0.3);
 TweenMax.staggerFrom(".tile", 0.5, {
 	opacity:0.5
