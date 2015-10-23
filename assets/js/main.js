@@ -378,10 +378,7 @@ TweenMax.staggerFrom(".tile", 0.5, {
 
 $(".tile").click(function(){
 	TweenMax.staggerTo(".tile", 0.5, {
-		opacity:0
-	}, 0.1);
-  TweenMax.staggerTo(".tile", 0.5, {
 		y:-550,
-		ease:Back.easeIn.config(0.7),
+		opacity:0
 	}, 0.1);
 });
