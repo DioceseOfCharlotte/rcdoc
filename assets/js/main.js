@@ -365,7 +365,7 @@ var $ = jQuery.noConflict();
 TweenMax.staggerFrom(".tile", 1, {
 	y:-550,
 	cycle:{
-		rotationY:[-180, 180]
+		rotationY:[-90, 90]
 	},
 	ease: Power3.easeOut
 }, 0.3);
@@ -379,6 +379,6 @@ TweenMax.staggerFrom(".tile", 0.5, {
 $(".tile").click(function(){
 	TweenMax.staggerTo(".tile", 0.5, {
 		y:-550,
-		opacity:0.5
+		opacity:0
 	}, 0.1);
 });
