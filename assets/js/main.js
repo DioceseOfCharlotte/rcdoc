@@ -379,6 +379,6 @@ TweenMax.staggerFrom(".tile", 0.5, {
 $(".tile").click(function(){
 	TweenMax.staggerTo(".tile", 0.5, {
 		y:-550,
-		opacity:0
+		opacity:0.5
 	}, 0.1);
 });
