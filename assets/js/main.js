@@ -365,10 +365,15 @@ var $ = jQuery.noConflict();
 TweenMax.staggerFrom(".tile", 1, {
 	y:-550,
 	ease:Back.easeOut.config(0.7),
+	cycle:{
+		rotationY:[-180, 180],
+		ease: Power3.easeOut,
+	}
+
 }, 0.3);
 TweenMax.staggerFrom(".tile", 0.5, {
 	opacity:0.5
-}, 0.1);
+}, 0.2);
 
 
 
@@ -378,6 +383,6 @@ $(".tile").click(function(){
 	}, 0.1);
   TweenMax.staggerTo(".tile", 0.5, {
 		y:-550,
-		ease:Back.easeIn
+		ease:Back.easeIn.config(0.7),
 	}, 0.1);
 });
