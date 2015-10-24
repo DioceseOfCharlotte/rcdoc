@@ -7331,3 +7331,7 @@ select#facetwp-radius {
 
 .toggles .tile-icon {
   max-height: 48px; }
+
+input[type=submit],
+input[type=checkbox] {
+  width: auto; }

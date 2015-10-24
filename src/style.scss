@@ -291,3 +291,9 @@ select#facetwp-radius {
 // .tile-wrap:nth-child(3) { @include mui-queue(.8s, -0.5s, slide($direction: down)); }
 // .tile-wrap:nth-child(4) { @include mui-queue(1s, -0.5s, slide($direction: down)); }
 // }
+
+
+input[type=submit],
+input[type=checkbox] {
+    width: auto;
+}
