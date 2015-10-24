@@ -7210,23 +7210,10 @@ button.simplefavorite-button {
   padding: 0;
   background-color: transparent; }
 
-.dropdown-basic {
-  position: relative; }
-
-/**
- * Expand/collapse icons
- */
 /**
  * Dropdown content
  */
-/* line 35, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
 .dropdown-menu-basic {
-  background-color: #ffffff;
-  border: 0.0725em solid #b8b8b8;
-  border-radius: 0.0725em;
-  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;
-  display: none;
   float: left;
   margin-top: 3.5em;
   margin-left: 0;
@@ -7235,16 +7222,23 @@ button.simplefavorite-button {
   text-align: left;
   top: 0;
   visibility: hidden;
-  z-index: 1000;
-  /**
-	 * Switch up styling on small viewports
-	 */ }
+  z-index: -1;
+  opacity: 0;
+  transition-duration: 250ms;
+  transition-timing-function: linear;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  transition-property: -webkit-transform, opacity;
+  transition-property: transform, opacity;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
 
-/* line 52, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
 .dropdown-menu-basic.is-visible {
-  display: block;
-  padding: 0.5em;
-  visibility: visible; }
+  opacity: 1;
+  visibility: visible;
+  z-index: 1000;
+  -webkit-transform: translateY(0);
+          transform: translateY(0); }
 
 /* line 58, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
 .dropdown-menu-basic.dropdown-right {
