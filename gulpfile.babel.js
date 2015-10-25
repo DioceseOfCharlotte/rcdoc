@@ -38,35 +38,35 @@ const AUTOPREFIXER_BROWSERS = [
 
 const SOURCES = [
   // Component handler
-  'src/mdlComponentHandler.js',
+  'assets/src/mdl/mdlComponentHandler.js',
   // Polyfills/dependencies
-  'src/third_party/**/*.js',
+  'assets/src/mdl/third_party/**/*.js',
   // Base components
-  'src/button/button.js',
+  'assets/src/mdl/button/button.js',
   //'src/checkbox/checkbox.js',
-  'src/icon-toggle/icon-toggle.js',
-  'src/menu/menu.js',
+  'assets/src/mdl/icon-toggle/icon-toggle.js',
+  'assets/src/mdl/menu/menu.js',
   //'src/progress/progress.js',
   //'src/radio/radio.js',
   //'src/slider/slider.js',
-  'src/snackbar/snackbar.js',
+  'assets/src/mdl/snackbar/snackbar.js',
   //'src/spinner/spinner.js',
-  'src/switch/switch.js',
-  'src/tabs/tabs.js',
-  'src/textfield/textfield.js',
-  'src/tooltip/tooltip.js',
+  'assets/src/mdl/switch/switch.js',
+  'assets/src/mdl/tabs/tabs.js',
+  'assets/src/mdl/textfield/textfield.js',
+  'assets/src/mdl/tooltip/tooltip.js',
   // Complex components (which reuse base components)
-  'src/layout/layout.js',
+  'assets/src/mdl/layout/layout.js',
   //'src/data-table/data-table.js',
   // And finally, the ripples
-  'src/ripple/ripple.js'
+  'assets/src/mdl/ripple/ripple.js'
 ];
 
 // ***** Development tasks ****** //
 
 // Lint JavaScript
 gulp.task('lint', () =>
-  gulp.src('src/**/*.js')
+  gulp.src('assets/src/**/*.js')
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
@@ -79,7 +79,7 @@ gulp.task('lint', () =>
 // Optimize Images
 // TODO: Update image paths in final CSS to match root/images
 gulp.task('images', () =>
-  gulp.src('src/**/*.{svg,png,jpg}')
+  gulp.src('assets/src/**/*.{svg,png,jpg}')
     .pipe($.flatten())
     .pipe($.cache($.imagemin({
       progressive: true,
@@ -93,7 +93,7 @@ gulp.task('images', () =>
 // Compile and Automatically Prefix Stylesheets (production)
 gulp.task('styles', () => {
   // For best performance, don't add Sass partials to `gulp.src`
-  gulp.src('src/style.scss')
+  gulp.src('assets/src/style.scss')
     // Generate Source Maps
     .pipe($.sourcemaps.init())
     .pipe($.sass({
