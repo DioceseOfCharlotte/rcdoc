@@ -110,7 +110,7 @@ function abraham_widgets() {
 		'id'            => 'footer',
 		'name'          => __( 'Footer', 'abraham' ),
 		'before_widget' => '<section class="mdl-mega-footer__drop-down-section u-p2 u-flexed-grow"><div>',
-		'before_title'  => '</div><input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked><h2 class="widget-title u-mt0 mdl-mega-footer--heading">',
+		'before_title'  => '</div><input class="mdl-mega-footer__heading-checkbox u-1/1" type="checkbox" checked><h2 class="widget-title u-mt0 mdl-mega-footer--heading">',
 		'after_title'   => '</h2><div class="mdl-mega-footer--link-list">',
 		'after_widget'  => '</div></section>',
 	));
