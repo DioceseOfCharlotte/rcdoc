@@ -31,12 +31,14 @@ ob_start();
 $output .= ob_get_clean();
 $output .= '</a></p>';
 ob_start(); ?>
+<p class="contact-numbers">
 <?php if( get_field('doc_phone_number') ): ?>
     <p class="phone" itemprop="telephone"><a href="tel:<?php the_field('doc_phone_number'); ?>"><i class="u-align-middle material-icons">&#xE0CD;</i> <?php the_field('doc_phone_number'); ?></a></p>
 <?php endif; ?>
 <?php if( get_field('doc_fax') ): ?>
     <p class="fax" itemprop="faxNumber"><i class="u-bold u-align-middle">FAX</i> <?php the_field('doc_fax'); ?></p>
 <?php endif; ?>
+</p>
 <?php if( get_field('doc_email') ): ?>
     <p class="email" itemprop="email"><a href="mailto:<?php the_field('doc_email'); ?>"><i class="u-align-middle material-icons">&#xE0BE;</i> <?php the_field('doc_email'); ?></a></p>
 <?php endif; ?>
