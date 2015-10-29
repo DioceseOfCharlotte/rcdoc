@@ -6,14 +6,10 @@
  */
 if ( has_post_thumbnail() ) {
 $feat_image_url = wp_get_attachment_url( get_post_thumbnail_id() );
-     echo '<style>
-     .mdl-card-image {
-            background: url('.$feat_image_url.') center / cover;
-        }
-            </style>';
+$bg_image = 'background-image: url('.$feat_image_url.')';
 }
 ?>
-<section class="u-flexed-start mdl-cell mdl-card mdl-card-image mdl-shadow--2dp">
+<section class="u-flexed-start mdl-cell u-bg-cover u-bg-center mdl-card mdl-card-image mdl-shadow--2dp" style="<?php echo $bg_image ?>">
 <div class="u-bg-tint-3 u-text-white u-color-inherit">
         <header <?php hybrid_attr('entry-header'); ?>>
             <h2 <?php hybrid_attr('entry-title'); ?>>
