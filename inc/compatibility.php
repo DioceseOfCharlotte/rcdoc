@@ -55,6 +55,7 @@ function meh_post_type_archive_supports() {
 	add_post_type_support( 'department', 'archive' );
 
 	add_post_type_support( 'archive_post', 'archive' );
+	add_post_type_support( 'bishop', 'archive' );
 	add_post_type_support( 'chancery', 'archive' );
 	add_post_type_support( 'deacon', 'archive' );
 	add_post_type_support( 'development', 'archive' );
