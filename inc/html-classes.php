@@ -37,7 +37,7 @@ function rcdoc_html_classes() {
 		'page_title'    		  	=> 'u-display-2 u-m0 u-py3',
 		'archive_description'     	=> '',
 
-		'entry_header'            	=> 'mdl-card__title',
+		'entry_header'            	=> 'mdl-card__title pt0 px0',
 		'entry_content'           	=> 'u-px2 u-pb2',
 		'entry_content_wide'      	=> '',
 		'entry_summary'           	=> 'u-px2 u-pb2',
