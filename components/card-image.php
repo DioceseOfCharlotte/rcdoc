@@ -14,7 +14,7 @@ $feat_image_url = wp_get_attachment_url( get_post_thumbnail_id() );
 }
 ?>
 <section class="u-flexed-start mdl-cell mdl-card mdl-card-image mdl-shadow--2dp">
-<div class="u-bg-tint-4 u-text-white u-color-inherit">
+<div class="u-bg-tint-3 u-text-white u-color-inherit">
         <header <?php hybrid_attr('entry-header'); ?>>
             <h2 <?php hybrid_attr('entry-title'); ?>>
                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
