@@ -24,7 +24,7 @@ function rcdoc_html_classes() {
 		// CONTENT
 		'content'                 	=> 'mdl-cell mdl-grid u-m0 u-p0 u-1/1',
 		'content_with_sidebar'    	=> 'mdl-cell mdl-grid u-m0 u-p0 u-1/1 u-2/3@md',
-		'content_archive'         	=> 'facetwp-template',
+		'content_archive'         	=> 'u-flex-justify-around facetwp-template',
 		// ENTRY
 		'post'                    	=> 'mdl-cell u-mb2 u-1/1 mdl-card u-py4 u-px3 u-text-gray u-overflow-visible',
 		'post_archive'            	=> 'mdl-cell mdl-cell--6-col-desktop mdl-card mdl-shadow--2dp u-overflow-visible',
