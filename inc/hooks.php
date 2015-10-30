@@ -11,7 +11,7 @@ add_action( 'tha_content_before', 'rcdoc_facet_parish_prox' );
 
 
 function rcdoc_parish_footer() {
-    if ( 'parish' !== get_post_type() ) {
+    if ( 'parish' !== get_post_type() && 'school' !== get_post_type() && 'department' !== get_post_type() ) {
 		return;
 	}
 	get_template_part('components/acf-parish-contact');
