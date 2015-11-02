@@ -7264,10 +7264,10 @@ button.simplefavorite-button {
 @media screen and (min-width: 760px) {
   .site-logo {
     height: 100px;
-    transition: all 0.25s; }
+    transition: all .25s; }
   .mdl-layout-title {
     font-size: 30px;
-    transition: all 0.25s; }
+    transition: all .25s; }
   .is-compact .mdl-layout-title {
     margin-left: 5px;
     font-size: 20px; } }
@@ -7310,7 +7310,8 @@ button.simplefavorite-button {
   display: flex; }
 
 select#facetwp-radius {
-  width: 72px; }
+  width: 80px;
+  height: 2.4em; }
 
 .tile {
   width: 256px;
