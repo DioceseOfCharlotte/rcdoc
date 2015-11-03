@@ -50,7 +50,7 @@ function rcdoc_scripts() {
 
 	wp_enqueue_script(
         'gsap_js',
-        'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js',
+        trailingslashit(get_stylesheet_directory_uri())."assets/js/gsap.min.js",
         array( 'jquery' ), null, true
     );
 

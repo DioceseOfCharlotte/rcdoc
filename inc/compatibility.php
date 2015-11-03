@@ -2,7 +2,7 @@
 
 //add_filter('pre_get_posts', 'query_post_type');
 add_action( 'wp_footer', 'mdl_facet_refresh' );
-add_filter( 'facetwp_index_row', 'index_acf_google_map_address', 10, 2 );
+//add_filter( 'facetwp_index_row', 'index_acf_google_map_address', 10, 2 );
 add_action('init', 'meh_post_type_archive_supports', 5);
 
 

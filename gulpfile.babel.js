@@ -25,18 +25,18 @@ const reload = browserSync.reload;
 
 
 const AUTOPREFIXER_BROWSERS = [
-  'ie >= 10',
+  'ie >= 9',
   'ie_mob >= 10',
   'ff >= 30',
   'chrome >= 34',
   'safari >= 7',
   'opera >= 23',
-  'ios >= 7',
-  'android >= 4.4',
+  'ios >= 6',
+  'android >= 4.2',
   'bb >= 10'
 ];
 
-const SOURCES = [
+const MDLSOURCES = [
   // Component handler
   'assets/src/mdl/mdlComponentHandler.js',
   // Polyfills/dependencies
@@ -49,17 +49,25 @@ const SOURCES = [
   //'src/progress/progress.js',
   //'src/radio/radio.js',
   //'src/slider/slider.js',
-  'assets/src/mdl/snackbar/snackbar.js',
+  //'assets/src/mdl/snackbar/snackbar.js',
   //'src/spinner/spinner.js',
-  'assets/src/mdl/switch/switch.js',
+  //'assets/src/mdl/switch/switch.js',
   'assets/src/mdl/tabs/tabs.js',
   'assets/src/mdl/textfield/textfield.js',
-  'assets/src/mdl/tooltip/tooltip.js',
+  //'assets/src/mdl/tooltip/tooltip.js',
   // Complex components (which reuse base components)
   'assets/src/mdl/layout/layout.js',
   //'src/data-table/data-table.js',
   // And finally, the ripples
   'assets/src/mdl/ripple/ripple.js'
+];
+
+const GSSOURCES = [
+  'assets/src/js/TweenMax.min.js',
+  'assets/src/js/MorphSVGPlugin.min.js',
+  'assets/src/js/DrawSVGPlugin.min.js',
+  'assets/src/js/ScrollMagic.min.js',
+  'assets/src/js/animation.gsap.min.js'
 ];
 
 // ***** Development tasks ****** //
@@ -111,13 +119,13 @@ gulp.task('styles', () => {
     .pipe($.concat('style.min.css'))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('./'))
-    .pipe($.size({title: 'styles'}));
+    .pipe($.size({title: 'all_styles'}));
 });
 
 
 // Concatenate And Minify JavaScript
-gulp.task('scripts', () =>
-  gulp.src(SOURCES)
+gulp.task('mdl_scripts', () =>
+  gulp.src(MDLSOURCES)
   .pipe($.sourcemaps.init())
   .pipe($.babel())
   .pipe($.sourcemaps.write())
@@ -133,7 +141,28 @@ gulp.task('scripts', () =>
     // Write Source Maps
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('assets/js'))
-    .pipe($.size({title: 'scripts'}))
+    .pipe($.size({title: 'mdl_scripts'}))
+);
+
+// Concatenate And Minify JavaScript
+gulp.task('gs_scripts', () =>
+  gulp.src(GSSOURCES)
+  .pipe($.sourcemaps.init())
+  //.pipe($.babel())
+  .pipe($.sourcemaps.write())
+    // Concatenate Scripts
+    .pipe($.concat('gsap.js'))
+    .pipe(gulp.dest('assets/js'))
+    // Minify Scripts
+    .pipe($.uglify({
+      sourceRoot: '.',
+      sourceMapIncludeSources: true
+    }))
+    .pipe($.concat('gsap.min.js'))
+    // Write Source Maps
+    .pipe($.sourcemaps.write('.'))
+    .pipe(gulp.dest('assets/js'))
+    .pipe($.size({title: 'gs_scripts'}))
 );
 
 
@@ -157,10 +186,10 @@ gulp.task('serve', ['styles'], function() {
 });
 
 
-
+// Build production files, the default task
 gulp.task('default', cb => {
   runSequence(
     'styles',
-    ['scripts'],
+    ['mdl_scripts', 'gs_scripts'],
     cb);
 });
