@@ -66,11 +66,11 @@ function rcdoc_scripts() {
         array( 'sm_js' ), null, true
     );
 
-	wp_enqueue_script(
-        'sm_debug_js',
-        trailingslashit(get_stylesheet_directory_uri())."assets/js/debug.addIndicators.js",
-        array( 'jquery' ), null, true
-    );
+	// wp_enqueue_script(
+    //     'sm_debug_js',
+    //     trailingslashit(get_stylesheet_directory_uri())."assets/js/debug.addIndicators.js",
+    //     array( 'jquery' ), null, true
+    // );
 
 
 	wp_enqueue_script(
