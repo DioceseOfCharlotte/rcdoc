@@ -380,3 +380,42 @@ $(".tile").click(function(){
 		ease:Back.easeIn.config(0.7),
 	}, 0.1);
 });
+
+
+
+// Animation Setup
+var music_tween = TweenLite.to("#cart", 1, {morphSVG:"#music"});
+var heart_tween = TweenLite.to("#cart", 1, {morphSVG:"#heart"});
+var bread_tween = TweenLite.to("#cart", 1, {morphSVG:"#bread"});
+
+// init ScrollMagic Controller
+var controller = new ScrollMagic.Controller();
+
+// Scale Scene
+var music_scene = new ScrollMagic.Scene({
+  triggerElement: '#row-9523'
+})
+.setTween(music_tween)
+.addIndicators();
+
+// Background Scene
+var heart_scene = new ScrollMagic.Scene({
+  triggerElement: '#row-9523',
+	offset: 200
+})
+.setTween(heart_tween)
+.addIndicators();
+
+// Background Scene
+var bread_scene = new ScrollMagic.Scene({
+  triggerElement: '#row-9523',
+	offset: 400
+})
+.setTween(bread_tween)
+.addIndicators();
+
+controller.addScene([
+  music_scene,
+  heart_scene,
+	bread_scene
+]);
