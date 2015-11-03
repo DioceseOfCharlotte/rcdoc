@@ -16,8 +16,9 @@ $map_link = "http://maps.google.com/maps?z=16&q=" . $address;
 
 
 
-$output = '<div itemscope itemtype="http://schema.org/Organization">';
-$output .= '<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><a href="' . esc_url( $map_link ) . '" target="_blank"><i class="material-icons map-marker">&#xE55F;</i>';
+$output = '<div class="u-text-gray card-body" itemscope itemtype="http://schema.org/Organization">';
+if( get_field('doc_city') ): 
+$output .= '<p class="card-address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><a href="' . esc_url( $map_link ) . '" target="_blank"><i class="material-icons map-marker">&#xE55F;</i>';
 ob_start();
 ?>
         <span itemprop="streetAddress">
@@ -30,10 +31,22 @@ ob_start();
 <?php
 $output .= ob_get_clean();
 $output .= '</a></p>';
+endif;
 ob_start(); ?>
-    <p itemprop="telephone"><a href="tel:<?php the_field('doc_phone_number'); ?>"><i class="u-align-middle material-icons">&#xE0CD;</i> <?php the_field('doc_phone_number'); ?></a></p>
-    <p itemprop="faxNumber"><i class="u-bold u-align-middle">FAX</i> <?php the_field('doc_fax'); ?></p>
-    <p itemprop="email"><a href="mailto:<?php the_field('doc_email'); ?>"><i class="u-align-middle material-icons">&#xE0BE;</i> <?php the_field('doc_email'); ?></a></p>
+<p class="contact-numbers">
+<?php if( get_field('doc_phone_number') ): ?>
+    <p class="phone" itemprop="telephone"><a href="tel:<?php the_field('doc_phone_number'); ?>"><i class="u-align-middle material-icons">&#xE0CD;</i> <?php the_field('doc_phone_number'); ?></a></p>
+<?php endif; ?>
+<?php if( get_field('doc_fax') ): ?>
+    <p class="fax" itemprop="faxNumber"><i class="u-bold u-align-middle">FAX</i> <?php the_field('doc_fax'); ?></p>
+<?php endif; ?>
+</p>
+<?php if( get_field('doc_email') ): ?>
+    <p class="email" itemprop="email"><a href="mailto:<?php the_field('doc_email'); ?>"><i class="u-align-middle material-icons">&#xE0BE;</i> <?php the_field('doc_email'); ?></a></p>
+<?php endif; ?>
+<?php if( get_field('doc_website') ): ?>
+    <p class="website" itemprop="url"><a href="<?php the_field('doc_website'); ?>"><i class="u-align-middle material-icons">&#xE80B;</i> <?php the_field('doc_website'); ?></a></p>
+<?php endif; ?>
 <?php
 $output .= ob_get_clean();
 $output .= '</div>';

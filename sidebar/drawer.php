@@ -52,6 +52,5 @@ endif;
         <?php hybrid_get_menu('logged-in'); ?>
         <?php dynamic_sidebar('drawer'); ?>
         <div class="mdl-layout-spacer"></div>
-        <?php get_search_form(); ?>
     </aside>
 </div>

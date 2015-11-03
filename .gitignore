@@ -5,6 +5,12 @@
 
 # Development files
 /node_modules
+/.tmp
+src/**/*.html
+src/**/snippets/*
+src/**/demo.css
+src/**/demo.js
+src/**/README.md
 
 # Generated theme files
 *.map

@@ -347,3 +347,36 @@ componentHandler.register({
     classAsString: 'DropPanel',
     cssClass: 'js-drop-panel'
 });
+
+//document.querySelector('.mdl-grid').classList.add('is-animating');
+
+var $ = jQuery.noConflict();
+//
+// $( document ).ready(function() {
+//   var $yeti = $('.tile');
+//
+// $('.tile').each(function() {
+//     MotionUI.animateIn($yeti, 'fadeIn');
+// 	})
+// });
+
+
+
+TweenMax.staggerFrom(".tile", 1, {
+	y:-900,
+	ease: Power3.easeOut
+}, 0.3);
+
+TweenMax.staggerFrom(".tile", 0.5, {
+	opacity:0.5
+}, 0.2);
+
+
+
+$(".tile").click(function(){
+	TweenMax.staggerTo(".tile", 0.8, {
+		y:-900,
+		opacity:0,
+		ease:Back.easeIn.config(0.7),
+	}, 0.1);
+});

@@ -4,7 +4,8 @@ add_action( 'init', 'doc_documents_register_post_types' );
 add_action( 'init', 'doc_departments_register_post_types' );
 add_action( 'init', 'doc_parishs_register_post_types' );
 add_action( 'init', 'doc_schools_register_post_types' );
-add_action( 'init', 'doc_archives_register_post_types' );
+add_action( 'init', 'doc_archive_posts_register_post_types' );
+add_action( 'init', 'doc_bishop_register_post_types' );
 add_action( 'init', 'doc_chancerys_register_post_types' );
 add_action( 'init', 'doc_developments_register_post_types' );
 add_action( 'init', 'doc_deacons_register_post_types' );
@@ -419,7 +420,8 @@ function doc_departments_register_post_types() {
 	$role = get_role( 'administrator' );
 	// If the administrator role exists, add required capabilities for the plugin.
 	if ( ! empty( $role ) ) {
-		$role->add_cap( 'create_departments'     ); // Create new posts.
+		$role->add_cap( 'create_departments'     ); // Create new posts.		'vocation',
+
 		$role->add_cap( 'manage_departments'     ); // delete/publish existing posts.
 		$role->add_cap( 'edit_departments'       ); // Edit existing posts.
 	}
@@ -1738,10 +1740,112 @@ function doc_chancerys_register_post_types() {
 
 
 
-function doc_archives_register_post_types() {
+function doc_bishop_register_post_types() {
 
 	register_post_type(
-		'archive',
+		'bishop',
+		array(
+			'description'         => '',
+			'public'              => true,
+			'publicly_queryable'  => true,
+			'show_in_nav_menus'   => false,
+			'show_in_admin_bar'   => true,
+			'exclude_from_search' => false,
+			'show_ui'             => true,
+			'show_in_menu'        => true,
+			'menu_position'       => 100,
+			'menu_icon'           => 'dashicons-shield-alt',
+			'can_export'          => true,
+			'delete_with_user'    => false,
+			'hierarchical'        => true,
+			'taxonomies'          => array( 'category', 'post_tag' ),
+			'has_archive'         => 'bishop_posts',
+			'query_var'           => 'bishop',
+			'capability_type'     => 'bishop',
+			'map_meta_cap'        => true,
+
+			/* Capabilities. */
+			'capabilities' => array(
+
+				// meta caps (don't assign these to roles)
+				'edit_post'              => 'edit_bishop',
+				'read_post'              => 'read_bishop',
+				'delete_post'            => 'delete_bishop',
+
+				// primitive/meta caps
+				'create_posts'           => 'create_bishop_posts',
+
+				// primitive caps used outside of map_meta_cap()
+				'edit_posts'             => 'edit_bishop_posts',
+				'edit_others_posts'      => 'manage_bishop_posts',
+				'publish_posts'          => 'manage_bishop_posts',
+				'read_private_posts'     => 'read',
+
+				// primitive caps used inside of map_meta_cap()
+				'read'                   => 'read',
+				'delete_posts'           => 'manage_bishop_posts',
+				'delete_private_posts'   => 'manage_bishop_posts',
+				'delete_published_posts' => 'manage_bishop_posts',
+				'delete_others_posts'    => 'manage_bishop_posts',
+				'edit_private_posts'     => 'edit_bishop_posts',
+				'edit_published_posts'   => 'edit_bishop_posts'
+			),
+
+			/* The rewrite handles the URL structure. */
+			'rewrite' => array(
+				'slug'       => 'bishop',
+				'with_front' => false,
+				'pages'      => true,
+				'feeds'      => true,
+				'ep_mask'    => EP_PERMALINK,
+			),
+
+			/* What features the post type supports. */
+			'supports' => array(
+                'title',
+				'editor',
+				'author',
+				'thumbnail',
+				'page-attributes',
+                'post-formats'
+			),
+
+			/* Labels used when displaying the posts. */
+			'labels' => array(
+				'name'               => __( 'Bishop',                   'rcdoc' ),
+				'singular_name'      => __( 'Bishop',                    'rcdoc' ),
+				'menu_name'          => __( 'Bishop',                   		'rcdoc' ),
+				'name_admin_bar'     => __( 'Bishop',                    		'rcdoc' ),
+				'add_new'            => __( 'Add New',                        	'rcdoc' ),
+				'add_new_item'       => __( 'Add New Bishop Post',            'rcdoc' ),
+				'edit_item'          => __( 'Edit Bishop Post',               'rcdoc' ),
+				'new_item'           => __( 'New Bishop Post',                'rcdoc' ),
+				'view_item'          => __( 'View Bishop Post',               'rcdoc' ),
+				'search_items'       => __( 'Search Bishop Posts',            'rcdoc' ),
+				'not_found'          => __( 'No Bishop posts found',          'rcdoc' ),
+				'not_found_in_trash' => __( 'No Bishop Posts found in trash', 'rcdoc' ),
+				'all_items'          => __( 'Bishop Posts',                   'rcdoc' ),
+			)
+		)
+	);
+
+	// Get the administrator role.
+	$role = get_role( 'administrator' );
+	// If the administrator role exists, add required capabilities for the plugin.
+	if ( ! empty( $role ) ) {
+		$role->add_cap( 'create_bishop_posts'     ); // Create new posts.
+		$role->add_cap( 'manage_bishop_posts'     ); // delete/publish existing posts.
+		$role->add_cap( 'edit_bishop_posts'       ); // Edit existing posts.
+	}
+}
+
+
+
+
+function doc_archive_posts_register_post_types() {
+
+	register_post_type(
+		'archive_post',
 		array(
 			'description'         => '',
 			'public'              => true,
@@ -1757,41 +1861,41 @@ function doc_archives_register_post_types() {
 			'delete_with_user'    => false,
 			'hierarchical'        => false,
 			'taxonomies'          => array( 'category', 'post_tag' ),
-			'has_archive'         => 'archives',
-			'query_var'           => 'archive',
-			'capability_type'     => 'archive',
+			'has_archive'         => 'archive_posts',
+			'query_var'           => 'archive_post',
+			'capability_type'     => 'archive_post',
 			'map_meta_cap'        => true,
 
 			/* Capabilities. */
 			'capabilities' => array(
 
 				// meta caps (don't assign these to roles)
-				'edit_post'              => 'edit_archive',
-				'read_post'              => 'read_archive',
-				'delete_post'            => 'delete_archive',
+				'edit_post'              => 'edit_archive_post',
+				'read_post'              => 'read_archive_post',
+				'delete_post'            => 'delete_archive_post',
 
 				// primitive/meta caps
-				'create_posts'           => 'create_archives',
+				'create_posts'           => 'create_archive_posts',
 
 				// primitive caps used outside of map_meta_cap()
-				'edit_posts'             => 'edit_archives',
-				'edit_others_posts'      => 'manage_archives',
-				'publish_posts'          => 'manage_archives',
+				'edit_posts'             => 'edit_archive_posts',
+				'edit_others_posts'      => 'manage_archive_posts',
+				'publish_posts'          => 'manage_archive_posts',
 				'read_private_posts'     => 'read',
 
 				// primitive caps used inside of map_meta_cap()
 				'read'                   => 'read',
-				'delete_posts'           => 'manage_archives',
-				'delete_private_posts'   => 'manage_archives',
-				'delete_published_posts' => 'manage_archives',
-				'delete_others_posts'    => 'manage_archives',
-				'edit_private_posts'     => 'edit_archives',
-				'edit_published_posts'   => 'edit_archives'
+				'delete_posts'           => 'manage_archive_posts',
+				'delete_private_posts'   => 'manage_archive_posts',
+				'delete_published_posts' => 'manage_archive_posts',
+				'delete_others_posts'    => 'manage_archive_posts',
+				'edit_private_posts'     => 'edit_archive_posts',
+				'edit_published_posts'   => 'edit_archive_posts'
 			),
 
 			/* The rewrite handles the URL structure. */
 			'rewrite' => array(
-				'slug'       => 'archives',
+				'slug'       => 'archive-posts',
 				'with_front' => false,
 				'pages'      => true,
 				'feeds'      => true,
@@ -1811,9 +1915,9 @@ function doc_archives_register_post_types() {
 			/* Labels used when displaying the posts. */
 			'labels' => array(
 				'name'               => __( 'Archive Posts',                   'rcdoc' ),
-				'singular_name'      => __( 'Archive',                    'rcdoc' ),
-				'menu_name'          => __( 'Archives',                   'rcdoc' ),
-				'name_admin_bar'     => __( 'Archives',                    'rcdoc' ),
+				'singular_name'      => __( 'Archive Post',                    'rcdoc' ),
+				'menu_name'          => __( 'Archive Posts',                   'rcdoc' ),
+				'name_admin_bar'     => __( 'Archive Posts',                    'rcdoc' ),
 				'add_new'            => __( 'Add New',                    'rcdoc' ),
 				'add_new_item'       => __( 'Add New Archive Post',            'rcdoc' ),
 				'edit_item'          => __( 'Edit Archive Post',               'rcdoc' ),
@@ -1830,8 +1934,8 @@ function doc_archives_register_post_types() {
 	$role = get_role( 'administrator' );
 	// If the administrator role exists, add required capabilities for the plugin.
 	if ( ! empty( $role ) ) {
-		$role->add_cap( 'create_archives'     ); // Create new posts.
-		$role->add_cap( 'manage_archives'     ); // delete/publish existing posts.
-		$role->add_cap( 'edit_archives'       ); // Edit existing posts.
+		$role->add_cap( 'create_archive_posts'     ); // Create new posts.
+		$role->add_cap( 'manage_archive_posts'     ); // delete/publish existing posts.
+		$role->add_cap( 'edit_archive_posts'       ); // Edit existing posts.
 	}
 }

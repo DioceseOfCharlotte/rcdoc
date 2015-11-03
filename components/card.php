@@ -5,15 +5,16 @@
  * @package abraham
  */
 ?>
-<section class="mdl-cell mdl-card mdl-shadow--2dp">
-    <?php
-        get_the_image(array(
-            'size' => 'abraham-lg',
-            'image_class' => 'mdl-card__media',
-            'link_to_post' => false,
-        ));
-    ?>
+<article <?php hybrid_attr('post'); ?>>
+
+    <?php tha_entry_top(); ?>
+
         <header <?php hybrid_attr('entry-header'); ?>>
+            <?php
+                get_the_image(array(
+                    'size' => 'abraham-lg',
+                ));
+            ?>
             <h2 <?php hybrid_attr('entry-title'); ?>>
                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </h2>
@@ -25,9 +26,8 @@
             <?php tha_entry_content_after(); ?>
         </div>
 
-        <footer <?php hybrid_attr('entry-footer'); ?>>
-            <a href="<?php the_permalink(); ?>" class="mdl-button mdl-js-button mdl-js-ripple-effect"><?php esc_html_e( 'More', 'abraham' ); ?></a>
-            <?php get_template_part('components/child', 'links'); ?>
-        </footer>
+        <?php get_template_part('components/entry', 'footer'); ?>
 
-</section>
+<?php tha_entry_bottom(); ?>
+
+</article>
