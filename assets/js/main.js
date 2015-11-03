@@ -396,7 +396,7 @@ var music_scene = new ScrollMagic.Scene({
   triggerElement: '#row-9523'
 })
 .setTween(music_tween)
-.addIndicators();
+//.addIndicators();
 
 // Background Scene
 var heart_scene = new ScrollMagic.Scene({
@@ -404,7 +404,7 @@ var heart_scene = new ScrollMagic.Scene({
 	offset: 200
 })
 .setTween(heart_tween)
-.addIndicators();
+//.addIndicators();
 
 // Background Scene
 var bread_scene = new ScrollMagic.Scene({
@@ -412,7 +412,7 @@ var bread_scene = new ScrollMagic.Scene({
 	offset: 400
 })
 .setTween(bread_tween)
-.addIndicators();
+//.addIndicators();
 
 controller.addScene([
   music_scene,
