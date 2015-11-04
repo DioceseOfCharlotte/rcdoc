@@ -5,6 +5,37 @@
 global $mehsc_atts;
 ?>
 
+<?php if ('u-1/1@md' === $mehsc_atts['width']) : ?>
+
+        <header class="block-header">
+            <h2 class="block-title">
+                <a class="block-title__link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            </h2>
+        
+        
+            <?php
+                get_the_image(array(
+                    'size' => 'abraham-lg',
+                ));
+            ?>
+        </header>
+
+        <div class="block-content">
+        <?php
+        if ('excerpt' === $mehsc_atts['show_content']) {
+          the_excerpt();
+        } elseif ('content' === $mehsc_atts['show_content']) {
+          the_content();
+        }
+        ?>
+        </div>
+
+
+
+<?php else: ?>
+
+
+
 <div id="post-<?php the_ID(); ?>" class="<?php echo esc_attr($mehsc_atts['width']); ?> mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
 
     <?php if ('show_img' === $mehsc_atts['show_image']) : ?>
@@ -51,3 +82,5 @@ global $mehsc_atts;
 
     </div>
 </div><!-- .block -->
+
+<?php endif;
