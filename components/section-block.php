@@ -21,13 +21,7 @@ global $mehsc_atts;
         </header>
 
         <div class="block-content">
-        <?php
-        if ('excerpt' === $mehsc_atts['show_content']) {
-          the_excerpt();
-        } elseif ('content' === $mehsc_atts['show_content']) {
-          the_content();
-        }
-        ?>
+        <?php the_excerpt(); ?>
         </div>
 
 
