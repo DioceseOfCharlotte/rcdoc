@@ -51,7 +51,7 @@ function header_right_widget() {
 
 
 function rcdoc_facet_parish_prox() {
-    if ( is_post_type_archive('parish') && 'parish_proximity' == $params['facet_name']  ) {
+    if ( is_post_type_archive('parish') ) {
 		echo '<div class="u-1/1 u-br u-px3 u-pb0 u-mb1 u-mx1 u-pt3 u-flex u-flex-wrap u-flex-justify u-bg-frost-4 mdl-shadow--2dp">';
 		echo facetwp_display( 'facet', 'parish_proximity' );
 		echo '<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="FWP.reset()">Reset</button>';
