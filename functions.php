@@ -72,6 +72,11 @@ function rcdoc_scripts() {
     //     array( 'jquery' ), null, true
     // );
 
+	wp_enqueue_script(
+        'flickity_js',
+        trailingslashit(get_stylesheet_directory_uri())."assets/js/flickity.pkgd.min.js",
+        false, null, true
+    );
 
 	wp_enqueue_script(
         'abraham_js',
