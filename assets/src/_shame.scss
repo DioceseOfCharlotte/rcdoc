@@ -454,3 +454,27 @@ li > a.rsswidget {
     max-width: 260px;
     max-height: 260px;
 }
+
+
+
+ul.gravityview-az-filter, .facetwp-type-alpha {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+	flex-wrap: wrap;
+}
+
+span.facetwp-alpha {
+	font: 400 16px/24px Roboto, sans-serif;
+	color: #999;
+}
+
+ul.gravityview-az-filter li.gv-uppercase a, span.facetwp-alpha.available {
+	color: #3F51B5;
+	font-weight: 500 16px/24px Roboto, sans-serif;
+}
+
+ul.gravityview-az-filter li.gv-active a, span.facetwp-alpha.selected {
+	color: #222;
+	font-weight: 700;
+}
