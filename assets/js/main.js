@@ -359,7 +359,11 @@ var $ = jQuery.noConflict();
 //     MotionUI.animateIn($yeti, 'fadeIn');
 // 	})
 // });
-
+(function($) {
+		$(document).on('facetwp-loaded', function() {
+				componentHandler.upgradeAllRegistered();
+		 });
+})(jQuery);
 
 
 TweenMax.staggerFrom(".tile", 1, {

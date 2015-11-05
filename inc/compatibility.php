@@ -1,7 +1,7 @@
 <?php
 
 //add_filter('pre_get_posts', 'query_post_type');
-add_action( 'wp_footer', 'mdl_facet_refresh' );
+//add_action( 'wp_footer', 'mdl_facet_refresh' );
 //add_filter( 'facetwp_index_row', 'index_acf_google_map_address', 10, 2 );
 add_action('init', 'meh_post_type_archive_supports', 5);
 
@@ -25,27 +25,27 @@ endif;
 
 
 // Reload MDL after facet refresh
-function mdl_facet_refresh() { ?>
-	<script type="text/javascript">
+//function mdl_facet_refresh() { ?>
+	<!-- <script type="text/javascript">
 		(function($) {
 		    $(document).on('facetwp-loaded', function() {
 		        componentHandler.upgradeAllRegistered();
 		     });
 		})(jQuery);
-	</script>
+	</script> -->
 <?php
-}
+//}
 
 
 
-function index_acf_google_map_address( $params, $class ) {
-    if ( 'parish_proximity' == $params['facet_name'] ) {
-        $location = $params['facet_value'];
-        $params['facet_value'] = $location['lat'];
-        $params['facet_display_value'] = $location['lng'];
-    }
-    return $params;
-}
+// function index_acf_google_map_address( $params, $class ) {
+//     if ( 'parish_proximity' == $params['facet_name'] ) {
+//         $location = $params['facet_value'];
+//         $params['facet_value'] = $location['lat'];
+//         $params['facet_display_value'] = $location['lng'];
+//     }
+//     return $params;
+// }
 
 
 
