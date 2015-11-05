@@ -1,0 +1,28 @@
+<?php
+/**
+ * This is the template for the different block-type shortcodes.
+ */
+global $mehsc_atts;
+?>
+
+<div class ="gallery-cell">
+<div id="post-<?php the_ID(); ?>" class="mdl-card mdl-shadow--2dp">
+
+    <header <?php hybrid_attr('entry-header'); ?>>
+        <?php
+            get_the_image(array(
+                'size' => 'abraham-lg',
+            ));
+        ?>
+        <h2 <?php hybrid_attr('entry-title'); ?>>
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        </h2>
+    </header>
+
+    <div class="u-px2 u-pb2">
+        <?php the_excerpt(); ?>
+    </div>
+
+</div>
+</div>
+        <?php
