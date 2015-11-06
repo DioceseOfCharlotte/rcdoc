@@ -6,7 +6,7 @@ global $mehsc_atts;
 ?>
 
 <div class ="gallery-cell">
-<div id="post-<?php the_ID(); ?>" class="mdl-card mdl-shadow--2dp">
+<div id="post-<?php the_ID(); ?>" class="mdl-card mdl-shadow--3dp">
 
     <header <?php hybrid_attr('entry-header'); ?>>
         <?php
