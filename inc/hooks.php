@@ -13,7 +13,7 @@ add_action( 'tha_entry_bottom',  'rcdoc_give_row' );
 
 
 function rcdoc_parish_footer() {
-    if ( 'parish' !== get_post_type() && 'school' !== get_post_type() && 'department' !== get_post_type() ) {
+    if ( is_front_page() || 'parish' !== get_post_type() && 'school' !== get_post_type() && 'department' !== get_post_type() ) {
 		return;
 	}
 	get_template_part('components/acf-parish-contact');
