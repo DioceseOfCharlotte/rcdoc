@@ -44,7 +44,7 @@ const MDLSOURCES = [
   // Base components
   'assets/src/mdl/button/button.js',
   //'src/checkbox/checkbox.js',
-  'assets/src/mdl/icon-toggle/icon-toggle.js',
+  //'assets/src/mdl/icon-toggle/icon-toggle.js',
   'assets/src/mdl/menu/menu.js',
   //'src/progress/progress.js',
   //'src/radio/radio.js',
@@ -52,7 +52,7 @@ const MDLSOURCES = [
   //'assets/src/mdl/snackbar/snackbar.js',
   //'src/spinner/spinner.js',
   //'assets/src/mdl/switch/switch.js',
-  'assets/src/mdl/tabs/tabs.js',
+  //'assets/src/mdl/tabs/tabs.js',
   'assets/src/mdl/textfield/textfield.js',
   //'assets/src/mdl/tooltip/tooltip.js',
   // Complex components (which reuse base components)
@@ -66,6 +66,10 @@ const GSSOURCES = [
   'assets/src/js/TweenMax.min.js',
   'assets/src/js/MorphSVGPlugin.min.js',
   'assets/src/js/DrawSVGPlugin.min.js',
+  'assets/src/js/ScrollMagic.min.js',
+  'assets/src/js/animation.gsap.min.js',
+  'assets/src/js/flickity.pkgd.min.js',
+  'assets/src/js/main.js',
 ];
 
 // ***** Development tasks ****** //
