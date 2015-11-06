@@ -359,7 +359,11 @@ var $ = jQuery.noConflict();
 //     MotionUI.animateIn($yeti, 'fadeIn');
 // 	})
 // });
-
+(function($) {
+		$(document).on('facetwp-loaded', function() {
+				componentHandler.upgradeAllRegistered();
+		 });
+})(jQuery);
 
 
 TweenMax.staggerFrom(".tile", 1, {
@@ -380,3 +384,34 @@ $(".tile").click(function(){
 		ease:Back.easeIn.config(0.7),
 	}, 0.1);
 });
+
+
+
+// Animation Setup
+var heart_tween = TweenLite.to("#cart", 1, {morphSVG:"#heart"});
+var bread_tween = TweenLite.to("#cart", 1, {morphSVG:"#bread"});
+
+// init ScrollMagic Controller
+var controller = new ScrollMagic.Controller();
+
+
+// Background Scene
+var heart_scene = new ScrollMagic.Scene({
+  triggerElement: '#row-give',
+	offset: 300
+})
+.setTween(heart_tween)
+//.addIndicators();
+
+// Background Scene
+var bread_scene = new ScrollMagic.Scene({
+  triggerElement: '#row-give',
+	//offset: 200
+})
+.setTween(bread_tween)
+//.addIndicators();
+
+controller.addScene([
+  heart_scene,
+	bread_scene
+]);

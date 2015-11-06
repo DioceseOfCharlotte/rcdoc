@@ -5,7 +5,8 @@
 global $mehsc_atts;
 ?>
 
-<div id="post-<?php the_ID(); ?>" class="mdl-cell mdl-card mdl-shadow--2dp u-overflow-visible">
+<div class ="gallery-cell">
+<div id="post-<?php the_ID(); ?>" class="mdl-card mdl-shadow--3dp">
 
     <header <?php hybrid_attr('entry-header'); ?>>
         <?php
@@ -19,15 +20,9 @@ global $mehsc_atts;
     </header>
 
     <div class="u-px2 u-pb2">
-        <?php
-        if ('excerpt' === $mehsc_atts['show_content']) {
-          the_excerpt();
-        } elseif ('content' === $mehsc_atts['show_content']) {
-          the_content();
-        }
-        ?>
+        <?php the_excerpt(); ?>
     </div>
 
-
+</div>
 </div>
         <?php

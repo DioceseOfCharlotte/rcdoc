@@ -66,8 +66,6 @@ const GSSOURCES = [
   'assets/src/js/TweenMax.min.js',
   'assets/src/js/MorphSVGPlugin.min.js',
   'assets/src/js/DrawSVGPlugin.min.js',
-  'assets/src/js/ScrollMagic.min.js',
-  'assets/src/js/animation.gsap.min.js'
 ];
 
 // ***** Development tasks ****** //
