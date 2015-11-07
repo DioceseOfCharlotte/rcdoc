@@ -24,7 +24,7 @@ ob_start();
         <span itemprop="streetAddress">
             <?php the_field('doc_street'); ?><br>
             <?php the_field('doc_street_2'); ?>
-        </span>
+        </span><br>
         <span itemprop="addressLocality"><?php the_field('doc_city'); ?>, <?php the_field('doc_state'); ?></span>
         <span itemprop="postalCode"><?php the_field('doc_zip'); ?></span>
 
@@ -33,6 +33,7 @@ $output .= ob_get_clean();
 $output .= '</a></p>';
 endif;
 ob_start(); ?>
+<div class="contact-methods">
 <p class="contact-numbers">
 <?php if( get_field('doc_phone_number') ): ?>
     <p class="phone" itemprop="telephone"><a href="tel:<?php the_field('doc_phone_number'); ?>"><i class="u-align-middle material-icons">&#xE0CD;</i> <?php the_field('doc_phone_number'); ?></a></p>
@@ -47,6 +48,7 @@ ob_start(); ?>
 <?php if( get_field('doc_website') ): ?>
     <p class="website" itemprop="url"><a href="<?php the_field('doc_website'); ?>"><i class="u-align-middle material-icons">&#xE80B;</i> <?php the_field('doc_website'); ?></a></p>
 <?php endif; ?>
+</div>
 <?php
 $output .= ob_get_clean();
 $output .= '</div>';
