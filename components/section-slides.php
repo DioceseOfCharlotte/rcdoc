@@ -14,7 +14,7 @@ global $mehsc_atts;
                 'size' => 'abraham-lg',
                 'image_class' => 'o-crop__content',
                 'link_to_post' => false,
-                'before' => '<div class="o-crop o-crop--4:3">',
+                'before' => '<div class="o-crop o-crop--4by3">',
 	            'after' => 	'</div>',
             ));
         ?>
