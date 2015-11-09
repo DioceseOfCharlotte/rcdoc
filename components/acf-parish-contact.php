@@ -16,7 +16,6 @@ $map_link = "http://maps.google.com/maps?z=16&q=" . $address;
 
 
 
-$output = '<div class="u-text-gray card-body" itemscope itemtype="http://schema.org/Organization">';
 if( get_field('doc_city') ): 
 $output .= '<p class="card-address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><a href="' . esc_url( $map_link ) . '" target="_blank"><i class="material-icons map-marker">&#xE55F;</i>';
 ob_start();
@@ -33,6 +32,7 @@ $output .= ob_get_clean();
 $output .= '</a></p>';
 endif;
 ob_start(); ?>
+<div class="u-1/1 u-bg-silver u-p1 js-dropdown">Contact<i class="material-icons">expand_more</i></div>
 <div class="contact-methods">
 <p class="contact-numbers">
 <?php if( get_field('doc_phone_number') ): ?>
@@ -51,7 +51,6 @@ ob_start(); ?>
 </div>
 <?php
 $output .= ob_get_clean();
-$output .= '</div>';
 
 
 
