@@ -33,7 +33,7 @@ $output .= '</a></p>';
 endif;
 ob_start(); ?>
 <div class="u-1/1 u-bg-silver u-p1 js-dropdown">Contact<i class="material-icons">expand_more</i></div>
-<div class="contact-methods">
+<div class="contact-methods u-overflow-hidden">
 <p class="contact-numbers">
 <?php if( get_field('doc_phone_number') ): ?>
     <p class="phone" itemprop="telephone"><a href="tel:<?php the_field('doc_phone_number'); ?>"><i class="u-align-middle material-icons">&#xE0CD;</i> <?php the_field('doc_phone_number'); ?></a></p>
