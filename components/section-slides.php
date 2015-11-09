@@ -13,6 +13,7 @@ global $mehsc_atts;
             get_the_image(array(
                 'size' => 'abraham-lg',
                 'image_class' => 'o-crop__content',
+                'link_to_post' => false,
                 'before' => '<div class="o-crop o-crop--4:3">',
 	            'after' => 	'</div>',
             ));
