@@ -87,6 +87,7 @@ componentHandler.register({
       var targetSibling = target.nextElementSibling;
       var targetParent = target.parentElement;
       if( ! target.classList.contains(this.CssClasses_.DROPDOWN_IS_ACTIVE)){
+        TweenLite.to(target, 0.2, {rotation:180});
 				TweenLite.to(targetParent, 0.2, {y:5});
         TweenLite.set(targetSibling, {height:"auto", opacity:1});
         TweenLite.from(targetSibling, 0.2, {height:0, opacity:0});
@@ -95,6 +96,7 @@ componentHandler.register({
         targetSibling.classList.add(this.CssClasses_.DROPDOWN_IS_ACTIVE);
         targetParent.classList.add(this.CssClasses_.DROPDOWN_IS_ACTIVE);
       } else {
+        TweenLite.to(target, 0.2, {rotation:0});
 				TweenLite.to(targetParent, 0.2, {y:0});
         TweenLite.to(targetSibling, 0.2, {height:0, opacity:0});
         TweenLite.to(targetSibling, 0.2, {paddingBottom:0});

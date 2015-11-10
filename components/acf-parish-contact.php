@@ -40,9 +40,7 @@ ob_start();
 $output .= ob_get_clean();
 endif;
 ob_start(); ?>
-<button class="js-dropdown mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-  <i class="material-icons">expand_more</i>
-</button>
+  <button class="mdl-button--icon u-flexed-center js-dropdown material-icons">expand_more</button>
 <div class="contact-methods u-overflow-hidden u-px1">
 <p class="contact-numbers">
 <?php if( get_field('doc_phone_number') ): ?>
