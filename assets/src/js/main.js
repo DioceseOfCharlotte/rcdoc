@@ -84,7 +84,7 @@ componentHandler.register({
 
   Dropdown.prototype.clickHandler = function(event) {
       var target = event.target;
-      var targetSibling = target.nextElementSibling;
+      var targetSibling = target.previousElementSibling;
       var targetParent = target.parentElement;
       if( ! target.classList.contains(this.CssClasses_.DROPDOWN_IS_ACTIVE)){
         TweenLite.to(target, 0.2, {rotation:180});
