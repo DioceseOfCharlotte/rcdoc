@@ -6258,6 +6258,21 @@ http://flickity.metafizzy.co
 .mdl-js .contact-methods {
   height: 0; }
 
+.archive .mdl-card__title {
+  min-height: 80px; }
+  .archive .mdl-card__title .mdl-card__title-text {
+    -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+            align-self: flex-start; }
+
+.entry {
+  box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+  -webkit-transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1); }
+
+.entry.is-active {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36); }
+
 /* Styles specific to the editor. */
 body#tinymce {
   margin: 0 auto !important;

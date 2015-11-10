@@ -87,17 +87,17 @@ componentHandler.register({
       var targetSibling = target.nextElementSibling;
       var targetParent = target.parentElement;
       if( ! target.classList.contains(this.CssClasses_.DROPDOWN_IS_ACTIVE)){
-				TweenLite.to(targetParent, 0.2, {scale:1.01, marginTop:"16px", ease:Power1.easeInOut});
-				TweenLite.to(targetParent, 0.2, {boxShadow:"0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36)", ease:Power1.easeIn});
+				TweenLite.to(targetParent, 0.2, {y:5});
         TweenLite.set(targetSibling, {height:"auto", opacity:1});
         TweenLite.from(targetSibling, 0.2, {height:0, opacity:0});
+        TweenLite.to(targetSibling, 0.2, {paddingBottom:10});
         target.classList.add(this.CssClasses_.DROPDOWN_IS_ACTIVE);
         targetSibling.classList.add(this.CssClasses_.DROPDOWN_IS_ACTIVE);
         targetParent.classList.add(this.CssClasses_.DROPDOWN_IS_ACTIVE);
       } else {
-				TweenLite.to(targetParent, 0.2, {scale:1, marginTop:'8px', ease:Power1.easeInOut});
-				TweenLite.to(targetParent, 0.2, {boxShadow:"0 1px 1.5px 0 rgba(0,0,0,.12),0 1px 1px 0 rgba(0,0,0,.24)", ease:Power1.easeOut});
+				TweenLite.to(targetParent, 0.2, {y:0});
         TweenLite.to(targetSibling, 0.2, {height:0, opacity:0});
+        TweenLite.to(targetSibling, 0.2, {paddingBottom:0});
         targetSibling.classList.remove(this.CssClasses_.DROPDOWN_IS_ACTIVE);
         target.classList.remove(this.CssClasses_.DROPDOWN_IS_ACTIVE);
         targetParent.classList.remove(this.CssClasses_.DROPDOWN_IS_ACTIVE);
