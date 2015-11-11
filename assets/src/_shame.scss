@@ -721,8 +721,9 @@ http://flickity.metafizzy.co
 	width: 100%;
 }
 
-.mdl-js .contact-methods {
+.contact-methods {
 	height: 0;
+    background-color: #f1f1f1;
 }
 
 
@@ -742,4 +743,18 @@ http://flickity.metafizzy.co
 }
 .entry.is-active {
     box-shadow: 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36);
+}
+
+
+
+.archive-parish .entry_summary {
+    display: none;
+}
+
+.archive-school .entry_summary {
+    display: none;
+}
+
+.archive-department .entry_summary {
+    display: none;
 }

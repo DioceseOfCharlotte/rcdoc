@@ -38,9 +38,9 @@ function rcdoc_html_classes() {
 		'archive_description'     	=> 'archive-description u-max-width u-1/1 u-p3 u-mb1 u-mx-auto u-br u-bg-frost-4 mdl-shadow--3dp',
 
 		'entry_header'            	=> 'mdl-card__title u-pt0 u-px0',
-		'entry_content'           	=> 'u-px2 u-pb2',
+		'entry_content'           	=> 'entry_content u-px2 u-pb2',
 		'entry_content_wide'      	=> '',
-		'entry_summary'           	=> 'u-px2 u-pb2',
+		'entry_summary'           	=> 'entry_summary u-px2 u-pb2',
 		'entry_footer'            	=> 'u-mt-auto mdl-card__actions mdl-card--border',
 
 		'nav_single'              	=> '',

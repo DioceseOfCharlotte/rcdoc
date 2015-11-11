@@ -34,7 +34,7 @@ ob_start();
     </span>
 </a></p>
     <?php if( get_field('doc_website') ): ?>
-        <p class="website" itemprop="url"><a href="<?php the_field('doc_website'); ?>"><i class="u-align-middle material-icons">&#xE80B;</i> <?php the_field('doc_website'); ?></a></p>
+        <p class="website u-nowrap" itemprop="url"><a href="<?php the_field('doc_website'); ?>"><i class="u-align-middle material-icons">&#xE80B;</i> <?php the_field('doc_website'); ?></a></p>
     <?php endif; ?>
 <?php
 $output .= ob_get_clean();
