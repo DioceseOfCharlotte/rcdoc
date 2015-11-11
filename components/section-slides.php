@@ -12,6 +12,10 @@ global $mehsc_atts;
         <?php
             get_the_image(array(
                 'size' => 'abraham-lg',
+                'image_class' => 'o-crop__content',
+                'link_to_post' => false,
+                'before' => '<div class="o-crop o-crop--16x9">',
+	            'after' => 	'</div>',
             ));
         ?>
         <h2 <?php hybrid_attr('entry-title'); ?>>

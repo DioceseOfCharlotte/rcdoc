@@ -6208,6 +6208,71 @@ http://flickity.metafizzy.co
 .flickity-prev-next-button:disabled {
   display: none; }
 
+/*------------------------------------*
+    #CROP
+*------------------------------------*/
+/**
+ * Provide a cropping container in order to display media (usually images)
+ * cropped to certain ratios.
+ *
+ * 1. Set up a positioning context in which the image can sit.
+ * 2. This is the crucial part: where the cropping happens.
+ */
+.o-crop {
+  position: relative;
+  /* [1] */
+  display: block;
+  overflow: hidden;
+  /* [2] */
+  width: 100%; }
+
+/**
+ * A variety of different standard ratios to crop to.
+ *
+ * We use the `padding` trick to create a fluid-height container (`padding`s set
+ * in percentages will track the current width of the element).
+ */
+.o-crop--1x1 {
+  padding-top: 100%; }
+
+.o-crop--4x3 {
+  padding-top: 75%; }
+
+.o-crop--16x9 {
+  padding-top: 56.25%; }
+
+/**
+ * Apply this class to the content (usually `img`) that needs cropping.
+ *
+ * 1. Positioning to the bottom usually gives consistently better results as
+ *    most images’ subjects are toward the bottom of the frame. Of course,
+ *    your mileage may vary.
+ */
+.o-crop__content {
+  position: absolute;
+  top: 0;
+  /* [1] */
+  left: 0;
+  width: 100%; }
+
+.mdl-js .contact-methods {
+  height: 0; }
+
+.archive .mdl-card__title {
+  min-height: 80px; }
+  .archive .mdl-card__title .mdl-card__title-text {
+    -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+            align-self: flex-start; }
+
+.entry {
+  box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+  -webkit-transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1); }
+
+.entry.is-active {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36); }
+
 /* Styles specific to the editor. */
 body#tinymce {
   margin: 0 auto !important;

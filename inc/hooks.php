@@ -1,6 +1,6 @@
 <?php
 
-add_action( 'tha_entry_content_after',  'rcdoc_parish_footer' );
+add_action( 'tha_entry_bottom',  'rcdoc_parish_footer' );
 add_action( 'tha_header_after', 'logged_in_drawer' );
 //add_action( 'tha_header_bottom', 'mdl_search_form' );
 add_action( 'tha_header_before', 'header_right_widget' );
