@@ -21,7 +21,7 @@ $output .= '';
 ob_start();
 ?>
 <p class="card-address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-    <a href="<?php esc_url( $map_link ) ?>" target="_blank"><i class="material-icons u-align-top map-marker">&#xE55F;</i>
+    <a href="<?php echo esc_url( $map_link ) ?>" target="_blank"><i class="material-icons u-align-top map-marker">&#xE55F;</i>
     <span class="u-inline-block">
         <span itemprop="streetAddress">
             <?php the_field('doc_street'); ?><br>
