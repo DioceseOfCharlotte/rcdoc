@@ -8,20 +8,20 @@ add_action('init', 'meh_post_type_archive_supports', 5);
 
 
 // Let custom post types use the categories
-
-function query_post_type($query) {
-	if ( ! is_admin() && $query->is_main_query() ) :
-		if(is_category() || is_tag()) {
-		    $post_type = get_query_var('post_type');
-		    if($post_type)
-		        $post_type = $post_type;
-		    else
-		        $post_type = array('post','multicultural','chancery','vocation'); // replace cpt to your custom post type
-		    $query->set('post_type',$post_type);
-		    return $query;
-		}
-endif;
-}
+//
+// function query_post_type($query) {
+// 	if ( ! is_admin() && $query->is_main_query() ) :
+// 		if(is_category() || is_tag()) {
+// 		    $post_type = get_query_var('post_type');
+// 		    if($post_type)
+// 		        $post_type = $post_type;
+// 		    else
+// 		        $post_type = array('post','multicultural','chancery','vocation');
+// 		    $query->set('post_type',$post_type);
+// 		    return $query;
+// 		}
+// endif;
+// }
 
 
 

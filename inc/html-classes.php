@@ -27,7 +27,7 @@ function rcdoc_html_classes() {
 		'content_archive'         	=> 'u-flex-justify-around facetwp-template',
 		// ENTRY
 		'post'                    	=> 'mdl-cell u-mb2 u-1/1 mdl-card u-py4 u-px3 u-text-gray u-overflow-visible',
-		'post_archive'            	=> 'mdl-cell mdl-card mdl-shadow--2dp u-flexed-start',
+		'post_archive'            	=> 'mdl-cell mdl-card mdl-shadow--2dp',
         'post_featured'           	=> 'u-flexed-first u-1/1',
 		'post_wide'					=> 'u-bg-transparent u-m0 u-p0',
 
@@ -37,7 +37,7 @@ function rcdoc_html_classes() {
 		'page_title'    		  	=> 'u-display-2 u-m0 u-py3',
 		'archive_description'     	=> 'archive-description u-max-width u-1/1 u-p3 u-mb1 u-mx-auto u-br u-bg-frost-4 mdl-shadow--3dp',
 
-		'entry_header'            	=> 'mdl-card__title u-pt0 u-px0',
+		'entry_header'            	=> 'entry_header mdl-card__title u-pt0 u-px0',
 		'entry_content'           	=> 'entry_content u-px2 u-pb2',
 		'entry_content_wide'      	=> '',
 		'entry_summary'           	=> 'entry_summary u-px2 u-pb2',
@@ -79,6 +79,30 @@ function rcdoc_html_classes() {
 
 		'gv_container'              => 'mdl-grid u-mx4@lg',
 		'gv_entry'                  => 'mdl-cell mdl-card mdl-shadow--2dp',
-
 	));
+
+}
+
+
+add_filter('hybrid_attr_post',   'cpt_post');
+add_filter('hybrid_attr_entry-header',   'cpt_header',20);
+
+function cpt_post( $attr ) {
+
+$directory_posts = array('school','parish','department');
+
+	if (is_post_type_archive( $directory_posts )) :
+		$attr['class']   .= " u-1/2@md u-flexed-start";
+	endif;
+return $attr;
+}
+
+function cpt_header( $attr ) {
+
+$directory_posts = array('school','parish','department');
+
+	if (is_post_type_archive( $directory_posts )) :
+		$attr['class']   .= " u-flex-row u-flex-nowrap";
+	endif;
+return $attr;
 }

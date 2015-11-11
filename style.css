@@ -6283,6 +6283,11 @@ http://flickity.metafizzy.co
 .archive-department .entry_summary {
   display: none; }
 
+.entry_header .thumbnail {
+  max-width: 90px;
+  max-height: 90px;
+  padding: 5px; }
+
 /* Styles specific to the editor. */
 body#tinymce {
   margin: 0 auto !important;
