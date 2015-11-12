@@ -53,7 +53,7 @@ ob_start(); ?>
     <p class="email" itemprop="email"><a href="mailto:<?php the_field('doc_email'); ?>"><i class="u-align-middle material-icons">&#xE0BE;</i> <?php the_field('doc_email'); ?></a></p>
 <?php endif; ?>
 </div>
-  <button class="mdl-button--icon u-flexed-center js-dropdown material-icons">expand_more</button>
+  <button class="u-flexed-center u-1/1 js-dropdown material-icons">expand_more</button>
 <?php
 $output .= ob_get_clean();
 
