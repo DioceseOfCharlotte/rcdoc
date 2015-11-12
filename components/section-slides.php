@@ -2,7 +2,6 @@
 /**
  * This is the template for the different block-type shortcodes.
  */
-global $mehsc_atts;
 ?>
 
 <div class ="gallery-cell">

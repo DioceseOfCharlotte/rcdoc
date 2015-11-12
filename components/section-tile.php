@@ -4,7 +4,6 @@
  *
  * @package abraham
  */
- global $mehsc_atts;
 ?>
             <div id="post-<?php the_ID(); ?>" class="tile <?php the_field('accent_color'); ?> mdl-cell mdl-card mdl-shadow--2dp shadow-hover">
                 <a href="<?php the_permalink(); ?>" class="mdl-card__title mdl-card--expand u-flex-column u-flex-justify-center u-text-center">

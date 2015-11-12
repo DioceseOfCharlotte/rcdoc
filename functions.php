@@ -9,6 +9,8 @@ require get_stylesheet_directory() . '/inc/post-types.php';
 require get_stylesheet_directory() . '/inc/taxonomies.php';
 require get_stylesheet_directory() . '/inc/compatibility.php';
 require get_stylesheet_directory() . '/inc/hooks.php';
+require get_stylesheet_directory() . '/inc/shortcodes.php'; // Shortcodes
+require get_stylesheet_directory() . '/inc/shorts-ui.php';  // Shortcake interface
 
 
 function rcdoc_setup() {
