@@ -11,12 +11,12 @@ $args = array(
 $query = new WP_Query( $args );
  
 if ( $query->have_posts() ) { ?>
- <div>
+ <div class="give-links">
     <?php while ( $query->have_posts() ) { ?>
  
         <?php $query->the_post(); ?>
  
-            <a href="<?php the_permalink(); ?>" class="mdl-menu__item">
+            <a href="<?php the_permalink(); ?>" class="list u-block u-text-white u-p1">
                 <?php the_title(); ?>
             </a>
  
