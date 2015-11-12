@@ -1,6 +1,6 @@
 <?php
 
-//add_filter('pre_get_posts', 'query_post_type');
+add_filter('pre_get_posts', 'query_post_type');
 //add_action( 'wp_footer', 'mdl_facet_refresh' );
 //add_filter( 'facetwp_index_row', 'index_acf_google_map_address', 10, 2 );
 add_action('init', 'meh_post_type_archive_supports', 5);
@@ -9,19 +9,19 @@ add_action('init', 'meh_post_type_archive_supports', 5);
 
 // Let custom post types use the categories
 //
-// function query_post_type($query) {
-// 	if ( ! is_admin() && $query->is_main_query() ) :
-// 		if(is_category() || is_tag()) {
-// 		    $post_type = get_query_var('post_type');
-// 		    if($post_type)
-// 		        $post_type = $post_type;
-// 		    else
-// 		        $post_type = array('post','multicultural','chancery','vocation');
-// 		    $query->set('post_type',$post_type);
-// 		    return $query;
-// 		}
-// endif;
-// }
+function query_post_type($query) {
+	if ( ! is_admin() && $query->is_main_query() ) :
+		if(is_category() || is_tag()) {
+		    $post_type = get_query_var('post_type');
+		    if($post_type)
+		        $post_type = $post_type;
+		    else
+		        $post_type = array('post','development','chancery','vocation');
+		    $query->set('post_type',$post_type);
+		    return $query;
+		}
+endif;
+}
 
 
 
