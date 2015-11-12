@@ -4,7 +4,8 @@
 <?php
  
 $args = array(
-    'cat' => '64'
+    'cat' => '64',
+    'post_type' => 'development'
 );
  
 $query = new WP_Query( $args );
