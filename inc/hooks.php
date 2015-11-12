@@ -8,8 +8,8 @@ add_action( 'tha_content_before', 'rcdoc_facet_parish_prox' );
 //add_action( 'tha_entry_content_after',  'rcdoc_news_widget' );
 // add_action( 'tha_header_after',  'rcdoc_page_hero' );
 // add_action( 'tha_content_before', 'rcdoc_page_before' );
-add_action( 'tha_entry_bottom',  'rcdoc_news_row' );
-add_action( 'tha_entry_bottom',  'rcdoc_give_row' );
+//add_action( 'tha_entry_bottom',  'rcdoc_news_row' );
+//add_action( 'tha_entry_bottom',  'rcdoc_give_row' );
 
 
 function rcdoc_parish_footer() {
