@@ -1,4 +1,5 @@
 <section id="row-give" class="u-1/1 u-bg-2-glass section-row u-p3 u-py4@md">
+    <div class="mdl-typography--display-2-color-contrast u-mb3 u-mb4@md u-text-center">Opportunities for Giving</div>
     <div class="u-max-width mdl-grid">
         <div class="mdl-cell u-1/2@md u-text-white u-flex u-flex-justify-center u-flex-center">
 <?php
