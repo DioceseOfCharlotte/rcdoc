@@ -761,7 +761,9 @@ http://flickity.metafizzy.co
 
 
 
-.entry_header .thumbnail {
+.archive-school .entry_header .thumbnail,
+.archive-parish .entry_header .thumbnail,
+.archive-department .entry_header .thumbnail, {
     max-width: 90px;
     max-height: 90px;
     padding: 5px;
