@@ -7,6 +7,7 @@ function meh_add_shortcodes() {
     add_shortcode('meh_cards', 'meh_cards_shortcode');
     add_shortcode('meh_toggles', 'meh_toggles_shortcode');
     add_shortcode('meh_slides', 'meh_slides_shortcode');
+    add_shortcode('meh_tabs', 'meh_tabs_shortcode');
 }
 
 /**
@@ -210,3 +211,45 @@ function meh_block_shortcode($attr, $content = null) {
 
           wp_reset_postdata();
           }
+
+
+
+
+/**
+* TABS
+*/
+function meh_tabs_shortcode($attr, $content = null) {
+    $attr = shortcode_atts(array(
+        'row_color'     => '',
+        'row_intro'     => '',
+        'page'          => '',
+        'icon_file'     => '',
+        'direction'     => '',
+        'js_id'         => '',
+    ), $attr, 'meh_tabs');
+  
+    ob_start(); ?>
+    
+    <?php if ($attr['direction']) :
+        $direction = esc_attr( $attr['direction'] );
+    endif; ?>
+    
+    <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-1/1 u-py3 u-py4@md">
+        
+    <?php if ($attr['row_intro']) : ?>
+    
+        <div class="mdl-typography--display-2-color-contrast u-mb3 u-mb4@md u-text-center">
+            <?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?>
+        </div>
+        
+    <?php endif; ?>
+    
+        <div class="section-row__content mdl-grid u-max-width <?php echo $direction; ?>">
+            <?php include locate_template('/components/row-tabs.php'); ?>
+        </div>
+    </section>
+    
+<?php
+return ob_get_clean();
+wp_reset_postdata();
+}
