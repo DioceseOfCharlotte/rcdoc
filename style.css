@@ -1019,7 +1019,7 @@ p {
   margin-bottom: 16px; }
 
 a {
-  color: rgb(0,150,136);
+  color: rgb(22,160,133);
   font-weight: 500; }
 
 blockquote {
@@ -1498,31 +1498,31 @@ ul, ol {
 /* SNACKBAR */
 /* TOOLTIP */
 .mdl-color--primary {
-  background-color: rgb(63,81,181) !important; }
+  background-color: rgb(41,128,185) !important; }
 
 .mdl-color--primary-contrast {
   background-color: rgb(255,255,255) !important; }
 
 .mdl-color--primary-dark {
-  background-color: rgb(48,63,159) !important; }
+  background-color: rgb(32,99,143) !important; }
 
 .mdl-color--accent {
-  background-color: rgb(0,150,136) !important; }
+  background-color: rgb(22,160,133) !important; }
 
 .mdl-color--accent-contrast {
   background-color: rgb(255,255,255) !important; }
 
 .mdl-color-text--primary {
-  color: rgb(63,81,181) !important; }
+  color: rgb(41,128,185) !important; }
 
 .mdl-color-text--primary-contrast {
   color: rgb(255,255,255) !important; }
 
 .mdl-color-text--primary-dark {
-  color: rgb(48,63,159) !important; }
+  color: rgb(32,99,143) !important; }
 
 .mdl-color-text--accent {
-  color: rgb(0,150,136) !important; }
+  color: rgb(22,160,133) !important; }
 
 .mdl-color-text--accent-contrast {
   color: rgb(255,255,255) !important; }
@@ -2107,7 +2107,7 @@ ul, ol {
   .mdl-button:active {
     background-color: rgba(158,158,158, 0.40); }
   .mdl-button.mdl-button--colored {
-    color: rgb(63,81,181); }
+    color: rgb(41,128,185); }
     .mdl-button.mdl-button--colored:focus:not(:active) {
       background-color: rgba(0,0,0, 0.12); }
 
@@ -2124,14 +2124,14 @@ input.mdl-button[type="submit"] {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36);
     background-color: rgba(158,158,158, 0.40); }
   .mdl-button--raised.mdl-button--colored {
-    background: rgb(63,81,181);
+    background: rgb(41,128,185);
     color: rgb(255,255,255); }
     .mdl-button--raised.mdl-button--colored:hover {
-      background-color: rgb(63,81,181); }
+      background-color: rgb(41,128,185); }
     .mdl-button--raised.mdl-button--colored:active {
-      background-color: rgb(63,81,181); }
+      background-color: rgb(41,128,185); }
     .mdl-button--raised.mdl-button--colored:focus:not(:active) {
-      background-color: rgb(63,81,181); }
+      background-color: rgb(41,128,185); }
     .mdl-button--raised.mdl-button--colored .mdl-ripple {
       background: rgb(255,255,255); }
 
@@ -2171,14 +2171,14 @@ input.mdl-button[type="submit"] {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36);
     background-color: rgba(158,158,158, 0.40); }
   .mdl-button--fab.mdl-button--colored {
-    background: rgb(0,150,136);
+    background: rgb(22,160,133);
     color: rgb(255,255,255); }
     .mdl-button--fab.mdl-button--colored:hover {
-      background-color: rgb(0,150,136); }
+      background-color: rgb(22,160,133); }
     .mdl-button--fab.mdl-button--colored:focus:not(:active) {
-      background-color: rgb(0,150,136); }
+      background-color: rgb(22,160,133); }
     .mdl-button--fab.mdl-button--colored:active {
-      background-color: rgb(0,150,136); }
+      background-color: rgb(22,160,133); }
     .mdl-button--fab.mdl-button--colored .mdl-ripple {
       background: rgb(255,255,255); }
 
@@ -2228,20 +2228,20 @@ input.mdl-button[type="submit"] {
     background-color: transparent; }
 
 .mdl-button--primary.mdl-button--primary {
-  color: rgb(63,81,181); }
+  color: rgb(41,128,185); }
   .mdl-button--primary.mdl-button--primary .mdl-ripple {
     background: rgb(255,255,255); }
   .mdl-button--primary.mdl-button--primary.mdl-button--raised, .mdl-button--primary.mdl-button--primary.mdl-button--fab {
     color: rgb(255,255,255);
-    background-color: rgb(63,81,181); }
+    background-color: rgb(41,128,185); }
 
 .mdl-button--accent.mdl-button--accent {
-  color: rgb(0,150,136); }
+  color: rgb(22,160,133); }
   .mdl-button--accent.mdl-button--accent .mdl-ripple {
     background: rgb(255,255,255); }
   .mdl-button--accent.mdl-button--accent.mdl-button--raised, .mdl-button--accent.mdl-button--accent.mdl-button--fab {
     color: rgb(255,255,255);
-    background-color: rgb(0,150,136); }
+    background-color: rgb(22,160,133); }
 
 .mdl-button[disabled][disabled], .mdl-button.mdl-button--disabled.mdl-button--disabled {
   color: rgba(0,0,0, 0.26);
@@ -2449,7 +2449,7 @@ input.mdl-button[type="submit"] {
   box-sizing: border-box; }
 
 .mdl-card__media {
-  background-color: rgb(0,150,136);
+  background-color: rgb(22,160,133);
   background-repeat: repeat;
   background-position: 50% 50%;
   background-size: cover;
@@ -3847,7 +3847,7 @@ input.mdl-button[type="submit"] {
         background-color: rgb(224,224,224); }
       .mdl-layout__drawer .mdl-navigation .mdl-navigation__link--current {
         background-color: rgb(0,0,0);
-        color: rgb(63,81,181); }
+        color: rgb(41,128,185); }
   @media screen and (min-width: 1025px) {
     .mdl-layout--fixed-drawer > .mdl-layout__drawer {
       -webkit-transform: translateX(0);
@@ -3921,7 +3921,7 @@ input.mdl-button[type="submit"] {
   min-height: 64px;
   max-height: 1000px;
   z-index: 3;
-  background-color: rgb(63,81,181);
+  background-color: rgb(41,128,185);
   color: rgb(255,255,255);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   -webkit-transition-duration: 0.2s;
@@ -4117,7 +4117,7 @@ input.mdl-button[type="submit"] {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background-color: rgb(63,81,181);
+  background-color: rgb(41,128,185);
   overflow-y: hidden;
   overflow-x: scroll; }
   .mdl-layout__tab-bar::-webkit-scrollbar {
@@ -4173,7 +4173,7 @@ input.mdl-button[type="submit"] {
   width: 56px;
   z-index: 4;
   text-align: center;
-  background-color: rgb(63,81,181);
+  background-color: rgb(41,128,185);
   color: transparent;
   cursor: pointer;
   -webkit-user-select: none;
@@ -4247,7 +4247,7 @@ input.mdl-button[type="submit"] {
     bottom: 0;
     left: 0;
     position: absolute;
-    background: rgb(0,150,136);
+    background: rgb(22,160,133);
     -webkit-animation: border-expand 0.2s cubic-bezier(0.4, 0, 0.4, 1) 0.01s alternate forwards;
             animation: border-expand 0.2s cubic-bezier(0.4, 0, 0.4, 1) 0.01s alternate forwards;
     -webkit-transition: all 1s cubic-bezier(0.4, 0, 1, 1);
@@ -4478,10 +4478,10 @@ input.mdl-button[type="submit"] {
   font-weight: 500;
   font-size: 14px;
   text-transform: uppercase;
-  color: rgba(0,0,0, 0.54);
+  color: rgba(255,255,255, 0.54);
   overflow: hidden; }
   .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active {
-    color: rgba(0,0,0, 0.87); }
+    color: rgba(255,255,255, 0.87); }
   .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after {
     height: 2px;
     width: 100%;
@@ -4490,7 +4490,7 @@ input.mdl-button[type="submit"] {
     bottom: 0px;
     left: 0px;
     position: absolute;
-    background: rgb(63,81,181);
+    background: rgb(41,128,185);
     -webkit-animation: border-expand 0.2s cubic-bezier(0.4, 0, 0.4, 1) 0.01s alternate forwards;
             animation: border-expand 0.2s cubic-bezier(0.4, 0, 0.4, 1) 0.01s alternate forwards;
     -webkit-transition: all 1s cubic-bezier(0.4, 0, 1, 1);
@@ -4505,7 +4505,7 @@ input.mdl-button[type="submit"] {
     z-index: 1;
     overflow: hidden; }
     .mdl-tabs__tab .mdl-tabs__ripple-container .mdl-ripple {
-      background: rgb(63,81,181); }
+      background: rgb(41,128,185); }
 
 .mdl-tabs__panel {
   display: block; }
@@ -4786,7 +4786,7 @@ input.mdl-button[type="submit"] {
     color: rgba(0,0,0, 0.26); }
   .mdl-textfield--floating-label.is-focused .mdl-textfield__label,
   .mdl-textfield--floating-label.is-dirty .mdl-textfield__label {
-    color: rgb(63,81,181);
+    color: rgb(41,128,185);
     font-size: 12px;
     top: 4px;
     visibility: visible; }
@@ -4797,7 +4797,7 @@ input.mdl-button[type="submit"] {
     color: rgb(222, 50, 38);
     font-size: 12px; }
   .mdl-textfield__label:after {
-    background-color: rgb(63,81,181);
+    background-color: rgb(41,128,185);
     bottom: 20px;
     content: '';
     height: 2px;

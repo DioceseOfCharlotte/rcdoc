@@ -74,6 +74,7 @@ $performance_font: 'Helvetica', 'Arial', sans-serif ;
 
 @import "mdl/color-definitions";
 @import "mdl/functions";
+@import "settings.colors";
 
 /* ==========  Color & Themes  ========== */
 
@@ -87,9 +88,9 @@ $trim-color-classes: true;
 
 // Use color primarily for emphasis. Choose colors that fit with
 // your brand and provide good contrast between visual components.
-$color-primary: $palette-indigo-500 ;
-$color-primary-dark: $palette-indigo-700 ;
-$color-accent: $palette-teal-500 ;
+$color-primary: "41,128,185" ;
+$color-primary-dark: "32,99,143" ;
+$color-accent: "22,160,133" ;
 
 // Our primary is dark, so use $color-dark-contrast for overlaid text.
 $color-primary-contrast: $color-dark-contrast ;
@@ -199,8 +200,8 @@ $layout-header-tab-highlight: unquote("rgb(#{$color-accent})") ;
 /* ==========  Content Tabs  ========== */
 
 $tab-highlight-color: unquote("rgb(#{$color-primary})") ;
-$tab-text-color: unquote("rgba(#{$color-black}, 0.54)") ;
-$tab-active-text-color: unquote("rgba(#{$color-black}, 0.87)") ;
+$tab-text-color: unquote("rgba(#{$color-white}, 0.54)") ;
+$tab-active-text-color: unquote("rgba(#{$color-white}, 0.87)") ;
 $tab-border-color: unquote("rgb(#{$palette-grey-300})") ;
 
 /* ==========  Checkboxes  ========== */
