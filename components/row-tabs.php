@@ -13,7 +13,7 @@ $query = new WP_Query( $args );
 
 if ( $query->have_posts() ) { ?>
 
-<div class="mdl-cell u-bg-white mdl-shadow--2dp row__tabs mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+<div class="mdl-cell u-bg-white mdl-shadow--2dp u-br row__tabs mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
   <div class="mdl-tabs__tab-bar u-bg-tint-1">
 
     <?php while ($query->have_posts()) : $query->the_post(); ?>
