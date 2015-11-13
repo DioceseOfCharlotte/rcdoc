@@ -52,7 +52,7 @@ const MDLSOURCES = [
   //'assets/src/mdl/snackbar/snackbar.js',
   //'src/spinner/spinner.js',
   //'assets/src/mdl/switch/switch.js',
-  //'assets/src/mdl/tabs/tabs.js',
+  'assets/src/mdl/tabs/tabs.js',
   'assets/src/mdl/textfield/textfield.js',
   //'assets/src/mdl/tooltip/tooltip.js',
   // Complex components (which reuse base components)
