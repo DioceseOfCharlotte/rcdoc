@@ -43,6 +43,16 @@ if (!function_exists('shortcode_ui_register_for_shortcode')) {
         	            'u-bg-silver u-text-black'        => esc_html__( 'Neutral Gray', 'abraham' ),
         			),
         		),
+
+                array(
+        			'label'       => esc_html__( 'Attachment', 'abraham' ),
+        			'attr'        => 'bg_image',
+        			'type'        => 'attachment',
+        			'libraryType' => array( 'image' ),
+        			'addButton'   => esc_html__( 'Select Image', 'abraham' ),
+        			'frameTitle'  => esc_html__( 'Select Image', 'abraham' ),
+        		),
+
         		array(
         			'label'  => esc_html__( 'Intro Text', 'abraham' ),
         			'attr'   => 'row_intro',
@@ -61,6 +71,16 @@ if (!function_exists('shortcode_ui_register_for_shortcode')) {
                     'query'    => array('post_type' => array( 'page', 'cpt_archive', 'department' )),
                     'multiple' => true,
                ),
+               array(
+       			'label'  => esc_html__( 'Unique Row ID', 'abraham' ),
+       			'attr'   => 'js_id',
+       			'type'   => 'text',
+       			'encode' => true,
+       			'meta'   => array(
+       				'placeholder' => esc_html__( 'You should leave this blank', 'abraham' ),
+       				'data-test'   => 1,
+       			 ),
+       		   ),
            ),
        )
    );
@@ -343,10 +363,10 @@ if (!function_exists('shortcode_ui_register_for_shortcode')) {
           ),
       )
    );
-   
-   
-   
-   
+
+
+
+
 shortcode_ui_register_for_shortcode(
     'meh_tabs',
     array(
@@ -373,6 +393,16 @@ shortcode_ui_register_for_shortcode(
     	            'u-bg-silver u-text-black'        => esc_html__( 'Neutral Gray', 'abraham' ),
     			),
     		),
+
+            array(
+    			'label'       => esc_html__( 'Attachment', 'abraham' ),
+    			'attr'        => 'bg_image',
+    			'type'        => 'attachment',
+    			'libraryType' => array( 'image' ),
+    			'addButton'   => esc_html__( 'Select Image', 'abraham' ),
+    			'frameTitle'  => esc_html__( 'Select Image', 'abraham' ),
+    		),
+
     		array(
     			'label'  => esc_html__( 'Intro Text', 'abraham' ),
     			'attr'   => 'row_intro',
@@ -422,6 +452,6 @@ shortcode_ui_register_for_shortcode(
     		),
        ),
    )
-);   
+);
 
 }

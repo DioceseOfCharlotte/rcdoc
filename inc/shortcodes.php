@@ -13,45 +13,58 @@ function meh_add_shortcodes() {
 /**
  * TILES
  */
-function meh_tile_shortcode($atts, $content = null) {
-    $mehsc_atts = shortcode_atts(array(
+function meh_tile_shortcode($attr, $content = null) {
+    $attr = shortcode_atts(array(
         'row_color'    => '',
+        'bg_image'      => '',
         'row_intro'    => '',
-        'width'        => '',
         'page'         => '',
-   ), $atts, 'meh_tile');
+        'js_id'         => '',
+   ), $attr, 'meh_tile');
+   ob_start(); ?>
 
-    $output = '
-    <section class="' . $mehsc_atts['row_color'] . ' section-row u-py3 u-py4@md">
-        <div class="mdl-typography--display-2-color-contrast u-mb3 u-mb4@md u-text-center">' . $mehsc_atts['row_intro'] . '</div>
-        <div class="card-row mdl-grid u-flex-justify-around">
-    ';
+   <?php if ($attr['bg_image']) :
+       $parallax = 'js-parallax-row';
+   endif; ?>
 
-// Get pages set (if any)
-$pages = $mehsc_atts['page'];
+<section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-overflow-hidden u-1/1 u-py3 u-py4@md <?php echo $parallax; ?>">
 
-    $args = array(
-        'post_type' => array( 'page', 'cpt_archive', 'department' ),
-        'post__in'  => explode(',', $pages),
-        'orderby'   => 'post__in',
-    );
+   <?php if ($attr['row_intro']) : ?>
 
-    $queryTile = new WP_Query($args);
-    while ($queryTile->have_posts()) : $queryTile->the_post();
+       <div class="mdl-typography--display-2-color-contrast u-text-white u-z1 u-mb3 u-mb4@md u-text-center">
+           <?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?>
+       </div>
 
-    ob_start();
-    include locate_template('/components/section-tile.php');
-    $output .= ob_get_clean();
+   <?php endif; ?>
 
-    endwhile;
+   <?php if ($attr['bg_image']) : ?>
+       <div class="parallax-image u-1/1 u-bg-cover u-bg-no-repeat u-absolute" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>">
+       </div>
+   <?php endif; ?>
 
-    $output .= '</div></section>';
+        <div class="section-row__content mdl-grid u-flex-justify-around">
 
-    return $output;
+        <?php
+        // Get pages set (if any)
+        $pages = $attr['page'];
+          $args = array(
+            'post_type' => array( 'page', 'cpt_archive', 'department' ),
+            'post__in'  => explode(',', $pages),
+            'orderby'   => 'post__in',
+          );
+        $query = new WP_Query( $args );
 
-    wp_reset_postdata();
+            while ($query->have_posts()) : $query->the_post(); ?>
+                <?php include locate_template('/components/section-tile.php'); ?>
+            <?php endwhile;?>
+
+        </div>
+</section>
+
+<?php
+return ob_get_clean();
+wp_reset_postdata();
 }
-
 
 
 /**
@@ -108,15 +121,28 @@ function meh_slides_shortcode($attr, $content = null) {
 
     $attr = shortcode_atts(array(
         'row_color'    => '',
+        'bg_image'      => '',
         'row_intro'    => '',
         'page'         => '',
+        'js_id'         => '',
    ), $attr, 'meh_slides');
 
 ob_start(); ?>
-<section class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-py3 u-py4@md">
+<?php if ($attr['bg_image']) :
+    $parallax = 'js-parallax-row';
+endif; ?>
+
+<section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-overflow-hidden u-1/1 u-py3 u-py4@md <?php echo $parallax; ?>">
+
 <?php if ($attr['row_intro']) : ?>
     <div class="mdl-typography--display-2-color-contrast u-mb3 u-mb4@md u-text-center"><?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?></div>
 <?php endif; ?>
+
+<?php if ($attr['bg_image']) : ?>
+    <div class="parallax-image u-1/1 u-bg-cover u-bg-no-repeat u-absolute" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>">
+    </div>
+<?php endif; ?>
+
     <div class="card-row gallery js-flickity" data-flickity-options='{ "wrapAround": true, "pageDots": false, "freeScroll": true }'>
 
         <?php
@@ -155,16 +181,30 @@ function meh_block_shortcode($attr, $content = null) {
 
     $attr = shortcode_atts(array(
         'row_color'    => '',
+        'bg_image'      => '',
         'row_intro'    => '',
         'feed_url'     => '',
         'icon_file'    => '',
+        'js_id'         => '',
    ), $attr, 'meh_block');
 
    ob_start(); ?>
-   <section class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-1/1 u-py3 u-py4@md">
+
+   <?php if ($attr['bg_image']) :
+       $parallax = 'js-parallax-row';
+   endif; ?>
+
+<section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-overflow-hidden u-1/1 u-py3 u-py4@md <?php echo $parallax; ?>">
+
    <?php if ($attr['row_intro']) : ?>
        <div class="mdl-typography--display-2-color-contrast u-text-white u-mb3 u-mb4@md u-text-center"><?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?></div>
    <?php endif; ?>
+
+   <?php if ($attr['bg_image']) : ?>
+       <div class="parallax-image u-1/1 u-bg-cover u-bg-no-repeat u-absolute" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>">
+       </div>
+   <?php endif; ?>
+
        <div class="section-row__content mdl-grid u-max-width">
                <?php include locate_template('/components/row-feed.php'); ?>
        </div>
@@ -186,6 +226,7 @@ function meh_block_shortcode($attr, $content = null) {
 
        $attr = shortcode_atts(array(
            'row_color'    => '',
+           'bg_image'      => '',
            'row_intro'    => '',
            'page'         => '',
            'icon_file'    => '',
@@ -197,10 +238,22 @@ function meh_block_shortcode($attr, $content = null) {
       <?php if ($attr['direction']) :
           $direction = esc_attr( $attr['direction'] );
           endif; ?>
-      <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-1/1 u-py3 u-py4@md">
+
+          <?php if ($attr['bg_image']) :
+              $parallax = 'js-parallax-row';
+          endif; ?>
+
+       <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-overflow-hidden u-1/1 u-py3 u-py4@md <?php echo $parallax; ?>">
+
       <?php if ($attr['row_intro']) : ?>
           <div class="mdl-typography--display-2-color-contrast u-text-white u-mb3 u-mb4@md u-text-center"><?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?></div>
       <?php endif; ?>
+
+      <?php if ($attr['bg_image']) : ?>
+          <div class="parallax-image u-1/1 u-bg-cover u-bg-no-repeat u-absolute" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>">
+          </div>
+      <?php endif; ?>
+
           <div class="section-row__content mdl-grid u-max-width <?php echo $direction; ?>">
               <?php include locate_template('/components/row-links.php'); ?>
           </div>
@@ -221,6 +274,7 @@ function meh_block_shortcode($attr, $content = null) {
 function meh_tabs_shortcode($attr, $content = null) {
     $attr = shortcode_atts(array(
         'row_color'     => '',
+        'bg_image'      => '',
         'row_intro'     => '',
         'page'          => '',
         'icon_file'     => '',
@@ -234,20 +288,29 @@ function meh_tabs_shortcode($attr, $content = null) {
         $direction = esc_attr( $attr['direction'] );
     endif; ?>
 
-    <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-1/1 u-py3 u-py4@md">
+    <?php if ($attr['bg_image']) :
+        $parallax = 'js-parallax-row';
+    endif; ?>
+
+<section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-overflow-hidden u-1/1 u-py3 u-py4@md <?php echo $parallax; ?>">
 
     <?php if ($attr['row_intro']) : ?>
 
-        <div class="mdl-typography--display-2-color-contrast u-text-white u-mb3 u-mb4@md u-text-center">
+        <div class="mdl-typography--display-2-color-contrast u-text-white u-z1 u-mb3 u-mb4@md u-text-center">
             <?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?>
         </div>
 
     <?php endif; ?>
 
+    <?php if ($attr['bg_image']) : ?>
+        <div class="parallax-image u-1/1 u-bg-cover u-bg-no-repeat u-absolute" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>">
+        </div>
+    <?php endif; ?>
+
         <div class="section-row__content mdl-grid u-max-width <?php echo $direction; ?>">
             <?php include locate_template('/components/row-tabs.php'); ?>
         </div>
-    </section>
+</section>
 
 <?php
 return ob_get_clean();

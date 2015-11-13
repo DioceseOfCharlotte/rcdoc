@@ -6569,6 +6569,11 @@ http://flickity.metafizzy.co
   max-height: 90px;
   padding: 5px; }
 
+.parallax-image {
+  height: 200%;
+  top: -100%;
+  width: 100%; }
+
 /* Styles specific to the editor. */
 body#tinymce {
   margin: 0 auto !important;
