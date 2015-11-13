@@ -7,7 +7,7 @@
 $pages = $attr['page'];
 
     $args = array(
-        'post_type' => array( 'development', 'cpt_archive', 'department' ),
+        'post_type' => 'any',
         'post__in'  => explode(',', $pages),
         'orderby'   => 'post__in',
     );
