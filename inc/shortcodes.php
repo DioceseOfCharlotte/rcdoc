@@ -163,7 +163,7 @@ function meh_block_shortcode($attr, $content = null) {
    ob_start(); ?>
    <section class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-1/1 u-py3 u-py4@md">
    <?php if ($attr['row_intro']) : ?>
-       <div class="mdl-typography--display-2-color-contrast u-mb3 u-mb4@md u-text-center"><?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?></div>
+       <div class="mdl-typography--display-2-color-contrast u-text-white u-mb3 u-mb4@md u-text-center"><?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?></div>
    <?php endif; ?>
        <div class="section-row__content mdl-grid u-max-width">
                <?php include locate_template('/components/row-feed.php'); ?>
@@ -199,7 +199,7 @@ function meh_block_shortcode($attr, $content = null) {
           endif; ?>
       <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-1/1 u-py3 u-py4@md">
       <?php if ($attr['row_intro']) : ?>
-          <div class="mdl-typography--display-2-color-contrast u-mb3 u-mb4@md u-text-center"><?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?></div>
+          <div class="mdl-typography--display-2-color-contrast u-text-white u-mb3 u-mb4@md u-text-center"><?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?></div>
       <?php endif; ?>
           <div class="section-row__content mdl-grid u-max-width <?php echo $direction; ?>">
               <?php include locate_template('/components/row-links.php'); ?>
@@ -227,28 +227,28 @@ function meh_tabs_shortcode($attr, $content = null) {
         'direction'     => '',
         'js_id'         => '',
     ), $attr, 'meh_tabs');
-  
+
     ob_start(); ?>
-    
+
     <?php if ($attr['direction']) :
         $direction = esc_attr( $attr['direction'] );
     endif; ?>
-    
+
     <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-1/1 u-py3 u-py4@md">
-        
+
     <?php if ($attr['row_intro']) : ?>
-    
-        <div class="mdl-typography--display-2-color-contrast u-mb3 u-mb4@md u-text-center">
+
+        <div class="mdl-typography--display-2-color-contrast u-text-white u-mb3 u-mb4@md u-text-center">
             <?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?>
         </div>
-        
+
     <?php endif; ?>
-    
+
         <div class="section-row__content mdl-grid u-max-width <?php echo $direction; ?>">
             <?php include locate_template('/components/row-tabs.php'); ?>
         </div>
     </section>
-    
+
 <?php
 return ob_get_clean();
 wp_reset_postdata();

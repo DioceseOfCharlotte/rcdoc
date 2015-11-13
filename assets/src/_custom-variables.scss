@@ -200,8 +200,8 @@ $layout-header-tab-highlight: unquote("rgb(#{$color-accent})") ;
 /* ==========  Content Tabs  ========== */
 
 $tab-highlight-color: unquote("rgb(#{$color-primary})") ;
-$tab-text-color: unquote("rgba(#{$color-white}, 0.54)") ;
-$tab-active-text-color: unquote("rgba(#{$color-white}, 0.87)") ;
+$tab-text-color: unquote("rgba(#{$color-black}, 0.54)") ;
+$tab-active-text-color: unquote("rgba(#{$color-black}, 0.87)") ;
 $tab-border-color: unquote("rgb(#{$palette-grey-300})") ;
 
 /* ==========  Checkboxes  ========== */

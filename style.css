@@ -4478,10 +4478,10 @@ input.mdl-button[type="submit"] {
   font-weight: 500;
   font-size: 14px;
   text-transform: uppercase;
-  color: rgba(255,255,255, 0.54);
+  color: rgba(0,0,0, 0.54);
   overflow: hidden; }
   .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active {
-    color: rgba(255,255,255, 0.87); }
+    color: rgba(0,0,0, 0.87); }
   .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after {
     height: 2px;
     width: 100%;
