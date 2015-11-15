@@ -4,19 +4,13 @@
 
 //'use strict';
 
- import fs from 'fs';
- import path from 'path';
-
+import fs from 'fs';
+import path from 'path';
+import gulp from 'gulp';
 import del from 'del';
-
 import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
-
-
-import gulp from 'gulp';
-
 import gulpLoadPlugins from 'gulp-load-plugins';
-
 import pkg from './package.json';
 
 const $ = gulpLoadPlugins();
@@ -25,18 +19,19 @@ const reload = browserSync.reload;
 
 
 const AUTOPREFIXER_BROWSERS = [
-  'ie >= 9',
+  'ie >= 10',
   'ie_mob >= 10',
   'ff >= 30',
   'chrome >= 34',
   'safari >= 7',
   'opera >= 23',
-  'ios >= 6',
-  'android >= 4.2',
+  'ios >= 7',
+  'android >= 4.4',
   'bb >= 10'
 ];
 
-const MDLSOURCES = [
+const SOURCESJS = [
+  // ** MDL ** //
   // Component handler
   'assets/src/mdl/mdlComponentHandler.js',
   // Polyfills/dependencies
@@ -58,47 +53,47 @@ const MDLSOURCES = [
   // Complex components (which reuse base components)
   'assets/src/mdl/layout/layout.js',
   //'src/data-table/data-table.js',
-  // And finally, the ripples
-  'assets/src/mdl/ripple/ripple.js'
-];
-
-const GSSOURCES = [
+  'assets/src/mdl/ripple/ripple.js',
+  // ** GSAP ** //
   'assets/src/js/TweenMax.min.js',
   'assets/src/js/MorphSVGPlugin.min.js',
   'assets/src/js/DrawSVGPlugin.min.js',
+  // ** ScrollMagic ** //
   'assets/src/js/ScrollMagic.min.js',
   'assets/src/js/animation.gsap.min.js',
+  // ** Flickity ** //
   'assets/src/js/flickity.pkgd.min.js',
-  'assets/src/js/main.js',
+  // ** Mine ** //
+  'assets/src/js/myjs/main.js',
+];
+
+// Scripts that rely on jQuery
+const SOURCESJQ = [
+  'assets/src/js/myjs/jq-main.js',
 ];
 
 // ***** Development tasks ****** //
-
 // Lint JavaScript
 gulp.task('lint', () =>
-  gulp.src('assets/src/**/*.js')
-    .pipe(reload({stream: true, once: true}))
-    .pipe($.jshint())
-    .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')))
+  gulp.src('assets/src/js/myjs/*.js')
+  .pipe($.eslint())
+  .pipe($.eslint.format())
+  .pipe($.if(!browserSync.active, $.eslint.failOnError()))
 );
-
 
 // ***** Production build tasks ****** //
-
-// Optimize Images
-// TODO: Update image paths in final CSS to match root/images
+// Optimize images
 gulp.task('images', () =>
   gulp.src('assets/src/**/*.{svg,png,jpg}')
-    .pipe($.flatten())
-    .pipe($.cache($.imagemin({
-      progressive: true,
-      interlaced: true
-    })))
-    .pipe(gulp.dest('images'))
-    .pipe($.size({title: 'images'}))
+  .pipe($.cache($.imagemin({
+    progressive: true,
+    interlaced: true
+  })))
+  .pipe(gulp.dest('assets/images'))
+  .pipe($.size({
+    title: 'images'
+  }))
 );
-
 
 // Compile and Automatically Prefix Stylesheets (production)
 gulp.task('styles', () => {
@@ -121,77 +116,78 @@ gulp.task('styles', () => {
     .pipe($.concat('style.min.css'))
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('./'))
-    .pipe($.size({title: 'all_styles'}));
+    .pipe($.size({
+      title: 'styles'
+    }));
 });
 
-
 // Concatenate And Minify JavaScript
-gulp.task('mdl_scripts', () =>
-  gulp.src(MDLSOURCES)
+gulp.task('scripts', () =>
+  gulp.src(SOURCESJS)
   .pipe($.sourcemaps.init())
   .pipe($.babel())
   .pipe($.sourcemaps.write())
-    // Concatenate Scripts
-    .pipe($.concat('material.js'))
-    .pipe(gulp.dest('assets/js'))
-    // Minify Scripts
-    .pipe($.uglify({
-      sourceRoot: '.',
-      sourceMapIncludeSources: true
-    }))
-    .pipe($.concat('material.min.js'))
-    // Write Source Maps
-    .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('assets/js'))
-    .pipe($.size({title: 'mdl_scripts'}))
+  // Concatenate Scripts
+  .pipe($.concat('main.js'))
+  .pipe(gulp.dest('assets/js'))
+  // Minify Scripts
+  .pipe($.uglify({
+    sourceRoot: '.',
+    sourceMapIncludeSources: true
+  }))
+  .pipe($.concat('main.min.js'))
+  // Write Source Maps
+  .pipe($.sourcemaps.write('.'))
+  .pipe(gulp.dest('assets/js'))
+  .pipe($.size({
+    title: 'scripts'
+  }))
 );
 
 // Concatenate And Minify JavaScript
-gulp.task('gs_scripts', () =>
-  gulp.src(GSSOURCES)
+gulp.task('jq_scripts', () =>
+  gulp.src(SOURCESJQ)
   .pipe($.sourcemaps.init())
   //.pipe($.babel())
   .pipe($.sourcemaps.write())
-    // Concatenate Scripts
-    .pipe($.concat('gsap.js'))
-    .pipe(gulp.dest('assets/js'))
-    // Minify Scripts
-    .pipe($.uglify({
-      sourceRoot: '.',
-      sourceMapIncludeSources: true
-    }))
-    .pipe($.concat('gsap.min.js'))
-    // Write Source Maps
-    .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('assets/js'))
-    .pipe($.size({title: 'gs_scripts'}))
+  // Concatenate Scripts
+  .pipe($.concat('jq-main.js'))
+  .pipe(gulp.dest('assets/js'))
+  // Minify Scripts
+  .pipe($.uglify({
+    sourceRoot: '.',
+    sourceMapIncludeSources: true
+  }))
+  .pipe($.concat('jq-main.min.js'))
+  // Write Source Maps
+  .pipe($.sourcemaps.write('.'))
+  .pipe(gulp.dest('assets/js'))
+  .pipe($.size({
+    title: 'jq_scripts'
+  }))
 );
-
 
 /**
  * Defines the list of resources to watch for changes.
  */
- // Build and serve the output
-gulp.task('serve', ['styles'], function() {
- 	browserSync.init({
- 		//proxy: "local.wordpress.dev"
- 		//proxy: "local.wordpress-trunk.dev"
- 		//proxy: "stmark.dev"
- 		proxy: "doc.dev"
- 		//proxy: "127.0.0.1:8080/wordpress/"
- 	});
+// Build and serve the output
+gulp.task('serve', ['scripts', 'styles'], () => {
+  browserSync.init({
+    //proxy: "local.wordpress.dev"
+    //proxy: "local.wordpress-trunk.dev"
+    proxy: "doc.dev"
+      //proxy: "127.0.0.1:8080/wordpress/"
+  });
 
-	gulp.watch(['src/**/*.{scss,css}'], ['styles', reload]);
-	gulp.watch(['src/**/*.js'], ['scripts', reload]);
-	//gulp.watch(['assets/src/images/**/*'], reload);
-	gulp.watch(['*/**/*.php'], reload);
+  gulp.watch(['*/**/*.php'], reload);
+  gulp.watch(['src/**/*.{scss,css}'], ['styles', reload]);
+  gulp.watch(['src/**/*.js'], ['lint', 'scripts']);
+  gulp.watch(['assets/src/images/**/*'], reload);
 });
-
 
 // Build production files, the default task
 gulp.task('default', cb => {
   runSequence(
-    'styles',
-    ['mdl_scripts', 'gs_scripts'],
+    'styles', [/*'lint',*/ 'scripts', 'jq_scripts', 'images'],
     cb);
 });
