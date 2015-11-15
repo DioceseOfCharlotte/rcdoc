@@ -26,7 +26,7 @@ if ( $query->have_posts() ) { ?>
 
   <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-  <div class="mdl-tabs__panel u-p2" id="tab<?php the_ID(); ?>">
+  <div class="mdl-tabs__panel u-p2 tab<?php the_ID(); ?>" id="tab<?php the_ID(); ?>">
     <?php the_content(); ?>
   </div>
 

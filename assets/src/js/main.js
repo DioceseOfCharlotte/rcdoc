@@ -209,29 +209,48 @@ controller.addScene([
 
 
 
-// //init controller
-// var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
-//
-// // build scenes
-// new ScrollMagic.Scene({triggerElement: "#parallax1"})
-//         .setTween(".parallax-image", {y: "80%", ease: Linear.easeNone})
-//         .addTo(controller);
+//init controller
+var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
+
+// build scenes
+new ScrollMagic.Scene({triggerElement: ".js-parallax-row"})
+        .setTween(".js-parallax-row", {backgroundPosition: "0 50%"})
+        .addTo(controller);
 
 
 
+var toggleTab = document.querySelector('.tab9682');
+toggleTab.classList.toggle("is-active");
+
+        // // init controller
+        // var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
+        //
+        // function move (what, progress) {
+        //     var to = progress * 80;
+        //     TweenMax.to(what, 0.3, {y: to + "%", overwrite: 5, force3D: true});
+        // }
+        // // build scenes
+        // new ScrollMagic.Scene({triggerElement: ".js-parallax-row"})
+        //                 .on("progress", function (e) {
+        //                     move (".parallax-image", e.progress);
+        //                 })
+        //                 .addTo(controller);
 
 
-
-        // init controller
-        var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
-
-        function move (what, progress) {
-            var to = progress * 80;
-            TweenMax.to(what, 0.3, {y: to + "%", overwrite: 5, force3D: true});
-        }
-        // build scenes
-        new ScrollMagic.Scene({triggerElement: ".js-parallax-row"})
-                        .on("progress", function (e) {
-                            move (".parallax-image", e.progress);
-                        })
-                        .addTo(controller);
+        // (function(){
+        //
+        //   var parallax = document.querySelectorAll(".js-parallax-row"),
+        //       speed = 0.5;
+        //
+        //   window.onscroll = function(){
+        //     [].slice.call(parallax).forEach(function(el,i){
+        //
+        //       var windowYOffset = window.pageYOffset,
+        //           elBackgrounPos = "0 " + (windowYOffset * speed) + "px";
+        //
+        //       el.style.backgroundPosition = elBackgrounPos;
+        //
+        //     });
+        //   };
+        //
+        // })();

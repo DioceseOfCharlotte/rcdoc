@@ -25,9 +25,14 @@ function meh_tile_shortcode($attr, $content = null) {
 
    <?php if ($attr['bg_image']) :
        $parallax = 'js-parallax-row';
+   else:
+       $parallax = 'no-paralax';
    endif; ?>
 
-<section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-overflow-hidden u-1/1 u-py3 u-py4@md <?php echo $parallax; ?>">
+<section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-overflow-hidden u-1/1 u-py3 u-py4@md u-bg-cover <?php echo $parallax; ?>"
+    <?php if ($attr['bg_image']) : ?>
+        style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>"
+        <?php endif; ?> >
 
    <?php if ($attr['row_intro']) : ?>
 
@@ -35,11 +40,6 @@ function meh_tile_shortcode($attr, $content = null) {
            <?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?>
        </div>
 
-   <?php endif; ?>
-
-   <?php if ($attr['bg_image']) : ?>
-       <div class="parallax-image u-1/1 u-bg-cover u-bg-no-repeat u-absolute" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>">
-       </div>
    <?php endif; ?>
 
         <div class="section-row__content mdl-grid u-flex-justify-around">
@@ -128,19 +128,20 @@ function meh_slides_shortcode($attr, $content = null) {
    ), $attr, 'meh_slides');
 
 ob_start(); ?>
+
 <?php if ($attr['bg_image']) :
     $parallax = 'js-parallax-row';
+else:
+    $parallax = 'no-paralax';
 endif; ?>
 
-<section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-overflow-hidden u-1/1 u-py3 u-py4@md <?php echo $parallax; ?>">
+<section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-overflow-hidden u-1/1 u-py3 u-py4@md u-bg-cover <?php echo $parallax; ?>"
+ <?php if ($attr['bg_image']) : ?>
+     style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>"
+     <?php endif; ?> >
 
 <?php if ($attr['row_intro']) : ?>
     <div class="mdl-typography--display-2-color-contrast u-mb3 u-mb4@md u-text-center"><?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?></div>
-<?php endif; ?>
-
-<?php if ($attr['bg_image']) : ?>
-    <div class="parallax-image u-1/1 u-bg-cover u-bg-no-repeat u-absolute" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>">
-    </div>
 <?php endif; ?>
 
     <div class="card-row gallery js-flickity" data-flickity-options='{ "wrapAround": true, "pageDots": false, "freeScroll": true }'>
@@ -192,18 +193,19 @@ function meh_block_shortcode($attr, $content = null) {
 
    <?php if ($attr['bg_image']) :
        $parallax = 'js-parallax-row';
+   else:
+       $parallax = 'no-paralax';
    endif; ?>
 
-<section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-overflow-hidden u-1/1 u-py3 u-py4@md <?php echo $parallax; ?>">
+<section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-overflow-hidden u-1/1 u-py3 u-py4@md u-bg-cover <?php echo $parallax; ?>"
+    <?php if ($attr['bg_image']) : ?>
+        style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>"
+        <?php endif; ?> >
 
    <?php if ($attr['row_intro']) : ?>
        <div class="mdl-typography--display-2-color-contrast u-text-white u-mb3 u-mb4@md u-text-center"><?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?></div>
    <?php endif; ?>
 
-   <?php if ($attr['bg_image']) : ?>
-       <div class="parallax-image u-1/1 u-bg-cover u-bg-no-repeat u-absolute" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>">
-       </div>
-   <?php endif; ?>
 
        <div class="section-row__content mdl-grid u-max-width">
                <?php include locate_template('/components/row-feed.php'); ?>
@@ -241,17 +243,17 @@ function meh_block_shortcode($attr, $content = null) {
 
           <?php if ($attr['bg_image']) :
               $parallax = 'js-parallax-row';
+          else:
+              $parallax = 'no-paralax';
           endif; ?>
 
-       <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-overflow-hidden u-1/1 u-py3 u-py4@md <?php echo $parallax; ?>">
+       <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-overflow-hidden u-1/1 u-py3 u-py4@md u-bg-cover <?php echo $parallax; ?>"
+           <?php if ($attr['bg_image']) : ?>
+               style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>"
+               <?php endif; ?> >
 
       <?php if ($attr['row_intro']) : ?>
           <div class="mdl-typography--display-2-color-contrast u-text-white u-mb3 u-mb4@md u-text-center"><?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?></div>
-      <?php endif; ?>
-
-      <?php if ($attr['bg_image']) : ?>
-          <div class="parallax-image u-1/1 u-bg-cover u-bg-no-repeat u-absolute" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>">
-          </div>
       <?php endif; ?>
 
           <div class="section-row__content mdl-grid u-max-width <?php echo $direction; ?>">
@@ -290,9 +292,14 @@ function meh_tabs_shortcode($attr, $content = null) {
 
     <?php if ($attr['bg_image']) :
         $parallax = 'js-parallax-row';
+    else:
+        $parallax = 'no-paralax';
     endif; ?>
 
-<section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-overflow-hidden u-1/1 u-py3 u-py4@md <?php echo $parallax; ?>">
+ <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-overflow-hidden u-1/1 u-py3 u-py4@md u-bg-cover <?php echo $parallax; ?>"
+     <?php if ($attr['bg_image']) : ?>
+         style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>"
+         <?php endif; ?> >
 
     <?php if ($attr['row_intro']) : ?>
 
@@ -300,11 +307,6 @@ function meh_tabs_shortcode($attr, $content = null) {
             <?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?>
         </div>
 
-    <?php endif; ?>
-
-    <?php if ($attr['bg_image']) : ?>
-        <div class="parallax-image u-1/1 u-bg-cover u-bg-no-repeat u-absolute" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>">
-        </div>
     <?php endif; ?>
 
         <div class="section-row__content mdl-grid u-max-width <?php echo $direction; ?>">
