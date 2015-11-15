@@ -55,14 +55,14 @@ const SOURCESJS = [
   //'src/data-table/data-table.js',
   'assets/src/mdl/ripple/ripple.js',
   // ** GSAP ** //
-  'assets/src/js/TweenMax.min.js',
-  'assets/src/js/MorphSVGPlugin.min.js',
-  'assets/src/js/DrawSVGPlugin.min.js',
+  'assets/src/js/TweenMax.js',
+  'assets/src/js/MorphSVGPlugin.js',
+  'assets/src/js/DrawSVGPlugin.js',
   // ** ScrollMagic ** //
-  'assets/src/js/ScrollMagic.min.js',
-  'assets/src/js/animation.gsap.min.js',
+  'assets/src/js/ScrollMagic.js',
+  'assets/src/js/animation.gsap.js',
   // ** Flickity ** //
-  'assets/src/js/flickity.pkgd.min.js',
+  'assets/src/js/flickity.pkgd.js',
   // ** Mine ** //
   'assets/src/js/myjs/main.js',
 ];
