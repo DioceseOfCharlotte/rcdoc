@@ -7,7 +7,6 @@
 import fs from 'fs';
 import path from 'path';
 import gulp from 'gulp';
-import del from 'del';
 import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
 import gulpLoadPlugins from 'gulp-load-plugins';
@@ -33,7 +32,7 @@ const AUTOPREFIXER_BROWSERS = [
 const SOURCESJS = [
   // ** MDL ** //
   // Component handler
-  'assets/src/mdl/mdlComponentHandler.js',
+  //'assets/src/mdl/mdlComponentHandler.js',
   // Polyfills/dependencies
   'assets/src/mdl/third_party/**/*.js',
   // Base components
@@ -110,6 +109,7 @@ gulp.task('styles', () => {
     .pipe(gulp.dest('.tmp'))
     // Concatenate Styles
     .pipe($.concat('style.css'))
+    .pipe($.csscomb())
     .pipe(gulp.dest('./'))
     // Minify Styles
     .pipe($.if('*.css', $.minifyCss()))

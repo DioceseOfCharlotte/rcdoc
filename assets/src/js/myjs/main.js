@@ -171,17 +171,13 @@ controller.addScene([
 
 
 //init controller
-var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
+// var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
+//
+// // build scenes
+// new ScrollMagic.Scene({triggerElement: ".js-parallax-row"})
+//         .setTween(".js-parallax-row", {backgroundPosition: "0 50%"})
+//         .addTo(controller);
 
-// build scenes
-new ScrollMagic.Scene({triggerElement: ".js-parallax-row"})
-        .setTween(".js-parallax-row", {backgroundPosition: "0 50%"})
-        .addTo(controller);
-
-
-
-var toggleTab = document.querySelector('.tab9682');
-toggleTab.classList.toggle("is-active");
 
         // // init controller
         // var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});

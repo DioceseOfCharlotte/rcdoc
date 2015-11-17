@@ -296,7 +296,7 @@ function meh_tabs_shortcode($attr, $content = null) {
         $parallax = 'no-paralax';
     endif; ?>
 
- <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-overflow-hidden u-1/1 u-py3 u-py4@md u-bg-cover <?php echo $parallax; ?>"
+ <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-overflow-hidden u-1/1 u-py3 u-py4@md u-bg-cover u-bg-fixed <?php echo $parallax; ?>"
      <?php if ($attr['bg_image']) : ?>
          style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>)"
          <?php endif; ?> >

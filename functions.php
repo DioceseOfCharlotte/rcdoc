@@ -47,7 +47,7 @@ function rcdoc_scripts() {
 	wp_enqueue_script(
         'main_scripts',
         trailingslashit(get_stylesheet_directory_uri())."assets/js/main.min.js",
-        false, null, true
+        array( 'abraham_js' ), null, true
     );
 
 	wp_enqueue_script(
