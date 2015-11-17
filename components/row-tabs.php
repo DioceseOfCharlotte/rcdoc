@@ -5,7 +5,7 @@
 // Get pages set (if any)
 $pages = $attr['page'];
   $args = array(
-    'post_type' => 'any',
+    'post_type' => array( 'page', 'cpt_archive', 'department' ),
     'post__in'  => explode(',', $pages),
     'orderby'   => 'post__in',
   );

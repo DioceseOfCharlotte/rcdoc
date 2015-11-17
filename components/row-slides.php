@@ -2,6 +2,17 @@
 /**
  * This is the template for the different block-type shortcodes.
  */
+
+ $pages = $attr['page'];
+
+     $args = array(
+         'post_type' => array( 'page', 'cpt_archive', 'department' ),
+         'post__in'  => explode(',', $pages),
+         'orderby'   => 'post__in',
+     );
+
+ $query = new WP_Query($args);
+ while ($query->have_posts()) : $query->the_post();
 ?>
 
 <div class ="gallery-cell">
@@ -28,4 +39,5 @@
 
 </div>
 </div>
-        <?php
+<?php
+endwhile;
