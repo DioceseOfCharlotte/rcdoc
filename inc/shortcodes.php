@@ -291,7 +291,7 @@ function meh_tabs_shortcode($attr, $content = null) {
     endif; ?>
 
     <?php if ($attr['bg_image']) :
-        $parallax = 'js-parallax-row';
+        $parallax = 'no-parallax-row';
     else:
         $parallax = 'no-paralax';
     endif; ?>
