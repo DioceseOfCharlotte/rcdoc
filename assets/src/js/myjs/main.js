@@ -139,45 +139,6 @@ componentHandler.register({
 
 
 
-
-
-var $ = jQuery.noConflict();
-//
-// $( document ).ready(function() {
-//   var $yeti = $('.tile');
-//
-// $('.tile').each(function() {
-//     MotionUI.animateIn($yeti, 'fadeIn');
-// 	})
-// });
-(function($) {
-		$(document).on('facetwp-loaded', function() {
-				componentHandler.upgradeAllRegistered();
-		 });
-})(jQuery);
-
-
-TweenMax.staggerFrom(".tile", 1, {
-	y:-900,
-	ease: Power3.easeOut
-}, 0.3);
-
-TweenMax.staggerFrom(".tile", 0.5, {
-	opacity:0.5
-}, 0.2);
-
-
-
-$(".tile").click(function(){
-	TweenMax.staggerTo(".tile", 0.8, {
-		y:-900,
-		opacity:0,
-		ease:Back.easeIn.config(0.7),
-	}, 0.1);
-});
-
-
-
 // Animation Setup
 var heart_tween = TweenLite.to("#cart", 1, {morphSVG:"#heart"});
 var bread_tween = TweenLite.to("#cart", 1, {morphSVG:"#bread"});
@@ -209,29 +170,44 @@ controller.addScene([
 
 
 
-// //init controller
+//init controller
 // var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
 //
 // // build scenes
-// new ScrollMagic.Scene({triggerElement: "#parallax1"})
-//         .setTween(".parallax-image", {y: "80%", ease: Linear.easeNone})
+// new ScrollMagic.Scene({triggerElement: ".js-parallax-row"})
+//         .setTween(".js-parallax-row", {backgroundPosition: "0 50%"})
 //         .addTo(controller);
 
 
+        // // init controller
+        // var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
+        //
+        // function move (what, progress) {
+        //     var to = progress * 80;
+        //     TweenMax.to(what, 0.3, {y: to + "%", overwrite: 5, force3D: true});
+        // }
+        // // build scenes
+        // new ScrollMagic.Scene({triggerElement: ".js-parallax-row"})
+        //                 .on("progress", function (e) {
+        //                     move (".parallax-image", e.progress);
+        //                 })
+        //                 .addTo(controller);
 
 
-
-
-        // init controller
-        var controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}});
-
-        function move (what, progress) {
-            var to = progress * 80;
-            TweenMax.to(what, 0.3, {y: to + "%", overwrite: 5, force3D: true});
-        }
-        // build scenes
-        new ScrollMagic.Scene({triggerElement: ".js-parallax-row"})
-                        .on("progress", function (e) {
-                            move (".parallax-image", e.progress);
-                        })
-                        .addTo(controller);
+        // (function(){
+        //
+        //   var parallax = document.querySelectorAll(".js-parallax-row"),
+        //       speed = 0.5;
+        //
+        //   window.onscroll = function(){
+        //     [].slice.call(parallax).forEach(function(el,i){
+        //
+        //       var windowYOffset = window.pageYOffset,
+        //           elBackgrounPos = "0 " + (windowYOffset * speed) + "px";
+        //
+        //       el.style.backgroundPosition = elBackgrounPos;
+        //
+        //     });
+        //   };
+        //
+        // })();
