@@ -25,7 +25,7 @@
                 'image_class' => 'o-crop__content',
                 'link_to_post' => false,
                 'before' => '<div class="o-crop o-crop--16x9">',
-	            'after' => 	'</div>',
+                'after' =>    '</div>',
             ));
         ?>
         <h2 <?php hybrid_attr('entry-title'); ?>>

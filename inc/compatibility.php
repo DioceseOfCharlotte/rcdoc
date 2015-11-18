@@ -10,16 +10,16 @@ add_action('init', 'meh_post_type_archive_supports', 5);
 // Let custom post types use the categories
 //
 function query_post_type($query) {
-	if ( ! is_admin() && $query->is_main_query() ) :
-		if(is_category() || is_tag()) {
-		    $post_type = get_query_var('post_type');
-		    if($post_type)
-		        $post_type = $post_type;
-		    else
-		        $post_type = array('post','development','chancery','vocation');
-		    $query->set('post_type',$post_type);
-		    return $query;
-		}
+    if ( ! is_admin() && $query->is_main_query() ) :
+        if(is_category() || is_tag()) {
+            $post_type = get_query_var('post_type');
+            if($post_type)
+                $post_type = $post_type;
+            else
+                $post_type = array('post','development','chancery','vocation');
+            $query->set('post_type', $post_type);
+            return $query;
+        }
 endif;
 }
 
@@ -39,26 +39,26 @@ endif;
 
 
 function meh_post_type_archive_supports() {
-	add_post_type_support( 'parish', 'archive' );
-	add_post_type_support( 'school', 'archive' );
-	add_post_type_support( 'department', 'archive' );
+    add_post_type_support( 'parish', 'archive' );
+    add_post_type_support( 'school', 'archive' );
+    add_post_type_support( 'department', 'archive' );
 
-	add_post_type_support( 'archive_post', 'archive' );
-	add_post_type_support( 'bishop', 'archive' );
-	add_post_type_support( 'chancery', 'archive' );
-	add_post_type_support( 'deacon', 'archive' );
-	add_post_type_support( 'development', 'archive' );
+    add_post_type_support( 'archive_post', 'archive' );
+    add_post_type_support( 'bishop', 'archive' );
+    add_post_type_support( 'chancery', 'archive' );
+    add_post_type_support( 'deacon', 'archive' );
+    add_post_type_support( 'development', 'archive' );
 
-	add_post_type_support( 'finance', 'archive' );
-	add_post_type_support( 'hispanic_ministry', 'archive' );
-	add_post_type_support( 'housing', 'archive' );
-	add_post_type_support( 'info_tech', 'archive' );
+    add_post_type_support( 'finance', 'archive' );
+    add_post_type_support( 'hispanic_ministry', 'archive' );
+    add_post_type_support( 'housing', 'archive' );
+    add_post_type_support( 'info_tech', 'archive' );
 
-	add_post_type_support( 'liturgy', 'archive' );
-	add_post_type_support( 'multicultural', 'archive' );
-	add_post_type_support( 'planning', 'archive' );
-	add_post_type_support( 'property', 'archive' );
+    add_post_type_support( 'liturgy', 'archive' );
+    add_post_type_support( 'multicultural', 'archive' );
+    add_post_type_support( 'planning', 'archive' );
+    add_post_type_support( 'property', 'archive' );
 
-	add_post_type_support( 'tribunal', 'archive' );
-	add_post_type_support( 'vocation', 'archive' );
+    add_post_type_support( 'tribunal', 'archive' );
+    add_post_type_support( 'vocation', 'archive' );
 }

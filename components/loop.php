@@ -3,7 +3,7 @@
 $slug = get_the_slug();
 // WP_Query arguments
 $args = array (
-    'post_type'              => array( 'post','chancery','vocation','tribunal','property','planning','multicultural','liturgy','liturgy','housing','hispanic_ministry','finance','info_tech','development','deacon','archive', ),
+    'post_type'              => array( 'post', 'chancery', 'vocation', 'tribunal', 'property', 'planning', 'multicultural', 'liturgy', 'liturgy', 'housing', 'hispanic_ministry', 'finance', 'info_tech', 'development', 'deacon', 'archive'),
     'category_name'          => $slug,
     'posts_per_page'         => 6,
     'order'                  => 'ASC',
