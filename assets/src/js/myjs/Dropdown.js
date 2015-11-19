@@ -113,7 +113,7 @@
 
 
 
-var first_tab = document.getElementsByClassName("mdl-tabs__tab")[0];
-var first_panel = document.getElementsByClassName("mdl-tabs__panel")[0];
-first_tab.classList.toggle("is-active");
-first_panel.classList.toggle("is-active");
+// var first_tab = document.getElementsByClassName("mdl-tabs__tab")[0];
+// var first_panel = document.getElementsByClassName("mdl-tabs__panel")[0];
+// first_tab.classList.toggle("is-active");
+// first_panel.classList.toggle("is-active");

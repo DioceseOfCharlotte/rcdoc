@@ -6463,34 +6463,19 @@ button.simplefavorite-button {
  * Dropdown content
  */
 .dropdown-menu-basic {
-    visibility: hidden;
     float: left;
+    overflow: hidden; 
     position: absolute;
-    z-index: -1;
     top: 0;
     min-width: 200px;
+    height: 0;
     margin-top: 3.5em;
     margin-left: 0;
-    opacity: 0;
     text-align: left;
-    transition-timing-function: linear;
-    transition-duration: 250ms;
-    transition-property: -webkit-transform, opacity;
-    transition-property: opacity, -webkit-transform;
-    transition-property: transform, opacity;
-    transition-property: transform, opacity, -webkit-transform;
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
 }
 
-.dropdown-menu-basic.is-visible {
-    visibility: visible;
+.dropdown-menu-basic.is-active {
     z-index: 1000;
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
 }
 
 /* line 58, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
