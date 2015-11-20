@@ -2,33 +2,26 @@
 /**
  * This is the template for the different block-type shortcodes.
  */
-
  while ($query->have_posts()) : $query->the_post();
 ?>
 
-<div class ="gallery-cell">
-<div id="post-<?php the_ID(); ?>" class="mdl-card mdl-shadow--3dp">
-
-    <header <?php hybrid_attr('entry-header'); ?>>
+<div id="post-<?php the_ID(); ?>" class="mdl-cell card mdl-shadow--2dp u-text-gray">
         <?php
             get_the_image(array(
                 'size' => 'abraham-lg',
-                'image_class' => 'o-crop__content',
+                'image_class' => 'card-img-top',
                 'link_to_post' => false,
-                'before' => '<div class="o-crop o-crop--16x9">',
-                'after' =>    '</div>',
             ));
         ?>
-        <h2 <?php hybrid_attr('entry-title'); ?>>
+    <div class="card-block">
+        <h3 class="card-title u-text-black">
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-        </h2>
-    </header>
+        </h3>
 
-    <div class="u-px2 u-pb2">
         <?php the_excerpt(); ?>
     </div>
 
-</div>
+
 </div>
 <?php
 endwhile;

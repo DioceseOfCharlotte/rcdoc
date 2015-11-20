@@ -983,7 +983,7 @@ main {
 html,
 body {
     font-family: "Helvetica", "Arial", sans-serif;
-    font-size: 14px;
+    font-size: 1rem;
     font-weight: 400;
     line-height: 20px;
 }
@@ -1018,8 +1018,8 @@ h6 small {
 }
 
 h1 {
-    margin-top: 24px;
-    margin-bottom: 24px; 
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem; 
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 56px;
     font-weight: 400;
@@ -1028,8 +1028,8 @@ h1 {
 }
 
 h2 {
-    margin-top: 24px;
-    margin-bottom: 24px; 
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem; 
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 45px;
     font-weight: 400;
@@ -1037,8 +1037,8 @@ h2 {
 }
 
 h3 {
-    margin-top: 24px;
-    margin-bottom: 24px; 
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem; 
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 34px;
     font-weight: 400;
@@ -1046,8 +1046,8 @@ h3 {
 }
 
 h4 {
-    margin-top: 24px;
-    margin-bottom: 16px; 
+    margin-top: 0.5rem;
+    margin-bottom: 1rem; 
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 24px;
     font-weight: 400;
@@ -1056,8 +1056,8 @@ h4 {
 }
 
 h5 {
-    margin-top: 24px;
-    margin-bottom: 16px; 
+    margin-top: 0.5rem;
+    margin-bottom: 1rem; 
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 20px;
     font-weight: 500;
@@ -1066,8 +1066,8 @@ h5 {
 }
 
 h6 {
-    margin-top: 24px;
-    margin-bottom: 16px; 
+    margin-top: 0.5rem;
+    margin-bottom: 1rem; 
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -1076,7 +1076,7 @@ h6 {
 }
 
 p {
-    margin-bottom: 16px; 
+    margin-bottom: 1rem; 
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
@@ -1440,7 +1440,7 @@ ol {
 .material-icons {
     display: inline-block;
     font-family: "Material Icons";
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: normal;
     font-style: normal;
     -webkit-font-smoothing: antialiased; 
@@ -6394,6 +6394,227 @@ fieldset[disabled] .mdl-textfield .mdl-textfield__label,
 }
 
 /* To be moved */
+.card {
+    display: block;
+    position: relative;
+    margin-bottom: 24px;
+    border-radius: 3px; 
+    background-color: #fff;
+}
+
+.card-block {
+    padding: 24px;
+}
+
+.card-title {
+    margin-bottom: 24px;
+}
+
+.card-subtitle {
+    margin-top: -12px;
+    margin-bottom: 0;
+}
+
+.card-text:last-child {
+    margin-bottom: 0;
+}
+
+.card-link:hover {
+    text-decoration: none;
+}
+
+.card-link + .card-link {
+    margin-left: 24px;
+}
+
+.card > .list-group:first-child .list-group-item:first-child {
+    border-radius: 24px 24px 0 0;
+}
+
+.card > .list-group:last-child .list-group-item:last-child {
+    border-radius: 0 0 24px 24px;
+}
+
+.card-header {
+    padding: 24px 24px;
+    border-bottom: 0.0625rem solid #e5e5e5; 
+    background-color: #f5f5f5;
+}
+
+.card-header:first-child {
+    border-radius: 24px 24px 0 0;
+}
+
+.card-footer {
+    padding: 24px 24px;
+    border-top: 0.0625rem solid #e5e5e5; 
+    background-color: #f5f5f5;
+}
+
+.card-footer:last-child {
+    border-radius: 0 0 24px 24px;
+}
+
+.card-primary {
+    border-color: 24px; 
+    background-color: 24px;
+}
+
+.card-success {
+    border-color: #5cb85c; 
+    background-color: #5cb85c;
+}
+
+.card-info {
+    border-color: #5bc0de; 
+    background-color: #5bc0de;
+}
+
+.card-warning {
+    border-color: #f0ad4e; 
+    background-color: #f0ad4e;
+}
+
+.card-danger {
+    border-color: #d9534f; 
+    background-color: #d9534f;
+}
+
+.card-inverse .card-header,
+.card-inverse .card-footer {
+    border-bottom: 0.075rem solid rgba(255, 255, 255, 0.2);
+}
+
+.card-inverse .card-header,
+.card-inverse .card-footer,
+.card-inverse .card-title,
+.card-inverse .card-blockquote {
+    color: #fff;
+}
+
+.card-inverse .card-link,
+.card-inverse .card-text,
+.card-inverse .card-blockquote > footer {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.card-inverse .card-link:focus,
+.card-inverse .card-link:hover {
+    color: #fff;
+}
+
+.card-blockquote {
+    margin-bottom: 0;
+    padding: 0;
+    border-left: 0;
+}
+
+.card-img {
+    border-radius: 3px;
+}
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 24px;
+}
+
+.card-img-top {
+    border-radius: 3px 3px 0 0;
+}
+
+.card-img-bottom {
+    border-radius: 0 0 3px 3px;
+}
+
+@media screen and (min-width: 52em) {
+    .card-deck {
+    	display: -webkit-flex;
+    	display: -ms-flexbox;
+    	display: flex;
+    	margin-right: -0.625rem;
+    	margin-left: -0.625rem; 
+
+    	-webkit-flex-flow: row wrap;
+    	-ms-flex-flow: row wrap;
+    	flex-flow: row wrap;
+    }
+    .card-deck .card {
+    	margin-right: 0.625rem;
+    	margin-left: 0.625rem; 
+
+    	-webkit-flex: 1 0 0;
+    	-ms-flex: 1 0 0;
+    	flex: 1 0 0;
+    }
+}
+
+@media screen and (min-width: 52em) {
+    .card-group {
+    	display: -webkit-flex;
+    	display: -ms-flexbox;
+    	display: flex;
+
+    	-webkit-flex-flow: row wrap;
+    	-ms-flex-flow: row wrap;
+    	flex-flow: row wrap;
+    }
+    .card-group .card {
+    	-webkit-flex: 1 0 0;
+    	-ms-flex: 1 0 0;
+    	flex: 1 0 0;
+    }
+    .card-group .card + .card {
+    	margin-left: 0;
+    	border-left: 0;
+    }
+    .card-group .card:first-child {
+    	border-top-right-radius: 0;
+    	border-bottom-right-radius: 0;
+    }
+    .card-group .card:first-child .card-img-top {
+    	border-top-right-radius: 0;
+    }
+    .card-group .card:first-child .card-img-bottom {
+    	border-bottom-right-radius: 0;
+    }
+    .card-group .card:last-child {
+    	border-top-left-radius: 0;
+    	border-bottom-left-radius: 0;
+    }
+    .card-group .card:last-child .card-img-top {
+    	border-top-left-radius: 0;
+    }
+    .card-group .card:last-child .card-img-bottom {
+    	border-bottom-left-radius: 0;
+    }
+    .card-group .card:not(:first-child):not(:last-child) {
+    	border-radius: 0;
+    }
+    .card-group .card:not(:first-child):not(:last-child) .card-img-top,
+    .card-group .card:not(:first-child):not(:last-child) .card-img-bottom {
+    	border-radius: 0;
+    }
+}
+
+@media screen and (min-width: 52em) {
+    .card-columns {
+    	-webkit-column-count: 3;
+    	-moz-column-count: 3;
+    	column-count: 3;
+    	-webkit-column-gap: 24px;
+    	-moz-column-gap: 24px;
+    	column-gap: 24px;
+    }
+    .card-columns .card {
+    	display: inline-block;
+    	width: 100%;
+    }
+}
+
 .mdl-mega-footer--heading-checkbox:checked ~ div,
 .mdl-mega-footer__heading-checkbox:checked ~ div {
     display: none;

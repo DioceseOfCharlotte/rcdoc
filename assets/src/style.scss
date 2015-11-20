@@ -17,7 +17,9 @@
 
 // MINE
 @import "custom-variables";
-
+@import "settings.colors";
+@import "settings.defaults";
+@import "settings.responsive";
 
 
 @import "mdl/mixins";
@@ -53,6 +55,7 @@
 @import "mdl/grid/grid";
 
 /* To be moved */
+@import "card";
 @import "shame";
 
 

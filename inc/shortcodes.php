@@ -16,17 +16,27 @@ function meh_row_shortcode($attr, $content = null) {
         'row_intro'     => '',
         'page'          => '',
         'icon_file'     => '',
+        'feed_url'      => '',
         'direction'     => '',
         'js_id'         => '',
     ), $attr, 'meh_row');
 
+
+    $pages = $attr['page'];
+
+        $args = array(
+            'post_type' => array( 'page', 'cpt_archive', 'department' ),
+            'post__in'  => explode(',', $pages),
+            'orderby'   => 'post__in',
+        );
+        $query = new WP_Query($args);
     ob_start(); ?>
 
     <?php if ($attr['direction']) :
         $direction = esc_attr( $attr['direction'] );
     endif; ?>
 
- <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-overflow-hidden u-1/1 u-py3 u-py4@md u-bg-cover u-bg-fixed"
+ <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row js-morph u-overflow-hidden u-1/1 u-py3 u-py4@md u-bg-cover u-bg-fixed"
      <?php if ($attr['bg_image']) : ?>
          style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>)"
          <?php endif; ?> >
@@ -43,6 +53,30 @@ function meh_row_shortcode($attr, $content = null) {
 
         <div class="section-row__content mdl-grid u-max-width <?php echo $direction; ?>">
             <?php include locate_template('/components/row-tabs.php'); ?>
+        </div>
+
+    <?php elseif ('links' === $attr['row_type']) : ?>
+
+        <div class="section-row__content mdl-grid u-max-width <?php echo $direction; ?>">
+            <?php include locate_template('/components/row-links.php'); ?>
+        </div>
+
+    <?php elseif ('feed' === $attr['row_type']) : ?>
+
+        <div class="section-row__content mdl-grid u-max-width <?php echo $direction; ?>">
+            <?php include locate_template('/components/row-feed.php'); ?>
+        </div>
+
+    <?php elseif ('tiles' === $attr['row_type']) : ?>
+
+        <div class="section-row__content mdl-grid u-flex-justify-around">
+            <?php include locate_template('/components/row-tiles.php'); ?>
+        </div>
+
+    <?php elseif ('cards' === $attr['row_type']) : ?>
+
+        <div class="section-row__content mdl-grid u-max-width">
+            <?php include locate_template('/components/row-cards.php'); ?>
         </div>
 
     <?php elseif ('slides' === $attr['row_type']) : ?>

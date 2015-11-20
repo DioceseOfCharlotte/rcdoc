@@ -2,7 +2,7 @@
 
 add_action( 'after_setup_theme', 'rcdoc_setup' );
 add_action( 'wp_enqueue_scripts', 'rcdoc_scripts' );
-add_action('widgets_init', 'abraham_widgets');
+add_action( 'widgets_init', 'abraham_widgets' );
 
 require get_stylesheet_directory() . '/inc/html-classes.php';
 require get_stylesheet_directory() . '/inc/post-types.php';

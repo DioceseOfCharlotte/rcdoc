@@ -1,17 +1,8 @@
 <div class="mdl-cell u-1/2@md u-text-1-dark u-flex u-flex-justify-center u-flex-center">
   <?php get_template_part('assets/images/icon', esc_attr( $attr['icon_file'] ) ); ?>
 </div>
-<?php
-// Get pages set (if any)
-$pages = $attr['page'];
-  $args = array(
-    'post_type' => array( 'page', 'cpt_archive', 'department' ),
-    'post__in'  => explode(',', $pages),
-    'orderby'   => 'post__in',
-  );
-$query = new WP_Query( $args );
 
-if ( $query->have_posts() ) { ?>
+<?php if ( $query->have_posts() ) { ?>
 
 <div class="mdl-cell u-bg-white mdl-shadow--2dp u-br row__tabs mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
   <div class="mdl-tabs__tab-bar u-bg-tint-1">

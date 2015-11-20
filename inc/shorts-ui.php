@@ -4,6 +4,7 @@
  * https://github.com/fusioneng/Shortcake.
  */
 add_action('init', 'meh_add_shortcake');
+add_action( 'enqueue_shortcode_ui', 'shorts_scripts' );
 
 function meh_add_shortcake() {
 
@@ -27,18 +28,21 @@ shortcode_ui_register_for_shortcode(
                 'attr'    => 'row_type',
                 'type'    => 'select',
                 'options'     => array(
-                    ''        => esc_html__( 'None', 'abraham' ),
+                    'cards'    => esc_html__( 'Cards', 'abraham' ),
                     'tabs'    => esc_html__( 'Tabs', 'abraham' ),
+                    'links'   => esc_html__( 'Page Links', 'abraham' ),
+                    'feed'   => esc_html__( 'RSS Feed', 'abraham' ),
                     'slides'  => esc_html__( 'Slides', 'abraham' ),
+                    'tiles'  => esc_html__( 'Tiles', 'abraham' ),
                 ),
             ),
 
             array(
-                'label'   => 'Row Color',
+                'label'   => 'Row Background Color',
                 'attr'    => 'row_color',
                 'type'    => 'select',
                 'options'     => array(
-                                        ''      => esc_html__( 'None', 'abraham' ),
+                    'u-bg-transparent'      => esc_html__( 'Transparent', 'abraham' ),
                     'u-bg-white u-text-black'   => esc_html__( 'White', 'abraham' ),
                     'u-bg-1 u-text-white'       => esc_html__( 'Primary color', 'abraham' ),
                     'u-bg-2 u-text-black'       => esc_html__( 'Secondary color', 'abraham' ),
@@ -51,11 +55,12 @@ shortcode_ui_register_for_shortcode(
                     'u-bg-frost-4 u-text-black'       => esc_html__( 'Frosted', 'abraham' ),
                     'u-bg-tint-4 u-text-white'        => esc_html__( 'Tinted', 'abraham' ),
                     'u-bg-silver u-text-black'        => esc_html__( 'Neutral Gray', 'abraham' ),
+                    'has-image'        => esc_html__( 'Use an Image', 'abraham' ),
                 ),
             ),
 
             array(
-                'label'       => esc_html__( 'Attachment', 'abraham' ),
+                'label'       => esc_html__( 'Background Image', 'abraham' ),
                 'attr'        => 'bg_image',
                 'type'        => 'attachment',
                 'libraryType' => array( 'image' ),
@@ -84,12 +89,17 @@ shortcode_ui_register_for_shortcode(
                 ),
             ),
             array(
-                'label'    => 'Select Each Tabs Content',
+                'label'    => 'Select Pages to Display',
                 'attr'     => 'page',
                 'type'     => 'post_select',
                 'query'    => array('post_type' => array( 'department', 'development' )),
                 'multiple' => true,
            ),
+           array(
+                'label'    => esc_html__( 'Feed URL' ),
+                'attr'     => 'feed_url',
+                'type'     => 'url',
+            ),
            array(
                    'label'       => esc_html__( 'Order', 'shortcode-ui-example' ),
                    'description' => esc_html__( 'Choose the order of the blocks.', 'abraham' ),
@@ -114,4 +124,14 @@ shortcode_ui_register_for_shortcode(
    )
 );
 
+}
+
+
+
+
+function shorts_scripts() {
+    wp_enqueue_script(
+        'shorts_scripts',
+        trailingslashit(get_stylesheet_directory_uri())."assets/js/mehShorts.js"
+    );
 }

@@ -63,8 +63,9 @@ const SOURCESJS = [
 	// ** Flickity ** //
 	'assets/src/js/flickity.pkgd.js',
 	// ** Mine ** //
-	//'assets/src/js/myjs/main.js',
 	'assets/src/js/myjs/Dropdown.js',
+	'assets/src/js/myjs/Morph.js',
+	'assets/src/js/myjs/main.js',
 ];
 
 // Scripts that rely on jQuery
