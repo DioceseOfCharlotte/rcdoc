@@ -2,8 +2,6 @@
   <?php get_template_part('assets/images/icon', esc_attr( $attr['icon_file'] ) ); ?>
 </div>
 
-<?php if ( $query->have_posts() ) { ?>
-
 <div class="mdl-cell u-bg-white mdl-shadow--2dp u-br row__tabs mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
   <div class="mdl-tabs__tab-bar u-bg-tint-1">
 
@@ -26,4 +24,3 @@
   <?php endwhile; ?>
 
 </div>
-<?php }
