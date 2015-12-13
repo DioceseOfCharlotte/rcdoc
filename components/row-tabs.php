@@ -14,7 +14,9 @@
     <?php endwhile; ?>
 
   </div>
-
+  
+    <?php rewind_posts(); ?>
+    
   <?php while ($query->have_posts()) : $query->the_post(); ?>
 
   <div class="mdl-tabs__panel u-p2 tab<?php the_ID(); ?>" id="tab<?php the_ID(); ?>">
