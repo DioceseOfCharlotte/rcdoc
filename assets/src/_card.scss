@@ -1,0 +1,206 @@
+.card {
+  position: relative;
+  display: block;
+  margin-bottom: $base-spacing-unit;
+  background-color: $white;
+  //border: .0625rem solid #e5e5e5;
+  border-radius: $base-radius;
+}
+
+.card-block {
+  padding: $base-spacing-unit;
+}
+
+.card-title {
+  margin-bottom: $base-spacing-unit;
+}
+
+.card-subtitle {
+  margin-top: -$base-spacing-unit--small;
+  margin-bottom: 0;
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+.card-link:hover {
+  text-decoration: none;
+}
+
+.card-link + .card-link {
+  margin-left: $base-spacing-unit;
+}
+
+.card > .list-group:first-child .list-group-item:first-child {
+  border-radius: $base-spacing-unit $base-spacing-unit 0 0;
+}
+
+.card > .list-group:last-child .list-group-item:last-child {
+  border-radius: 0 0 $base-spacing-unit $base-spacing-unit;
+}
+
+.card-header {
+  padding: $base-spacing-unit $base-spacing-unit;
+  background-color: #f5f5f5;
+  border-bottom: .0625rem solid #e5e5e5;
+}
+
+.card-header:first-child {
+  border-radius: $base-spacing-unit $base-spacing-unit 0 0;
+}
+
+.card-footer {
+  padding: $base-spacing-unit $base-spacing-unit;
+  background-color: #f5f5f5;
+  border-top: .0625rem solid #e5e5e5;
+}
+
+.card-footer:last-child {
+  border-radius: 0 0 $base-spacing-unit $base-spacing-unit;
+}
+
+.card-primary {
+  background-color: $base-spacing-unit;
+  border-color: $base-spacing-unit;
+}
+
+.card-success {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+
+.card-info {
+  background-color: #5bc0de;
+  border-color: #5bc0de;
+}
+
+.card-warning {
+  background-color: #f0ad4e;
+  border-color: #f0ad4e;
+}
+
+.card-danger {
+  background-color: #d9534f;
+  border-color: #d9534f;
+}
+
+.card-inverse .card-header,
+.card-inverse .card-footer {
+  border-bottom: .075rem solid rgba(255, 255, 255, .2);
+}
+
+.card-inverse .card-header,
+.card-inverse .card-footer,
+.card-inverse .card-title,
+.card-inverse .card-blockquote {
+  color: $white;
+}
+
+.card-inverse .card-link,
+.card-inverse .card-text,
+.card-inverse .card-blockquote > footer {
+  color: rgba(255, 255, 255, .65);
+}
+
+.card-inverse .card-link:focus, .card-inverse .card-link:hover {
+  color: $white;
+}
+
+.card-blockquote {
+  padding: 0;
+  margin-bottom: 0;
+  border-left: 0;
+}
+
+.card-img {
+  border-radius: $base-radius;
+}
+
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: $base-spacing-unit;
+}
+
+.card-img-top {
+  border-radius: $base-radius $base-radius 0 0;
+}
+
+.card-img-bottom {
+  border-radius: 0 0 $base-radius $base-radius;
+}
+
+@include md {
+    .card-deck {
+      display: flex;
+      flex-flow: row wrap;
+      margin-right: -.625rem;
+      margin-left: -.625rem;
+
+      .card {
+        flex: 1 0 0;
+        margin-right: .625rem;
+        margin-left: .625rem;
+      }
+    }
+}
+
+@include md {
+  .card-group {
+      display: flex;
+      flex-flow: row wrap;
+  }
+  .card-group .card {
+    flex: 1 0 0;
+  }
+  .card-group .card + .card {
+    margin-left: 0;
+    border-left: 0;
+  }
+  .card-group .card:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .card-group .card:first-child .card-img-top {
+    border-top-right-radius: 0;
+  }
+  .card-group .card:first-child .card-img-bottom {
+    border-bottom-right-radius: 0;
+  }
+  .card-group .card:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .card-group .card:last-child .card-img-top {
+    border-top-left-radius: 0;
+  }
+  .card-group .card:last-child .card-img-bottom {
+    border-bottom-left-radius: 0;
+  }
+  .card-group .card:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+  .card-group .card:not(:first-child):not(:last-child) .card-img-top,
+  .card-group .card:not(:first-child):not(:last-child) .card-img-bottom {
+    border-radius: 0;
+  }
+}
+
+@include md {
+  .card-columns {
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3;
+    -webkit-column-gap: $base-spacing-unit;
+       -moz-column-gap: $base-spacing-unit;
+            column-gap: $base-spacing-unit;
+  }
+  .card-columns .card {
+    display: inline-block;
+    width: 100%;
+  }
+}

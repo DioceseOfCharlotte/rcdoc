@@ -2,6 +2,8 @@
 /**
  * This is the template for the different block-type shortcodes.
  */
+
+ while ($query->have_posts()) : $query->the_post();
 ?>
 
 <div class ="gallery-cell">
@@ -14,7 +16,7 @@
                 'image_class' => 'o-crop__content',
                 'link_to_post' => false,
                 'before' => '<div class="o-crop o-crop--16x9">',
-	            'after' => 	'</div>',
+                'after' =>    '</div>',
             ));
         ?>
         <h2 <?php hybrid_attr('entry-title'); ?>>
@@ -28,4 +30,5 @@
 
 </div>
 </div>
-        <?php
+<?php
+endwhile;

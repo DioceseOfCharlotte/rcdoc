@@ -7,8 +7,8 @@ global $post;
         'echo' => 0,
         'depth' => 1,
         'link_after'   => '</span>',
-    	'link_before'  => '<span class="mdl-menu__item">',
-        'title_li'=> ''
+        'link_before'  => '<span class="mdl-menu__item">',
+        'title_li'=> '',
     ));
 
   //$children = wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0&depth=1');

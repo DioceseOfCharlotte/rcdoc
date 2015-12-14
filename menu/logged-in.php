@@ -11,7 +11,7 @@ if (has_nav_menu('logged-in') && is_user_logged_in()) : ?>
             'menu_id'        => 'menu-logged-in__list',
             'menu_class'     => 'menu__list menu-logged-in__list',
             'fallback_cb'    => '',
-            'items_wrap'     => '%3$s'
+            'items_wrap'     => '%3$s',
         ));
     ?>
 </nav>

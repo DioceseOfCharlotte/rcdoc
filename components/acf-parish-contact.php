@@ -17,7 +17,6 @@ $map_link = "http://maps.google.com/maps?z=16&q=" . $address;
 
 
 if( get_field('doc_city') ):
-$output .= '';
 ob_start();
 ?>
 <p class="card-address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
@@ -37,7 +36,7 @@ ob_start();
         <p class="website u-nowrap" itemprop="url"><a href="<?php the_field('doc_website'); ?>"><i class="u-align-middle material-icons">&#xE80B;</i> <?php the_field('doc_website'); ?></a></p>
     <?php endif; ?>
 <?php
-$output .= ob_get_clean();
+echo ob_get_clean();
 endif;
 ob_start(); ?>
 <div class="contact-methods u-overflow-hidden u-px1">
@@ -53,11 +52,6 @@ ob_start(); ?>
     <p class="email" itemprop="email"><a href="mailto:<?php the_field('doc_email'); ?>"><i class="u-align-middle material-icons">&#xE0BE;</i> <?php the_field('doc_email'); ?></a></p>
 <?php endif; ?>
 </div>
-  <button class="u-flexed-center u-1/1 js-dropdown material-icons">expand_more</button>
+  <button class="u-flexed-center u-1/1 js-dropdown js-with-parent js-drop-before material-icons">&#xE5C5;</button>
 <?php
-$output .= ob_get_clean();
-
-
-
-
-echo $output;
+echo ob_get_clean();

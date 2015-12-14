@@ -32,9 +32,9 @@ if (!is_user_logged_in()) {
 $favorites = get_user_favorites();
 if ( $favorites ) : // This is important: if an empty array is passed into the WP_Query parameters, all posts will be returned
 $favorites_query = new WP_Query(array(
-	'post_type' => array('post', 'page', 'attachment', 'employee', 'parish', 'department', 'document'),
-	'posts_per_page' => -1,
-	'post__in' => $favorites
+    'post_type' => array('post', 'page', 'attachment', 'employee', 'parish', 'department', 'document'),
+    'posts_per_page' => -1,
+    'post__in' => $favorites,
 ));
 if ( $favorites_query->have_posts() ) : while ( $favorites_query->have_posts() ) : $favorites_query->the_post();?>
 	<a href="<?php the_permalink(); ?>" class="u-text-gray mdl-menu__item"><?php the_title(); ?></a>
