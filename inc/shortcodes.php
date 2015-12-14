@@ -25,7 +25,7 @@ function meh_row_shortcode($attr, $content = null) {
     $pages = $attr['page'];
 
         $args = array(
-            'post_type' => array( 'page', 'cpt_archive', 'department' ),
+            'post_type' => array( 'page', 'cpt_archive', 'department', 'development' ),
             'post__in'  => explode(',', $pages),
             'orderby'   => 'post__in',
         );
