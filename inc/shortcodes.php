@@ -11,6 +11,7 @@ function meh_add_shortcodes() {
 function meh_row_shortcode($attr, $content = null) {
     $attr = shortcode_atts(array(
         'row_type'      => '',
+        'slide_type'    => '',
         'row_color'     => '',
         'bg_image'      => '',
         'row_intro'     => '',
@@ -25,7 +26,7 @@ function meh_row_shortcode($attr, $content = null) {
     $pages = $attr['page'];
 
         $args = array(
-            'post_type' => array( 'page', 'cpt_archive', 'department', 'development' ),
+            'post_type' => array( 'page', 'cpt_archive', 'department', 'vocation', 'development' ),
             'post__in'  => explode(',', $pages),
             'orderby'   => 'post__in',
         );
@@ -81,11 +82,19 @@ function meh_row_shortcode($attr, $content = null) {
 
     <?php elseif ('slides' === $attr['row_type']) : ?>
 
-        <div class="section-row__content gallery js-flickity" data-flickity-options='{ "wrapAround": true, "pageDots": false, "freeScroll": true }'>
-            <?php include locate_template('/components/row-slides.php'); ?>
+        <?php if ('photo' === $attr['slide_type']) { ?>
+
+        <div class="section-row__content gallery js-flickity" data-flickity-options='{ "wrapAround": true, "autoPlay": true, "freeScroll": true }'>
+            <?php include locate_template('/components/row-photoslides.php'); ?>
         </div>
 
-    <?php endif; ?>
+    <?php } elseif ('card' === $attr['slide_type']) { ?>
+
+        <div class="section-row__content gallery js-flickity" data-flickity-options='{ "wrapAround": true, "autoPlay": true, "freeScroll": true }'>
+            <?php include locate_template('/components/row-slides.php'); ?>
+        </div>
+    <?php }
+     endif; ?>
 
 </section>
 

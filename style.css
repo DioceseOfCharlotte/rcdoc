@@ -7348,6 +7348,15 @@ http://flickity.metafizzy.co
     padding: 5px;
 }
 
+.archive-vocation .flickity-viewport {
+    overflow-y: hidden; 
+    max-height: 500px;
+}
+
+img {
+    width: 100%;
+}
+
 /* Styles specific to the editor. */
 body#tinymce {
     min-height: 50px; 

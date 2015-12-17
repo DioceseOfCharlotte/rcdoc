@@ -753,3 +753,14 @@ http://flickity.metafizzy.co
     //background-size: 100%;
     //padding: 300px 0;
 }
+
+
+.archive-vocation .flickity-viewport {
+    max-height: 500px;
+    overflow-y: hidden;
+}
+
+
+img {
+    width: 100%;
+}

@@ -38,6 +38,16 @@ shortcode_ui_register_for_shortcode(
             ),
 
             array(
+                'label'   => 'Slide Type',
+                'attr'    => 'slide_type',
+                'type'    => 'select',
+                'options'     => array(
+                    'card'    => esc_html__( 'Content Cards', 'abraham' ),
+                    'photo'    => esc_html__( 'Photo Slides', 'abraham' ),
+                ),
+            ),
+
+            array(
                 'label'   => 'Row Background Color',
                 'attr'    => 'row_color',
                 'type'    => 'select',
@@ -92,7 +102,7 @@ shortcode_ui_register_for_shortcode(
                 'label'    => 'Select Pages to Display',
                 'attr'     => 'page',
                 'type'     => 'post_select',
-                'query'    => array('post_type' => array( 'department', 'development' )),
+                'query'    => array('post_type' => array( 'department', 'development', 'vocation' )),
                 'multiple' => true,
            ),
            array(

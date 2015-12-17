@@ -446,7 +446,7 @@ function doc_vocations_register_post_types() {
             'menu_icon'           => 'dashicons-businessman',
             'can_export'          => true,
             'delete_with_user'    => false,
-            'hierarchical'        => false,
+            'hierarchical'        => true,
             'taxonomies'          => array( 'category', 'post_tag' ),
             'has_archive'         => 'vocations',
             'query_var'           => 'vocation',
