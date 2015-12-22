@@ -111,7 +111,6 @@ gulp.task('styles', () => {
 		.pipe(gulp.dest('.tmp'))
 		// Concatenate Styles
 		.pipe($.concat('style.css'))
-		.pipe($.csscomb())
 		.pipe(gulp.dest('./'))
 		// Minify Styles
 		.pipe($.if('*.css', $.minifyCss()))
