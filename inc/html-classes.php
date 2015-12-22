@@ -28,7 +28,7 @@ function rcdoc_html_classes() {
         // ENTRY
         'post'                        => 'mdl-cell u-mb2 u-1/1 mdl-card u-py4 u-px3 u-text-gray u-overflow-visible',
         'post_archive'                => 'mdl-cell mdl-card mdl-shadow--2dp',
-        'post_featured'               => 'u-flexed-first u-1/1',
+        'post_featured'               => 'u-1/1',
         'post_wide'                    => 'u-bg-transparent u-m0 u-p0',
 
         'page_header'                 => 'page-header u-1/1 u-text-center',
