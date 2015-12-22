@@ -63,22 +63,20 @@ function meh_post_type_archive_supports() {
     add_post_type_support( 'vocation', 'archive' );
 }
 
-add_filter( 'hybrid_get_theme_layout', 'my_pt_archive_layout' );
+//add_filter( 'hybrid_get_theme_layout', 'my_pt_archive_layout' );
 
-
-
-function my_pt_archive_layout($layout) {
-
-    $archive_layout = '';
-
-    if ( is_post_type_archive() ) {
-        global $cptarchives;
-
-        $archive_layout = hybrid_get_post_layout( $cptarchives->get_archive_id() );
-    }
-
-    return $archive_layout && 'default' !== $archive_layout ? $archive_layout : layout;
-}
+// function my_pt_archive_layout($layout) {
+//
+//     $archive_layout = '';
+//
+//     if ( is_post_type_archive() ) {
+//         global $cptarchives;
+// 
+//         $archive_layout = hybrid_get_post_layout( $cptarchives->get_archive_id() );
+//     }
+//
+//     return $archive_layout && 'default' !== $archive_layout ? $archive_layout : layout;
+// }
 
 
 
