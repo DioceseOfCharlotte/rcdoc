@@ -121,3 +121,47 @@ function doc_schools_register_taxonomies() {
         )
     );
 }
+
+
+
+
+// Register Custom Taxonomy
+function archive_taxonomy() {
+
+	$labels = array(
+		'name'                       => _x( 'Landing Pages', 'Taxonomy General Name', 'abraham' ),
+		'singular_name'              => _x( 'Landing Page', 'Taxonomy Singular Name', 'abraham' ),
+		'menu_name'                  => __( 'Landing Page', 'abraham' ),
+		'all_items'                  => __( 'All Items', 'abraham' ),
+		'parent_item'                => __( 'Parent Item', 'abraham' ),
+		'parent_item_colon'          => __( 'Parent Item:', 'abraham' ),
+		'new_item_name'              => __( 'New Landing Page', 'abraham' ),
+		'add_new_item'               => __( 'Add Landing Page', 'abraham' ),
+		'edit_item'                  => __( 'Edit Landing Page', 'abraham' ),
+		'update_item'                => __( 'Update Landing Page', 'abraham' ),
+		'view_item'                  => __( 'View Landing Page', 'abraham' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'abraham' ),
+		'add_or_remove_items'        => __( 'Add or remove items', 'abraham' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'abraham' ),
+		'popular_items'              => __( 'Popular Items', 'abraham' ),
+		'search_items'               => __( 'Search Items', 'abraham' ),
+		'not_found'                  => __( 'Not Found', 'abraham' ),
+		'no_terms'                   => __( 'No items', 'abraham' ),
+		'items_list'                 => __( 'Items list', 'abraham' ),
+		'items_list_navigation'      => __( 'Items list navigation', 'abraham' ),
+	);
+	$args = array(
+		'labels'                          => $labels,
+		'hierarchical'                    => false,
+		'public'                          => true,
+		'show_ui'                         => true,
+        'show_in_menu'                    => true,
+		'show_admin_column'               => false,
+		'show_in_nav_menus'               => true,
+		'show_tagcloud'                   => false,
+		'query_var'                       => 'landing_page',
+	);
+	register_taxonomy( 'landing', array( 'vocation', 'bishop' ), $args );
+
+}
+add_action( 'init', 'archive_taxonomy', 0 );

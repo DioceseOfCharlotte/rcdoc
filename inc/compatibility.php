@@ -62,3 +62,33 @@ function meh_post_type_archive_supports() {
     add_post_type_support( 'tribunal', 'archive' );
     add_post_type_support( 'vocation', 'archive' );
 }
+
+add_filter( 'hybrid_get_theme_layout', 'my_pt_archive_layout' );
+
+
+
+function my_pt_archive_layout($layout) {
+
+    $archive_layout = '';
+
+    if ( is_post_type_archive() ) {
+        global $cptarchives;
+
+        $archive_layout = hybrid_get_post_layout( $cptarchives->get_archive_id() );
+    }
+
+    return $archive_layout && 'default' !== $archive_layout ? $archive_layout : layout;
+}
+
+
+
+
+function cpt_landing_page($post_id) {
+    $current_post = get_post( $post_id );
+    $landing_term = get_post_type( $post_id );
+
+    if ( $current_post->post_date == $current_post->post_modified ) {
+        wp_set_object_terms( $post_id, $landing_term, landing, true );
+    }
+}
+add_action( 'save_post_vocation', 'cpt_landing_page' );
