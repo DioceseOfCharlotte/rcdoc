@@ -9,19 +9,19 @@ add_action('init', 'meh_post_type_archive_supports', 5);
 
 // Let custom post types use the categories
 //
-function query_post_type($query) {
-    if ( ! is_admin() && $query->is_main_query() ) :
-        if(is_category() || is_tag()) {
-            $post_type = get_query_var('post_type');
-            if($post_type)
-                $post_type = $post_type;
-            else
-                $post_type = array('post','development','chancery','vocation');
-            $query->set('post_type', $post_type);
-            return $query;
-        }
-endif;
-}
+// function query_post_type($query) {
+//     if ( ! is_admin() && $query->is_main_query() ) :
+//         if(is_category() || is_tag()) {
+//             $post_type = get_query_var('post_type');
+//             if($post_type)
+//                 $post_type = $post_type;
+//             else
+//                 $post_type = array('post','development','chancery','vocation');
+//             $query->set('post_type', $post_type);
+//             return $query;
+//         }
+// endif;
+// }
 
 
 
@@ -63,30 +63,59 @@ function meh_post_type_archive_supports() {
     add_post_type_support( 'vocation', 'archive' );
 }
 
-//add_filter( 'hybrid_get_theme_layout', 'my_pt_archive_layout' );
+add_filter( 'hybrid_get_theme_layout', 'my_pt_archive_layout' );
 
-// function my_pt_archive_layout($layout) {
+function my_pt_archive_layout( $layout ) {
+
+    //$layout = '';
+
+    if ( is_post_type_archive() ) {
+        global $cptarchives;
+
+        $layout = hybrid_get_post_layout( $cptarchives->get_archive_id() );
+    }
+
+    return $layout && 'default' !== $layout ? $layout : layout;
+}
+
+
+
+// function cpt_landing_page($post_id) {
+//     $current_post = get_post( $post_id );
+//     $landing_term = get_post_type( $post_id );
 //
-//     $archive_layout = '';
-//
-//     if ( is_post_type_archive() ) {
-//         global $cptarchives;
-// 
-//         $archive_layout = hybrid_get_post_layout( $cptarchives->get_archive_id() );
+//     if ( $current_post->post_date == $current_post->post_modified ) {
+//         wp_set_object_terms( $post_id, $landing_term, landing, true );
 //     }
+// }
+// add_action( 'save_post_vocation', 'cpt_landing_page' );
+
+// add_action('admin_menu', 'register_landing_page');
 //
-//     return $archive_layout && 'default' !== $archive_layout ? $archive_layout : layout;
+// function register_landing_page() {
+// 	add_submenu_page(
+//         'edit.php?post_type=vocation',
+//         'Landing Page',
+//         'Landing Page',
+//         'edit_posts',
+//         'edit-tags.php?action=edit&taxonomy=landing&tag_ID=69'
+//     );
+// }
+
+// function landing_page_callback() {
+//
+// 	echo '<div class="wrap"><div id="icon-tools" class="icon32"></div>';
+// 		echo '<h2>Landing Page</h2>';
+// 	echo '</div>';
+//
 // }
 
 
-
-
-function cpt_landing_page($post_id) {
-    $current_post = get_post( $post_id );
-    $landing_term = get_post_type( $post_id );
-
-    if ( $current_post->post_date == $current_post->post_modified ) {
-        wp_set_object_terms( $post_id, $landing_term, landing, true );
-    }
-}
-add_action( 'save_post_vocation', 'cpt_landing_page' );
+    // add_submenu_page(
+    //     'edit.php?post_type=' . ccp_get_project_post_type(),
+    //     esc_html__( 'Portfolio Settings', 'custom-content-portfolio' ),
+    //     esc_html__( 'Settings',           'custom-content-portfolio' ),
+    //     apply_filters( 'ccp_settings_capability', 'manage_options' ),
+    //     'settings',
+    //     array( $this, 'settings_page' )
+    // );

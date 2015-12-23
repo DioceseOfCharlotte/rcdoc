@@ -2,7 +2,7 @@
 
 add_action( 'init', 'doc_schools_register_taxonomies' );
 add_action( 'init', 'doc_agencies_register_taxonomies' );
-
+//add_action( 'init', 'archive_taxonomy', 0 );
 
 
 
@@ -156,6 +156,8 @@ function archive_taxonomy() {
 		'public'                          => true,
 		'show_ui'                         => true,
         'show_in_menu'                    => true,
+        //'show_in_quick_edit'              => false,
+        //'meta_box_cb'                     => false,
 		'show_admin_column'               => false,
 		'show_in_nav_menus'               => true,
 		'show_tagcloud'                   => false,
@@ -164,4 +166,3 @@ function archive_taxonomy() {
 	register_taxonomy( 'landing', array( 'vocation', 'bishop' ), $args );
 
 }
-add_action( 'init', 'archive_taxonomy', 0 );
