@@ -20,7 +20,7 @@
 @if $target-elements-directly == true {
   html, body {
     font-family: $performance_font;
-    font-size: 1rem;
+    font-size: 14px;
     font-weight: 400;
     line-height: 20px;
   }
@@ -43,49 +43,49 @@
   h1 {
     @include typo-display-3;
 
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 24px;
+    margin-bottom: 24px;
   }
 
   h2 {
     @include typo-display-2;
 
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 24px;
+    margin-bottom: 24px;
   }
 
   h3 {
     @include typo-display-1;
 
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 24px;
+    margin-bottom: 24px;
   }
 
   h4 {
     @include typo-headline;
 
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
+    margin-top: 24px;
+    margin-bottom: 16px;
   }
 
   h5 {
     @include typo-title;
 
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
+    margin-top: 24px;
+    margin-bottom: 16px;
   }
 
   h6 {
     @include typo-subhead;
 
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
+    margin-top: 24px;
+    margin-bottom: 16px;
   }
 
   p {
     @include typo-body-1;
 
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
   }
 
   a {
@@ -297,16 +297,5 @@
 }
 
 .material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 1.5rem;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  word-wrap: normal;
-  font-feature-settings: 'liga';
-  -webkit-font-feature-settings: 'liga';
-  -webkit-font-smoothing: antialiased;
+  @include typo-icon;
 }

@@ -272,6 +272,7 @@ $progress-image-path: $image_path;
 
 $list-container-item-border-color: unquote("rgb(#{$palette-grey-300})") !default;
 $list-container-view-background: unquote("rgb(#{$color-white})") !default;
+$list-supporting-text-text-color: unquote("rgba(#{$color-black}, 0.54)") !default;
 
 /* ==========  Item ========== */
 
@@ -365,10 +366,9 @@ $menu-fade-duration: 0.2s !default;
 $list-container-height: 500px !default;
 $list-container-width: 400px !default;
 $list-container-item-height: 70px !default;
+// $list__item-hover-color: unquote("rgb(#{$palette-grey-300})") !default;
 
 /* LAYOUT */
-
-$layout-nav-link-font-size: 13px !default;
 
 $layout-drawer-narrow: 240px !default;
 $layout-drawer-wide: 456px !default;
@@ -501,6 +501,7 @@ $badge-background: unquote("rgb(#{$color-accent})") !default;
 $badge-background-inverse: unquote("rgba(#{$color-accent-contrast},0.2)") !default;
 $badge-size : 22px !default;
 $badge-padding: 2px !default;
+$badge-overlap: 12px !default;
 
 /* SHADOWS */
 
@@ -533,8 +534,10 @@ $grid-max-columns: $grid-desktop-columns !default;
 
 $data-table-font-size: 13px !default;
 $data-table-header-font-size: 12px !default;
+$data-table-header-sort-icon-size: 16px !default;
 
 $data-table-header-color: rgba(#000, 0.54) !default;
+$data-table-header-sorted-color: rgba(#000, 0.87) !default;
 $data-table-divider-color: rgba(#000, 0.12) !default;
 
 $data-table-hover-color: #eeeeee !default;
