@@ -764,3 +764,158 @@ http://flickity.metafizzy.co
 // img {
 //     width: 100%;
 // }
+
+
+
+// JP STYLES
+
+/*
+Welcome to Custom CSS!
+
+To learn how this works, see http://wp.me/PEmnE-Bt
+*/
+.page-numbers {
+	background: #fff;
+	color: #232527;
+	border-radius: 3px;
+	padding: 1px 8px;
+	margin-right: 5px;
+}
+
+.prev.page-numbers, .next.page-numbers, .page-numbers.dots {
+	background-color: transparent;
+	padding: 0;
+}
+
+.meta-nav.mdl-button {
+	background-color: #fff !important;
+}
+
+#site .u-text-gray {
+	color: #55595c;
+}
+
+.gv-grid-col-2-3.gv-list-view-content-description {
+	width: 100%;
+}
+
+.archive-description.u-max-width.u-p3.u-mb1.u-mx-auto.u-br.u-bg-frost-4.mdl-shadow--3dp {
+	text-align: left;
+}
+
+blockquote {
+	font-size: 18px;
+	background-color: rgba(228,234,236,.8);
+}
+
+.blockquote > blockquote {
+	background-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: .5rem;
+	margin-bottom: 1rem;
+	opacity: .8;
+}
+
+.card-body a {
+	display: inline-block;
+}
+
+.widget_nav_menu {
+	padding: 0 !important;
+}
+
+.nav-menu {
+	margin-left: 0;
+}
+
+.flickity-prev-next-button {
+	width: 5%;
+	bottom: 0;
+	height: 100%;
+	border-radius: 0;
+}
+
+.flickity-prev-next-button.previous {
+	left: 0;
+	background: linear-gradient(to right,rgba(15,19,42,.4),transparent);
+}
+
+.flickity-prev-next-button.next {
+	right: 0;
+	background: linear-gradient(to left,rgba(15,19,42,.4),transparent);
+}
+
+.gallery-cell {
+	height: 400px;
+	padding: 0;
+	margin-right: 1em;
+}
+
+.gallery-cell > .mdl-card {
+	height: 395px;
+}
+
+.tile {
+	width: 100%;
+	height: 100%;
+	max-width: 256px;
+	max-height: 256px;
+}
+
+@media screen and (max-width: 51em) {
+	.tile {
+		max-width: 44%;
+	}
+
+	.tile h4 {
+		font-size: 16px;
+	}
+
+	.tile .mdl-card__actions {
+		padding: 0;
+	}
+}
+
+.no-parallax-row {
+	box-shadow: 0 4px 5px 0 rgba(0,48,102,.14), 0 1px 10px 0 rgba(0,48,102,.12), 0 2px 4px -1px rgba(0,48,102,.2);
+}
+
+.no-parallax-row:before {
+	content: " ";
+	background-color: rgba(41,128,185,0.75);
+	width: 100%;
+	position: absolute;
+	height: 100%;
+	top: 0;
+}
+
+#row-give::after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	background: radial-gradient(90px at 50% 20%,rgba(228,234,236,.1),rgba(228,234,236,.1) 97%,transparent), radial-gradient(40px at 85% 8%,rgba(228,234,236,.2),rgba(228,234,236,.2) 94%,transparent), radial-gradient(70px at 10% 50%,rgba(228,234,236,.1),rgba(228,234,236,.1) 96%,transparent), radial-gradient(120px at 37% 30%,rgba(228,234,236,.2),rgba(228,234,236,.2) 97%,transparent), radial-gradient(30px at 30% 69%,rgba(228,234,236,.2),rgba(228,234,236,.2) 96%,transparent), radial-gradient(50px at 70% 95%,rgba(255,192,203,.1),rgba(255,192,203,.1) 95%,transparent), radial-gradient(60px at 93% 44%,rgba(228,234,236,.2),rgba(228,234,236,.2) 94%,transparent), radial-gradient(80px at 76% 87%,rgba(228,234,236,.1),rgba(228,234,236,.1) 96%,transparent), radial-gradient(100px at 0px 21%,rgba(228,234,236,.2),rgba(228,234,236,.2) 97%,transparent), radial-gradient(40px at 25% 79%,rgba(228,234,236,.2),rgba(228,234,236,.2) 96%,transparent), radial-gradient(50px at 82% 55%,rgba(228,234,236,.1),rgba(228,234,236,.1) 95%,transparent);
+}
+
+#row-give > div {
+	z-index: 1;
+}
+
+header#header:not(.is-compact) {
+	background: none;
+	z-index: 1;
+}
+
+.location-wrap > .locate-me {
+	top: 10px;
+	z-index: 1;
+}
+
+select#facetwp-radius {
+	width: 100px;
+}

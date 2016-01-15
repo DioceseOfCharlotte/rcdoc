@@ -2,7 +2,9 @@
 
 add_action( 'init', 'doc_schools_register_taxonomies' );
 add_action( 'init', 'doc_agencies_register_taxonomies' );
-//add_action( 'init', 'archive_taxonomy', 0 );
+add_action( 'init', 'register_filetype_taxonomy' );
+add_action( 'init', 'register_file_category_taxonomy' );
+add_action( 'init', 'register_document_type_taxonomy' );
 
 
 
@@ -123,46 +125,119 @@ function doc_schools_register_taxonomies() {
 }
 
 
+// Register Filetype Taxonomy
+function register_filetype_taxonomy() {
+
+	$labels = array(
+		'name'                       => _x( 'Filetypes', 'Taxonomy General Name', 'rcdoc' ),
+		'singular_name'              => _x( 'Filetype', 'Taxonomy Singular Name', 'rcdoc' ),
+		'menu_name'                  => __( 'Filetype', 'rcdoc' ),
+		'all_items'                  => __( 'All Filetypes', 'rcdoc' ),
+		'parent_item'                => __( 'Parent Item', 'rcdoc' ),
+		'parent_item_colon'          => __( 'Parent Item:', 'rcdoc' ),
+		'new_item_name'              => __( 'New Item Name', 'rcdoc' ),
+		'add_new_item'               => __( 'Add New Item', 'rcdoc' ),
+		'edit_item'                  => __( 'Edit Item', 'rcdoc' ),
+		'update_item'                => __( 'Update Item', 'rcdoc' ),
+		'view_item'                  => __( 'View Item', 'rcdoc' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'rcdoc' ),
+		'add_or_remove_items'        => __( 'Add or remove items', 'rcdoc' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'rcdoc' ),
+		'popular_items'              => __( 'Popular Items', 'rcdoc' ),
+		'search_items'               => __( 'Search Items', 'rcdoc' ),
+		'not_found'                  => __( 'Not Found', 'rcdoc' ),
+		'no_terms'                   => __( 'No items', 'rcdoc' ),
+		'items_list'                 => __( 'Items list', 'rcdoc' ),
+		'items_list_navigation'      => __( 'Items list navigation', 'rcdoc' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => false,
+		'public'                     => true,
+		'show_ui'                    => false,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => false,
+		'show_tagcloud'              => false,
+	);
+	register_taxonomy( 'filetype', array( 'document' ), $args );
+
+}
+
 
 
 // Register Custom Taxonomy
-function archive_taxonomy() {
+function register_file_category_taxonomy() {
 
 	$labels = array(
-		'name'                       => _x( 'Landing Pages', 'Taxonomy General Name', 'abraham' ),
-		'singular_name'              => _x( 'Landing Page', 'Taxonomy Singular Name', 'abraham' ),
-		'menu_name'                  => __( 'Landing Page', 'abraham' ),
-		'all_items'                  => __( 'All Items', 'abraham' ),
-		'parent_item'                => __( 'Parent Item', 'abraham' ),
-		'parent_item_colon'          => __( 'Parent Item:', 'abraham' ),
-		'new_item_name'              => __( 'New Landing Page', 'abraham' ),
-		'add_new_item'               => __( 'Add Landing Page', 'abraham' ),
-		'edit_item'                  => __( 'Edit Landing Page', 'abraham' ),
-		'update_item'                => __( 'Update Landing Page', 'abraham' ),
-		'view_item'                  => __( 'View Landing Page', 'abraham' ),
-		'separate_items_with_commas' => __( 'Separate items with commas', 'abraham' ),
-		'add_or_remove_items'        => __( 'Add or remove items', 'abraham' ),
-		'choose_from_most_used'      => __( 'Choose from the most used', 'abraham' ),
-		'popular_items'              => __( 'Popular Items', 'abraham' ),
-		'search_items'               => __( 'Search Items', 'abraham' ),
-		'not_found'                  => __( 'Not Found', 'abraham' ),
-		'no_terms'                   => __( 'No items', 'abraham' ),
-		'items_list'                 => __( 'Items list', 'abraham' ),
-		'items_list_navigation'      => __( 'Items list navigation', 'abraham' ),
+		'name'                       => _x( 'Document Categories', 'Taxonomy General Name', 'rcdoc' ),
+		'singular_name'              => _x( 'Doc Category', 'Taxonomy Singular Name', 'rcdoc' ),
+		'menu_name'                  => __( 'Categories', 'rcdoc' ),
+		'all_items'                  => __( 'All Categories', 'rcdoc' ),
+		'parent_item'                => __( 'Parent Item', 'rcdoc' ),
+		'parent_item_colon'          => __( 'Parent Item:', 'rcdoc' ),
+		'new_item_name'              => __( 'New Item Name', 'rcdoc' ),
+		'add_new_item'               => __( 'Add New Item', 'rcdoc' ),
+		'edit_item'                  => __( 'Edit Item', 'rcdoc' ),
+		'update_item'                => __( 'Update Item', 'rcdoc' ),
+		'view_item'                  => __( 'View Item', 'rcdoc' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'rcdoc' ),
+		'add_or_remove_items'        => __( 'Add or remove items', 'rcdoc' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'rcdoc' ),
+		'popular_items'              => __( 'Popular Items', 'rcdoc' ),
+		'search_items'               => __( 'Search Items', 'rcdoc' ),
+		'not_found'                  => __( 'Not Found', 'rcdoc' ),
+		'no_terms'                   => __( 'No items', 'rcdoc' ),
+		'items_list'                 => __( 'Items list', 'rcdoc' ),
+		'items_list_navigation'      => __( 'Items list navigation', 'rcdoc' ),
 	);
 	$args = array(
-		'labels'                          => $labels,
-		'hierarchical'                    => false,
-		'public'                          => true,
-		'show_ui'                         => true,
-        'show_in_menu'                    => true,
-        //'show_in_quick_edit'              => false,
-        //'meta_box_cb'                     => false,
-		'show_admin_column'               => false,
-		'show_in_nav_menus'               => true,
-		'show_tagcloud'                   => false,
-		'query_var'                       => 'landing_page',
+		'labels'                     => $labels,
+		'hierarchical'               => false,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
 	);
-	register_taxonomy( 'landing', array( 'vocation', 'bishop' ), $args );
+	register_taxonomy( 'document_category', array( 'document' ), $args );
+
+}
+
+
+// Register Custom Taxonomy
+function register_document_type_taxonomy() {
+
+	$labels = array(
+		'name'                       => _x( 'Document Types', 'Taxonomy General Name', 'rcdoc' ),
+		'singular_name'              => _x( 'Document Type', 'Taxonomy Singular Name', 'rcdoc' ),
+		'menu_name'                  => __( 'Types', 'rcdoc' ),
+		'all_items'                  => __( 'All Document Types', 'rcdoc' ),
+		'parent_item'                => __( 'Parent Item', 'rcdoc' ),
+		'parent_item_colon'          => __( 'Parent Item:', 'rcdoc' ),
+		'new_item_name'              => __( 'New Item Name', 'rcdoc' ),
+		'add_new_item'               => __( 'Add New Item', 'rcdoc' ),
+		'edit_item'                  => __( 'Edit Item', 'rcdoc' ),
+		'update_item'                => __( 'Update Item', 'rcdoc' ),
+		'view_item'                  => __( 'View Item', 'rcdoc' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'rcdoc' ),
+		'add_or_remove_items'        => __( 'Add or remove items', 'rcdoc' ),
+		'choose_from_most_used'      => __( 'Choose from the most used', 'rcdoc' ),
+		'popular_items'              => __( 'Popular Items', 'rcdoc' ),
+		'search_items'               => __( 'Search Items', 'rcdoc' ),
+		'not_found'                  => __( 'Not Found', 'rcdoc' ),
+		'no_terms'                   => __( 'No items', 'rcdoc' ),
+		'items_list'                 => __( 'Items list', 'rcdoc' ),
+		'items_list_navigation'      => __( 'Items list navigation', 'rcdoc' ),
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => false,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+	);
+	register_taxonomy( 'document_type', array( 'document' ), $args );
 
 }
