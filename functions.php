@@ -124,3 +124,19 @@ function abraham_widgets() {
         'class'         => '',
     ));
 }
+
+function get_non_hierarchy_cpts() {
+	$cpt_non_hierarchy = array( 'bishop', 'chancery', 'deacon', 'development', 'finance', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'tribunal', 'vocation' );
+    return $cpt_non_hierarchy;
+}
+
+function get_hierarchy_cpts() {
+	$cpt_hierarchy = array(
+        'page',
+        'cpt_archive',
+        'department',
+		'parish',
+		'school'
+        );
+    return $cpt_hierarchy;
+}
