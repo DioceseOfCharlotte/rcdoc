@@ -3,6 +3,21 @@
 add_action( 'save_post_document', 'wpdr_update_filetype' );
 add_filter( 'document_permalink', 'wpdr_remove_dates_from_permalink_filter', 10, 2 );
 add_filter( 'document_rewrite_rules', 'wpdr_remove_date_from_rewrite_rules' );
+add_filter( 'map_meta_cap', 'wpdr_map_meta_cap', 16, 4 );
+
+
+function wpdr_map_meta_cap( $caps, $cap, $user_id, $args ) {
+
+    if ( 'read_post' === $cap ) {
+        $post = get_post( $args[0] );
+
+        if ( 'document' === $post->post_type && 'private' === $post->post_status && members_can_user_view_post( $user_id, $post->ID ) ) {
+            $caps = array();
+        }
+    }
+
+    return $caps;
+}
 
 // auto-add filetype term to wp-document-revisions docs
 function wpdr_update_filetype($post_id) {
