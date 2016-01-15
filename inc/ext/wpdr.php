@@ -1,9 +1,10 @@
 <?php
 
+add_filter( 'map_meta_cap', 'wpdr_map_meta_cap', 16, 4 );
+add_action('pre_get_posts','doc_doc_archive');
 add_action( 'save_post_document', 'wpdr_update_filetype' );
 add_filter( 'document_permalink', 'wpdr_remove_dates_from_permalink_filter', 10, 2 );
 add_filter( 'document_rewrite_rules', 'wpdr_remove_date_from_rewrite_rules' );
-add_filter( 'map_meta_cap', 'wpdr_map_meta_cap', 16, 4 );
 
 
 function wpdr_map_meta_cap( $caps, $cap, $user_id, $args ) {
@@ -18,6 +19,16 @@ function wpdr_map_meta_cap( $caps, $cap, $user_id, $args ) {
 
     return $caps;
 }
+
+
+function doc_doc_archive($query) {
+  if ( !is_admin() && $query->is_main_query() ) {
+    if ( is_post_type_archive( 'document' )) {
+      $query->set('post_status', array( 'publish', 'inherit', 'private' ) );
+    }
+  }
+}
+
 
 // auto-add filetype term to wp-document-revisions docs
 function wpdr_update_filetype($post_id) {

@@ -107,3 +107,16 @@ function doc_display_facets() {
     }
 
 }
+
+
+
+
+
+
+// Index attachments (post_status = inherit)
+function my_facetwp_indexer_query_args( $args ) {
+    $args['post_status'] = array( 'publish', 'inherit', 'private' );
+    return $args;
+}
+
+add_filter( 'facetwp_indexer_query_args', 'my_facetwp_indexer_query_args' );
