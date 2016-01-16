@@ -2,3 +2,18 @@
 
 add_post_type_support('gravityview', 'theme-layouts');
 add_post_type_support('sc_event', 'theme-layouts');
+
+add_action( 'pre_get_posts', 'doc_post_order', 1 );
+function doc_post_order( $query ) {
+    if ( is_admin() || ! $query->is_main_query() )
+        return;
+    if ( is_post_type_archive( 'department' ) || is_post_type_archive( 'parish' ) || is_post_type_archive( 'school' ) ) {
+        $query->set( 'order', 'ASC' );
+	  	$query->set('orderby', 'name');
+	  	$query->set('post_parent', 0);
+        return;
+    } elseif ( is_post_type_archive() ) {
+	  	$query->set( 'order', 'ASC' );
+	  	$query->set('orderby', 'menu_order');
+	}
+}
