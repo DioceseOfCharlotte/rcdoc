@@ -57,7 +57,7 @@ function doc_register_doc_category_facets( $facets ) {
     $facets[] = array(
         'label' => 'Title Alpha',
         'name' => 'title_alpha',
-        'type' => 'alphabet',
+        'type' => 'alpha',
     );
 
     // $facets[] = array(
