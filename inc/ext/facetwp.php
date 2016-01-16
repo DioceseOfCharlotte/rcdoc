@@ -1,8 +1,5 @@
 <?php
 
-add_filter( 'facetwp_proximity_store_distance', '__return_true' );
-
-// Register the facets
 
 add_filter( 'facetwp_facets', 'doc_register_doc_category_facets' );
 
@@ -113,10 +110,12 @@ function doc_display_facets() {
 
 
 
-// Index attachments (post_status = inherit)
-function my_facetwp_indexer_query_args( $args ) {
-    $args['post_status'] = array( 'publish', 'inherit', 'private' );
-    return $args;
+// Index attachments (post_status)
+function wpdr_facetwp_indexer_query_args( $args ) {
+    if ( is_post_type_archive( 'document' )) {
+        $args['post_status'] = array( 'publish', 'private' );
+        return $args;
+    }
 }
 
-add_filter( 'facetwp_indexer_query_args', 'my_facetwp_indexer_query_args' );
+add_filter( 'facetwp_indexer_query_args', 'wpdr_facetwp_indexer_query_args' );

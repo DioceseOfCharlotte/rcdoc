@@ -22,10 +22,8 @@ function wpdr_map_meta_cap( $caps, $cap, $user_id, $args ) {
 
 
 function doc_doc_archive($query) {
-  if ( !is_admin() && $query->is_main_query() ) {
-    if ( is_post_type_archive( 'document' )) {
+  if ( !is_admin() && $query->is_main_query() && is_post_type_archive( 'document' ) ) {
       $query->set('post_status', array( 'publish', 'inherit', 'private' ) );
-    }
   }
 }
 
