@@ -6,8 +6,10 @@
  */
 
  while ($query->have_posts()) : $query->the_post();
-?>
-    <div id="post-<?php the_ID(); ?>" class="tile <?php the_field('accent_color'); ?> mdl-cell mdl-card mdl-shadow--2dp shadow-hover">
+
+$doc_color = get_post_meta( get_the_ID(), 'rcdoc_colors', true ); ?>
+
+    <div id="post-<?php the_ID(); ?>" class="tile o-cell mdl-card mdl-shadow--2dp shadow-hover" style="background-color: <?= esc_html( $doc_color ) ?>">
         <a href="<?php the_permalink(); ?>" class="mdl-card__title mdl-card--expand u-flex-column u-flex-justify-center u-text-center">
             <?php get_template_part('assets/images/icon', get_the_slug() ); ?>
             <div class="mdl-card__actions">

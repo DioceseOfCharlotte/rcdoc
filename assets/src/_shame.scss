@@ -15,36 +15,6 @@
 	display: none;
 }
 
-.mdl-layout__header .scrollindicator {
-	display: none;
-	position: absolute;
-	top: 0;
-	width: 48px;
-	height: 64px;
-	margin-right: 0;
-	line-height: 64px;
-	text-align: center;
-	cursor: pointer;
-	user-select: none;
-}
-
-.mdl-layout__header .scrollindicator.disabled {
-	opacity: 0.12;
-	cursor: default;
-}
-
-.mdl-layout__header .scrollindicator.scrollindicator--right {
-	right: 0;
-}
-
-.mdl-layout__header .scrollindicator.scrollindicator--left {
-	left: 0;
-}
-
-.mdl-layout__header.is-small-screen .scrollindicator.scrollindicator.scrollindicator {
-	display: block;
-}
-
 .account-dropdown:after {
 	display: block;
 	position: absolute;
@@ -331,14 +301,11 @@ header#header:not(.is-compact) {
 	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='##000000',EndColorStr='##000000');
 }
 
-header#header {
-	border: 0 !important;
-	transition: 0.5s ease;
-}
+// header#header {
+// 	border: 0 !important;
+// 	transition: 0.5s ease;
+// }
 
-.mdl-layout__header .mdl-layout__drawer-button {
-	background-color: transparent;
-}
 
 .contact-map {
 	color: black !important;
@@ -354,10 +321,6 @@ header#header {
 
 .gv-list-view-content {
 	padding: 0;
-}
-
-.mdl-layout__header .mdl-layout__drawer-button {
-	background-color: transparent;
 }
 
 #bread,

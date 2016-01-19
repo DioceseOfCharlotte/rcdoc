@@ -3,8 +3,8 @@ if( have_rows('mass_schedule') ):
 
     // (parent repeater)
     while( have_rows('mass_schedule') ): the_row(); ?>
-        <div class="u-1/1 u-text-right u-py1 u-border-t">
-            <div class="u-h3 u-inline-block u-1/3 title">
+        <div class="u-1of1 u-text-right u-py1 u-border-t">
+            <div class="u-h3 u-inline-block u-1of3 title">
                 <?php the_sub_field('title'); ?>
             </div>
 
@@ -16,12 +16,12 @@ if( have_rows('mass_schedule') ):
                 foreach ($values as $value) {
                 $labels[] = $field['choices'][ $value ];
                 } ?>
-                <div class="u-inline-block u-1/3 days u-py1">
+                <div class="u-inline-block u-1of3 days u-py1">
                     <?php foreach ($labels as $label) {echo $label.', ';} ?>
                 </div>
 
                 <?php if( have_rows('group_time') ): ?>
-                    <div class="u-inline-block u-1/3 times">
+                    <div class="u-inline-block u-1of3 times">
                         <?php while( have_rows('group_time') ): the_row(); ?>
                             <?php the_sub_field('time'); ?>
                         <?php endwhile; ?>

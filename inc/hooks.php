@@ -4,7 +4,6 @@ add_action( 'tha_entry_bottom',  'rcdoc_parish_footer' );
 add_action( 'tha_header_after', 'logged_in_drawer' );
 //add_action( 'tha_header_bottom', 'mdl_search_form' );
 add_action( 'tha_header_before', 'header_right_widget' );
-add_action( 'tha_content_before', 'rcdoc_facet_parish_prox' );
 //add_action( 'tha_entry_content_after',  'rcdoc_news_widget' );
 //add_action( 'tha_header_after',  'rcdoc_page_hero' );
 //add_action( 'tha_content_before', 'rcdoc_page_before' );
@@ -47,20 +46,6 @@ function mdl_search_form() {
 
 function header_right_widget() {
     return hybrid_get_sidebar('header-right');
-}
-
-
-
-
-function rcdoc_facet_parish_prox() {
-    if ( is_post_type_archive('parish') ) {
-        echo '<div class="u-1/1 u-br u-px3 u-pb0 u-mb1 u-mx1 u-pt3 u-flex u-flex-wrap u-flex-justify u-bg-frost-4 mdl-shadow--2dp">';
-        echo facetwp_display( 'facet', 'parish_proximity' );
-        echo '<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="FWP.reset()">Reset</button>';
-        echo '<div class="u-1/1 u-text-center">' .facetwp_display( 'facet', 'title_alpha' ). '</div>';
-        echo '</div>';
-    }
-
 }
 
 
