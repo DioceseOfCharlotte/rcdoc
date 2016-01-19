@@ -53,7 +53,7 @@ function rcdoc_scripts() {
     wp_enqueue_script(
         'main_scripts',
         trailingslashit(get_stylesheet_directory_uri())."assets/js/main.min.js",
-        array( 'abraham_js' ), null, true
+        false, false, true
     );
 
     wp_enqueue_script(
@@ -123,7 +123,7 @@ function rcdoc_accent_color($hex) {
 
 
 function rcdoc_non_hierarchy_cpts($cpts) {
-	$cpts = array( 'bishop', 'chancery', 'deacon', 'development', 'finance', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'tribunal', 'vocation' );
+	$cpts = array( 'post', 'bishop', 'chancery', 'deacon', 'development', 'finance', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'tribunal', 'vocation' );
     return $cpts;
 }
 

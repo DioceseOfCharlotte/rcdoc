@@ -23,7 +23,9 @@ function rcdoc_parish_footer() {
 
 
 function logged_in_drawer() {
-    hybrid_get_sidebar('drawer');
+	if (is_user_logged_in() && is_active_sidebar('drawer')) {
+    	hybrid_get_sidebar('drawer');
+	}
 }
 
 

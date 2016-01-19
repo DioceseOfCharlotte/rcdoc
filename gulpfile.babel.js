@@ -8,6 +8,10 @@ import gulp from 'gulp';
 import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
 import gulpLoadPlugins from 'gulp-load-plugins';
+import postcss from 'gulp-postcss';
+import xo from 'gulp-xo';
+import autoPrefixer from 'autoprefixer';
+// import postcssFlex from 'postcss-flexibility';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -25,12 +29,19 @@ const AUTOPREFIXER_BROWSERS = [
 	'bb >= 10'
 ];
 
+const POSTCSS_PLUGINS = [
+	autoPrefixer({
+		browsers: AUTOPREFIXER_BROWSERS
+	})
+	// postcssFlex
+];
+
 const SOURCESJS = [
 	// ** MDL ** //
 	// Component handler
-	// 'assets/src/mdl/mdlComponentHandler.js',
+	'assets/src/mdl/mdlComponentHandler.js',
 	// Polyfills/dependencies
-	'assets/src/mdl/third_party/**/*.js',
+	// 'assets/src/mdl/third_party/**/*.js',
 	// Base components
 	'assets/src/mdl/button/button.js',
 	// 'src/checkbox/checkbox.js',
@@ -43,10 +54,10 @@ const SOURCESJS = [
 	// 'src/spinner/spinner.js',
 	// 'assets/src/mdl/switch/switch.js',
 	'assets/src/mdl/tabs/tabs.js',
-	'assets/src/mdl/textfield/textfield.js',
+	// 'assets/src/mdl/textfield/textfield.js',
 	// 'assets/src/mdl/tooltip/tooltip.js',
 	// Complex components (which reuse base components)
-	'assets/src/mdl/layout/layout.js',
+	// 'assets/src/mdl/layout/layout.js',
 	// 'src/data-table/data-table.js',
 	'assets/src/mdl/ripple/ripple.js',
 	// ** GSAP ** //
@@ -73,9 +84,7 @@ const SOURCESJQ = [
 // Lint JavaScript
 gulp.task('lint', () =>
 	gulp.src('assets/src/js/myjs/*.js')
-	.pipe($.eslint())
-	.pipe($.eslint.format())
-	.pipe($.if(!browserSync.active, $.eslint.failOnError()))
+	.pipe(xo())
 );
 
 // ***** Production build tasks ****** //
@@ -102,14 +111,13 @@ gulp.task('styles', () => {
 			precision: 10,
 			onError: console.error.bind(console, 'Sass error:')
 		}))
-		// .pipe($.cssInlineImages({webRoot: 'src'}))
-		.pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+		.pipe(postcss(POSTCSS_PLUGINS))
 		.pipe(gulp.dest('.tmp'))
 		// Concatenate Styles
 		.pipe($.concat('style.css'))
 		.pipe(gulp.dest('./'))
 		// Minify Styles
-		.pipe($.if('*.css', $.minifyCss()))
+		.pipe($.if('*.css', $.cssnano()))
 		.pipe($.concat('style.min.css'))
 		.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest('./'))

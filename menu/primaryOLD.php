@@ -18,7 +18,5 @@ if (has_nav_menu('primary')) : ?>
             ?>
         </nav>
 </div>
-<i class="material-icons scrollindicator scrollindicator--right">&#xE315;</i>
-<i class="material-icons scrollindicator scrollindicator--left">&#xE314;</i>
 <?php
 endif;
