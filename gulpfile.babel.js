@@ -69,6 +69,7 @@ const SOURCESJS = [
 	'assets/src/js/animation.gsap.js',
 	// ** Flickity ** //
 	'assets/src/js/flickity.pkgd.js',
+	'assets/src/js/headroom.js',
 	// ** Mine ** //
 	'assets/src/js/myjs/Dropdown.js',
 	'assets/src/js/myjs/Morph.js',

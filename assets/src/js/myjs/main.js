@@ -21,3 +21,25 @@ ready(function() {
 	first_tab.classList.toggle("is-active");
 	first_panel.classList.toggle("is-active");
 });
+
+
+// HEADROOM JS
+(function() {
+    var header = document.querySelector("#header");
+
+    new Headroom(header, {
+        tolerance: {
+          down : 40,
+          //up : 20
+        },
+        //offset : 200,
+        classes: {
+    "initial": "animated",
+    "pinned": "slideInDown",
+    "unpinned": "slideOutUp",
+	"top" : "is-top",
+	"notTop" : "not-top"
+        }
+    }).init();
+
+}());
