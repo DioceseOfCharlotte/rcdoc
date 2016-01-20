@@ -76,7 +76,7 @@ function abraham_widgets() {
         'name'          => __( 'Primary', 'abraham' ),
         'before_title'  => '<div class="mdl-card__title u-mtn2 u-mxn2"><h2 class="mdl-card__title-text widget-title">',
         'after_title'   => '</h2></div>',
-        'before_widget' => '<section class="mdl-card mdl-cell mdl-shadow--2dp u-p2 u-list-reset">',
+        'before_widget' => '<section class="mdl-card o-cell mdl-shadow--2dp u-p2 u-list-reset">',
         'after_widget'  => '</section>',
     ));
 
