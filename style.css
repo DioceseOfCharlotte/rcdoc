@@ -4490,9 +4490,6 @@ http://flickity.metafizzy.co
 .mdl-layout__container {
   position: relative; }
 
-.layout__content {
-  padding-top: 200px; }
-
 .logo-image {
   -webkit-align-self: flex-start;
       -ms-flex-item-align: start;
@@ -4566,8 +4563,12 @@ http://flickity.metafizzy.co
 .site-logo {
   height: 8em; }
 
-.site-content {
-  padding-top: 220px; }
+.site-content:before {
+  content: "";
+  height: 68px;
+  width: 100%;
+  position: relative;
+  display: block; }
 
 /*!
  * animate.css -http://daneden.me/animate
