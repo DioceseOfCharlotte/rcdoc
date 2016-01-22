@@ -4,6 +4,7 @@ add_action( 'tha_entry_bottom',  'rcdoc_parish_footer' );
 add_action( 'tha_header_after', 'logged_in_drawer' );
 //add_action( 'tha_header_bottom', 'mdl_search_form' );
 add_action( 'tha_header_before', 'header_right_widget' );
+add_action( 'tha_header_after', 'headspace' );
 //add_action( 'tha_entry_content_after',  'rcdoc_news_widget' );
 //add_action( 'tha_header_after',  'rcdoc_page_hero' );
 //add_action( 'tha_content_before', 'rcdoc_page_before' );
@@ -48,6 +49,9 @@ function header_right_widget() {
     return hybrid_get_sidebar('header-right');
 }
 
+function headspace() {
+    echo '<div id="head-space" class="u-mb3"></div>';
+}
 
 function rcdoc_give_row() {
     if ( is_front_page() ) {

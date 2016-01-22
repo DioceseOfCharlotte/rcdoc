@@ -60,6 +60,8 @@ const SOURCESJS = [
 	// 'assets/src/mdl/layout/layout.js',
 	// 'src/data-table/data-table.js',
 	'assets/src/mdl/ripple/ripple.js',
+
+	// 'assets/src/js/bliss.js',
 	// ** GSAP ** //
 	'assets/src/js/TweenMax.js',
 	'assets/src/js/MorphSVGPlugin.js',
@@ -73,8 +75,8 @@ const SOURCESJS = [
 	// ** Mine ** //
 	'assets/src/js/myjs/Dropdown.js',
 	'assets/src/js/myjs/Morph.js',
-	'assets/src/js/myjs/main.js',
-	'assets/src/js/myjs/mobile-nav.js'
+	'assets/src/js/myjs/mobile-nav.js',
+	'assets/src/js/myjs/main.js'
 ];
 
 // Scripts that rely on jQuery

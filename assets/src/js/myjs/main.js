@@ -31,10 +31,17 @@ ready(function () {
 		// offset : 200,
 		classes: {
 			initial: 'animated',
-			pinned: 'slideInDown',
-			unpinned: 'slideOutUp',
+			pinned: 'mui-enter-active',
+			unpinned: 'mui-leave-active',
 			top: 'is-top',
 			notTop: 'not-top'
 		}
 	}).init();
 }());
+
+ready(function() {
+	var elmnt = document.getElementById("header");
+	var fakeHeight = elmnt.offsetHeight;
+
+	document.getElementById('head-space').style.height = fakeHeight + 'px';
+});

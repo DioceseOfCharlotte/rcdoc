@@ -14,14 +14,13 @@
 
 // Variables and mixins
 @import "mdl/variables";
-@import "./node_modules/motion-ui/motion-ui";
+@import "./node_modules/motion-ui/src/motion-ui";
 
 // MINE
 @import "custom-variables";
 @import "settings.colors";
 @import "settings.defaults";
 @import "settings.responsive";
-
 
 @import "mdl/mixins";
 

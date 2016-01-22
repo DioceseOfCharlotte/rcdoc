@@ -39,9 +39,9 @@ function meh_row_shortcode($attr, $content = null) {
     endif; ?>
 
 <?php if ($attr['bg_image']) : ?>
- <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-relative u-overflow-hidden u-1of1 u-py3 u-py4-md u-bg-cover u-bg-fixed" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>)">
+ <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-relative u-1of1 u-py3 u-py4-md u-bg-cover u-bg-fixed" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>)">
 <?php else: ?>
- <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-relative u-overflow-hidden u-1of1 u-py3 u-py4-md">
+ <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-relative u-1of1 u-py3 u-py4-md">
 <?php endif; ?>
 
     <?php if ($attr['row_intro']) : ?>
