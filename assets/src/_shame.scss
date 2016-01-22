@@ -798,6 +798,22 @@ http://flickity.metafizzy.co
     margin-bottom: 1rem;
 }
 
+.site-header.is-top {
+    position: relative!important;
+}
+
+.not-top ~ .site-content {
+    padding-top: 2em;
+}
+
+.home .not-top ~ .site-content {
+    padding-top: 4em;
+}
+
+// .site-header.slideOutUp {
+//     position: relative!important;
+// }
+
 .home .site-header.is-top {
     transition: none;
     background-color: transparent!important;
@@ -844,21 +860,25 @@ http://flickity.metafizzy.co
 
 
 
-.site-content:before {
-    content: "";
-    height: 68px;
+// .site-content:before {
+//     content: "";
+//     height: 88px;
+//     width: 100%;
+//     position: relative;
+//     display: block;
+// }
+
+
+
+
+.entry-header {
     width: 100%;
-    position: relative;
-    display: block;
 }
 
 
-
-
-
-
-
-
+.format-aside .permalink {
+    display: none;
+}
 
 
 
@@ -1132,4 +1152,22 @@ http://flickity.metafizzy.co
 .slideOutUp {
   -webkit-animation-name: slideOutUp;
   animation-name: slideOutUp;
+}
+
+
+.facet-more {
+    display: none;
+}
+
+.btn.facet-more:last-of-type {
+    display: inline-block;
+}
+
+
+#facetwp-location {
+    height: 2.4em;
+}
+
+i.locate-me {
+    top: 9px;
 }

@@ -91,7 +91,13 @@ function cpt_post($attr) {
 $directory_posts = array('school','parish','department');
 
     if (is_post_type_archive( $directory_posts )) :
-        $attr['class']   .= " u-1of2-md u-flexed-start";
+        $attr['class']   .= " u-1of2-md";
+    endif;
+    if (has_post_format( 'aside' )) :
+        $attr['class']   .= " u-bg-1-glass";
+    endif;
+    if (has_post_format( 'quote' )) :
+        $attr['class']   .= " u-bg-2-glass";
     endif;
 return $attr;
 }

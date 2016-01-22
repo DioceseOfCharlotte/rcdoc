@@ -19,14 +19,10 @@
                 'after'        => '</div>',
             ));
         ?>
-        <h2 <?php hybrid_attr('entry-title'); ?>>
+        <h3 class="card-title u-text-center u-mb0 u-py2">
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </h2>
     </header>
-
-    <div class="u-px2 u-pb2">
-        <?php the_excerpt(); ?>
-    </div>
 
 </div>
 </div>
