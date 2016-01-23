@@ -41,6 +41,7 @@ shortcode_ui_register_for_shortcode(
                 'label'   => 'Slide Type',
                 'attr'    => 'slide_type',
                 'type'    => 'select',
+                'value' => 'card',
                 'options'     => array(
                     'card'    => esc_html__( 'Content Cards', 'abraham' ),
                     'photo'    => esc_html__( 'Photo Slides', 'abraham' ),
@@ -97,6 +98,16 @@ shortcode_ui_register_for_shortcode(
                     'placeholder' => esc_html__( 'name of your file', 'abraham' ),
                     'data-test'   => 1,
                 ),
+            ),
+            array(
+                'label'       => 'Gallery',
+                'attr'        => 'gallery',
+                'description' => esc_html__( 'Select multiple images.' ),
+                'type'        => 'attachment',
+                'libraryType' => array( 'image' ),
+                'multiple'    => true,
+                'addButton'   => 'Select Images',
+                'frameTitle'  => 'Select Images',
             ),
             array(
                 'label'    => 'Select Pages to Display',

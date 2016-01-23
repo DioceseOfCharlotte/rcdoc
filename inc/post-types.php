@@ -1,6 +1,6 @@
 <?php
 
-add_action( 'init', 'doc_documents_register_post_types' );
+//add_action( 'init', 'doc_documents_register_post_types' );
 add_action( 'init', 'doc_departments_register_post_types' );
 add_action( 'init', 'doc_parishs_register_post_types' );
 add_action( 'init', 'doc_schools_register_post_types' );
@@ -39,7 +39,7 @@ function doc_documents_register_post_types() {
             'menu_icon'           => 'dashicons-media-document',
             'can_export'          => true,
             'delete_with_user'    => false,
-            'hierarchical'        => false,
+            'hierarchical'        => true,
             'taxonomies'          => array( 'category', 'post_tag' ),
             'has_archive'         => 'documents',
             'query_var'           => 'document',
@@ -87,7 +87,6 @@ function doc_documents_register_post_types() {
                 'title',
                 'excerpt',
                 'author',
-                'revisions',
                 'thumbnail',
             ),
 
@@ -130,7 +129,7 @@ function doc_parishs_register_post_types() {
             'description'         => '',
             'public'              => true,
             'publicly_queryable'  => true,
-            'show_in_nav_menus'   => true,
+            'show_in_nav_menus'   => false,
             'show_in_admin_bar'   => true,
             'exclude_from_search' => false,
             'show_ui'             => true,
@@ -188,9 +187,10 @@ function doc_parishs_register_post_types() {
                 'author',
                 'thumbnail',
                 'excerpt',
-                'revisions',
                 'page-attributes',
                 'post-formats',
+                'theme-layouts',
+                'archive',
             ),
 
             /* Labels used when displaying the posts. */
@@ -232,7 +232,7 @@ function doc_schools_register_post_types() {
             'description'         => '',
             'public'              => true,
             'publicly_queryable'  => true,
-            'show_in_nav_menus'   => true,
+            'show_in_nav_menus'   => false,
             'show_in_admin_bar'   => true,
             'exclude_from_search' => false,
             'show_ui'             => true,
@@ -290,9 +290,10 @@ function doc_schools_register_post_types() {
                 'author',
                 'thumbnail',
                 'excerpt',
-                'revisions',
                 'page-attributes',
                 'post-formats',
+                'theme-layouts',
+                'archive',
             ),
 
             /* Labels used when displaying the posts. */
@@ -392,9 +393,10 @@ function doc_departments_register_post_types() {
                 'author',
                 'thumbnail',
                 'excerpt',
-                'revisions',
                 'page-attributes',
                 'post-formats',
+                'theme-layouts',
+                'archive',
             ),
 
             /* Labels used when displaying the posts. */
@@ -497,6 +499,8 @@ function doc_vocations_register_post_types() {
                 'thumbnail',
                 'page-attributes',
                 'post-formats',
+                'theme-layouts',
+                'archive',
             ),
 
             /* Labels used when displaying the posts. */
@@ -538,7 +542,7 @@ function doc_tribunals_register_post_types() {
             'description'         => '',
             'public'              => true,
             'publicly_queryable'  => true,
-            'show_in_nav_menus'   => true,
+            'show_in_nav_menus'   => false,
             'show_in_admin_bar'   => true,
             'exclude_from_search' => false,
             'show_ui'             => true,
@@ -547,7 +551,7 @@ function doc_tribunals_register_post_types() {
             'menu_icon'           => 'dashicons-analytics',
             'can_export'          => true,
             'delete_with_user'    => false,
-            'hierarchical'        => false,
+            'hierarchical'        => true,
             'taxonomies'          => array( 'category', 'post_tag' ),
             'has_archive'         => 'tribunals',
             'query_var'           => 'tribunal',
@@ -598,6 +602,8 @@ function doc_tribunals_register_post_types() {
                 'thumbnail',
                 'page-attributes',
                 'post-formats',
+                'theme-layouts',
+                'archive',
             ),
 
             /* Labels used when displaying the posts. */
@@ -648,7 +654,7 @@ function doc_properties_register_post_types() {
             'menu_icon'           => 'dashicons-building',
             'can_export'          => true,
             'delete_with_user'    => false,
-            'hierarchical'        => false,
+            'hierarchical'        => true,
             'taxonomies'          => array( 'category', 'post_tag' ),
             'has_archive'         => 'properties',
             'query_var'           => 'property',
@@ -699,6 +705,8 @@ function doc_properties_register_post_types() {
                 'thumbnail',
                 'page-attributes',
                 'post-formats',
+                'theme-layouts',
+                'archive',
             ),
 
             /* Labels used when displaying the posts. */
@@ -749,7 +757,7 @@ function doc_plannings_register_post_types() {
             'menu_icon'           => 'dashicons-networking',
             'can_export'          => true,
             'delete_with_user'    => false,
-            'hierarchical'        => false,
+            'hierarchical'        => true,
             'taxonomies'          => array( 'category', 'post_tag' ),
             'has_archive'         => 'plannings',
             'query_var'           => 'planning',
@@ -800,6 +808,8 @@ function doc_plannings_register_post_types() {
                 'thumbnail',
                 'page-attributes',
                 'post-formats',
+                'theme-layouts',
+                'archive',
             ),
 
             /* Labels used when displaying the posts. */
@@ -850,7 +860,7 @@ function doc_multiculturals_register_post_types() {
             'menu_icon'           => 'dashicons-translation',
             'can_export'          => true,
             'delete_with_user'    => false,
-            'hierarchical'        => false,
+            'hierarchical'        => true,
             'taxonomies'          => array( 'category', 'post_tag' ),
             'has_archive'         => 'multiculturals',
             'query_var'           => 'multicultural',
@@ -901,6 +911,8 @@ function doc_multiculturals_register_post_types() {
                 'thumbnail',
                 'page-attributes',
                 'post-formats',
+                'theme-layouts',
+                'archive',
             ),
 
             /* Labels used when displaying the posts. */
@@ -951,7 +963,7 @@ function doc_liturgys_register_post_types() {
             'menu_icon'           => 'dashicons-book',
             'can_export'          => true,
             'delete_with_user'    => false,
-            'hierarchical'        => false,
+            'hierarchical'        => true,
             'taxonomies'          => array( 'category', 'post_tag' ),
             'has_archive'         => 'liturgys',
             'query_var'           => 'liturgy',
@@ -1002,6 +1014,8 @@ function doc_liturgys_register_post_types() {
                 'thumbnail',
                 'page-attributes',
                 'post-formats',
+                'theme-layouts',
+                'archive',
             ),
 
             /* Labels used when displaying the posts. */
@@ -1052,7 +1066,7 @@ function doc_info_techs_register_post_types() {
             'menu_icon'           => 'dashicons-desktop',
             'can_export'          => true,
             'delete_with_user'    => false,
-            'hierarchical'        => false,
+            'hierarchical'        => true,
             'taxonomies'          => array( 'category', 'post_tag' ),
             'has_archive'         => 'info_techs',
             'query_var'           => 'info_tech',
@@ -1103,6 +1117,8 @@ function doc_info_techs_register_post_types() {
                 'thumbnail',
                 'page-attributes',
                 'post-formats',
+                'theme-layouts',
+                'archive',
             ),
 
             /* Labels used when displaying the posts. */
@@ -1153,7 +1169,7 @@ function doc_housings_register_post_types() {
             'menu_icon'           => 'dashicons-admin-multisite',
             'can_export'          => true,
             'delete_with_user'    => false,
-            'hierarchical'        => false,
+            'hierarchical'        => true,
             'taxonomies'          => array( 'category', 'post_tag' ),
             'has_archive'         => 'housings',
             'query_var'           => 'housing',
@@ -1204,6 +1220,8 @@ function doc_housings_register_post_types() {
                 'thumbnail',
                 'page-attributes',
                 'post-formats',
+                'theme-layouts',
+                'archive',
             ),
 
             /* Labels used when displaying the posts. */
@@ -1253,7 +1271,7 @@ function doc_hispanic_ministries_register_post_types() {
             'menu_icon'           => 'dashicons-share-alt',
             'can_export'          => true,
             'delete_with_user'    => false,
-            'hierarchical'        => false,
+            'hierarchical'        => true,
             'taxonomies'          => array( 'category', 'post_tag' ),
             'has_archive'         => 'hispanic_ministries',
             'query_var'           => 'hispanic_ministry',
@@ -1304,6 +1322,8 @@ function doc_hispanic_ministries_register_post_types() {
                 'thumbnail',
                 'page-attributes',
                 'post-formats',
+                'theme-layouts',
+                'archive',
             ),
 
             /* Labels used when displaying the posts. */
@@ -1354,7 +1374,7 @@ function doc_finances_register_post_types() {
             'menu_icon'           => 'dashicons-portfolio',
             'can_export'          => true,
             'delete_with_user'    => false,
-            'hierarchical'        => false,
+            'hierarchical'        => true,
             'taxonomies'          => array( 'category', 'post_tag' ),
             'has_archive'         => 'finances',
             'query_var'           => 'finance',
@@ -1405,6 +1425,8 @@ function doc_finances_register_post_types() {
                 'thumbnail',
                 'page-attributes',
                 'post-formats',
+                'theme-layouts',
+                'archive',
             ),
 
             /* Labels used when displaying the posts. */
@@ -1455,7 +1477,7 @@ function doc_developments_register_post_types() {
             'menu_icon'           => 'dashicons-chart-bar',
             'can_export'          => true,
             'delete_with_user'    => false,
-            'hierarchical'        => false,
+            'hierarchical'        => true,
             'taxonomies'          => array( 'category', 'post_tag' ),
             'has_archive'         => 'developments',
             'query_var'           => 'development',
@@ -1506,6 +1528,8 @@ function doc_developments_register_post_types() {
                 'thumbnail',
                 'page-attributes',
                 'post-formats',
+                'theme-layouts',
+                'archive',
             ),
 
             /* Labels used when displaying the posts. */
@@ -1556,7 +1580,7 @@ function doc_deacons_register_post_types() {
             'menu_icon'           => 'dashicons-shield-alt',
             'can_export'          => true,
             'delete_with_user'    => false,
-            'hierarchical'        => false,
+            'hierarchical'        => true,
             'taxonomies'          => array( 'category', 'post_tag' ),
             'has_archive'         => 'deacons',
             'query_var'           => 'deacon',
@@ -1607,6 +1631,8 @@ function doc_deacons_register_post_types() {
                 'thumbnail',
                 'page-attributes',
                 'post-formats',
+                'theme-layouts',
+                'archive',
             ),
 
             /* Labels used when displaying the posts. */
@@ -1707,6 +1733,8 @@ function doc_chancerys_register_post_types() {
                 'thumbnail',
                 'page-attributes',
                 'post-formats',
+                'theme-layouts',
+                'archive',
             ),
 
             /* Labels used when displaying the posts. */
@@ -1808,6 +1836,8 @@ function doc_bishop_register_post_types() {
                 'thumbnail',
                 'page-attributes',
                 'post-formats',
+                'theme-layouts',
+                'archive',
             ),
 
             /* Labels used when displaying the posts. */
@@ -1859,7 +1889,7 @@ function doc_archive_posts_register_post_types() {
             'menu_icon'           => 'dashicons-archive',
             'can_export'          => true,
             'delete_with_user'    => false,
-            'hierarchical'        => false,
+            'hierarchical'        => true,
             'taxonomies'          => array( 'category', 'post_tag' ),
             'has_archive'         => 'archive_posts',
             'query_var'           => 'archive_post',
@@ -1910,6 +1940,8 @@ function doc_archive_posts_register_post_types() {
                 'thumbnail',
                 'page-attributes',
                 'post-formats',
+                'theme-layouts',
+                'archive',
             ),
 
             /* Labels used when displaying the posts. */

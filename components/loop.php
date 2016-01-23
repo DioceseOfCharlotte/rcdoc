@@ -16,7 +16,7 @@ $bishop_query = new WP_Query( $args );
 // The Loop
 if ( $bishop_query->have_posts() ) { ?>
 
-<div class="mdl-grid">
+<div class="o-grid">
 
     <?php while ( $bishop_query->have_posts() ) {
         $bishop_query->the_post();

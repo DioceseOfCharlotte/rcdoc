@@ -32,7 +32,7 @@
   }
 
   & .mdl-logo {
-    line-height: $footer-btn-size;
+    //line-height: $footer-btn-size;
   }
 }
 
@@ -51,7 +51,7 @@
     margin-right: $padding;
 
     @media screen and (min-width: 760px) {
-      line-height: $footer-btn-size;
+      //line-height: $footer-btn-size;
     }
   }
 

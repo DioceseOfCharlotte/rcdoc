@@ -12,6 +12,7 @@ function meh_row_shortcode($attr, $content = null) {
     $attr = shortcode_atts(array(
         'row_type'      => '',
         'slide_type'    => '',
+        'gallery'       => '',
         'row_color'     => '',
         'bg_image'      => '',
         'row_intro'     => '',
@@ -37,46 +38,47 @@ function meh_row_shortcode($attr, $content = null) {
         $direction = esc_attr( $attr['direction'] );
     endif; ?>
 
- <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row js-morph u-overflow-hidden u-1/1 u-py3 u-py4@md u-bg-cover u-bg-fixed"
-     <?php if ($attr['bg_image']) : ?>
-         style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>)"
-         <?php endif; ?> >
+<?php if ($attr['bg_image']) : ?>
+ <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-relative u-1of1 u-py3 u-py4-md u-bg-cover u-bg-fixed" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>)">
+<?php else: ?>
+ <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-relative u-1of1 u-py3 u-py4-md">
+<?php endif; ?>
 
     <?php if ($attr['row_intro']) : ?>
 
-        <div class="mdl-typography--display-2-color-contrast u-text-white u-z1 u-mb3 u-mb4@md u-text-center">
+        <h2 class="u-text-white u-z1 u-mb3 u-mb4-md u-text-center">
             <?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?>
-        </div>
+        </h2>
 
     <?php endif; ?>
 
     <?php if ('tabs' === $attr['row_type']) : ?>
 
-        <div class="section-row__content mdl-grid u-max-width <?php echo $direction; ?>">
+        <div class="section-row__content o-grid u-max-width <?php echo $direction; ?>">
             <?php include locate_template('/components/row-tabs.php'); ?>
         </div>
 
     <?php elseif ('links' === $attr['row_type']) : ?>
 
-        <div class="section-row__content mdl-grid u-max-width <?php echo $direction; ?>">
+        <div class="section-row__content o-grid u-max-width <?php echo $direction; ?>">
             <?php include locate_template('/components/row-links.php'); ?>
         </div>
 
     <?php elseif ('feed' === $attr['row_type']) : ?>
 
-        <div class="section-row__content mdl-grid u-max-width <?php echo $direction; ?>">
+        <div class="section-row__content o-grid u-max-width <?php echo $direction; ?>">
             <?php include locate_template('/components/row-feed.php'); ?>
         </div>
 
     <?php elseif ('tiles' === $attr['row_type']) : ?>
 
-        <div class="section-row__content mdl-grid u-flex-justify-around">
+        <div class="section-row__content o-grid u-flex-justify-around">
             <?php include locate_template('/components/row-tiles.php'); ?>
         </div>
 
     <?php elseif ('cards' === $attr['row_type']) : ?>
 
-        <div class="section-row__content mdl-grid u-max-width">
+        <div class="section-row__content o-grid u-max-width">
             <?php include locate_template('/components/row-cards.php'); ?>
         </div>
 
@@ -84,7 +86,7 @@ function meh_row_shortcode($attr, $content = null) {
 
         <?php if ('photo' === $attr['slide_type']) { ?>
 
-        <div class="section-row__content gallery js-flickity" data-flickity-options='{ "wrapAround": true, "autoPlay": true, "freeScroll": true }'>
+        <div class="section-row__content gallery js-flickity" data-flickity-options='{ "wrapAround": true, "autoPlay": true }'>
             <?php include locate_template('/components/row-photoslides.php'); ?>
         </div>
 

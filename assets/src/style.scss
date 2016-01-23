@@ -2,7 +2,7 @@
  * Theme Name:  RCDOC
  * Theme URI:   https://github.com/DioceseOfCharlotte/rcdoc
  * Description: Diocese child theme for Abraham.
- * Version:     0.5.0
+ * Version:     0.6.0
  * Author:      Marty Helmick
  * Author URI:  https://github.com/m-e-h
  * Tags:
@@ -14,6 +14,7 @@
 
 // Variables and mixins
 @import "mdl/variables";
+@import "./node_modules/motion-ui/src/motion-ui";
 
 // MINE
 @import "custom-variables";
@@ -21,12 +22,11 @@
 @import "settings.defaults";
 @import "settings.responsive";
 
-
 @import "mdl/mixins";
 
 // Resets and dependencies
-@import "mdl/resets/resets";
-@import "mdl/typography/typography";
+// @import "mdl/resets/resets";
+// @import "mdl/typography/typography";
 
 // Components
 @import "mdl/palette/palette";
@@ -42,7 +42,7 @@
 //@import "mdl/icon-toggle/icon-toggle";
 @import "mdl/menu/menu";
 //@import "progress/progress";
-@import "mdl/layout/layout";
+// @import "mdl/layout/layout";
 //@import "radio/radio";
 //@import "slider/slider";
 //@import "mdl/snackbar/snackbar";
@@ -52,7 +52,7 @@
 @import "mdl/textfield/textfield";
 //@import "mdl/tooltip/tooltip";
 @import "mdl/shadow/shadow";
-@import "mdl/grid/grid";
+// @import "mdl/grid/grid";
 
 /* To be moved */
 @import "card";
@@ -63,12 +63,12 @@
 /* Styles specific to the editor. */
 
 body#tinymce {
-    margin: 0 auto!important;
-    padding: 1.5rem 1.5rem 0!important;
-    border: none!important;
-    min-height: 50px;
+	min-height: 50px;
+	margin: 0 auto!important;
+	padding: 1.5rem 1.5rem 0!important;
+	border: none!important;
 }
 
-.wpview-wrap .gallery-cell {
-    display: inline-block;
+body#tinymce .wpview-wrap .gallery-cell {
+	display: inline-block;
 }

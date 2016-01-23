@@ -12,21 +12,17 @@
     <header <?php hybrid_attr('entry-header'); ?>>
         <?php
             get_the_image(array(
-                'size' => 'abraham-lg',
-                'image_class' => 'o-crop__content',
+                'size'         => 'abraham-lg',
+                'image_class'  => 'o-crop__content',
                 'link_to_post' => false,
-                'before' => '<div class="o-crop o-crop--16x9">',
-                'after' =>    '</div>',
+                'before'       => '<div class="o-crop o-crop--16x9">',
+                'after'        => '</div>',
             ));
         ?>
-        <h2 <?php hybrid_attr('entry-title'); ?>>
+        <h3 class="card-title u-text-center u-mb0 u-py2">
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </h2>
     </header>
-
-    <div class="u-px2 u-pb2">
-        <?php the_excerpt(); ?>
-    </div>
 
 </div>
 </div>

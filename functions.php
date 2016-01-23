@@ -5,10 +5,15 @@ add_action( 'wp_enqueue_scripts', 'rcdoc_scripts' );
 add_action( 'widgets_init', 'abraham_widgets' );
 
 require get_stylesheet_directory() . '/inc/html-classes.php';
+require get_stylesheet_directory() . '/inc/ext/tgmpa.php';
 require get_stylesheet_directory() . '/inc/post-types.php';
 require get_stylesheet_directory() . '/inc/taxonomies.php';
 require get_stylesheet_directory() . '/inc/compatibility.php';
 require get_stylesheet_directory() . '/inc/hooks.php';
+require get_stylesheet_directory() . '/inc/ext/cpt-archive.php';
+require get_stylesheet_directory() . '/inc/ext/wpdr.php';
+require get_stylesheet_directory() . '/inc/ext/gravity.php';
+require get_stylesheet_directory() . '/inc/ext/facetwp.php';
 require get_stylesheet_directory() . '/inc/shortcodes.php'; // Shortcodes
 require get_stylesheet_directory() . '/inc/shorts-ui.php';  // Shortcake interface
 
@@ -31,9 +36,12 @@ function rcdoc_setup() {
             'default-image' => '',
         )
     );
+
     add_filter( 'theme_mod_primary_color', 'rcdoc_primary_color' );
     add_filter( 'theme_mod_secondary_color', 'rcdoc_secondary_color' );
     add_filter( 'theme_mod_accent_color', 'rcdoc_accent_color' );
+    add_filter( 'abe_add_hierarchy_cpts', 'rcdoc_hierarchy_cpts' );
+    add_filter( 'abe_add_non_hierarchy_cpts', 'rcdoc_non_hierarchy_cpts' );
 
 }
 
@@ -47,7 +55,7 @@ function rcdoc_scripts() {
     wp_enqueue_script(
         'main_scripts',
         trailingslashit(get_stylesheet_directory_uri())."assets/js/main.min.js",
-        array( 'abraham_js' ), null, true
+        false, false, true
     );
 
     wp_enqueue_script(
@@ -55,27 +63,8 @@ function rcdoc_scripts() {
         trailingslashit(get_stylesheet_directory_uri())."assets/js/jq-main.min.js",
         array( 'jquery' ), null, true
     );
-
-    // if (get_post_type() == 'parish') {
-    //     wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array(), '3', true );
-    //     wp_enqueue_script(
-    // 		'google-map-init',
-    // 		trailingslashit(get_stylesheet_directory_uri())."assets/js/google-maps.js",
-    // 		array('google-map', 'jquery'), '0.1', true
-    // 	);
-    // }
 }
 
-
-function rcdoc_primary_color($hex) {
-    return $hex ? $hex : '3F51B5';
-}
-function rcdoc_secondary_color($hex) {
-    return $hex ? $hex : '009688';
-}
-function rcdoc_accent_color($hex) {
-    return $hex ? $hex : 'C62828';
-}
 
 
 //add_action( 'wp_enqueue_scripts', 'meh_remove_scripts', 20 );
@@ -89,7 +78,7 @@ function abraham_widgets() {
         'name'          => __( 'Primary', 'abraham' ),
         'before_title'  => '<div class="mdl-card__title u-mtn2 u-mxn2"><h2 class="mdl-card__title-text widget-title">',
         'after_title'   => '</h2></div>',
-        'before_widget' => '<section class="mdl-card mdl-cell mdl-shadow--2dp u-p2 u-list-reset">',
+        'before_widget' => '<section class="mdl-card o-cell mdl-shadow--2dp u-p2 u-list-reset">',
         'after_widget'  => '</section>',
     ));
 
@@ -120,4 +109,34 @@ function abraham_widgets() {
         'after_widget'  => '</section>',
         'class'         => '',
     ));
+}
+
+
+
+function rcdoc_primary_color($hex) {
+    return $hex ? $hex : '3F51B5';
+}
+function rcdoc_secondary_color($hex) {
+    return $hex ? $hex : '009688';
+}
+function rcdoc_accent_color($hex) {
+    return $hex ? $hex : 'C62828';
+}
+
+
+function rcdoc_non_hierarchy_cpts($cpts) {
+	$cpts = array( 'post', 'bishop', 'chancery', 'deacon', 'development', 'finance', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'tribunal', 'vocation' );
+    return $cpts;
+}
+
+
+function rcdoc_hierarchy_cpts($cpts) {
+	$cpts = array(
+        'page',
+        'cpt_archive',
+        'department',
+        'parish',
+        'school'
+        );
+    return $cpts;
 }

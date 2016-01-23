@@ -2,57 +2,66 @@
  * MEH gulp
  */
 
-//'use strict';
+// 'use strict';
 
-import fs from 'fs';
-import path from 'path';
 import gulp from 'gulp';
 import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
 import gulpLoadPlugins from 'gulp-load-plugins';
-import pkg from './package.json';
+import postcss from 'gulp-postcss';
+import xo from 'gulp-xo';
+import autoPrefixer from 'autoprefixer';
+// import postcssFlex from 'postcss-flexibility';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
-
-
 const AUTOPREFIXER_BROWSERS = [
 	'ie >= 10',
 	'ie_mob >= 10',
-	'ff >= 30',
-	'chrome >= 34',
-	'safari >= 7',
-	'opera >= 23',
+	'last 2 ff versions',
+	'last 2 chrome versions',
+	'last 2 edge versions',
+	'last 2 safari versions',
+	'last 2 opera versions',
 	'ios >= 7',
 	'android >= 4.4',
 	'bb >= 10'
 ];
 
+const POSTCSS_PLUGINS = [
+	autoPrefixer({
+		browsers: AUTOPREFIXER_BROWSERS
+	})
+	// postcssFlex
+];
+
 const SOURCESJS = [
 	// ** MDL ** //
 	// Component handler
-	//'assets/src/mdl/mdlComponentHandler.js',
+	'assets/src/mdl/mdlComponentHandler.js',
 	// Polyfills/dependencies
-	'assets/src/mdl/third_party/**/*.js',
+	// 'assets/src/mdl/third_party/**/*.js',
 	// Base components
 	'assets/src/mdl/button/button.js',
-	//'src/checkbox/checkbox.js',
-	//'assets/src/mdl/icon-toggle/icon-toggle.js',
+	// 'src/checkbox/checkbox.js',
+	// 'assets/src/mdl/icon-toggle/icon-toggle.js',
 	'assets/src/mdl/menu/menu.js',
-	//'src/progress/progress.js',
-	//'src/radio/radio.js',
-	//'src/slider/slider.js',
-	//'assets/src/mdl/snackbar/snackbar.js',
-	//'src/spinner/spinner.js',
-	//'assets/src/mdl/switch/switch.js',
+	// 'src/progress/progress.js',
+	// 'src/radio/radio.js',
+	// 'src/slider/slider.js',
+	// 'assets/src/mdl/snackbar/snackbar.js',
+	// 'src/spinner/spinner.js',
+	// 'assets/src/mdl/switch/switch.js',
 	'assets/src/mdl/tabs/tabs.js',
-	'assets/src/mdl/textfield/textfield.js',
-	//'assets/src/mdl/tooltip/tooltip.js',
+	// 'assets/src/mdl/textfield/textfield.js',
+	// 'assets/src/mdl/tooltip/tooltip.js',
 	// Complex components (which reuse base components)
-	'assets/src/mdl/layout/layout.js',
-	//'src/data-table/data-table.js',
+	// 'assets/src/mdl/layout/layout.js',
+	// 'src/data-table/data-table.js',
 	'assets/src/mdl/ripple/ripple.js',
+
+	// 'assets/src/js/bliss.js',
 	// ** GSAP ** //
 	'assets/src/js/TweenMax.js',
 	'assets/src/js/MorphSVGPlugin.js',
@@ -62,24 +71,24 @@ const SOURCESJS = [
 	'assets/src/js/animation.gsap.js',
 	// ** Flickity ** //
 	'assets/src/js/flickity.pkgd.js',
+	'assets/src/js/headroom.js',
 	// ** Mine ** //
 	'assets/src/js/myjs/Dropdown.js',
 	'assets/src/js/myjs/Morph.js',
-	'assets/src/js/myjs/main.js',
+	'assets/src/js/myjs/mobile-nav.js',
+	'assets/src/js/myjs/main.js'
 ];
 
 // Scripts that rely on jQuery
 const SOURCESJQ = [
-	'assets/src/js/myjs/jq-main.js',
+	'assets/src/js/myjs/jq-main.js'
 ];
 
 // ***** Development tasks ****** //
 // Lint JavaScript
 gulp.task('lint', () =>
 	gulp.src('assets/src/js/myjs/*.js')
-	.pipe($.eslint())
-	.pipe($.eslint.format())
-	.pipe($.if(!browserSync.active, $.eslint.failOnError()))
+	.pipe(xo())
 );
 
 // ***** Production build tasks ****** //
@@ -106,14 +115,13 @@ gulp.task('styles', () => {
 			precision: 10,
 			onError: console.error.bind(console, 'Sass error:')
 		}))
-		//.pipe($.cssInlineImages({webRoot: 'src'}))
-		.pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+		.pipe(postcss(POSTCSS_PLUGINS))
 		.pipe(gulp.dest('.tmp'))
 		// Concatenate Styles
 		.pipe($.concat('style.css'))
 		.pipe(gulp.dest('./'))
 		// Minify Styles
-		.pipe($.if('*.css', $.minifyCss()))
+		.pipe($.if('*.css', $.cssnano()))
 		.pipe($.concat('style.min.css'))
 		.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest('./'))
@@ -149,7 +157,7 @@ gulp.task('scripts', () =>
 gulp.task('jq_scripts', () =>
 	gulp.src(SOURCESJQ)
 	.pipe($.sourcemaps.init())
-	//.pipe($.babel())
+	// .pipe($.babel())
 	.pipe($.sourcemaps.write())
 	// Concatenate Scripts
 	.pipe($.concat('jq-main.js'))
@@ -174,10 +182,10 @@ gulp.task('jq_scripts', () =>
 // Build and serve the output
 gulp.task('serve', ['scripts', 'styles'], () => {
 	browserSync.init({
-		//proxy: "local.wordpress.dev"
-		//proxy: "local.wordpress-trunk.dev"
-		proxy: "rcdoc.dev"
-			//proxy: "127.0.0.1:8080/wordpress/"
+		// proxy: "local.wordpress.dev"
+		// proxy: "local.wordpress-trunk.dev"
+		proxy: 'rcdoc.dev'
+		// proxy: "127.0.0.1:8080/wordpress/"
 	});
 
 	gulp.watch(['*/**/*.php'], reload);
@@ -189,6 +197,6 @@ gulp.task('serve', ['scripts', 'styles'], () => {
 // Build production files, the default task
 gulp.task('default', cb => {
 	runSequence(
-		'styles', [ /*'lint',*/ 'scripts', 'jq_scripts', 'images'],
+		'styles', ['scripts', 'jq_scripts', 'images'],
 		cb);
 });
