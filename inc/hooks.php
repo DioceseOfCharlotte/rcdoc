@@ -1,6 +1,6 @@
 <?php
 
-add_action( 'tha_entry_bottom',  'rcdoc_parish_footer' );
+add_action( 'tha_entry_bottom',  'rcdoc_contact_footer' );
 add_action( 'tha_header_after', 'logged_in_drawer' );
 //add_action( 'tha_header_bottom', 'mdl_search_form' );
 add_action( 'tha_header_before', 'header_right_widget' );
@@ -12,8 +12,8 @@ add_action( 'tha_header_after', 'headspace' );
 //add_action( 'tha_entry_bottom',  'rcdoc_give_row' );
 
 
-function rcdoc_parish_footer() {
-    if ( is_front_page() || 'parish' !== get_post_type() && 'school' !== get_post_type() && 'department' !== get_post_type() ) {
+function rcdoc_contact_footer() {
+    if ( is_front_page() || is_singular() || 'parish' !== get_post_type() && 'school' !== get_post_type() && 'department' !== get_post_type() ) {
         return;
     }
     get_template_part('components/acf-parish-contact');

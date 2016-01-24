@@ -4058,6 +4058,12 @@ body:not(.home) .site-header .site-description {
 i.locate-me {
   top: 9px; }
 
+.type-document {
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
+  width: 100%; }
+
 /* Styles specific to the editor. */
 body#tinymce {
   min-height: 50px;
