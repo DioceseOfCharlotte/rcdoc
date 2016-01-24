@@ -85,6 +85,7 @@ function rcdoc_html_classes() {
 
 add_filter('hybrid_attr_post',   'cpt_post');
 add_filter('hybrid_attr_entry-header',   'cpt_header', 20);
+add_filter('hybrid_attr_post',   'document_post');
 
 function cpt_post($attr) {
 
@@ -110,4 +111,13 @@ $directory_posts = array('school','parish','department');
         $attr['class']   .= " u-flex-row u-flex-nowrap";
     endif;
 return $attr;
+}
+
+
+function document_post($attr) {
+
+    if (is_post_type_archive( 'document' )) :
+        $attr['class']   .= " u-1of2-md";
+    endif;
+	return $attr;
 }

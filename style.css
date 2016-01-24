@@ -4061,8 +4061,7 @@ i.locate-me {
 .type-document {
   -webkit-align-self: flex-start;
       -ms-flex-item-align: start;
-          align-self: flex-start;
-  width: 100%; }
+          align-self: flex-start; }
 
 /* Styles specific to the editor. */
 body#tinymce {
