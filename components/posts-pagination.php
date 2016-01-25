@@ -1,4 +1,9 @@
-<?php if ( is_singular( 'post' ) ) : // If viewing a single post page. ?>
+<?php
+if ( is_post_type_archive( 'department' ) || is_post_type_archive( 'parish' ) || is_post_type_archive( 'school' ) ) :
+echo facetwp_display( 'pager' );
+?>
+
+<?php elseif ( is_singular( 'post' ) ) : // If viewing a single post page. ?>
 
 	<div class="loop-nav">
 		<?php previous_post_link( '<div class="prev">' . esc_html__( 'Previous Post: %link', 'abraham' ) . '</div>', '%title' ); ?>
