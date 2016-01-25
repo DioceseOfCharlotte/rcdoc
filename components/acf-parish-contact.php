@@ -17,7 +17,7 @@ $map_link = "http://maps.google.com/maps?z=16&q=" . $address;
 
 <div class="u-flex contact-info u-flex-wrap u-flex-justify-between u-mxn1">
 <?php
-if( get_field('doc_city') ):
+
 ob_start();
 ?>
 <div class="contact-numbers u-overflow-hidden u-px2 u-inline-block">
@@ -31,7 +31,7 @@ ob_start();
 
 <?php
 echo ob_get_clean();
-endif;
+if( get_field('doc_city') ):
 ob_start(); ?>
 <div class="contact-address u-px2 u-inline-block u-mb1" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
     <a class="contact-link" href="<?php echo esc_url( $map_link ) ?>" target="_blank"><i class="material-icons u-align-top map-marker u-mr1">&#xE55F;</i>
@@ -47,9 +47,9 @@ ob_start(); ?>
     </span>
 </a>
 </div>
-<?php
-echo ob_get_clean();
-?>
+<?php echo ob_get_clean(); ?>
+<?php endif; ?>
+
 <?php if( get_field('doc_email') ): ?>
     <div class="email u-1of1 u-mb1 u-px2" itemprop="email"><a class="contact-link" href="mailto:<?php the_field('doc_email'); ?>"><i class="material-icons u-mr1">&#xE0BE;</i><?php the_field('doc_email'); ?></a></div>
 <?php endif; ?>
