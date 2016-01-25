@@ -23,9 +23,6 @@
 
   padding: ($padding * 2) $padding;
 
-  color: $footer-color;
-  background-color: $footer-bg-color;
-
   &:after {
     content: '';
     display: block;
@@ -81,8 +78,6 @@
 
   padding: 0;
   margin: 0;
-
-  background-color: $footer-button-fill-color;
 
   border: none;
 }

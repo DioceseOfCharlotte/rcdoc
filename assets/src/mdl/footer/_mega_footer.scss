@@ -19,9 +19,6 @@
 
 .mdl-mega-footer {
   padding: $footer-min-padding $footer-padding-sides;
-
-  color: $footer-color;
-  background-color: $footer-bg-color;
 }
 
 
@@ -85,8 +82,6 @@
 
   padding: 0;
   margin: 0;
-
-  background-color: $footer-button-fill-color;
 
   border: none;
 }
@@ -214,7 +209,6 @@
   text-overflow: ellipsis;
   overflow: hidden;
 
-  color: $footer-heading-color;
 }
 
 .mdl-mega-footer--heading:after,
@@ -298,7 +292,6 @@
 
 .mdl-logo {
   margin-bottom: $footer-min-padding;
-  color: white;
 }
 
 .mdl-mega-footer--bottom-section .mdl-mega-footer--link-list li,

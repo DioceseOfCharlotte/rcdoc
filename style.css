@@ -1417,19 +1417,15 @@ input.mdl-button[type="submit"] {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-size: 16px;
-  font-weight: 400;
   min-height: 200px;
   overflow: hidden;
   width: 330px;
   z-index: 1;
   position: relative;
   background: rgb(255,255,255);
-  border-radius: 2px;
-  box-sizing: border-box; }
+  border-radius: 2px; }
 
 .mdl-card__media {
-  background-color: rgb(22,160,133);
   background-repeat: repeat;
   background-position: 50% 50%;
   background-size: cover;
@@ -1441,7 +1437,6 @@ input.mdl-button[type="submit"] {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  color: rgb(0,0,0);
   display: block;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1463,34 +1458,24 @@ input.mdl-button[type="submit"] {
   -webkit-align-self: flex-end;
       -ms-flex-item-align: end;
           align-self: flex-end;
-  color: inherit;
   display: block;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-size: 24px;
-  font-weight: 300;
-  line-height: normal;
   overflow: hidden;
   -webkit-transform-origin: 149px 48px;
           transform-origin: 149px 48px;
   margin: 0; }
 
 .mdl-card__subtitle-text {
-  font-size: 14px;
-  color: rgba(0,0,0, 0.54);
   margin: 0; }
 
 .mdl-card__supporting-text {
-  color: rgba(0,0,0, 0.54);
-  font-size: 13px;
-  line-height: 18px;
   overflow: hidden;
   padding: 16px 16px;
   width: 90%; }
 
 .mdl-card__actions {
-  font-size: 16px;
   line-height: normal;
   width: 100%;
   background-color: transparent;
@@ -1691,9 +1676,7 @@ input.mdl-button[type="submit"] {
 /* Shadows */
 /* Animations */
 .mdl-mega-footer {
-  padding: 16px 40px;
-  color: rgb(158,158,158);
-  background-color: rgb(66,66,66); }
+  padding: 16px 40px; }
 
 .mdl-mega-footer--top-section:after,
 .mdl-mega-footer--middle-section:after,
@@ -1740,7 +1723,6 @@ input.mdl-button[type="submit"] {
   height: 36px;
   padding: 0;
   margin: 0;
-  background-color: rgb(158,158,158);
   border: none; }
 
 .mdl-mega-footer--drop-down-section,
@@ -1829,8 +1811,7 @@ input.mdl-button[type="submit"] {
   margin-bottom: 16px;
   white-space: nowrap;
   text-overflow: ellipsis;
-  overflow: hidden;
-  color: rgb(224,224,224); }
+  overflow: hidden; }
 
 .mdl-mega-footer--heading:after,
 .mdl-mega-footer__heading:after {
@@ -1891,8 +1872,7 @@ input.mdl-button[type="submit"] {
   margin-bottom: 16px; }
 
 .mdl-logo {
-  margin-bottom: 16px;
-  color: white; }
+  margin-bottom: 16px; }
 
 .mdl-mega-footer--bottom-section .mdl-mega-footer--link-list li,
 .mdl-mega-footer__bottom-section .mdl-mega-footer__link-list li {
@@ -2079,9 +2059,7 @@ input.mdl-button[type="submit"] {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 32px 16px;
-  color: rgb(158,158,158);
-  background-color: rgb(66,66,66); }
+  padding: 32px 16px; }
   .mdl-mini-footer:after {
     content: '';
     display: block; }
@@ -2127,7 +2105,6 @@ input.mdl-button[type="submit"] {
   height: 36px;
   padding: 0;
   margin: 0;
-  background-color: rgb(158,158,158);
   border: none; }
 
 /**

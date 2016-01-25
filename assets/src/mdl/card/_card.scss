@@ -19,8 +19,6 @@
 .mdl-card {
   display: flex;
   flex-direction: column;
-  font-size: $card-font-size;
-  font-weight: 400;
   min-height: $card-height;
   overflow: hidden;
   width: $card-width;
@@ -28,11 +26,9 @@
   position: relative;
   background: $card-background-color;
   border-radius: 2px;
-  box-sizing: border-box;
 }
 
 .mdl-card__media {
-  background-color: $card-image-placeholder-color;
   background-repeat: repeat;
   background-position: 50% 50%;
   background-size: cover;
@@ -43,7 +39,6 @@
 
 .mdl-card__title {
   align-items: center;
-  color: $card-text-color;
   display: block;
   display: flex;
   justify-content: stretch;
@@ -60,34 +55,24 @@
 
 .mdl-card__title-text {
   align-self: flex-end;
-  color: inherit;
   display: block;
   display: flex;
-  font-size: $card-title-font-size;
-  font-weight: $card-title-text-font-weight;
-  line-height: normal;
   overflow: hidden;
   transform-origin: $card-title-text-transform-origin-x $card-title-text-transform-origin-y;
   margin: 0;
 }
 
 .mdl-card__subtitle-text {
-  font-size: $card-subtitle-font-size;
-  color: $card-subtitle-color;
   margin: 0;
 }
 
 .mdl-card__supporting-text {
-  color: $card-supporting-text-text-color;
-  font-size: $card-supporting-text-font-size;
-  line-height: $card-supporting-text-line-height;
   overflow: hidden;
   padding: $card-vertical-padding $card-horizontal-padding;
   width: 90%;
 }
 
 .mdl-card__actions {
-  font-size: $card-actions-font-size;
   line-height: normal;
   width: 100%;
   background-color: rgba(0,0,0,0);
