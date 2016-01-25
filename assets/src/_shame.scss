@@ -302,8 +302,7 @@ input.search-submit {
 }
 
 .rss-widget li {
-  margin-bottom: 0.75em;
-  font-size: 1.2rem;
+  margin-bottom: 0.5em;
 }
 
 .rss-title img {
@@ -899,5 +898,16 @@ i.locate-me {
 .menu-primary__list li {
     @include md {
     display: inline-block;
+    }
+}
+
+
+.widget ul,
+.widget li {
+	list-style: none;
+    padding: 0;
+    margin: 0;
+    > a {
+        width: 100%;
     }
 }
