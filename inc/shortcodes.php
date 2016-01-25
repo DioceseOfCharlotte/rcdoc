@@ -46,7 +46,7 @@ function meh_row_shortcode($attr, $content = null) {
 
     <?php if ($attr['row_intro']) : ?>
 
-        <h2 class="u-text-white u-z1 u-mb3 u-mb4-md u-text-center">
+        <h2 class="u-z1 u-mb3 u-mb4-md u-text-center">
             <?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?>
         </h2>
 
