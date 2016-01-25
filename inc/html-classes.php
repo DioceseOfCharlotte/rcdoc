@@ -65,7 +65,7 @@ function rcdoc_html_classes() {
         // 'comments_area'               => '',
 		//
         // // FOOTER
-        'footer'                      => '',
+        //'footer'                      => '',
 		//
         // 'menu_item'                 => 'u-list-reset u-p0 u-color-inherit',
         // 'menu_link'                 => 'u-hover-frost-2 u-opacity1 mdl-navigation__link',
@@ -117,7 +117,7 @@ return $attr;
 function document_post($attr) {
 
     if (is_post_type_archive( 'document' )) :
-        $attr['class']   .= " u-1of2-md";
+        $attr['class']   .= " u-1of3 u-p0";
     endif;
 	return $attr;
 }
