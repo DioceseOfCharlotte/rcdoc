@@ -54,6 +54,6 @@ echo ob_get_clean();
     <div class="email u-1of1 u-mb1 u-px2" itemprop="email"><a class="contact-link" href="mailto:<?php the_field('doc_email'); ?>"><i class="material-icons u-mr1">&#xE0BE;</i><?php the_field('doc_email'); ?></a></div>
 <?php endif; ?>
 <?php if( get_field('doc_website') ): ?>
-    <div class="website-address u-bg-tint-1 u-1of1 u-text-center" itemprop="url"><a class="contact-link u-1of1 btn u-h6" href="<?php the_field('doc_website'); ?>" target="_blank"><?php the_field('doc_website'); ?><i class="u-px1 u-h6 material-icons">&#xE89E;</i></a></div>
+    <div class="website-address u-bg-2-glass u-1of1 u-text-center" itemprop="url"><a class="contact-link u-1of1 btn u-h6" href="<?php the_field('doc_website'); ?>" target="_blank"><?php the_field('doc_website'); ?><i class="u-px1 u-h6 material-icons">&#xE89E;</i></a></div>
 <?php endif; ?>
 </div>

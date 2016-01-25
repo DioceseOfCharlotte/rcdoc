@@ -922,3 +922,13 @@ i.locate-me {
     background-color: $lighten-4;
     padding: 1rem;
 }
+
+
+.gv-grid.gv-list-view-content {
+    padding: 0;
+}
+
+.gv-grid-col-2-3.gv-list-view-content-description {
+    width: 100%;
+    padding: 0;
+}
