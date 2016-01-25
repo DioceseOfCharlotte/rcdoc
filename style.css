@@ -4076,7 +4076,16 @@ i.locate-me {
   margin: 0; }
   .widget ul > a,
   .widget li > a {
-    width: 100%; }
+    width: 100%;
+    text-align: left; }
+
+#page .gv-list-container,
+#page .gv-grid {
+  max-width: 100%; }
+
+.entry-content > .gv-grid {
+  background-color: rgba(228, 234, 236, 0.8);
+  padding: 1rem; }
 
 /* Styles specific to the editor. */
 body#tinymce {

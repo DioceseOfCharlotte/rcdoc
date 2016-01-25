@@ -909,5 +909,16 @@ i.locate-me {
     margin: 0;
     > a {
         width: 100%;
+        text-align: left;
     }
+}
+
+#page .gv-list-container,
+#page .gv-grid {
+    max-width: 100%;
+}
+
+.entry-content > .gv-grid {
+    background-color: $lighten-4;
+    padding: 1rem;
 }
