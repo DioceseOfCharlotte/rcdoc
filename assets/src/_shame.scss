@@ -745,7 +745,6 @@ http://flickity.metafizzy.co
 .menu-primary.toggled ul {
   display: block;
   width: 100%;
-  background-color: #d2d2d2;
 }
 
 .menu-primary__list {
@@ -756,13 +755,14 @@ http://flickity.metafizzy.co
   width: 100%;
 }
 
-@media screen and (min-width: 37.5em) {
+@include md {
   .menu-toggle {
     display: none;
   }
 
-  .menu-primary__list {
+  #page .menu-primary__list {
     display: block;
+    background-color: transparent;
   }
 
   .menu-item {
@@ -893,4 +893,11 @@ i.locate-me {
   align-self: flex-start;
 
   //min-width: 47%;
+}
+
+
+.menu-primary__list li {
+    @include md {
+    display: inline-block;
+    }
 }

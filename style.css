@@ -3943,8 +3943,7 @@ http://flickity.metafizzy.co
 
 .menu-primary.toggled ul {
   display: block;
-  width: 100%;
-  background-color: #d2d2d2; }
+  width: 100%; }
 
 .menu-primary__list {
   display: none; }
@@ -3952,11 +3951,12 @@ http://flickity.metafizzy.co
 .menu-item {
   width: 100%; }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 52em) {
   .menu-toggle {
     display: none; }
-  .menu-primary__list {
-    display: block; }
+  #page .menu-primary__list {
+    display: block;
+    background-color: transparent; }
   .menu-item {
     width: auto; } }
 
@@ -4065,6 +4065,10 @@ i.locate-me {
   -webkit-align-self: flex-start;
       -ms-flex-item-align: start;
           align-self: flex-start; }
+
+@media screen and (min-width: 52em) {
+  .menu-primary__list li {
+    display: inline-block; } }
 
 /* Styles specific to the editor. */
 body#tinymce {
