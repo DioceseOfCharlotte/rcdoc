@@ -118,3 +118,61 @@ function wpdr_facetwp_indexer_query_args( $args ) {
 }
 
 add_filter( 'facetwp_indexer_query_args', 'wpdr_facetwp_indexer_query_args' );
+
+
+
+
+
+
+
+function doc_facetwp_pager_html( $output, $params ) {
+    $output = '';
+    $page = $params['page'];
+	$total_pages = $params['total_pages'];
+
+	if ( 1 < $total_pages ) {
+
+		$text_page      = __( 'Page', 'fwp' );
+		$text_of        = __( 'of', 'fwp' );
+
+		// "Page 5 of 150"
+		// $output .= '<span class="facetwp-page u-br u-h5 u-p1r-label">' . "$text_page $page $text_of $total_pages</span>";
+
+		// if ( 3 < $page ) {
+		// 	$output .= '<a class="facetwp-page u-br u-h5 u-p1 btn first-page" data-page="1"><i class="material-icons">&#xE408;</i> Previous</a>';
+		// }
+		if ( $page > 1 ) {
+	        $output .= '<a class="facetwp-page u-br u-h5 u-p1 btn" data-page="' . ($page - 1) . '"><i class="material-icons">&#xE408;</i>Previous</a>';
+	    }
+		if ( 1 < ( $page - 10 ) ) {
+			$output .= '<a class="facetwp-page u-br u-h5 u-p1 btn" data-page="' . ($page - 10) . '">' . ($page - 10) . '</a>';
+		}
+		for ( $i = 2; $i > 0; $i-- ) {
+			if ( 0 < ( $page - $i ) ) {
+				$output .= '<a class="facetwp-page u-br u-h5 u-p1 btn" data-page="' . ($page - $i) . '">' . ($page - $i) . '</a>';
+			}
+		}
+
+		// Current page
+		$output .= '<a class="facetwp-page u-br u-h5 u-p1 u-bold btn btn1 active" data-page="' . $page . '">' . $page . '</a>';
+
+		for ( $i = 1; $i <= 2; $i++ ) {
+			if ( $total_pages >= ( $page + $i ) ) {
+				$output .= '<a class="facetwp-page u-br u-h5 u-p1 btn" data-page="' . ($page + $i) . '">' . ($page + $i) . '</a>';
+			}
+		}
+		if ( $total_pages > ( $page + 10 ) ) {
+			$output .= '<a class="facetwp-page u-br u-h5 u-p1 btn" data-page="' . ($page + 10) . '">' . ($page + 10) . '</a>';
+		}
+		if ( $page < $total_pages && $total_pages > 1 ) {
+	        $output .= '<a class="facetwp-page u-br u-h5 u-p1 btn" data-page="' . ($page + 1) . '">Next<i class="material-icons">&#xE409;</i></a>';
+	    }
+		// if ( $total_pages > ( $page + 2 ) ) {
+		// 	$output .= '<a class="facetwp-page u-br u-h5 u-p1 last-page btn" data-page="' . $total_pages . '">Next <i class="material-icons">&#xE409;</i></a>';
+		// }
+	}
+
+	return $output;
+}
+
+add_filter( 'facetwp_pager_html', 'doc_facetwp_pager_html', 10, 2 );
