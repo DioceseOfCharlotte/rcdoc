@@ -3451,16 +3451,6 @@ button.simplefavorite-button {
           align-items: center;
   margin: 0 auto; }
 
-.facetwp-type-proximity {
-  margin-bottom: 40px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; }
-
-select#facetwp-radius {
-  width: 80px;
-  height: 2.4em; }
-
 .tile {
   width: 256px;
   height: 256px;
@@ -3518,41 +3508,6 @@ span.gv-field-label:empty {
 
 .gv-list-view-content h4 {
   margin: 0; }
-
-span.facetwp-counter {
-  display: none; }
-
-.facetwp-type-checkboxes {
-  min-width: 50px;
-  min-height: 50px; }
-
-.facetwp-checkbox {
-  display: inline-block;
-  margin-right: 50px;
-  font-size: 1.3rem; }
-
-.facetwp-checkbox.checked {
-  font-weight: bold; }
-
-.facetwp-checkbox {
-  background: none !important; }
-
-.facetwp-checkbox:before {
-  content: "\E835";
-  font-family: 'Material Icons';
-  padding-right: 5px;
-  padding-left: 0;
-  vertical-align: top; }
-
-.facetwp-checkbox.checked:before {
-  content: "\E834";
-  font-weight: 400;
-  color: #3f51b5; }
-
-span.facetwp-alpha {
-  font-size: 1.2rem;
-  color: #a5a5a5;
-  font-weight: bold; }
 
 .material-icons {
   vertical-align: middle; }
@@ -3631,33 +3586,6 @@ li > a.rsswidget {
   width: 100%;
   max-width: 260px;
   max-height: 260px; }
-
-ul.gravityview-az-filter,
-.facetwp-type-alpha {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 20px;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
-
-span.facetwp-alpha {
-  font: 400 16px/24px Roboto, sans-serif;
-  color: #999; }
-
-ul.gravityview-az-filter li.gv-uppercase a,
-span.facetwp-alpha.available {
-  color: #3f51b5;
-  font-weight: 500 16px/24px Roboto, sans-serif; }
-
-ul.gravityview-az-filter li.gv-active a,
-span.facetwp-alpha.selected {
-  color: #222;
-  font-weight: 700; }
 
 .gallery-cell {
   padding: 0 10px; }
@@ -3943,7 +3871,7 @@ http://flickity.metafizzy.co
   font-size: 3.6em; }
 
 .site-branding {
-  transition-duration: .6s;
+  transition-duration: 0.6s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: font-size;
   margin-bottom: 1rem; }
@@ -3960,14 +3888,14 @@ http://flickity.metafizzy.co
 
 .site-header.not-top .site-branding,
 body:not(.home) .site-header .site-branding {
-  font-size: .5rem; }
+  font-size: 0.5rem; }
 
 .site-header.not-top .site-description,
 body:not(.home) .site-header .site-description {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: opacity; }
 
@@ -4025,18 +3953,6 @@ body:not(.home) .site-header .site-description {
 .site-header.not-top::after {
   opacity: 1; }
 
-.facet-more {
-  display: none; }
-
-.btn.facet-more:last-of-type {
-  display: inline-block; }
-
-#facetwp-location {
-  height: 2.4em; }
-
-i.locate-me {
-  top: 9px; }
-
 .type-document {
   -webkit-align-self: flex-start;
       -ms-flex-item-align: start;
@@ -4070,6 +3986,77 @@ i.locate-me {
 .gv-grid-col-2-3.gv-list-view-content-description {
   width: 100%;
   padding: 0; }
+
+span.facetwp-counter {
+  display: none; }
+
+#page .facetwp-facet:not(.facetwp-type-alpha) {
+  margin-bottom: 2rem;
+  min-width: 50px;
+  min-height: 50px; }
+
+.facetwp-checkbox.checked {
+  font-weight: bold; }
+
+.facetwp-checkbox {
+  background: none !important; }
+
+.facetwp-checkbox:before {
+  content: "\E835";
+  font-family: 'Material Icons';
+  padding-right: 5px;
+  padding-left: 0;
+  vertical-align: top; }
+
+.facetwp-checkbox.checked:before {
+  content: "\E834";
+  font-weight: 400;
+  color: #3f51b5; }
+
+#page .gv-uppercase > a,
+#page .facetwp-alpha {
+  color: inherit;
+  opacity: 0.4;
+  display: inline-block;
+  float: none;
+  line-height: 1;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: normal;
+  border-radius: 2px;
+  font-family: inherit;
+  margin-right: .5rem;
+  border: 1px solid transparent;
+  background-color: transparent;
+  transition-duration: 0.3s;
+  cursor: default;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: color, background-color, border-color; }
+
+#page li.gv-uppercase > a,
+#page .facetwp-alpha.available {
+  opacity: 1;
+  cursor: pointer; }
+  #page li.gv-uppercase > a:hover,
+  #page .facetwp-alpha.available:hover {
+    background-color: rgba(13, 16, 18, 0.0625); }
+
+#page .gv-active.gv-uppercase > a,
+#page .facetwp-alpha.selected {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: #004899;
+  font-weight: bold; }
+  #page .gv-active.gv-uppercase > a:hover,
+  #page .facetwp-alpha.selected:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    cursor: default; }
+
+ul.gravityview-az-filter {
+  margin-bottom: 1rem;
+  display: inline-block; }
+
+.gv-widget-letter-links {
+  text-align: center; }
 
 /* Styles specific to the editor. */
 body#tinymce {
