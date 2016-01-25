@@ -265,6 +265,9 @@ input.search-submit {
 
 .navigation.pagination {
   padding: 0.5rem;
+  width: 100%;
+  background: rgba(228,234,236, 0.8);
+  margin-bottom: 1rem;
 }
 
 .mdl-card {
@@ -790,7 +793,6 @@ http://flickity.metafizzy.co
 // .site-header:not(.mui-leave-active) {
 //   position: relative !important;
 // }
-
 // .not-top ~ .site-content {
 //   padding-top: 2em;
 // }
@@ -798,7 +800,6 @@ http://flickity.metafizzy.co
 // .home .not-top ~ .site-content {
 //   padding-top: 4em;
 // }
-
 // .site-header.slideOutUp {
 //     position: relative!important;
 // }
@@ -856,7 +857,7 @@ body:not(.home) .site-header {
 
   &::after {
     content: '';
-	position: absolute;
+    position: absolute;
     z-index: -1;
     width: 100%;
     height: 100%;
@@ -871,7 +872,6 @@ body:not(.home) .site-header {
     opacity: 1;
   }
 }
-
 
 .facet-more {
   display: none;
@@ -889,9 +889,8 @@ i.locate-me {
   top: 9px;
 }
 
-
-
 .type-document {
-	align-self: flex-start;
-	//min-width: 47%;
+  align-self: flex-start;
+
+  //min-width: 47%;
 }

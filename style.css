@@ -3600,7 +3600,10 @@ input.search-submit {
   box-shadow: none !important; }
 
 .navigation.pagination {
-  padding: 0.5rem; }
+  padding: 0.5rem;
+  width: 100%;
+  background: rgba(228, 234, 236, 0.8);
+  margin-bottom: 1rem; }
 
 .mdl-card {
   min-height: auto; }
