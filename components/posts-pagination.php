@@ -3,6 +3,16 @@ if ( is_post_type_archive( 'department' ) || is_post_type_archive( 'parish' ) ||
 echo facetwp_display( 'pager' );
 ?>
 
+<script>
+(function($) {
+    $(document).on('facetwp-loaded', function() {
+        $('html, body').animate({
+            scrollTop: $('#content').offset().top
+        }, 500);
+    });
+})(jQuery);
+</script>
+
 <?php elseif ( is_singular( 'post' ) ) : // If viewing a single post page. ?>
 
 	<div class="loop-nav">
