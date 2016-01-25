@@ -7,11 +7,11 @@ function doc_register_doc_category_facets( $facets ) {
     $facets[] = array(
         'label' => 'Document Categories',
         'name' => 'document_categories',
-        'type' => 'checkboxes',
+        'type' => 'dropdown',
         'source' => 'tax/document_category',
-		'ghosts' => 'yes',
-	    'preserve_ghosts' => 'yes',
-        'operator' => 'or',
+		'label_any' => 'All Categories',
+	    'orderby' => 'display_value',
+        'hierarchical' => 'no',
     );
 
     $facets[] = array(
@@ -78,6 +78,7 @@ add_action( 'tha_content_before', 'doc_display_facets' );
 function doc_display_facets() {
     if ( is_post_type_archive('document') ) {
 		echo '<div class="u-1of3-md u-px3 u-pb0 u-br u-pt3 u-mb1 u-mx1 u-flex u-flex-wrap u-flex-justify-around u-bg-frost-4 mdl-shadow--3dp">';
+		echo facetwp_display( 'facet', 'department_search' );
         echo facetwp_display( 'facet', 'document_categories' );
         echo facetwp_display( 'facet', 'document_types' );
         echo '<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect u-m0" onclick="FWP.reset()"><i class="material-icons">&#xE5D5;</i></button>';
@@ -85,6 +86,7 @@ function doc_display_facets() {
     } elseif ( is_post_type_archive('parish') ) {
 		echo '<div class="u-1of1 u-px3 u-pb0 u-br u-pt3 u-mb1 u-mx1 u-flex u-flex-wrap u-flex-justify-around u-bg-frost-4 mdl-shadow--3dp">';
         echo facetwp_display( 'facet', 'parish_proximity' );
+		echo facetwp_display( 'facet', 'department_search' );
         echo '<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect u-m0" onclick="FWP.reset()"><i class="material-icons">&#xE5D5;</i></button>';
         echo '<div class="u-1of1 u-text-center">' .facetwp_display( 'facet', 'title_alpha' ). '</div>';
         echo '</div>';
@@ -99,6 +101,7 @@ function doc_display_facets() {
 		echo '<div class="u-1of1 u-px3 u-pb0 u-br u-pt3 u-mb1 u-mx1 u-flex u-flex-wrap u-flex-justify-around u-bg-frost-4 mdl-shadow--3dp">';
 		echo facetwp_display( 'facet', 'parish_proximity' );
 	    echo facetwp_display( 'facet', 'school_system' );
+		echo facetwp_display( 'facet', 'department_search' );
         echo '<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect u-m0" onclick="FWP.reset()"><i class="material-icons">&#xE5D5;</i></button>';
 		echo '<div class="u-1of1 u-text-center">' .facetwp_display( 'facet', 'title_alpha' ). '</div>';
 		echo '</div>';
