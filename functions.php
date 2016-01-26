@@ -5,7 +5,7 @@ add_action( 'wp_enqueue_scripts', 'rcdoc_scripts' );
 add_action( 'widgets_init', 'abraham_widgets' );
 
 require get_stylesheet_directory() . '/inc/html-classes.php';
-require get_stylesheet_directory() . '/inc/ext/tgmpa.php';
+//require get_stylesheet_directory() . '/inc/ext/tgmpa.php';
 require get_stylesheet_directory() . '/inc/post-types.php';
 require get_stylesheet_directory() . '/inc/taxonomies.php';
 require get_stylesheet_directory() . '/inc/compatibility.php';
