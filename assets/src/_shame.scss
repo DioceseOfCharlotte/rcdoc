@@ -835,6 +835,8 @@ body:not(.home) .site-header {
 .entry-content > .gv-grid {
     background-color: $lighten-4;
     padding         : 1rem;
+    border-radius: 2px;
+    margin-bottom: 1rem;
 }
 
 .gv-grid.gv-list-view-content {

@@ -3978,7 +3978,9 @@ body:not(.home) .site-header .site-description {
 
 .entry-content > .gv-grid {
   background-color: rgba(228, 234, 236, 0.8);
-  padding: 1rem; }
+  padding: 1rem;
+  border-radius: 2px;
+  margin-bottom: 1rem; }
 
 .gv-grid.gv-list-view-content {
   padding: 0; }
