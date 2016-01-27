@@ -7,14 +7,14 @@ var $ = jQuery.noConflict();
 })(jQuery);
 
 
-TweenMax.staggerFrom(".tile", 1, {
-	y: -900,
-	ease: Power3.easeOut
-}, 0.3);
-
-TweenMax.staggerFrom(".tile", 0.5, {
-	opacity: 0.5
-}, 0.2);
+// TweenMax.staggerFrom(".tile", 1, {
+// 	y: -900,
+// 	ease: Power3.easeOut
+// }, 0.3);
+//
+// TweenMax.staggerFrom(".tile", 0.5, {
+// 	opacity: 0.5
+// }, 0.2);
 
 
 
