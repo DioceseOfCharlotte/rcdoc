@@ -1,0 +1,24 @@
+
+.tile {
+    @include mui-fade(in, $duration: 1s);
+    width     : 256px;
+    height    : 256px;
+    transition-delay: 0.3s;
+    opacity: 1;
+    //transition: box-shadow 0.2s cubic-bezier(.4, 0, 1, 1), background-color 0.2s cubic-bezier(.4, 0, .2, 1), opacity 1s cubic-bezier(.4, 0, .2, 1), color 0.2s cubic-bezier(.4, 0, .2, 1);
+}
+
+.tile-icon {
+    max-height: 90px;
+    max-width : 90px;
+}
+
+
+// .tile {
+//     -webkit-transition: box-shadow 0.2s cubic-bezier(.4, 0, 1, 1), opacity 0.2s cubic-bezier(.4, 0, .2, 1), color 0.2s cubic-bezier(.4, 0, .2, 1);
+//     transition        : box-shadow 0.2s cubic-bezier(.4, 0, 1, 1), opacity 0.2s cubic-bezier(.4, 0, .2, 1), color 0.2s cubic-bezier(.4, 0, .2, 1);
+// }
+
+.tile:hover {
+    opacity: 0.9;
+}

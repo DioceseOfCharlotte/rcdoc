@@ -1,22 +1,50 @@
 // Open the first Tab by default.
-var ready = function (fn) {
-	// Sanity check
-	if (typeof fn !== 'function') return;
+function ready(fn) {
+  if (document.readyState != 'loading'){
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
 
-	// If document is already loaded, run method
-	if (document.readyState === 'complete') {
-		return fn();
+
+/**
+ * A simple forEach() implementation for Arrays, Objects and NodeLists
+ * @private
+ * @param {Array|Object|NodeList} collection Collection of items to iterate
+ * @param {Function} callback Callback function for each iteration
+ * @param {Array|Object|NodeList} scope Object/NodeList/Array that forEach is iterating over (aka `this`)
+ */
+var forEach = function (collection, callback, scope) {
+	if (Object.prototype.toString.call(collection) === '[object Object]') {
+		for (var prop in collection) {
+			if (Object.prototype.hasOwnProperty.call(collection, prop)) {
+				callback.call(scope, collection[prop], prop, collection);
+			}
+		}
+	} else {
+		for (var i = 0, len = collection.length; i < len; i++) {
+			callback.call(scope, collection[i], i, collection);
+		}
 	}
-
-	// Otherwise, wait until document is loaded
-	document.addEventListener('DOMContentLoaded', fn, false);
 };
+
 
 ready(function () {
 	var firstTab = document.getElementsByClassName('mdl-tabs__tab')[0];
 	var firstPanel = document.getElementsByClassName('mdl-tabs__panel')[0];
 	firstTab.classList.toggle('is-active');
 	firstPanel.classList.toggle('is-active');
+});
+
+ready(function (myTile) {
+	var myTile = document.querySelectorAll('.js-tile');
+	var drop = {};
+
+		forEach(myTile, function (drop) {
+		myTile.classList.add('mui-enter-active');
+	});
+
 });
 
 // HEADROOM JS

@@ -64,17 +64,17 @@ const SOURCESJS = [
 	// 'assets/src/js/bliss.js',
 	// ** GSAP ** //
 	'assets/src/js/TweenMax.js',
-	'assets/src/js/MorphSVGPlugin.js',
-	'assets/src/js/DrawSVGPlugin.js',
+	// 'assets/src/js/MorphSVGPlugin.js',
+	// 'assets/src/js/DrawSVGPlugin.js',
 	// ** ScrollMagic ** //
-	'assets/src/js/ScrollMagic.js',
-	'assets/src/js/animation.gsap.js',
+	// 'assets/src/js/ScrollMagic.js',
+	// 'assets/src/js/animation.gsap.js',
 	// ** Flickity ** //
 	'assets/src/js/flickity.pkgd.js',
 	'assets/src/js/headroom.js',
 	// ** Mine ** //
 	'assets/src/js/myjs/Dropdown.js',
-	'assets/src/js/myjs/Morph.js',
+	// 'assets/src/js/myjs/Morph.js',
 	'assets/src/js/myjs/mobile-nav.js',
 	'assets/src/js/myjs/main.js'
 ];

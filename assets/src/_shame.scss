@@ -86,58 +86,9 @@ button.simplefavorite-button {
     align-items: center;
     margin     : 0 auto;
 }
-// .facetwp-type-proximity {
-//   margin-bottom: 40px;
-//   display: flex;
-// }
-// select#facetwp-radius {
-//   width: 80px;
-//   height: 2.4em;
-// }
-.tile {
-    width     : 256px;
-    height    : 256px;
-    transition: box-shadow 0.2s cubic-bezier(.4, 0, 1, 1), background-color 0.2s cubic-bezier(.4, 0, .2, 1), opacity 1s cubic-bezier(.4, 0, .2, 1), color 0.2s cubic-bezier(.4, 0, .2, 1);
-}
 
-.tile-icon {
-    max-height: 90px;
-    max-width : 90px;
-}
 
-.collapse {
-    max-height: 0;
-    min-width : 100%;
-    opacity   : 0;
-}
 
-.collapse.mui-enter-active {
-    max-height: 100%;
-    opacity   : 1;
-}
-
-.toggles .tile-icon {
-    max-height: 48px;
-}
-// .tile {
-//     opacity: 0;
-//     transition: 10s!important;
-// }
-//
-// .mdl-js .tile {
-//     opacity: 1;
-// }
-//
-// @include mui-series {
-// .tile-wrap:nth-child(1) { @include mui-queue(.8s, -0.5s, slide($direction: down)); }
-// .tile-wrap:nth-child(2) {  @include mui-queue(.8s, -0.5s, slide($direction: down)); }
-// .tile-wrap:nth-child(3) { @include mui-queue(.8s, -0.5s, slide($direction: down)); }
-// .tile-wrap:nth-child(4) { @include mui-queue(1s, -0.5s, slide($direction: down)); }
-// }
-// input[type=submit],
-// input[type=checkbox] {
-//     width: auto;
-// }
 body {
     background-size: cover;
 }
@@ -229,14 +180,7 @@ input.search-submit {
     color: black !important;
 }
 
-.tile {
-    -webkit-transition: box-shadow 0.2s cubic-bezier(.4, 0, 1, 1), opacity 0.2s cubic-bezier(.4, 0, .2, 1), color 0.2s cubic-bezier(.4, 0, .2, 1);
-    transition        : box-shadow 0.2s cubic-bezier(.4, 0, 1, 1), opacity 0.2s cubic-bezier(.4, 0, .2, 1), color 0.2s cubic-bezier(.4, 0, .2, 1);
-}
 
-.tile:hover {
-    opacity: 0.9;
-}
 
 .gv-list-view-content {
     padding: 0;
@@ -711,19 +655,7 @@ http://flickity.metafizzy.co
     transition-property       : font-size;
     margin-bottom             : 1rem;
 }
-// .site-header:not(.mui-leave-active) {
-//   position: relative !important;
-// }
-// .not-top ~ .site-content {
-//   padding-top: 2em;
-// }
-//
-// .home .not-top ~ .site-content {
-//   padding-top: 4em;
-// }
-// .site-header.slideOutUp {
-//     position: relative!important;
-// }
+
 .home .site-header.is-top {
     transition      : none;
     background-color: transparent !important;
@@ -937,4 +869,112 @@ ul.gravityview-az-filter {
     @include shadow-6dp();
     background: rgba(255, 255, 255, 0.85);
     border: 1px solid $color-grey-light;
+}
+
+
+
+
+
+.mdl-mega-footer__drop-down-section {
+  display: block;
+  position: relative;
+}
+
+.mdl-mega-footer--heading,
+.mdl-mega-footer__heading {
+    position: relative;
+    width: 100%;
+    padding-right: 52px;
+    margin-bottom: 1rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.mdl-mega-footer--heading:after,
+.mdl-mega-footer__heading:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 36px;
+    height: 36px;
+    background-size: cover;
+}
+
+@include md {
+    .mdl-mega-footer__drop-down-section {
+        width: 33%;
+    }
+}
+
+@include lg {
+  .mdl-mega-footer__drop-down-section,
+  .mdl-mega-footer__drop-down-section:nth-child(3),
+  .mdl-mega-footer__drop-down-section:nth-child(4) {
+    width: 24%;
+  }
+}
+
+.mdl-mega-footer__heading-checkbox {
+    position: absolute;
+    width: 100%;
+    height: 68px;
+    padding: 32px;
+    margin: 0;
+    margin-top: -16px;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0;
+
+    & + .mdl-mega-footer__heading:after {
+      font-family: 'Material Icons';
+      content: '\E5CE';
+    }
+}
+
+.mdl-mega-footer__heading-checkbox:checked {
+  // WebViews in iOS 9 break the "~" operator, and WebViews in OS X 10.10
+  // break consecutive "+" operators in some cases. Therefore, we need to use
+  // both here to cover all the bases.
+  // & + .mdl-mega-footer--heading + .mdl-mega-footer--link-list,
+  // & + .mdl-mega-footer__heading + .mdl-mega-footer__link-list {
+  //   display: none;
+  // }
+
+  & + .mdl-mega-footer--heading:after,
+  & ~ .mdl-mega-footer--heading:after {
+    font-family: 'Material Icons';
+    content: '\E5CF';
+  }
+}
+
+@include md {
+  .mdl-mega-footer--heading-checkbox,
+  .mdl-mega-footer__heading-checkbox {
+    display: none;
+
+    & + .mdl-mega-footer--heading:after,
+    & + .mdl-mega-footer__heading:after {
+      content: '';
+    }
+  }
+  .mdl-mega-footer--heading-checkbox:checked,
+  .mdl-mega-footer__heading-checkbox:checked {
+    // WebViews in iOS 9 break the "~" operator, and WebViews in OS X 10.10
+    // break consecutive "+" operators in some cases. Therefore, we need to use
+    // both here to cover all the bases.
+    & ~ .mdl-mega-footer--link-list,
+    & ~ .mdl-mega-footer__link-list,
+    & + .mdl-mega-footer__heading + .mdl-mega-footer__link-list,
+    & + .mdl-mega-footer--heading + .mdl-mega-footer--link-list {
+      display: block;
+    }
+
+    & + .mdl-mega-footer--heading:after,
+    & + .mdl-mega-footer__heading:after {
+      content: '';
+    }
+  }
 }
