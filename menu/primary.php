@@ -11,7 +11,7 @@ if (has_nav_menu('primary')) : ?>
                     'container'      => '',
                     'depth'          => 2,
                     'menu_id'        => 'menu-primary__list',
-                    'menu_class'     => 'nav-menu menu-primary__list u-bg-frost-3',
+                    'menu_class'     => 'nav-menu menu-primary__list u-bg-1-glass-dark',
                     'fallback_cb'    => '',
                     //'items_wrap'     => '%3$s',
                 ));
