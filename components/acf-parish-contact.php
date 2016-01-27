@@ -70,7 +70,7 @@ ob_start(); ?>
 
 <?php if( get_field('doc_website') ): ?>
     <div class="website-address u-bg-tint-1 u-spacer1 u-1of1 u-text-center">
-        <a class="contact-link u-link u-1of1 btn u-h6" itemprop="url" href="<?php the_field('doc_website'); ?>" target="_blank"><?php the_field('doc_website'); ?><i class="u-px1 u-h6 material-icons">&#xE89E;</i></a>
+        <a class="contact-link u-1of1 btn u-h6" itemprop="url" href="<?php the_field('doc_website'); ?>" target="_blank"><?php the_field('doc_website'); ?><i class="u-px1 u-h6 material-icons">&#xE89E;</i></a>
     </div>
 <?php endif; ?>
 
