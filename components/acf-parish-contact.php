@@ -22,14 +22,14 @@ ob_start();
 ?>
 <div class="contact-numbers u-overflow-hidden u-px2 u-inline-block">
 
-    <div class="phone u-mb1">
+    <div class="phone u-mb1 u-spacer16">
 <?php if( get_field('doc_phone_number') ): ?>
         <a class="contact-link" href="tel:<?php the_field('doc_phone_number'); ?>" itemprop="telephone"><i class="material-icons u-mr1">&#xE0CD;</i><?php the_field('doc_phone_number'); ?></a>
 <?php endif; ?>
     </div>
 
 
-    <div class="fax u-mb1">
+    <div class="fax u-mb1 u-spacer16">
 <?php if( get_field('doc_fax') ): ?>
         <span itemprop="faxNumber"><i class="u-bold u-mr1">FAX</i><?php the_field('doc_fax'); ?></span>
 <?php endif; ?>
@@ -61,17 +61,17 @@ ob_start(); ?>
 
 
 
-    <div class="email u-1of1 u-mb1 u-px2">
+    <div class="email u-spacer16 u-1of1 u-mb1 u-px2">
 <?php if( get_field('doc_email') ): ?>
         <a class="contact-link" itemprop="email" href="mailto:<?php the_field('doc_email'); ?>"><i class="material-icons u-mr1">&#xE0BE;</i><?php the_field('doc_email'); ?></a>
 <?php endif; ?>
     </div>
 
 
-    <div class="website-address u-bg-2-glass u-1of1 u-text-center">
 <?php if( get_field('doc_website') ): ?>
-        <a class="contact-link u-1of1 btn u-h6" itemprop="url" href="<?php the_field('doc_website'); ?>" target="_blank"><?php the_field('doc_website'); ?><i class="u-px1 u-h6 material-icons">&#xE89E;</i></a>
-<?php endif; ?>
+    <div class="website-address u-bg-tint-1 u-spacer1 u-1of1 u-text-center">
+        <a class="contact-link u-link u-1of1 btn u-h6" itemprop="url" href="<?php the_field('doc_website'); ?>" target="_blank"><?php the_field('doc_website'); ?><i class="u-px1 u-h6 material-icons">&#xE89E;</i></a>
     </div>
+<?php endif; ?>
 
 </div>
