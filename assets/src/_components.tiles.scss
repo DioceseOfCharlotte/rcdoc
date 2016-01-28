@@ -1,12 +1,22 @@
 
 .tile {
     @include mui-fade(in, $duration: 1s);
-    width     : 256px;
-    height    : 256px;
-    transition-delay: 0.3s;
-    opacity: 1;
+    width     : 24vw;
+    height    : 24vw;
+    //transition-delay: 0.3s;
+	//opacity:0;
     //transition: box-shadow 0.2s cubic-bezier(.4, 0, 1, 1), background-color 0.2s cubic-bezier(.4, 0, .2, 1), opacity 1s cubic-bezier(.4, 0, .2, 1), color 0.2s cubic-bezier(.4, 0, .2, 1);
 }
+
+@include mui-series {
+  .tile:first-of-type  { @include mui-queue(1s, 2s, fade()); }
+  .tile:nth-of-type(2)  { @include mui-queue(1s, 2s, fade()); }
+  .tile:nth-of-type(3)  { @include mui-queue(1s, 2s, fade()); }
+  .tile:nth-of-type(4)  { @include mui-queue(1s, 2s, fade()); }
+  // .spin   { @include mui-queue(1s, 2s, spin()); }
+  // .wiggle { @include mui-queue(wiggle); }
+}
+
 
 .tile-icon {
     max-height: 90px;

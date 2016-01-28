@@ -9,6 +9,7 @@ import runSequence from 'run-sequence';
 import browserSync from 'browser-sync';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import postcss from 'gulp-postcss';
+import babel from 'gulp-babel';
 import xo from 'gulp-xo';
 import autoPrefixer from 'autoprefixer';
 // import postcssFlex from 'postcss-flexibility';
@@ -63,20 +64,21 @@ const SOURCESJS = [
 
 	// 'assets/src/js/bliss.js',
 	// ** GSAP ** //
-	'assets/src/js/TweenMax.js',
+	'assets/src/js/vendors/TweenMax.js',
 	// 'assets/src/js/MorphSVGPlugin.js',
 	// 'assets/src/js/DrawSVGPlugin.js',
 	// ** ScrollMagic ** //
 	// 'assets/src/js/ScrollMagic.js',
 	// 'assets/src/js/animation.gsap.js',
 	// ** Flickity ** //
-	'assets/src/js/flickity.pkgd.js',
-	'assets/src/js/headroom.js',
+	'assets/src/js/vendors/flickity.pkgd.js',
+	'assets/src/js/vendors/headroom.js',
 	// ** Mine ** //
 	'assets/src/js/myjs/Dropdown.js',
 	// 'assets/src/js/myjs/Morph.js',
 	'assets/src/js/myjs/mobile-nav.js',
-	'assets/src/js/myjs/main.js'
+	'assets/src/js/myjs/main.js',
+	'assets/src/js/babeled.js'
 ];
 
 // Scripts that rely on jQuery
@@ -134,15 +136,17 @@ gulp.task('styles', () => {
 gulp.task('scripts', () =>
 	gulp.src(SOURCESJS)
 	.pipe($.sourcemaps.init())
-	.pipe($.babel())
-	.pipe($.sourcemaps.write())
+	.pipe(babel({
+		presets: ['es2015']
+	}))
 	// Concatenate Scripts
 	.pipe($.concat('main.js'))
+	.pipe($.sourcemaps.write())
 	.pipe(gulp.dest('assets/js'))
 	// Minify Scripts
 	.pipe($.uglify({
 		sourceRoot: '.',
-		sourceMapIncludeSources: true
+		sourceMapIncludeSources: false
 	}))
 	.pipe($.concat('main.min.js'))
 	// Write Source Maps
