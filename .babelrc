@@ -1,7 +1,0 @@
-{
-  "presets": ["es2015"],
-  "only": [
-	  "gulpfile.babel.js",
-	  "assets/src/js/babeled.js"
-  ]
-}

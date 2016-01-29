@@ -1,22 +1,36 @@
 
-.tile {
-    @include mui-fade(in, $duration: 1s);
-    width     : 24vw;
-    height    : 24vw;
-    //transition-delay: 0.3s;
-	//opacity:0;
-    //transition: box-shadow 0.2s cubic-bezier(.4, 0, 1, 1), background-color 0.2s cubic-bezier(.4, 0, .2, 1), opacity 1s cubic-bezier(.4, 0, .2, 1), color 0.2s cubic-bezier(.4, 0, .2, 1);
-}
 
-@include mui-series {
-  .tile:first-of-type  { @include mui-queue(1s, 2s, fade()); }
-  .tile:nth-of-type(2)  { @include mui-queue(1s, 2s, fade()); }
-  .tile:nth-of-type(3)  { @include mui-queue(1s, 2s, fade()); }
-  .tile:nth-of-type(4)  { @include mui-queue(1s, 2s, fade()); }
+
+
+  // .tile:first-of-type  {
+  //       @include mui-animation(fade($from: 0, $to: 1));
+  //       animation-duration: 2s;
+  //   }
+  // .tile:nth-of-type(2)  {
+  //       @include mui-animation(fade($from: 0, $to: 1));
+  //       animation-duration: 1s;
+  //   }
+  // .tile:nth-of-type(3)  {
+  //       @include mui-animation(fade($from: 0, $to: 1));
+  //       animation-duration: 2.5s;
+  //   }
+  // .tile:nth-of-type(4)  {
+  //       @include mui-animation(fade($from: 0, $to: 1));
+  //       animation-duration: 3s;
+  //       // animation-play-state: running;
+  //       //     animation-fill-mode: both;
+  //   }
   // .spin   { @include mui-queue(1s, 2s, spin()); }
   // .wiggle { @include mui-queue(wiggle); }
-}
 
+// .tile {
+//     //@include mui-fade(in, $duration: 1s);
+//     width     : 24vw;
+//     height    : 24vw;
+//     //transition-delay: 0.3s;
+// 	//opacity:0;
+//     //transition: box-shadow 0.2s cubic-bezier(.4, 0, 1, 1), background-color 0.2s cubic-bezier(.4, 0, .2, 1), opacity 1s cubic-bezier(.4, 0, .2, 1), color 0.2s cubic-bezier(.4, 0, .2, 1);
+// }
 
 .tile-icon {
     max-height: 90px;
@@ -24,10 +38,9 @@
 }
 
 
-// .tile {
-//     -webkit-transition: box-shadow 0.2s cubic-bezier(.4, 0, 1, 1), opacity 0.2s cubic-bezier(.4, 0, .2, 1), color 0.2s cubic-bezier(.4, 0, .2, 1);
-//     transition        : box-shadow 0.2s cubic-bezier(.4, 0, 1, 1), opacity 0.2s cubic-bezier(.4, 0, .2, 1), color 0.2s cubic-bezier(.4, 0, .2, 1);
-// }
+.tile {
+    transition: box-shadow 0.2s cubic-bezier(.4, 0, 1, 1), opacity 0.2s cubic-bezier(.4, 0, .2, 1), color 0.2s cubic-bezier(.4, 0, .2, 1);
+}
 
 .tile:hover {
     opacity: 0.9;

@@ -1,5 +1,6 @@
+
 <div class="o-cell u-1of2-md u-flex u-flex-justify-center u-flex-center">
-    <?php get_template_part('assets/images/icon', esc_attr( $attr['icon_file'] ) ); ?>
+    <?php include( locate_template( 'assets/images/svg/'.esc_attr( $attr['icon_file'] ).'.svg' ) ); ?>
 </div>
 
 <div class="o-cell u-1of2-md u-flex u-flex-justify-center u-flex-center">

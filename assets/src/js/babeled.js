@@ -1,10 +1,17 @@
-NodeList.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
+var arrayMethods = Object.getOwnPropertyNames(Array.prototype);
+
+arrayMethods.forEach(attachArrayMethodsToNodeList);
+
+function attachArrayMethodsToNodeList(methodName) {
+	if (methodName !== 'length') {
+		NodeList.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
+	}
+}
 
 ready(function () {
-	var glassTiles = document.querySelectorAll('.tile');
+	let glassTiles = document.querySelectorAll('.js-tile');
 
-	for (var tile of glassTiles) {
+	for (let tile of glassTiles) {
 		tile.classList.add('is-animating');
-		tile.classList.add('mui-enter-active');
 	}
 });

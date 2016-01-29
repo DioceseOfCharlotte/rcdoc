@@ -119,17 +119,13 @@ gulp.task('styles', () => {
 		}))
 		.pipe(postcss(POSTCSS_PLUGINS))
 		.pipe(gulp.dest('.tmp'))
-		// Concatenate Styles
 		.pipe($.concat('style.css'))
 		.pipe(gulp.dest('./'))
-		// Minify Styles
 		.pipe($.if('*.css', $.cssnano()))
 		.pipe($.concat('style.min.css'))
+		.pipe($.size({title: 'styles'}))
 		.pipe($.sourcemaps.write('.'))
-		.pipe(gulp.dest('./'))
-		.pipe($.size({
-			title: 'styles'
-		}));
+		.pipe(gulp.dest('./'));
 });
 
 // Concatenate And Minify JavaScript
@@ -139,22 +135,14 @@ gulp.task('scripts', () =>
 	.pipe(babel({
 		presets: ['es2015']
 	}))
-	// Concatenate Scripts
-	.pipe($.concat('main.js'))
 	.pipe($.sourcemaps.write())
+	.pipe($.concat('main.js'))
 	.pipe(gulp.dest('assets/js'))
-	// Minify Scripts
-	.pipe($.uglify({
-		sourceRoot: '.',
-		sourceMapIncludeSources: false
-	}))
 	.pipe($.concat('main.min.js'))
-	// Write Source Maps
+	.pipe($.uglify())
+	.pipe($.size({title: 'scripts'}))
 	.pipe($.sourcemaps.write('.'))
 	.pipe(gulp.dest('assets/js'))
-	.pipe($.size({
-		title: 'scripts'
-	}))
 );
 
 // Concatenate And Minify JavaScript
@@ -162,22 +150,13 @@ gulp.task('jq_scripts', () =>
 	gulp.src(SOURCESJQ)
 	.pipe($.sourcemaps.init())
 	// .pipe($.babel())
-	.pipe($.sourcemaps.write())
-	// Concatenate Scripts
 	.pipe($.concat('jq-main.js'))
 	.pipe(gulp.dest('assets/js'))
-	// Minify Scripts
-	.pipe($.uglify({
-		sourceRoot: '.',
-		sourceMapIncludeSources: true
-	}))
+	.pipe($.uglify())
 	.pipe($.concat('jq-main.min.js'))
-	// Write Source Maps
 	.pipe($.sourcemaps.write('.'))
 	.pipe(gulp.dest('assets/js'))
-	.pipe($.size({
-		title: 'jq_scripts'
-	}))
+	.pipe($.size({title: 'jq_scripts'}))
 );
 
 /**
@@ -189,7 +168,7 @@ gulp.task('serve', ['scripts', 'styles'], () => {
 		// proxy: "local.wordpress.dev"
 		// proxy: "local.wordpress-trunk.dev"
 		proxy: 'rcdoc.dev'
-		// proxy: "127.0.0.1:8080/wordpress/"
+			// proxy: "127.0.0.1:8080/wordpress/"
 	});
 
 	gulp.watch(['*/**/*.php'], reload);

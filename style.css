@@ -160,7 +160,7 @@
 /* DATA TABLE */
 /* SNACKBAR */
 /* TOOLTIP */
-.tile.mui-enter, .tile.site-header, .site-header.mui-enter, .site-header, .site-header.mui-leave {
+.site-header.mui-enter, .site-header, .site-header.mui-leave {
   transition-duration: 500ms;
   transition-timing-function: linear; }
 
@@ -2229,21 +2229,12 @@ http://flickity.metafizzy.co
   right: 1rem;
   top: 1rem; }
 
-.tile {
-  width: 256px;
-  height: 256px;
-  transition-delay: 0.3s;
-  opacity: 1; }
-  .tile.mui-enter, .tile.site-header {
-    transition-duration: 1s;
-    opacity: 0;
-    transition-property: opacity; }
-  .tile.mui-enter.mui-enter-active, .tile.mui-enter-active.site-header {
-    opacity: 1; }
-
 .tile-icon {
   max-height: 90px;
   max-width: 90px; }
+
+.tile {
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
 
 .tile:hover {
   opacity: 0.9; }
