@@ -93,33 +93,10 @@ body {
     background-size: cover;
 }
 
-blockquote:before,
-blockquote:after,
-blockquote p:before,
-blockquote p:after {
-    content: '';
-    margin : 0;
-}
 
-cite {
-    text-align: right;
-    width     : 100%;
-    display   : inline-block;
-}
 
-blockquote p {
-    font-size  : inherit;
-    font-weight: bold;
-}
 
-blockquote cite {
-    font-size  : 14px;
-    font-weight: normal;
-}
 
-.blockquote {
-    justify-content: center;
-}
 // .layout-1-column-wide .entry {
 //     background-color: transparent;
 // }

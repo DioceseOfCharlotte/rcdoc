@@ -2044,6 +2044,15 @@ input.mdl-button[type="submit"] {
   box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.2); }
 
 /* To be moved */
+.facetwp-facet .location-wrap,
+.facetwp-facet .facetwp-search-wrap {
+  display: inline-block; }
+
+.facetwp-facet i.facetwp-btn:before,
+.facetwp-facet i.locate-me:before {
+  height: 2.5rem;
+  background-position: 50%; }
+
 /*! Flickity v1.1.2
 http://flickity.metafizzy.co
 ---------------------------------------------- */
@@ -2231,9 +2240,11 @@ http://flickity.metafizzy.co
 
 .tile-icon {
   max-height: 90px;
-  max-width: 90px; }
+  max-width: 90px;
+  opacity: .7; }
 
 .tile {
+  border: 5px solid #36474f;
   transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
 
 .tile:hover {
@@ -2320,31 +2331,6 @@ button.simplefavorite-button {
 
 body {
   background-size: cover; }
-
-blockquote:before,
-blockquote:after,
-blockquote p:before,
-blockquote p:after {
-  content: '';
-  margin: 0; }
-
-cite {
-  text-align: right;
-  width: 100%;
-  display: inline-block; }
-
-blockquote p {
-  font-size: inherit;
-  font-weight: bold; }
-
-blockquote cite {
-  font-size: 14px;
-  font-weight: normal; }
-
-.blockquote {
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
 
 .gv-list-view-content-description {
   width: 100%; }

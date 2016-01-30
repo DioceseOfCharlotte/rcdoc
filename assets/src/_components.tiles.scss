@@ -35,10 +35,12 @@
 .tile-icon {
     max-height: 90px;
     max-width : 90px;
+    opacity: .7;
 }
 
 
 .tile {
+    border: 5px solid #36474f;
     transition: box-shadow 0.2s cubic-bezier(.4, 0, 1, 1), opacity 0.2s cubic-bezier(.4, 0, .2, 1), color 0.2s cubic-bezier(.4, 0, .2, 1);
 }
 
