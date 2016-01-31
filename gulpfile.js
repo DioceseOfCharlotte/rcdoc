@@ -4,20 +4,23 @@
 
 // 'use strict';
 
-import gulp from 'gulp';
-import runSequence from 'run-sequence';
-import browserSync from 'browser-sync';
-import gulpLoadPlugins from 'gulp-load-plugins';
-import postcss from 'gulp-postcss';
-import babel from 'gulp-babel';
-import xo from 'gulp-xo';
-import autoPrefixer from 'autoprefixer';
-// import postcssFlex from 'postcss-flexibility';
+var gulp = require('gulp');
+var runSequence = require('run-sequence');
+var browserSync = require('browser-sync');
+var gulpLoadPlugins = require('gulp-load-plugins');
+var postcss = require('gulp-postcss');
+var babel = require('gulp-babel');
+var xo = require('gulp-xo');
+var autoPrefixer = require('autoprefixer');
+var postcssFlex = require('postcss-flexibility');
+// var postcssScss = require('postcss-scss');
+// var postcssNested = require('postcss-nested');
+// var precss = require('precss');
 
-const $ = gulpLoadPlugins();
-const reload = browserSync.reload;
+var $ = gulpLoadPlugins();
+var reload = browserSync.reload;
 
-const AUTOPREFIXER_BROWSERS = [
+var AUTOPREFIXER_BROWSERS = [
 	'ie >= 10',
 	'ie_mob >= 10',
 	'last 2 ff versions',
@@ -30,14 +33,14 @@ const AUTOPREFIXER_BROWSERS = [
 	'bb >= 10'
 ];
 
-const POSTCSS_PLUGINS = [
+var POSTCSS_PLUGINS = [
 	autoPrefixer({
 		browsers: AUTOPREFIXER_BROWSERS
 	})
 	// postcssFlex
 ];
 
-const SOURCESJS = [
+var SOURCESJS = [
 	// ** MDL ** //
 	// Component handler
 	'assets/src/mdl/mdlComponentHandler.js',
@@ -78,25 +81,25 @@ const SOURCESJS = [
 	// 'assets/src/js/myjs/Morph.js',
 	'assets/src/js/myjs/mobile-nav.js',
 	'assets/src/js/myjs/main.js',
-	'assets/src/js/babeled.js'
+	'assets/src/js/es6.js'
 ];
 
 // Scripts that rely on jQuery
-const SOURCESJQ = [
+var SOURCESJQ = [
 	'assets/src/js/myjs/jq-main.js'
 ];
 
 // ***** Development tasks ****** //
 // Lint JavaScript
-gulp.task('lint', () =>
-	gulp.src('assets/src/js/myjs/*.js')
+gulp.task('lint', function () {
+	gulp.src('assets/src/scripts/*.js')
 	.pipe(xo())
-);
+});
 
 // ***** Production build tasks ****** //
 // Optimize images
-gulp.task('images', () =>
-	gulp.src('assets/src/**/*.{svg,png,jpg}')
+gulp.task('images', function () {
+	gulp.src('assets/src/images/**/*.{svg,png,jpg}')
 	.pipe($.cache($.imagemin({
 		progressive: true,
 		interlaced: true
@@ -105,10 +108,10 @@ gulp.task('images', () =>
 	.pipe($.size({
 		title: 'images'
 	}))
-);
+});
 
 // Compile and Automatically Prefix Stylesheets (production)
-gulp.task('styles', () => {
+gulp.task('styles', function () {
 	// For best performance, don't add Sass partials to `gulp.src`
 	gulp.src('assets/src/style.scss')
 		// Generate Source Maps
@@ -129,24 +132,27 @@ gulp.task('styles', () => {
 });
 
 // Concatenate And Minify JavaScript
-gulp.task('scripts', () =>
+gulp.task('scripts', function () {
 	gulp.src(SOURCESJS)
 	.pipe($.sourcemaps.init())
 	.pipe(babel({
-		presets: ['es2015']
+		"presets": ["es2015"],
+		"only": [
+			"assets/src/js/es6.js"
+		]
 	}))
-	.pipe($.sourcemaps.write())
 	.pipe($.concat('main.js'))
+	.pipe($.sourcemaps.write())
 	.pipe(gulp.dest('assets/js'))
 	.pipe($.concat('main.min.js'))
 	.pipe($.uglify())
 	.pipe($.size({title: 'scripts'}))
 	.pipe($.sourcemaps.write('.'))
 	.pipe(gulp.dest('assets/js'))
-);
+});
 
 // Concatenate And Minify JavaScript
-gulp.task('jq_scripts', () =>
+gulp.task('jq_scripts', function () {
 	gulp.src(SOURCESJQ)
 	.pipe($.sourcemaps.init())
 	// .pipe($.babel())
@@ -157,13 +163,13 @@ gulp.task('jq_scripts', () =>
 	.pipe($.sourcemaps.write('.'))
 	.pipe(gulp.dest('assets/js'))
 	.pipe($.size({title: 'jq_scripts'}))
-);
+});
 
 /**
  * Defines the list of resources to watch for changes.
  */
 // Build and serve the output
-gulp.task('serve', ['scripts', 'styles'], () => {
+gulp.task('serve', ['scripts', 'styles'], function () {
 	browserSync.init({
 		// proxy: "local.wordpress.dev"
 		// proxy: "local.wordpress-trunk.dev"
@@ -178,7 +184,7 @@ gulp.task('serve', ['scripts', 'styles'], () => {
 });
 
 // Build production files, the default task
-gulp.task('default', cb => {
+gulp.task('default', function (cb) {
 	runSequence(
 		'styles', ['scripts', 'jq_scripts', 'images'],
 		cb);
