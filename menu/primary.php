@@ -4,7 +4,7 @@ if (has_nav_menu('primary')) : ?>
   <!-- Navigation -->
 
         <nav <?php hybrid_attr('menu', 'primary'); ?>>
-            <button class="menu-toggle u-ml-auto" aria-controls="menu-primary-items" aria-expanded="false"><i class="material-icons">&#xE5D2;</i></button>
+            <button class="menu-toggle btn u-ml-auto" data-active-toggle="#nav-toggle" aria-controls="menu-primary-items"><i class="material-icons">&#xE5D2;</i></button>
             <?php
                 wp_nav_menu(array(
                     'theme_location' => 'primary',
@@ -14,6 +14,7 @@ if (has_nav_menu('primary')) : ?>
                     'menu_class'     => 'nav-menu menu-primary__list u-bg-1-glass-dark',
                     'fallback_cb'    => '',
                     //'items_wrap'     => '%3$s',
+					'items_wrap'      => '<div id="nav-toggle" class="nav-wrap">' . get_search_form( false ) . '<ul id="%s" class="%s">%s</ul></div>'
                 ));
             ?>
         </nav>

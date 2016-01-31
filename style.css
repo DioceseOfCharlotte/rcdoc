@@ -2293,12 +2293,16 @@ button.simplefavorite-button {
 .dropdown-menu-basic.is-active {
   z-index: 1000; }
 
-/* line 58, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
 .dropdown-menu-basic.dropdown-right {
   left: auto;
   right: 0; }
 
-/* line 64, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
+.dropdown-menu-basic > .widgets {
+  display: none; }
+
+.dropdown-menu-basic.is-active > .widgets {
+  display: block; }
+
 .dropdown-menu-basic ul,
 .dropdown-menu-basic section {
   list-style: none;
@@ -2514,18 +2518,19 @@ http://flickity.metafizzy.co
   line-height: 64px; }
 
 /* Small menu. */
-.menu-toggle {
-  display: block;
-  height: 60px;
-  width: 60px; }
+.nav-wrap {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition-duration: .3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: max-height; }
 
-.menu-primary.toggled ul {
-  display: block;
+.nav-wrap.is-active {
+  max-height: 100%;
+  opacity: 1;
   width: 100%;
   box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12); }
-
-.menu-primary__list {
-  display: none; }
 
 .menu-item {
   width: 100%; }
@@ -2533,6 +2538,9 @@ http://flickity.metafizzy.co
 @media screen and (min-width: 48em) {
   .menu-toggle {
     display: none; }
+  .nav-wrap {
+    max-height: 100%;
+    opacity: 1; }
   #page .nav-menu.menu-primary__list {
     display: block;
     background-color: transparent; }

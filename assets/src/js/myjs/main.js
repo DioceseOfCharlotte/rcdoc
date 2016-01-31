@@ -42,3 +42,11 @@ ready(function() {
 
 	document.getElementById('head-space').style.height = fakeHeight + 'px';
 });
+
+astro.init({
+    selector: '[data-active-toggle]', // Navigation toggle selector
+	selected: 'data-active-toggle',
+    toggleActiveClass: 'is-active', // Class added to active dropdown toggles on small screens
+    navActiveClass: 'is-active', // Class added to active dropdown content areas on small screens
+    initClass: 'js-cl', // Class added to `<html>` element when initiated
+});

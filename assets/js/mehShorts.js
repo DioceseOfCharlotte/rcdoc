@@ -16,6 +16,8 @@ function updateRowTypeListener(changed, collection, shortcode) {
 		rowIcon = attributeByName('icon_file'),
 		rowID = attributeByName('js_id'),
 		rowPages = attributeByName('page');
+		slideTypes = attributeByName('slide_type');
+		slideGal = attributeByName('gallery');
 
 
 
@@ -44,12 +46,16 @@ function updateRowTypeListener(changed, collection, shortcode) {
 		rowIcon.$el.hide();
 		feedURL.$el.hide();
 		rowDirection.$el.hide();
+		slideTypes.$el.show();
 		rowPages.$el.show();
+		slideGal.$el.show();
 	} else {
 		feedURL.$el.hide();
+		slideGal.$el.hide();
 		rowDirection.$el.hide();
 		rowPages.$el.show();
 		rowIcon.$el.hide();
+		slideTypes.$el.hide();
 	}
 }
 
