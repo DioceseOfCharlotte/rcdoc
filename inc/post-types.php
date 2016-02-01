@@ -93,6 +93,7 @@ function doc_parishs_register_post_types() {
                 'post-formats',
                 'theme-layouts',
                 'archive',
+                'custom-header'
             ),
 
             /* Labels used when displaying the posts. */
@@ -196,6 +197,7 @@ function doc_schools_register_post_types() {
                 'post-formats',
                 'theme-layouts',
                 'archive',
+                'custom-header'
             ),
 
             /* Labels used when displaying the posts. */
@@ -299,6 +301,7 @@ function doc_departments_register_post_types() {
                 'post-formats',
                 'theme-layouts',
                 'archive',
+                'custom-header'
             ),
 
             /* Labels used when displaying the posts. */
@@ -403,6 +406,7 @@ function doc_vocations_register_post_types() {
                 'post-formats',
                 'theme-layouts',
                 'archive',
+                'custom-header'
             ),
 
             /* Labels used when displaying the posts. */
@@ -506,6 +510,7 @@ function doc_tribunals_register_post_types() {
                 'post-formats',
                 'theme-layouts',
                 'archive',
+                'custom-header'
             ),
 
             /* Labels used when displaying the posts. */
@@ -609,6 +614,7 @@ function doc_properties_register_post_types() {
                 'post-formats',
                 'theme-layouts',
                 'archive',
+                'custom-header'
             ),
 
             /* Labels used when displaying the posts. */
@@ -712,6 +718,7 @@ function doc_plannings_register_post_types() {
                 'post-formats',
                 'theme-layouts',
                 'archive',
+                'custom-header'
             ),
 
             /* Labels used when displaying the posts. */
@@ -815,6 +822,7 @@ function doc_multiculturals_register_post_types() {
                 'post-formats',
                 'theme-layouts',
                 'archive',
+                'custom-header'
             ),
 
             /* Labels used when displaying the posts. */
@@ -918,6 +926,7 @@ function doc_liturgys_register_post_types() {
                 'post-formats',
                 'theme-layouts',
                 'archive',
+                'custom-header'
             ),
 
             /* Labels used when displaying the posts. */
@@ -1740,6 +1749,7 @@ function doc_bishop_register_post_types() {
                 'post-formats',
                 'theme-layouts',
                 'archive',
+                'custom-header'
             ),
 
             /* Labels used when displaying the posts. */

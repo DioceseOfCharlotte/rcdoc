@@ -24,5 +24,8 @@ function header_right_widget() {
 }
 
 function headspace() {
+    if ( ! is_front_page() )
+        return;
+
     echo '<div id="head-space" class="u-mb3"></div>';
 }

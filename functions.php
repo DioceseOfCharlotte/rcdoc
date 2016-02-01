@@ -29,13 +29,13 @@ function rcdoc_setup() {
     add_theme_support('soil-js-to-footer');
 
 
-    add_theme_support(
-        'custom-background',
-        array(
-            'default-color' => 'E9EBE7',
-            'default-image' => '',
-        )
-    );
+    // add_theme_support(
+    //     'custom-background',
+    //     array(
+    //         'default-color' => 'E9EBE7',
+    //         'default-image' => '',
+    //     )
+    // );
 
     add_filter( 'theme_mod_primary_color', 'rcdoc_primary_color' );
     add_filter( 'theme_mod_secondary_color', 'rcdoc_secondary_color' );

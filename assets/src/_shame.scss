@@ -643,7 +643,9 @@ http://flickity.metafizzy.co
 // }
 
 .site-title {
+    @include md {
     font-size: 3.6em;
+    }
 }
 
 .site-branding {
@@ -868,6 +870,11 @@ ul.gravityview-az-filter {
     border: 1px solid $color-grey-light;
 }
 
+
+.is-active > a {
+    font-weight: 700;
+    border-bottom-color: currentcolor;
+}
 
 
 
