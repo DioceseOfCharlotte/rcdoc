@@ -39,7 +39,6 @@ function rcdoc_setup() {
 
     add_filter( 'theme_mod_primary_color', 'rcdoc_primary_color' );
     add_filter( 'theme_mod_secondary_color', 'rcdoc_secondary_color' );
-    add_filter( 'theme_mod_accent_color', 'rcdoc_accent_color' );
     add_filter( 'abe_add_hierarchy_cpts', 'rcdoc_hierarchy_cpts' );
     add_filter( 'abe_add_non_hierarchy_cpts', 'rcdoc_non_hierarchy_cpts' );
 
@@ -118,9 +117,6 @@ function rcdoc_primary_color($hex) {
 }
 function rcdoc_secondary_color($hex) {
     return $hex ? $hex : '009688';
-}
-function rcdoc_accent_color($hex) {
-    return $hex ? $hex : 'C62828';
 }
 
 
