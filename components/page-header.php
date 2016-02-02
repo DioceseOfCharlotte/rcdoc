@@ -7,7 +7,7 @@
 
 	<div id="head-space" class="head-space"></div>
 
-	<div class="page-head-text u-flex u-relative u-p2 u-flex-column u-flex-justify-center">
+	<div class="page-head-text u-flex u-rel u-p2 u-flex-column u-flex-justify-center">
 		<?php hybrid_get_menu('breadcrumbs'); ?>
 
 		<h1 <?php hybrid_attr('archive-title'); ?>>
@@ -30,6 +30,6 @@
 		</div><!-- .archive-description -->
 
 	<?php endif; // End paged check. ?>
-	
+
 	</div>
 </div>
