@@ -160,10 +160,6 @@
 /* DATA TABLE */
 /* SNACKBAR */
 /* TOOLTIP */
-.site-header.mui-enter, .site-header, .site-header.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear; }
-
 /**
  * Copyright 2015 Google Inc. All Rights Reserved.
  *
@@ -2250,6 +2246,84 @@ http://flickity.metafizzy.co
 .tile:hover {
   opacity: 0.9; }
 
+.not-top ~ .menu-primary {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  width: 240px;
+  height: 100%;
+  max-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateX(-250px);
+          transform: translateX(-250px);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+  transition-duration: .2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  color: #424242;
+  overflow: visible;
+  overflow-y: auto;
+  z-index: 5; }
+  .not-top ~ .menu-primary .menu-item,
+  .not-top ~ .menu-primary .menu__link {
+    width: 100%; }
+
+.not-top ~ .menu-primary.is-active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0); }
+
+@media screen and (max-width: 47em) {
+  .menu-primary {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    width: 240px;
+    height: 100%;
+    max-height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+    -webkit-transform: translateX(-250px);
+            transform: translateX(-250px);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    will-change: transform;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    color: #424242;
+    overflow: visible;
+    overflow-y: auto;
+    z-index: 5; }
+    .menu-primary .menu-item,
+    .menu-primary .menu__link {
+      width: 100%; }
+  .menu-primary.is-active {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
 .mdl-mega-footer--heading-checkbox:checked ~ div,
 .mdl-mega-footer__heading-checkbox:checked ~ div {
   display: none; }
@@ -2280,15 +2354,9 @@ button.simplefavorite-button {
  * Dropdown content
  */
 .dropdown-menu-basic {
-  float: left;
-  margin-top: 3.5em;
-  margin-left: 0;
   min-width: 200px;
   position: absolute;
-  text-align: left;
-  top: 0;
-  height: 0;
-  overflow: hidden; }
+  text-align: left; }
 
 .dropdown-menu-basic.is-active {
   z-index: 1000; }
@@ -2517,30 +2585,14 @@ http://flickity.metafizzy.co
   padding: 0 24px;
   line-height: 64px; }
 
-/* Small menu. */
-.nav-wrap {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition-duration: .3s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: max-height; }
-
-.nav-wrap.is-active {
-  max-height: 100%;
-  opacity: 1;
-  width: 100%;
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12); }
-
 .menu-item {
   width: 100%; }
 
 @media screen and (min-width: 48em) {
-  .menu-toggle {
-    display: none; }
-  .nav-wrap {
-    max-height: 100%;
-    opacity: 1; }
+  .is-top .menu-toggle {
+    visibility: hidden; }
+  .home .is-top ~ .menu-primary {
+    background-color: transparent !important; }
   #page .nav-menu.menu-primary__list {
     display: block;
     background-color: transparent; }
@@ -2589,36 +2641,6 @@ body:not(.home) .site-header .site-description {
 .format-aside .permalink {
   display: none; }
 
-.site-header.mui-enter, .site-header {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-  transition-property: opacity, -webkit-transform;
-  transition-property: transform, opacity;
-  transition-property: transform, opacity, -webkit-transform;
-  opacity: 0;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden; }
-
-.site-header.mui-enter.mui-enter-active, .site-header.mui-enter-active {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-  opacity: 1; }
-
-.site-header.mui-leave, .site-header {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-  transition-property: opacity, -webkit-transform;
-  transition-property: transform, opacity;
-  transition-property: transform, opacity, -webkit-transform;
-  opacity: 1;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden; }
-
-.site-header.mui-leave.mui-leave-active, .site-header.mui-leave-active {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-  opacity: 0; }
-
 .site-header::after {
   content: '';
   position: absolute;
@@ -2633,6 +2655,21 @@ body:not(.home) .site-header .site-description {
 
 .site-header.not-top::after {
   opacity: 1; }
+
+.search-form {
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: all; }
+
+.not-top .search-form {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0; }
+  .not-top .search-form .search-field {
+    opacity: 0;
+    transition: opacity .15s ease-out; }
 
 .type-document {
   -webkit-align-self: flex-start;

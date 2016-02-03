@@ -27,9 +27,9 @@ ready(function () {
 		},
 		// offset : 200,
 		classes: {
-			initial: 'animated',
-			pinned: 'mui-enter-active',
-			unpinned: 'mui-leave-active',
+			initial: 'animating',
+			pinned: 'fadeInDown',
+			unpinned: 'fadeOutUp',
 			top: 'is-top',
 			notTop: 'not-top'
 		}
@@ -41,12 +41,4 @@ ready(function() {
 	var fakeHeight = elmnt.offsetHeight;
 
 	document.getElementById('head-space').style.height = fakeHeight + 'px';
-});
-
-astro.init({
-    selector: '[data-active-toggle]', // Navigation toggle selector
-	selected: 'data-active-toggle',
-    toggleActiveClass: 'is-active', // Class added to active dropdown toggles on small screens
-    navActiveClass: 'is-active', // Class added to active dropdown content areas on small screens
-    initClass: 'js-cl', // Class added to `<html>` element when initiated
 });
