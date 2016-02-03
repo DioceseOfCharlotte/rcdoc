@@ -2,6 +2,7 @@
 
 // add_action( 'tha_entry_bottom',  'rcdoc_contact_footer' );
 add_action( 'tha_header_after', 'logged_in_drawer' );
+add_action( 'tha_header_bottom', 'doc_search_form' );
 add_action( 'tha_header_bottom', 'header_right_widget' );
 add_action( 'tha_header_bottom', 'doc_nav_toggle' );
 add_action( 'tha_header_after', 'headspace' );
@@ -22,6 +23,10 @@ function logged_in_drawer() {
 	}
 }
 
+function doc_search_form() {
+    get_search_form();
+}
+
 function header_right_widget() {
     return hybrid_get_sidebar('header-right');
 }
@@ -38,7 +43,7 @@ function doc_primary_menu() {
 }
 
 function doc_nav_toggle() {
-    echo '<button class="menu-toggle btn btn-round u-z4 u-rel" data-active-toggle="#menu-primary" aria-controls="menu-primary-items"><i class="material-icons">&#xE5D2;</i></button>';
+    echo '<button class="menu-toggle btn btn-round u-mx1 u-z4 u-rel" data-active-toggle="#menu-primary" aria-controls="menu-primary-items"><i class="material-icons">&#xE5D2;</i></button>';
 }
 
 function doc_content_mask() {

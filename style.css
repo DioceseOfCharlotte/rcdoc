@@ -2276,16 +2276,35 @@ http://flickity.metafizzy.co
   color: #424242;
   overflow: visible;
   overflow-y: auto;
-  z-index: 5; }
+  z-index: 5;
+  visibility: hidden; }
   .not-top ~ .menu-primary .menu-item,
   .not-top ~ .menu-primary .menu__link {
     width: 100%; }
 
 .not-top ~ .menu-primary.is-active {
+  visibility: visible;
   -webkit-transform: translateX(0);
           transform: translateX(0); }
 
+.not-top .site-logo {
+  max-height: 45px;
+  width: auto; }
+
 @media screen and (max-width: 47em) {
+  .search-form {
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+  .not-top .title-text {
+    opacity: 0;
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+    position: absolute;
+    margin: 0;
+    padding: 0; }
   .menu-primary {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -2323,6 +2342,35 @@ http://flickity.metafizzy.co
   .menu-primary.is-active {
     -webkit-transform: translateX(0);
             transform: translateX(0); } }
+
+.site-header.not-top {
+  max-height: 60px; }
+
+.site-header .search-field {
+  color: currentColor;
+  font-weight: normal;
+  border-color: transparent; }
+  .site-header .search-field::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: inherit;
+    opacity: .8; }
+  .site-header .search-field::-moz-placeholder {
+    /* Firefox 19+ */
+    color: inherit;
+    opacity: .8; }
+  .site-header .search-field:-ms-input-placeholder {
+    /* IE 10+ */
+    color: inherit;
+    opacity: .8; }
+  .site-header .search-field:-moz-placeholder {
+    /* Firefox 18- */
+    color: inherit;
+    opacity: .8; }
+  .site-header .search-field:focus {
+    background-color: white;
+    color: #212c31; }
+    .site-header .search-field:focus ~ .material-icons {
+      color: #212c31; }
 
 .mdl-mega-footer--heading-checkbox:checked ~ div,
 .mdl-mega-footer__heading-checkbox:checked ~ div {
@@ -2419,9 +2467,6 @@ span.gv-field-label:empty {
 .mdl-button--mini-fab a {
   display: block;
   height: 40px; }
-
-input.search-submit {
-  display: none; }
 
 .mdl-card__title {
   -webkit-flex-wrap: wrap;
@@ -2606,8 +2651,7 @@ http://flickity.metafizzy.co
 .site-branding {
   transition-duration: 0.6s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: font-size;
-  margin-bottom: 1rem; }
+  transition-property: font-size; }
 
 .home .site-header.is-top {
   transition: none;
@@ -2655,21 +2699,6 @@ body:not(.home) .site-header .site-description {
 
 .site-header.not-top::after {
   opacity: 1; }
-
-.search-form {
-  transition-duration: 0.3s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: all; }
-
-.not-top .search-form {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0; }
-  .not-top .search-form .search-field {
-    opacity: 0;
-    transition: opacity .15s ease-out; }
 
 .type-document {
   -webkit-align-self: flex-start;

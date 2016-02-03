@@ -14,7 +14,7 @@ if (has_nav_menu('primary')) : ?>
                     'menu_class'     => 'nav-menu menu-primary__list u-bg-1-glass-dark u-text-center',
                     'fallback_cb'    => '',
                     //'items_wrap'     => '%3$s',
-					//'items_wrap'      => '<div id="nav-toggle" class="nav-panel">' . get_search_form( false ) . '<ul id="%s" class="%s">%s</ul></div>'
+					//'items_wrap'      => '<div class="nav-wrap">' . get_search_form( false ) . '<ul id="%s" class="%s">%s</ul></div>'
                 ));
             ?>
         </nav>
