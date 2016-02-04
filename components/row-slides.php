@@ -12,7 +12,7 @@
     <header <?php hybrid_attr('entry-header'); ?>>
         <?php
             get_the_image(array(
-                'size'         => 'abraham-lg',
+                'size'         => 'abe-card',
                 'image_class'  => 'o-crop__content',
                 'link_to_post' => false,
                 'before'       => '<div class="o-crop o-crop--16x9">',
