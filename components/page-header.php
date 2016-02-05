@@ -5,8 +5,6 @@
 
 <div <?php hybrid_attr('archive-header'); ?>>
 
-	<div id="head-space" class="head-space"></div>
-
 	<div class="page-head-text u-flex u-rel u-p2 u-flex-column u-flex-justify-center">
 		<?php hybrid_get_menu('breadcrumbs'); ?>
 

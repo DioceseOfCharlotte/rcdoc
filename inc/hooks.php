@@ -35,7 +35,7 @@ function headspace() {
     // if ( ! is_front_page() )
     //     return;
 
-    echo '<div id="head-space" class="head-space"></div>';
+    echo '<div id="head-space" class="head-space u-bg-1-glass-dark"></div>';
 }
 
 function doc_primary_menu() {

@@ -2287,7 +2287,8 @@ http://flickity.metafizzy.co
   -webkit-transform: translateX(0);
           transform: translateX(0); }
 
-.not-top .site-logo {
+body:not(.home) .site-logo,
+.home .not-top .site-logo {
   max-height: 45px;
   width: auto; }
 
@@ -2371,6 +2372,23 @@ http://flickity.metafizzy.co
     color: #212c31; }
     .site-header .search-field:focus ~ .material-icons {
       color: #212c31; }
+
+body:not(.home) #header {
+  max-height: 64px; }
+
+.head-space {
+  height: 43px; }
+
+.home #menu-primary:not(.is-active) > .nav-menu {
+  color: #444;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(33, 44, 49, 0.6); }
+
+.home .head-space {
+  opacity: 0; }
+
+.menu-primary:not(.is-active) {
+  margin-top: -43px; }
 
 .mdl-mega-footer--heading-checkbox:checked ~ div,
 .mdl-mega-footer__heading-checkbox:checked ~ div {

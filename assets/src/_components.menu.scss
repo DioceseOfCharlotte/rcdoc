@@ -34,7 +34,8 @@
     }
 }
 
-.not-top .site-logo {
+body:not(.home) .site-logo,
+.home .not-top .site-logo {
     max-height: 45px;
     width: auto;
 }
@@ -125,6 +126,26 @@
 }
 
 
-.search-field {
 
+body:not(.home) #header {
+    max-height: 64px;
+}
+
+
+.head-space {
+    height: 43px;
+}
+
+.home #menu-primary:not(.is-active) > .nav-menu {
+    color: #444;
+    font-weight: bold;
+        text-shadow: 1px 1px 5px rgba(33, 44, 49, 0.6);
+}
+
+.home .head-space {
+    opacity: 0;
+}
+
+.menu-primary:not(.is-active) {
+    margin-top: -43px;
 }

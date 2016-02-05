@@ -40,5 +40,5 @@ ready(function() {
 	var elmnt = document.getElementById("header");
 	var fakeHeight = elmnt.offsetHeight;
 
-	document.getElementById('head-space').style.height = fakeHeight + 'px';
+	document.getElementById('head-space').style.marginTop = fakeHeight + 'px';
 });
