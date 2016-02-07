@@ -1,7 +1,7 @@
 <?php
 
-add_action( 'init', 'doc_schools_register_taxonomies' );
-add_action( 'init', 'doc_agencies_register_taxonomies' );
+//add_action( 'init', 'doc_schools_register_taxonomies' );
+//add_action( 'init', 'doc_agencies_register_taxonomies' );
 add_action( 'init', 'register_filetype_taxonomy' );
 add_action( 'init', 'register_file_category_taxonomy' );
 add_action( 'init', 'register_document_type_taxonomy' );

@@ -43,67 +43,67 @@ var POSTCSS_PLUGINS = [
 var SOURCESJS = [
 	// ** MDL ** //
 	// Component handler
-	'assets/src/mdl/mdlComponentHandler.js',
+	'src/mdl/mdlComponentHandler.js',
 	// Polyfills/dependencies
-	// 'assets/src/mdl/third_party/**/*.js',
+	// 'src/mdl/third_party/**/*.js',
 	// Base components
-	'assets/src/mdl/button/button.js',
+	'src/mdl/button/button.js',
 	// 'src/checkbox/checkbox.js',
-	// 'assets/src/mdl/icon-toggle/icon-toggle.js',
-	'assets/src/mdl/menu/menu.js',
+	// 'src/mdl/icon-toggle/icon-toggle.js',
+	'src/mdl/menu/menu.js',
 	// 'src/progress/progress.js',
 	// 'src/radio/radio.js',
 	// 'src/slider/slider.js',
-	// 'assets/src/mdl/snackbar/snackbar.js',
+	// 'src/mdl/snackbar/snackbar.js',
 	// 'src/spinner/spinner.js',
-	// 'assets/src/mdl/switch/switch.js',
-	'assets/src/mdl/tabs/tabs.js',
-	// 'assets/src/mdl/textfield/textfield.js',
-	// 'assets/src/mdl/tooltip/tooltip.js',
+	// 'src/mdl/switch/switch.js',
+	'src/mdl/tabs/tabs.js',
+	// 'src/mdl/textfield/textfield.js',
+	// 'src/mdl/tooltip/tooltip.js',
 	// Complex components (which reuse base components)
-	// 'assets/src/mdl/layout/layout.js',
+	// 'src/mdl/layout/layout.js',
 	// 'src/data-table/data-table.js',
-	'assets/src/mdl/ripple/ripple.js',
+	'src/mdl/ripple/ripple.js',
 
-	// 'assets/src/js/bliss.js',
+	// 'src/js/bliss.js',
 	// ** GSAP ** //
-	'assets/src/js/vendors/TweenMax.js',
-	// 'assets/src/js/MorphSVGPlugin.js',
-	// 'assets/src/js/DrawSVGPlugin.js',
+	'src/js/vendors/TweenMax.js',
+	// 'src/js/MorphSVGPlugin.js',
+	// 'src/js/DrawSVGPlugin.js',
 	// ** ScrollMagic ** //
-	// 'assets/src/js/ScrollMagic.js',
-	// 'assets/src/js/animation.gsap.js',
+	// 'src/js/ScrollMagic.js',
+	// 'src/js/animation.gsap.js',
 	// ** Flickity ** //
-	'assets/src/js/vendors/flickity.pkgd.js',
-	'assets/src/js/vendors/headroom.js',
+	'src/js/vendors/flickity.pkgd.js',
+	'src/js/vendors/headroom.js',
 	// ** Mine ** //
-	'assets/src/js/myjs/Dropdown.js',
-	// 'assets/src/js/myjs/Morph.js',
-	'assets/src/js/myjs/main.js',
-	'assets/src/js/es6.js'
+	'src/js/myjs/Dropdown.js',
+	// 'src/js/myjs/Morph.js',
+	'src/js/myjs/main.js',
+	'src/js/es6.js'
 ];
 
 // Scripts that rely on jQuery
 var SOURCESJQ = [
-	'assets/src/js/myjs/jq-main.js'
+	'src/js/myjs/jq-main.js'
 ];
 
 // ***** Development tasks ****** //
 // Lint JavaScript
 gulp.task('lint', function () {
-	gulp.src('assets/src/scripts/*.js')
+	gulp.src('src/scripts/*.js')
 	.pipe(xo())
 });
 
 // ***** Production build tasks ****** //
 // Optimize images
 gulp.task('images', function () {
-	gulp.src('assets/src/images/**/*.{svg,png,jpg}')
+	gulp.src('src/images/**/*.{svg,png,jpg}')
 	.pipe($.cache($.imagemin({
 		progressive: true,
 		interlaced: true
 	})))
-	.pipe(gulp.dest('assets/images'))
+	.pipe(gulp.dest('images'))
 	.pipe($.size({
 		title: 'images'
 	}))
@@ -112,7 +112,7 @@ gulp.task('images', function () {
 // Compile and Automatically Prefix Stylesheets (production)
 gulp.task('styles', function () {
 	// For best performance, don't add Sass partials to `gulp.src`
-	gulp.src('assets/src/style.scss')
+	gulp.src('src/style.scss')
 		// Generate Source Maps
 		.pipe($.sourcemaps.init())
 		.pipe($.sass({
@@ -137,17 +137,17 @@ gulp.task('scripts', function () {
 	.pipe(babel({
 		"presets": ["es2015"],
 		"only": [
-			"assets/src/js/es6.js"
+			"src/js/es6.js"
 		]
 	}))
 	.pipe($.concat('main.js'))
 	.pipe($.sourcemaps.write())
-	.pipe(gulp.dest('assets/js'))
+	.pipe(gulp.dest('js'))
 	.pipe($.concat('main.min.js'))
 	.pipe($.uglify())
 	.pipe($.size({title: 'scripts'}))
 	.pipe($.sourcemaps.write('.'))
-	.pipe(gulp.dest('assets/js'))
+	.pipe(gulp.dest('js'))
 });
 
 // Concatenate And Minify JavaScript
@@ -156,11 +156,11 @@ gulp.task('jq_scripts', function () {
 	.pipe($.sourcemaps.init())
 	// .pipe($.babel())
 	.pipe($.concat('jq-main.js'))
-	.pipe(gulp.dest('assets/js'))
+	.pipe(gulp.dest('js'))
 	.pipe($.uglify())
 	.pipe($.concat('jq-main.min.js'))
 	.pipe($.sourcemaps.write('.'))
-	.pipe(gulp.dest('assets/js'))
+	.pipe(gulp.dest('js'))
 	.pipe($.size({title: 'jq_scripts'}))
 });
 
@@ -179,7 +179,7 @@ gulp.task('serve', ['scripts', 'styles'], function () {
 	gulp.watch(['*/**/*.php'], reload);
 	gulp.watch(['src/**/*.{scss,css}'], ['styles', reload]);
 	gulp.watch(['src/**/*.js'], ['lint', 'scripts']);
-	gulp.watch(['assets/src/images/**/*'], reload);
+	gulp.watch(['src/images/**/*'], reload);
 });
 
 // Build production files, the default task

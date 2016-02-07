@@ -7,7 +7,7 @@
  ?>
 
 <div class="o-cell u-1of2-md u-flex u-flex-justify-center u-flex-center">
-  <?php include( locate_template( 'assets/images/svg/'.esc_attr( $attr['icon_file'] ).'.svg' ) ); ?>
+  <?php include( locate_template( 'images/svg/'.esc_attr( $attr['icon_file'] ).'.svg' ) ); ?>
 </div>
 
 

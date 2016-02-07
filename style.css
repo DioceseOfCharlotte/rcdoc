@@ -2412,17 +2412,14 @@ body:not(.home) #header {
   content: "";
   background: linear-gradient(to right, rgba(61, 153, 112, 0), #3d9970); }
 
-button.simplefavorite-button {
-  padding: 0;
-  background-color: transparent; }
-
 /**
  * Dropdown content
  */
 .dropdown-menu-basic {
   min-width: 200px;
   position: absolute;
-  text-align: left; }
+  text-align: left;
+  height: 0; }
 
 .dropdown-menu-basic.is-active {
   z-index: 1000; }
@@ -2431,11 +2428,15 @@ button.simplefavorite-button {
   left: auto;
   right: 0; }
 
-.dropdown-menu-basic > .widgets {
-  display: none; }
+.dropdown-menu-basic > * {
+  opacity: 0;
+  height: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden; }
 
-.dropdown-menu-basic.is-active > .widgets {
-  display: block; }
+.dropdown-menu-basic.is-active > * {
+  opacity: 1;
+  height: auto; }
 
 .dropdown-menu-basic ul,
 .dropdown-menu-basic section {

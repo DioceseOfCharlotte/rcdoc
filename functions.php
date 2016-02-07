@@ -7,6 +7,8 @@ add_action( 'widgets_init', 'abraham_widgets' );
 require get_stylesheet_directory() . '/inc/html-classes.php';
 //require get_stylesheet_directory() . '/inc/ext/tgmpa.php';
 require get_stylesheet_directory() . '/inc/post-types.php';
+require get_stylesheet_directory() . '/inc/cpt.php';
+require get_stylesheet_directory() . '/inc/tax.php';
 require get_stylesheet_directory() . '/inc/taxonomies.php';
 require get_stylesheet_directory() . '/inc/compatibility.php';
 require get_stylesheet_directory() . '/inc/hooks.php';
@@ -54,13 +56,13 @@ function rcdoc_scripts() {
 
     wp_enqueue_script(
         'main_scripts',
-        trailingslashit(get_stylesheet_directory_uri())."assets/js/main.min.js",
+        trailingslashit(get_stylesheet_directory_uri())."js/main.min.js",
         false, false, true
     );
 
     wp_enqueue_script(
         'jq_scripts',
-        trailingslashit(get_stylesheet_directory_uri())."assets/js/jq-main.min.js",
+        trailingslashit(get_stylesheet_directory_uri())."js/jq-main.min.js",
         array( 'jquery' ), null, true
     );
 }
@@ -122,7 +124,7 @@ function rcdoc_secondary_color($hex) {
 
 
 function rcdoc_non_hierarchy_cpts($cpts) {
-	$cpts = array( 'post', 'bishop', 'chancery', 'deacon', 'development', 'finance', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'tribunal', 'vocation' );
+	$cpts = array( 'post', 'archive_post','bishop', 'chancery', 'deacon', 'development', 'finance', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'tribunal', 'vocation' );
     return $cpts;
 }
 
