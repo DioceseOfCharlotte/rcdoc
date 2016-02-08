@@ -33,10 +33,18 @@
     position   : absolute;
     text-align : left;
 	height: 0;
+
+    input {
+        display: none;
+    }
 }
 
 .dropdown-menu-basic.is-active {
     z-index: 1000;
+
+    input {
+        display: block;
+    }
 }
 
 .dropdown-menu-basic.dropdown-right {

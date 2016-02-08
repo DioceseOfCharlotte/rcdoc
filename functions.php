@@ -7,7 +7,6 @@ add_action( 'widgets_init', 'abraham_widgets' );
 require get_stylesheet_directory() . '/inc/html-classes.php';
 //require get_stylesheet_directory() . '/inc/ext/tgmpa.php';
 require get_stylesheet_directory() . '/inc/post-types.php';
-require get_stylesheet_directory() . '/inc/cpt.php';
 require get_stylesheet_directory() . '/inc/tax.php';
 require get_stylesheet_directory() . '/inc/taxonomies.php';
 require get_stylesheet_directory() . '/inc/compatibility.php';
@@ -124,7 +123,7 @@ function rcdoc_secondary_color($hex) {
 
 
 function rcdoc_non_hierarchy_cpts($cpts) {
-	$cpts = array( 'post', 'archive_post','bishop', 'chancery', 'deacon', 'development', 'finance', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'tribunal', 'vocation' );
+	$cpts = array( 'post', 'archive_post','bishop', 'chancery', 'deacon', 'development', 'education', 'finance', 'human_resources', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'tribunal', 'vocation' );
     return $cpts;
 }
 

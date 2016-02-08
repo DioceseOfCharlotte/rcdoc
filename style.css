@@ -2420,9 +2420,13 @@ body:not(.home) #header {
   position: absolute;
   text-align: left;
   height: 0; }
+  .dropdown-menu-basic input {
+    display: none; }
 
 .dropdown-menu-basic.is-active {
   z-index: 1000; }
+  .dropdown-menu-basic.is-active input {
+    display: block; }
 
 .dropdown-menu-basic.dropdown-right {
   left: auto;

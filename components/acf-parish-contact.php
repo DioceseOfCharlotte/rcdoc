@@ -15,7 +15,7 @@ $map_link = "http://maps.google.com/maps?z=16&q=" . $address;
 
 ?>
 
-<div class="u-flex contact-info u-flex-wrap u-flex-justify-between u-mxn1">
+<div class="u-flex contact-info u-flex-wrap u-flex-justify-between">
 <?php
 
 ob_start();
