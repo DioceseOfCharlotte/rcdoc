@@ -318,6 +318,7 @@ function doc_register_post_types() {
 					'featured_image' => 'abe-icon',
 				),
 			),
+			'menu_icon'           => 'dashicons-image-filter',
 			'supports'            => $doc_post_supports,
 			'capability_type'     => 'education',
 			'map_meta_cap'        => true,
