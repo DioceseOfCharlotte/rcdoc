@@ -31,14 +31,6 @@ function rcdoc_setup() {
     add_theme_support('soil-js-to-footer');
 
 
-    // add_theme_support(
-    //     'custom-background',
-    //     array(
-    //         'default-color' => 'E9EBE7',
-    //         'default-image' => '',
-    //     )
-    // );
-
     add_filter( 'theme_mod_primary_color', 'rcdoc_primary_color' );
     add_filter( 'theme_mod_secondary_color', 'rcdoc_secondary_color' );
     add_filter( 'abe_add_hierarchy_cpts', 'rcdoc_hierarchy_cpts' );
@@ -115,10 +107,10 @@ function abraham_widgets() {
 
 
 function rcdoc_primary_color($hex) {
-    return $hex ? $hex : '3F51B5';
+    return $hex ? $hex : '3581ce';
 }
 function rcdoc_secondary_color($hex) {
-    return $hex ? $hex : '009688';
+    return $hex ? $hex : '3BC391';
 }
 
 

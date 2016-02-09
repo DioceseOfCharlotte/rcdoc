@@ -2382,7 +2382,7 @@ body:not(.home) #header {
 .home #menu-primary:not(.is-active) > .nav-menu {
   color: #444;
   font-weight: bold;
-  text-shadow: 1px 1px 5px rgba(33, 44, 49, 0.6); }
+  text-shadow: 1px 1px 5px rgba(235, 235, 241, 0.6); }
 
 .home .head-space {
   opacity: 0; }
@@ -2426,7 +2426,7 @@ body:not(.home) #header {
 .dropdown-menu-basic.is-active {
   z-index: 1000; }
   .dropdown-menu-basic.is-active input {
-    display: block; }
+    display: inline-block; }
 
 .dropdown-menu-basic.dropdown-right {
   left: auto;
@@ -2747,7 +2747,7 @@ body:not(.home) .site-header .site-description {
   max-width: 100%; }
 
 .entry-content > .gv-grid {
-  background-color: rgba(228, 234, 236, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 1rem;
   border-radius: 2px;
   margin-bottom: 1rem; }
@@ -2833,7 +2833,7 @@ ul.gravityview-az-filter {
 .flickity-prev-next-button {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
   background: rgba(255, 255, 255, 0.85);
-  border: 1px solid #99aeb8; }
+  border: 1px solid #b3b3b3; }
 
 .is-active > a {
   font-weight: 700;

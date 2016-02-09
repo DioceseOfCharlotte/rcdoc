@@ -67,25 +67,25 @@ var SOURCESJS = [
 
 	// 'src/js/bliss.js',
 	// ** GSAP ** //
-	'src/js/vendors/TweenMax.js',
+	'src/scripts/vendors/TweenMax.js',
 	// 'src/js/MorphSVGPlugin.js',
 	// 'src/js/DrawSVGPlugin.js',
 	// ** ScrollMagic ** //
 	// 'src/js/ScrollMagic.js',
 	// 'src/js/animation.gsap.js',
 	// ** Flickity ** //
-	'src/js/vendors/flickity.pkgd.js',
-	'src/js/vendors/headroom.js',
+	'src/scripts/vendors/flickity.pkgd.js',
+	'src/scripts/vendors/headroom.js',
 	// ** Mine ** //
-	'src/js/myjs/Dropdown.js',
+	'src/scripts/myjs/Dropdown.js',
 	// 'src/js/myjs/Morph.js',
-	'src/js/myjs/main.js',
-	'src/js/es6.js'
+	'src/scripts/myjs/main.js',
+	'src/scripts/es6.js'
 ];
 
 // Scripts that rely on jQuery
 var SOURCESJQ = [
-	'src/js/myjs/jq-main.js'
+	'src/scripts/myjs/jq-main.js'
 ];
 
 // ***** Development tasks ****** //
@@ -112,7 +112,7 @@ gulp.task('images', function () {
 // Compile and Automatically Prefix Stylesheets (production)
 gulp.task('styles', function () {
 	// For best performance, don't add Sass partials to `gulp.src`
-	gulp.src('src/style.scss')
+	gulp.src('src/styles/style.scss')
 		// Generate Source Maps
 		.pipe($.sourcemaps.init())
 		.pipe($.sass({
@@ -137,7 +137,7 @@ gulp.task('scripts', function () {
 	.pipe(babel({
 		"presets": ["es2015"],
 		"only": [
-			"src/js/es6.js"
+			"src/scripts/es6.js"
 		]
 	}))
 	.pipe($.concat('main.js'))

@@ -195,7 +195,7 @@ function doc_register_post_types() {
 					'featured_image' => 'abe-icon',
 				),
 			),
-			'menu_icon'           => 'dashicons-shield-alt',
+			'menu_icon'           => 'dashicons-shield',
 			'supports'            => $doc_post_supports,
 			'capability_type'     => 'bishop',
 			'map_meta_cap'        => true,
@@ -226,47 +226,6 @@ function doc_register_post_types() {
 	        'plural'   => 'Bishop',
 	        'slug'     => 'bishop',
 	    )
-	);
-
-	register_extended_post_type( 'chancery',
-		array(
-			'admin_cols' => array(
-				'featured_image' => array(
-					'title'          => 'Image',
-					'featured_image' => 'abe-icon',
-				),
-			),
-			'menu_icon'           => 'dashicons-shield-alt',
-			'supports'            => $doc_post_supports,
-			'capability_type'     => 'chancery',
-			'map_meta_cap'        => true,
-			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
-				'edit_post'              => 'edit_chancery',
-				'read_post'              => 'read_chancery',
-				'delete_post'            => 'delete_chancery',
-				# primitive/meta caps
-				'create_posts'           => 'create_chancery_posts',
-				# primitive caps used outside of map_meta_cap()
-				'edit_posts'             => 'edit_chancery_posts',
-				'edit_others_posts'      => 'manage_chancery_posts',
-				'publish_posts'          => 'manage_chancery_posts',
-				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
-				'read'                   => 'read',
-				'delete_posts'           => 'manage_chancery_posts',
-				'delete_private_posts'   => 'manage_chancery_posts',
-				'delete_published_posts' => 'manage_chancery_posts',
-				'delete_others_posts'    => 'manage_chancery_posts',
-				'edit_private_posts'     => 'edit_chancery_posts',
-				'edit_published_posts'   => 'edit_chancery_posts',
-			),
-		),
-		array(
-			'singular' => 'Chancery',
-			'plural'   => 'Chancery',
-			'slug'     => 'chancery',
-		)
 	);
 
 	register_extended_post_type( 'deacon',
@@ -846,7 +805,7 @@ function doc_register_post_types() {
 	# Add required capabilities to the administrator role.
     $role = get_role( 'administrator' );
 
-    if ( ! empty( $role ) ) {
+    if ( ! is_null( $role ) ) {
 
 		# Create new posts.
         $role->add_cap( 'create_parishes' );
@@ -854,7 +813,6 @@ function doc_register_post_types() {
 		$role->add_cap( 'create_departments' );
 		$role->add_cap( 'create_archive_posts' );
 		$role->add_cap( 'create_bishop_posts' );
-		$role->add_cap( 'create_chancery_posts' );
 		$role->add_cap( 'create_deacon_posts' );
 		$role->add_cap( 'create_development_posts' );
 		$role->add_cap( 'create_education_posts' );
@@ -876,7 +834,6 @@ function doc_register_post_types() {
 		$role->add_cap( 'manage_departments' );
 		$role->add_cap( 'manage_archive_posts' );
 		$role->add_cap( 'manage_bishop_posts' );
-		$role->add_cap( 'manage_chancery_posts' );
 		$role->add_cap( 'manage_deacon_posts' );
 		$role->add_cap( 'manage_development_posts' );
 		$role->add_cap( 'manage_education_posts' );
@@ -898,7 +855,6 @@ function doc_register_post_types() {
         $role->add_cap( 'edit_departments' );
 		$role->add_cap( 'edit_archive_posts' );
 		$role->add_cap( 'edit_bishop_posts' );
-		$role->add_cap( 'edit_chancery_posts' );
 		$role->add_cap( 'edit_deacon_posts' );
 		$role->add_cap( 'edit_development_posts' );
 		$role->add_cap( 'edit_education_posts' );
