@@ -67,7 +67,7 @@ var SOURCESJS = [
 
 	// 'src/js/bliss.js',
 	// ** GSAP ** //
-	'src/scripts/vendors/TweenMax.js',
+	// 'src/scripts/vendors/TweenMax.js',
 	// 'src/js/MorphSVGPlugin.js',
 	// 'src/js/DrawSVGPlugin.js',
 	// ** ScrollMagic ** //
@@ -99,14 +99,29 @@ gulp.task('lint', function () {
 // Optimize images
 gulp.task('images', function () {
 	gulp.src('src/images/**/*.{svg,png,jpg}')
-	.pipe($.cache($.imagemin({
+	.pipe($.imagemin({
 		progressive: true,
-		interlaced: true
-	})))
-	.pipe(gulp.dest('images'))
-	.pipe($.size({
-		title: 'images'
+		interlaced: true,
+		svgoPlugins: [{
+                cleanupIDs: false
+            }, {
+                removeTitle: true
+            }, {
+				addClassesToSVGElement: {
+					className: 'v-icon'
+				}
+			}, {
+                removeUselessStrokeAndFill: true
+            }, {
+                cleanupNumericValues: {
+                    floatPrecision: 2
+                }
+            }, {
+                removeDimensions: true
+            }]
 	}))
+	.pipe(gulp.dest('images'))
+	.pipe($.size({title: 'images'}))
 });
 
 // Compile and Automatically Prefix Stylesheets (production)
