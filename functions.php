@@ -46,6 +46,12 @@ function rcdoc_setup() {
 function rcdoc_scripts() {
 
     wp_enqueue_script(
+        'gsap_scripts',
+        trailingslashit(get_stylesheet_directory_uri())."js/vendors/TweenMax.min.js",
+        false, false, true
+    );
+
+    wp_enqueue_script(
         'main_scripts',
         trailingslashit(get_stylesheet_directory_uri())."js/main.min.js",
         false, false, true
