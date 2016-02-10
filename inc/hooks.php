@@ -8,6 +8,48 @@ add_action( 'tha_header_bottom', 'doc_nav_toggle' );
 add_action( 'tha_header_after', 'headspace' );
 add_action( 'tha_header_after', 'doc_primary_menu' );
 add_action( 'tha_footer_after', 'doc_content_mask' );
+add_action( 'tha_content_bottom', 'doc_dept_child_posts' );
+
+
+function doc_dept_child_posts() {
+
+	if ( ! is_singular(abe_non_hierarchy_cpts()) )
+		return;
+
+$postid = get_the_ID();
+
+$args = array (
+	'post_parent'            => $postid,
+	'post_type'              => abe_non_hierarchy_cpts(),
+	'order'                  => 'ASC',
+	'orderby'                => 'menu_order',
+);
+
+$query1 = new WP_Query( $args );
+
+if ( $query1->have_posts() ) { ?>
+	<div class="u-1of1"> <?php
+	while ( $query1->have_posts() ) {
+		$query1->the_post();
+
+		$posted_format = get_post_format() ? get_post_format() : 'content';
+
+		tha_entry_before();
+
+		get_template_part( "content/{$posted_format}" );
+
+		tha_entry_after();
+
+	} ?>
+	</div> <?php
+} else {
+	// no child posts
+}
+
+// Restore original Post Data
+wp_reset_postdata();
+
+}
 
 
 function rcdoc_contact_footer() {
