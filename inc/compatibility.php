@@ -4,10 +4,9 @@ add_post_type_support('sc_event', 'theme-layouts');
 add_action( 'login_enqueue_scripts', 'doc_login_logo' );
 add_filter( 'login_headerurl', 'doc_login_logo_url' );
 add_filter( 'login_headertitle', 'doc_login_logo_url_title' );
-
-
-
 add_action( 'pre_get_posts', 'doc_post_order', 1 );
+
+
 function doc_post_order( $query ) {
     if ( is_admin() || ! $query->is_main_query() )
         return;
@@ -19,6 +18,7 @@ function doc_post_order( $query ) {
     } elseif ( is_post_type_archive() ) {
 	  	$query->set( 'order', 'ASC' );
 	  	$query->set('orderby', 'menu_order');
+		$query->set('post_parent', 0);
 	}
 }
 
