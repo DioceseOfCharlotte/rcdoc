@@ -51,6 +51,9 @@ function rcdoc_setup() {
  */
 function rcdoc_scripts() {
 
+    wp_enqueue_style( 'oldie_child', trailingslashit(get_stylesheet_directory_uri()).'css/oldie.css', array( 'oldie' ) );
+	wp_style_add_data( 'oldie_child', 'conditional', 'IE' );
+
     wp_enqueue_script(
         'gsap_scripts',
         trailingslashit(get_stylesheet_directory_uri())."js/vendors/TweenMax.min.js",

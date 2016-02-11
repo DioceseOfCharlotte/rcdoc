@@ -97,9 +97,9 @@ function doc_primary_menu() {
 }
 
 function doc_nav_toggle() {
-    echo '<button class="menu-toggle btn btn-round u-mx1 u-z4 u-rel" data-active-toggle="#menu-primary" aria-controls="menu-primary-items"><i class="material-icons">&#xE5D2;</i></button>';
+    echo '<button id="side-menu-toggle" class="menu-toggle btn btn-round u-mx1 u-z4 u-rel" aria-controls="menu-primary-items"><i class="material-icons">&#xE5D2;</i></button>';
 }
 
 function doc_content_mask() {
-    echo '<div id="content-mask" class="u-bg-mask u-fix u-1of1 u-top0 u-left0 u-invisible u-height100 u-z1"></div>';
+    echo '<div id="content-mask" class="u-bg-mask u-fix u-top0 u-left0 u-height100"></div>';
 }

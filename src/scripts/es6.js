@@ -1,20 +1,4 @@
-var arrayMethods = Object.getOwnPropertyNames(Array.prototype);
 
-arrayMethods.forEach(attachArrayMethodsToNodeList);
-
-function attachArrayMethodsToNodeList(methodName) {
-	if (methodName !== 'length') {
-		NodeList.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
-	}
-}
-
-ready(function () {
-	let glassTiles = document.querySelectorAll('.js-tile');
-
-	for (let tile of glassTiles) {
-		tile.classList.add('is-animating');
-	}
-});
 
 
 (function () {
@@ -25,21 +9,21 @@ ready(function () {
   var sideNav = querySelector('#menu-primary');
   var body = document.body;
   var siteHeader = querySelector('#header');
-  var menuBtn = querySelector('.menu-toggle');
+  var menuBtn = querySelector('#side-menu-toggle');
   var contentMask = querySelector('#content-mask');
 
   function closeMenu() {
     body.classList.remove('u-overflow-hidden');
     siteHeader.classList.remove('sidebar-open');
     sideNav.classList.remove('is-active');
-	contentMask.classList.remove('u-visible');
+	contentMask.classList.remove('is-active');
   }
 
   function toggleMenu() {
     body.classList.toggle('u-overflow-hidden');
     siteHeader.classList.toggle('sidebar-open');
     sideNav.classList.toggle('is-active');
-    contentMask.classList.toggle('u-visible');
+    contentMask.classList.toggle('is-active');
     sideNav.classList.add('has-opened');
   }
 

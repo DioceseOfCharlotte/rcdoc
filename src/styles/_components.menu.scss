@@ -85,6 +85,7 @@ body:not(.home) .site-logo,
     }
     .menu-primary.is-active {
         transform: translateX(0);
+        z-index: 3;
     }
 }
 
@@ -148,4 +149,16 @@ body:not(.home) #header {
 
 .menu-primary:not(.is-active) {
     margin-top: -43px;
+}
+
+
+#content-mask {
+    width: 0;
+    visibility:hidden;
+
+    &.is-active {
+        width: 100%;
+        visibility:visible;
+        z-index: 1;
+    }
 }
