@@ -2748,7 +2748,7 @@ body:not(.home) .site-header .site-description {
   max-width: 100%; }
 
 .entry-content > .gv-grid {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.99);
   padding: 1rem;
   border-radius: 2px;
   margin-bottom: 1rem; }
@@ -2834,7 +2834,7 @@ ul.gravityview-az-filter {
 .flickity-prev-next-button {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
   background: rgba(255, 255, 255, 0.85);
-  border: 1px solid #b3b3b3; }
+  border: 1px solid #d0d0d0; }
 
 .is-active > a {
   font-weight: 700;
@@ -2920,6 +2920,19 @@ ul.gravityview-az-filter {
 
 .card-img {
   max-height: 371px; }
+
+@media screen and (min-width: 62em) {
+  body:not(.home) .content-layout {
+    margin-top: -5vw; } }
+
+.page-head-text {
+  min-height: 20vw; }
+  @media screen and (min-width: 62em) {
+    .page-head-text {
+      padding-bottom: 5vw; } }
+
+.home .site-footer {
+  background-color: #D4D4CF; }
 
 /* Styles specific to the editor. */
 body#tinymce {

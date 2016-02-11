@@ -28,7 +28,7 @@ function rcdoc_setup() {
     add_theme_support('soil-disable-trackbacks');
     //add_theme_support('soil-nice-search');
     add_theme_support('soil-google-analytics', 'UA-40566077-9');
-    add_theme_support('soil-js-to-footer');
+    //add_theme_support('soil-js-to-footer');
 
 
     add_filter( 'theme_mod_primary_color', 'rcdoc_primary_color' );
@@ -36,6 +36,12 @@ function rcdoc_setup() {
     add_filter( 'abe_add_hierarchy_cpts', 'rcdoc_hierarchy_cpts' );
     add_filter( 'abe_add_non_hierarchy_cpts', 'rcdoc_non_hierarchy_cpts' );
 
+    add_theme_support(
+		'custom-background',
+		array(
+			'default-color' => 'e3e3db',
+		)
+	);
 }
 
 

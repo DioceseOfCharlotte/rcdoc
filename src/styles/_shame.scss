@@ -987,3 +987,21 @@ ul.gravityview-az-filter {
 .card-img {
     max-height: 371px;
 }
+
+
+body:not(.home) .content-layout {
+    @include lg {
+    margin-top: -5vw;
+}
+}
+
+.page-head-text {
+    min-height:20vw;
+    @include lg {
+    padding-bottom:5vw;
+}
+}
+
+.home .site-footer {
+background-color: #D4D4CF;
+}

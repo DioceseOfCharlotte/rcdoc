@@ -9,6 +9,7 @@ add_action( 'tha_header_after', 'headspace' );
 add_action( 'tha_header_after', 'doc_primary_menu' );
 add_action( 'tha_footer_after', 'doc_content_mask' );
 add_action( 'tha_content_bottom', 'doc_dept_child_posts' );
+add_action( 'tha_content_before', 'doc_archive_desc' );
 
 
 function doc_dept_child_posts() {
@@ -28,7 +29,7 @@ $args = array (
 $query1 = new WP_Query( $args );
 
 if ( $query1->have_posts() ) { ?>
-	<div class="u-1of1"> <?php
+	<div class="o-cell o-grid u-m0 u-p0 u-1of1"> <?php
 	while ( $query1->have_posts() ) {
 		$query1->the_post();
 
@@ -49,6 +50,17 @@ if ( $query1->have_posts() ) { ?>
 // Restore original Post Data
 wp_reset_postdata();
 
+}
+
+
+function doc_archive_desc() {
+	if ( ! is_paged() && $desc = get_the_archive_description() ) : // Check if we're on page/1. ?>
+
+		<div <?php hybrid_attr( 'archive-description' ); ?>>
+			<?php echo $desc; ?>
+		</div>
+
+	<?php endif;
 }
 
 

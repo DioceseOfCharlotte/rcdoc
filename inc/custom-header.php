@@ -29,7 +29,7 @@ function abraham_custom_header_setup() {
 			'height'                 => 560,
 			'flex-width'             => true,
 			'flex-height'            => true,
-			'default-text-color'     => 'FAFAFC',
+			'default-text-color'     => 'ffffff',
 			'header-text'            => true,
 			'uploads'                => true,
 			'wp-head-callback'       => 'abraham_custom_header_wp_head'
@@ -64,6 +64,6 @@ $url = $thumb['0'];
 } elseif (get_header_image()) {
 	$bg_image = get_header_image();
  }
-	$style .= ".archive-header{background-image:url({$bg_image});}.page-head-text{min-height:20vw;}";
+	$style .= ".archive-header{background-image:url({$bg_image});}";
 	echo "\n" . '<style type="text/css" id="custom-header-css">' . trim( $style ) . '</style>' . "\n";
 }
