@@ -16,8 +16,9 @@ require get_stylesheet_directory() . '/inc/ext/wpdr.php';
 require get_stylesheet_directory() . '/inc/custom-header.php';
 require get_stylesheet_directory() . '/inc/ext/gravity.php';
 require get_stylesheet_directory() . '/inc/ext/facetwp.php';
-require get_stylesheet_directory() . '/inc/shortcodes.php'; // Shortcodes
-require get_stylesheet_directory() . '/inc/shorts-ui.php';  // Shortcake interface
+require get_stylesheet_directory() . '/inc/shortcodes.php';
+require get_stylesheet_directory() . '/inc/shorts-ui.php';
+// require get_stylesheet_directory() . '/inc/metaboxes.php';
 
 
 function rcdoc_setup() {

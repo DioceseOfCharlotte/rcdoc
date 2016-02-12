@@ -34,6 +34,17 @@ function doc_register_time_schedule_metabox() {
 	 *
 	 * The parent field's id needs to be passed as the first argument.
 	 */
+	 $doc_times->add_group_field( $doc_times_group, array(
+ 		'name'             => __( 'Title', 'cmb2' ),
+		'id'               => 'mass_title',
+		'type'             => 'select',
+		'options'          => array(
+			'mass' => __( 'Mass', 'cmb2' ),
+			'adoration' => __( 'Adoration of the Blessed Sacrament', 'cmb2' ),
+			'reconciliation' => __( 'Reconciliation', 'cmb2' ),
+			'holy_days' => __( 'Holy Days', 'cmb2' ),
+		),
+ 	) );
 	$doc_times->add_group_field( $doc_times_group, array(
 		'name'             => __( 'Day(s)', 'cmb2' ),
 		//'desc'             => __( 'field description (optional)', 'cmb2' ),
@@ -41,37 +52,27 @@ function doc_register_time_schedule_metabox() {
 		'type'             => 'select',
 		'options'          => array(
 			'monday' => __( 'Monday', 'cmb2' ),
-			'tuesday'   => __( 'Tuesday', 'cmb2' ),
-			'wednesday'     => __( 'Wednesday', 'cmb2' ),
+			'tuesday' => __( 'Tuesday', 'cmb2' ),
+			'wednesday'  => __( 'Wednesday', 'cmb2' ),
+			'thursday' => __( 'Thursday', 'cmb2' ),
+			'friday' => __( 'Friday', 'cmb2' ),
+			'saturday'  => __( 'Saturday', 'cmb2' ),
+			'sunday'  => __( 'Sunday', 'cmb2' ),
 		),
+		'repeatable' => true,
+	) );
+	$doc_times->add_group_field( $doc_times_group, array(
+		'name' => __( 'Test Time', 'cmb2' ),
+		'desc' => __( 'field description (optional)', 'cmb2' ),
+		'id'   => $prefix . 'time',
+		'type' => 'text_time',
+		// 'time_format' => 'H:i', // Set to 24hr format
 		'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
 	) );
 	$doc_times->add_group_field( $doc_times_group, array(
-		'name'             => __( 'Time(s)', 'cmb2' ),
-		//'desc'             => __( 'field description (optional)', 'cmb2' ),
-		'id'               => 'time',
-		'type'             => 'select',
-		'options'          => array(
-			'01' => __( '01', 'cmb2' ),
-			'02'   => __( '02', 'cmb2' ),
-			'03'     => __( '03', 'cmb2' ),
-		),
-		'repeatable' => true, // Repeatable fields are supported w/in repeatable groups (for most types)
-	) );
-	$doc_times->add_group_field( $doc_times_group, array(
-		'name'        => __( 'Description', 'cmb2' ),
-		'description' => __( 'Write a short description for this entry', 'cmb2' ),
-		'id'          => 'description',
-		'type'        => 'textarea_small',
-	) );
-	$doc_times->add_group_field( $doc_times_group, array(
-		'name' => __( 'Entry Image', 'cmb2' ),
-		'id'   => 'image',
-		'type' => 'file',
-	) );
-	$doc_times->add_group_field( $doc_times_group, array(
-		'name' => __( 'Image Caption', 'cmb2' ),
-		'id'   => 'image_caption',
-		'type' => 'text',
+		'name'        => __( '**', 'cmb2' ),
+		'description' => __( 'Additional Information  (optional)', 'cmb2' ),
+		'id'          => 'additional',
+		'type'        => 'text',
 	) );
 }
