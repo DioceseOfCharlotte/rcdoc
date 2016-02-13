@@ -2378,19 +2378,27 @@ body:not(.home) .site-logo,
 body:not(.home) #header {
   max-height: 64px; }
 
-.head-space {
-  height: 43px; }
-
 .home #menu-primary:not(.is-active) > .nav-menu {
   color: #444;
   font-weight: bold;
   text-shadow: 1px 1px 5px rgba(235, 235, 241, 0.6); }
 
-.home .head-space {
+.head-space {
+  min-height: 60px; }
+
+.home .head-space,
+.home .menu-space {
   opacity: 0; }
 
-.menu-primary:not(.is-active) {
-  margin-top: -43px; }
+.menu-primary__list {
+  min-height: 43px; }
+
+.menu-space {
+  height: 43px;
+  margin-bottom: -43px; }
+
+.not-top ~ .menu-space {
+  margin-bottom: 0; }
 
 #content-mask {
   width: 0;
@@ -2930,18 +2938,27 @@ ul.gravityview-az-filter {
 .card-img {
   max-height: 371px; }
 
-@media screen and (min-width: 62em) {
-  body:not(.home) .content-layout {
-    margin-top: -5vw; } }
-
-.page-head-text {
-  min-height: 20vw; }
-  @media screen and (min-width: 62em) {
-    .page-head-text {
-      padding-bottom: 5vw; } }
-
 .home .site-footer {
   background-color: #D4D4CF; }
+
+.article-hero {
+  min-height: 300px; }
+  @media screen and (min-width: 48em) {
+    .article-hero {
+      min-height: 450px; } }
+
+@media screen and (min-width: 62em) {
+  .archive-title {
+    font-size: 3.5rem; } }
+
+@media screen and (min-width: 62em) {
+  .trail-items {
+    font-size: 1.5rem; } }
+
+.wp-embedded-content + p {
+  display: inline-block;
+  vertical-align: top;
+  padding: .5rem; }
 
 /* Styles specific to the editor. */
 body#tinymce {

@@ -5,7 +5,6 @@
 
 <div <?php hybrid_attr('archive-header'); ?>>
 
-	<div class="page-head-text u-flex u-rel u-p2 u-flex-column u-flex-justify-center">
 		<?php hybrid_get_menu('breadcrumbs'); ?>
 
 		<h1 <?php hybrid_attr('archive-title'); ?>>
@@ -21,6 +20,4 @@
 			}
 			?>
 		</h1>
-
-	</div>
 </div>

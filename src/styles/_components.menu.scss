@@ -133,9 +133,7 @@ body:not(.home) #header {
 }
 
 
-.head-space {
-    height: 43px;
-}
+
 
 .home #menu-primary:not(.is-active) > .nav-menu {
     color: #444;
@@ -143,14 +141,31 @@ body:not(.home) #header {
         text-shadow: 1px 1px 5px rgba(235, 235, 241, 0.6);
 }
 
-.home .head-space {
+.head-space {
+	min-height: 60px;
+}
+
+.home .head-space,
+.home .menu-space {
     opacity: 0;
 }
 
-.menu-primary:not(.is-active) {
-    margin-top: -43px;
+// .menu-primary:not(.is-active) {
+//     margin-top: -43px;
+// }
+.menu-primary__list {
+    min-height: 43px;
 }
 
+.menu-space {
+    height: 43px;
+	margin-bottom: -43px;
+
+}
+
+.not-top ~ .menu-space {
+    margin-bottom: 0;
+}
 
 #content-mask {
     width: 0;

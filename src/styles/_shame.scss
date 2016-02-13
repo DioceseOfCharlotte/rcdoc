@@ -989,19 +989,47 @@ ul.gravityview-az-filter {
 }
 
 
-body:not(.home) .content-layout {
-    @include lg {
-    margin-top: -5vw;
-}
-}
-
-.page-head-text {
-    min-height:20vw;
-    @include lg {
-    padding-bottom:5vw;
-}
-}
+// body:not(.home) .content-layout {
+//     @include lg {
+//     margin-top: -5vw;
+// }
+// }
+//
+// .page-head-text {
+//     min-height:20vw;
+//     @include lg {
+//     padding-bottom:5vw;
+// }
+// }
 
 .home .site-footer {
 background-color: #D4D4CF;
+}
+
+
+.article-hero {
+	min-height: 300px;
+	@include md {
+    	min-height: 450px;
+	}
+}
+
+
+.archive-title {
+	@include lg {
+    	font-size: 3.5rem;
+	}
+}
+
+.trail-items {
+	@include lg {
+    	font-size: 1.5rem;
+	}
+}
+
+
+.wp-embedded-content + p {
+    display: inline-block;
+	vertical-align: top;
+    padding: .5rem;
 }

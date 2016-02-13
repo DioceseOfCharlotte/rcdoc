@@ -64,6 +64,6 @@ $url = $thumb['0'];
 } elseif (get_header_image()) {
 	$bg_image = get_header_image();
  }
-	$style .= ".archive-header{background-image:url({$bg_image});}";
+	$style .= ".article-hero{background-image:url({$bg_image});}";
 	echo "\n" . '<style type="text/css" id="custom-header-css">' . trim( $style ) . '</style>' . "\n";
 }

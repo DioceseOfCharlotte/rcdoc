@@ -2274,19 +2274,27 @@ http://flickity.metafizzy.co
  {
   max-height: 64px; }
 
-.head-space {
-  height: 43px; }
-
  {
   color: #444;
   font-weight: bold;
   text-shadow: 1px 1px 5px rgba(235, 235, 241, 0.6); }
 
-.home .head-space {
+.head-space {
+  min-height: 60px; }
+
+.home .head-space,
+.home .menu-space {
   filter: alpha(opacity=0); }
 
- {
-  margin-top: -43px; }
+.menu-primary__list {
+  min-height: 43px; }
+
+.menu-space {
+  height: 43px;
+  margin-bottom: -43px; }
+
+.not-top ~ .menu-space {
+  margin-bottom: 0; }
 
 #content-mask {
   width: 0;
@@ -2808,16 +2816,22 @@ ul.gravityview-az-filter {
 .card-img {
   max-height: 371px; }
 
-{
-  margin-top: -5vw; }
-
-.page-head-text {
-  min-height: 20vw; }
-  .page-head-text{
-  padding-bottom: 5vw; }
-
 .home .site-footer {
   background-color: #D4D4CF; }
+
+.article-hero {
+  min-height: 300px; }
+  .article-hero{
+  min-height: 450px; }
+
+.archive-title{
+  font-size: 56px; }
+
+.trail-items{
+  font-size: 24px; }
+
+.wp-embedded-content + p {
+  display: inline-block; }
 
 /* Styles specific to the editor. */
 body#tinymce {
