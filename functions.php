@@ -39,7 +39,7 @@ function rcdoc_setup() {
     // add_theme_support('soil-nice-search');
     add_theme_support('soil-google-analytics', 'UA-40566077-9');
     // add_theme_support('soil-js-to-footer');
-
+add_theme_support( 'cleaner-gallery' );
     add_theme_support(
 		'custom-background',
 		array(
@@ -144,4 +144,11 @@ function abraham_widgets() {
         'after_widget'  => '</section>',
         'class'         => '',
     ));
+}
+
+
+add_filter( 'cleaner_gallery_defaults', 'meh_gallery_default_args' );
+function meh_gallery_default_args($defaults) {
+    $defaults['size']    = 'abe-hd';
+    return $defaults;
 }
