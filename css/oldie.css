@@ -2304,6 +2304,9 @@ http://flickity.metafizzy.co
     visibility: visible;
     z-index: 1; }
 
+.archive .format-image {
+  align-self: flex-start; }
+
 .mdl-mega-footer--heading-checkbox:checked ~ div,
 .mdl-mega-footer__heading-checkbox:checked ~ div {
   display: none; }
@@ -2831,7 +2834,9 @@ ul.gravityview-az-filter {
   font-size: 24px; }
 
 .wp-embedded-content + p {
-  display: inline-block; }
+  display: inline-block;
+  vertical-align: top;
+  padding: 8px; }
 
 /* Styles specific to the editor. */
 body#tinymce {

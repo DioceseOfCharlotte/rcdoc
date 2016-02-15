@@ -94,7 +94,7 @@ $directory_posts = array('school','parish','department');
     if (is_post_type_archive( $directory_posts )) :
         $attr['class']   .= " u-1of2-md";
     endif;
-    if (has_post_format( 'aside' )) :
+    if (has_post_format( 'aside' ) && ! is_search()) :
         $attr['class']   .= " u-bg-1-glass";
     endif;
     if (has_post_format( 'quote' )) :

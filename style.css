@@ -2408,6 +2408,11 @@ body:not(.home) #header {
     visibility: visible;
     z-index: 1; }
 
+.archive .format-image {
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start; }
+
 .mdl-mega-footer--heading-checkbox:checked ~ div,
 .mdl-mega-footer__heading-checkbox:checked ~ div {
   display: none; }
