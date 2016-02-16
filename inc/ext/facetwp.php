@@ -60,6 +60,29 @@ function doc_register_doc_category_facets( $facets ) {
         'type' => 'alpha',
     );
 
+    $facets[] = array(
+        'label' => 'Statistics Type',
+        'name' => 'statistics_type',
+        'type' => 'checkboxes',
+        'source' => 'tax/statistics_type',
+		'label_any' => 'All Reports',
+	    'orderby' => 'display_value',
+        'hierarchical' => 'no',
+        'ghosts' => 'yes',
+	    'preserve_ghosts' => 'yes',
+        'operator' => 'or',
+    );
+
+    $facets[] = array(
+        'label' => 'Statistics Date',
+        'name' => 'statistics_year',
+        'type' => 'dropdown',
+        'source' => 'cf/doc_stats_report_date',
+		'label_any' => 'All Dates',
+	    'orderby' => 'display_value',
+        'hierarchical' => 'no',
+    );
+
     // $facets[] = array(
     //     'label' => 'Parish Proximity',
     //     'name' => 'parish_proximity',
@@ -108,7 +131,7 @@ function doc_display_facets() {
     } elseif ( is_post_type_archive('statistics_report') ) {
 		echo '<div class="u-1of1 u-px3 u-pb0 u-br u-pt3 u-mb2 u-flex u-flex-wrap u-flex-justify-around u-bg-frost-4 u-text-color u-max-center">';
         echo facetwp_display( 'facet', 'statistics_year' );
-        echo facetwp_display( 'facet', 'statistics_county' );
+        //echo facetwp_display( 'facet', 'statistics_county' );
 	    echo facetwp_display( 'facet', 'statistics_type' );
 		echo '</div>';
     }
