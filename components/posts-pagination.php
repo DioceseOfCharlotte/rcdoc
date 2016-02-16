@@ -1,6 +1,6 @@
 <?php
 if ( is_post_type_archive( 'department' ) || is_post_type_archive( 'parish' ) || is_post_type_archive( 'school' ) ) : ?>
-<div class="u-1of1 u-p2 u-mb2 u-content-wrap u-bg-frost-4 u-text-center">
+<div class="u-1of1 u-p2 u-mb2 u-content-wrap u-text-center">
  	<?= facetwp_display( 'pager' ); ?>
 </div>
 

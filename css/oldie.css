@@ -2207,10 +2207,11 @@ http://flickity.metafizzy.co
 
 .tile {
   border: 5px solid #36474f;
-  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+  background-image: linear-gradient(335deg, rgba(0, 0, 0, 0.08) 50%, transparent 50%);
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1); }
 
 .tile:hover {
-  filter: alpha(opacity=90); }
+  background-image: linear-gradient(335deg, rgba(0, 0, 0, 0.06) 50%, transparent 50%); }
 
 .not-top ~ .menu-primary {
   -js-display: flex;
@@ -2282,8 +2283,7 @@ http://flickity.metafizzy.co
  {
   max-height: 64px; }
 
-
-.nav-menu {
+ {
   color: #444;
   font-weight: bold;
   text-shadow: 1px 1px 5px rgba(235, 235, 241, 0.6); }
