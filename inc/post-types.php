@@ -802,7 +802,41 @@ function doc_register_post_types() {
 		)
 	);
 
-
+	register_extended_post_type( 'statistics_report',
+		array(
+			'admin_cols' => array(
+				'statistics_type' => array(
+					'taxonomy' => 'statistics_type',
+				),
+			),
+			'enter_title_here'     => 'Enter report title here',
+			'menu_icon'           => 'dashicons-chart-pie',
+			'supports'            => array( 'title', 'author', 'archive' ),
+			'capability_type'     => 'statistics_report',
+			'map_meta_cap'        => true,
+			'capabilities'        => array(
+				# meta caps (don't assign these to roles)
+				'edit_post'              => 'edit_statistics_report',
+				'read_post'              => 'read_statistics_report',
+				'delete_post'            => 'delete_statistics_report',
+				# primitive/meta caps
+				'create_posts'           => 'create_statistics_reports',
+				# primitive caps used outside of map_meta_cap()
+				'edit_posts'             => 'edit_statistics_reports',
+				'edit_others_posts'      => 'manage_statistics_reports',
+				'publish_posts'          => 'manage_statistics_reports',
+				'read_private_posts'     => 'read',
+				# primitive caps used inside of map_meta_cap()
+				'read'                   => 'read',
+				'delete_posts'           => 'manage_statistics_reports',
+				'delete_private_posts'   => 'manage_statistics_reports',
+				'delete_published_posts' => 'manage_statistics_reports',
+				'delete_others_posts'    => 'manage_statistics_reports',
+				'edit_private_posts'     => 'edit_statistics_reports',
+				'edit_published_posts'   => 'edit_statistics_reports',
+			),
+		)
+	);
 	# Add required capabilities to the administrator role.
     $role = get_role( 'administrator' );
 
@@ -828,6 +862,7 @@ function doc_register_post_types() {
 		$role->add_cap( 'create_properties_posts' );
 		$role->add_cap( 'create_tribunal_posts' );
 		$role->add_cap( 'create_vocations_posts' );
+		$role->add_cap( 'create_statistics_reports' );
 
 		# Delete/publish existing posts.
         $role->add_cap( 'manage_parishes' );
@@ -849,6 +884,7 @@ function doc_register_post_types() {
 		$role->add_cap( 'manage_properties_posts' );
 		$role->add_cap( 'manage_tribunal_posts' );
 		$role->add_cap( 'manage_vocations_posts' );
+		$role->add_cap( 'manage_statistics_reports' );
 
 		# Edit existing posts.
         $role->add_cap( 'edit_parishes' );
@@ -870,6 +906,7 @@ function doc_register_post_types() {
 		$role->add_cap( 'edit_properties_posts' );
 		$role->add_cap( 'edit_tribunal_posts' );
 		$role->add_cap( 'edit_vocations_posts' );
+		$role->add_cap( 'edit_statistics_reports' );
     }
 
 }

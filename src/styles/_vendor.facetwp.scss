@@ -10,3 +10,11 @@
 	    background-position: 50%;
 	}
 }
+
+.facetwp-facet-statistics_type.facetwp-type-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 0!important;
+}

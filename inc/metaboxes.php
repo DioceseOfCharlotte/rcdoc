@@ -1,7 +1,54 @@
 <?php
-// silence
 
-add_action( 'cmb2_admin_init', 'doc_register_time_schedule_metabox' );
+add_action( 'cmb2_admin_init', 'doc_register_stats_upload' );
+//add_action( 'cmb2_admin_init', 'doc_register_time_schedule_metabox' );
+
+
+function doc_register_stats_upload() {
+	$prefix = 'doc_stats_';
+	/**
+	 * Sample metabox to demonstrate each field type included
+	 */
+	$doc_stat = new_cmb2_box( array(
+		'id'            => $prefix . 'metabox',
+		'title'         => __( 'Statistics Report', 'cmb2' ),
+		'object_types'  => array( 'statistics_report', ), // Post type
+		// 'show_on_cb' => 'yourprefix_show_if_front_page', // function should return a bool value
+		// 'context'    => 'normal',
+		// 'priority'   => 'high',
+		// 'show_names' => true, // Show field names on the left
+	) );
+
+	$doc_stat->add_field( array(
+		'name' => __( 'Report Year', 'cmb2' ),
+		'desc' => __( 'Enter the year for this Report.', 'cmb2' ),
+		'default' => '201_',
+		'id'   => $prefix . 'report_date',
+		'type' => 'text_small',
+	) );
+
+	$doc_stat->add_field( array(
+		'name' => __( 'Report', 'cmb2' ),
+		'desc' => __( 'Upload the document or enter a URL.', 'cmb2' ),
+		'id'   => $prefix . 'report',
+		'type' => 'file',
+	) );
+
+	$doc_stat->add_field( array(
+		'name' => __( 'County', 'cmb2' ),
+		'desc' => __( 'Select the relevant county or counties. (optional)', 'cmb2' ),
+		'id'   => $prefix . 'county',
+		'type' => 'select',
+		'show_option_none' => true,
+		'repeatable'      => true,
+		'options'          => array(
+'alamance' => 'Alamance', 'alexander' => 'Alexander', 'alleghany' => 'Alleghany', 'anson' => 'Anson', 'ashe' => 'Ashe', 'avery' => 'Avery', 'beaufort' => 'Beaufort', 'bertie' => 'Bertie', 'bladen' => 'Bladen', 'brunswick' => 'Brunswick', 'buncombe' => 'Buncombe', 'burke' => 'Burke', 'cabarrus' => 'Cabarrus', 'caldwell' => 'Caldwell', 'camden' => 'Camden', 'cartere' => 'Cartere', 'caswell' => 'Caswell', 'catawba' => 'Catawba', 'chatham' => 'Chatham', 'cherokee' => 'Cherokee', 'chowan' => 'Chowan', 'clay' => 'Clay', 'cleveland' => 'Cleveland', 'columbus' => 'Columbus', 'craven' => 'Craven', 'cumberland' => 'Cumberland', 'currituck' => 'Currituck', 'dare' => 'Dare', 'davidson' => 'Davidson', 'davie' => 'Davie', 'duplin' => 'Duplin', 'durham' => 'Durham', 'edgecombe' => 'Edgecombe', 'forsyth' => 'Forsyth', 'franklin' => 'Franklin', 'gaston' => 'Gaston', 'gates' => 'Gates', 'graham' => 'Graham', 'granville' => 'Granville', 'greene' => 'Greene', 'guilford' => 'Guilford', 'halifax' => 'Halifax', 'harnett' => 'Harnett', 'haywood' => 'Haywood', 'henderson' => 'Henderson', 'hertford' => 'Hertford', 'hoke' => 'Hoke', 'hyde' => 'Hyde', 'iredell' => 'Iredell', 'jackson' => 'Jackson', 'johnston' => 'Johnston', 'jones' => 'Jones', 'lee' => 'Lee', 'lenoir' => 'Lenoir', 'lincoln' => 'Lincoln', 'macon' => 'Macon', 'madison' => 'Madison', 'martin' => 'Martin', 'mcdowell' => 'McDowell', 'mecklenburg' => 'Mecklenburg', 'mitchell' => 'Mitchell', 'montgomery' => 'Montgomery', 'moore' => 'Moore', 'nash' => 'Nash', 'new-hanover' => 'New Hanover', 'northampton' => 'Northampton', 'onslow' => 'Onslow', 'orange' => 'Orange', 'pamlico' => 'Pamlico', 'pasquotank' => 'Pasquotank', 'pender' => 'Pender', 'perquimans' => 'Perquimans', 'person' => 'Person', 'pitt' => 'Pitt', 'polk' => 'Polk', 'randolph' => 'Randolph', 'richmond' => 'Richmond', 'robeson' => 'Robeson', 'rockingham' => 'Rockingham', 'rowan' => 'Rowan', 'rutherford' => 'Rutherford', 'sampson' => 'Sampson', 'scotland' => 'Scotland', 'stanly' => 'Stanly', 'stokes' => 'Stokes', 'surry' => 'Surry', 'swain' => 'Swain', 'transylvania' => 'Transylvania', 'tyrrell' => 'Tyrrell', 'union' => 'Union', 'vance' => 'Vance', 'wake' => 'Wake', 'warren' => 'Warren', 'washington' => 'Washington', 'watauga' => 'Watauga', 'wayne' => 'Wayne', 'wilkes' => 'Wilkes', 'wilson' => 'Wilson', 'yadkin' => 'Yadkin', 'yancey' => 'Yancey',
+		),
+	) );
+
+}
+
+
 /**
  * Hook in and add a metabox to demonstrate repeatable grouped fields
  */

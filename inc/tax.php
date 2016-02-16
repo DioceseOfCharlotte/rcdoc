@@ -46,4 +46,20 @@ function doc_register_taxonomies() {
 
 		)
 	);
+
+	register_extended_taxonomy( 'statistics_type', 'statistics_report', array(
+
+        # Use radio buttons in the meta box for this taxonomy on the post editing screen:
+        'meta_box' => 'radio',
+
+        # Show this taxonomy in the 'At a Glance' dashboard widget:
+        'dashboard_glance' => true,
+
+    	'capabilities' => array(
+    		'manage_terms' => 'manage_options',
+    		'edit_terms'   => 'manage_options',
+    		'delete_terms' => 'manage_options',
+    		'assign_terms' => 'edit_statistics_reports',
+    	),
+    ) );
 }

@@ -2050,6 +2050,19 @@ input.mdl-button[type="submit"] {
   height: 2.5rem;
   background-position: 50%; }
 
+.facetwp-facet-statistics_type.facetwp-type-checkboxes {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  width: 100%;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  margin-bottom: 0 !important; }
+
 /*! Flickity v1.1.2
 http://flickity.metafizzy.co
 ---------------------------------------------- */

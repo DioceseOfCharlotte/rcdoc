@@ -105,6 +105,12 @@ function doc_display_facets() {
         echo '<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab u-m0 mdl-js-ripple-effect u-m0" onclick="FWP.reset()"><i class="material-icons">&#xE5D5;</i></button>';
 		echo '<div class="u-1of1 u-text-center">' .facetwp_display( 'facet', 'title_alpha' ). '</div>';
 		echo '</div>';
+    } elseif ( is_post_type_archive('statistics_report') ) {
+		echo '<div class="u-1of1 u-px3 u-pb0 u-br u-pt3 u-mb2 u-flex u-flex-wrap u-flex-justify-around u-bg-frost-4 u-text-color u-max-center">';
+        echo facetwp_display( 'facet', 'statistics_year' );
+        echo facetwp_display( 'facet', 'statistics_county' );
+	    echo facetwp_display( 'facet', 'statistics_type' );
+		echo '</div>';
     }
 
 }
