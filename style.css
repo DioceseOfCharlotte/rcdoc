@@ -2768,7 +2768,8 @@ body:not(.home) .site-header .site-description {
 .site-header.not-top::after {
   opacity: 1; }
 
-.type-document {
+.type-document,
+.type-statistics_report {
   -webkit-align-self: flex-start;
       -ms-flex-item-align: start;
           align-self: flex-start; }

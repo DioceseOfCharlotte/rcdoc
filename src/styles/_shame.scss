@@ -736,7 +736,8 @@ body:not(.home) .site-header {
 
 
 
-.type-document {
+.type-document,
+.type-statistics_report {
     align-self: flex-start;
     //min-width: 47%;
 }

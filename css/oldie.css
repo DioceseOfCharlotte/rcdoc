@@ -2025,6 +2025,14 @@ input.mdl-button[type="submit"] {
   height: 40px;
   background-position: 50%; }
 
+.facetwp-facet-statistics_type.facetwp-type-checkboxes {
+  -js-display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 0 !important; }
+
 /*! Flickity v1.1.2
 http://flickity.metafizzy.co
 ---------------------------------------------- */
