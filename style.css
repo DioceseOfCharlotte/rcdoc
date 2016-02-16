@@ -2415,7 +2415,8 @@ body:not(.home) #header {
   .archive .format-image .entry-header {
     background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.4) 25%, rgba(0, 0, 0, 0.6));
     text-align: center;
-    border-radius: 0 0 2px 2px; }
+    border-radius: 0 0 2px 2px;
+    padding-top: .5rem; }
   .archive .format-image .entry-title {
     margin: 0;
     font-size: 2rem; }
@@ -2695,9 +2696,6 @@ http://flickity.metafizzy.co
     visibility: hidden; }
   .home .is-top ~ .menu-primary {
     background-color: transparent !important; }
-  #page .nav-menu.menu-primary__list {
-    display: block;
-    background-color: transparent; }
   .menu-item {
     width: auto; } }
 
@@ -2975,6 +2973,12 @@ ul.gravityview-az-filter {
   display: inline-block;
   vertical-align: top;
   padding: .5rem; }
+
+@media screen and (max-width: 47em) {
+  .site-title {
+    font-size: 1.3rem; }
+  .site-description {
+    display: none; } }
 
 /* Styles specific to the editor. */
 body#tinymce {

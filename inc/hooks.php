@@ -2,8 +2,8 @@
 
 // add_action( 'tha_entry_bottom',  'rcdoc_contact_footer' );
 add_action( 'tha_header_after', 'logged_in_drawer' );
-add_action( 'tha_header_bottom', 'doc_search_form' );
-add_action( 'tha_header_bottom', 'header_right_widget' );
+//add_action( 'tha_header_bottom', 'doc_search_form' );
+//add_action( 'tha_header_bottom', 'header_right_widget' );
 add_action( 'tha_header_bottom', 'doc_nav_toggle' );
 add_action( 'tha_header_after', 'headspace' );
 add_action( 'tha_header_after', 'doc_primary_menu' );

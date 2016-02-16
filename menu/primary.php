@@ -11,12 +11,14 @@ if (has_nav_menu('primary')) : ?>
                     'container'      => '',
                     'depth'          => 2,
                     'menu_id'        => 'menu-primary__list',
-                    'menu_class'     => 'nav-menu menu-primary__list u-bg-1-glass-dark u-text-center',
+                    'menu_class'     => 'nav-menu menu-primary__list u-inline-block',
                     'fallback_cb'    => '',
                     //'items_wrap'     => '%3$s',
 					//'items_wrap'      => '<div class="nav-wrap">' . get_search_form( false ) . '<ul id="%s" class="%s">%s</ul></div>'
                 ));
             ?>
+
+        <?php hybrid_get_sidebar('header-right'); ?>
         </nav>
 
 <?php

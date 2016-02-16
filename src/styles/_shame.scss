@@ -620,10 +620,10 @@ http://flickity.metafizzy.co
 	// 	opacity: 1;
 	// }
 
-    #page .nav-menu.menu-primary__list {
-        display         : block;
-        background-color: transparent;
-    }
+    // #page .nav-menu.menu-primary__list {
+    //     display         : block;
+    //     background-color: transparent;
+    // }
 
     .menu-item {
         width: auto;
@@ -1032,4 +1032,14 @@ background-color: #D4D4CF;
     display: inline-block;
 	vertical-align: top;
     padding: .5rem;
+}
+
+
+@include sm {
+    .site-title {
+        font-size: 1.3rem;
+    }
+    .site-description {
+        display: none;
+    }
 }

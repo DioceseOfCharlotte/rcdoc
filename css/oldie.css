@@ -2309,9 +2309,11 @@ http://flickity.metafizzy.co
   .archive .format-image .entry-header {
     background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.4) 25%, rgba(0, 0, 0, 0.6));
     text-align: center;
-    border-radius: 0 0 2px 2px; }
+    border-radius: 0 0 2px 2px;
+    padding-top: 8px; }
   .archive .format-image .entry-title {
-    margin: 0; }
+    margin: 0;
+    font-size: 32px; }
   .archive .format-image a {
     padding: 16px 0;
     display: inline-block;
@@ -2575,10 +2577,6 @@ http://flickity.metafizzy.co
 
 .home .is-top ~ .menu-primary{
   background-color: transparent !important; }
-
-#page .nav-menu.menu-primary__list{
-  display: block;
-  background-color: transparent; }
 
 .menu-item{
   width: auto; }
