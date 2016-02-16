@@ -29,7 +29,7 @@ function doc_register_doc_category_facets( $facets ) {
         'name' => 'department_agency',
         'type' => 'dropdown',
         'source' => 'tax/agency',
-		'label_any' => 'All',
+		'label_any' => 'All Agencies',
 	    'orderby' => 'display_value',
         'hierarchical' => 'no',
     );
@@ -39,7 +39,7 @@ function doc_register_doc_category_facets( $facets ) {
         'name' => 'school_system',
         'type' => 'checkboxes',
         'source' => 'tax/school_system',
-		'label_any' => 'All',
+		'label_any' => 'All School Systems',
 	    'orderby' => 'display_value',
         'hierarchical' => 'no',
         'ghosts' => 'yes',

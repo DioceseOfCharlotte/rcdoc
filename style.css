@@ -2391,6 +2391,7 @@ body:not(.home) .site-logo,
 body:not(.home) #header {
   max-height: 64px; }
 
+.home #menu-primary:not(.is-active) > .sidebar-header,
 .home #menu-primary:not(.is-active) > .nav-menu {
   color: #444;
   font-weight: bold;

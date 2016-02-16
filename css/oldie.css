@@ -2282,7 +2282,8 @@ http://flickity.metafizzy.co
  {
   max-height: 64px; }
 
- {
+
+.nav-menu {
   color: #444;
   font-weight: bold;
   text-shadow: 1px 1px 5px rgba(235, 235, 241, 0.6); }
@@ -2641,7 +2642,8 @@ http://flickity.metafizzy.co
 .site-header.not-top:after {
   filter: alpha(opacity=100); }
 
-.type-document {
+.type-document,
+.type-statistics_report {
   align-self: flex-start; }
 
 .menu-primary__list li{
