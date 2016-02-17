@@ -15,23 +15,23 @@ $map_link = "http://maps.google.com/maps?z=16&q=" . $address;
 
 ?>
 
-<div class="u-flex contact-info u-flex-wrap u-flex-justify-between">
+<div class="contact-info u-inline-block u-1of1 u-2of3-md u-align-middle u-p1 u-h6">
 <?php
 
 ob_start();
 ?>
-<div class="contact-numbers u-overflow-hidden u-px2 u-inline-block">
+<div class="contact-numbers u-1of1 u-p1 u-mb1 u-flex u-flex-justify-between">
 
-    <div class="phone u-mb1 u-spacer16">
+    <div class="phone contact-numbers__item u-1of2-md u-inline-block u-spacer16">
 <?php if( get_field('doc_phone_number') ): ?>
-        <a class="contact-link" href="tel:<?php the_field('doc_phone_number'); ?>" itemprop="telephone"><i class="material-icons u-mr1">&#xE0CD;</i><?php the_field('doc_phone_number'); ?></a>
+        <a class="contact-link u-inline-block" href="tel:<?php the_field('doc_phone_number'); ?>" itemprop="telephone"><i class="material-icons u-mr1">&#xE0CD;</i><?php the_field('doc_phone_number'); ?></a>
 <?php endif; ?>
     </div>
 
 
-    <div class="fax u-mb1 u-spacer16">
+    <div class="fax contact-numbers__item u-1of2-md u-inline-block u-spacer16">
 <?php if( get_field('doc_fax') ): ?>
-        <span itemprop="faxNumber"><i class="u-bold u-mr1">FAX</i><?php the_field('doc_fax'); ?></span>
+        <span class="contact-fax u-inline-block" itemprop="faxNumber"><i class="u-bold u-mr1">FAX</i><?php the_field('doc_fax'); ?></span>
 <?php endif; ?>
     </div>
 
@@ -41,9 +41,9 @@ ob_start();
 echo ob_get_clean();
 
 ob_start(); ?>
-<div class="contact-address u-px2 u-inline-block u-mb1">
+<div class="contact-address u-1of1 u-inline-block u-mb1">
 <?php if( get_field('doc_city') ): ?>
-    <a class="contact-link" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" href="<?php echo esc_url( $map_link ) ?>" target="_blank"><i class="material-icons u-align-top map-marker u-mr1">&#xE55F;</i>
+    <a class="contact-link u-flex u-p1" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" href="<?php echo esc_url( $map_link ) ?>" target="_blank"><i class="material-icons u-align-top map-marker u-mr1">&#xE55F;</i>
         <span class="u-inline-block">
             <span itemprop="streetAddress">
                 <?php the_field('doc_street'); ?><br>
@@ -61,17 +61,15 @@ ob_start(); ?>
 
 
 
-    <div class="email u-spacer16 u-1of1 u-mb1 u-px2">
+<div class="email u-spacer16 u-1of1 u-truncate">
 <?php if( get_field('doc_email') ): ?>
-        <a class="contact-link" itemprop="email" href="mailto:<?php the_field('doc_email'); ?>"><i class="material-icons u-mr1">&#xE0BE;</i><?php the_field('doc_email'); ?></a>
+    <a class="contact-link u-p1" itemprop="email" href="mailto:<?php the_field('doc_email'); ?>"><i class="material-icons u-mr1">&#xE0BE;</i><?php the_field('doc_email'); ?></a>
 <?php endif; ?>
-    </div>
+</div>
 
 
 <?php if( get_field('doc_website') ): ?>
-    <div class="website-address u-bg-tint-1 u-spacer1 u-1of1 u-text-center">
-        <a class="contact-link u-1of1 btn u-h6" itemprop="url" href="<?php the_field('doc_website'); ?>" target="_blank"><?php the_field('doc_website'); ?><i class="u-px1 u-h6 material-icons">&#xE89E;</i></a>
-    </div>
+    <a class="contact-link u-abs u-top0 u-bg-2 u-right0 mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect u-mtn1 u-mrn1" itemprop="url" href="<?php the_field('doc_website'); ?>" target="_blank"><i class="material-icons">&#xE89E;</i></a>
 <?php endif; ?>
 
 </div>

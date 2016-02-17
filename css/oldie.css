@@ -2856,6 +2856,12 @@ ul.gravityview-az-filter {
   vertical-align: top;
   padding: 8px; }
 
+.contact-numbers__item {
+  min-width: 132px; }
+
+.entry-header + .contact-info {
+  width: 100%; }
+
 /* Styles specific to the editor. */
 body#tinymce {
   min-height: 50px;

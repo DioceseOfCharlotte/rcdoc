@@ -1,14 +1,14 @@
 // Open the first Tab by default.
 function ready(fn) {
-  if (document.readyState != 'loading'){
-    fn();
-  } else {
-    document.addEventListener('DOMContentLoaded', fn);
-  }
+	if (document.readyState != 'loading') {
+		fn();
+	} else {
+		document.addEventListener('DOMContentLoaded', fn);
+	}
 }
 
 
-ready(function () {
+ready(function() {
 	var firstTab = document.getElementsByClassName('mdl-tabs__tab')[0];
 	var firstPanel = document.getElementsByClassName('mdl-tabs__panel')[0];
 	firstTab.classList.toggle('is-active');
@@ -17,7 +17,7 @@ ready(function () {
 
 
 // HEADROOM JS
-(function () {
+(function() {
 	var header = document.querySelector('#header');
 
 	new Headroom(header, {
@@ -42,3 +42,33 @@ ready(function() {
 
 	document.getElementById('head-space').style.height = fakeHeight + 'px';
 });
+
+
+
+
+
+
+// ;(function() {
+//     var throttle = function(type, name, obj) {
+//         var obj = obj || window;
+//         var running = false;
+//         var func = function() {
+//             if (running) { return; }
+//             running = true;
+//             requestAnimationFrame(function() {
+//                 obj.dispatchEvent(new CustomEvent(name));
+//                 running = false;
+//             });
+//         };
+//         obj.addEventListener(type, func);
+//     };
+//     throttle ("scroll", "optimizedScroll");
+// })();
+//
+// // to use the script *without* anti-jank, set the event to "scroll" and remove the anonymous function.
+//
+// window.addEventListener("optimizedScroll", function() {
+//     if (window.pageYOffset > 0) {
+//         document.getElementById("article-hero").style.transform = "translateY(" + window.pageYOffset*(-.9) + "px)";
+//     }
+// });

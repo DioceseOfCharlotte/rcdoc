@@ -1044,3 +1044,19 @@ background-color: #D4D4CF;
         display: none;
     }
 }
+
+
+.contact-numbers__item {
+    min-width: 132px;
+}
+
+.entry-header + .contact-info {
+    width: 100%;
+}
+
+
+.type-parish .entry-title {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}

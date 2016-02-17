@@ -2996,6 +2996,17 @@ ul.gravityview-az-filter {
   .site-description {
     display: none; } }
 
+.contact-numbers__item {
+  min-width: 132px; }
+
+.entry-header + .contact-info {
+  width: 100%; }
+
+.type-parish .entry-title {
+  padding: 0;
+  margin: 0;
+  text-align: center; }
+
 /* Styles specific to the editor. */
 body#tinymce {
   min-height: 50px;

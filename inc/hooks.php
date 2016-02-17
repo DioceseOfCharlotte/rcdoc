@@ -101,11 +101,11 @@ function doc_article_hero() {
 	if (is_front_page())
 		return;
 
-    echo '<div class="article-hero u-1of1 u-bg-center u-bg-no-repeat u-bg-cover u-tinted-image u-bg-fixed u-abs u-left0 u-right0"></div>';
+    echo '<div id="article-hero" class="article-hero u-1of1 u-bg-center u-bg-no-repeat u-bg-cover u-tinted-image u-bg-fixed u-abs u-left0 u-right0"></div>';
 }
 
 function doc_nav_toggle() {
-    echo '<button id="side-menu-toggle" class="menu-toggle btn btn-round u-mx1 u-z4 u-rel" aria-controls="menu-primary-items"><i class="material-icons">&#xE5D2;</i></button>';
+    echo '<button id="side-menu-toggle" class="menu-toggle btn btn-round u-ml-auto u-mr1 u-z4 u-rel" aria-controls="menu-primary-items"><i class="material-icons">&#xE5D2;</i></button>';
 }
 
 function doc_content_mask() {
