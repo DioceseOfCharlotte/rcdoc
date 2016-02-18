@@ -46,30 +46,30 @@
     border: 0;
   }
 
-  &:hover {
-    background-color: $button-hover-color;
-  }
+  // &:hover {
+  //   background-color: $button-hover-color;
+  // }
+  //
+  // &:focus:not(:active) {
+  //   background-color: $button-focus-color;
+  // }
+  //
+  // &:active {
+  //   background-color: $button-active-color;
+  // }
 
-  &:focus:not(:active) {
-    background-color: $button-focus-color;
-  }
-
-  &:active {
-    background-color: $button-active-color;
-  }
-
-  &.mdl-button--colored {
-    color: $button-primary-color-alt;
-
-    &:focus:not(:active) {
-      background-color: $button-focus-color-alt;
-    }
-  }
+  // &.mdl-button--colored {
+  //   color: $button-primary-color-alt;
+  //
+  //   &:focus:not(:active) {
+  //     background-color: $button-focus-color-alt;
+  //   }
+  // }
 }
 
-input.mdl-button[type="submit"] {
-  -webkit-appearance:none;
-}
+// input.mdl-button[type="submit"] {
+//   -webkit-appearance:none;
+// }
 
   // Raised buttons
   .mdl-button--raised {
@@ -78,29 +78,29 @@ input.mdl-button[type="submit"] {
 
     &:active {
       @include shadow-4dp();
-      background-color: $button-active-color;
+      //background-color: $button-active-color;
     }
 
     &:focus:not(:active) {
       @include focus-shadow();
-      background-color: $button-active-color;
+      //background-color: $button-active-color;
     }
 
     &.mdl-button--colored {
-      background: $button-primary-color-alt;
-      color: $button-secondary-color-alt;
+      //background: $button-primary-color-alt;
+      //color: $button-secondary-color-alt;
 
-      &:hover {
-        background-color: $button-hover-color-alt;
-      }
-
-      &:active {
-        background-color: $button-active-color-alt;
-      }
-
-      &:focus:not(:active) {
-        background-color: $button-active-color-alt;
-      }
+    //   &:hover {
+    //     background-color: $button-hover-color-alt;
+    //   }
+      //
+    //   &:active {
+    //     background-color: $button-active-color-alt;
+    //   }
+      //
+    //   &:focus:not(:active) {
+    //     background-color: $button-active-color-alt;
+    //   }
 
       & .mdl-ripple {
         background: $button-ripple-color-alt;
@@ -119,7 +119,7 @@ input.mdl-button[type="submit"] {
     width: $button-fab-size;
     padding: 0;
     overflow: hidden;
-    background: $button-primary-color;
+    //background: $button-primary-color;
     box-shadow: 0 1px 1.5px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);
     position: relative;
     line-height: normal;
@@ -147,33 +147,33 @@ input.mdl-button[type="submit"] {
 
     &:active {
       @include shadow-4dp();
-      background-color: $button-active-color;
+      //background-color: $button-active-color;
     }
 
     &:focus:not(:active) {
       @include focus-shadow();
-      background-color: $button-active-color;
+      //background-color: $button-active-color;
     }
 
     &.mdl-button--colored {
-      background: $button-fab-color-alt;
-      color: $button-fab-text-color-alt;
+      //background: $button-fab-color-alt;
+      //color: $button-fab-text-color-alt;
 
-      &:hover {
-        background-color: $button-fab-hover-color-alt;
-      }
-
-      &:focus:not(:active) {
-        background-color: $button-fab-active-color-alt;
-      }
-
-      &:active {
-        background-color: $button-fab-active-color-alt;
-      }
-
-      & .mdl-ripple {
-        background: $button-fab-ripple-color-alt;
-      }
+    //   &:hover {
+    //     background-color: $button-fab-hover-color-alt;
+    //   }
+      //
+    //   &:focus:not(:active) {
+    //     background-color: $button-fab-active-color-alt;
+    //   }
+      //
+    //   &:active {
+    //     background-color: $button-fab-active-color-alt;
+    //   }
+      //
+    //   & .mdl-ripple {
+    //     background: $button-fab-ripple-color-alt;
+    //   }
     }
   }
 
