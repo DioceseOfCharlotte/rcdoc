@@ -11,8 +11,7 @@
 		</header>
 
 		<?php tha_entry_content_before(); ?>
-		<?php get_template_part('components/acf-parish-contact'); ?>
-		<?php the_excerpt(); ?>
+		<?php get_template_part('components/acf-contact'); ?>
 		<?php tha_entry_content_after(); ?>
 
 		<?php get_template_part('components/entry', 'footer'); ?>

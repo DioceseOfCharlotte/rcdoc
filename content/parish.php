@@ -20,7 +20,7 @@
 		?>
 
 		<?php tha_entry_content_before(); ?>
-		<?php get_template_part('components/acf-parish-contact'); ?>
+		<?php get_template_part('components/acf-contact'); ?>
 		<?php the_excerpt(); ?>
 		<?php tha_entry_content_after(); ?>
 

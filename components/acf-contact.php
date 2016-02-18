@@ -69,7 +69,7 @@ ob_start(); ?>
 
 
 <?php if( get_field('doc_website') ): ?>
-    <a class="contact-link u-abs u-top0 u-bg-2-light u-right0 mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect u-mtn1 u-mrn1" itemprop="url" href="<?php the_field('doc_website'); ?>" target="_blank"><i class="material-icons">&#xE89E;</i></a>
+    <a class="contact-link btn u-abs u-top0 u-bg-silver u-right0 btn-round u-mtn1 u-mrn1" itemprop="url" href="<?php the_field('doc_website'); ?>" target="_blank"><i class="material-icons">&#xE89E;</i></a>
 <?php endif; ?>
 
 </div>
