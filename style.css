@@ -160,10 +160,6 @@
 /* DATA TABLE */
 /* SNACKBAR */
 /* TOOLTIP */
-.site-header.mui-enter, .site-header, .site-header.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear; }
-
 /**
  * Copyright 2015 Google Inc. All Rights Reserved.
  *
@@ -309,6 +305,21 @@
 /* GRID */
 /* DATA TABLE */
 /* TOOLTIP */
+/*--------------------------------------------------------------
+# Defaults
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Colors
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Alerts
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Spacing
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Animation
+--------------------------------------------------------------*/
 /**
  * Copyright 2015 Google Inc. All Rights Reserved.
  *
@@ -1066,6 +1077,7 @@
   color: rgb(0,0,0);
   position: relative;
   height: 36px;
+  margin: 0;
   min-width: 64px;
   padding: 0 8px;
   display: inline-block;
@@ -1246,889 +1258,6 @@ input.mdl-button[type="submit"] {
 
 .mdl-button .material-icons {
   vertical-align: middle; }
-
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/*------------------------------------*    $CONTENTS
-\*------------------------------------*/
-/**
- * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
- * -----Typography
- * -----Colors
- * -----Textfield
- * -----Switch
- * -----Spinner
- * -----Radio
- * -----Menu
- * -----List
- * -----Layout
- * -----Icon toggles
- * -----Footer
- * -----Column
- * -----Checkbox
- * -----Card
- * -----Button
- * -----Animation
- * -----Progress
- * -----Badge
- * -----Shadows
- * -----Grid
- * -----Data table
- * -----Snackbar
- *
- * Even though all variables have the `!default` directive, most of them
- * should not be changed as they are dependent one another. This can cause
- * visual distortions (like alignment issues) that are hard to track down
- * and fix.
- */
-/* ==========  TYPOGRAPHY  ========== */
-/* We're splitting fonts into "preferred" and "performance" in order to optimize
-   page loading. For important text, such as the body, we want it to load
-   immediately and not wait for the web font load, whereas for other sections,
-   such as headers and titles, we're OK with things taking a bit longer to load.
-   We do have some optional classes and parameters in the mixins, in case you
-   definitely want to make sure you're using the preferred font and don't mind
-   the performance hit.
-   We should be able to improve on this once CSS Font Loading L3 becomes more
-   widely available.
-*/
-/* ==========  COLORS  ========== */
-/**
-*
-* Material design color palettes.
-* @see http://www.google.com/design/spec/style/color.html
-*
-**/
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* ==========  Color Palettes  ========== */
-/* colors.scss */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* ==========  IMAGES  ========== */
-/* ==========  Color & Themes  ========== */
-/* ==========  Typography  ========== */
-/* ==========  Components  ========== */
-/* ==========  Standard Buttons  ========== */
-/* ==========  Icon Toggles  ========== */
-/* ==========  Radio Buttons  ========== */
-/* ==========  Ripple effect  ========== */
-/* ==========  Layout  ========== */
-/* ==========  Content Tabs  ========== */
-/* ==========  Checkboxes  ========== */
-/* ==========  Switches  ========== */
-/* ==========  Spinner  ========== */
-/* ==========  Text fields  ========== */
-/* ==========  Card  ========== */
-/* ==========  Sliders ========== */
-/* ========== Progress ========== */
-/* ==========  List ========== */
-/* ==========  Item ========== */
-/* ==========  Dropdown menu ========== */
-/* ==========  Tooltips  ========== */
-/* ==========  Footer  ========== */
-/* TEXTFIELD */
-/* SWITCH */
-/* SPINNER */
-/* RADIO */
-/* MENU */
-/* LIST */
-/* LAYOUT */
-/* ICON TOGGLE */
-/* FOOTER */
-/*mega-footer*/
-/*mini-footer*/
-/* CHECKBOX */
-/* CARD */
-/* Card dimensions */
-/* Cover image */
-/* BUTTON */
-/**
- *
- * Dimensions
- *
- */
-/* ANIMATION */
-/* PROGRESS */
-/* BADGE */
-/* SHADOWS */
-/* GRID */
-/* DATA TABLE */
-/* SNACKBAR */
-/* TOOLTIP */
-.mdl-card {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  font-size: 16px;
-  font-weight: 400;
-  min-height: 200px;
-  overflow: hidden;
-  width: 330px;
-  z-index: 1;
-  position: relative;
-  background: rgb(255,255,255);
-  border-radius: 2px;
-  box-sizing: border-box; }
-
-.mdl-card__media {
-  background-color: rgb(22,160,133);
-  background-repeat: repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-  background-origin: padding-box;
-  background-attachment: scroll;
-  box-sizing: border-box; }
-
-.mdl-card__title {
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: rgb(0,0,0);
-  display: block;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: stretch;
-      -ms-flex-pack: stretch;
-          justify-content: stretch;
-  line-height: normal;
-  padding: 16px 16px;
-  -webkit-perspective-origin: 165px 56px;
-          perspective-origin: 165px 56px;
-  -webkit-transform-origin: 165px 56px;
-          transform-origin: 165px 56px;
-  box-sizing: border-box; }
-  .mdl-card__title.mdl-card--border {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-
-.mdl-card__title-text {
-  -webkit-align-self: flex-end;
-      -ms-flex-item-align: end;
-          align-self: flex-end;
-  color: inherit;
-  display: block;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 24px;
-  font-weight: 300;
-  line-height: normal;
-  overflow: hidden;
-  -webkit-transform-origin: 149px 48px;
-          transform-origin: 149px 48px;
-  margin: 0; }
-
-.mdl-card__subtitle-text {
-  font-size: 14px;
-  color: rgba(0,0,0, 0.54);
-  margin: 0; }
-
-.mdl-card__supporting-text {
-  color: rgba(0,0,0, 0.54);
-  font-size: 13px;
-  line-height: 18px;
-  overflow: hidden;
-  padding: 16px 16px;
-  width: 90%; }
-
-.mdl-card__actions {
-  font-size: 16px;
-  line-height: normal;
-  width: 100%;
-  background-color: transparent;
-  padding: 8px;
-  box-sizing: border-box; }
-  .mdl-card__actions.mdl-card--border {
-    border-top: 1px solid rgba(0, 0, 0, 0.1); }
-
-.mdl-card--expand {
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1; }
-
-.mdl-card__menu {
-  position: absolute;
-  right: 16px;
-  top: 16px; }
-
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/*------------------------------------*    $CONTENTS
-\*------------------------------------*/
-/**
- * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
- * -----Typography
- * -----Colors
- * -----Textfield
- * -----Switch
- * -----Spinner
- * -----Radio
- * -----Menu
- * -----List
- * -----Layout
- * -----Icon toggles
- * -----Footer
- * -----Column
- * -----Checkbox
- * -----Card
- * -----Button
- * -----Animation
- * -----Progress
- * -----Badge
- * -----Shadows
- * -----Grid
- * -----Data table
- * -----Snackbar
- *
- * Even though all variables have the `!default` directive, most of them
- * should not be changed as they are dependent one another. This can cause
- * visual distortions (like alignment issues) that are hard to track down
- * and fix.
- */
-/* ==========  TYPOGRAPHY  ========== */
-/* We're splitting fonts into "preferred" and "performance" in order to optimize
-   page loading. For important text, such as the body, we want it to load
-   immediately and not wait for the web font load, whereas for other sections,
-   such as headers and titles, we're OK with things taking a bit longer to load.
-   We do have some optional classes and parameters in the mixins, in case you
-   definitely want to make sure you're using the preferred font and don't mind
-   the performance hit.
-   We should be able to improve on this once CSS Font Loading L3 becomes more
-   widely available.
-*/
-/* ==========  COLORS  ========== */
-/**
-*
-* Material design color palettes.
-* @see http://www.google.com/design/spec/style/color.html
-*
-**/
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* ==========  Color Palettes  ========== */
-/* colors.scss */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* ==========  IMAGES  ========== */
-/* ==========  Color & Themes  ========== */
-/* ==========  Typography  ========== */
-/* ==========  Components  ========== */
-/* ==========  Standard Buttons  ========== */
-/* ==========  Icon Toggles  ========== */
-/* ==========  Radio Buttons  ========== */
-/* ==========  Ripple effect  ========== */
-/* ==========  Layout  ========== */
-/* ==========  Content Tabs  ========== */
-/* ==========  Checkboxes  ========== */
-/* ==========  Switches  ========== */
-/* ==========  Spinner  ========== */
-/* ==========  Text fields  ========== */
-/* ==========  Card  ========== */
-/* ==========  Sliders ========== */
-/* ========== Progress ========== */
-/* ==========  List ========== */
-/* ==========  Item ========== */
-/* ==========  Dropdown menu ========== */
-/* ==========  Tooltips  ========== */
-/* ==========  Footer  ========== */
-/* TEXTFIELD */
-/* SWITCH */
-/* SPINNER */
-/* RADIO */
-/* MENU */
-/* LIST */
-/* LAYOUT */
-/* ICON TOGGLE */
-/* FOOTER */
-/*mega-footer*/
-/*mini-footer*/
-/* CHECKBOX */
-/* CARD */
-/* Card dimensions */
-/* Cover image */
-/* BUTTON */
-/**
- *
- * Dimensions
- *
- */
-/* ANIMATION */
-/* PROGRESS */
-/* BADGE */
-/* SHADOWS */
-/* GRID */
-/* DATA TABLE */
-/* SNACKBAR */
-/* TOOLTIP */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* Typography */
-/* Shadows */
-/* Animations */
-.mdl-mega-footer {
-  padding: 16px 40px;
-  color: rgb(158,158,158);
-  background-color: rgb(66,66,66); }
-
-.mdl-mega-footer--top-section:after,
-.mdl-mega-footer--middle-section:after,
-.mdl-mega-footer--bottom-section:after,
-.mdl-mega-footer__top-section:after,
-.mdl-mega-footer__middle-section:after,
-.mdl-mega-footer__bottom-section:after {
-  content: '';
-  display: block;
-  clear: both; }
-
-.mdl-mega-footer--left-section,
-.mdl-mega-footer__left-section {
-  margin-bottom: 16px; }
-
-.mdl-mega-footer--right-section,
-.mdl-mega-footer__right-section {
-  margin-bottom: 16px; }
-
-.mdl-mega-footer--right-section a,
-.mdl-mega-footer__right-section a {
-  display: block;
-  margin-bottom: 16px;
-  color: inherit;
-  text-decoration: none; }
-
-@media screen and (min-width: 760px) {
-  .mdl-mega-footer--left-section,
-  .mdl-mega-footer__left-section {
-    float: left; }
-  .mdl-mega-footer--right-section,
-  .mdl-mega-footer__right-section {
-    float: right; }
-  .mdl-mega-footer--right-section a,
-  .mdl-mega-footer__right-section a {
-    display: inline-block;
-    margin-left: 16px;
-    line-height: 36px;
-    vertical-align: middle; } }
-
-.mdl-mega-footer--social-btn,
-.mdl-mega-footer__social-btn {
-  width: 36px;
-  height: 36px;
-  padding: 0;
-  margin: 0;
-  background-color: rgb(158,158,158);
-  border: none; }
-
-.mdl-mega-footer--drop-down-section,
-.mdl-mega-footer__drop-down-section {
-  display: block;
-  position: relative; }
-
-@media screen and (min-width: 760px) {
-  .mdl-mega-footer--drop-down-section,
-  .mdl-mega-footer__drop-down-section {
-    width: 33%; }
-  .mdl-mega-footer--drop-down-section:nth-child(1),
-  .mdl-mega-footer--drop-down-section:nth-child(2),
-  .mdl-mega-footer__drop-down-section:nth-child(1),
-  .mdl-mega-footer__drop-down-section:nth-child(2) {
-    float: left; }
-  .mdl-mega-footer--drop-down-section:nth-child(3),
-  .mdl-mega-footer__drop-down-section:nth-child(3) {
-    float: right; }
-    .mdl-mega-footer--drop-down-section:nth-child(3):after,
-    .mdl-mega-footer__drop-down-section:nth-child(3):after {
-      clear: right; }
-  .mdl-mega-footer--drop-down-section:nth-child(4),
-  .mdl-mega-footer__drop-down-section:nth-child(4) {
-    clear: right;
-    float: right; }
-  .mdl-mega-footer--middle-section:after,
-  .mdl-mega-footer__middle-section:after {
-    content: '';
-    display: block;
-    clear: both; }
-  .mdl-mega-footer--bottom-section,
-  .mdl-mega-footer__bottom-section {
-    padding-top: 0; } }
-
-@media screen and (min-width: 1024px) {
-  .mdl-mega-footer--drop-down-section,
-  .mdl-mega-footer--drop-down-section:nth-child(3),
-  .mdl-mega-footer--drop-down-section:nth-child(4),
-  .mdl-mega-footer__drop-down-section,
-  .mdl-mega-footer__drop-down-section:nth-child(3),
-  .mdl-mega-footer__drop-down-section:nth-child(4) {
-    width: 24%;
-    float: left; } }
-
-.mdl-mega-footer--heading-checkbox,
-.mdl-mega-footer__heading-checkbox {
-  position: absolute;
-  width: 100%;
-  height: 68px;
-  padding: 32px;
-  margin: 0;
-  margin-top: -16px;
-  cursor: pointer;
-  z-index: 1;
-  opacity: 0; }
-  .mdl-mega-footer--heading-checkbox + .mdl-mega-footer--heading:after,
-  .mdl-mega-footer--heading-checkbox + .mdl-mega-footer__heading:after,
-  .mdl-mega-footer__heading-checkbox + .mdl-mega-footer--heading:after,
-  .mdl-mega-footer__heading-checkbox + .mdl-mega-footer__heading:after {
-    font-family: 'Material Icons';
-    content: '\E5CE'; }
-
-.mdl-mega-footer--heading-checkbox:checked ~ .mdl-mega-footer--link-list,
-.mdl-mega-footer--heading-checkbox:checked ~ .mdl-mega-footer__link-list,
-.mdl-mega-footer--heading-checkbox:checked + .mdl-mega-footer--heading + .mdl-mega-footer--link-list,
-.mdl-mega-footer--heading-checkbox:checked + .mdl-mega-footer__heading + .mdl-mega-footer__link-list,
-.mdl-mega-footer__heading-checkbox:checked ~ .mdl-mega-footer--link-list,
-.mdl-mega-footer__heading-checkbox:checked ~ .mdl-mega-footer__link-list,
-.mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer--heading + .mdl-mega-footer--link-list,
-.mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer__heading + .mdl-mega-footer__link-list {
-  display: none; }
-
-.mdl-mega-footer--heading-checkbox:checked + .mdl-mega-footer--heading:after,
-.mdl-mega-footer--heading-checkbox:checked + .mdl-mega-footer__heading:after,
-.mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer--heading:after,
-.mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer__heading:after {
-  font-family: 'Material Icons';
-  content: '\E5CF'; }
-
-.mdl-mega-footer--heading,
-.mdl-mega-footer__heading {
-  position: relative;
-  width: 100%;
-  padding-right: 52px;
-  margin-bottom: 16px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  color: rgb(224,224,224); }
-
-.mdl-mega-footer--heading:after,
-.mdl-mega-footer__heading:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: block;
-  width: 36px;
-  height: 36px;
-  background-size: cover; }
-
-.mdl-mega-footer--link-list,
-.mdl-mega-footer__link-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 32px; }
-  .mdl-mega-footer--link-list:after,
-  .mdl-mega-footer__link-list:after {
-    clear: both;
-    display: block;
-    content: ''; }
-
-.mdl-mega-footer--link-list a,
-.mdl-mega-footer__link-list a {
-  color: inherit;
-  text-decoration: none;
-  white-space: nowrap; }
-
-@media screen and (min-width: 760px) {
-  .mdl-mega-footer--heading-checkbox,
-  .mdl-mega-footer__heading-checkbox {
-    display: none; }
-    .mdl-mega-footer--heading-checkbox + .mdl-mega-footer--heading:after,
-    .mdl-mega-footer--heading-checkbox + .mdl-mega-footer__heading:after,
-    .mdl-mega-footer__heading-checkbox + .mdl-mega-footer--heading:after,
-    .mdl-mega-footer__heading-checkbox + .mdl-mega-footer__heading:after {
-      content: ''; }
-  .mdl-mega-footer--heading-checkbox:checked ~ .mdl-mega-footer--link-list,
-  .mdl-mega-footer--heading-checkbox:checked ~ .mdl-mega-footer__link-list,
-  .mdl-mega-footer--heading-checkbox:checked + .mdl-mega-footer__heading + .mdl-mega-footer__link-list,
-  .mdl-mega-footer--heading-checkbox:checked + .mdl-mega-footer--heading + .mdl-mega-footer--link-list,
-  .mdl-mega-footer__heading-checkbox:checked ~ .mdl-mega-footer--link-list,
-  .mdl-mega-footer__heading-checkbox:checked ~ .mdl-mega-footer__link-list,
-  .mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer__heading + .mdl-mega-footer__link-list,
-  .mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer--heading + .mdl-mega-footer--link-list {
-    display: block; }
-  .mdl-mega-footer--heading-checkbox:checked + .mdl-mega-footer--heading:after,
-  .mdl-mega-footer--heading-checkbox:checked + .mdl-mega-footer__heading:after,
-  .mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer--heading:after,
-  .mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer__heading:after {
-    content: ''; } }
-
-.mdl-mega-footer--bottom-section,
-.mdl-mega-footer__bottom-section {
-  padding-top: 16px;
-  margin-bottom: 16px; }
-
-.mdl-logo {
-  margin-bottom: 16px;
-  color: white; }
-
-.mdl-mega-footer--bottom-section .mdl-mega-footer--link-list li,
-.mdl-mega-footer__bottom-section .mdl-mega-footer__link-list li {
-  float: left;
-  margin-bottom: 0;
-  margin-right: 16px; }
-
-@media screen and (min-width: 760px) {
-  .mdl-logo {
-    float: left;
-    margin-bottom: 0;
-    margin-right: 16px; } }
-
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/*------------------------------------*    $CONTENTS
-\*------------------------------------*/
-/**
- * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
- * -----Typography
- * -----Colors
- * -----Textfield
- * -----Switch
- * -----Spinner
- * -----Radio
- * -----Menu
- * -----List
- * -----Layout
- * -----Icon toggles
- * -----Footer
- * -----Column
- * -----Checkbox
- * -----Card
- * -----Button
- * -----Animation
- * -----Progress
- * -----Badge
- * -----Shadows
- * -----Grid
- * -----Data table
- * -----Snackbar
- *
- * Even though all variables have the `!default` directive, most of them
- * should not be changed as they are dependent one another. This can cause
- * visual distortions (like alignment issues) that are hard to track down
- * and fix.
- */
-/* ==========  TYPOGRAPHY  ========== */
-/* We're splitting fonts into "preferred" and "performance" in order to optimize
-   page loading. For important text, such as the body, we want it to load
-   immediately and not wait for the web font load, whereas for other sections,
-   such as headers and titles, we're OK with things taking a bit longer to load.
-   We do have some optional classes and parameters in the mixins, in case you
-   definitely want to make sure you're using the preferred font and don't mind
-   the performance hit.
-   We should be able to improve on this once CSS Font Loading L3 becomes more
-   widely available.
-*/
-/* ==========  COLORS  ========== */
-/**
-*
-* Material design color palettes.
-* @see http://www.google.com/design/spec/style/color.html
-*
-**/
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* ==========  Color Palettes  ========== */
-/* colors.scss */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* ==========  IMAGES  ========== */
-/* ==========  Color & Themes  ========== */
-/* ==========  Typography  ========== */
-/* ==========  Components  ========== */
-/* ==========  Standard Buttons  ========== */
-/* ==========  Icon Toggles  ========== */
-/* ==========  Radio Buttons  ========== */
-/* ==========  Ripple effect  ========== */
-/* ==========  Layout  ========== */
-/* ==========  Content Tabs  ========== */
-/* ==========  Checkboxes  ========== */
-/* ==========  Switches  ========== */
-/* ==========  Spinner  ========== */
-/* ==========  Text fields  ========== */
-/* ==========  Card  ========== */
-/* ==========  Sliders ========== */
-/* ========== Progress ========== */
-/* ==========  List ========== */
-/* ==========  Item ========== */
-/* ==========  Dropdown menu ========== */
-/* ==========  Tooltips  ========== */
-/* ==========  Footer  ========== */
-/* TEXTFIELD */
-/* SWITCH */
-/* SPINNER */
-/* RADIO */
-/* MENU */
-/* LIST */
-/* LAYOUT */
-/* ICON TOGGLE */
-/* FOOTER */
-/*mega-footer*/
-/*mini-footer*/
-/* CHECKBOX */
-/* CARD */
-/* Card dimensions */
-/* Cover image */
-/* BUTTON */
-/**
- *
- * Dimensions
- *
- */
-/* ANIMATION */
-/* PROGRESS */
-/* BADGE */
-/* SHADOWS */
-/* GRID */
-/* DATA TABLE */
-/* SNACKBAR */
-/* TOOLTIP */
-.mdl-mini-footer {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 32px 16px;
-  color: rgb(158,158,158);
-  background-color: rgb(66,66,66); }
-  .mdl-mini-footer:after {
-    content: '';
-    display: block; }
-
-.mdl-mini-footer--link-list,
-.mdl-mini-footer__link-list {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row nowrap;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-  .mdl-mini-footer--link-list li,
-  .mdl-mini-footer__link-list li {
-    margin-bottom: 0;
-    margin-right: 16px; }
-  .mdl-mini-footer--link-list a,
-  .mdl-mini-footer__link-list a {
-    color: inherit;
-    text-decoration: none;
-    white-space: nowrap; }
-
-.mdl-mini-footer--left-section,
-.mdl-mini-footer__left-section {
-  display: inline-block;
-  -webkit-order: 0;
-      -ms-flex-order: 0;
-          order: 0; }
-
-.mdl-mini-footer--right-section,
-.mdl-mini-footer__right-section {
-  display: inline-block;
-  -webkit-order: 1;
-      -ms-flex-order: 1;
-          order: 1; }
-
-.mdl-mini-footer--social-btn,
-.mdl-mini-footer__social-btn {
-  width: 36px;
-  height: 36px;
-  padding: 0;
-  margin: 0;
-  background-color: rgb(158,158,158);
-  border: none; }
 
 /**
  * Copyright 2015 Google Inc. All Rights Reserved.
@@ -2890,317 +2019,6 @@ input.mdl-button[type="submit"] {
 /* Typography */
 /* Shadows */
 /* Animations */
-.mdl-textfield {
-  position: relative;
-  font-size: 16px;
-  display: inline-block;
-  box-sizing: border-box;
-  width: 300px;
-  max-width: 100%;
-  margin: 0;
-  padding: 20px 0; }
-  .mdl-textfield .mdl-button {
-    position: absolute;
-    bottom: 20px; }
-
-.mdl-textfield--align-right {
-  text-align: right; }
-
-.mdl-textfield--full-width {
-  width: 100%; }
-
-.mdl-textfield--expandable {
-  min-width: 32px;
-  width: auto;
-  min-height: 32px; }
-
-.mdl-textfield__input {
-  border: none;
-  border-bottom: 1px solid rgba(0,0,0, 0.12);
-  display: block;
-  font-size: 16px;
-  font-family: "Helvetica", "Arial", sans-serif;
-  margin: 0;
-  padding: 4px 0;
-  width: 100%;
-  background: none;
-  text-align: left;
-  color: inherit; }
-  .mdl-textfield__input[type="number"] {
-    -moz-appearance: textfield; }
-  .mdl-textfield__input[type="number"]::-webkit-inner-spin-button, .mdl-textfield__input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0; }
-  .mdl-textfield.is-focused .mdl-textfield__input {
-    outline: none; }
-  .mdl-textfield.is-invalid .mdl-textfield__input {
-    border-color: rgb(222, 50, 38);
-    box-shadow: none; }
-  fieldset[disabled] .mdl-textfield .mdl-textfield__input,
-  .mdl-textfield.is-disabled .mdl-textfield__input {
-    background-color: transparent;
-    border-bottom: 1px dotted rgba(0,0,0, 0.12);
-    color: rgba(0,0,0, 0.26); }
-
-.mdl-textfield textarea.mdl-textfield__input {
-  display: block; }
-
-.mdl-textfield__label {
-  bottom: 0;
-  color: rgba(0,0,0, 0.26);
-  font-size: 16px;
-  left: 0;
-  right: 0;
-  pointer-events: none;
-  position: absolute;
-  display: block;
-  top: 24px;
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-align: left; }
-  .mdl-textfield.is-dirty .mdl-textfield__label {
-    visibility: hidden; }
-  .mdl-textfield--floating-label .mdl-textfield__label {
-    transition-duration: 0.2s;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
-  fieldset[disabled] .mdl-textfield .mdl-textfield__label,
-  .mdl-textfield.is-disabled.is-disabled .mdl-textfield__label {
-    color: rgba(0,0,0, 0.26); }
-  .mdl-textfield--floating-label.is-focused .mdl-textfield__label,
-  .mdl-textfield--floating-label.is-dirty .mdl-textfield__label {
-    color: rgb(41,128,185);
-    font-size: 12px;
-    top: 4px;
-    visibility: visible; }
-  .mdl-textfield--floating-label.is-focused .mdl-textfield__expandable-holder .mdl-textfield__label,
-  .mdl-textfield--floating-label.is-dirty .mdl-textfield__expandable-holder .mdl-textfield__label {
-    top: -16px; }
-  .mdl-textfield--floating-label.is-invalid .mdl-textfield__label {
-    color: rgb(222, 50, 38);
-    font-size: 12px; }
-  .mdl-textfield__label:after {
-    background-color: rgb(41,128,185);
-    bottom: 20px;
-    content: '';
-    height: 2px;
-    left: 45%;
-    position: absolute;
-    transition-duration: 0.2s;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    visibility: hidden;
-    width: 10px; }
-  .mdl-textfield.is-focused .mdl-textfield__label:after {
-    left: 0;
-    visibility: visible;
-    width: 100%; }
-  .mdl-textfield.is-invalid .mdl-textfield__label:after {
-    background-color: rgb(222, 50, 38); }
-
-.mdl-textfield__error {
-  color: rgb(222, 50, 38);
-  position: absolute;
-  font-size: 12px;
-  margin-top: 3px;
-  visibility: hidden;
-  display: block; }
-  .mdl-textfield.is-invalid .mdl-textfield__error {
-    visibility: visible; }
-
-.mdl-textfield__expandable-holder {
-  display: inline-block;
-  position: relative;
-  margin-left: 32px;
-  transition-duration: 0.2s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  display: inline-block;
-  max-width: 0.1px; }
-  .mdl-textfield.is-focused .mdl-textfield__expandable-holder, .mdl-textfield.is-dirty .mdl-textfield__expandable-holder {
-    max-width: 600px; }
-  .mdl-textfield__expandable-holder .mdl-textfield__label:after {
-    bottom: 0; }
-
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/*------------------------------------*    $CONTENTS
-\*------------------------------------*/
-/**
- * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
- * -----Typography
- * -----Colors
- * -----Textfield
- * -----Switch
- * -----Spinner
- * -----Radio
- * -----Menu
- * -----List
- * -----Layout
- * -----Icon toggles
- * -----Footer
- * -----Column
- * -----Checkbox
- * -----Card
- * -----Button
- * -----Animation
- * -----Progress
- * -----Badge
- * -----Shadows
- * -----Grid
- * -----Data table
- * -----Snackbar
- *
- * Even though all variables have the `!default` directive, most of them
- * should not be changed as they are dependent one another. This can cause
- * visual distortions (like alignment issues) that are hard to track down
- * and fix.
- */
-/* ==========  TYPOGRAPHY  ========== */
-/* We're splitting fonts into "preferred" and "performance" in order to optimize
-   page loading. For important text, such as the body, we want it to load
-   immediately and not wait for the web font load, whereas for other sections,
-   such as headers and titles, we're OK with things taking a bit longer to load.
-   We do have some optional classes and parameters in the mixins, in case you
-   definitely want to make sure you're using the preferred font and don't mind
-   the performance hit.
-   We should be able to improve on this once CSS Font Loading L3 becomes more
-   widely available.
-*/
-/* ==========  COLORS  ========== */
-/**
-*
-* Material design color palettes.
-* @see http://www.google.com/design/spec/style/color.html
-*
-**/
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* ==========  Color Palettes  ========== */
-/* colors.scss */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* ==========  IMAGES  ========== */
-/* ==========  Color & Themes  ========== */
-/* ==========  Typography  ========== */
-/* ==========  Components  ========== */
-/* ==========  Standard Buttons  ========== */
-/* ==========  Icon Toggles  ========== */
-/* ==========  Radio Buttons  ========== */
-/* ==========  Ripple effect  ========== */
-/* ==========  Layout  ========== */
-/* ==========  Content Tabs  ========== */
-/* ==========  Checkboxes  ========== */
-/* ==========  Switches  ========== */
-/* ==========  Spinner  ========== */
-/* ==========  Text fields  ========== */
-/* ==========  Card  ========== */
-/* ==========  Sliders ========== */
-/* ========== Progress ========== */
-/* ==========  List ========== */
-/* ==========  Item ========== */
-/* ==========  Dropdown menu ========== */
-/* ==========  Tooltips  ========== */
-/* ==========  Footer  ========== */
-/* TEXTFIELD */
-/* SWITCH */
-/* SPINNER */
-/* RADIO */
-/* MENU */
-/* LIST */
-/* LAYOUT */
-/* ICON TOGGLE */
-/* FOOTER */
-/*mega-footer*/
-/*mini-footer*/
-/* CHECKBOX */
-/* CARD */
-/* Card dimensions */
-/* Cover image */
-/* BUTTON */
-/**
- *
- * Dimensions
- *
- */
-/* ANIMATION */
-/* PROGRESS */
-/* BADGE */
-/* SHADOWS */
-/* GRID */
-/* DATA TABLE */
-/* SNACKBAR */
-/* TOOLTIP */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/* Typography */
-/* Shadows */
-/* Animations */
 .mdl-shadow--2dp {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
 
@@ -3223,467 +2041,29 @@ input.mdl-button[type="submit"] {
   box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.2); }
 
 /* To be moved */
-.card {
-  position: relative;
-  display: block;
-  margin-bottom: 24px;
-  background-color: #fff;
-  border-radius: 3px; }
-
-.card-block {
-  padding: 24px; }
-
-.card-title {
-  margin-bottom: 24px; }
-
-.card-subtitle {
-  margin-top: -12px;
-  margin-bottom: 0; }
-
-.card-text:last-child {
-  margin-bottom: 0; }
-
-.card-link:hover {
-  text-decoration: none; }
-
-.card-link + .card-link {
-  margin-left: 24px; }
-
-.card > .list-group:first-child .list-group-item:first-child {
-  border-radius: 24px 24px 0 0; }
-
-.card > .list-group:last-child .list-group-item:last-child {
-  border-radius: 0 0 24px 24px; }
-
-.card-header {
-  padding: 24px 24px;
-  background-color: #f5f5f5;
-  border-bottom: .0625rem solid #e5e5e5; }
-
-.card-header:first-child {
-  border-radius: 24px 24px 0 0; }
-
-.card-footer {
-  padding: 24px 24px;
-  background-color: #f5f5f5;
-  border-top: .0625rem solid #e5e5e5; }
-
-.card-footer:last-child {
-  border-radius: 0 0 24px 24px; }
-
-.card-primary {
-  background-color: 24px;
-  border-color: 24px; }
-
-.card-success {
-  background-color: #5cb85c;
-  border-color: #5cb85c; }
-
-.card-info {
-  background-color: #5bc0de;
-  border-color: #5bc0de; }
-
-.card-warning {
-  background-color: #f0ad4e;
-  border-color: #f0ad4e; }
-
-.card-danger {
-  background-color: #d9534f;
-  border-color: #d9534f; }
-
-.card-inverse .card-header,
-.card-inverse .card-footer {
-  border-bottom: 0.075rem solid rgba(255, 255, 255, 0.2); }
-
-.card-inverse .card-header,
-.card-inverse .card-footer,
-.card-inverse .card-title,
-.card-inverse .card-blockquote {
-  color: #fff; }
-
-.card-inverse .card-link,
-.card-inverse .card-text,
-.card-inverse .card-blockquote > footer {
-  color: rgba(255, 255, 255, 0.65); }
-
-.card-inverse .card-link:focus, .card-inverse .card-link:hover {
-  color: #fff; }
-
-.card-blockquote {
-  padding: 0;
-  margin-bottom: 0;
-  border-left: 0; }
-
-.card-img {
-  border-radius: 3px; }
-
-.card-img-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 24px; }
-
-.card-img-top {
-  border-radius: 3px 3px 0 0; }
-
-.card-img-bottom {
-  border-radius: 0 0 3px 3px; }
-
-@media screen and (min-width: 52em) {
-  .card-deck {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    margin-right: -.625rem;
-    margin-left: -.625rem; }
-    .card-deck .card {
-      -webkit-flex: 1 0 0;
-          -ms-flex: 1 0 0;
-              flex: 1 0 0;
-      margin-right: .625rem;
-      margin-left: .625rem; } }
-
-@media screen and (min-width: 52em) {
-  .card-group {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap; }
-  .card-group .card {
-    -webkit-flex: 1 0 0;
-        -ms-flex: 1 0 0;
-            flex: 1 0 0; }
-  .card-group .card + .card {
-    margin-left: 0;
-    border-left: 0; }
-  .card-group .card:first-child {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0; }
-  .card-group .card:first-child .card-img-top {
-    border-top-right-radius: 0; }
-  .card-group .card:first-child .card-img-bottom {
-    border-bottom-right-radius: 0; }
-  .card-group .card:last-child {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0; }
-  .card-group .card:last-child .card-img-top {
-    border-top-left-radius: 0; }
-  .card-group .card:last-child .card-img-bottom {
-    border-bottom-left-radius: 0; }
-  .card-group .card:not(:first-child):not(:last-child) {
-    border-radius: 0; }
-  .card-group .card:not(:first-child):not(:last-child) .card-img-top,
-  .card-group .card:not(:first-child):not(:last-child) .card-img-bottom {
-    border-radius: 0; } }
-
-@media screen and (min-width: 52em) {
-  .card-columns {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-    -webkit-column-gap: 24px;
-    -moz-column-gap: 24px;
-    column-gap: 24px; }
-  .card-columns .card {
-    display: inline-block;
-    width: 100%; } }
-
-.mdl-mega-footer--heading-checkbox:checked ~ div,
-.mdl-mega-footer__heading-checkbox:checked ~ div {
-  display: none; }
-
-@media screen and (min-width: 760px) {
-  .mdl-mega-footer--heading-checkbox:checked ~ div,
-  .mdl-mega-footer__heading-checkbox:checked ~ div {
-    display: block; } }
-
-.mdl-mega-footer__drop-down-section > div:empty {
-  display: none; }
-
-.account-dropdown:after {
-  display: block;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  width: 30px;
-  content: "";
-  background: linear-gradient(to right, rgba(61, 153, 112, 0), #3d9970); }
-
-button.simplefavorite-button {
-  padding: 0;
-  background-color: transparent; }
-
-/**
- * Dropdown content
- */
-.dropdown-menu-basic {
-  float: left;
-  margin-top: 3.5em;
-  margin-left: 0;
-  min-width: 200px;
-  position: absolute;
-  text-align: left;
-  top: 0;
-  height: 0;
-  overflow: hidden; }
-
-.dropdown-menu-basic.is-active {
-  z-index: 1000; }
-
-/* line 58, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
-.dropdown-menu-basic.dropdown-right {
-  left: auto;
-  right: 0; }
-
-/* line 64, /Users/cferdinandi/Sites/drop/src/sass/components/_drop-basic.scss */
-.dropdown-menu-basic ul,
-.dropdown-menu-basic section {
-  list-style: none;
-  margin-left: 0; }
-
-.acf-map {
-  width: 100%;
-  height: 400px;
-  border: #ccc solid 1px;
-  margin: 20px 0; }
-
-.nav-links {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around; }
-
-.post-navigation {
-  width: 100%; }
-
-.pagination > .nav-links {
-  max-width: 300px;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-              -ms-grid-row-align: center;
-          align-items: center;
-  margin: 0 auto; }
-
-.facetwp-type-proximity {
-  margin-bottom: 40px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; }
-
-select#facetwp-radius {
-  width: 80px;
-  height: 2.4em; }
-
-.tile {
-  width: 256px;
-  height: 256px;
-  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 1s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
-
-.tile-icon {
-  max-height: 90px;
-  max-width: 90px; }
-
-.collapse {
-  max-height: 0;
-  min-width: 100%;
-  opacity: 0; }
-
-.collapse.mui-enter-active {
-  max-height: 100%;
-  opacity: 1; }
-
-.toggles .tile-icon {
-  max-height: 48px; }
-
-body {
-  background-size: cover; }
-
-blockquote:before,
-blockquote:after,
-blockquote p:before,
-blockquote p:after {
-  content: '';
-  margin: 0; }
-
-cite {
-  text-align: right;
-  width: 100%;
+.facetwp-facet .location-wrap,
+.facetwp-facet .facetwp-search-wrap {
   display: inline-block; }
 
-blockquote p {
-  font-size: inherit;
-  font-weight: bold; }
+.facetwp-facet i.facetwp-btn:before,
+.facetwp-facet i.locate-me:before {
+  height: 2.5rem;
+  background-position: 50%; }
 
-blockquote cite {
-  font-size: 14px;
-  font-weight: normal; }
-
-.blockquote {
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
-
-.gv-list-view-content-description {
-  width: 100%; }
-
-span.gv-field-label:empty {
-  display: none; }
-
-.gv-list-view-content h4 {
-  margin: 0; }
-
-span.facetwp-counter {
-  display: none; }
-
-.facetwp-type-checkboxes {
-  min-width: 50px;
-  min-height: 50px; }
-
-.facetwp-checkbox {
-  display: inline-block;
-  margin-right: 50px;
-  font-size: 1.3rem; }
-
-.facetwp-checkbox.checked {
-  font-weight: bold; }
-
-.facetwp-checkbox {
-  background: none !important; }
-
-.facetwp-checkbox:before {
-  content: "\E835";
-  font-family: 'Material Icons';
-  padding-right: 5px;
-  padding-left: 0;
-  vertical-align: top; }
-
-.facetwp-checkbox.checked:before {
-  content: "\E834";
-  font-weight: 400;
-  color: #3f51b5; }
-
-span.facetwp-alpha {
-  font-size: 1.2rem;
-  color: #a5a5a5;
-  font-weight: bold; }
-
-.material-icons {
-  vertical-align: middle; }
-
-.mdl-button--mini-fab a {
-  display: block;
-  height: 40px; }
-
-input.search-submit {
-  display: none; }
-
-.mdl-card__title {
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
-
-.mdl-card__title-text {
-  width: 100%; }
-
-.meta-nav.mdl-button.mdl-button--fab {
-  background: none;
-  box-shadow: none !important; }
-
-.navigation.pagination {
-  padding: 0.5rem; }
-
-.mdl-card {
-  min-height: auto; }
-
-.contact-map {
-  color: black !important; }
-
-.tile {
-  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
-
-.tile:hover {
-  opacity: 0.9; }
-
-.gv-list-view-content {
-  padding: 0; }
-
-.site-header .mdl-layout__drawer-button {
-  background-color: transparent; }
-
-#bread,
-#heart,
-#music {
-  visibility: hidden; }
-
-.rss-widget li {
-  margin-bottom: 0.75em;
-  font-size: 1.2rem; }
-
-.rss-title img {
-  display: none; }
-
-a.rsswidget {
-  white-space: normal; }
-
-li > a.rsswidget {
-  font-weight: 400; }
-
-.icon-sm {
-  width: 100%;
-  max-width: 40px;
-  max-height: 40px; }
-
-.icon-md {
-  width: 100%;
-  max-width: 120px;
-  max-height: 120px; }
-
-.icon-lg {
-  width: 100%;
-  max-width: 260px;
-  max-height: 260px; }
-
-ul.gravityview-az-filter,
-.facetwp-type-alpha {
+.facetwp-facet-statistics_type.facetwp-type-checkboxes {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 20px;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
+          flex-wrap: wrap;
+  width: 100%;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  margin-bottom: 0 !important; }
 
-span.facetwp-alpha {
-  font: 400 16px/24px Roboto, sans-serif;
-  color: #999; }
-
-ul.gravityview-az-filter li.gv-uppercase a,
-span.facetwp-alpha.available {
-  color: #3f51b5;
-  font-weight: 500 16px/24px Roboto, sans-serif; }
-
-ul.gravityview-az-filter li.gv-active a,
-span.facetwp-alpha.selected {
-  color: #222;
-  font-weight: 700; }
-
-.gallery-cell {
-  padding: 0 10px; }
-
-/*! Flickity v1.1.1
+/*! Flickity v1.1.2
 http://flickity.metafizzy.co
 ---------------------------------------------- */
 .flickity-enabled {
@@ -3740,7 +2120,7 @@ http://flickity.metafizzy.co
 
 .flickity-prev-next-button:focus {
   outline: none;
-  box-shadow: 0 0 0 5px #09f; }
+  box-shadow: 0 0 0 5px #09F; }
 
 .flickity-prev-next-button:active {
   filter: alpha(opacity=60);
@@ -3814,26 +2194,421 @@ http://flickity.metafizzy.co
   /* IE8 */
   opacity: 1; }
 
-/* big buttons, no circle */
-.flickity-prev-next-button {
-  width: 100px;
-  height: 100px;
-  background: transparent; }
+.mdl-card {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 200px;
+  overflow: hidden;
+  width: 330px;
+  z-index: 1;
+  position: relative;
+  background: #fff;
+  border-radius: 2px; }
 
-.flickity-prev-next-button:hover {
-  background: transparent; }
+.mdl-card__media {
+  background-color: #ff4081;
+  background-repeat: repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-origin: padding-box;
+  background-attachment: scroll; }
 
-/* arrow color */
-.flickity-prev-next-button .arrow {
-  fill: white; }
+.mdl-card__title {
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  padding: 1rem; }
 
-.flickity-prev-next-button.no-svg {
-  color: white; }
+.mdl-card__title-text {
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden; }
 
-/* hide disabled button */
-.flickity-prev-next-button:disabled {
+.mdl-card--expand {
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
+
+.mdl-card__menu {
+  position: absolute;
+  right: 1rem;
+  top: 1rem; }
+
+.tile-icon {
+  max-height: 90px;
+  max-width: 90px;
+  opacity: .7; }
+
+.tile {
+  border: 5px solid #36474f;
+  background-image: linear-gradient(335deg, rgba(0, 0, 0, 0.08) 50%, transparent 50%);
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1); }
+
+.tile:hover {
+  background-image: linear-gradient(335deg, rgba(0, 0, 0, 0.06) 50%, transparent 50%); }
+
+.not-top ~ .menu-primary {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  width: 240px;
+  height: 100%;
+  max-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateX(-250px);
+          transform: translateX(-250px);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  will-change: transform;
+  transition-duration: .2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  color: #424242;
+  overflow: visible;
+  overflow-y: auto;
+  z-index: 5;
+  visibility: hidden; }
+  .not-top ~ .menu-primary .menu-item,
+  .not-top ~ .menu-primary .menu__link {
+    width: 100%; }
+
+.not-top ~ .menu-primary.is-active {
+  visibility: visible;
+  -webkit-transform: translateX(0);
+          transform: translateX(0); }
+
+body:not(.home) .site-logo,
+.home .not-top .site-logo {
+  max-height: 45px;
+  width: auto; }
+
+@media screen and (max-width: 47em) {
+  .search-form {
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+  .not-top .title-text {
+    opacity: 0;
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+    position: absolute;
+    margin: 0;
+    padding: 0; }
+  .menu-primary {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    width: 240px;
+    height: 100%;
+    max-height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+    -webkit-transform: translateX(-250px);
+            transform: translateX(-250px);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    will-change: transform;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    color: #424242;
+    overflow: visible;
+    overflow-y: auto;
+    z-index: 5; }
+    .menu-primary .menu-item,
+    .menu-primary .menu__link {
+      width: 100%; }
+  .menu-primary.is-active {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    z-index: 3; } }
+
+.site-header.not-top {
+  max-height: 60px; }
+
+.site-header .search-field {
+  color: currentColor;
+  font-weight: normal;
+  border-color: transparent; }
+  .site-header .search-field::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: inherit;
+    opacity: .8; }
+  .site-header .search-field::-moz-placeholder {
+    /* Firefox 19+ */
+    color: inherit;
+    opacity: .8; }
+  .site-header .search-field:-ms-input-placeholder {
+    /* IE 10+ */
+    color: inherit;
+    opacity: .8; }
+  .site-header .search-field:-moz-placeholder {
+    /* Firefox 18- */
+    color: inherit;
+    opacity: .8; }
+  .site-header .search-field:focus {
+    background-color: white;
+    color: #212c31; }
+    .site-header .search-field:focus ~ .material-icons {
+      color: #212c31; }
+
+body:not(.home) #header {
+  max-height: 64px; }
+
+.home #menu-primary:not(.is-active) > .sidebar-header,
+.home #menu-primary:not(.is-active) > .nav-menu {
+  color: #444;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(235, 235, 241, 0.6); }
+
+.head-space {
+  min-height: 60px; }
+
+.home .head-space,
+.home .menu-space {
+  opacity: 0; }
+
+.menu-primary__list {
+  min-height: 43px; }
+
+.menu-space {
+  height: 43px;
+  margin-bottom: -43px; }
+
+.not-top ~ .menu-space {
+  margin-bottom: 0; }
+
+#content-mask {
+  width: 0;
+  visibility: hidden; }
+  #content-mask.is-active {
+    width: 100%;
+    visibility: visible;
+    z-index: 1; }
+
+.archive .format-image {
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start; }
+  .archive .format-image .entry-header {
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.4) 25%, rgba(0, 0, 0, 0.6));
+    text-align: center;
+    border-radius: 0 0 2px 2px;
+    padding-top: .5rem; }
+  .archive .format-image .entry-title {
+    margin: 0;
+    font-size: 2rem; }
+  .archive .format-image a {
+    padding: 1rem 0;
+    display: inline-block;
+    width: 100%; }
+
+.mdl-mega-footer--heading-checkbox:checked ~ div,
+.mdl-mega-footer__heading-checkbox:checked ~ div {
   display: none; }
 
+@media screen and (min-width: 760px) {
+  .mdl-mega-footer--heading-checkbox:checked ~ div,
+  .mdl-mega-footer__heading-checkbox:checked ~ div {
+    display: block; } }
+
+.mdl-mega-footer__drop-down-section > div:empty {
+  display: none; }
+
+.account-dropdown:after {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 30px;
+  content: "";
+  background: linear-gradient(to right, rgba(61, 153, 112, 0), #3d9970); }
+
+/**
+ * Dropdown content
+ */
+.dropdown-menu-basic {
+  min-width: 200px;
+  position: absolute;
+  text-align: left;
+  height: 0; }
+  .dropdown-menu-basic input {
+    display: none; }
+
+.dropdown-menu-basic.is-active {
+  z-index: 1000; }
+  .dropdown-menu-basic.is-active input {
+    display: inline-block; }
+
+.dropdown-menu-basic.dropdown-right {
+  left: auto;
+  right: 0; }
+
+.dropdown-menu-basic > * {
+  opacity: 0;
+  height: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden; }
+
+.dropdown-menu-basic.is-active > * {
+  opacity: 1;
+  height: auto; }
+
+.dropdown-menu-basic ul,
+.dropdown-menu-basic section {
+  list-style: none;
+  margin-left: 0; }
+
+.acf-map {
+  width: 100%;
+  height: 400px;
+  border: #ccc solid 1px;
+  margin: 20px 0; }
+
+.nav-links {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+
+.post-navigation {
+  width: 100%; }
+
+.pagination > .nav-links {
+  max-width: 300px;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center;
+  margin: 0 auto; }
+
+body {
+  background-size: cover; }
+
+.gv-list-view-content-description {
+  width: 100%; }
+
+span.gv-field-label:empty {
+  display: none; }
+
+.gv-list-view-content h4 {
+  margin: 0; }
+
+.material-icons {
+  vertical-align: middle; }
+
+.mdl-button--mini-fab a {
+  display: block;
+  height: 40px; }
+
+.mdl-card__title {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+
+.mdl-card__title-text {
+  width: 100%; }
+
+.meta-nav.mdl-button.mdl-button--fab {
+  background: none;
+  box-shadow: none !important; }
+
+.navigation.pagination {
+  padding: 0.5rem;
+  width: 100%;
+  background: rgba(228, 234, 236, 0.8);
+  margin-bottom: 1rem; }
+
+.mdl-card {
+  min-height: auto; }
+
+.contact-map {
+  color: black !important; }
+
+.gv-list-view-content {
+  padding: 0; }
+
+.site-header .mdl-layout__drawer-button {
+  background-color: transparent; }
+
+#bread,
+#heart,
+#music {
+  visibility: hidden; }
+
+.rss-widget li {
+  margin-bottom: 0.5em; }
+
+.rss-title img {
+  display: none; }
+
+a.rsswidget {
+  white-space: normal; }
+
+li > a.rsswidget {
+  font-weight: 400; }
+
+.icon-sm {
+  width: 100%;
+  max-width: 40px;
+  max-height: 40px; }
+
+.icon-md {
+  width: 100%;
+  max-width: 120px;
+  max-height: 120px; }
+
+.icon-lg {
+  width: 100%;
+  max-width: 260px;
+  max-height: 260px; }
+
+.gallery-cell {
+  padding: 0 10px; }
+
+/*! Flickity v1.1.1
+http://flickity.metafizzy.co
+---------------------------------------------- */
 /*------------------------------------*
     #CROP
 *------------------------------------*/
@@ -3915,10 +2690,6 @@ http://flickity.metafizzy.co
   max-height: 90px;
   padding: 5px; }
 
-.archive-vocation .flickity-viewport {
-  max-height: 500px;
-  overflow-y: hidden; }
-
 .mdl-layout__container {
   position: relative; }
 
@@ -3932,42 +2703,25 @@ http://flickity.metafizzy.co
   padding: 0 24px;
   line-height: 64px; }
 
-/* Small menu. */
-.menu-toggle {
-  display: block;
-  height: 60px;
-  width: 60px; }
-
-.menu-primary.toggled ul {
-  display: block;
-  width: 100%;
-  background-color: #d2d2d2; }
-
-.menu-primary__list {
-  display: none; }
-
 .menu-item {
   width: 100%; }
 
-@media screen and (min-width: 37.5em) {
-  .menu-toggle {
-    display: none; }
-  .menu-primary__list {
-    display: block; }
+@media screen and (min-width: 48em) {
+  .is-top .menu-toggle {
+    visibility: hidden; }
+  .home .is-top ~ .menu-primary {
+    background-color: transparent !important; }
   .menu-item {
     width: auto; } }
 
-.flickity-prev-next-button .arrow {
-  stroke: rgba(0, 0, 0, 0.45); }
-
-.site-title {
-  font-size: 3.6em; }
+@media screen and (min-width: 48em) {
+  .site-title {
+    font-size: 3.6em; } }
 
 .site-branding {
-  transition-duration: .6s;
+  transition-duration: 0.6s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: font-size;
-  margin-bottom: 1rem; }
+  transition-property: font-size; }
 
 .home .site-header.is-top {
   transition: none;
@@ -3981,14 +2735,14 @@ http://flickity.metafizzy.co
 
 .site-header.not-top .site-branding,
 body:not(.home) .site-header .site-branding {
-  font-size: .5rem; }
+  font-size: 0.5rem; }
 
 .site-header.not-top .site-description,
 body:not(.home) .site-header .site-description {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: opacity; }
 
@@ -4000,36 +2754,6 @@ body:not(.home) .site-header .site-description {
 
 .format-aside .permalink {
   display: none; }
-
-.site-header.mui-enter, .site-header {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-  transition-property: opacity, -webkit-transform;
-  transition-property: transform, opacity;
-  transition-property: transform, opacity, -webkit-transform;
-  opacity: 0;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden; }
-
-.site-header.mui-enter.mui-enter-active, .site-header.mui-enter-active {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-  opacity: 1; }
-
-.site-header.mui-leave, .site-header {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
-  transition-property: opacity, -webkit-transform;
-  transition-property: transform, opacity;
-  transition-property: transform, opacity, -webkit-transform;
-  opacity: 1;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden; }
-
-.site-header.mui-leave.mui-leave-active, .site-header.mui-leave-active {
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-  opacity: 0; }
 
 .site-header::after {
   content: '';
@@ -4046,17 +2770,242 @@ body:not(.home) .site-header .site-description {
 .site-header.not-top::after {
   opacity: 1; }
 
-.facet-more {
+.type-document,
+.type-statistics_report {
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start; }
+
+@media screen and (min-width: 48em) {
+  .menu-primary__list li {
+    display: inline-block; } }
+
+.widget ul,
+.widget li {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  .widget ul > a,
+  .widget li > a {
+    width: 100%;
+    text-align: left; }
+
+#page .gv-list-container,
+#page .gv-grid {
+  max-width: 100%; }
+
+.entry-content > .gv-grid {
+  background-color: rgba(255, 255, 255, 0.99);
+  padding: 1rem;
+  border-radius: 2px;
+  margin-bottom: 1rem; }
+
+.gv-grid.gv-list-view-content {
+  padding: 0; }
+
+.gv-grid-col-2-3.gv-list-view-content-description {
+  width: 100%;
+  padding: 0; }
+
+span.facetwp-counter {
   display: none; }
 
-.btn.facet-more:last-of-type {
+#page .facetwp-facet:not(.facetwp-type-alpha) {
+  margin-bottom: 2rem;
+  min-width: 50px;
+  min-height: 50px; }
+
+.facetwp-checkbox.checked {
+  font-weight: bold; }
+
+.facetwp-checkbox {
+  background: none !important; }
+
+.facetwp-checkbox:before {
+  content: "\E835";
+  font-family: 'Material Icons';
+  padding-right: 5px;
+  padding-left: 0;
+  vertical-align: top; }
+
+.facetwp-checkbox.checked:before {
+  content: "\E834";
+  font-weight: 400;
+  color: #3f51b5; }
+
+#page .gv-uppercase > a,
+#page .facetwp-alpha {
+  color: inherit;
+  opacity: 0.4;
+  display: inline-block;
+  float: none;
+  line-height: 1;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: normal;
+  border-radius: 2px;
+  font-family: inherit;
+  margin-right: .5rem;
+  border: 1px solid transparent;
+  background-color: transparent;
+  transition-duration: 0.3s;
+  cursor: default;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: color, background-color, border-color; }
+
+#page li.gv-uppercase > a,
+#page .facetwp-alpha.available {
+  opacity: 1;
+  cursor: pointer; }
+  #page li.gv-uppercase > a:hover,
+  #page .facetwp-alpha.available:hover {
+    background-color: rgba(13, 16, 18, 0.0625); }
+
+#page .gv-active.gv-uppercase > a,
+#page .facetwp-alpha.selected {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: #004899;
+  font-weight: bold; }
+  #page .gv-active.gv-uppercase > a:hover,
+  #page .facetwp-alpha.selected:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    cursor: default; }
+
+ul.gravityview-az-filter {
+  margin-bottom: 1rem;
   display: inline-block; }
 
-#facetwp-location {
-  height: 2.4em; }
+.gv-widget-letter-links {
+  text-align: center; }
 
-i.locate-me {
-  top: 9px; }
+.flickity-prev-next-button {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #d0d0d0; }
+
+.is-active > a {
+  font-weight: 700;
+  border-bottom-color: currentcolor; }
+
+.mdl-mega-footer__drop-down-section {
+  display: block;
+  position: relative; }
+
+.mdl-mega-footer--heading,
+.mdl-mega-footer__heading {
+  position: relative;
+  width: 100%;
+  padding-right: 52px;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
+.mdl-mega-footer--heading:after,
+.mdl-mega-footer__heading:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 36px;
+  height: 36px;
+  background-size: cover; }
+
+@media screen and (min-width: 48em) {
+  .mdl-mega-footer__drop-down-section {
+    width: 33%; } }
+
+@media screen and (min-width: 62em) {
+  .mdl-mega-footer__drop-down-section,
+  .mdl-mega-footer__drop-down-section:nth-child(3),
+  .mdl-mega-footer__drop-down-section:nth-child(4) {
+    width: 24%; } }
+
+.mdl-mega-footer__heading-checkbox {
+  position: absolute;
+  width: 100%;
+  height: 68px;
+  padding: 32px;
+  margin: 0;
+  margin-top: -16px;
+  cursor: pointer;
+  z-index: 1;
+  opacity: 0; }
+  .mdl-mega-footer__heading-checkbox + .mdl-mega-footer__heading:after {
+    font-family: 'Material Icons';
+    content: '\E5CE'; }
+
+.mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer--heading:after,
+.mdl-mega-footer__heading-checkbox:checked ~ .mdl-mega-footer--heading:after {
+  font-family: 'Material Icons';
+  content: '\E5CF'; }
+
+@media screen and (min-width: 48em) {
+  .mdl-mega-footer--heading-checkbox,
+  .mdl-mega-footer__heading-checkbox {
+    display: none; }
+    .mdl-mega-footer--heading-checkbox + .mdl-mega-footer--heading:after,
+    .mdl-mega-footer--heading-checkbox + .mdl-mega-footer__heading:after,
+    .mdl-mega-footer__heading-checkbox + .mdl-mega-footer--heading:after,
+    .mdl-mega-footer__heading-checkbox + .mdl-mega-footer__heading:after {
+      content: ''; }
+  .mdl-mega-footer--heading-checkbox:checked ~ .mdl-mega-footer--link-list,
+  .mdl-mega-footer--heading-checkbox:checked ~ .mdl-mega-footer__link-list,
+  .mdl-mega-footer--heading-checkbox:checked + .mdl-mega-footer__heading + .mdl-mega-footer__link-list,
+  .mdl-mega-footer--heading-checkbox:checked + .mdl-mega-footer--heading + .mdl-mega-footer--link-list,
+  .mdl-mega-footer__heading-checkbox:checked ~ .mdl-mega-footer--link-list,
+  .mdl-mega-footer__heading-checkbox:checked ~ .mdl-mega-footer__link-list,
+  .mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer__heading + .mdl-mega-footer__link-list,
+  .mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer--heading + .mdl-mega-footer--link-list {
+    display: block; }
+  .mdl-mega-footer--heading-checkbox:checked + .mdl-mega-footer--heading:after,
+  .mdl-mega-footer--heading-checkbox:checked + .mdl-mega-footer__heading:after,
+  .mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer--heading:after,
+  .mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer__heading:after {
+    content: ''; } }
+
+.card-img {
+  max-height: 371px; }
+
+.home .site-footer {
+  background-color: #D4D4CF; }
+
+.article-hero {
+  min-height: 300px; }
+  @media screen and (min-width: 48em) {
+    .article-hero {
+      min-height: 450px; } }
+
+@media screen and (min-width: 62em) {
+  .archive-title {
+    font-size: 3.5rem; } }
+
+@media screen and (min-width: 62em) {
+  .trail-items {
+    font-size: 1.5rem; } }
+
+.wp-embedded-content + p {
+  display: inline-block;
+  vertical-align: top;
+  padding: .5rem; }
+
+@media screen and (max-width: 47em) {
+  .site-title {
+    font-size: 1.3rem; }
+  .site-description {
+    display: none; } }
+
+.contact-numbers__item {
+  min-width: 132px; }
+
+.entry-header + .contact-info {
+  width: 100%; }
+
+.type-parish .entry-title {
+  padding: 0;
+  margin: 0;
+  text-align: center; }
 
 /* Styles specific to the editor. */
 body#tinymce {

@@ -41,7 +41,6 @@ shortcode_ui_register_for_shortcode(
                 'label'   => 'Slide Type',
                 'attr'    => 'slide_type',
                 'type'    => 'select',
-                'value' => 'card',
                 'options'     => array(
                     'card'    => esc_html__( 'Content Cards', 'abraham' ),
                     'photo'    => esc_html__( 'Photo Slides', 'abraham' ),
@@ -52,20 +51,21 @@ shortcode_ui_register_for_shortcode(
                 'label'   => 'Row Background Color',
                 'attr'    => 'row_color',
                 'type'    => 'select',
+                'value'     => 'u-bg-transparent',
                 'options'     => array(
                     'u-bg-transparent'      => esc_html__( 'Transparent', 'abraham' ),
                     'u-bg-white u-text-black'   => esc_html__( 'White', 'abraham' ),
-                    'u-bg-1 u-text-white'       => esc_html__( 'Primary color', 'abraham' ),
-                    'u-bg-2 u-text-black'       => esc_html__( 'Secondary color', 'abraham' ),
-                    'u-bg-1-glass u-text-white'       => esc_html__( 'Glass 1', 'abraham' ),
-                    'u-bg-2-glass u-text-black'       => esc_html__( 'Glass 2', 'abraham' ),
-                    'u-bg-1-glass-light u-text-white' => esc_html__( 'Glass 1 light', 'abraham' ),
-                    'u-bg-2-glass-light u-text-black' => esc_html__( 'Glass 2 light', 'abraham' ),
-                    'u-bg-1-glass-dark u-text-white'  => esc_html__( 'Glass 1 dark', 'abraham' ),
-                    'u-bg-2-glass-dark u-text-black'  => esc_html__( 'Glass 2 dark', 'abraham' ),
-                    'u-bg-frost-4 u-text-black'       => esc_html__( 'Frosted', 'abraham' ),
-                    'u-bg-tint-4 u-text-white'        => esc_html__( 'Tinted', 'abraham' ),
-                    'u-bg-silver u-text-black'        => esc_html__( 'Neutral Gray', 'abraham' ),
+                    'u-bg-1'       => esc_html__( 'Primary color', 'abraham' ),
+                    'u-bg-2'       => esc_html__( 'Secondary color', 'abraham' ),
+                    'u-bg-1-glass'       => esc_html__( 'Glass 1', 'abraham' ),
+                    'u-bg-2-glass'       => esc_html__( 'Glass 2', 'abraham' ),
+                    'u-bg-1-glass-light' => esc_html__( 'Glass 1 light', 'abraham' ),
+                    'u-bg-2-glass-light' => esc_html__( 'Glass 2 light', 'abraham' ),
+                    'u-bg-1-glass-dark'  => esc_html__( 'Glass 1 dark', 'abraham' ),
+                    'u-bg-2-glass-dark'  => esc_html__( 'Glass 2 dark', 'abraham' ),
+                    'u-bg-frost-4'       => esc_html__( 'Frosted', 'abraham' ),
+                    'u-bg-tint-4'        => esc_html__( 'Tinted', 'abraham' ),
+                    'u-bg-silver'        => esc_html__( 'Neutral Gray', 'abraham' ),
                     'has-image'        => esc_html__( 'Use an Image', 'abraham' ),
                 ),
             ),
@@ -113,7 +113,7 @@ shortcode_ui_register_for_shortcode(
                 'label'    => 'Select Pages to Display',
                 'attr'     => 'page',
                 'type'     => 'post_select',
-                'query'    => array('post_type' => array( 'department', 'development', 'vocation' )),
+                'query'    => array('post_type' => array( 'page', 'cpt_archive', 'department', 'vocation', 'development' )),
                 'multiple' => true,
            ),
            array(
@@ -153,6 +153,6 @@ shortcode_ui_register_for_shortcode(
 function shorts_scripts() {
     wp_enqueue_script(
         'shorts_scripts',
-        trailingslashit(get_stylesheet_directory_uri())."assets/js/mehShorts.js"
+        trailingslashit(get_stylesheet_directory_uri())."js/mehShorts.js"
     );
 }

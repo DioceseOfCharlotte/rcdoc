@@ -41,6 +41,7 @@ function cpt_archive_labels($args, $type) {
             'author',
             'thumbnail',
             'theme-layouts',
+            'custom-header'
         );
     }
 

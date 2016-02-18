@@ -1,6 +1,6 @@
 
 <div class="o-cell u-1of2-md u-text-1-dark u-flex u-flex-justify-center u-flex-center">
-    <?php get_template_part('assets/images/icon', esc_attr( $attr['icon_file'] ) ); ?>
+    <?php get_template_part('images/icon', esc_attr( $attr['icon_file'] ) ); ?>
 </div>
 
  <div class="row-links o-cell u-flex u-flex-column u-flex-justify-around">

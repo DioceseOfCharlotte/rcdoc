@@ -6,6 +6,8 @@ if (function_exists('breadcrumb_trail')) :
         'container'     => 'nav',
         'show_on_front' => false,
         'show_browse'   => false,
+        'before'          => '<span class="u-text-shadow u-h4">',
+        'after'           => '</span>',
         //'network'         => true,
     ));
 

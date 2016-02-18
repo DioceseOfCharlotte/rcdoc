@@ -1,0 +1,20 @@
+
+.facetwp-facet {
+	.location-wrap,
+	.facetwp-search-wrap {
+	    display: inline-block;
+	}
+	i.facetwp-btn:before,
+	i.locate-me:before {
+	    height: 2.5rem;
+	    background-position: 50%;
+	}
+}
+
+.facetwp-facet-statistics_type.facetwp-type-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 0!important;
+}
