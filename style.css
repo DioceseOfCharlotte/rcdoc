@@ -2012,6 +2012,11 @@
   height: 2.5rem;
   background-position: 50%; }
 
+.facetwp-facet .locate-me {
+  right: 0;
+  padding-left: .5rem;
+  padding-right: .5rem; }
+
 .facetwp-facet-statistics_type.facetwp-type-checkboxes {
   display: -webkit-flex;
   display: -ms-flexbox;

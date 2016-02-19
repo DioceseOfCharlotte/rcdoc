@@ -1987,6 +1987,12 @@
   height: 40px;
   background-position: 50%; }
 
+.facetwp-facet .locate-me {
+  right: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+  background: blue; }
+
 .facetwp-facet-statistics_type.facetwp-type-checkboxes {
   -js-display: flex;
   display: flex;
@@ -2282,6 +2288,9 @@ http://flickity.metafizzy.co
 
 .not-top ~ .head-space{
   height: 104px; }
+
+.home .not-top ~ .head-space{
+  height: 128px; }
 
 .home .is-top ~ .head-space {
   height: 64px; }

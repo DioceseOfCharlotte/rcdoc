@@ -1,7 +1,40 @@
 <?php
 
+add_action( 'cmb2_admin_init', 'doc_attached_posts_field' );
 add_action( 'cmb2_admin_init', 'doc_register_stats_upload' );
 //add_action( 'cmb2_admin_init', 'doc_register_time_schedule_metabox' );
+
+
+
+
+
+function doc_attached_posts_field() {
+$prefix = 'doc_posts_';
+//global $current_screen;
+// $current_screen = get_current_screen();
+//$post_type = $current_screen->post_type;
+//$screen = get_current_screen();
+//$post_type = $screen->post_type;
+
+	$cmb_doc_posts = new_cmb2_box( array(
+	    'id'           => $prefix . 'metabox',
+	    'title'        => __( 'Post Info' ),
+	    'object_types' => rcdoc_non_hierarchy_cpts(),
+	) );
+
+	$cmb_doc_posts->add_field( array(
+		'name'    => __( 'Attached Posts', 'cmb2' ),
+		'desc'    => __( 'Drag posts from the left column to the right column to attach them to this page.<br />You may rearrange the order of the posts in the right column by dragging and dropping.', 'cmb2' ),
+		'id'      => $prefix . 'attached_posts',
+		'type'    => 'custom_attached_posts',
+		'options' => array(
+			'show_thumbnails' => true, // Show thumbnails on the left
+			'filter_boxes'    => true, // Show a text box for filtering the results
+			//'query_args'      => array( 'post_type'	=> abe_get_cpt_admin() ), // override the get_posts args
+		)
+	) );
+}
+
 
 
 function doc_register_stats_upload() {
