@@ -90,7 +90,7 @@ function headspace() {
     // if ( ! is_front_page() )
     //     return;
 
-    echo '<div id="head-space" class="head-space u-bg-1-glass-dark"></div><div class="menu-space u-bg-1-glass-dark"></div>';
+    echo '<div id="head-space" class="head-space u-bg-1-glass-dark u-text-1-dark"></div>';
 }
 
 function doc_primary_menu() {

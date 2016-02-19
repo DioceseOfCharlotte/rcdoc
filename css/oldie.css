@@ -2208,11 +2208,6 @@ http://flickity.metafizzy.co
   -ms-transform: translateX(0);
       transform: translateX(0); }
 
-.site-header.not-top {
-  height: 50px; }
-  .site-header.not-top{
-  height: 60px; }
-
 .site-header .search-field {
   color: currentColor;
   font-weight: normal;
@@ -2240,23 +2235,9 @@ http://flickity.metafizzy.co
       color: #212c31; }
 
  {
-  max-height: 64px; }
-
- {
   color: #444;
   font-weight: bold;
   text-shadow: 1px 1px 5px rgba(235, 235, 241, 0.6); }
-
-.home .head-space,
-.home .menu-space {
-  filter: alpha(opacity=0); }
-
-.menu-space {
-  height: 40px;
-  margin-bottom: -40px; }
-
-.not-top ~ .menu-space {
-  margin-bottom: 0; }
 
 #content-mask {
   width: 0;
@@ -2281,10 +2262,39 @@ http://flickity.metafizzy.co
   max-height: 4.5em;
   width: auto; }
 
+.site-header {
+  height: 56px; }
+  .site-header{
+  height: 64px; }
+
+.home .site-header.is-top {
+  height: 64px; }
+  .home .site-header.is-top{
+  height: 88px; }
+
+.home .head-space {
+  filter: alpha(opacity=0); }
+
+.head-space {
+  height: 56px; }
+  .head-space{
+  height: 64px; }
+
+.not-top ~ .head-space{
+  height: 104px; }
+
+.home .is-top ~ .head-space {
+  height: 64px; }
+  .home .is-top ~ .head-space{
+  height: 88px; }
+
 .site-header.not-top .site-description {
   height: 0;
   filter: alpha(opacity=0);
   overflow: hidden; }
+
+.site-header.not-top .site-branding {
+  font-size: 12.8px; }
 
 .archive .format-image {
   align-self: flex-start; }

@@ -76,13 +76,6 @@
 }
 
 
-.site-header.not-top {
-    height: 50px;
-    @include md {
-        height: 60px;
-    }
-}
-
 .site-header .search-field {
     color: currentColor;
     font-weight: normal;
@@ -117,12 +110,6 @@
 
 
 
-body:not(.home) #header {
-    max-height: 64px;
-}
-
-
-
 
 .home #menu-primary:not(.is-active) {
 > .sidebar-header,
@@ -131,27 +118,6 @@ body:not(.home) #header {
     font-weight: bold;
         text-shadow: 1px 1px 5px rgba(235, 235, 241, 0.6);
 }
-}
-
-.head-space {
-	//min-height: 60px;
-}
-
-.home .head-space,
-.home .menu-space {
-    opacity: 0;
-}
-
-
-
-.menu-space {
-    height: 2.5rem;
-	margin-bottom: -2.5rem;
-
-}
-
-.not-top ~ .menu-space {
-    margin-bottom: 0;
 }
 
 #content-mask {
@@ -191,6 +157,51 @@ body:not(.home) #header {
     width: auto;
 }
 
+.site-header {
+    height: 3.5rem;
+    @include md {
+        height: 4rem;
+    }
+}
+
+.home .site-header.is-top {
+    height: 4rem;
+    @include md {
+        height: 5.5rem;
+    }
+}
+
+.home .head-space {
+    opacity: 0;
+}
+
+.head-space {
+    height: 3.5rem;
+    @include md {
+        height: 4rem;
+    }
+}
+
+.not-top ~ .head-space {
+    //height: 6rem;
+    @include md {
+        height: 6.5rem;
+    }
+}
+
+.home .not-top ~ .head-space {
+    @include md {
+        height: 8rem;
+    }
+}
+
+.home .is-top ~ .head-space {
+    height: 4rem;
+    @include md {
+        height: 5.5rem;
+    }
+}
+
 .site-header.not-top,
 body:not(.home) {
     .site-description {
@@ -206,45 +217,3 @@ body:not(.home) {
         }
     }
 }
-
-
-
-
-// .site-header.not-top,
-// body:not(.home) .site-header {
-//     .site-branding {
-//         font-size: 0.5rem;
-//     }
-//
-//     .site-description {
-//         max-height                : 0;
-//         overflow                  : hidden;
-//         opacity                   : 0;
-//         transition-duration       : 0.2s;
-//         transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-//         transition-property       : opacity;
-//     }
-// }
-
-
-// body:not(.home) .site-logo,
-// .home .not-top .site-logo {
-//     max-height: 45px;
-//     width: auto;
-// }
-
-
-// @include sm {
-//     .site-title {
-//         font-size: 1.3rem;
-//     }
-//     .site-description {
-//         display: none;
-//     }
-// }
-
-// .site-title {
-//     @include md {
-//     font-size: 3em;
-//     }
-// }

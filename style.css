@@ -2308,12 +2308,6 @@ http://flickity.metafizzy.co
             transform: translateX(0);
     z-index: 3; } }
 
-.site-header.not-top {
-  height: 50px; }
-  @media screen and (min-width: 48em) {
-    .site-header.not-top {
-      height: 60px; } }
-
 .site-header .search-field {
   color: currentColor;
   font-weight: normal;
@@ -2340,25 +2334,11 @@ http://flickity.metafizzy.co
     .site-header .search-field:focus ~ .material-icons {
       color: #212c31; }
 
-body:not(.home) #header {
-  max-height: 64px; }
-
 .home #menu-primary:not(.is-active) > .sidebar-header,
 .home #menu-primary:not(.is-active) > .nav-menu {
   color: #444;
   font-weight: bold;
   text-shadow: 1px 1px 5px rgba(235, 235, 241, 0.6); }
-
-.home .head-space,
-.home .menu-space {
-  opacity: 0; }
-
-.menu-space {
-  height: 2.5rem;
-  margin-bottom: -2.5rem; }
-
-.not-top ~ .menu-space {
-  margin-bottom: 0; }
 
 #content-mask {
   width: 0;
@@ -2388,6 +2368,41 @@ body:not(.home) #header {
 .site-logo {
   max-height: 4.5em;
   width: auto; }
+
+.site-header {
+  height: 3.5rem; }
+  @media screen and (min-width: 48em) {
+    .site-header {
+      height: 4rem; } }
+
+.home .site-header.is-top {
+  height: 4rem; }
+  @media screen and (min-width: 48em) {
+    .home .site-header.is-top {
+      height: 5.5rem; } }
+
+.home .head-space {
+  opacity: 0; }
+
+.head-space {
+  height: 3.5rem; }
+  @media screen and (min-width: 48em) {
+    .head-space {
+      height: 4rem; } }
+
+@media screen and (min-width: 48em) {
+  .not-top ~ .head-space {
+    height: 6.5rem; } }
+
+@media screen and (min-width: 48em) {
+  .home .not-top ~ .head-space {
+    height: 8rem; } }
+
+.home .is-top ~ .head-space {
+  height: 4rem; }
+  @media screen and (min-width: 48em) {
+    .home .is-top ~ .head-space {
+      height: 5.5rem; } }
 
 .site-header.not-top .site-description,
 body:not(.home) .site-description {

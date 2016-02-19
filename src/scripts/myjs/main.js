@@ -36,18 +36,18 @@ ready(function() {
 	}).init();
 }());
 
-ready(function() {
-	var elmnt = document.getElementById("header");
-	var fakeHeight = elmnt.offsetHeight;
-
-	document.getElementById('head-space').style.height = fakeHeight + 'px';
-});
-
-
+// ready(function() {
+// 	var elmnt = document.getElementById("header");
+// 	var fakeHeight = elmnt.offsetHeight;
+//
+// 	document.getElementById('head-space').style.height = fakeHeight + 'px';
+// });
 
 
 
-// 
+
+
+//
 // ;(function() {
 //     var throttle = function(type, name, obj) {
 //         var obj = obj || window;
