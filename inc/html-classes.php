@@ -108,7 +108,7 @@ function cpt_header($attr) {
 $directory_posts = array('school','parish','department');
 
     if (is_post_type_archive( $directory_posts )) :
-        $attr['class']   .= " u-flex-row u-flex-nowrap";
+        $attr['class']   .= " u-bg-1-dark u-flex u-flex-row u-flex-nowrap u-flex-justify-between";
     endif;
 return $attr;
 }

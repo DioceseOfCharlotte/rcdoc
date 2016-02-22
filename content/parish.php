@@ -4,11 +4,14 @@
 
 	<?php tha_entry_top(); ?>
 
-		<header <?php hybrid_attr('entry-header'); ?>>
-			<h2 <?php hybrid_attr('entry-title'); ?>>
-				<a class="u-bg-1-dark u-py1 u-1of1 u-inline-block" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-			</h2>
-		</header>
+	<header class="u-bg-1-dark u-flex u-flex-row u-flex-nowrap u-flex-justify-between" <?= doc_prime_style(); ?>>
+		<h2 <?php hybrid_attr('entry-title'); ?>>
+			<a class="u-p1 u-inline-block" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		</h2>
+		<?php if( get_field('doc_website') ): ?>
+			<a class="u-bg-frost-1 contact-link btn u-inline-block" itemprop="url" href="<?php the_field('doc_website'); ?>" target="_blank"><?php abe_do_svg( 'external', 'sm' ); ?></a>
+			<?php endif; ?>
+	</header>
 
 		<?php
 			get_the_image(array(

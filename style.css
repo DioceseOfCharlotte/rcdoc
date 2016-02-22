@@ -2578,21 +2578,6 @@ a.rsswidget {
 li > a.rsswidget {
   font-weight: 400; }
 
-.icon-sm {
-  width: 100%;
-  max-width: 40px;
-  max-height: 40px; }
-
-.icon-md {
-  width: 100%;
-  max-width: 120px;
-  max-height: 120px; }
-
-.icon-lg {
-  width: 100%;
-  max-width: 260px;
-  max-height: 260px; }
-
 .gallery-cell {
   padding: 0 10px; }
 

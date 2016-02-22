@@ -1990,8 +1990,7 @@
 .facetwp-facet .locate-me {
   right: 0;
   padding-left: 8px;
-  padding-right: 8px;
-  background: blue; }
+  padding-right: 8px; }
 
 .facetwp-facet-statistics_type.facetwp-type-checkboxes {
   -js-display: flex;
@@ -2448,21 +2447,6 @@ a.rsswidget {
 
 li > a.rsswidget {
   font-weight: 400; }
-
-.icon-sm {
-  width: 100%;
-  max-width: 40px;
-  max-height: 40px; }
-
-.icon-md {
-  width: 100%;
-  max-width: 120px;
-  max-height: 120px; }
-
-.icon-lg {
-  width: 100%;
-  max-width: 260px;
-  max-height: 260px; }
 
 .gallery-cell {
   padding: 0 10px; }

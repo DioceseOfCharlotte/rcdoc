@@ -67,9 +67,4 @@ ob_start(); ?>
 <?php endif; ?>
 </div>
 
-
-<?php if( get_field('doc_website') ): ?>
-    <a class="contact-link btn u-abs u-top0 u-bg-silver u-right0 btn-round u-mtn1 u-mrn1" itemprop="url" href="<?php the_field('doc_website'); ?>" target="_blank"><i class="material-icons">&#xE89E;</i></a>
-<?php endif; ?>
-
 </div>
