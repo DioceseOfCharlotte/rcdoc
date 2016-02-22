@@ -67,11 +67,11 @@ function rcdoc_secondary_color($hex) {
 /**
  * Post Groups.
  */
-function rcdoc_non_hierarchy_cpts($cpts) {
+function rcdoc_non_hierarchy_cpts($cpts=array('post')) {
 	$cpts = array( 'post', 'archive_post','bishop', 'chancery', 'deacon', 'development', 'education', 'finance', 'human_resources', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'tribunal', 'vocation' );
     return $cpts;
 }
-function rcdoc_hierarchy_cpts($cpts) {
+function rcdoc_hierarchy_cpts($cpts=array('page')) {
 	$cpts = array(
         'page',
         'cpt_archive',

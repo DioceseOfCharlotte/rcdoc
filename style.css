@@ -2914,11 +2914,6 @@ ul.gravityview-az-filter {
 .entry-header + .contact-info {
   width: 100%; }
 
-.type-parish .entry-title {
-  padding: 0;
-  margin: 0;
-  text-align: center; }
-
 /* Styles specific to the editor. */
 body#tinymce {
   min-height: 50px;
