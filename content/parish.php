@@ -4,7 +4,7 @@
 
 	<?php tha_entry_top(); ?>
 
-	<header class="u-bg-1-dark u-flex u-flex-row u-flex-nowrap u-flex-justify-between" style="<?= doc_prime_style(); ?> border-bottom: 5px solid <?= abe_second_hex() ?>;">
+	<header class="u-bg-1-dark u-flex u-flex-row u-flex-nowrap u-flex-justify-between u-br-t" style="<?= doc_prime_style(); ?> border-bottom: 5px solid <?= abe_second_hex() ?>;">
 		<h2 <?php hybrid_attr('entry-title'); ?>>
 			<a class="u-p1 u-inline-block" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 		</h2>
