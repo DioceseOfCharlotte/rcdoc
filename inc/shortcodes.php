@@ -12,9 +12,11 @@ function meh_row_shortcode($attr, $content = null) {
     $attr = shortcode_atts(array(
         'row_type'      => '',
         'slide_type'    => '',
-        'gallery'       => '',
+        'cta'           => '',
+        'btn_text'      => '',
         'row_color'     => '',
         'bg_image'      => '',
+        'overlay'       => '',
         'row_intro'     => '',
         'page'          => '',
         'icon_file'     => '',
@@ -39,7 +41,7 @@ function meh_row_shortcode($attr, $content = null) {
     endif; ?>
 
 <?php if ($attr['bg_image']) : ?>
- <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-relative u-1of1 u-py3 u-py4-md u-bg-cover u-bg-fixed" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>)">
+ <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-relative u-1of1 u-py3 u-py4-md u-bg-cover u-bg-fixed <?php echo esc_attr( $attr['overlay'] ); ?>" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>)">
 <?php else: ?>
  <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-relative u-1of1 u-py3 u-py4-md">
 <?php endif; ?>
@@ -74,6 +76,20 @@ function meh_row_shortcode($attr, $content = null) {
 
         <div class="section-row__content o-grid u-flex-justify-around">
             <?php include locate_template('/components/row-tiles.php'); ?>
+        </div>
+
+    <?php elseif ('cta' === $attr['row_type']) : ?>
+
+        <div class="section-row__content o-grid u-flex-justify-around u-py3 u-py4-md">
+
+            <?php if ($attr['btn_text']) : ?>
+<?php while ($query->have_posts()) : $query->the_post(); ?>
+            <a href="<?php the_permalink(); ?>" class="btn btn-big btn-hollow">
+                <?php echo wp_kses_post( $attr[ 'btn_text' ] ); ?>
+            </a>
+<?php endwhile; ?>
+            <?php endif; ?>
+
         </div>
 
     <?php elseif ('cards' === $attr['row_type']) : ?>

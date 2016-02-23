@@ -1,0 +1,16 @@
+.has-image.section-row {
+    min-height: 33vh;
+}
+
+.u-bg-1-glass,
+.u-bg-2-glass,
+.u-bg-1-glass-light,
+.u-bg-1-glass-dark,
+.u-bg-2-glass-light,
+.u-bg-2-glass-dark {
+
+    &.section-row {
+        border-top: 5px solid #36474f;
+        border-bottom: 5px solid #36474f;
+    }
+}

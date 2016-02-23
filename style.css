@@ -2440,6 +2440,18 @@ body:not(.home) .site-branding {
     display: inline-block;
     width: 100%; }
 
+.has-image.section-row {
+  min-height: 33vh; }
+
+.u-bg-1-glass.section-row,
+.u-bg-2-glass.section-row,
+.u-bg-1-glass-light.section-row,
+.u-bg-1-glass-dark.section-row,
+.u-bg-2-glass-light.section-row,
+.u-bg-2-glass-dark.section-row {
+  border-top: 5px solid #36474f;
+  border-bottom: 5px solid #36474f; }
+
 .mdl-mega-footer--heading-checkbox:checked ~ div,
 .mdl-mega-footer__heading-checkbox:checked ~ div {
   display: none; }

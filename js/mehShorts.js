@@ -15,9 +15,8 @@ function updateRowTypeListener(changed, collection, shortcode) {
 		bgImage = attributeByName('bg_image'),
 		rowIcon = attributeByName('icon_file'),
 		rowID = attributeByName('js_id'),
-		rowPages = attributeByName('page');
+		rowPages = attributeByName('page'),
 		slideTypes = attributeByName('slide_type');
-		slideGal = attributeByName('gallery');
 
 
 
@@ -48,10 +47,8 @@ function updateRowTypeListener(changed, collection, shortcode) {
 		rowDirection.$el.hide();
 		slideTypes.$el.show();
 		rowPages.$el.show();
-		slideGal.$el.show();
 	} else {
 		feedURL.$el.hide();
-		slideGal.$el.hide();
 		rowDirection.$el.hide();
 		rowPages.$el.show();
 		rowIcon.$el.hide();
@@ -79,13 +76,16 @@ function updateRowColorListener(changed, collection, shortcode) {
 		bgImage = attributeByName('bg_image'),
 		rowIcon = attributeByName('icon_file'),
 		rowID = attributeByName('js_id'),
+		bgOverlay = attributeByName('overlay'),
 		rowPages = attributeByName('page');
 
 
 	if (updatedColor === 'has-image') {
 		bgImage.$el.show();
+		bgOverlay.$el.show();
 	} else {
 		bgImage.$el.hide();
+		bgOverlay.$el.hide();
 	}
 }
 

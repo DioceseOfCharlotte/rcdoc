@@ -32,6 +32,7 @@ shortcode_ui_register_for_shortcode(
                     'tabs'    => esc_html__( 'Tabs', 'abraham' ),
                     'links'   => esc_html__( 'Page Links', 'abraham' ),
                     'feed'   => esc_html__( 'RSS Feed', 'abraham' ),
+                    'cta'  => esc_html__( 'Call to Action', 'abraham' ),
                     'slides'  => esc_html__( 'Slides', 'abraham' ),
                     'tiles'  => esc_html__( 'Tiles', 'abraham' ),
                 ),
@@ -78,7 +79,17 @@ shortcode_ui_register_for_shortcode(
                 'addButton'   => esc_html__( 'Select Image', 'abraham' ),
                 'frameTitle'  => esc_html__( 'Select Image', 'abraham' ),
             ),
-
+            array(
+                'label'  => esc_html__( 'Image Overlay', 'abraham' ),
+                'attr'   => 'overlay',
+                'type'   => 'select',
+                'value'     => 'u-bg-transparent',
+                'options'     => array(
+                    'no-overlay'      => esc_html__( 'None', 'abraham' ),
+                    'u-tinted-image'   => esc_html__( 'Tinted', 'abraham' ),
+                    'u-frosted-image'  => esc_html__( 'Frosted', 'abraham' ),
+                ),
+            ),
             array(
                 'label'  => esc_html__( 'Intro Text', 'abraham' ),
                 'attr'   => 'row_intro',
@@ -100,21 +111,21 @@ shortcode_ui_register_for_shortcode(
                 ),
             ),
             array(
-                'label'       => 'Gallery',
-                'attr'        => 'gallery',
-                'description' => esc_html__( 'Select multiple images.' ),
-                'type'        => 'attachment',
-                'libraryType' => array( 'image' ),
-                'multiple'    => true,
-                'addButton'   => 'Select Images',
-                'frameTitle'  => 'Select Images',
-            ),
-            array(
                 'label'    => 'Select Pages to Display',
                 'attr'     => 'page',
                 'type'     => 'post_select',
                 'query'    => array('post_type' => array( 'page', 'cpt_archive', 'department', 'vocation', 'development' )),
                 'multiple' => true,
+           ),
+           array(
+               'label'  => esc_html__( 'Button Text', 'abraham' ),
+               'attr'   => 'btn_text',
+               'type'   => 'text',
+               'encode' => true,
+               'meta'   => array(
+                   'placeholder' => esc_html__( 'Make it actionable!', 'abraham' ),
+                   'data-test'   => 1,
+               ),
            ),
            array(
                 'label'    => esc_html__( 'Feed URL' ),
