@@ -58,10 +58,10 @@ add_theme_support( 'cleaner-gallery' );
  * Theme Colors.
  */
 function rcdoc_primary_color($hex) {
-    return $hex ? $hex : '3581ce';
+    return $hex ? $hex : '2980b9';
 }
 function rcdoc_secondary_color($hex) {
-    return $hex ? $hex : '3BC391';
+    return $hex ? $hex : '16a085';
 }
 
 /**
