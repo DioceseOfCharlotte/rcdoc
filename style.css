@@ -2228,7 +2228,7 @@ http://flickity.metafizzy.co
 .tile:hover {
   background-image: linear-gradient(335deg, rgba(0, 0, 0, 0.06) 50%, transparent 50%); }
 
-.not-top ~ .menu-primary {
+.site-header:not(.is-top) ~ .menu-primary {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -2260,11 +2260,11 @@ http://flickity.metafizzy.co
   overflow-y: auto;
   z-index: 5;
   visibility: hidden; }
-  .not-top ~ .menu-primary .menu-item,
-  .not-top ~ .menu-primary .menu__link {
+  .site-header:not(.is-top) ~ .menu-primary .menu-item,
+  .site-header:not(.is-top) ~ .menu-primary .menu__link {
     width: 100%; }
 
-.not-top ~ .menu-primary.is-active {
+.site-header:not(.is-top) ~ .menu-primary.is-active {
   visibility: visible;
   -webkit-transform: translateX(0);
           transform: translateX(0); }
@@ -2396,11 +2396,11 @@ http://flickity.metafizzy.co
       height: 4rem; } }
 
 @media screen and (min-width: 48em) {
-  .not-top ~ .head-space {
+  .site-header:not(.is-top) ~ .head-space {
     height: 6.5rem; } }
 
 @media screen and (min-width: 48em) {
-  .home .not-top ~ .head-space {
+  .home .site-header:not(.is-top) ~ .head-space {
     height: 8rem; } }
 
 .home .is-top ~ .head-space {
@@ -2409,17 +2409,17 @@ http://flickity.metafizzy.co
     .home .is-top ~ .head-space {
       height: 5.5rem; } }
 
-.site-header.not-top .site-description,
+.site-header:not(.is-top) .site-description,
 body:not(.home) .site-description {
   height: 0;
   opacity: 0;
   overflow: hidden; }
 
-.site-header.not-top .site-branding,
+.site-header:not(.is-top) .site-branding,
 body:not(.home) .site-branding {
   font-size: .8rem; }
   @media screen and (max-width: 34em) {
-    .site-header.not-top .site-branding,
+    .site-header:not(.is-top) .site-branding,
     body:not(.home) .site-branding {
       font-size: 3vw; } }
 
@@ -2697,7 +2697,7 @@ li > a.rsswidget {
   opacity: 0;
   transition: opacity 0.3s ease-in-out; }
 
-.site-header.not-top::after {
+.site-header.u-fix::after {
   opacity: 1; }
 
 .type-document,

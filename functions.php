@@ -115,9 +115,9 @@ function abraham_widgets() {
     register_sidebar(array(
         'id'            => 'primary',
         'name'          => __( 'Primary', 'abraham' ),
-        'before_title'  => '<div class="mdl-card__title u-mtn2 u-mxn2"><h2 class="mdl-card__title-text widget-title">',
+        'before_title'  => '<div class="u-mtn2 u-mxn2"><h2 class="widget-title">',
         'after_title'   => '</h2></div>',
-        'before_widget' => '<section class="widget mdl-card o-cell mdl-shadow--2dp u-p2 u-list-reset">',
+        'before_widget' => '<section class="widget o-cell mdl-shadow--2dp u-p2 u-list-reset">',
         'after_widget'  => '</section>',
     ));
     register_sidebar(array(
@@ -139,7 +139,7 @@ function abraham_widgets() {
     register_sidebar(array(
         'id'            => 'drawer',
         'name'          => __( 'Drawer Widgets', 'abraham' ),
-        'before_title'  => '<h3 class="mdl-card__title-text widget-title">',
+        'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
         'before_widget' => '<section class="widget u-p2 u-list-reset %2$s">',
         'after_widget'  => '</section>',

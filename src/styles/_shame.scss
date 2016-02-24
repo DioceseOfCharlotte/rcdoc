@@ -331,7 +331,7 @@ li > a.rsswidget {
         transition: opacity 0.3s ease-in-out;
     }
 
-    &.not-top::after {
+    &.u-fix::after {
         opacity: 1;
     }
 }

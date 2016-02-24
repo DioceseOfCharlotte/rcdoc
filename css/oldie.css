@@ -2180,7 +2180,7 @@ http://flickity.metafizzy.co
 .tile:hover {
   background-image: linear-gradient(335deg, rgba(0, 0, 0, 0.06) 50%, transparent 50%); }
 
-.not-top ~ .menu-primary {
+ {
   -js-display: flex;
   display: flex;
   flex-direction: column;
@@ -2204,11 +2204,10 @@ http://flickity.metafizzy.co
   overflow-y: auto;
   z-index: 5;
   visibility: hidden; }
-  .not-top ~ .menu-primary .menu-item,
-  .not-top ~ .menu-primary .menu__link {
+   {
     width: 100%; }
 
-.not-top ~ .menu-primary.is-active {
+ {
   visibility: visible;
   -ms-transform: translateX(0);
       transform: translateX(0); }
@@ -2285,10 +2284,10 @@ http://flickity.metafizzy.co
   .head-space{
   height: 64px; }
 
-.not-top ~ .head-space{
+{
   height: 104px; }
 
-.home .not-top ~ .head-space{
+{
   height: 128px; }
 
 .home .is-top ~ .head-space {
@@ -2296,12 +2295,12 @@ http://flickity.metafizzy.co
   .home .is-top ~ .head-space{
   height: 88px; }
 
-.site-header.not-top .site-description {
+ {
   height: 0;
   filter: alpha(opacity=0);
   overflow: hidden; }
 
-.site-header.not-top .site-branding {
+ {
   font-size: 12.8px; }
 
 .archive .format-image {
@@ -2566,7 +2565,7 @@ li > a.rsswidget {
   filter: alpha(opacity=0);
   transition: opacity 0.3s ease-in-out; }
 
-.site-header.not-top:after {
+.site-header.u-fix:after {
   filter: alpha(opacity=100); }
 
 .type-document,

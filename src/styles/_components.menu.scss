@@ -1,4 +1,4 @@
-.not-top {
+.site-header:not(.is-top) {
 
     ~ .menu-primary {
         display: flex;
@@ -182,14 +182,14 @@
     }
 }
 
-.not-top ~ .head-space {
+.site-header:not(.is-top) ~ .head-space {
     //height: 6rem;
     @include md {
         height: 6.5rem;
     }
 }
 
-.home .not-top ~ .head-space {
+.home .site-header:not(.is-top) ~ .head-space {
     @include md {
         height: 8rem;
     }
@@ -202,7 +202,7 @@
     }
 }
 
-.site-header.not-top,
+.site-header:not(.is-top),
 body:not(.home) {
     .site-description {
         height: 0;
