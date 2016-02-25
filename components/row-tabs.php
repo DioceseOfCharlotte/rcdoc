@@ -11,7 +11,7 @@
 </div>
 
 
-<div class="o-cell u-1of2-md u-br row__tabs mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+<div class="o-cell u-1of2-md u-br row__tabs mdl-tabs mdl-js-tabs">
   <div class="mdl-tabs__tab-bar u-bg-frost-2">
 
     <?php while ($query->have_posts()) : $query->the_post(); ?>

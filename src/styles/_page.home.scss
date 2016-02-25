@@ -10,7 +10,157 @@
 .u-bg-2-glass-dark {
 
     &.section-row {
-        border-top: 5px solid #36474f;
-        border-bottom: 5px solid #36474f;
+        // border-top: 5px solid #36474f;
+        // border-bottom: 5px solid #36474f;
     }
+}
+
+
+.section-row__content.blur-img {
+    width: 50%;
+    border: 5px solid #36474f;
+}
+
+.u-bg-1-glass-over {
+
+    > * {
+        position: relative;
+    }
+    &:before {
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    background-color: rgba($color1, 0.6);
+}
+}
+
+.u-bg-2-glass-over {
+
+    > * {
+        position: relative;
+    }
+    &:before {
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    background-color: rgba($color2, 0.6);
+}
+}
+
+.u-bg-3-glass-over {
+
+    > * {
+        position: relative;
+    }
+    &:before {
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    background-color: rgba($color3, 0.6);
+}
+}
+
+.u-bg-1-glass-light-over {
+
+    > * {
+        position: relative;
+    }
+    &:before {
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    background-color: rgba(lighten($color1, 10), 0.6);
+}
+}
+
+.u-bg-2-glass-light-over {
+
+    > * {
+        position: relative;
+    }
+    &:before {
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    background-color: rgba(lighten($color2, 10), 0.6);
+}
+}
+
+.u-bg-3-glass-light-over {
+
+    > * {
+        position: relative;
+    }
+    &:before {
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    background-color: rgba(lighten($color3, 10), 0.6);
+}
+}
+
+.u-bg-1-glass-dark-over {
+
+    > * {
+        position: relative;
+    }
+    &:before {
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    background-color: rgba(darken($color1, 10), 0.6);
+}
+}
+
+.u-bg-2-glass-dark-over {
+
+    > * {
+        position: relative;
+    }
+    &:before {
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    background-color: rgba(darken($color2, 10), 0.6);
+}
+}
+
+.u-bg-3-glass-dark-over {
+
+    > * {
+        position: relative;
+    }
+    &:before {
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    background-color: rgba(darken($color3, 10), 0.6);
+}
 }

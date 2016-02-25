@@ -7,7 +7,7 @@
 ?>
 
 <div class ="gallery-cell">
-<div id="post-<?php the_ID(); ?>" class="o-cell u-bg-white u-br mdl-shadow--3dp">
+<div id="post-<?php the_ID(); ?>" class="o-cell u-bg-white u-br u-shadow--3dp">
 
     <header <?php hybrid_attr('entry-header'); ?>>
         <?php

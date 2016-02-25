@@ -5,7 +5,7 @@
  while ($query->have_posts()) : $query->the_post();
 ?>
 
-<div id="post-<?php the_ID(); ?>" class="o-cell card mdl-shadow--2dp u-text-gray">
+<div id="post-<?php the_ID(); ?>" class="o-cell card u-shadow--2dp u-text-gray">
         <?php
             get_the_image(array(
                 'size' => 'abraham-lg',

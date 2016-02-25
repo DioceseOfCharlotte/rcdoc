@@ -15,7 +15,10 @@ function meh_row_shortcode($attr, $content = null) {
         'cta'           => '',
         'btn_text'      => '',
         'row_color'     => '',
+        'text_color'     => '',
         'bg_image'      => '',
+        'blur_image'      => '',
+        'glass_color'     => '',
         'overlay'       => '',
         'row_intro'     => '',
         'page'          => '',
@@ -41,14 +44,14 @@ function meh_row_shortcode($attr, $content = null) {
     endif; ?>
 
 <?php if ($attr['bg_image']) : ?>
- <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-relative u-1of1 u-py3 u-py4-md u-bg-cover u-bg-fixed <?php echo esc_attr( $attr['overlay'] ); ?>" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>)">
+ <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-relative <?php echo esc_attr( $attr['text_color'] ); ?> u-1of1 u-py3 u-py4-md u-bg-cover u-bg-fixed <?php echo esc_attr( $attr['overlay'] ); ?>" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>)">
 <?php else: ?>
- <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-relative u-1of1 u-py3 u-py4-md">
+ <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-relative <?php echo esc_attr( $attr['text_color'] ); ?> u-1of1 u-py3 u-py4-md">
 <?php endif; ?>
 
     <?php if ($attr['row_intro']) : ?>
 
-        <h2 class="u-z1 u-h1 u-mb3 u-mb4-md u-text-center">
+        <h2 class="u-z1 u-h1 u-mb3 u-mb4-md u-rel u-text-center">
             <?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?>
         </h2>
 
@@ -80,11 +83,11 @@ function meh_row_shortcode($attr, $content = null) {
 
     <?php elseif ('cta' === $attr['row_type']) : ?>
 
-        <div class="section-row__content o-grid u-flex-justify-around u-py3 u-py4-md">
+        <div class="section-row__content blur-img u-py3 u-py4-md u-abs u-top0 u-bottom0 u-bg-cover u-bg-fixed <?php echo esc_attr( $attr['glass_color'] ); ?>" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'blur_image' ] ) ); ?>)">
 
             <?php if ($attr['btn_text']) : ?>
 <?php while ($query->have_posts()) : $query->the_post(); ?>
-            <a href="<?php the_permalink(); ?>" class="btn btn-big btn-hollow">
+            <a href="<?php the_permalink(); ?>" class="btn btn-big btn-hollow u-bg-white">
                 <?php echo wp_kses_post( $attr[ 'btn_text' ] ); ?>
             </a>
 <?php endwhile; ?>

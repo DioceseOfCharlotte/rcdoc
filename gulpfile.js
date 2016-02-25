@@ -53,7 +53,7 @@ var SOURCESJS = [
 	'src/mdl/mdlComponentHandler.js',
 	'src/mdl/menu/menu.js',
 	'src/mdl/tabs/tabs.js',
-	'src/mdl/ripple/ripple.js',
+	//'src/mdl/ripple/ripple.js',
 
 	// ** GSAP ** //
 	// 'src/scripts/vendors/TweenMax.js',

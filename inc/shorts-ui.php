@@ -72,6 +72,24 @@ shortcode_ui_register_for_shortcode(
             ),
 
             array(
+                'label'   => 'Text Color',
+                'attr'    => 'text_color',
+                'type'    => 'select',
+                'value'     => 'u-bg-transparent',
+                'options'     => array(
+                    'u-text-white'   => esc_html__( 'White', 'abraham' ),
+                    'u-text-black'        => esc_html__( 'Black', 'abraham' ),
+                    'u-text-grey'        => esc_html__( 'Grey', 'abraham' ),
+                    'u-text-1'       => esc_html__( 'Primary color', 'abraham' ),
+                    'u-text-2'       => esc_html__( 'Secondary color', 'abraham' ),
+                    'u-text-1-dark'       => esc_html__( 'Primary Dark', 'abraham' ),
+                    'u-text-2-dark'       => esc_html__( 'Secondary Dark', 'abraham' ),
+                    'u-text-1-light'       => esc_html__( 'Primary Light', 'abraham' ),
+                    'u-text-2-light'       => esc_html__( 'Secondary Light', 'abraham' ),
+                ),
+            ),
+
+            array(
                 'label'       => esc_html__( 'Background Image', 'abraham' ),
                 'attr'        => 'bg_image',
                 'type'        => 'attachment',
@@ -79,6 +97,33 @@ shortcode_ui_register_for_shortcode(
                 'addButton'   => esc_html__( 'Select Image', 'abraham' ),
                 'frameTitle'  => esc_html__( 'Select Image', 'abraham' ),
             ),
+            array(
+                'label'       => esc_html__( 'Blur Image', 'abraham' ),
+                'attr'        => 'blur_image',
+                'type'        => 'attachment',
+                'libraryType' => array( 'image' ),
+                'addButton'   => esc_html__( 'Select Image', 'abraham' ),
+                'frameTitle'  => esc_html__( 'Select Image', 'abraham' ),
+            ),
+
+            array(
+                'label'   => 'Glass Color',
+                'attr'    => 'glass_color',
+                'type'    => 'select',
+                'value'     => 'u-bg-1-glass-dark',
+                'options'     => array(
+                    'u-bg-transparent-over'      => esc_html__( 'Transparent', 'abraham' ),
+                    'u-bg-1-glass-over'       => esc_html__( 'Glass 1', 'abraham' ),
+                    'u-bg-2-glass-over'       => esc_html__( 'Glass 2', 'abraham' ),
+                    'u-bg-1-glass-light-over' => esc_html__( 'Glass 1 light', 'abraham' ),
+                    'u-bg-2-glass-light-over' => esc_html__( 'Glass 2 light', 'abraham' ),
+                    'u-bg-1-glass-dark-over'  => esc_html__( 'Glass 1 dark', 'abraham' ),
+                    'u-bg-2-glass-dark-over'  => esc_html__( 'Glass 2 dark', 'abraham' ),
+                    'u-bg-frost-4'       => esc_html__( 'Frosted', 'abraham' ),
+                    'u-bg-tint-4'        => esc_html__( 'Tinted', 'abraham' ),
+                ),
+            ),
+
             array(
                 'label'  => esc_html__( 'Image Overlay', 'abraham' ),
                 'attr'   => 'overlay',
