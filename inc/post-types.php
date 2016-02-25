@@ -32,7 +32,7 @@ function doc_register_post_types() {
 			'admin_cols' => array(
 				'featured_image' => array(
 				    'title'          => 'Logo',
-				    'featured_image' => 'thumbnail',
+				    'featured_image' => 'abe-icon',
 				),
 				'school_system' => array(
 				    'taxonomy' => 'school_system',

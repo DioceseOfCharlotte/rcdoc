@@ -55,7 +55,7 @@ shortcode_ui_register_for_shortcode(
                 'value'     => 'u-bg-transparent',
                 'options'     => array(
                     'u-bg-transparent'      => esc_html__( 'Transparent', 'abraham' ),
-                    'u-bg-white u-text-black'   => esc_html__( 'White', 'abraham' ),
+                    'u-bg-white'   => esc_html__( 'White', 'abraham' ),
                     'u-bg-1'       => esc_html__( 'Primary color', 'abraham' ),
                     'u-bg-2'       => esc_html__( 'Secondary color', 'abraham' ),
                     'u-bg-1-glass'       => esc_html__( 'Glass 1', 'abraham' ),
@@ -75,7 +75,7 @@ shortcode_ui_register_for_shortcode(
                 'label'   => 'Text Color',
                 'attr'    => 'text_color',
                 'type'    => 'select',
-                'value'     => 'u-bg-transparent',
+                'value'     => 'u-text-black',
                 'options'     => array(
                     'u-text-white'   => esc_html__( 'White', 'abraham' ),
                     'u-text-black'        => esc_html__( 'Black', 'abraham' ),

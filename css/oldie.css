@@ -1236,11 +1236,19 @@ http://flickity.metafizzy.co
     width: 100%; }
 
 .has-image.section-row {
-  min-height: 33vh; }
+  min-height: 160px; }
+
+.blur-img {
+  border: 8px solid #36474f; }
 
 .section-row__content.blur-img {
   width: 50%;
-  border: 5px solid #36474f; }
+  border-color: #36474f;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: opacity; }
+  .section-row__content.blur-img:hover {
+    filter: alpha(opacity=10); }
 
 .u-bg-1-glass-over > * {
   position: relative; }

@@ -1,25 +1,24 @@
 .has-image.section-row {
-    min-height: 33vh;
+    min-height: 10rem;
 }
 
-.u-bg-1-glass,
-.u-bg-2-glass,
-.u-bg-1-glass-light,
-.u-bg-1-glass-dark,
-.u-bg-2-glass-light,
-.u-bg-2-glass-dark {
 
-    &.section-row {
-        // border-top: 5px solid #36474f;
-        // border-bottom: 5px solid #36474f;
-    }
+.blur-img {
+    border: 8px solid #36474f;
 }
-
 
 .section-row__content.blur-img {
     width: 50%;
-    border: 5px solid #36474f;
+    border-color: #36474f;
+    transition-duration: $transition-time;
+    transition-timing-function: $animation-curve-default;
+    transition-property: opacity;
+
+    &:hover {
+        opacity: .1;
+    }
 }
+
 
 .u-bg-1-glass-over {
 
@@ -33,7 +32,7 @@
         position: absolute;
         top: 0;
         width: 100%;
-    background-color: rgba($color1, 0.6);
+    background-color: rgba($color1, 0.8);
 }
 }
 
@@ -49,7 +48,7 @@
         position: absolute;
         top: 0;
         width: 100%;
-    background-color: rgba($color2, 0.6);
+    background-color: rgba($color2, 0.8);
 }
 }
 
@@ -65,7 +64,7 @@
         position: absolute;
         top: 0;
         width: 100%;
-    background-color: rgba($color3, 0.6);
+    background-color: rgba($color3, 0.8);
 }
 }
 
@@ -81,7 +80,7 @@
         position: absolute;
         top: 0;
         width: 100%;
-    background-color: rgba(lighten($color1, 10), 0.6);
+    background-color: rgba(lighten($color1, 10), 0.8);
 }
 }
 
@@ -97,7 +96,7 @@
         position: absolute;
         top: 0;
         width: 100%;
-    background-color: rgba(lighten($color2, 10), 0.6);
+    background-color: rgba(lighten($color2, 10), 0.8);
 }
 }
 
@@ -113,7 +112,7 @@
         position: absolute;
         top: 0;
         width: 100%;
-    background-color: rgba(lighten($color3, 10), 0.6);
+    background-color: rgba(lighten($color3, 10), 0.8);
 }
 }
 
@@ -129,7 +128,7 @@
         position: absolute;
         top: 0;
         width: 100%;
-    background-color: rgba(darken($color1, 10), 0.6);
+    background-color: rgba(darken($color1, 10), 0.8);
 }
 }
 
@@ -145,7 +144,7 @@
         position: absolute;
         top: 0;
         width: 100%;
-    background-color: rgba(darken($color2, 10), 0.6);
+    background-color: rgba(darken($color2, 10), 0.8);
 }
 }
 
@@ -161,6 +160,6 @@
         position: absolute;
         top: 0;
         width: 100%;
-    background-color: rgba(darken($color3, 10), 0.6);
+    background-color: rgba(darken($color3, 10), 0.8);
 }
 }

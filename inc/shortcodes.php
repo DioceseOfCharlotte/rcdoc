@@ -82,19 +82,9 @@ function meh_row_shortcode($attr, $content = null) {
         </div>
 
     <?php elseif ('cta' === $attr['row_type']) : ?>
-
-        <div class="section-row__content blur-img u-py3 u-py4-md u-abs u-top0 u-bottom0 u-bg-cover u-bg-fixed <?php echo esc_attr( $attr['glass_color'] ); ?>" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'blur_image' ] ) ); ?>)">
-
-            <?php if ($attr['btn_text']) : ?>
-<?php while ($query->have_posts()) : $query->the_post(); ?>
-            <a href="<?php the_permalink(); ?>" class="btn btn-big btn-hollow u-bg-white">
-                <?php echo wp_kses_post( $attr[ 'btn_text' ] ); ?>
-            </a>
-<?php endwhile; ?>
-            <?php endif; ?>
-
-        </div>
-
+<div class="section-row__content <?php echo $direction; ?> o-grid <?php echo esc_attr( $attr['text_color'] ); ?>">
+<?php include locate_template('/components/row-callout.php'); ?>
+</div>
     <?php elseif ('cards' === $attr['row_type']) : ?>
 
         <div class="section-row__content o-grid u-max-width">

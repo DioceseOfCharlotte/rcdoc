@@ -67,7 +67,10 @@ function updateRowTypeListener(changed, collection, shortcode) {
 		bgImage.$el.show();
 		blurImage.$el.show();
 		glassColor.$el.show();
+		rowDirection.$el.show();
 		slideTypes.$el.hide();
+		rowIcon.$el.hide();
+		feedURL.$el.hide();
 	} else {
 		feedURL.$el.hide();
 		rowDirection.$el.hide();
