@@ -82,7 +82,7 @@ function meh_row_shortcode($attr, $content = null) {
         </div>
 
     <?php elseif ('cta' === $attr['row_type']) : ?>
-<div class="section-row__content <?php echo $direction; ?> o-grid <?php echo esc_attr( $attr['text_color'] ); ?>">
+<div class="section-row__content <?php echo $direction; ?> o-grid u-max-width <?php echo esc_attr( $attr['text_color'] ); ?>">
 <?php include locate_template('/components/row-callout.php'); ?>
 </div>
     <?php elseif ('cards' === $attr['row_type']) : ?>

@@ -13,6 +13,7 @@
 <?php if ($attr['btn_text']) : ?>
 <a href="<?php the_permalink(); ?>" class="btn btn-big btn-hollow u-bg-white">
     <?php echo wp_kses_post( $attr[ 'btn_text' ] ); ?>
+    <?php abe_do_svg( 'arrowRight', 'xs' ); ?>
 </a>
 <?php endif; ?>
 <?php endwhile; ?>
