@@ -16,7 +16,7 @@
 
     <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-      <a href="#tab<?php the_ID(); ?>" class="mdl-tabs__tab"><?php the_title(); ?></a>
+      <a href="#tab<?php the_ID(); ?>" class="mdl-tabs__tab u-f-plus"><?php the_title(); ?></a>
     <?php endwhile; ?>
 
         <?php $query->rewind_posts(); ?>
@@ -25,7 +25,7 @@
 
   <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-  <div class="mdl-tabs__panel u-p2 tab<?php the_ID(); ?>" id="tab<?php the_ID(); ?>">
+  <div class="mdl-tabs__panel u-p2 u-f-plus tab<?php the_ID(); ?>" id="tab<?php the_ID(); ?>">
     <?php the_content(); ?>
   </div>
 
