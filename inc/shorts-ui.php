@@ -159,7 +159,7 @@ shortcode_ui_register_for_shortcode(
                 'label'    => 'Select Pages to Display',
                 'attr'     => 'page',
                 'type'     => 'post_select',
-                'query'    => array('post_type' => array( 'page', 'cpt_archive', 'department', 'vocation', 'development' )),
+                'query'    => array('post_type' => array( 'page', 'cpt_archive', 'department', 'archive_post', 'bishop', 'chancery', 'deacon', 'development', 'education', 'finance', 'human_resources', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'tribunal', 'vocation' )),
                 'multiple' => true,
            ),
            array(

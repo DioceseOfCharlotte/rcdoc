@@ -2,6 +2,10 @@
     min-height: 10rem;
 }
 
+.card-wrap.o-cell > .entry {
+    width: 100%;
+    max-width: 100%;
+}
 
 .blur-img {
     border: 8px solid #36474f;

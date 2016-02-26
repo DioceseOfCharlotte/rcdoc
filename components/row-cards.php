@@ -2,26 +2,17 @@
 /**
  * This is the template for the different block-type shortcodes.
  */
- while ($query->have_posts()) : $query->the_post();
+ while ($query->have_posts()) : $query->the_post(); ?>
+<div class="card-wrap u-fit o-cell u-bg-white u-mb3 u-br u-flex">
+<?php
+$posted_format = get_post_format() ? get_post_format() : 'content';
+
+tha_entry_before();
+
+get_template_part( "content/{$posted_format}" );
+
+tha_entry_after();
 ?>
-
-<div id="post-<?php the_ID(); ?>" class="o-cell card u-shadow--2dp u-text-gray">
-        <?php
-            get_the_image(array(
-                'size' => 'abraham-lg',
-                'image_class' => 'card-img-top',
-                'link_to_post' => false,
-            ));
-        ?>
-    <div class="card-block">
-        <h3 class="card-title u-text-black">
-            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-        </h3>
-
-        <?php the_excerpt(); ?>
-    </div>
-
-
 </div>
 <?php
 endwhile;
