@@ -3,7 +3,7 @@
  * This is the template for the different block-type shortcodes.
  */
  while ($query->have_posts()) : $query->the_post(); ?>
-<div class="card-wrap u-fit o-cell u-bg-white u-mb3 u-br u-flex">
+<div class="card-wrap u-fit o-cell u-bg-white u-flexed-start u-br">
 <?php
 $posted_format = get_post_format() ? get_post_format() : 'content';
 

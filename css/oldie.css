@@ -1230,10 +1230,6 @@ http://flickity.metafizzy.co
   .archive .format-image .entry-title {
     margin: 0;
     font-size: 32px; }
-  .archive .format-image a {
-    padding: 16px 0;
-    display: inline-block;
-    width: 100%; }
 
 .has-image.section-row {
   min-height: 160px; }
