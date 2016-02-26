@@ -15,12 +15,12 @@ $map_link = "http://maps.google.com/maps?z=16&q=" . $address;
 
 ?>
 
-<div class="contact-info u-inline-block u-1of1 u-2of3-md u-align-middle u-p1 u-h6">
+<div class="contact-info u-inline-block u-2of3 u-align-middle u-p1 u-h6">
 <?php
 
 ob_start();
 ?>
-<div class="contact-numbers u-1of1 u-p1 u-mb1 u-flex u-flex-justify-between">
+<div class="contact-numbers u-1of1 u-p1 u-mb1 u-flex u-flex-wrap u-flex-justify-between">
 
     <div class="phone contact-numbers__item u-1of2-md u-inline-block u-spacer16">
 <?php if( get_field('doc_phone_number') ): ?>

@@ -1238,6 +1238,10 @@ http://flickity.metafizzy.co
 .has-image.section-row {
   min-height: 160px; }
 
+.card-wrap.o-cell > .entry {
+  width: 100%;
+  max-width: 100%; }
+
 .blur-img {
   border: 8px solid #36474f; }
 

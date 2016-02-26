@@ -1350,10 +1350,6 @@ body:not(.home) .site-branding {
   .archive .format-image .entry-title {
     margin: 0;
     font-size: 2rem; }
-  .archive .format-image a {
-    padding: 1rem 0;
-    display: inline-block;
-    width: 100%; }
 
 .has-image.section-row {
   min-height: 10rem; }
