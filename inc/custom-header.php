@@ -56,7 +56,7 @@ if ( display_header_text() ) {
 
 global $cptarchives;
 if (has_post_thumbnail($cptarchives->get_archive_id())) {
-	$bg_image = wp_get_attachment_url( get_post_thumbnail_id($cptarchives->get_archive_id()), 'abraham-full' );
+	$bg_image = wp_get_attachment_url( get_post_thumbnail_id($cptarchives->get_archive_id()), 'abraham-hd' );
 $url = $thumb['0'];
 } elseif (has_post_thumbnail()) {
 	$bg_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'abe-hd' );
