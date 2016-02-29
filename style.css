@@ -1358,6 +1358,9 @@ body:not(.home) .site-branding {
   width: 100%;
   max-width: 100%; }
 
+.card-wrap > .entry {
+  background-color: white; }
+
 .blur-img {
   border: 8px solid #36474f; }
 
