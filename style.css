@@ -1351,6 +1351,11 @@ body:not(.home) .site-branding {
     margin: 0;
     font-size: 2rem; }
 
+.format-link {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center; }
+
 .has-image.section-row {
   min-height: 10rem; }
 
