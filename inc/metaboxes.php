@@ -5,7 +5,75 @@ add_action( 'cmb2_admin_init', 'doc_register_stats_upload' );
 //add_action( 'cmb2_admin_init', 'doc_register_time_schedule_metabox' );
 
 
+add_action( 'cmb2_admin_init', 'yourprefix_register_demo_metabox' );
+/**
+ * Hook in and add a demo metabox. Can only happen on the 'cmb2_admin_init' or 'cmb2_init' hook.
+ */
+function yourprefix_register_demo_metabox() {
+	$prefix = 'doc_alias_';
 
+	$doc_alias = new_cmb2_box( array(
+		'id'            => $prefix . 'metabox',
+		'title'         => __( 'Test Metabox', 'cmb2' ),
+		'object_types'  => array( 'cpt_archive', ), // Post type
+		'show_on_cb' => 'abe_top_level_posts_only', // function should return a bool value
+		// 'context'    => 'normal',
+		// 'priority'   => 'high',
+		// 'show_names' => true, // Show field names on the left
+		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		// 'closed'     => true, // true to keep the metabox closed by default
+	) );
+
+
+	$doc_alias->add_field( array(
+		'name'             => __( 'Test Select', 'cmb2' ),
+		'desc'             => __( 'field description (optional)', 'cmb2' ),
+		'id'               => $prefix . 'select',
+		'type'             => 'select',
+		'show_option_none' => true,
+		'options_cb' => 'cmb2_get_your_post_type_post_options',
+	) );
+}
+
+
+function cmb2_get_post_options( $query_args ) {
+
+	$args = wp_parse_args( $query_args, array(
+        'post_type'   => 'post',
+        'numberposts' => 10,
+    ) );
+
+    $posts = get_posts( $args );
+
+    $post_options = array();
+    if ( $posts ) {
+        foreach ( $posts as $post ) {
+          $post_options[ $post->ID ] = $post->post_title;
+        }
+    }
+
+    return $post_options;
+}
+
+/**
+ * Gets 5 posts for your_post_type and displays them as options
+ * @return array An array of options that matches the CMB2 options array
+ */
+function cmb2_get_your_post_type_post_options() {
+    return cmb2_get_post_options( array( 'post_type' => 'department', 'numberposts' => 200 ) );
+}
+
+/**
+ * Exclude metabox on non top level posts
+ * @author Travis Northcutt
+ * @param  object $cmb CMB2 object
+ * @return bool        True/false whether to show the metabox
+ */
+function abe_top_level_posts_only( $cmb ) {
+	$has_parent = $cmb->object_id() && get_post_ancestors( $cmb->object_id() );
+	if (current_user_can( manage_options ))
+	return ! $has_parent;
+}
 
 
 // function doc_attached_posts_field() {

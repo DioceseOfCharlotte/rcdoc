@@ -13,6 +13,8 @@ add_action( 'tha_content_bottom', 'doc_dept_child_posts' );
 add_action( 'tha_content_before', 'doc_archive_desc' );
 
 add_action( 'tha_entry_bottom', 'doc_view_staff' );
+//add_action( 'tha_content_bottom', 'doc_alias_view_staff' );
+
 function doc_view_staff() {
 	if ( is_front_page() || ! is_singular() || 'department' !== get_post_type() ) {
         return;
@@ -21,6 +23,14 @@ function doc_view_staff() {
 	echo do_shortcode( '[gravityview id="10028" search_field="21" search_value="' . $id .'"]' );
 }
 
+// function doc_alias_view_staff() {
+// 	global $cptarchives;
+// 	if ( $GLOBALS['cptarchives'] ) {
+// 		$id = $cptarchives->get_archive_meta( 'doc_alias_select', true );
+// 		echo do_shortcode( '[gravityview id="10028" search_field="21" search_value="' . $id .'"]' );
+// 	}
+//
+// }
 
 function doc_dept_child_posts() {
 
