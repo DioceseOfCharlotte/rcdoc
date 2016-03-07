@@ -18,7 +18,7 @@ function doc_view_staff() {
         return;
     }
 	$id = get_the_ID();
-	echo do_shortcode( '[gravityview id="9778" search_field="20" search_value="' . $id .'"]' );
+	echo do_shortcode( '[gravityview id="10028" search_field="20" search_value="' . $id .'"]' );
 }
 
 
