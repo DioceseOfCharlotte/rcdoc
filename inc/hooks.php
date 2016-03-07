@@ -12,6 +12,15 @@ add_action( 'tha_footer_after', 'doc_content_mask' );
 add_action( 'tha_content_bottom', 'doc_dept_child_posts' );
 add_action( 'tha_content_before', 'doc_archive_desc' );
 
+add_action( 'tha_entry_bottom', 'doc_view_staff' );
+function doc_view_staff() {
+	if ( is_front_page() || ! is_singular() || 'department' !== get_post_type() ) {
+        return;
+    }
+	$id = get_the_ID();
+	echo do_shortcode( '[gravityview id="9778" search_field="20" search_value="' . $id .'"]' );
+}
+
 
 function doc_dept_child_posts() {
 
