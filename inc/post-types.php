@@ -597,6 +597,47 @@ function doc_register_post_types() {
 		)
 	);
 
+	register_extended_post_type( 'macs',
+		array(
+			'admin_cols' => array(
+				'featured_image' => array(
+					'title'          => 'Image',
+					'featured_image' => 'abe-icon',
+				),
+			),
+			'menu_icon'           => 'dashicons-awards',
+			'supports'            => $doc_post_supports,
+			'capability_type'     => 'macs',
+			'map_meta_cap'        => true,
+			'capabilities'        => array(
+				# meta caps (don't assign these to roles)
+				'edit_post'              => 'edit_macs',
+				'read_post'              => 'read_macs',
+				'delete_post'            => 'delete_macs',
+				# primitive/meta caps
+				'create_posts'           => 'create_macs_posts',
+				# primitive caps used outside of map_meta_cap()
+				'edit_posts'             => 'edit_macs_posts',
+				'edit_others_posts'      => 'manage_macs_posts',
+				'publish_posts'          => 'manage_macs_posts',
+				'read_private_posts'     => 'read',
+				# primitive caps used inside of map_meta_cap()
+				'read'                   => 'read',
+				'delete_posts'           => 'manage_macs_posts',
+				'delete_private_posts'   => 'manage_macs_posts',
+				'delete_published_posts' => 'manage_macs_posts',
+				'delete_others_posts'    => 'manage_macs_posts',
+				'edit_private_posts'     => 'edit_macs_posts',
+				'edit_published_posts'   => 'edit_macs_posts',
+			),
+		),
+		array(
+			'singular' => 'MACS post',
+			'plural'   => 'MACS',
+			'slug'     => 'macs',
+		)
+	);
+
 	register_extended_post_type( 'multicultural',
 		array(
 			'admin_cols' => array(
@@ -857,6 +898,7 @@ function doc_register_post_types() {
 		$role->add_cap( 'create_hr_posts' );
 		$role->add_cap( 'create_it_posts' );
 		$role->add_cap( 'create_liturgy_posts' );
+		$role->add_cap( 'create_macs_posts' );
 		$role->add_cap( 'create_multicultural_posts' );
 		$role->add_cap( 'create_planning_posts' );
 		$role->add_cap( 'create_properties_posts' );
@@ -879,6 +921,7 @@ function doc_register_post_types() {
 		$role->add_cap( 'manage_hr_posts' );
 		$role->add_cap( 'manage_it_posts' );
 		$role->add_cap( 'manage_liturgy_posts' );
+		$role->add_cap( 'manage_macs_posts' );
 		$role->add_cap( 'manage_multicultural_posts' );
 		$role->add_cap( 'manage_planning_posts' );
 		$role->add_cap( 'manage_properties_posts' );
@@ -901,6 +944,7 @@ function doc_register_post_types() {
 		$role->add_cap( 'edit_hr_posts' );
 		$role->add_cap( 'edit_it_posts' );
 		$role->add_cap( 'edit_liturgy_posts' );
+		$role->add_cap( 'edit_macs_posts' );
 		$role->add_cap( 'edit_multicultural_posts' );
 		$role->add_cap( 'edit_planning_posts' );
 		$role->add_cap( 'edit_properties_posts' );
