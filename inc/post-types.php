@@ -235,11 +235,6 @@ function doc_register_post_types() {
 					'title'          => 'Image',
 					'featured_image' => 'abe-icon',
 				),
-				'doc_show_content' => array(
-				    'title'    => 'Content',
-				    'meta_key' => 'doc_show_content',
-					'sortable' => false,
-				),
 			),
 			'menu_icon'           => 'dashicons-shield-alt',
 			'supports'            => $doc_post_supports,

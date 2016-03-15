@@ -12,11 +12,11 @@
     <header <?php hybrid_attr('entry-header'); ?>>
         <?php
             get_the_image(array(
-                'size'         => 'abe-card',
-                'image_class'  => 'o-crop__content',
+                'size'         => 'abe-hd',
+                //'image_class'  => 'o-crop__content',
                 'link_to_post' => false,
-                'before'       => '<div class="o-crop o-crop--16x9">',
-                'after'        => '</div>',
+                //'before'       => '<div class="o-crop o-crop--16x9">',
+                //'after'        => '</div>',
             ));
         ?>
         <h3 class="card-title u-text-center u-m0">
