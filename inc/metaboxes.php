@@ -69,11 +69,11 @@ add_action( 'cmb2_admin_init', 'doc_register_stats_upload' );
  * @param  object $cmb CMB2 object
  * @return bool        True/false whether to show the metabox
  */
-function abe_top_level_posts_only( $cmb ) {
-	$has_parent = $cmb->object_id() && get_post_ancestors( $cmb->object_id() );
-	if (current_user_can( manage_options ))
-	return ! $has_parent;
-}
+// function abe_top_level_posts_only( $cmb ) {
+// 	$has_parent = $cmb->object_id() && get_post_ancestors( $cmb->object_id() );
+// 	if (current_user_can( manage_options ))
+// 	return ! $has_parent;
+// }
 
 
 // function doc_attached_posts_field() {
