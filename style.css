@@ -1342,14 +1342,18 @@ body:not(.home) .site-branding {
   -webkit-align-self: flex-start;
       -ms-flex-item-align: start;
           align-self: flex-start; }
-  .archive .format-image .entry-header {
-    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.4) 25%, rgba(0, 0, 0, 0.6));
-    text-align: center;
-    border-radius: 0 0 2px 2px;
-    padding-top: .5rem; }
-  .archive .format-image .entry-title {
-    margin: 0;
-    font-size: 2rem; }
+
+.format-image:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  background: linear-gradient(to bottom, transparent 50%, #212c31 100%); }
 
 .format-link {
   -webkit-align-self: center;

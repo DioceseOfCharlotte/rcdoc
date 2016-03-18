@@ -57,10 +57,10 @@ if ( display_header_text() ) {
 global $cptarchives;
 if (has_post_thumbnail($cptarchives->get_archive_id())) {
 	$bg_image = wp_get_attachment_url( get_post_thumbnail_id($cptarchives->get_archive_id()), 'abe-hd' );
-$url = $thumb['0'];
+//$url = $bg_image['0'];
 } elseif (has_post_thumbnail()) {
 	$bg_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'abe-hd' );
-$url = $thumb['0'];
+//$url = $bg_image['0'];
 } elseif (get_header_image()) {
 	$bg_image = get_header_image();
  }

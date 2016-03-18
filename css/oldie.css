@@ -1222,14 +1222,18 @@ http://flickity.metafizzy.co
 
 .archive .format-image {
   align-self: flex-start; }
-  .archive .format-image .entry-header {
-    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.4) 25%, rgba(0, 0, 0, 0.6));
-    text-align: center;
-    border-radius: 0 0 2px 2px;
-    padding-top: 8px; }
-  .archive .format-image .entry-title {
-    margin: 0;
-    font-size: 32px; }
+
+.format-image:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  background: linear-gradient(to bottom, transparent 50%, #0d1012 100%); }
 
 .format-link {
   align-self: center; }
