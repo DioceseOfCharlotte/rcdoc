@@ -80,7 +80,7 @@ function doc_register_post_types() {
 				),
 			),
 			'menu_icon'           => 'dashicons-book-alt',
-			'supports' 			        => $doc_page_supports,
+			'supports' 			  => $doc_page_supports,
 			'capability_type'     => 'parish',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
@@ -851,11 +851,11 @@ function doc_register_post_types() {
 				),
 			),
 			'enter_title_here'     => 'Enter report title here',
-			'menu_icon'           => 'dashicons-chart-pie',
-			'supports'            => array( 'title', 'author', 'archive' ),
-			'capability_type'     => 'statistics_report',
-			'map_meta_cap'        => true,
-			'capabilities'        => array(
+			'menu_icon'            => 'dashicons-chart-pie',
+			'supports'             => array( 'title', 'author', 'archive' ),
+			'capability_type'      => 'statistics_report',
+			'map_meta_cap'         => true,
+			'capabilities'         => array(
 				# meta caps (don't assign these to roles)
 				'edit_post'              => 'edit_statistics_report',
 				'read_post'              => 'read_statistics_report',

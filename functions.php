@@ -50,6 +50,7 @@ add_theme_support( 'cleaner-gallery' );
     add_filter( 'theme_mod_secondary_color', 'rcdoc_secondary_color' );
     add_filter( 'abe_add_hierarchy_cpts', 'rcdoc_hierarchy_cpts' );
     add_filter( 'abe_add_non_hierarchy_cpts', 'rcdoc_non_hierarchy_cpts' );
+	add_filter( 'arch_add_post_types', 'rcdoc_non_hierarchy_cpts' );
 }
 
 /**
