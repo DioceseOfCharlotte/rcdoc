@@ -20,7 +20,7 @@
             ));
         ?>
         <h3 class="card-title u-text-center u-m0">
-            <a class="btn btn-hollow u-border0 u-1of1 u-bold" href="<?php the_permalink(); ?>">HHHEEEY<?php the_title(); ?></a>
+            <a class="btn btn-hollow u-border0 u-1of1 u-bold" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         </h2>
     </header>
 
