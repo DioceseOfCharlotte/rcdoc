@@ -15,12 +15,12 @@ $map_link = "http://maps.google.com/maps?z=16&q=" . $address;
 
 ?>
 
-<div class="contact-info u-inline-block u-1of1 u-2of3-md u-align-middle u-p1 u-h6">
+<div class="contact-info u-inline-block u-2of3 u-align-middle u-p1 u-h6">
 <?php
 
 ob_start();
 ?>
-<div class="contact-numbers u-1of1 u-p1 u-mb1 u-flex u-flex-justify-between">
+<div class="contact-numbers u-1of1 u-p1 u-mb1 u-flex u-flex-wrap u-flex-justify-between">
 
     <div class="phone contact-numbers__item u-1of2-md u-inline-block u-spacer16">
 <?php if( get_field('doc_phone_number') ): ?>
@@ -66,10 +66,5 @@ ob_start(); ?>
     <a class="contact-link u-p1" itemprop="email" href="mailto:<?php the_field('doc_email'); ?>"><i class="material-icons u-mr1">&#xE0BE;</i><?php the_field('doc_email'); ?></a>
 <?php endif; ?>
 </div>
-
-
-<?php if( get_field('doc_website') ): ?>
-    <a class="contact-link u-abs u-top0 u-bg-2-light u-right0 mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect u-mtn1 u-mrn1" itemprop="url" href="<?php the_field('doc_website'); ?>" target="_blank"><i class="material-icons">&#xE89E;</i></a>
-<?php endif; ?>
 
 </div>

@@ -12,6 +12,25 @@ add_action( 'tha_footer_after', 'doc_content_mask' );
 add_action( 'tha_content_bottom', 'doc_dept_child_posts' );
 add_action( 'tha_content_before', 'doc_archive_desc' );
 
+add_action( 'tha_entry_bottom', 'doc_view_staff' );
+//add_action( 'tha_content_bottom', 'doc_alias_view_staff' );
+
+function doc_view_staff() {
+	if ( is_front_page() || ! is_singular() || 'department' !== get_post_type() ) {
+        return;
+    }
+	$id = get_the_ID();
+	echo do_shortcode( '[gravityview id="10028" search_field="21" search_value="' . $id .'"]' );
+}
+
+// function doc_alias_view_staff() {
+// 	global $cptarchives;
+// 	if ( $GLOBALS['cptarchives'] ) {
+// 		$id = $cptarchives->get_archive_meta( 'doc_alias_select', true );
+// 		echo do_shortcode( '[gravityview id="10028" search_field="21" search_value="' . $id .'"]' );
+// 	}
+//
+// }
 
 function doc_dept_child_posts() {
 
@@ -90,7 +109,7 @@ function headspace() {
     // if ( ! is_front_page() )
     //     return;
 
-    echo '<div id="head-space" class="head-space u-bg-1-glass-dark"></div><div class="menu-space u-bg-1-glass-dark"></div>';
+    echo '<div id="head-space" class="head-space u-bg-1-glass-dark u-text-1-dark"></div>';
 }
 
 function doc_primary_menu() {

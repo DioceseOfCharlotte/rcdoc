@@ -95,10 +95,10 @@ $directory_posts = array('school','parish','department');
         $attr['class']   .= " u-1of2-md";
     endif;
     if (has_post_format( 'aside' ) && ! is_search()) :
-        $attr['class']   .= " u-bg-1-glass";
+        $attr['class']   .= " u-bg-1-light u-f-plus";
     endif;
     if (has_post_format( 'quote' )) :
-        $attr['class']   .= " u-bg-2-glass";
+        $attr['class']   .= " u-bg-2-light u-shadow--8dp";
     endif;
 return $attr;
 }
@@ -108,7 +108,7 @@ function cpt_header($attr) {
 $directory_posts = array('school','parish','department');
 
     if (is_post_type_archive( $directory_posts )) :
-        $attr['class']   .= " u-flex-row u-flex-nowrap";
+        $attr['class']   .= " u-bg-1-dark u-flex u-flex-row u-flex-nowrap u-flex-justify-between";
     endif;
 return $attr;
 }

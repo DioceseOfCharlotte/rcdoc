@@ -51,38 +51,20 @@ var SOURCESJS = [
 	// ** MDL ** //
 	// Component handler
 	'src/mdl/mdlComponentHandler.js',
-	// Polyfills/dependencies
-	// 'src/mdl/third_party/**/*.js',
-	// Base components
-	'src/mdl/button/button.js',
-	// 'src/checkbox/checkbox.js',
-	// 'src/mdl/icon-toggle/icon-toggle.js',
 	'src/mdl/menu/menu.js',
-	// 'src/progress/progress.js',
-	// 'src/radio/radio.js',
-	// 'src/slider/slider.js',
-	// 'src/mdl/snackbar/snackbar.js',
-	// 'src/spinner/spinner.js',
-	// 'src/mdl/switch/switch.js',
 	'src/mdl/tabs/tabs.js',
-	// 'src/mdl/textfield/textfield.js',
-	// 'src/mdl/tooltip/tooltip.js',
-	// Complex components (which reuse base components)
-	// 'src/mdl/layout/layout.js',
-	// 'src/data-table/data-table.js',
-	'src/mdl/ripple/ripple.js',
+	//'src/mdl/ripple/ripple.js',
 
-	// 'src/js/bliss.js',
 	// ** GSAP ** //
 	// 'src/scripts/vendors/TweenMax.js',
 	// 'src/js/MorphSVGPlugin.js',
 	// 'src/js/DrawSVGPlugin.js',
 	// ** ScrollMagic ** //
-	// 'src/js/ScrollMagic.js',
 	// 'src/js/animation.gsap.js',
+
 	// ** Flickity ** //
 	'src/scripts/vendors/flickity.pkgd.js',
-	'src/scripts/vendors/headroom.js',
+	'src/scripts/vendors/steer.js',
 	// ** Mine ** //
 	'src/scripts/myjs/Dropdown.js',
 	// 'src/js/myjs/Morph.js',

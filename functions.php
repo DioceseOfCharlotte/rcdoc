@@ -8,11 +8,10 @@
 /**
  * Load required theme files.
  */
-require get_stylesheet_directory() . '/inc/html-classes.php';
+//require get_stylesheet_directory() . '/inc/html-classes.php';
 //require get_stylesheet_directory() . '/inc/ext/tgmpa.php';
 require get_stylesheet_directory() . '/inc/post-types.php';
 require get_stylesheet_directory() . '/inc/tax.php';
-require get_stylesheet_directory() . '/inc/taxonomies.php';
 require get_stylesheet_directory() . '/inc/compatibility.php';
 require get_stylesheet_directory() . '/inc/hooks.php';
 require get_stylesheet_directory() . '/inc/ext/cpt-archive.php';
@@ -22,7 +21,7 @@ require get_stylesheet_directory() . '/inc/ext/gravity.php';
 require get_stylesheet_directory() . '/inc/ext/facetwp.php';
 require get_stylesheet_directory() . '/inc/shortcodes.php';
 require get_stylesheet_directory() . '/inc/shorts-ui.php';
-require get_stylesheet_directory() . '/inc/metaboxes.php';
+//require get_stylesheet_directory() . '/inc/metaboxes.php';
 
 add_action( 'after_setup_theme', 'rcdoc_setup' );
 add_action( 'wp_enqueue_scripts', 'rcdoc_scripts' );
@@ -51,26 +50,27 @@ add_theme_support( 'cleaner-gallery' );
     add_filter( 'theme_mod_secondary_color', 'rcdoc_secondary_color' );
     add_filter( 'abe_add_hierarchy_cpts', 'rcdoc_hierarchy_cpts' );
     add_filter( 'abe_add_non_hierarchy_cpts', 'rcdoc_non_hierarchy_cpts' );
+	add_filter( 'arch_add_post_types', 'rcdoc_non_hierarchy_cpts' );
 }
 
 /**
  * Theme Colors.
  */
 function rcdoc_primary_color($hex) {
-    return $hex ? $hex : '3581ce';
+    return $hex ? $hex : '2980b9';
 }
 function rcdoc_secondary_color($hex) {
-    return $hex ? $hex : '3BC391';
+    return $hex ? $hex : '16a085';
 }
 
 /**
  * Post Groups.
  */
-function rcdoc_non_hierarchy_cpts($cpts) {
-	$cpts = array( 'post', 'archive_post','bishop', 'chancery', 'deacon', 'development', 'education', 'finance', 'human_resources', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'tribunal', 'vocation' );
+function rcdoc_non_hierarchy_cpts() {
+	$cpts = array( 'arch','archive_post','bishop', 'chancery', 'deacon', 'development', 'education', 'finance', 'human_resources', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'tribunal', 'vocation' );
     return $cpts;
 }
-function rcdoc_hierarchy_cpts($cpts) {
+function rcdoc_hierarchy_cpts() {
 	$cpts = array(
         'page',
         'cpt_archive',
@@ -114,9 +114,9 @@ function abraham_widgets() {
     register_sidebar(array(
         'id'            => 'primary',
         'name'          => __( 'Primary', 'abraham' ),
-        'before_title'  => '<div class="mdl-card__title u-mtn2 u-mxn2"><h2 class="mdl-card__title-text widget-title">',
+        'before_title'  => '<div class="u-mtn2 u-mxn2"><h2 class="widget-title">',
         'after_title'   => '</h2></div>',
-        'before_widget' => '<section class="widget mdl-card o-cell mdl-shadow--2dp u-p2 u-list-reset">',
+        'before_widget' => '<section class="widget o-cell u-shadow--2dp u-p2 u-list-reset">',
         'after_widget'  => '</section>',
     ));
     register_sidebar(array(
@@ -138,7 +138,7 @@ function abraham_widgets() {
     register_sidebar(array(
         'id'            => 'drawer',
         'name'          => __( 'Drawer Widgets', 'abraham' ),
-        'before_title'  => '<h3 class="mdl-card__title-text widget-title">',
+        'before_title'  => '<h3 class="widget-title">',
         'after_title'   => '</h3>',
         'before_widget' => '<section class="widget u-p2 u-list-reset %2$s">',
         'after_widget'  => '</section>',

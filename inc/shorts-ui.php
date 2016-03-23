@@ -32,6 +32,7 @@ shortcode_ui_register_for_shortcode(
                     'tabs'    => esc_html__( 'Tabs', 'abraham' ),
                     'links'   => esc_html__( 'Page Links', 'abraham' ),
                     'feed'   => esc_html__( 'RSS Feed', 'abraham' ),
+                    'cta'  => esc_html__( 'Call to Action', 'abraham' ),
                     'slides'  => esc_html__( 'Slides', 'abraham' ),
                     'tiles'  => esc_html__( 'Tiles', 'abraham' ),
                 ),
@@ -54,7 +55,7 @@ shortcode_ui_register_for_shortcode(
                 'value'     => 'u-bg-transparent',
                 'options'     => array(
                     'u-bg-transparent'      => esc_html__( 'Transparent', 'abraham' ),
-                    'u-bg-white u-text-black'   => esc_html__( 'White', 'abraham' ),
+                    'u-bg-white'   => esc_html__( 'White', 'abraham' ),
                     'u-bg-1'       => esc_html__( 'Primary color', 'abraham' ),
                     'u-bg-2'       => esc_html__( 'Secondary color', 'abraham' ),
                     'u-bg-1-glass'       => esc_html__( 'Glass 1', 'abraham' ),
@@ -71,6 +72,24 @@ shortcode_ui_register_for_shortcode(
             ),
 
             array(
+                'label'   => 'Text Color',
+                'attr'    => 'text_color',
+                'type'    => 'select',
+                'value'     => 'u-text-black',
+                'options'     => array(
+                    'u-text-white'   => esc_html__( 'White', 'abraham' ),
+                    'u-text-black'        => esc_html__( 'Black', 'abraham' ),
+                    'u-text-grey'        => esc_html__( 'Grey', 'abraham' ),
+                    'u-text-1'       => esc_html__( 'Primary color', 'abraham' ),
+                    'u-text-2'       => esc_html__( 'Secondary color', 'abraham' ),
+                    'u-text-1-dark'       => esc_html__( 'Primary Dark', 'abraham' ),
+                    'u-text-2-dark'       => esc_html__( 'Secondary Dark', 'abraham' ),
+                    'u-text-1-light'       => esc_html__( 'Primary Light', 'abraham' ),
+                    'u-text-2-light'       => esc_html__( 'Secondary Light', 'abraham' ),
+                ),
+            ),
+
+            array(
                 'label'       => esc_html__( 'Background Image', 'abraham' ),
                 'attr'        => 'bg_image',
                 'type'        => 'attachment',
@@ -78,7 +97,44 @@ shortcode_ui_register_for_shortcode(
                 'addButton'   => esc_html__( 'Select Image', 'abraham' ),
                 'frameTitle'  => esc_html__( 'Select Image', 'abraham' ),
             ),
+            array(
+                'label'       => esc_html__( 'Blur Image', 'abraham' ),
+                'attr'        => 'blur_image',
+                'type'        => 'attachment',
+                'libraryType' => array( 'image' ),
+                'addButton'   => esc_html__( 'Select Image', 'abraham' ),
+                'frameTitle'  => esc_html__( 'Select Image', 'abraham' ),
+            ),
 
+            array(
+                'label'   => 'Glass Color',
+                'attr'    => 'glass_color',
+                'type'    => 'select',
+                'value'     => 'u-bg-1-glass-dark',
+                'options'     => array(
+                    'u-bg-transparent-over'      => esc_html__( 'Transparent', 'abraham' ),
+                    'u-bg-1-glass-over'       => esc_html__( 'Glass 1', 'abraham' ),
+                    'u-bg-2-glass-over'       => esc_html__( 'Glass 2', 'abraham' ),
+                    'u-bg-1-glass-light-over' => esc_html__( 'Glass 1 light', 'abraham' ),
+                    'u-bg-2-glass-light-over' => esc_html__( 'Glass 2 light', 'abraham' ),
+                    'u-bg-1-glass-dark-over'  => esc_html__( 'Glass 1 dark', 'abraham' ),
+                    'u-bg-2-glass-dark-over'  => esc_html__( 'Glass 2 dark', 'abraham' ),
+                    'u-bg-frost-4'       => esc_html__( 'Frosted', 'abraham' ),
+                    'u-bg-tint-4'        => esc_html__( 'Tinted', 'abraham' ),
+                ),
+            ),
+
+            array(
+                'label'  => esc_html__( 'Image Overlay', 'abraham' ),
+                'attr'   => 'overlay',
+                'type'   => 'select',
+                'value'     => 'u-bg-transparent',
+                'options'     => array(
+                    'no-overlay'      => esc_html__( 'None', 'abraham' ),
+                    'u-tinted-image'   => esc_html__( 'Tinted', 'abraham' ),
+                    'u-frosted-image'  => esc_html__( 'Frosted', 'abraham' ),
+                ),
+            ),
             array(
                 'label'  => esc_html__( 'Intro Text', 'abraham' ),
                 'attr'   => 'row_intro',
@@ -100,21 +156,21 @@ shortcode_ui_register_for_shortcode(
                 ),
             ),
             array(
-                'label'       => 'Gallery',
-                'attr'        => 'gallery',
-                'description' => esc_html__( 'Select multiple images.' ),
-                'type'        => 'attachment',
-                'libraryType' => array( 'image' ),
-                'multiple'    => true,
-                'addButton'   => 'Select Images',
-                'frameTitle'  => 'Select Images',
-            ),
-            array(
                 'label'    => 'Select Pages to Display',
                 'attr'     => 'page',
                 'type'     => 'post_select',
-                'query'    => array('post_type' => array( 'page', 'cpt_archive', 'department', 'vocation', 'development' )),
+                'query'    => array('post_type' => array( 'page', 'cpt_archive', 'department', 'archive_post', 'bishop', 'chancery', 'deacon', 'development', 'education', 'finance', 'human_resources', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'tribunal', 'vocation' )),
                 'multiple' => true,
+           ),
+           array(
+               'label'  => esc_html__( 'Button Text', 'abraham' ),
+               'attr'   => 'btn_text',
+               'type'   => 'text',
+               'encode' => true,
+               'meta'   => array(
+                   'placeholder' => esc_html__( 'Make it actionable!', 'abraham' ),
+                   'data-test'   => 1,
+               ),
            ),
            array(
                 'label'    => esc_html__( 'Feed URL' ),

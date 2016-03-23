@@ -12,9 +12,14 @@ function meh_row_shortcode($attr, $content = null) {
     $attr = shortcode_atts(array(
         'row_type'      => '',
         'slide_type'    => '',
-        'gallery'       => '',
+        'cta'           => '',
+        'btn_text'      => '',
         'row_color'     => '',
+        'text_color'     => '',
         'bg_image'      => '',
+        'blur_image'      => '',
+        'glass_color'     => '',
+        'overlay'       => '',
         'row_intro'     => '',
         'page'          => '',
         'icon_file'     => '',
@@ -27,7 +32,7 @@ function meh_row_shortcode($attr, $content = null) {
     $pages = $attr['page'];
 
         $args = array(
-            'post_type' => array( 'page', 'cpt_archive', 'department', 'vocation', 'development' ),
+            'post_type' => array( 'page', 'cpt_archive', 'department', 'archive_post', 'bishop', 'chancery', 'deacon', 'development', 'education', 'finance', 'human_resources', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'tribunal', 'vocation' ),
             'post__in'  => explode(',', $pages),
             'orderby'   => 'post__in',
         );
@@ -39,14 +44,14 @@ function meh_row_shortcode($attr, $content = null) {
     endif; ?>
 
 <?php if ($attr['bg_image']) : ?>
- <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-relative u-1of1 u-py3 u-py4-md u-bg-cover u-bg-fixed" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>)">
+ <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-relative <?php echo esc_attr( $attr['text_color'] ); ?> u-1of1 u-py3 u-py4-md u-bg-cover u-bg-fixed <?php echo esc_attr( $attr['overlay'] ); ?>" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr[ 'bg_image' ] ) ); ?>)">
 <?php else: ?>
- <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-relative u-1of1 u-py3 u-py4-md">
+ <section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-relative <?php echo esc_attr( $attr['text_color'] ); ?> u-1of1 u-py3 u-py4-md">
 <?php endif; ?>
 
     <?php if ($attr['row_intro']) : ?>
 
-        <h2 class="u-z1 u-mb2 u-mb3-md u-text-center">
+        <h2 class="u-z1 u-h1 u-mb3 u-mb4-md u-rel u-text-center">
             <?php echo wp_kses_post( $attr[ 'row_intro' ] ); ?>
         </h2>
 
@@ -76,6 +81,10 @@ function meh_row_shortcode($attr, $content = null) {
             <?php include locate_template('/components/row-tiles.php'); ?>
         </div>
 
+    <?php elseif ('cta' === $attr['row_type']) : ?>
+<div class="section-row__content <?php echo $direction; ?> o-grid u-max-width <?php echo esc_attr( $attr['text_color'] ); ?>">
+<?php include locate_template('/components/row-callout.php'); ?>
+</div>
     <?php elseif ('cards' === $attr['row_type']) : ?>
 
         <div class="section-row__content o-grid u-max-width">

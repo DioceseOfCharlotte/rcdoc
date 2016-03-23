@@ -13,11 +13,12 @@ function updateRowTypeListener(changed, collection, shortcode) {
 		feedURL = attributeByName('feed_url'),
 		rowDirection = attributeByName('direction'),
 		bgImage = attributeByName('bg_image'),
+		blurImage = attributeByName('blur_image'),
+		glassColor = attributeByName('glass_color'),
 		rowIcon = attributeByName('icon_file'),
 		rowID = attributeByName('js_id'),
-		rowPages = attributeByName('page');
+		rowPages = attributeByName('page'),
 		slideTypes = attributeByName('slide_type');
-		slideGal = attributeByName('gallery');
 
 
 
@@ -27,35 +28,58 @@ function updateRowTypeListener(changed, collection, shortcode) {
 		feedURL.$el.show();
 		rowPages.$el.hide();
 		rowIcon.$el.show();
+		blurImage.$el.hide();
+		glassColor.$el.hide();
+		slideTypes.$el.hide();
 	} else if (updatedVal === 'tabs') {
 		rowDirection.$el.show();
 		feedURL.$el.hide();
 		rowPages.$el.show();
 		rowIcon.$el.show();
+		blurImage.$el.hide();
+		glassColor.$el.hide();
+		slideTypes.$el.hide();
 	} else if (updatedVal === 'links') {
 		rowDirection.$el.show();
 		rowIcon.$el.show();
 		feedURL.$el.hide();
 		rowPages.$el.show();
+		blurImage.$el.hide();
+		glassColor.$el.hide();
+		slideTypes.$el.hide();
 	} else if (updatedVal === 'cards') {
 		rowIcon.$el.hide();
 		feedURL.$el.hide();
 		rowDirection.$el.hide();
 		rowPages.$el.show();
+		blurImage.$el.hide();
+		glassColor.$el.hide();
+		slideTypes.$el.hide();
 	} else if (updatedVal === 'slides') {
 		rowIcon.$el.hide();
 		feedURL.$el.hide();
 		rowDirection.$el.hide();
 		slideTypes.$el.show();
 		rowPages.$el.show();
-		slideGal.$el.show();
+		blurImage.$el.hide();
+		glassColor.$el.hide();
+	} else if (updatedVal === 'cta') {
+		bgImage.$el.show();
+		blurImage.$el.show();
+		glassColor.$el.show();
+		rowDirection.$el.show();
+		slideTypes.$el.hide();
+		rowIcon.$el.hide();
+		feedURL.$el.hide();
 	} else {
 		feedURL.$el.hide();
-		slideGal.$el.hide();
 		rowDirection.$el.hide();
 		rowPages.$el.show();
 		rowIcon.$el.hide();
 		slideTypes.$el.hide();
+		bgImage.$el.hide();
+		blurImage.$el.hide();
+		glassColor.$el.hide();
 	}
 }
 
@@ -79,13 +103,16 @@ function updateRowColorListener(changed, collection, shortcode) {
 		bgImage = attributeByName('bg_image'),
 		rowIcon = attributeByName('icon_file'),
 		rowID = attributeByName('js_id'),
+		bgOverlay = attributeByName('overlay'),
 		rowPages = attributeByName('page');
 
 
 	if (updatedColor === 'has-image') {
 		bgImage.$el.show();
+		bgOverlay.$el.show();
 	} else {
 		bgImage.$el.hide();
+		bgOverlay.$el.hide();
 	}
 }
 
