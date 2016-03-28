@@ -63,7 +63,7 @@ var SOURCESJS = [
 	// 'src/js/animation.gsap.js',
 
 	// ** Flickity ** //
-	'src/scripts/vendors/flickity.pkgd.js',
+	// 'src/scripts/vendors/flickity.pkgd.js',
 	'src/scripts/vendors/steer.js',
 	// ** Mine ** //
 	'src/scripts/myjs/Dropdown.js',
