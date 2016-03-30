@@ -1338,11 +1338,6 @@ body:not(.home) .site-branding {
     body:not(.home) .site-branding {
       font-size: 3vw; } }
 
-.archive .format-image {
-  -webkit-align-self: flex-start;
-      -ms-flex-item-align: start;
-          align-self: flex-start; }
-
 .format-link {
   -webkit-align-self: center;
       -ms-flex-item-align: center;
