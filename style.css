@@ -1343,18 +1343,6 @@ body:not(.home) .site-branding {
       -ms-flex-item-align: start;
           align-self: flex-start; }
 
-.format-image:after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: inline-block;
-  background: linear-gradient(to bottom, transparent 50%, #212c31 100%); }
-
 .format-link {
   -webkit-align-self: center;
       -ms-flex-item-align: center;
