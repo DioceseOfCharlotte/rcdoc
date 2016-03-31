@@ -1,16 +1,16 @@
 
 
-
+// Off-canvas sidebar
 (function () {
   'use strict';
 
-  var querySelector = document.querySelector.bind(document);
+  let querySelector = document.querySelector.bind(document);
 
-  var sideNav = querySelector('#menu-primary');
-  var body = document.body;
-  var siteHeader = querySelector('#header');
-  var menuBtn = querySelector('#side-menu-toggle');
-  var contentMask = querySelector('#content-mask');
+  let sideNav = querySelector('#menu-primary');
+  let body = document.body;
+  let siteHeader = querySelector('#header');
+  let menuBtn = querySelector('#side-menu-toggle');
+  let contentMask = querySelector('#content-mask');
 
   function closeMenu() {
     body.classList.remove('u-overflow-hidden');

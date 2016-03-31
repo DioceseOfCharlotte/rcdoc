@@ -4,7 +4,7 @@
  *
  * @package abraham
  */
- ?>
+ wp_enqueue_script( 'arch-tabs' ); ?>
 
 <div class="o-cell u-1of2-md u-flex u-flex-justify-center u-flex-center">
   <?php include( locate_template( 'images/svg/'.esc_attr( $attr['icon_file'] ).'.svg' ) ); ?>
@@ -12,21 +12,31 @@
 
 
 <div class="o-cell u-1of2-md u-br row__tabs mdl-tabs mdl-js-tabs">
-  <div class="mdl-tabs__tab-bar">
+  <div class="tabs tab-bar">
+
+<?php $counter = -1; ?>
 
     <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-      <a href="#tab<?php the_ID(); ?>" class="mdl-tabs__tab u-f-plus"><?php the_title(); ?></a>
+<?php $counter++; ?>
+
+      <div data-index="<?= $counter ?>" class="tab-header u-p2 u-text-center u-flexed-auto u-f-plus"><?php the_title(); ?></div>
+
     <?php endwhile; ?>
 
         <?php $query->rewind_posts(); ?>
   </div>
 
+  <?php $counter = -1; ?>
 
-  <?php while ($query->have_posts()) : $query->the_post(); ?>
+      <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-  <div class="mdl-tabs__panel u-p2 u-f-plus tab<?php the_ID(); ?>" id="tab<?php the_ID(); ?>">
+  <?php $counter++; ?>
+
+      <div class="tab-content u-p2 tab<?php the_ID(); ?>" data-index="<?= $counter ?>">
+
     <?php the_content(); ?>
+
   </div>
 
   <?php endwhile; ?>

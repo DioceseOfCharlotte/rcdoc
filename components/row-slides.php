@@ -2,9 +2,9 @@
 /**
  * This is the template for the different block-type shortcodes.
  */
+ wp_enqueue_script( 'flickity' ); ?>
 
- while ($query->have_posts()) : $query->the_post();
-?>
+ <?php while ($query->have_posts()) : $query->the_post(); ?>
 
 <div id="post-<?php the_ID(); ?>" class="gallery-cell o-cell u-bg-white u-br u-shadow--3dp">
 

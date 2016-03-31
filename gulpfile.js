@@ -50,20 +50,12 @@ var POSTCSS_IE = [
 var SOURCESJS = [
 	// ** MDL ** //
 	// Component handler
-	'src/mdl/mdlComponentHandler.js',
-	'src/mdl/menu/menu.js',
-	'src/mdl/tabs/tabs.js',
+	 'src/mdl/mdlComponentHandler.js',
+	// 'src/mdl/menu/menu.js',
+	// 'src/mdl/tabs/tabs.js',
 	//'src/mdl/ripple/ripple.js',
 
-	// ** GSAP ** //
-	// 'src/scripts/vendors/TweenMax.js',
-	// 'src/js/MorphSVGPlugin.js',
-	// 'src/js/DrawSVGPlugin.js',
-	// ** ScrollMagic ** //
-	// 'src/js/animation.gsap.js',
-
-	// ** Flickity ** //
-	// 'src/scripts/vendors/flickity.pkgd.js',
+	// ** Vendors ** //
 	'src/scripts/vendors/steer.js',
 	// ** Mine ** //
 	'src/scripts/myjs/Dropdown.js',
