@@ -16,11 +16,13 @@ add_action( 'tha_entry_bottom', 'doc_view_staff' );
 //add_action( 'tha_content_bottom', 'doc_alias_view_staff' );
 
 function doc_view_staff() {
-	if ( is_front_page() || ! is_singular() || 'department' !== get_post_type() ) {
+	if ( is_front_page() || ! is_singular('department') ) {
         return;
     }
 	$id = get_the_ID();
-	echo do_shortcode( '[gravityview id="10028" search_field="21" search_value="' . $id .'"]' );
+	if ( is_single($id) ) {
+		echo do_shortcode( '[gravityview id="10028" search_field="21" search_value="' . $id .'"]' );
+	}
 }
 
 // function doc_alias_view_staff() {
@@ -34,24 +36,24 @@ function doc_view_staff() {
 
 function doc_dept_child_posts() {
 
-	if ( ! is_singular(abe_non_hierarchy_cpts()) )
+	if ( ! is_singular(abe_non_hierarchy_cpts()) && ! is_singular(abe_hierarchy_cpts()) )
 		return;
 
 $postid = get_the_ID();
 
 $args = array (
 	'post_parent'            => $postid,
-	'post_type'              => abe_non_hierarchy_cpts(),
+	'post_type'              => 'any',
 	'order'                  => 'ASC',
 	'orderby'                => 'menu_order',
 );
 
-$query1 = new WP_Query( $args );
+$query = new WP_Query( $args );
 
-if ( $query1->have_posts() ) { ?>
+if ( $query->have_posts() ) { ?>
 	<div class="o-cell o-grid u-m0 u-p0 u-1of1"> <?php
-	while ( $query1->have_posts() ) {
-		$query1->the_post();
+	while ( $query->have_posts() ) {
+		$query->the_post();
 
 		$posted_format = get_post_format() ? get_post_format() : 'content';
 
@@ -63,8 +65,6 @@ if ( $query1->have_posts() ) { ?>
 
 	} ?>
 	</div> <?php
-} else {
-	// no child posts
 }
 
 // Restore original Post Data
