@@ -363,122 +363,15 @@ li > a.rsswidget {
     }
 }
 
-#page .gv-list-container,
-#page .gv-grid {
-    max-width: 100%;
-}
-
-.entry-content > .gv-grid {
-    background-color: $lighten4;
-    padding         : 1rem;
-    border-radius: 2px;
-    margin-bottom: 1rem;
-}
-
-.gv-grid.gv-list-view-content {
-    padding: 0;
-}
-
-.gv-grid-col-2-3.gv-list-view-content-description {
-    width  : 100%;
-    padding: 0;
-}
-
-span.facetwp-counter {
-    display: none;
-}
-
-#page .facetwp-facet:not(.facetwp-type-alpha) {
-    margin-bottom: 2rem;
-    min-width    : 50px;
-    min-height   : 50px;
-}
-
-.facetwp-checkbox.checked {
-    font-weight: bold;
-}
-
-.facetwp-checkbox {
-    background: none !important;
-}
-
-.facetwp-checkbox:before {
-    content       : "\E835";
-    font-family   : 'Material Icons';
-    padding-right : 5px;
-    padding-left  : 0;
-    vertical-align: top;
-}
-
-.facetwp-checkbox.checked:before {
-    content    : "\E834";
-    font-weight: 400;
-    color      : #3f51b5;
-}
-
-#page .gv-uppercase > a,
-#page .facetwp-alpha {
-    color                     : inherit;
-    opacity                   : 0.4;
-    display: inline-block;
-    float: none;
-    line-height               : 1;
-    padding                   : 8px;
-    font-size                 : 16px;
-    font-weight               : normal;
-    border-radius             : 2px;
-    font-family: inherit;
-    //border-width              : 1px;
-    margin-right: .5rem;
-    border              : 1px solid transparent;
-    background-color          : transparent;
-    transition-duration       : 0.3s;
-    cursor                    : default;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-property       : color, background-color, border-color;
-}
-
-#page li.gv-uppercase > a,
-#page .facetwp-alpha.available {
-    opacity: 1;
-    cursor : pointer;
-
-    &:hover {
-        background-color: rgba(13, 16, 18, 0.0625);
-    }
-}
-
-#page .gv-active.gv-uppercase > a,
-#page .facetwp-alpha.selected {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-color    : #004899;
-    font-weight     : bold;
-
-    &:hover {
-        background-color: rgba(255, 255, 255, 0.9);
-        cursor: default;
-    }
-}
-
-ul.gravityview-az-filter {
-    margin-bottom: 1rem;
-    display: inline-block;
-}
-.gv-widget-letter-links {
-    text-align: center;
-}
-
-.flickity-prev-next-button {
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid $color-grey-light;
-}
 
 
-.is-active > a {
-    font-weight: 700;
-    border-bottom-color: currentcolor;
-}
+
+
+
+// .is-active > a {
+//     font-weight: 700;
+//     border-bottom-color: currentcolor;
+// }
 
 
 
