@@ -41,6 +41,8 @@ function meh_row_shortcode($attr, $content = null) {
 
     <?php if ($attr['direction']) :
         $direction = esc_attr( $attr['direction'] );
+    else:
+        $direction = '';
     endif; ?>
 
 <?php if ($attr['bg_image']) : ?>
