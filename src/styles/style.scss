@@ -22,15 +22,18 @@
 
 
 /* To be moved */
-@import "vendor.facetwp";
-@import "vendor.flickity";
 @import "card";
 @import "components.tiles";
 @import "components.menu";
 @import "theme.formats";
 @import "page.home";
-@import "shame";
 
+html {
+	@import "vendor.facetwp";
+	@import "vendor.flickity";
+	@import "vendor.gravity";
+	@import "shame";
+}
 
 
 /* Styles specific to the editor. */
