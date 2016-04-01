@@ -7,7 +7,7 @@
 <?php
 the_widget( 'WP_Widget_RSS',
     array(
-        //'title'  => __( 'Widget', 'abraham' ),
+        'title'  => __( '', 'abraham' ),
         'url'   => esc_url( $attr['feed_url'] ),
         'items' => 7,
         //'show_summary' => true,
