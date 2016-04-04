@@ -12,6 +12,15 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Template:    abraham
  */
+.tile:nth-child(1) {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+  .is-animating .tile:nth-child(1) {
+    -webkit-animation-play-state: running;
+            animation-play-state: running; }
+
 /* Variables and mixins */
 /**
  * Copyright 2015 Google Inc. All Rights Reserved.
@@ -1123,3 +1132,153 @@ body#tinymce {
 
 body#tinymce .wpview-wrap .gallery-cell {
   display: inline-block; }
+
+.tile {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both; }
+
+.is-animating .tile {
+  -webkit-animation-play-state: running;
+          animation-play-state: running; }
+
+.tile:nth-child(1) {
+  -webkit-animation-name: custom-1;
+          animation-name: custom-1;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s; }
+
+@-webkit-keyframes custom-1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes custom-1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+.tile:nth-child(3) {
+  -webkit-animation-name: custom-2;
+          animation-name: custom-2;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s; }
+
+@-webkit-keyframes custom-2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes custom-2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+.tile:nth-child(2) {
+  -webkit-animation-name: custom-3;
+          animation-name: custom-3;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s; }
+
+@-webkit-keyframes custom-3 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes custom-3 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+.tile:nth-child(4) {
+  -webkit-animation-name: custom-4;
+          animation-name: custom-4;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-delay: 1.1s;
+          animation-delay: 1.1s; }
+
+@-webkit-keyframes custom-4 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes custom-4 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+.tile:nth-child(5) {
+  -webkit-animation-name: custom-5;
+          animation-name: custom-5;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s; }
+
+@-webkit-keyframes custom-5 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes custom-5 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }

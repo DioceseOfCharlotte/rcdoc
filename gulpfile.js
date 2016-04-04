@@ -20,6 +20,10 @@ var postcssFlex = require('postcss-flexibility');
 var $ = gulpLoadPlugins();
 var reload = browserSync.reload;
 
+var SASS_PATHS = [
+	'src/motion-ui/src'
+];
+
 var AUTOPREFIXER_BROWSERS = [
 	'ie >= 10',
 	'ie_mob >= 10',
@@ -59,7 +63,6 @@ var SOURCESJS = [
 	'src/scripts/vendors/steer.js',
 	// ** Mine ** //
 	'src/scripts/myjs/Dropdown.js',
-	// 'src/js/myjs/Morph.js',
 	'src/scripts/myjs/main.js',
 	'src/scripts/es6.js'
 ];
@@ -107,11 +110,11 @@ gulp.task('images', function () {
 
 // Compile and Automatically Prefix Stylesheets (production)
 gulp.task('styles', function () {
-	// For best performance, don't add Sass partials to `gulp.src`
 	gulp.src('src/styles/style.scss')
 		// Generate Source Maps
 		.pipe($.sourcemaps.init())
 		.pipe($.sass({
+			includePaths: SASS_PATHS,
 			precision: 10,
 			onError: console.error.bind(console, 'Sass error:')
 		}))

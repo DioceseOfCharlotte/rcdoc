@@ -2,8 +2,8 @@
 if (!is_active_sidebar('header-right')) {
     return;
 }
-wp_enqueue_script( 'gsap_scripts' );
-wp_enqueue_script( 'jq_scripts' );
+//wp_enqueue_script( 'gsap_scripts' );
+//wp_enqueue_script( 'jq_scripts' );
 ?>
 
 <div class="u-inline-block sidebar-header u-rel">

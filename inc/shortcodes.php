@@ -79,7 +79,7 @@ function meh_row_shortcode($attr, $content = null) {
 
     <?php elseif ('tiles' === $attr['row_type']) : ?>
 
-        <div class="section-row__content o-grid u-flex-justify-around">
+        <div id="tile-row" class="section-row__content tile-row is-animating o-grid u-flex-justify-around">
             <?php include locate_template('/components/row-tiles.php'); ?>
         </div>
 

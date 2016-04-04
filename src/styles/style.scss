@@ -12,14 +12,13 @@
  * Template:    abraham
  */
 
-
+@import "motion-ui";
 
 /* Variables and mixins */
 @import "custom-variables";
 @import "settings.colors";
 @import "settings.vars";
 @import "settings.responsive";
-
 
 /* To be moved */
 @import "card";
@@ -35,16 +34,43 @@ html {
 	@import "shame";
 }
 
-
 /* Styles specific to the editor. */
 
 body#tinymce {
 	min-height: 50px;
-	margin: 0 auto!important;
-	padding: 1.5rem 1.5rem 0!important;
-	border: none!important;
+	margin: 0 auto !important;
+	padding: 1.5rem 1.5rem 0 !important;
+	border: none !important;
 }
 
 body#tinymce .wpview-wrap .gallery-cell {
 	display: inline-block;
+}
+
+.tile {
+	animation-play-state: paused;
+	animation-fill-mode: both;
+}
+
+.is-animating .tile {
+	animation-play-state: running;
+}
+
+@include mui-series {
+	// 2 second shake
+	.tile:nth-child(1) {
+		@include mui-queue(0.5s, 0s, fade, zoom);
+	}
+	.tile:nth-child(3) {
+		@include mui-queue(0.5s, -0.2s, fade, zoom);
+	}
+	.tile:nth-child(2) {
+		@include mui-queue(0.5s, -0.2s, fade, zoom);
+	}
+	.tile:nth-child(4) {
+		@include mui-queue(0.5s, 0s, fade, zoom);
+	}
+	.tile:nth-child(5) {
+		@include mui-queue(0.5s, -0.3s, fade, zoom);
+	}
 }
