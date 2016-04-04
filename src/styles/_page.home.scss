@@ -1,173 +1,172 @@
 .has-image.section-row {
-    min-height: 10rem;
+	min-height: 10rem;
 }
 
 .card-wrap.o-cell > .entry {
-    width: 100%;
-    max-width: 100%;
+	width: 100%;
+	max-width: 100%;
 }
 
-.card-wrap>.entry {
-    background-color: white;
+.card-wrap > .entry {
+	background-color: white;
 }
 
 .blur-img {
-    border: 8px solid #36474f;
+	border: 8px solid #36474f;
 }
 
 .section-row__content.blur-img {
-    width: 50%;
-    border-color: #36474f;
-    transition-duration: $transition-time;
-    transition-timing-function: $animation-curve-default;
-    transition-property: opacity;
+	width: 50%;
+	border-color: #36474f;
+	transition-duration: $transition-time;
+	transition-timing-function: $animation-curve-default;
+	transition-property: opacity;
 
-    &:hover {
-        opacity: .1;
-    }
+	&:hover {
+		opacity: 0.1;
+	}
 }
-
 
 .u-bg-1-glass-over {
+	> * {
+		position: relative;
+	}
 
-    > * {
-        position: relative;
-    }
-    &:before {
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    background-color: rgba($color1, 0.8);
-}
+	&::before {
+		content: "";
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		background-color: rgba($color1, 0.8);
+	}
 }
 
 .u-bg-2-glass-over {
+	> * {
+		position: relative;
+	}
 
-    > * {
-        position: relative;
-    }
-    &:before {
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    background-color: rgba($color2, 0.8);
-}
+	&::before {
+		content: "";
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		background-color: rgba($color2, 0.8);
+	}
 }
 
 .u-bg-3-glass-over {
+	> * {
+		position: relative;
+	}
 
-    > * {
-        position: relative;
-    }
-    &:before {
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    background-color: rgba($color3, 0.8);
-}
+	&::before {
+		content: "";
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		background-color: rgba($color3, 0.8);
+	}
 }
 
 .u-bg-1-glass-light-over {
+	> * {
+		position: relative;
+	}
 
-    > * {
-        position: relative;
-    }
-    &:before {
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    background-color: rgba(lighten($color1, 10), 0.8);
-}
+	&::before {
+		content: "";
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		background-color: rgba(lighten($color1, 10), 0.8);
+	}
 }
 
 .u-bg-2-glass-light-over {
+	> * {
+		position: relative;
+	}
 
-    > * {
-        position: relative;
-    }
-    &:before {
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    background-color: rgba(lighten($color2, 10), 0.8);
-}
+	&::before {
+		content: "";
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		background-color: rgba(lighten($color2, 10), 0.8);
+	}
 }
 
 .u-bg-3-glass-light-over {
+	> * {
+		position: relative;
+	}
 
-    > * {
-        position: relative;
-    }
-    &:before {
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    background-color: rgba(lighten($color3, 10), 0.8);
-}
+	&::before {
+		content: "";
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		background-color: rgba(lighten($color3, 10), 0.8);
+	}
 }
 
 .u-bg-1-glass-dark-over {
+	> * {
+		position: relative;
+	}
 
-    > * {
-        position: relative;
-    }
-    &:before {
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    background-color: rgba(darken($color1, 10), 0.8);
-}
+	&::before {
+		content: "";
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		background-color: rgba(darken($color1, 10), 0.8);
+	}
 }
 
 .u-bg-2-glass-dark-over {
+	> * {
+		position: relative;
+	}
 
-    > * {
-        position: relative;
-    }
-    &:before {
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    background-color: rgba(darken($color2, 10), 0.8);
-}
+	&::before {
+		content: "";
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		background-color: rgba(darken($color2, 10), 0.8);
+	}
 }
 
 .u-bg-3-glass-dark-over {
+	> * {
+		position: relative;
+	}
 
-    > * {
-        position: relative;
-    }
-    &:before {
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-    background-color: rgba(darken($color3, 10), 0.8);
-}
+	&::before {
+		content: "";
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		background-color: rgba(darken($color3, 10), 0.8);
+	}
 }

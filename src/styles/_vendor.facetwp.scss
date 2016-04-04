@@ -1,58 +1,58 @@
-
 .facetwp-facet {
 	.location-wrap,
 	.facetwp-search-wrap {
-	    display: inline-block;
+		display: inline-block;
 	}
-	i.facetwp-btn:before,
-	i.locate-me:before {
-	    height: 2.5rem;
-	    background-position: 50%;
+
+	i.facetwp-btn::before,
+	i.locate-me::before {
+		height: 2.5rem;
+		background-position: 50%;
 	}
 
 	.locate-me {
-	    right: 0;
-	    padding-left: .5rem;
-	    padding-right: .5rem;
+		right: 0;
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
 	}
 }
 
 .facetwp-facet-statistics_type.facetwp-type-checkboxes {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-around;
-    margin-bottom: 0!important;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: space-around;
+	margin-bottom: 0 !important;
 }
 
 span.facetwp-counter {
-    display: none;
+	display: none;
 }
 
 #page .facetwp-facet:not(.facetwp-type-alpha) {
-    margin-bottom: 2rem;
-    min-width    : 50px;
-    min-height   : 50px;
+	margin-bottom: 2rem;
+	min-width: 50px;
+	min-height: 50px;
 }
 
 .facetwp-checkbox.checked {
-    font-weight: bold;
+	font-weight: bold;
 }
 
 .facetwp-checkbox {
-    background: none !important;
+	background: none !important;
 }
 
-.facetwp-checkbox:before {
-    content       : "\E835";
-    font-family   : 'Material Icons';
-    padding-right : 5px;
-    padding-left  : 0;
-    vertical-align: top;
+.facetwp-checkbox::before {
+	content: "\E835";
+	font-family: "Material Icons";
+	padding-right: 5px;
+	padding-left: 0;
+	vertical-align: top;
 }
 
-.facetwp-checkbox.checked:before {
-    content    : "\E834";
-    font-weight: 400;
-    color      : #3f51b5;
+.facetwp-checkbox.checked::before {
+	content: "\E834";
+	font-weight: 400;
+	color: #3f51b5;
 }

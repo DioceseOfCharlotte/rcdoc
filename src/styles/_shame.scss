@@ -1,520 +1,469 @@
 .mdl-mega-footer--heading-checkbox:checked ~ div,
 .mdl-mega-footer__heading-checkbox:checked ~ div {
-    display: none;
+	display: none;
 }
 
 @include md {
-    .mdl-mega-footer--heading-checkbox:checked ~ div,
-    .mdl-mega-footer__heading-checkbox:checked ~ div {
-        display: block;
-    }
+	.mdl-mega-footer--heading-checkbox:checked ~ div,
+	.mdl-mega-footer__heading-checkbox:checked ~ div {
+		display: block;
+	}
 }
 
 .mdl-mega-footer__drop-down-section > div:empty {
-    display: none;
+	display: none;
 }
 
 /**
- * Dropdown content
- */
+* Dropdown content
+*/
+
 .dropdown-menu-basic {
-    min-width  : 200px;
-    position   : absolute;
-    text-align : left;
+	min-width: 200px;
+	position: absolute;
+	text-align: left;
 	height: 0;
 
-    input {
-        display: none;
-    }
+	input {
+		display: none;
+	}
 }
 
 .dropdown-menu-basic.is-active {
-    z-index: 1000;
+	z-index: 1000;
 
-    input {
-        display: inline-block;
-    }
+	input {
+		display: inline-block;
+	}
 }
 
 .dropdown-menu-basic.dropdown-right {
-    left : auto;
-    right: 0;
+	left: auto;
+	right: 0;
 }
 
 .dropdown-menu-basic > * {
-    opacity: 0;
+	opacity: 0;
 	height: 0;
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
+	transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+	overflow: hidden;
 }
 
 .dropdown-menu-basic.is-active > * {
-    opacity: 1;
+	opacity: 1;
 	height: auto;
 }
 
 .dropdown-menu-basic ul,
 .dropdown-menu-basic section {
-    list-style : none;
-    margin-left: 0;
+	list-style: none;
+	margin-left: 0;
 }
 
 .acf-map {
-    width : 100%;
-    height: 400px;
-    border: #ccc solid 1px;
-    margin: 20px 0;
+	width: 100%;
+	height: 400px;
+	border: #ccc solid 1px;
+	margin: 20px 0;
 }
 
 .nav-links {
-    display        : flex;
-    justify-content: space-around;
+	display: flex;
+	justify-content: space-around;
 }
 
 .post-navigation {
-    width: 100%;
+	width: 100%;
 }
 
 .pagination > .nav-links {
-    max-width  : 300px;
-    align-items: center;
-    margin     : 0 auto;
+	max-width: 300px;
+	align-items: center;
+	margin: 0 auto;
 }
-
-
 
 body {
-    background-size: cover;
+	background-size: cover;
 }
 
-
-
-
 .gv-list-view-content-description {
-    width: 100%;
+	width: 100%;
 }
 
 span.gv-field-label:empty {
-    display: none;
+	display: none;
 }
 
 .gv-list-view-content h4 {
-    margin: 0;
+	margin: 0;
 }
 
-
 .material-icons {
-    vertical-align: middle;
+	vertical-align: middle;
 }
 
 .mdl-button--mini-fab a {
-    display: block;
-    height : 40px;
+	display: block;
+	height: 40px;
 }
 
 .mdl-card__title {
-    flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .mdl-card__title-text {
-    width: 100%;
+	width: 100%;
 }
 
 .meta-nav.mdl-button.mdl-button--fab {
-    background: none;
-    box-shadow: none !important;
+	background: none;
+	box-shadow: none !important;
 }
 
 .navigation.pagination {
-    padding      : 0.5rem;
-    width        : 100%;
-    background   : rgba(228,234,236, 0.8);
-    margin-bottom: 1rem;
+	padding: 0.5rem;
+	width: 100%;
+	background: rgba(228, 234, 236, 0.8);
+	margin-bottom: 1rem;
 }
 
 .mdl-card {
-    min-height: auto;
+	min-height: auto;
 }
 
 .contact-map {
-    color: black !important;
+	color: black !important;
 }
 
-
-
 .gv-list-view-content {
-    padding: 0;
+	padding: 0;
 }
 
 .site-header .mdl-layout__drawer-button {
-    background-color: transparent;
+	background-color: transparent;
 }
 
 #bread,
 #heart,
 #music {
-    visibility: hidden;
+	visibility: hidden;
 }
 
 .rss-widget li {
-    margin-bottom: 0.5em;
+	margin-bottom: 0.5em;
 }
 
 .rss-title img {
-    display: none;
+	display: none;
 }
 
 a.rsswidget {
-    white-space: normal;
+	white-space: normal;
 }
 
 li > a.rsswidget {
-    font-weight: 400;
+	font-weight: 400;
 }
 
-// .gallery-cell {
-//     padding: 0 10px;
-// }
-/*------------------------------------*
-    #CROP
-*------------------------------------*/
+/* ------------------------------------*
+#CROP
+*------------------------------------ */
+
 /**
- * Provide a cropping container in order to display media (usually images)
- * cropped to certain ratios.
- *
- * 1. Set up a positioning context in which the image can sit.
- * 2. This is the crucial part: where the cropping happens.
- */
+* Provide a cropping container in order to display media (usually images)
+* cropped to certain ratios.
+*
+* 1. Set up a positioning context in which the image can sit.
+* 2. This is the crucial part: where the cropping happens.
+*/
+
 .o-crop {
-    position: relative;
-    /* [1] */
-    display : block;
-    overflow: hidden;
-    /* [2] */
-    width   : 100%;
+	position: relative;
+
+	/* [1] */
+	display: block;
+	overflow: hidden;
+
+	/* [2] */
+	width: 100%;
 }
+
 /**
- * A variety of different standard ratios to crop to.
- *
- * We use the `padding` trick to create a fluid-height container (`padding`s set
- * in percentages will track the current width of the element).
- */
+* A variety of different standard ratios to crop to.
+*
+* We use the `padding` trick to create a fluid-height container (`padding`s set
+* in percentages will track the current width of the element).
+*/
+
 .o-crop--1x1 {
-    padding-top: 100%;
+	padding-top: 100%;
 }
 
 .o-crop--4x3 {
-    padding-top: 75%;
+	padding-top: 75%;
 }
 
 .o-crop--16x9 {
-    padding-top: 56.25%;
-}
-/**
- * Apply this class to the content (usually `img`) that needs cropping.
- *
- * 1. Positioning to the bottom usually gives consistently better results as
- *    most images’ subjects are toward the bottom of the frame. Of course,
- *    your mileage may vary.
- */
-.o-crop__content {
-    position: absolute;
-    top     : 0;
-    /* [1] */
-    left    : 0;
-    width   : 100%;
+	padding-top: 56.25%;
 }
 
-// .contact-methods {
-//     height          : 0;
-//     background-color: #f1f1f1;
-// }
-//
-// .archive .mdl-card__title {
-//     min-height: 80px;
-//
-//     .mdl-card__title-text {
-//         align-self: flex-start;
-//     }
-// }
+/**
+* Apply this class to the content (usually `img`) that needs cropping.
+*
+* 1. Positioning to the bottom usually gives consistently better results as
+*    most images’ subjects are toward the bottom of the frame. Of course,
+*    your mileage may vary.
+*/
+
+.o-crop__content {
+	position: absolute;
+	top: 0;
+
+	/* [1] */
+	left: 0;
+	width: 100%;
+}
 
 .entry {
-    box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, .12), 0 1px 1px 0 rgba(0, 0, 0, .24);
-    transition: box-shadow 0.2s cubic-bezier(.4, 0, 1, 1);
+	box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+	transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
 }
 
 .entry.is-active {
-    box-shadow: 0 0 8px rgba(0, 0, 0, .18), 0 8px 16px rgba(0, 0, 0, .36);
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36);
 }
 
-
-
 .logo-image {
-    align-self: flex-start;
+	align-self: flex-start;
 }
 
 .menu-item__link {
-    display    : block;
-    padding    : 0 24px;
-    line-height: 64px;
+	display: block;
+	padding: 0 24px;
+	line-height: 64px;
 }
 
-
-
-
 .menu-item {
-    width: 100%;
+	width: 100%;
 }
 
 @include md {
-    .is-top .menu-toggle {
-        visibility: hidden;
-    }
+	.is-top .menu-toggle {
+		visibility: hidden;
+	}
 
-.home .is-top ~ .menu-primary {
-    background-color: transparent!important;
+	.home .is-top ~ .menu-primary {
+		background-color: transparent !important;
+	}
+
+	.menu-item {
+		width: auto;
+	}
 }
-
-    .menu-item {
-        width: auto;
-    }
-}
-
-
-
 
 .site-branding {
-    transition-duration       : $transition-time;
-    transition-timing-function: $animation-curve-default;
-    transition-property       : font-size;
+	transition-duration: $transition-time;
+	transition-timing-function: $animation-curve-default;
+	transition-property: font-size;
 }
 
 .home .site-header.is-top {
-    transition      : none;
-    background-color: transparent !important;
-    //position: absolute!important;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.4)), color-stop(100%, rgba(0, 0, 0, 0)));
-    background-image: -webkit-linear-gradient(top, rgba(15, 19, 42, 0.4), rgba(0, 0, 0, 0));
-    background      : linear-gradient(to bottom, rgba(15, 19, 42, 0.4), rgba(0, 0, 0, 0));
-
-    // .site-branding {
-    //     font-size: 1rem;
-    // }
+	transition: none;
+	background: linear-gradient(to bottom, rgba(15, 19, 42, 0.4), rgba(0, 0, 0, 0));
+	background-color: transparent !important;
+	//position: absolute !important;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.4)), color-stop(100%, rgba(0, 0, 0, 0)));
+	background-image: -webkit-linear-gradient(top, rgba(15, 19, 42, 0.4), rgba(0, 0, 0, 0));
 }
 
-
-
-// .site-logo {
-//     width: 8em;
-// }
-
 .entry-header {
-    width: 100%;
+	width: 100%;
 }
 
 .format-aside .permalink {
-    display: none;
+	display: none;
 }
 
 .site-header {
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+	}
 
-    &::after {
-        content   : '';
-        position  : absolute;
-        z-index   : -1;
-        width     : 100%;
-        height    : 100%;
-        left      : 0;
-        top       : 0;
-        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
-        opacity   : 0;
-        transition: opacity 0.3s ease-in-out;
-    }
-
-    &.u-fix::after {
-        opacity: 1;
-    }
+	&.u-fix::after {
+		opacity: 1;
+	}
 }
-
-
-
 
 .type-document,
 .type-statistics_report {
-    align-self: flex-start;
-    //min-width: 47%;
+	align-self: flex-start;
+	//min-width: 47%;
 }
 
 .menu-primary__list li {
-    @include md {
-        display: inline-block;
-    }
+	@include md {
+		display: inline-block;
+	}
 }
 
 .widget ul,
 .widget li {
-    list-style: none;
-    padding   : 0;
-    margin    : 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 
-    > a {
-        width     : 100%;
-        text-align: left;
-    }
+	> a {
+		width: 100%;
+		text-align: left;
+	}
 }
 
-
-
-
-
-
-// .is-active > a {
-//     font-weight: 700;
-//     border-bottom-color: currentcolor;
-// }
-
-
-
-
 .mdl-mega-footer__drop-down-section {
-  display: block;
-  position: relative;
+	display: block;
+	position: relative;
 }
 
 .mdl-mega-footer--heading,
 .mdl-mega-footer__heading {
-    position: relative;
-    width: 100%;
-    padding-right: 52px;
-    margin-bottom: 1rem;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+	position: relative;
+	width: 100%;
+	padding-right: 52px;
+	margin-bottom: 1rem;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
-.mdl-mega-footer--heading:after,
-.mdl-mega-footer__heading:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: block;
-    width: 36px;
-    height: 36px;
-    background-size: cover;
-}
-
-@include md {
-    .mdl-mega-footer__drop-down-section {
-        width: 33%;
-    }
-}
-
-@include lg {
-  .mdl-mega-footer__drop-down-section,
-  .mdl-mega-footer__drop-down-section:nth-child(3),
-  .mdl-mega-footer__drop-down-section:nth-child(4) {
-    width: 24%;
-  }
-}
-
-.mdl-mega-footer__heading-checkbox {
-    position: absolute;
-    width: 100%;
-    height: 68px;
-    padding: 32px;
-    margin: 0;
-    margin-top: -16px;
-    cursor: pointer;
-    z-index: 1;
-    opacity: 0;
-
-    & + .mdl-mega-footer__heading:after {
-      font-family: 'Material Icons';
-      content: '\E5CE';
-    }
-}
-
-.mdl-mega-footer__heading-checkbox:checked {
-
-  & + .mdl-mega-footer--heading:after,
-  & ~ .mdl-mega-footer--heading:after {
-    font-family: 'Material Icons';
-    content: '\E5CF';
-  }
+.mdl-mega-footer--heading::after,
+.mdl-mega-footer__heading::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	width: 36px;
+	height: 36px;
+	background-size: cover;
 }
 
 @include md {
-  .mdl-mega-footer--heading-checkbox,
-  .mdl-mega-footer__heading-checkbox {
-    display: none;
-
-    & + .mdl-mega-footer--heading:after,
-    & + .mdl-mega-footer__heading:after {
-      content: '';
-    }
-  }
-  .mdl-mega-footer--heading-checkbox:checked,
-  .mdl-mega-footer__heading-checkbox:checked {
-    // WebViews in iOS 9 break the "~" operator, and WebViews in OS X 10.10
-    // break consecutive "+" operators in some cases. Therefore, we need to use
-    // both here to cover all the bases.
-    & ~ .mdl-mega-footer--link-list,
-    & ~ .mdl-mega-footer__link-list,
-    & + .mdl-mega-footer__heading + .mdl-mega-footer__link-list,
-    & + .mdl-mega-footer--heading + .mdl-mega-footer--link-list {
-      display: block;
-    }
-
-    & + .mdl-mega-footer--heading:after,
-    & + .mdl-mega-footer__heading:after {
-      content: '';
-    }
-  }
-}
-
-
-.card-img {
-    max-height: 371px;
-}
-
-.home .site-footer {
-background-color: #D4D4CF;
-}
-
-
-.article-hero {
-	min-height: 300px;
-	@include md {
-    	min-height: 450px;
+	.mdl-mega-footer__drop-down-section {
+		width: 33%;
 	}
 }
 
+@include lg {
+	.mdl-mega-footer__drop-down-section,
+	.mdl-mega-footer__drop-down-section:nth-child(3),
+	.mdl-mega-footer__drop-down-section:nth-child(4) {
+		width: 24%;
+	}
+}
+
+.mdl-mega-footer__heading-checkbox {
+	position: absolute;
+	width: 100%;
+	height: 68px;
+	padding: 32px;
+	margin: 0;
+	margin-top: -16px;
+	cursor: pointer;
+	z-index: 1;
+	opacity: 0;
+
+	& + .mdl-mega-footer__heading::after {
+		font-family: "Material Icons";
+		content: "\E5CE";
+	}
+}
+
+.mdl-mega-footer__heading-checkbox:checked {
+	& + .mdl-mega-footer--heading::after,
+	& ~ .mdl-mega-footer--heading::after {
+		font-family: "Material Icons";
+		content: "\E5CF";
+	}
+}
+
+@include md {
+	.mdl-mega-footer--heading-checkbox,
+	.mdl-mega-footer__heading-checkbox {
+		display: none;
+
+		& + .mdl-mega-footer--heading::after,
+		& + .mdl-mega-footer__heading::after {
+			content: "";
+		}
+	}
+
+	.mdl-mega-footer--heading-checkbox:checked,
+	.mdl-mega-footer__heading-checkbox:checked {
+		// WebViews in iOS 9 break the "~" operator,
+		and WebViews in OS X 10.10
+		// break consecutive "+" operators in some cases. Therefore,
+		we need to use
+		// both here to cover all the bases.
+		& ~ .mdl-mega-footer--link-list,
+		& ~ .mdl-mega-footer__link-list,
+		& + .mdl-mega-footer__heading + .mdl-mega-footer__link-list,
+		& + .mdl-mega-footer--heading + .mdl-mega-footer--link-list {
+			display: block;
+		}
+
+		& + .mdl-mega-footer--heading::after,
+		& + .mdl-mega-footer__heading::after {
+			content: "";
+		}
+	}
+}
+
+.card-img {
+	max-height: 371px;
+}
+
+.home .site-footer {
+	background-color: #d4d4cf;
+}
+
+.article-hero {
+	min-height: 300px;
+
+	@include md {
+		min-height: 450px;
+	}
+}
 
 .archive-title {
 	@include lg {
-    	font-size: 3.5rem;
+		font-size: 3.5rem;
 	}
 }
 
 .trail-items {
 	@include lg {
-    	font-size: 1.5rem;
+		font-size: 1.5rem;
 	}
 }
 
-
 .wp-embedded-content + p {
-    display: inline-block;
+	display: inline-block;
 	vertical-align: top;
-    padding: .5rem;
+	padding: 0.5rem;
 }
 
-
 .contact-numbers__item {
-    min-width: 132px;
+	min-width: 132px;
 }
 
 .entry-header + .contact-info {
-    width: 100%;
+	width: 100%;
 }
