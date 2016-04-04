@@ -1,7 +1,7 @@
 <?php
 if ( is_post_type_archive( 'department' ) || is_post_type_archive( 'parish' ) || is_post_type_archive( 'school' ) ) : ?>
 <div class="u-1of1 u-p2 u-mb2 u-content-wrap u-text-center">
- 	<?= facetwp_display( 'pager' ); ?>
+ 	<?php echo facetwp_display( 'pager' ); ?>
 </div>
 
 <script>
@@ -28,7 +28,7 @@ if ( is_post_type_archive( 'department' ) || is_post_type_archive( 'parish' ) ||
 	<?php the_posts_pagination(
 		array(
 			'prev_text' => esc_html_x( '&larr; Previous', 'posts navigation', 'abraham' ),
-			'next_text' => esc_html_x( 'Next &rarr;',     'posts navigation', 'abraham' )
+			'next_text' => esc_html_x( 'Next &rarr;',     'posts navigation', 'abraham' ),
 		)
 	); ?>
 

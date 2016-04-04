@@ -1,7 +1,18 @@
 <?php
+/**
+ * Post Types.
+ *
+ * @package  RCDOC
+ */
 
 add_action( 'init', 'doc_register_post_types' );
 
+/**
+ * Register post_types.
+ *
+ * @since  0.1.0
+ * @access public
+ */
 function doc_register_post_types() {
 
 	$doc_page_supports = array(
@@ -45,21 +56,21 @@ function doc_register_post_types() {
 
 			/* Capabilities. */
 			'capabilities' => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles)..
 				'edit_post'              => 'edit_school',
 				'read_post'              => 'read_school',
 				'delete_post'            => 'delete_school',
 
-				# primitive/meta caps
+				// Primitive/meta caps..
 				'create_posts'           => 'create_schools',
 
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap()..
 				'edit_posts'             => 'edit_schools',
 				'edit_others_posts'      => 'manage_schools',
 				'publish_posts'          => 'manage_schools',
 				'read_private_posts'     => 'read',
 
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap()..
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_schools',
 				'delete_private_posts'   => 'manage_schools',
@@ -80,22 +91,22 @@ function doc_register_post_types() {
 				),
 			),
 			'menu_icon'           => 'dashicons-book-alt',
-			'supports' 			  => $doc_page_supports,
+			'supports' 			        => $doc_page_supports,
 			'capability_type'     => 'parish',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles)..
 				'edit_post'              => 'edit_parish',
 				'read_post'              => 'read_parish',
 				'delete_post'            => 'delete_parish',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_parishes',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_parishes',
 				'edit_others_posts'      => 'manage_parishes',
 				'publish_posts'          => 'manage_parishes',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap()..
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_parishes',
 				'delete_private_posts'   => 'manage_parishes',
@@ -128,18 +139,18 @@ function doc_register_post_types() {
 			'capability_type'     => 'department',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_department',
 				'read_post'              => 'read_department',
 				'delete_post'            => 'delete_department',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_departments',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_departments',
 				'edit_others_posts'      => 'manage_departments',
 				'publish_posts'          => 'manage_departments',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_departments',
 				'delete_private_posts'   => 'manage_departments',
@@ -164,18 +175,18 @@ function doc_register_post_types() {
 			'capability_type'     => 'archive_post',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_archive_post',
 				'read_post'              => 'read_archive_post',
 				'delete_post'            => 'delete_archive_post',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_archive_posts',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_archive_posts',
 				'edit_others_posts'      => 'manage_archive_posts',
 				'publish_posts'          => 'manage_archive_posts',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_archive_posts',
 				'delete_private_posts'   => 'manage_archive_posts',
@@ -200,18 +211,18 @@ function doc_register_post_types() {
 			'capability_type'     => 'bishop',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_bishop',
 				'read_post'              => 'read_bishop',
 				'delete_post'            => 'delete_bishop',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_bishop_posts',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_bishop_posts',
 				'edit_others_posts'      => 'manage_bishop_posts',
 				'publish_posts'          => 'manage_bishop_posts',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_bishop_posts',
 				'delete_private_posts'   => 'manage_bishop_posts',
@@ -241,18 +252,18 @@ function doc_register_post_types() {
 			'capability_type'     => 'deacon',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_deacon',
 				'read_post'              => 'read_deacon',
 				'delete_post'            => 'delete_deacon',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_deacon_posts',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_deacon_posts',
 				'edit_others_posts'      => 'manage_deacon_posts',
 				'publish_posts'          => 'manage_deacon_posts',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_deacon_posts',
 				'delete_private_posts'   => 'manage_deacon_posts',
@@ -282,18 +293,18 @@ function doc_register_post_types() {
 			'capability_type'     => 'development',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_development',
 				'read_post'              => 'read_development',
 				'delete_post'            => 'delete_development',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_development_posts',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_development_posts',
 				'edit_others_posts'      => 'manage_development_posts',
 				'publish_posts'          => 'manage_development_posts',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_development_posts',
 				'delete_private_posts'   => 'manage_development_posts',
@@ -323,18 +334,18 @@ function doc_register_post_types() {
 			'capability_type'     => 'education',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_education',
 				'read_post'              => 'read_education',
 				'delete_post'            => 'delete_education',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_education_posts',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_education_posts',
 				'edit_others_posts'      => 'manage_education_posts',
 				'publish_posts'          => 'manage_education_posts',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_education_posts',
 				'delete_private_posts'   => 'manage_education_posts',
@@ -364,18 +375,18 @@ function doc_register_post_types() {
 			'capability_type'     => 'finance',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_finance',
 				'read_post'              => 'read_finance',
 				'delete_post'            => 'delete_finance',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_finance_posts',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_finance_posts',
 				'edit_others_posts'      => 'manage_finance_posts',
 				'publish_posts'          => 'manage_finance_posts',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_finance_posts',
 				'delete_private_posts'   => 'manage_finance_posts',
@@ -405,18 +416,18 @@ function doc_register_post_types() {
 			'capability_type'     => 'hispanic_ministry',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_hispanic_ministry',
 				'read_post'              => 'read_hispanic_ministry',
 				'delete_post'            => 'delete_hispanic_ministry',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_hisp_min_posts',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_hisp_min_posts',
 				'edit_others_posts'      => 'manage_hisp_min_posts',
 				'publish_posts'          => 'manage_hisp_min_posts',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_hisp_min_posts',
 				'delete_private_posts'   => 'manage_hisp_min_posts',
@@ -446,18 +457,18 @@ function doc_register_post_types() {
 			'capability_type'     => 'housing',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_housing',
 				'read_post'              => 'read_housing',
 				'delete_post'            => 'delete_housing',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_housing_posts',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_housing_posts',
 				'edit_others_posts'      => 'manage_housing_posts',
 				'publish_posts'          => 'manage_housing_posts',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_housing_posts',
 				'delete_private_posts'   => 'manage_housing_posts',
@@ -487,18 +498,18 @@ function doc_register_post_types() {
 			'capability_type'     => 'human_resources',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_human_resources',
 				'read_post'              => 'read_human_resources',
 				'delete_post'            => 'delete_human_resources',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_hr_posts',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_hr_posts',
 				'edit_others_posts'      => 'manage_hr_posts',
 				'publish_posts'          => 'manage_hr_posts',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_hr_posts',
 				'delete_private_posts'   => 'manage_hr_posts',
@@ -528,18 +539,18 @@ function doc_register_post_types() {
 			'capability_type'     => 'info_tech',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_info_tech',
 				'read_post'              => 'read_info_tech',
 				'delete_post'            => 'delete_info_tech',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_it_posts',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_it_posts',
 				'edit_others_posts'      => 'manage_it_posts',
 				'publish_posts'          => 'manage_it_posts',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_it_posts',
 				'delete_private_posts'   => 'manage_it_posts',
@@ -569,18 +580,18 @@ function doc_register_post_types() {
 			'capability_type'     => 'liturgy',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_liturgy',
 				'read_post'              => 'read_liturgy',
 				'delete_post'            => 'delete_liturgy',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_liturgy_posts',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_liturgy_posts',
 				'edit_others_posts'      => 'manage_liturgy_posts',
 				'publish_posts'          => 'manage_liturgy_posts',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_liturgy_posts',
 				'delete_private_posts'   => 'manage_liturgy_posts',
@@ -610,18 +621,18 @@ function doc_register_post_types() {
 			'capability_type'     => 'macs',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_macs',
 				'read_post'              => 'read_macs',
 				'delete_post'            => 'delete_macs',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_macs_posts',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_macs_posts',
 				'edit_others_posts'      => 'manage_macs_posts',
 				'publish_posts'          => 'manage_macs_posts',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_macs_posts',
 				'delete_private_posts'   => 'manage_macs_posts',
@@ -651,18 +662,18 @@ function doc_register_post_types() {
 			'capability_type'     => 'multicultural',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_multicultural',
 				'read_post'              => 'read_multicultural',
 				'delete_post'            => 'delete_multicultural',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_multicultural_posts',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_multicultural_posts',
 				'edit_others_posts'      => 'manage_multicultural_posts',
 				'publish_posts'          => 'manage_multicultural_posts',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_multicultural_posts',
 				'delete_private_posts'   => 'manage_multicultural_posts',
@@ -692,18 +703,18 @@ function doc_register_post_types() {
 			'capability_type'     => 'planning',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_planning',
 				'read_post'              => 'read_planning',
 				'delete_post'            => 'delete_planning',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_planning_posts',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_planning_posts',
 				'edit_others_posts'      => 'manage_planning_posts',
 				'publish_posts'          => 'manage_planning_posts',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_planning_posts',
 				'delete_private_posts'   => 'manage_planning_posts',
@@ -733,18 +744,18 @@ function doc_register_post_types() {
 			'capability_type'     => 'properties',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_properties',
 				'read_post'              => 'read_properties',
 				'delete_post'            => 'delete_properties',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_properties_posts',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_properties_posts',
 				'edit_others_posts'      => 'manage_properties_posts',
 				'publish_posts'          => 'manage_properties_posts',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_properties_posts',
 				'delete_private_posts'   => 'manage_properties_posts',
@@ -774,18 +785,18 @@ function doc_register_post_types() {
 			'capability_type'     => 'tribunal',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_tribunal',
 				'read_post'              => 'read_tribunal',
 				'delete_post'            => 'delete_tribunal',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_tribunal_posts',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_tribunal_posts',
 				'edit_others_posts'      => 'manage_tribunal_posts',
 				'publish_posts'          => 'manage_tribunal_posts',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_tribunal_posts',
 				'delete_private_posts'   => 'manage_tribunal_posts',
@@ -815,18 +826,18 @@ function doc_register_post_types() {
 			'capability_type'     => 'vocations',
 			'map_meta_cap'        => true,
 			'capabilities'        => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_vocations',
 				'read_post'              => 'read_vocations',
 				'delete_post'            => 'delete_vocations',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_vocations_posts',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_vocations_posts',
 				'edit_others_posts'      => 'manage_vocations_posts',
 				'publish_posts'          => 'manage_vocations_posts',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_vocations_posts',
 				'delete_private_posts'   => 'manage_vocations_posts',
@@ -856,18 +867,18 @@ function doc_register_post_types() {
 			'capability_type'      => 'statistics_report',
 			'map_meta_cap'         => true,
 			'capabilities'         => array(
-				# meta caps (don't assign these to roles)
+				// Meta caps (don't assign these to roles).
 				'edit_post'              => 'edit_statistics_report',
 				'read_post'              => 'read_statistics_report',
 				'delete_post'            => 'delete_statistics_report',
-				# primitive/meta caps
+				// Primitive/meta caps.
 				'create_posts'           => 'create_statistics_reports',
-				# primitive caps used outside of map_meta_cap()
+				// Primitive caps used outside of map_meta_cap().
 				'edit_posts'             => 'edit_statistics_reports',
 				'edit_others_posts'      => 'manage_statistics_reports',
 				'publish_posts'          => 'manage_statistics_reports',
 				'read_private_posts'     => 'read',
-				# primitive caps used inside of map_meta_cap()
+				// Primitive caps used inside of map_meta_cap().
 				'read'                   => 'read',
 				'delete_posts'           => 'manage_statistics_reports',
 				'delete_private_posts'   => 'manage_statistics_reports',
@@ -878,13 +889,13 @@ function doc_register_post_types() {
 			),
 		)
 	);
-	# Add required capabilities to the administrator role.
-    $role = get_role( 'administrator' );
+	// Add required capabilities to the administrator role.
+	$role = get_role( 'administrator' );
 
-    if ( ! is_null( $role ) ) {
+	if ( ! is_null( $role ) ) {
 
-		# Create new posts.
-        $role->add_cap( 'create_parishes' );
+		// Create new posts.
+		$role->add_cap( 'create_parishes' );
 		$role->add_cap( 'create_schools' );
 		$role->add_cap( 'create_departments' );
 		$role->add_cap( 'create_archive_posts' );
@@ -906,9 +917,9 @@ function doc_register_post_types() {
 		$role->add_cap( 'create_vocations_posts' );
 		$role->add_cap( 'create_statistics_reports' );
 
-		# Delete/publish existing posts.
-        $role->add_cap( 'manage_parishes' );
-        $role->add_cap( 'manage_schools' );
+		// Delete/publish existing posts.
+		$role->add_cap( 'manage_parishes' );
+		$role->add_cap( 'manage_schools' );
 		$role->add_cap( 'manage_departments' );
 		$role->add_cap( 'manage_archive_posts' );
 		$role->add_cap( 'manage_bishop_posts' );
@@ -929,10 +940,10 @@ function doc_register_post_types() {
 		$role->add_cap( 'manage_vocations_posts' );
 		$role->add_cap( 'manage_statistics_reports' );
 
-		# Edit existing posts.
-        $role->add_cap( 'edit_parishes' );
-        $role->add_cap( 'edit_schools' );
-        $role->add_cap( 'edit_departments' );
+		// Edit existing posts.
+		$role->add_cap( 'edit_parishes' );
+		$role->add_cap( 'edit_schools' );
+		$role->add_cap( 'edit_departments' );
 		$role->add_cap( 'edit_archive_posts' );
 		$role->add_cap( 'edit_bishop_posts' );
 		$role->add_cap( 'edit_deacon_posts' );
@@ -951,6 +962,6 @@ function doc_register_post_types() {
 		$role->add_cap( 'edit_tribunal_posts' );
 		$role->add_cap( 'edit_vocations_posts' );
 		$role->add_cap( 'edit_statistics_reports' );
-    }
+	}
 
 }

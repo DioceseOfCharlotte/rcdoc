@@ -1,8 +1,13 @@
 <?php
+/**
+ * ACF Maps.
+ *
+ * @package  RCDOC
+ */
 
-$location = get_field('doc_map');
+$location = get_field( 'doc_map' );
 
-if( !empty($location) ): ?>
+if ( ! empty( $location ) ) : ?>
 
 <div class="acf-map">
 	<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
