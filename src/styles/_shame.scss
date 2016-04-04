@@ -17,7 +17,6 @@
 /**
 * Dropdown content
 */
-
 .dropdown-menu-basic {
 	min-width: 200px;
 	position: absolute;
@@ -54,8 +53,8 @@
 	height: auto;
 }
 
-.dropdown-menu-basic ul,
-.dropdown-menu-basic section {
+.dropdown-menu-basic section,
+.dropdown-menu-basic ul {
 	list-style: none;
 	margin-left: 0;
 }
@@ -176,7 +175,6 @@ li > a.rsswidget {
 * 1. Set up a positioning context in which the image can sit.
 * 2. This is the crucial part: where the cropping happens.
 */
-
 .o-crop {
 	position: relative;
 
@@ -194,7 +192,6 @@ li > a.rsswidget {
 * We use the `padding` trick to create a fluid-height container (`padding`s set
 * in percentages will track the current width of the element).
 */
-
 .o-crop--1x1 {
 	padding-top: 100%;
 }
@@ -214,7 +211,6 @@ li > a.rsswidget {
 *    most images’ subjects are toward the bottom of the frame. Of course,
 *    your mileage may vary.
 */
-
 .o-crop__content {
 	position: absolute;
 	top: 0;
@@ -271,6 +267,7 @@ li > a.rsswidget {
 	transition: none;
 	background: linear-gradient(to bottom, rgba(15, 19, 42, 0.4), rgba(0, 0, 0, 0));
 	background-color: transparent !important;
+
 	//position: absolute !important;
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.4)), color-stop(100%, rgba(0, 0, 0, 0)));
 	background-image: -webkit-linear-gradient(top, rgba(15, 19, 42, 0.4), rgba(0, 0, 0, 0));
@@ -306,6 +303,7 @@ li > a.rsswidget {
 .type-document,
 .type-statistics_report {
 	align-self: flex-start;
+
 	//min-width: 47%;
 }
 
@@ -315,8 +313,8 @@ li > a.rsswidget {
 	}
 }
 
-.widget ul,
-.widget li {
+.widget li,
+.widget ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -374,8 +372,7 @@ li > a.rsswidget {
 	width: 100%;
 	height: 68px;
 	padding: 32px;
-	margin: 0;
-	margin-top: -16px;
+	margin: -16px 0 0;
 	cursor: pointer;
 	z-index: 1;
 	opacity: 0;
@@ -407,15 +404,10 @@ li > a.rsswidget {
 
 	.mdl-mega-footer--heading-checkbox:checked,
 	.mdl-mega-footer__heading-checkbox:checked {
-		// WebViews in iOS 9 break the "~" operator,
-		and WebViews in OS X 10.10
-		// break consecutive "+" operators in some cases. Therefore,
-		we need to use
-		// both here to cover all the bases.
-		& ~ .mdl-mega-footer--link-list,
-		& ~ .mdl-mega-footer__link-list,
+		& + .mdl-mega-footer--heading + .mdl-mega-footer--link-list,
 		& + .mdl-mega-footer__heading + .mdl-mega-footer__link-list,
-		& + .mdl-mega-footer--heading + .mdl-mega-footer--link-list {
+		& ~ .mdl-mega-footer--link-list,
+		& ~ .mdl-mega-footer__link-list {
 			display: block;
 		}
 

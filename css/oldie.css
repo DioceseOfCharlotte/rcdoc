@@ -18,71 +18,6 @@
   .is-animating .tile:first-child {
     animation-play-state: running; }
 
-/* Variables and mixins */
-/**
- * Copyright 2015 Google Inc. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-/*------------------------------------*    $CONTENTS
-\*------------------------------------*/
-/**
- * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
- * -----Typography
- * -----Colors
- * -----Textfield
- * -----Switch
- * -----Spinner
- * -----Radio
- * -----Menu
- * -----List
- * -----Layout
- * -----Icon toggles
- * -----Footer
- * -----Column
- * -----Checkbox
- * -----Card
- * -----Button
- * -----Animation
- * -----Progress
- * -----Badge
- * -----Shadows
- * -----Grid
- * -----Data table
- *
- * Even though all variables have the `` directive, most of them
- * should not be changed as they are dependent one another. This can cause
- * visual distortions (like alignment issues) that are hard to track down
- * and fix.
- */
-/* ==========  TYPOGRAPHY  ========== */
-/* We're splitting fonts into "preferred" and "performance" in order to optimize
-   page loading. For important text, such as the body, we want it to load
-   immediately and not wait for the web font load, whereas for other sections,
-   such as headers and titles, we're OK with things taking a bit longer to load.
-   We do have some optional classes and parameters in the mixins, in case you
-   definitely want to make sure you're using the preferred font and don't mind
-   the performance hit.
-   We should be able to improve on this once CSS Font Loading L3 becomes more
-   widely available.
-*/
-/* ==========  COLORS  ========== */
-/**
-*
-* Material design color palettes.
-* @see http://www.google.com/design/spec/style/color.html
-*
-**/
 /**
  * Copyright 2015 Google Inc. All Rights Reserved.
  *
@@ -115,71 +50,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* ==========  Color & Themes  ========== */
-/* ==========  Typography  ========== */
-/* ==========  Components  ========== */
-/* ==========  Standard Buttons  ========== */
-/* ==========  Icon Toggles  ========== */
-/* ==========  Radio Buttons  ========== */
-/* ==========  Ripple effect  ========== */
-/* ==========  Layout  ========== */
-/* ==========  Content Tabs  ========== */
-/* ==========  Checkboxes  ========== */
-/* ==========  Switches  ========== */
-/* ==========  Spinner  ========== */
-/* ==========  Text fields  ========== */
-/* ==========  Card  ========== */
-/* ==========  Sliders ========== */
-/* ========== Progress ========== */
-/* ==========  List ========== */
-/* ==========  Item ========== */
-/* ==========  Dropdown menu ========== */
-/* ==========  Tooltips  ========== */
-/* ==========  Footer  ========== */
-/* TEXTFIELD */
-/* SWITCH */
-/* SPINNER */
-/* RADIO */
-/* MENU */
-/* LIST */
-/* LAYOUT */
-/* ICON TOGGLE */
-/* FOOTER */
-/*mega-footer*/
-/*mini-footer*/
-/* CHECKBOX */
-/* CARD */
-/* Card dimensions */
-/* Cover image */
-/* BUTTON */
-/**
- *
- * Dimensions
- *
- */
-/* ANIMATION */
-/* PROGRESS */
-/* BADGE */
-/* SHADOWS */
-/* GRID */
-/* DATA TABLE */
-/* TOOLTIP */
-/*--------------------------------------------------------------
-# Defaults
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Colors
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Alerts
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Spacing
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Animation
---------------------------------------------------------------*/
-/* To be moved */
 .mdl-card {
   -js-display: flex;
   display: flex;
@@ -250,7 +120,7 @@
       transform: translateX(-250px);
   transform-style: preserve-3d;
   will-change: transform;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: transform;
   color: #424242;
@@ -500,31 +370,31 @@ http://flickity.metafizzy.co
   /* color & size if no SVG - IE8 and Android 2.3 */
   /* ---- page dots ---- */
   /**
- * Dropdown content
- */
-  /*------------------------------------*
-    #CROP
-*------------------------------------*/
+* Dropdown content
+*/
+  /* ------------------------------------*
+#CROP
+*------------------------------------ */
   /**
- * Provide a cropping container in order to display media (usually images)
- * cropped to certain ratios.
- *
- * 1. Set up a positioning context in which the image can sit.
- * 2. This is the crucial part: where the cropping happens.
- */
+* Provide a cropping container in order to display media (usually images)
+* cropped to certain ratios.
+*
+* 1. Set up a positioning context in which the image can sit.
+* 2. This is the crucial part: where the cropping happens.
+*/
   /**
- * A variety of different standard ratios to crop to.
- *
- * We use the `padding` trick to create a fluid-height container (`padding`s set
- * in percentages will track the current width of the element).
- */
+* A variety of different standard ratios to crop to.
+*
+* We use the `padding` trick to create a fluid-height container (`padding`s set
+* in percentages will track the current width of the element).
+*/
   /**
- * Apply this class to the content (usually `img`) that needs cropping.
- *
- * 1. Positioning to the bottom usually gives consistently better results as
- *    most images’ subjects are toward the bottom of the frame. Of course,
- *    your mileage may vary.
- */ }
+* Apply this class to the content (usually `img`) that needs cropping.
+*
+* 1. Positioning to the bottom usually gives consistently better results as
+*    most images’ subjects are toward the bottom of the frame. Of course,
+*    your mileage may vary.
+*/ }
   html .facetwp-facet .location-wrap,
   html .facetwp-facet .facetwp-search-wrap {
     display: inline-block; }
@@ -555,7 +425,7 @@ http://flickity.metafizzy.co
     background: none !important; }
   html .facetwp-checkbox:before {
     content: "\E835";
-    font-family: 'Material Icons';
+    font-family: "Material Icons";
     padding-right: 5px;
     padding-left: 0;
     vertical-align: top; }
@@ -601,7 +471,7 @@ http://flickity.metafizzy.co
     background: white; }
   html .flickity-prev-next-button:focus {
     outline: none;
-    box-shadow: 0 0 0 5px #09F; }
+    box-shadow: 0 0 0 5px #09f; }
   html .flickity-prev-next-button:active {
     filter: alpha(opacity=60);
     /* IE8 */
@@ -767,8 +637,8 @@ http://flickity.metafizzy.co
   html .dropdown-menu-basic.is-active > * {
     filter: alpha(opacity=100);
     height: auto; }
-  html .dropdown-menu-basic ul,
-  html .dropdown-menu-basic section {
+  html .dropdown-menu-basic section,
+  html .dropdown-menu-basic ul {
     list-style: none;
     margin-left: 0; }
   html .acf-map {
@@ -875,15 +745,15 @@ http://flickity.metafizzy.co
     transition-property: font-size; }
   html .home .site-header.is-top {
     transition: none;
+    background: linear-gradient(to bottom, #0f132a, transparent);
     background-color: transparent !important;
-    background-image: -webkit-linear-gradient(top, rgba(15, 19, 42, 0.4), transparent);
-    background: linear-gradient(to bottom, #0f132a, transparent); }
+    background-image: -webkit-linear-gradient(top, rgba(15, 19, 42, 0.4), transparent); }
   html .entry-header {
     width: 100%; }
   html .format-aside .permalink {
     display: none; }
   html .site-header:after {
-    content: '';
+    content: "";
     position: absolute;
     z-index: -1;
     width: 100%;
@@ -900,13 +770,13 @@ http://flickity.metafizzy.co
     align-self: flex-start; }
   html .menu-primary__list li{
   display: inline-block; }
-  html .widget ul,
-  html .widget li {
+  html .widget li,
+  html .widget ul {
     list-style: none;
     padding: 0;
     margin: 0; }
-    html .widget ul > a,
-    html .widget li > a {
+    html .widget li > a,
+    html .widget ul > a {
       width: 100%;
       text-align: left; }
   html .mdl-mega-footer__drop-down-section {
@@ -923,7 +793,7 @@ http://flickity.metafizzy.co
     overflow: hidden; }
   html .mdl-mega-footer--heading:after,
   html .mdl-mega-footer__heading:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
@@ -942,18 +812,17 @@ http://flickity.metafizzy.co
     width: 100%;
     height: 68px;
     padding: 32px;
-    margin: 0;
-    margin-top: -16px;
+    margin: -16px 0 0;
     cursor: pointer;
     z-index: 1;
     filter: alpha(opacity=0); }
     html .mdl-mega-footer__heading-checkbox + .mdl-mega-footer__heading:after {
-      font-family: 'Material Icons';
-      content: '\E5CE'; }
+      font-family: "Material Icons";
+      content: "\E5CE"; }
   html .mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer--heading:after,
   html .mdl-mega-footer__heading-checkbox:checked ~ .mdl-mega-footer--heading:after {
-    font-family: 'Material Icons';
-    content: '\E5CF'; }
+    font-family: "Material Icons";
+    content: "\E5CF"; }
   html .mdl-mega-footer--heading-checkbox,
     html .mdl-mega-footer__heading-checkbox{
   display: none; }
@@ -961,25 +830,25 @@ http://flickity.metafizzy.co
       html .mdl-mega-footer--heading-checkbox + .mdl-mega-footer__heading:after,
       html .mdl-mega-footer__heading-checkbox + .mdl-mega-footer--heading:after,
       html .mdl-mega-footer__heading-checkbox + .mdl-mega-footer__heading:after{
-  content: ''; }
-  html .mdl-mega-footer--heading-checkbox:checked ~ .mdl-mega-footer--link-list,
-    html .mdl-mega-footer--heading-checkbox:checked ~ .mdl-mega-footer__link-list,
+  content: ""; }
+  html .mdl-mega-footer--heading-checkbox:checked + .mdl-mega-footer--heading + .mdl-mega-footer--link-list,
     html .mdl-mega-footer--heading-checkbox:checked + .mdl-mega-footer__heading + .mdl-mega-footer__link-list,
-    html .mdl-mega-footer--heading-checkbox:checked + .mdl-mega-footer--heading + .mdl-mega-footer--link-list,
-    html .mdl-mega-footer__heading-checkbox:checked ~ .mdl-mega-footer--link-list,
-    html .mdl-mega-footer__heading-checkbox:checked ~ .mdl-mega-footer__link-list,
+    html .mdl-mega-footer--heading-checkbox:checked ~ .mdl-mega-footer--link-list,
+    html .mdl-mega-footer--heading-checkbox:checked ~ .mdl-mega-footer__link-list,
+    html .mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer--heading + .mdl-mega-footer--link-list,
     html .mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer__heading + .mdl-mega-footer__link-list,
-    html .mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer--heading + .mdl-mega-footer--link-list{
+    html .mdl-mega-footer__heading-checkbox:checked ~ .mdl-mega-footer--link-list,
+    html .mdl-mega-footer__heading-checkbox:checked ~ .mdl-mega-footer__link-list{
   display: block; }
   html .mdl-mega-footer--heading-checkbox:checked + .mdl-mega-footer--heading:after,
     html .mdl-mega-footer--heading-checkbox:checked + .mdl-mega-footer__heading:after,
     html .mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer--heading:after,
     html .mdl-mega-footer__heading-checkbox:checked + .mdl-mega-footer__heading:after{
-  content: ''; }
+  content: ""; }
   html .card-img {
     max-height: 371px; }
   html .home .site-footer {
-    background-color: #D4D4CF; }
+    background-color: #d4d4cf; }
   html .article-hero {
     min-height: 300px; }
     html .article-hero{
@@ -996,509 +865,6 @@ http://flickity.metafizzy.co
     min-width: 132px; }
   html .entry-header + .contact-info {
     width: 100%; }
-
-.slide-in-down.mui-enter {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  -ms-transform: translateY(-100%);
-      transform: translateY(-100%);
-  transition-property: transform, opacity;
-  backface-visibility: hidden; }
-
-.slide-in-down.mui-enter.mui-enter-active {
-  -ms-transform: translateY(0);
-      transform: translateY(0); }
-
-.slide-in-left.mui-enter {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  -ms-transform: translateX(-100%);
-      transform: translateX(-100%);
-  transition-property: transform, opacity;
-  backface-visibility: hidden; }
-
-.slide-in-left.mui-enter.mui-enter-active {
-  -ms-transform: translateX(0);
-      transform: translateX(0); }
-
-.slide-in-up.mui-enter {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  -ms-transform: translateY(100%);
-      transform: translateY(100%);
-  transition-property: transform, opacity;
-  backface-visibility: hidden; }
-
-.slide-in-up.mui-enter.mui-enter-active {
-  -ms-transform: translateY(0);
-      transform: translateY(0); }
-
-.slide-in-right.mui-enter {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  -ms-transform: translateX(100%);
-      transform: translateX(100%);
-  transition-property: transform, opacity;
-  backface-visibility: hidden; }
-
-.slide-in-right.mui-enter.mui-enter-active {
-  -ms-transform: translateX(0);
-      transform: translateX(0); }
-
-.slide-out-down.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  -ms-transform: translateY(0);
-      transform: translateY(0);
-  transition-property: transform, opacity;
-  backface-visibility: hidden; }
-
-.slide-out-down.mui-leave.mui-leave-active {
-  -ms-transform: translateY(100%);
-      transform: translateY(100%); }
-
-.slide-out-right.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  -ms-transform: translateX(0);
-      transform: translateX(0);
-  transition-property: transform, opacity;
-  backface-visibility: hidden; }
-
-.slide-out-right.mui-leave.mui-leave-active {
-  -ms-transform: translateX(100%);
-      transform: translateX(100%); }
-
-.slide-out-up.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  -ms-transform: translateY(0);
-      transform: translateY(0);
-  transition-property: transform, opacity;
-  backface-visibility: hidden; }
-
-.slide-out-up.mui-leave.mui-leave-active {
-  -ms-transform: translateY(-100%);
-      transform: translateY(-100%); }
-
-.slide-out-left.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  -ms-transform: translateX(0);
-      transform: translateX(0);
-  transition-property: transform, opacity;
-  backface-visibility: hidden; }
-
-.slide-out-left.mui-leave.mui-leave-active {
-  -ms-transform: translateX(-100%);
-      transform: translateX(-100%); }
-
-.fade-in.mui-enter {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  filter: alpha(opacity=0);
-  transition-property: opacity; }
-
-.fade-in.mui-enter.mui-enter-active {
-  filter: alpha(opacity=100); }
-
-.fade-out.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  filter: alpha(opacity=100);
-  transition-property: opacity; }
-
-.fade-out.mui-leave.mui-leave-active {
-  filter: alpha(opacity=0); }
-
-.hinge-in-from-top.mui-enter {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  transform: perspective(2000px) rotateX(-90deg);
-  -ms-transform-origin: top;
-      transform-origin: top;
-  transition-property: transform, opacity;
-  filter: alpha(opacity=0); }
-
-.hinge-in-from-top.mui-enter.mui-enter-active {
-  transform: perspective(2000px) rotate(0deg);
-  filter: alpha(opacity=100); }
-
-.hinge-in-from-right.mui-enter {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  transform: perspective(2000px) rotateY(-90deg);
-  -ms-transform-origin: right;
-      transform-origin: right;
-  transition-property: transform, opacity;
-  filter: alpha(opacity=0); }
-
-.hinge-in-from-right.mui-enter.mui-enter-active {
-  transform: perspective(2000px) rotate(0deg);
-  filter: alpha(opacity=100); }
-
-.hinge-in-from-bottom.mui-enter {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  transform: perspective(2000px) rotateX(90deg);
-  -ms-transform-origin: bottom;
-      transform-origin: bottom;
-  transition-property: transform, opacity;
-  filter: alpha(opacity=0); }
-
-.hinge-in-from-bottom.mui-enter.mui-enter-active {
-  transform: perspective(2000px) rotate(0deg);
-  filter: alpha(opacity=100); }
-
-.hinge-in-from-left.mui-enter {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  transform: perspective(2000px) rotateY(90deg);
-  -ms-transform-origin: left;
-      transform-origin: left;
-  transition-property: transform, opacity;
-  filter: alpha(opacity=0); }
-
-.hinge-in-from-left.mui-enter.mui-enter-active {
-  transform: perspective(2000px) rotate(0deg);
-  filter: alpha(opacity=100); }
-
-.hinge-in-from-middle-x.mui-enter {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  transform: perspective(2000px) rotateX(-90deg);
-  -ms-transform-origin: center;
-      transform-origin: center;
-  transition-property: transform, opacity;
-  filter: alpha(opacity=0); }
-
-.hinge-in-from-middle-x.mui-enter.mui-enter-active {
-  transform: perspective(2000px) rotate(0deg);
-  filter: alpha(opacity=100); }
-
-.hinge-in-from-middle-y.mui-enter {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  transform: perspective(2000px) rotateY(-90deg);
-  -ms-transform-origin: center;
-      transform-origin: center;
-  transition-property: transform, opacity;
-  filter: alpha(opacity=0); }
-
-.hinge-in-from-middle-y.mui-enter.mui-enter-active {
-  transform: perspective(2000px) rotate(0deg);
-  filter: alpha(opacity=100); }
-
-.hinge-out-from-top.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  transform: perspective(2000px) rotate(0deg);
-  -ms-transform-origin: top;
-      transform-origin: top;
-  transition-property: transform, opacity;
-  filter: alpha(opacity=100); }
-
-.hinge-out-from-top.mui-leave.mui-leave-active {
-  transform: perspective(2000px) rotateX(-90deg);
-  filter: alpha(opacity=0); }
-
-.hinge-out-from-right.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  transform: perspective(2000px) rotate(0deg);
-  -ms-transform-origin: right;
-      transform-origin: right;
-  transition-property: transform, opacity;
-  filter: alpha(opacity=100); }
-
-.hinge-out-from-right.mui-leave.mui-leave-active {
-  transform: perspective(2000px) rotateY(-90deg);
-  filter: alpha(opacity=0); }
-
-.hinge-out-from-bottom.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  transform: perspective(2000px) rotate(0deg);
-  -ms-transform-origin: bottom;
-      transform-origin: bottom;
-  transition-property: transform, opacity;
-  filter: alpha(opacity=100); }
-
-.hinge-out-from-bottom.mui-leave.mui-leave-active {
-  transform: perspective(2000px) rotateX(90deg);
-  filter: alpha(opacity=0); }
-
-.hinge-out-from-left.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  transform: perspective(2000px) rotate(0deg);
-  -ms-transform-origin: left;
-      transform-origin: left;
-  transition-property: transform, opacity;
-  filter: alpha(opacity=100); }
-
-.hinge-out-from-left.mui-leave.mui-leave-active {
-  transform: perspective(2000px) rotateY(90deg);
-  filter: alpha(opacity=0); }
-
-.hinge-out-from-middle-x.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  transform: perspective(2000px) rotate(0deg);
-  -ms-transform-origin: center;
-      transform-origin: center;
-  transition-property: transform, opacity;
-  filter: alpha(opacity=100); }
-
-.hinge-out-from-middle-x.mui-leave.mui-leave-active {
-  transform: perspective(2000px) rotateX(-90deg);
-  filter: alpha(opacity=0); }
-
-.hinge-out-from-middle-y.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  transform: perspective(2000px) rotate(0deg);
-  -ms-transform-origin: center;
-      transform-origin: center;
-  transition-property: transform, opacity;
-  filter: alpha(opacity=100); }
-
-.hinge-out-from-middle-y.mui-leave.mui-leave-active {
-  transform: perspective(2000px) rotateY(-90deg);
-  filter: alpha(opacity=0); }
-
-.scale-in-up.mui-enter {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  -ms-transform: scale(0.5);
-      transform: scale(0.5);
-  transition-property: transform, opacity;
-  filter: alpha(opacity=0); }
-
-.scale-in-up.mui-enter.mui-enter-active {
-  -ms-transform: scale(1);
-      transform: scale(1);
-  filter: alpha(opacity=100); }
-
-.scale-in-down.mui-enter {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  -ms-transform: scale(1.5);
-      transform: scale(1.5);
-  transition-property: transform, opacity;
-  filter: alpha(opacity=0); }
-
-.scale-in-down.mui-enter.mui-enter-active {
-  -ms-transform: scale(1);
-      transform: scale(1);
-  filter: alpha(opacity=100); }
-
-.scale-out-up.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  -ms-transform: scale(1);
-      transform: scale(1);
-  transition-property: transform, opacity;
-  filter: alpha(opacity=100); }
-
-.scale-out-up.mui-leave.mui-leave-active {
-  -ms-transform: scale(1.5);
-      transform: scale(1.5);
-  filter: alpha(opacity=0); }
-
-.scale-out-down.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  -ms-transform: scale(1);
-      transform: scale(1);
-  transition-property: transform, opacity;
-  filter: alpha(opacity=100); }
-
-.scale-out-down.mui-leave.mui-leave-active {
-  -ms-transform: scale(0.5);
-      transform: scale(0.5);
-  filter: alpha(opacity=0); }
-
-.spin-in.mui-enter {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  -ms-transform: rotate(-0.75turn);
-      transform: rotate(-0.75turn);
-  transition-property: transform, opacity;
-  filter: alpha(opacity=0); }
-
-.spin-in.mui-enter.mui-enter-active {
-  -ms-transform: rotate(0);
-      transform: rotate(0);
-  filter: alpha(opacity=100); }
-
-.spin-out.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  -ms-transform: rotate(0);
-      transform: rotate(0);
-  transition-property: transform, opacity;
-  filter: alpha(opacity=100); }
-
-.spin-out.mui-leave.mui-leave-active {
-  -ms-transform: rotate(0.75turn);
-      transform: rotate(0.75turn);
-  filter: alpha(opacity=0); }
-
-.spin-in-ccw.mui-enter {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  -ms-transform: rotate(0.75turn);
-      transform: rotate(0.75turn);
-  transition-property: transform, opacity;
-  filter: alpha(opacity=0); }
-
-.spin-in-ccw.mui-enter.mui-enter-active {
-  -ms-transform: rotate(0);
-      transform: rotate(0);
-  filter: alpha(opacity=100); }
-
-.spin-out-ccw.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
-  -ms-transform: rotate(0);
-      transform: rotate(0);
-  transition-property: transform, opacity;
-  filter: alpha(opacity=100); }
-
-.spin-out-ccw.mui-leave.mui-leave-active {
-  -ms-transform: rotate(-0.75turn);
-      transform: rotate(-0.75turn);
-  filter: alpha(opacity=0); }
-
-.slow {
-  transition-duration: 750ms !important; }
-
-.fast {
-  transition-duration: 250ms !important; }
-
-.linear {
-  transition-timing-function: linear !important; }
-
-.ease {
-  transition-timing-function: ease !important; }
-
-.ease-in {
-  transition-timing-function: ease-in !important; }
-
-.ease-out {
-  transition-timing-function: ease-out !important; }
-
-.ease-in-out {
-  transition-timing-function: ease-in-out !important; }
-
-.bounce-in {
-  transition-timing-function: cubic-bezier(0.485, 0.155, 0.24, 1.245) !important; }
-
-.bounce-out {
-  transition-timing-function: cubic-bezier(0.485, 0.155, 0.515, 0.845) !important; }
-
-.bounce-in-out {
-  transition-timing-function: cubic-bezier(0.76, -0.245, 0.24, 1.245) !important; }
-
-.short-delay {
-  transition-delay: 300ms !important; }
-
-.long-delay {
-  transition-delay: 700ms !important; }
-
-.shake {
-  animation-name: shake-7; }
-
-@keyframes shake-7 {
-  0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% {
-    transform: translateX(7%); }
-  5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
-    transform: translateX(-7%); } }
-
-.spin-cw {
-  animation-name: spin-cw-1turn; }
-
-@keyframes spin-cw-1turn {
-  0% {
-    transform: rotate(-1turn); }
-  100% {
-    transform: rotate(0); } }
-
-.spin-ccw {
-  animation-name: spin-cw-1turn; }
-
-@keyframes spin-cw-1turn {
-  0% {
-    transform: rotate(0); }
-  100% {
-    transform: rotate(1turn); } }
-
-.wiggle {
-  animation-name: wiggle-7deg; }
-
-@keyframes wiggle-7deg {
-  40%, 50%, 60% {
-    transform: rotate(7deg); }
-  35%, 45%, 55%, 65% {
-    transform: rotate(-7deg); }
-  0%, 30%, 70%, 100% {
-    transform: rotate(0); } }
-
-.shake,
-.spin-cw,
-.spin-ccw,
-.wiggle {
-  animation-duration: 500ms; }
-
-.infinite {
-  animation-iteration-count: infinite; }
-
-.slow {
-  animation-duration: 750ms !important; }
-
-.fast {
-  animation-duration: 250ms !important; }
-
-.linear {
-  animation-timing-function: linear !important; }
-
-.ease {
-  animation-timing-function: ease !important; }
-
-.ease-in {
-  animation-timing-function: ease-in !important; }
-
-.ease-out {
-  animation-timing-function: ease-out !important; }
-
-.ease-in-out {
-  animation-timing-function: ease-in-out !important; }
-
-.bounce-in {
-  animation-timing-function: cubic-bezier(0.485, 0.155, 0.24, 1.245) !important; }
-
-.bounce-out {
-  animation-timing-function: cubic-bezier(0.485, 0.155, 0.515, 0.845) !important; }
-
-.bounce-in-out {
-  animation-timing-function: cubic-bezier(0.76, -0.245, 0.24, 1.245) !important; }
-
-.short-delay {
-  animation-delay: 300ms !important; }
-
-.long-delay {
-  animation-delay: 700ms !important; }
-
-/* Styles specific to the editor. */
-body#tinymce {
-  min-height: 50px;
-  margin: 0 auto !important;
-  padding: 24px 24px 0 !important;
-  border: none !important; }
-
-body#tinymce .wpview-wrap .gallery-cell {
-  display: inline-block; }
 
 .tile {
   animation-play-state: paused;
@@ -1571,3 +937,13 @@ body#tinymce .wpview-wrap .gallery-cell {
   100% {
     filter: alpha(opacity=100);
     transform: scale(1); } }
+
+/* Styles specific to the editor. */
+body#tinymce {
+  min-height: 50px;
+  margin: 0 auto !important;
+  padding: 24px 24px 0 !important;
+  border: none !important; }
+
+body#tinymce .wpview-wrap .gallery-cell {
+  display: inline-block; }

@@ -14,13 +14,13 @@
 
 @import "motion-ui";
 
-/* Variables and mixins */
+///* Variables and mixins */
 @import "custom-variables";
 @import "settings.colors";
 @import "settings.vars";
 @import "settings.responsive";
 
-/* To be moved */
+///* To be moved */
 @import "card";
 @import "components.tiles";
 @import "components.menu";
@@ -32,19 +32,6 @@ html {
 	@import "vendor.flickity";
 	@import "vendor.gravity";
 	@import "shame";
-}
-
-/* Styles specific to the editor. */
-
-body#tinymce {
-	min-height: 50px;
-	margin: 0 auto !important;
-	padding: 1.5rem 1.5rem 0 !important;
-	border: none !important;
-}
-
-body#tinymce .wpview-wrap .gallery-cell {
-	display: inline-block;
 }
 
 .tile {
@@ -73,4 +60,17 @@ body#tinymce .wpview-wrap .gallery-cell {
 	.tile:nth-child(5) {
 		@include mui-queue(0.5s, -0.3s, fade, zoom);
 	}
+}
+
+/* Styles specific to the editor. */
+
+body#tinymce {
+	min-height: 50px;
+	margin: 0 auto !important;
+	padding: 1.5rem 1.5rem 0 !important;
+	border: none !important;
+}
+
+body#tinymce .wpview-wrap .gallery-cell {
+	display: inline-block;
 }

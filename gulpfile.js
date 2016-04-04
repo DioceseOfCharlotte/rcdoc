@@ -13,6 +13,7 @@ var babel = require('gulp-babel');
 var oldie = require('oldie');
 var autoPrefixer = require('autoprefixer');
 var postcssFlex = require('postcss-flexibility');
+var perfectionist = require('perfectionist');
 // var postcssScss = require('postcss-scss');
 // var postcssNested = require('postcss-nested');
 // var precss = require('precss');
@@ -40,6 +41,9 @@ var AUTOPREFIXER_BROWSERS = [
 var POSTCSS_PLUGINS = [
 	autoPrefixer({
 		browsers: AUTOPREFIXER_BROWSERS
+	}),
+	perfectionist({
+		cascade: false
 	})
 ];
 
@@ -55,9 +59,6 @@ var SOURCESJS = [
 	// ** MDL ** //
 	// Component handler
 	 'src/mdl/mdlComponentHandler.js',
-	// 'src/mdl/menu/menu.js',
-	// 'src/mdl/tabs/tabs.js',
-	//'src/mdl/ripple/ripple.js',
 
 	// ** Vendors ** //
 	'src/scripts/vendors/steer.js',
