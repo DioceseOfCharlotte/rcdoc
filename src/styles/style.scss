@@ -34,6 +34,20 @@ html {
 	@import "shame";
 }
 
+.dropdown-right {
+	animation-play-state: paused;
+	animation-fill-mode: both;
+}
+
+.is-active.dropdown-right {
+	animation-play-state: running;
+	z-index: 2;
+	> .widgets {
+		background-color: white;
+		padding: .5rem;
+	}
+}
+
 .tile {
 	animation-play-state: paused;
 	animation-fill-mode: both;
@@ -43,19 +57,23 @@ html {
 	animation-play-state: running;
 }
 
+.dropdown-right {
+	@include mui-animation(fade,slide);
+}
+
 @include mui-series {
 	// 2 second shake
 	.tile:nth-child(1) {
-		@include mui-queue(0.5s, 0s, fade, zoom);
+		@include mui-queue(0.5s, 0s, fade, slide($direction: down));
 	}
 	.tile:nth-child(3) {
-		@include mui-queue(0.5s, -0.2s, fade, zoom);
+		@include mui-queue(0.5s, -0.2s, fade, slide($direction: down));
 	}
 	.tile:nth-child(2) {
-		@include mui-queue(0.5s, -0.2s, fade, zoom);
+		@include mui-queue(0.5s, -0.2s, fade, slide($direction: down));
 	}
 	.tile:nth-child(4) {
-		@include mui-queue(0.5s, 0s, fade, zoom);
+		@include mui-queue(0.5s, 0s, fade, slide($direction: down));
 	}
 	.tile:nth-child(5) {
 		@include mui-queue(0.5s, -0.3s, fade, zoom);

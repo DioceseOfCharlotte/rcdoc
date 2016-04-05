@@ -18,7 +18,6 @@ add_action( 'tha_content_bottom', 'doc_dept_child_posts' );
 add_action( 'tha_content_before', 'doc_archive_desc' );
 add_action( 'tha_entry_bottom', 'doc_view_staff' );
 // add_action( 'tha_content_bottom', 'doc_alias_view_staff' );
-
 function doc_view_staff() {
 	if ( is_front_page() || ! is_singular( 'department' ) ) {
 		return;
@@ -36,7 +35,6 @@ function doc_view_staff() {
 // echo do_shortcode( '[gravityview id="10028" search_field="21" search_value="' . $id .'"]' );
 // }
 // }
-
 function doc_dept_child_posts() {
 
 	if ( ! is_singular( abe_non_hierarchy_cpts() ) && ! is_singular( abe_hierarchy_cpts() ) ) {
@@ -76,13 +74,13 @@ function doc_dept_child_posts() {
 
 
 function doc_archive_desc() {
-	if ( ! is_paged() && $desc = get_the_archive_description() ) : ?>
-
-	<div <?php hybrid_attr( 'archive-description' ); ?>>
-		<?php echo esc_html( $desc ) ?>
-	</div>
-
-<?php endif;
+	if ( ! is_paged() && $desc = get_the_archive_description() ) :
+	?>
+		<div <?php hybrid_attr( 'archive-description' ); ?>>
+			<?php echo $desc; ?>
+		</div><!-- .archive-description -->
+	<?php
+	endif;
 }
 
 

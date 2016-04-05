@@ -43,32 +43,32 @@
 		}
 		var targetParent = target.parentElement;
 		if (!target.classList.contains(this.CssClasses_.DROPDOWN_IS_ACTIVE)) {
-			TweenLite.set(targetSibling, {
-				height: "auto",
-				opacity: 1
-			});
-			TweenLite.from(targetSibling, 0.2, {
-				height: 0,
-				opacity: 0
-			});
-			TweenLite.to(targetSibling, 0.2, {
-				paddingTop: 10,
-				paddingBottom: 10
-			});
+			// TweenLite.set(targetSibling, {
+			// 	height: "auto",
+			// 	opacity: 1
+			// });
+			// TweenLite.from(targetSibling, 0.2, {
+			// 	height: 0,
+			// 	opacity: 0
+			// });
+			// TweenLite.to(targetSibling, 0.2, {
+			// 	paddingTop: 10,
+			// 	paddingBottom: 10
+			// });
 			target.classList.add(this.CssClasses_.DROPDOWN_IS_ACTIVE);
 			targetSibling.classList.add(this.CssClasses_.DROPDOWN_IS_ACTIVE);
 			if (target.classList.contains(this.CssClasses_.DROPDOWN_PARENT)) {
 				targetParent.classList.add(this.CssClasses_.PARENT_IS_ACTIVE);
 			}
 		} else {
-			TweenLite.to(targetSibling, 0.2, {
-				height: 0,
-				opacity: 0
-			});
-			TweenLite.to(targetSibling, 0.2, {
-				paddingTop: 0,
-				paddingBottom: 0
-			});
+			// TweenLite.to(targetSibling, 0.2, {
+			// 	height: 0,
+			// 	opacity: 0
+			// });
+			// TweenLite.to(targetSibling, 0.2, {
+			// 	paddingTop: 0,
+			// 	paddingBottom: 0
+			// });
 			target.classList.remove(this.CssClasses_.DROPDOWN_IS_ACTIVE);
 			targetSibling.classList.remove(this.CssClasses_.DROPDOWN_IS_ACTIVE);
 			if (target.classList.contains(this.CssClasses_.DROPDOWN_PARENT)) {

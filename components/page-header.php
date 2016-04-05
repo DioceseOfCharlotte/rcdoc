@@ -13,7 +13,7 @@ if ( is_home() || is_front_page() ) {
 <div <?php hybrid_attr( 'archive-header' ); ?>>
 
 	<?php hybrid_get_menu( 'breadcrumbs' ); ?>
-	
+
 	<h1 <?php hybrid_attr( 'archive-title' ); ?>>
 		<?php
 		if ( is_archive() ) {
