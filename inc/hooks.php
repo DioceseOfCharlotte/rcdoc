@@ -60,7 +60,7 @@ function doc_dept_child_posts() {
 
 				tha_entry_before();
 
-				get_template_part( "content/{$posted_format}" );
+				hybrid_get_content_template();
 
 				tha_entry_after();
 
