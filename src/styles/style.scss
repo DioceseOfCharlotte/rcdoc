@@ -1,17 +1,16 @@
 /**
- * Theme Name:  RCDOC
- * Theme URI:   https://github.com/DioceseOfCharlotte/rcdoc
- * Description: Diocese child theme for Abraham.
- * Version:     0.6.0
- * Author:      Marty Helmick
- * Author URI:  https://github.com/m-e-h
- * Tags:
- * Domain Path: /languages/
- * License:     GNU General Public License v2.0 or later
- * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Template:    abraham
- */
-
+* Theme Name:  RCDOC
+* Theme URI:   https://github.com/DioceseOfCharlotte/rcdoc
+* Description: Diocese child theme for Abraham.
+* Version:     0.6.0
+* Author:      Marty Helmick
+* Author URI:  https://github.com/m-e-h
+* Tags:
+* Domain Path: /languages/
+* License:     GNU General Public License v2.0 or later
+* License URI: http://www.gnu.org/licenses/gpl-2.0.html
+* Template:    abraham
+*/
 @import "motion-ui";
 
 ///* Variables and mixins */
@@ -24,64 +23,19 @@
 @import "card";
 @import "components.tiles";
 @import "components.menu";
+@import "components.dropdown";
 @import "theme.formats";
 @import "page.home";
 
 html {
+
 	@import "vendor.facetwp";
 	@import "vendor.flickity";
 	@import "vendor.gravity";
 	@import "shame";
 }
 
-.dropdown-right {
-	animation-play-state: paused;
-	animation-fill-mode: both;
-}
-
-.is-active.dropdown-right {
-	animation-play-state: running;
-	z-index: 2;
-	> .widgets {
-		background-color: white;
-		padding: .5rem;
-	}
-}
-
-.tile {
-	animation-play-state: paused;
-	animation-fill-mode: both;
-}
-
-.is-animating .tile {
-	animation-play-state: running;
-}
-
-.dropdown-right {
-	@include mui-animation(fade,slide);
-}
-
-@include mui-series {
-	// 2 second shake
-	.tile:nth-child(1) {
-		@include mui-queue(0.5s, 0s, fade, slide($direction: down));
-	}
-	.tile:nth-child(3) {
-		@include mui-queue(0.5s, -0.2s, fade, slide($direction: down));
-	}
-	.tile:nth-child(2) {
-		@include mui-queue(0.5s, -0.2s, fade, slide($direction: down));
-	}
-	.tile:nth-child(4) {
-		@include mui-queue(0.5s, 0s, fade, slide($direction: down));
-	}
-	.tile:nth-child(5) {
-		@include mui-queue(0.5s, -0.3s, fade, zoom);
-	}
-}
-
 /* Styles specific to the editor. */
-
 body#tinymce {
 	min-height: 50px;
 	margin: 0 auto !important;

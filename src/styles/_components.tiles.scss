@@ -13,3 +13,40 @@
 .tile:hover {
 	background-image: linear-gradient(335deg, rgba(0, 0, 0, 0.06) 50%, transparent 50%);
 }
+
+.tile {
+	animation-play-state: paused;
+	animation-fill-mode: both;
+}
+
+.is-animating .tile {
+	animation-play-state: running;
+}
+
+@include mui-series {
+	// 2 second shake
+	.tile:nth-child(1) {
+
+		@include mui-queue(0.5s, 0s, fade, slide($direction: down));
+	}
+
+	.tile:nth-child(3) {
+
+		@include mui-queue(0.5s, -0.2s, fade, slide($direction: down));
+	}
+
+	.tile:nth-child(2) {
+
+		@include mui-queue(0.5s, -0.2s, fade, slide($direction: down));
+	}
+
+	.tile:nth-child(4) {
+
+		@include mui-queue(0.5s, 0s, fade, slide($direction: down));
+	}
+
+	.tile:nth-child(5) {
+
+		@include mui-queue(0.5s, -0.3s, fade, zoom);
+	}
+}

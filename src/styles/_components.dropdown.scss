@@ -1,0 +1,32 @@
+/**
+* Dropdown content
+*/
+
+.dropdown-right {
+
+	@include mui-animation(fade,slide($state:in,$amount:20%));
+	display: none;
+	overflow: hidden;
+	min-width: 200px;
+	position: absolute;
+	text-align: left;
+	animation-fill-mode: both;
+	animation-duration: 0.3s;
+
+	> .widgets {
+		background-color: #fff;
+	}
+
+	.menu__link {
+		width: 100%;
+	}
+}
+
+.is-active.dropdown-right {
+	z-index: 2;
+	display: block;
+
+	> .widgets {
+		padding: 0.5rem;
+	}
+}

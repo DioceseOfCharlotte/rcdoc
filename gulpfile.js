@@ -13,7 +13,7 @@ var babel = require('gulp-babel');
 var oldie = require('oldie');
 var autoPrefixer = require('autoprefixer');
 var postcssFlex = require('postcss-flexibility');
-var perfectionist = require('perfectionist');
+//var perfectionist = require('perfectionist');
 // var postcssScss = require('postcss-scss');
 // var postcssNested = require('postcss-nested');
 // var precss = require('precss');
@@ -41,9 +41,6 @@ var AUTOPREFIXER_BROWSERS = [
 var POSTCSS_PLUGINS = [
 	autoPrefixer({
 		browsers: AUTOPREFIXER_BROWSERS
-	}),
-	perfectionist({
-		cascade: false
 	})
 ];
 
