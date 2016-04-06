@@ -11,7 +11,11 @@
 
 	<div id="post-<?php the_ID(); ?>" class="tile u-flex-wrap o-cell u-m0 mdl-card u-shadow--2dp u-1of2-sm shadow-hover" style="<?php echo doc_prime_style( '0.8' ); ?>">
 		<a href="<?php the_permalink(); ?>" class="mdl-card__title mdl-card--expand u-flex-column u-flex-justify-center u-text-center">
-			<?php include locate_template( 'images/svg/'.get_the_slug().'.svg' ); ?>
+			<?php if ( locate_template( 'images/svg/' . get_the_slug() . '.svg' ) ) {
+				include locate_template( 'images/svg/' . get_the_slug() . '.svg' );
+			} else {
+				include locate_template( 'images/icons/shield.svg' );
+			} ?>
 			<div class="mdl-card__actions">
 				<h4><?php the_title(); ?></h4>
 			</div>
