@@ -1,6 +1,6 @@
 <?php
 /**
- * rcdoc functions and definitions.
+ * Functions and definitions.
  *
  * @package rcdoc
  */
@@ -25,12 +25,13 @@ require get_stylesheet_directory() . '/inc/shorts-ui.php';
 add_action( 'after_setup_theme', 'rcdoc_setup' );
 add_action( 'wp_enqueue_scripts', 'rcdoc_scripts' );
 add_action( 'widgets_init', 'abraham_widgets' );
+add_filter( 'cleaner_gallery_defaults', 'meh_gallery_default_args' );
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  */
 function rcdoc_setup() {
-	add_theme_support( 'soil-jquery-cdn' );
+	// add_theme_support( 'soil-jquery-cdn' );
 	add_theme_support( 'soil-clean-up' );
 	// add_theme_support('soil-disable-asset-versioning');
 	add_theme_support( 'soil-disable-trackbacks' );
@@ -157,8 +158,6 @@ function abraham_widgets() {
 	));
 }
 
-
-add_filter( 'cleaner_gallery_defaults', 'meh_gallery_default_args' );
 function meh_gallery_default_args( $defaults ) {
 	$defaults['size']    = 'abe-hd';
 	return $defaults;
