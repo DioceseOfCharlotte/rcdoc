@@ -13,10 +13,6 @@ var babel = require('gulp-babel');
 var oldie = require('oldie');
 var autoPrefixer = require('autoprefixer');
 var postcssFlex = require('postcss-flexibility');
-//var perfectionist = require('perfectionist');
-// var postcssScss = require('postcss-scss');
-// var postcssNested = require('postcss-nested');
-// var precss = require('precss');
 
 var $ = gulpLoadPlugins();
 var reload = browserSync.reload;

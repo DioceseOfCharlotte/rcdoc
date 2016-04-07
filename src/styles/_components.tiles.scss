@@ -24,29 +24,58 @@
 }
 
 @include mui-series {
-	// 2 second shake
+
 	.tile:nth-child(1) {
 
-		@include mui-queue(0.5s, 0s, fade, slide($direction: down));
+		@include mui-queue(0.6s, -0.2s, fade, slide($direction: up));
 	}
 
 	.tile:nth-child(3) {
 
-		@include mui-queue(0.5s, -0.2s, fade, slide($direction: down));
+		@include mui-queue(0.7s, -0.3s, fade, slide($direction: down));
 	}
 
 	.tile:nth-child(2) {
 
-		@include mui-queue(0.5s, -0.2s, fade, slide($direction: down));
+		@include mui-queue(0.7s, -0.3s, fade, slide($direction: left));
 	}
 
 	.tile:nth-child(4) {
 
-		@include mui-queue(0.5s, 0s, fade, slide($direction: down));
+		@include mui-queue(0.6s, -0.2s, fade, slide($direction: down));
 	}
+
+}
+
+@include mui-series {
 
 	.tile:nth-child(5) {
 
-		@include mui-queue(0.5s, -0.3s, fade, zoom);
+		@include mui-queue(0.6s, -0.2s, fade, slide($direction: up));
+	}
+
+	.tile:nth-child(6) {
+
+		@include mui-queue(0.7s, -0.3s, fade, slide($direction: left));
+	}
+
+	.tile:nth-child(7) {
+
+		@include mui-queue(0.6s, -0.2s, fade, slide($direction: down));
+	}
+
+	.tile:nth-child(8) {
+
+		@include mui-queue(0.3s, -0.1s, fade, slide($direction: up));
+	}
+
+	.tile:nth-child(9) {
+
+		@include mui-queue(0.6s, -0.2s, fade, slide($direction: left));
+	}
+
+	.tile:nth-child(10) {
+
+		@include mui-queue(0.6s, -0.2s, fade, slide($direction: down));
 	}
 }
