@@ -7,6 +7,55 @@
 
 add_action( 'cmb2_admin_init', 'doc_register_stats_upload' );
 
+add_action( 'cmb2_admin_init', 'yourprefix_register_taxonomy_metabox' );
+/**
+ * Hook in and add a metabox to add fields to taxonomy terms
+ */
+function yourprefix_register_taxonomy_metabox() {
+	$prefix = 'yourprefix_term_';
+	/**
+	 * Metabox to add fields to categories and tags
+	 */
+	$cmb_term = new_cmb2_box( array(
+		'id'               => $prefix . 'edit',
+		'title'            => __( 'Category Metabox', 'cmb2' ), // Doesn't output for term boxes
+		'object_types'     => array( 'term' ), // Tells CMB2 to use term_meta vs post_meta
+		'taxonomies'       => array( 'category', 'post_tag' ), // Tells CMB2 which taxonomies should have these fields
+		// 'new_term_section' => true, // Will display in the "Add New Category" section
+	) );
+	$cmb_term->add_field( array(
+		'name' => __( 'Arbitrary Term Field', 'cmb2' ),
+		'desc' => __( 'field description (optional)', 'cmb2' ),
+		'id'   => $prefix . 'term_text_field',
+		'type' => 'text',
+	) );
+
+
+}
+
+
+function cmb2_get_icon_options() {
+
+    $icons = (array) get_image_icons();
+
+    // Initate an empty array
+    $icon_options = array();
+    if ( ! empty( $icons ) ) {
+        foreach ( $icons as $icon ) {
+            $icon_options[ $icon ] = $icon;
+        }
+    }
+
+    return $icon_options;
+}
+
+function get_image_icons() {
+	$files = wp_get_theme( get_template() )->get_files( 'svg', 2 )
+	foreach ( $files as $file ) {
+	return ( basename( $file, '.svg' ) );
+}
+}
+
 /**
  * Register metaboxes.
  *

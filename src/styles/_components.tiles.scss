@@ -27,7 +27,7 @@
 
 	.tile:nth-child(1) {
 
-		@include mui-queue(0.6s, -0.2s, fade, slide($direction: up));
+		@include mui-queue(0.6s, -0.2s, fade, slide($direction: down));
 	}
 
 	.tile:nth-child(3) {
@@ -37,7 +37,7 @@
 
 	.tile:nth-child(2) {
 
-		@include mui-queue(0.7s, -0.3s, fade, slide($direction: left));
+		@include mui-queue(1s, -0.3s, fade, zoom);
 	}
 
 	.tile:nth-child(4) {
@@ -51,12 +51,12 @@
 
 	.tile:nth-child(5) {
 
-		@include mui-queue(0.6s, -0.2s, fade, slide($direction: up));
+		@include mui-queue(0.6s, -0.2s, fade, slide($direction: down));
 	}
 
 	.tile:nth-child(6) {
 
-		@include mui-queue(0.7s, -0.3s, fade, slide($direction: left));
+		@include mui-queue(1s, -0.3s, fade, zoom);
 	}
 
 	.tile:nth-child(7) {
@@ -66,12 +66,12 @@
 
 	.tile:nth-child(8) {
 
-		@include mui-queue(0.3s, -0.1s, fade, slide($direction: up));
+		@include mui-queue(0.3s, -0.1s, fade, slide($direction: down));
 	}
 
 	.tile:nth-child(9) {
 
-		@include mui-queue(0.6s, -0.2s, fade, slide($direction: left));
+		@include mui-queue(0.6s, -0.2s, fade, zoom);
 	}
 
 	.tile:nth-child(10) {

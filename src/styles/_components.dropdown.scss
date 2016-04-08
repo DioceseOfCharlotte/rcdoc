@@ -4,7 +4,7 @@
 
 .dropdown-right {
 
-	@include mui-animation(fade,slide($state:in,$amount:20%));
+	@include mui-animation(fade, slide($state:in,$direction:up,$amount:20%));
 	display: none;
 	overflow: hidden;
 	min-width: 200px;

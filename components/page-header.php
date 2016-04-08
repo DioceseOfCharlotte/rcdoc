@@ -6,8 +6,15 @@
  */
 
 if ( is_home() || is_front_page() ) {
-	return;
-}
+	$terms = get_terms( 'agency' );
+	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+	    echo '<div class="section-row__content tile-row is-animating o-grid u-flex-justify-around">';
+	    foreach ( $terms as $term ) {
+	        echo '<div class="tile u-flex-wrap o-cell u-m0 mdl-card u-shadow--2dp u-1of2-sm shadow-hover"><h4>' . $term->name . '</h4></div>';
+	    }
+	    echo '</div>';
+	}
+} else {
 ?>
 
 <div <?php hybrid_attr( 'archive-header' ); ?>>
@@ -28,3 +35,4 @@ if ( is_home() || is_front_page() ) {
 		?>
 	</h1>
 </div>
+<?php }
