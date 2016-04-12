@@ -4,6 +4,7 @@
  *
  * @package  RCDOC
  */
+
 use Mexitek\PHPColors\Color;
 // add_action( 'cmb2_admin_init', 'doc_register_stats_upload' );
 //
@@ -228,6 +229,11 @@ use Mexitek\PHPColors\Color;
 //
 add_action( 'cmb2_admin_init', 'doc_register_term_metaboxes' );
 
+/**
+ * Register CMB2 Metaboxes.
+ *
+ * @return [type] [description]
+ */
 function doc_register_term_metaboxes() {
 	$prefix = 'doc_';
 
@@ -237,11 +243,10 @@ function doc_register_term_metaboxes() {
 	$doc_term_meta = new_cmb2_box( array(
 		'id'            => $prefix . 'icon_metabox',
 		'title'         => __( 'Icons', 'cmb2' ),
-		'object_types'     => array( 'term' ), // Tells CMB2 to use term_meta vs post_meta.
+		'object_types'     => array( 'term' ),
 		'taxonomies'       => array( 'category', 'agency' ),
 		'context'       => 'side',
 		'priority'      => 'high',
-		// 'show_names' => false,
 	) );
 
 	$doc_term_meta->add_field( array(
@@ -265,7 +270,11 @@ function doc_register_term_metaboxes() {
 	) );
 }
 
-
+/**
+ * List available svgs from the /icons folder.
+ *
+ * @return [type] [description]
+ */
 function get_tax_icons() {
 
 	$icon_options = '';
@@ -284,34 +293,56 @@ function get_tax_icons() {
 
 }
 
-
 /**
- * Colors
+ * Return style for using in html.
+ *
+ * @param  [type] $term_id [description]
+ * @param  string $alpha   [description]
+ * @return [type]          [description]
  */
-function doc_term_color_style( $alpha = '1' ) {
+function doc_term_color_style( $term_id, $alpha = '1' ) {
 	$style = '';
 	$style .= 'background-color:';
-	$style .= doc_term_color_rgb( $alpha );
+	$style .= doc_term_color_rgb( $term_id, $alpha );
 	$style .= ';color:';
-	$style .= doc_term_color_text();
+	$style .= doc_term_color_text( $term_id );
 	$style .= ';';
 	return $style;
 }
 
-function doc_term_color_hex() {
-	$term_accent = get_term_meta( $term->term_id, 'doc_term_color', true );
+/**
+ * [doc_term_color_hex description]
+ *
+ * @param  [type] $term_id [description]
+ * @return [type]          [description]
+ */
+function doc_term_color_hex( $term_id ) {
+	$term_accent = get_term_meta( $term_id, 'doc_term_color', true );
 	$hex_color = $term_accent ? trim( $term_accent, '#' ) : get_theme_mod( 'primary_color', '' );
 	return "#{$hex_color}";
 }
 
-function doc_term_color_rgb( $alpha ) {
-	$doc_hex = doc_term_color_hex();
+/**
+ * [doc_term_color_rgb description]
+ *
+ * @param  [type] $term_id [description]
+ * @param  [type] $alpha   [description]
+ * @return [type]          [description]
+ */
+function doc_term_color_rgb( $term_id, $alpha ) {
+	$doc_hex = doc_term_color_hex( $term_id );
 	$doc_rgb = implode( ',', hybrid_hex_to_rgb( $doc_hex ) );
 	return 'rgba('. $doc_rgb .','. $alpha .')';
 }
 
-function doc_term_color_text() {
-	$term_accent = new Color( doc_term_color_hex() );
+/**
+ * [doc_term_color_text description]
+ *
+ * @param  [type] $term_id [description]
+ * @return [type]          [description]
+ */
+function doc_term_color_text( $term_id ) {
+	$term_accent = new Color( doc_term_color_hex( $term_id ) );
 	$text_color = $term_accent->isDark() ? 'fff':'333';
 	return "#{$text_color}";
 }

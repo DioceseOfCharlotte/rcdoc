@@ -10,8 +10,10 @@ if ( is_home() || is_front_page() ) {
 	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
 	    echo '<div class="section-row__content tile-row is-animating o-grid u-flex-justify-around">';
 	    foreach ( $terms as $term ) {
-	        echo '<div class="tile u-flex-wrap o-cell u-m0 mdl-card u-shadow--2dp u-1of2-sm shadow-hover" style=" ' . doc_term_color_style( '0.8' ) . '">';
-			echo '<a href="<?php the_permalink(); ?>" class="mdl-card__title mdl-card--expand u-flex-column u-flex-justify-center u-text-center">';
+			$term_id = $term->term_id;
+			$term_link = get_term_link( $term );
+	        echo '<div class="tile u-flex-wrap o-cell u-m0 mdl-card u-shadow--2dp u-1of2-sm shadow-hover" style="' . doc_term_color_style( $term_id, '0.8' ) . '">';
+			echo '<a href="' . esc_url( $term_link ) . '" class="mdl-card__title mdl-card--expand u-flex-column u-flex-justify-center u-text-center">';
 			echo '<h4>' . $term->name . '</h4></div>';
 			echo '</a>';
 	    }
