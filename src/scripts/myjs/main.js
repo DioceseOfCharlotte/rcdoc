@@ -1,4 +1,3 @@
-
 // Steer fix header
 window.onload = function() {
 	// getting the element where the message goes

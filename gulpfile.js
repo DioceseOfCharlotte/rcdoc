@@ -51,7 +51,7 @@ var POSTCSS_IE = [
 var SOURCESJS = [
 	// ** MDL ** //
 	// Component handler
-	 'src/mdl/mdlComponentHandler.js',
+	'src/scripts/vendors/mdlComponentHandler.js',
 
 	// ** Vendors ** //
 	'src/scripts/vendors/steer.js',
@@ -68,42 +68,44 @@ var SOURCESJQ = [
 
 // ***** Development tasks ****** //
 // Lint JavaScript
-gulp.task('lint', function () {
+gulp.task('lint', function() {
 	gulp.src('src/scripts/*.js')
-	.pipe(xo())
+		.pipe(xo())
 });
 
 // ***** Production build tasks ****** //
 // Optimize images
-gulp.task('images', function () {
+gulp.task('images', function() {
 	gulp.src('src/images/**/*.{svg,png,jpg}')
-	.pipe($.imagemin({
-		progressive: true,
-		interlaced: true,
-		svgoPlugins: [{
-                cleanupIDs: false
-            }, {
-                removeTitle: true
-            }, {
+		.pipe($.imagemin({
+			progressive: true,
+			interlaced: true,
+			svgoPlugins: [{
+				cleanupIDs: false
+			}, {
+				removeTitle: true
+			}, {
 				addClassesToSVGElement: {
 					className: 'v-icon'
 				}
 			}, {
-                removeUselessStrokeAndFill: true
-            }, {
-                cleanupNumericValues: {
-                    floatPrecision: 2
-                }
-            }, {
-                removeDimensions: true
-            }]
-	}))
-	.pipe(gulp.dest('images'))
-	.pipe($.size({title: 'images'}))
+				removeUselessStrokeAndFill: true
+			}, {
+				cleanupNumericValues: {
+					floatPrecision: 2
+				}
+			}, {
+				removeDimensions: true
+			}]
+		}))
+		.pipe(gulp.dest('images'))
+		.pipe($.size({
+			title: 'images'
+		}))
 });
 
 // Compile and Automatically Prefix Stylesheets (production)
-gulp.task('styles', function () {
+gulp.task('styles', function() {
 	gulp.src('src/styles/style.scss')
 		// Generate Source Maps
 		.pipe($.sourcemaps.init())
@@ -118,57 +120,63 @@ gulp.task('styles', function () {
 		.pipe(gulp.dest('./'))
 		.pipe($.if('*.css', $.cssnano()))
 		.pipe($.concat('style.min.css'))
-		.pipe($.size({title: 'styles'}))
+		.pipe($.size({
+			title: 'styles'
+		}))
 		.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest('./'));
 });
 
-gulp.task('oldie', function () {
+gulp.task('oldie', function() {
 	gulp.src('.tmp/style.css')
-	.pipe(postcss(POSTCSS_IE))
-	.pipe($.concat('oldie.css'))
-	.pipe(gulp.dest('css'))
+		.pipe(postcss(POSTCSS_IE))
+		.pipe($.concat('oldie.css'))
+		.pipe(gulp.dest('css'))
 });
 
 // Concatenate And Minify JavaScript
-gulp.task('scripts', function () {
+gulp.task('scripts', function() {
 	gulp.src(SOURCESJS)
-	.pipe($.sourcemaps.init())
-	.pipe(babel({
-		"presets": ["es2015"],
-		"only": [
-			"src/scripts/es6.js"
-		]
-	}))
-	.pipe($.concat('main.js'))
-	.pipe($.sourcemaps.write())
-	.pipe(gulp.dest('js'))
-	.pipe($.concat('main.min.js'))
-	.pipe($.uglify())
-	.pipe($.size({title: 'scripts'}))
-	.pipe($.sourcemaps.write('.'))
-	.pipe(gulp.dest('js'))
+		.pipe($.sourcemaps.init())
+		.pipe(babel({
+			"presets": ["es2015"],
+			"only": [
+				"src/scripts/es6.js"
+			]
+		}))
+		.pipe($.concat('main.js'))
+		.pipe($.sourcemaps.write())
+		.pipe(gulp.dest('js'))
+		.pipe($.concat('main.min.js'))
+		.pipe($.uglify())
+		.pipe($.size({
+			title: 'scripts'
+		}))
+		.pipe($.sourcemaps.write('.'))
+		.pipe(gulp.dest('js'))
 });
 
 // Concatenate And Minify JavaScript
-gulp.task('jq_scripts', function () {
+gulp.task('jq_scripts', function() {
 	gulp.src(SOURCESJQ)
-	.pipe($.sourcemaps.init())
-	// .pipe($.babel())
-	.pipe($.concat('jq-main.js'))
-	.pipe(gulp.dest('js'))
-	.pipe($.uglify())
-	.pipe($.concat('jq-main.min.js'))
-	.pipe($.sourcemaps.write('.'))
-	.pipe(gulp.dest('js'))
-	.pipe($.size({title: 'jq_scripts'}))
+		.pipe($.sourcemaps.init())
+		// .pipe($.babel())
+		.pipe($.concat('jq-main.js'))
+		.pipe(gulp.dest('js'))
+		.pipe($.uglify())
+		.pipe($.concat('jq-main.min.js'))
+		.pipe($.sourcemaps.write('.'))
+		.pipe(gulp.dest('js'))
+		.pipe($.size({
+			title: 'jq_scripts'
+		}))
 });
 
 /**
  * Defines the list of resources to watch for changes.
  */
 // Build and serve the output
-gulp.task('serve', ['scripts', 'styles'], function () {
+gulp.task('serve', ['scripts', 'styles'], function() {
 	browserSync.init({
 		// proxy: "local.wordpress.dev"
 		// proxy: "local.wordpress-trunk.dev"
@@ -183,7 +191,7 @@ gulp.task('serve', ['scripts', 'styles'], function () {
 });
 
 // Build production files, the default task
-gulp.task('default', function (cb) {
+gulp.task('default', function(cb) {
 	runSequence(
 		'styles', ['oldie', 'scripts', 'jq_scripts', 'images'],
 		cb);

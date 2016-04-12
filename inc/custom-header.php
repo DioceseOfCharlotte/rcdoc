@@ -55,7 +55,7 @@ function abraham_custom_header_wp_head() {
 		$bg_image = wp_get_attachment_url( get_post_thumbnail_id( $cptarchives->get_archive_id() ), 'abe-hd' );
 
 	} elseif ( has_post_thumbnail() ) {
-		$bg_image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ), 'abe-hd' );
+		$bg_image = wp_get_attachment_url( get_post_thumbnail_id(), 'abe-hd' );
 
 	} elseif ( get_header_image() ) {
 		$bg_image = get_header_image();
