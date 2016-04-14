@@ -213,8 +213,8 @@
 .tile:nth-child(5) {
   -webkit-animation-name: custom-5;
           animation-name: custom-5;
-  -webkit-animation-duration: 0.6s;
-          animation-duration: 0.6s;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
   -webkit-animation-delay: 0s;
           animation-delay: 0s; }
 
@@ -243,8 +243,8 @@
           animation-name: custom-6;
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s; }
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s; }
 
 @-webkit-keyframes custom-6 {
   0% {
@@ -271,8 +271,8 @@
           animation-name: custom-7;
   -webkit-animation-duration: 0.6s;
           animation-duration: 0.6s;
-  -webkit-animation-delay: 1.1s;
-          animation-delay: 1.1s; }
+  -webkit-animation-delay: 1.3s;
+          animation-delay: 1.3s; }
 
 @-webkit-keyframes custom-7 {
   0% {
@@ -299,8 +299,8 @@
           animation-name: custom-8;
   -webkit-animation-duration: 0.3s;
           animation-duration: 0.3s;
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s; }
+  -webkit-animation-delay: 1.7s;
+          animation-delay: 1.7s; }
 
 @-webkit-keyframes custom-8 {
   0% {
@@ -327,8 +327,8 @@
           animation-name: custom-9;
   -webkit-animation-duration: 0.6s;
           animation-duration: 0.6s;
-  -webkit-animation-delay: 1.7s;
-          animation-delay: 1.7s; }
+  -webkit-animation-delay: 1.9s;
+          animation-delay: 1.9s; }
 
 @-webkit-keyframes custom-9 {
   0% {
@@ -355,8 +355,8 @@
           animation-name: custom-10;
   -webkit-animation-duration: 0.6s;
           animation-duration: 0.6s;
-  -webkit-animation-delay: 2.1s;
-          animation-delay: 2.1s; }
+  -webkit-animation-delay: 2.3s;
+          animation-delay: 2.3s; }
 
 @-webkit-keyframes custom-10 {
   0% {
@@ -625,6 +625,21 @@ body:not(.home) .site-branding {
       -ms-flex-item-align: center;
           align-self: center; }
 
+.tile-title {
+  top: 45%; }
+
+.tiled-icon {
+  font-size: 13rem;
+  stroke: rgba(54, 71, 79, 0.3); }
+
+.tiled-icon > .v-icon {
+  stroke-width: 1%;
+  stroke-linejoin: round; }
+
+@media screen and (min-width: 48em) {
+  .tile {
+    min-width: 25%; } }
+
 .has-image.section-row {
   min-height: 10rem; }
 
@@ -633,7 +648,7 @@ body:not(.home) .site-branding {
   max-width: 100%; }
 
 .card-wrap > .entry {
-  background-color: white; }
+  background-color: #fff; }
 
 .blur-img {
   border: 8px solid #36474f; }

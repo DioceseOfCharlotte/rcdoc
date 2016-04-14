@@ -1,16 +1,14 @@
 jQuery( document ).ready( function( $ ) {
     'use strict';
 
-    if ( typeof $.wp === 'object' && typeof $.wp.wpColorPicker === 'function' ) {
-        $( '#term-color' ).wpColorPicker();
-    } else {
-        $( '#colorpicker' ).farbtastic( '#term-color' );
-    }
-
-    $( '.editinline' ).on( 'click', function( e ) {
+    $( '.editinline' ).on( 'click', function() {
         var tag_id = $( this ).parents( 'tr' ).attr( 'id' ),
-			color  = $( 'td.color i', '#' + tag_id ).data( 'color' );
+			svg = $( 'td.svg span', '#' + tag_id ).data( 'svg' );
 
-        $( ':input[name="term-color"]', '.inline-edit-row' ).val( color );
+		if ( typeof( svg ) !== 'undefined' ) {
+			setTimeout( function() {
+				$( 'select[name="term-svg"]', '.inline-edit-row' ).val( svg );
+			}, 100 );
+		}
     } );
 } );

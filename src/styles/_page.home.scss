@@ -1,3 +1,23 @@
+.tile-title {
+	top: 45%;
+}
+
+.tiled-icon {
+    font-size: 13rem;
+	stroke: rgba(54, 71, 79, 0.3);
+}
+
+
+.tiled-icon > .v-icon {
+	stroke-width: 1%;
+	stroke-linejoin: round;
+}
+
+.tile {
+	@include md {
+	min-width: 25%;
+}
+}
 .has-image.section-row {
 	min-height: 10rem;
 }
@@ -8,7 +28,7 @@
 }
 
 .card-wrap > .entry {
-	background-color: white;
+	background-color: #fff;
 }
 
 .blur-img {

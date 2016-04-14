@@ -22,8 +22,6 @@ require get_stylesheet_directory() . '/inc/ext/facetwp.php';
 require get_stylesheet_directory() . '/inc/shortcodes.php';
 require get_stylesheet_directory() . '/inc/shorts-ui.php';
 require get_stylesheet_directory() . '/inc/metaboxes.php';
-// require get_stylesheet_directory() . '/inc/class-wp-term-meta-ui.php';
-// require get_stylesheet_directory() . '/inc/class-term-svg.php';
 add_action( 'after_setup_theme', 'rcdoc_setup' );
 add_action( 'wp_enqueue_scripts', 'rcdoc_scripts' );
 add_action( 'widgets_init', 'abraham_widgets' );

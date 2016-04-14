@@ -367,6 +367,20 @@
 .format-link {
   align-self: center; }
 
+.tile-title {
+  top: 45%; }
+
+.tiled-icon {
+  font-size: 208px;
+  stroke: rgba(54, 71, 79, 0.3); }
+
+.tiled-icon > .v-icon {
+  stroke-width: 1%;
+  stroke-linejoin: round; }
+
+.tile{
+  min-width: 25%; }
+
 .has-image.section-row {
   min-height: 160px; }
 
@@ -375,7 +389,7 @@
   max-width: 100%; }
 
 .card-wrap > .entry {
-  background-color: white; }
+  background-color: #fff; }
 
 .blur-img {
   border: 8px solid #36474f; }
