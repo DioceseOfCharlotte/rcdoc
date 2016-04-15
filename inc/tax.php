@@ -21,7 +21,7 @@ function doc_register_taxonomies() {
 		)
 	);
 
-	register_extended_taxonomy( 'agency', 'department',
+	register_extended_taxonomy( 'agency', array( 'department', 'cpt_archive' ),
 		array(
 			'meta_box' => 'radio',
 			'dashboard_glance' => true,

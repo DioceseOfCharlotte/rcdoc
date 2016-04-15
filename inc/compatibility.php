@@ -10,21 +10,20 @@ add_action( 'login_enqueue_scripts', 'doc_login_logo' );
 add_filter( 'login_headerurl', 'doc_login_logo_url' );
 add_filter( 'login_headertitle', 'doc_login_logo_url_title' );
 add_action( 'pre_get_posts', 'doc_post_order', 1 );
-// add_filter('pre_get_posts', 'query_post_type');
+add_filter( 'pre_get_posts', 'query_post_type' );
 
-// function query_post_type($query) {
-// if ( ! is_admin() && $query->is_main_query() ) :
-// if(is_category() || is_tag()) {
-// $post_type = get_query_var('post_type');
-// if($post_type)
-// $post_type = $post_type;
-// else
-// $post_type = array('post','development','chancery','vocation');
-// $query->set('post_type',$post_type);
-// return $query;
-// }
-// endif;
-// }
+function query_post_type( $query ) {
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return; }
+	if ( is_tax( 'agency' ) ) {
+		$post_type = get_query_var( 'post_type' );
+		if ( $post_type ) {
+			$post_type = $post_type;
+		} else { 			$post_type = array( 'department', 'cpt_archive' ); }
+		$query->set( 'post_type',$post_type );
+		return $query;
+	}
+}
 
 /**
  * Register taxonomies.

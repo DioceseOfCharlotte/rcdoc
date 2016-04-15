@@ -48,6 +48,7 @@ function cpt_archive_labels( $args, $type ) {
 			'theme-layouts',
 			'custom-header',
 		);
+		$args['taxonomies']   = array( 'agency' );
 	}
 
 	if ( 'document' === $type ) {
