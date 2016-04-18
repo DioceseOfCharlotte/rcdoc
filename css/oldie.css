@@ -1048,8 +1048,10 @@ http://flickity.metafizzy.co
     width: 100%; }
   html .school_system-macs .school-system-logo {
     color: #112A57; }
-  html [class*="u-bg-"] a:before {
-    color: inherit; }
+   {
+    color: inherit !important; }
+     {
+      color: inherit !important; }
 
 /* Styles specific to the editor. */
 body#tinymce {

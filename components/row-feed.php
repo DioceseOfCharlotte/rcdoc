@@ -8,7 +8,11 @@
 ?>
 
 <div class="o-cell u-1of2-md u-flex u-flex-jc u-flex-center">
-	<?php include locate_template( 'images/svg/'.esc_attr( $attr['icon_file'] ).'.svg' ); ?>
+	<?php if ( locate_template( 'images/icons/' . esc_attr( $attr['icon_file'] ) . '.svg' ) ) {
+		include locate_template( 'images/icons/' . esc_attr( $attr['icon_file'] ) . '.svg' );
+	} else {
+		include locate_template( 'images/icons/shield.svg' );
+	} ?>
 </div>
 
 <div class="o-cell u-1of2-md u-flex u-flex-jc u-flex-center">

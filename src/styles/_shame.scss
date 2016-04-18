@@ -437,6 +437,10 @@ li > a.rsswidget {
 }
 
 
-[class*="u-bg-"] a:before {
-    color: inherit;
+[class*="u-bg-"] a:not(.btn) {
+	color: inherit!important;
+
+	&:before {
+		color: inherit!important;
+	}
 }
