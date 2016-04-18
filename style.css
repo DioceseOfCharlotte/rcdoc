@@ -1345,9 +1345,13 @@ http://flickity.metafizzy.co
     width: 100%; }
   html .school_system-macs .school-system-logo {
     color: #112A57; }
-  html [class*="u-bg-"] a:not(.btn) {
+  html [class*="u-bg-1"] a:not(.btn),
+  html [class*="u-bg-2"] a:not(.btn),
+  html [class*="u-bg-3"] a:not(.btn) {
     color: inherit !important; }
-    html [class*="u-bg-"] a:not(.btn):before {
+    html [class*="u-bg-1"] a:not(.btn):before,
+    html [class*="u-bg-2"] a:not(.btn):before,
+    html [class*="u-bg-3"] a:not(.btn):before {
       color: inherit !important; }
 
 /* Styles specific to the editor. */
