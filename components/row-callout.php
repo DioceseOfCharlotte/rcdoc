@@ -7,7 +7,7 @@
 
 ?>
 
-<div class="o-cell u-1of2-md u-flex u-flex-column u-flex-justify-center u-flex-center">
+<div class="o-cell u-1of2-md u-flex u-flex-col u-flex-jc u-flex-center">
 
 	<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 		<h2 class="u-h1 u-mb2 u-mb4-md u-text-shadow"><?php the_title(); ?></h2>

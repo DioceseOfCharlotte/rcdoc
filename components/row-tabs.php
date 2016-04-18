@@ -7,7 +7,7 @@
 
 wp_enqueue_script( 'arch-tabs' ); ?>
 
-<div class="o-cell u-1of2-md u-flex u-flex-justify-center u-flex-center">
+<div class="o-cell u-1of2-md u-flex u-flex-jc u-flex-center">
 	<?php include locate_template( 'images/svg/'.esc_attr( $attr['icon_file'] ).'.svg' ); ?>
 </div>
 

@@ -5,20 +5,24 @@
  * @package  RCDOC
  */
 
-$address = get_field( 'doc_street' ) . "+" . get_field( 'doc_city' ) . "+" . get_field( 'doc_state' ) . "+" . get_field( 'doc_zip' );
-$map_link = "http://maps.google.com/maps?z=16&q=" . $address;
+$address = get_field( 'doc_street' ) . '+' . get_field( 'doc_city' ) . '+' . get_field( 'doc_state' ) . '+' . get_field( 'doc_zip' );
+$map_link = 'http://maps.google.com/maps?z=16&q=' . $address;
+$width = 'u-1of1';
+if ( has_post_thumbnail() ) {
+	$width = 'u-2of3';
+}
 ?>
 
-<div class="contact-info u-inline-block u-2of3 u-align-middle u-p1 u-h6">
+<div class="contact-info u-inline-block <?php echo $width ?> u-align-middle u-p1 u-h6">
 	<?php
 
 	ob_start();
 	?>
-	<div class="contact-numbers u-1of1 u-p1 u-mb1 u-flex u-flex-wrap u-flex-justify-between">
+	<div class="contact-numbers u-1of1 u-p1 u-mb1 u-flex u-flex-wrap u-flex-jb">
 
 		<div class="phone contact-numbers__item u-1of2-md u-inline-block u-spacer16">
 			<?php if ( get_field( 'doc_phone_number' ) ) : ?>
-				<a class="contact-link u-inline-block" href="tel:<?php the_field( 'doc_phone_number' ); ?>" itemprop="telephone"><i class="material-icons u-mr1">&#xE0CD;</i><?php the_field( 'doc_phone_number' ); ?></a>
+				<a class="contact-link u-inline-block" href="tel:<?php the_field( 'doc_phone_number' ); ?>" itemprop="telephone"><?php the_field( 'doc_phone_number' ); ?></a>
 			<?php endif; ?>
 		</div>
 
@@ -37,7 +41,7 @@ $map_link = "http://maps.google.com/maps?z=16&q=" . $address;
 	ob_start(); ?>
 	<div class="contact-address u-1of1 u-inline-block u-mb1">
 		<?php if ( get_field( 'doc_city' ) ) : ?>
-			<a class="contact-link u-flex u-p1" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" href="<?php echo esc_url( $map_link ) ?>" target="_blank"><i class="material-icons u-align-top map-marker u-mr1">&#xE55F;</i>
+			<a class="contact-link u-flex u-p1" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" href="<?php echo esc_url( $map_link ) ?>" target="_blank">
 				<span class="u-inline-block">
 					<span itemprop="streetAddress">
 						<?php the_field( 'doc_street' ); ?><br>
@@ -55,10 +59,16 @@ $map_link = "http://maps.google.com/maps?z=16&q=" . $address;
 
 
 
-		<div class="email u-spacer16 u-1of1 u-truncate">
+		<div class="email u-spacer16 u-1of1 u-mb1 u-truncate">
 			<?php if ( get_field( 'doc_email' ) ) : ?>
-				<a class="contact-link u-p1" itemprop="email" href="mailto:<?php the_field( 'doc_email' ); ?>"><i class="material-icons u-mr1">&#xE0BE;</i><?php the_field( 'doc_email' ); ?></a>
+				<a class="contact-link u-p1" itemprop="email" href="mailto:<?php the_field( 'doc_email' ); ?>"><?php the_field( 'doc_email' ); ?></a>
 			<?php endif; ?>
 		</div>
+
+		<?php if ( get_field( 'doc_website' ) ) : ?>
+			<div class="website u-text-center u-1of1">
+				<a class="contact-link u-bg-2 btn" itemprop="url" href="<?php the_field( 'doc_website' ); ?>" target="_blank">Visit Website</a>
+			</div>
+		<?php endif; ?>
 
 	</div>

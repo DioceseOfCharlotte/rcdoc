@@ -5,7 +5,7 @@ function rcdoc_html_classes() {
 
 	attr_trumps( array(
 		// 'body'                         => '',
-		// 'site_container'               => 'u-flex u-flex-column',
+		// 'site_container'               => 'u-flex u-flex-col',
 		// 'layout'                    => '',
 		// 'layout_wide'               => '',
 		// 'grid'                      => '',
@@ -13,7 +13,7 @@ function rcdoc_html_classes() {
 		// 'grid_2c-r'                 => '',
 		// 'grid_2c-l'                 => '',
 		// SITE HEADER
-		// 'header'                      => 'u-bg-1 u-flex u-flex-wrap u-flex-justify-around',
+		// 'header'                      => 'u-bg-1 u-flex u-flex-wrap u-flex-ja',
 		// 'branding'                    => 'mdl-layout__header-row',
 		// 'site_title'                  => 'mdl-layout-title color-inherit u-m0 u-h1 u-z4',
 		// 'site_description'            => 'site-description u-h1 u-m0 u-text-3 hidden-sm',
@@ -21,7 +21,7 @@ function rcdoc_html_classes() {
 		// // CONTENT
 		// 'content'                     => 'mdl-cell mdl-grid u-m0 u-p0 u-1of1',
 		// 'content_with_sidebar'        => 'mdl-cell mdl-grid u-m0 u-p0 u-1of1 u-2of3-md',
-		// 'content_archive'             => 'u-flex-justify-around u-flex-wrap facetwp-template u-flex',
+		// 'content_archive'             => 'u-flex-ja u-flex-wrap facetwp-template u-flex',
 		// // ENTRY
 		// 'post'                        => 'mdl-cell u-mb2 u-1of1 mdl-card u-py4 u-px3 u-text-gray u-overflow-visible',
 		// 'post_archive'                => 'mdl-cell mdl-card mdl-shadow--2dp',
@@ -104,7 +104,7 @@ function cpt_header( $attr ) {
 	$directory_posts = array( 'school','parish','department' );
 
 	if ( is_post_type_archive( $directory_posts ) ) :
-		$attr['class']   .= ' u-bg-1-dark u-flex u-flex-row u-flex-nowrap u-flex-justify-between';
+		$attr['class']   .= ' u-bg-1-dark u-flex u-flex-row u-flex-nowrap u-flex-jb';
 	endif;
 	return $attr;
 }

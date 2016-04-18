@@ -101,36 +101,35 @@ function doc_register_doc_category_facets( $facets ) {
  */
 function doc_display_facets() {
 	if ( is_post_type_archive( 'document' ) ) {
-		echo '<div class="u-1of3-md u-px3 u-pb0 u-br u-pt3 u-mb2 u-flex u-flex-wrap u-flex-justify-around u-bg-frost-4 u-text-color u-max-center">';
+		echo '<div class="u-1of3-md u-px3 u-pb0 u-br u-pt3 u-mb2 u-flex u-flex-wrap u-flex-ja u-bg-frost-4 u-text-color u-max-center">';
 		echo facetwp_display( 'facet', 'department_search' );
 		echo facetwp_display( 'facet', 'document_categories' );
 		echo facetwp_display( 'facet', 'document_types' );
 		echo '<button class="btn btn-round u-bg-silver u-m0 u-m0" onclick="FWP.reset()"><i class="material-icons">&#xE5D5;</i></button>';
 		echo '</div>';
 	} elseif ( is_post_type_archive( 'parish' ) ) {
-		echo '<div class="u-1of1 u-px3 u-pb0 u-br u-pt3 u-mb2 u-flex u-flex-wrap u-flex-justify-around u-bg-frost-4 u-text-color u-max-center">';
+		echo '<div class="u-1of1 u-px3 u-pb0 u-br u-pt3 u-mb2 u-flex u-flex-wrap u-flex-ja u-bg-frost-4 u-text-color u-max-center">';
 		echo facetwp_display( 'facet', 'parish_proximity' );
 		echo facetwp_display( 'facet', 'department_search' );
 		echo '<button class="btn btn-round u-bg-silver u-m0 u-m0" onclick="FWP.reset()"><i class="material-icons">&#xE5D5;</i></button>';
 		echo '<div class="u-1of1 u-text-center">' .facetwp_display( 'facet', 'title_alpha' ). '</div>';
 		echo '</div>';
 	} elseif ( is_post_type_archive( 'department' ) ) {
-		echo '<div class="u-1of1 u-px3 u-pb0 u-br u-pt3 u-mb2 u-flex u-flex-wrap u-flex-justify-around u-bg-frost-4 u-text-color u-max-center">';
+		echo '<div class="u-1of1 u-px3 u-pb0 u-br u-pt3 u-mb2 u-flex u-flex-wrap u-flex-ja u-bg-frost-4 u-text-color u-max-center">';
 		echo facetwp_display( 'facet', 'department_agency' );
 		echo facetwp_display( 'facet', 'department_search' );
 		echo '<button class="btn btn-round u-bg-silver u-m0 u-m0" onclick="FWP.reset()"><i class="material-icons">&#xE5D5;</i></button>';
 		echo '<div class="u-1of1 u-text-center">' .facetwp_display( 'facet', 'title_alpha' ). '</div>';
 		echo '</div>';
 	} elseif ( is_post_type_archive( 'school' ) ) {
-		echo '<div class="u-1of1 u-px3 u-pb0 u-br u-pt3 u-mb2 u-flex u-flex-wrap u-flex-justify-around u-bg-frost-4 u-text-color u-max-center">';
+		echo '<div class="u-1of1 u-px3 u-pb0 u-br u-pt3 u-mb2 u-flex u-flex-wrap u-flex-ja u-bg-frost-4 u-text-color u-max-center">';
 		echo facetwp_display( 'facet', 'parish_proximity' );
 		echo facetwp_display( 'facet', 'school_system' );
 		echo facetwp_display( 'facet', 'department_search' );
 		echo '<button class="btn btn-round u-bg-silver u-m0 u-m0" onclick="FWP.reset()"><i class="material-icons">&#xE5D5;</i></button>';
-		echo '<div class="u-1of1 u-text-center">' .facetwp_display( 'facet', 'title_alpha' ). '</div>';
 		echo '</div>';
 	} elseif ( is_post_type_archive( 'statistics_report' ) ) {
-		echo '<div class="u-1of1 u-px3 u-pb0 u-br u-pt3 u-mb2 u-flex u-flex-wrap u-flex-justify-around u-bg-frost-4 u-text-color u-max-center">';
+		echo '<div class="u-1of1 u-px3 u-pb0 u-br u-pt3 u-mb2 u-flex u-flex-wrap u-flex-ja u-bg-frost-4 u-text-color u-max-center">';
 		echo facetwp_display( 'facet', 'statistics_year' );
 		echo facetwp_display( 'facet', 'statistics_type' );
 		echo '</div>';
