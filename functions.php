@@ -85,12 +85,6 @@ function rcdoc_hierarchy_cpts() {
  * Enqueue scripts and styles.
  */
 function rcdoc_scripts() {
-	// Styles.
-	wp_enqueue_script(
-		'fonticons',
-		'https://use.fonticons.com/11b0b571.js',
-		false, false, true
-	);
 
 	wp_enqueue_style( 'oldie_child', trailingslashit( get_stylesheet_directory_uri() ).'css/oldie.css', array( 'oldie' ) );
 	wp_style_add_data( 'oldie_child', 'conditional', 'IE' );

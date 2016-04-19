@@ -89,7 +89,7 @@ gulp.task('images', function() {
 					className: 'v-icon'
 				}
 			}, {
-				removeUselessStrokeAndFill: true
+				removeStyleElement: true
 			}, {
 				cleanupNumericValues: {
 					floatPrecision: 2

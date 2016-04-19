@@ -1,0 +1,107 @@
+
+$icomoon-font-path: "fonts" !default;
+
+@font-face {
+	font-family: 'icomoon';
+    src:    url('#{$icomoon-font-path}/icomoon.eot?ftsq6');
+    src:    url('#{$icomoon-font-path}/icomoon.eot?ftsq6#iefix') format('embedded-opentype'),
+        url('#{$icomoon-font-path}/icomoon.woff2?ftsq6') format('woff2'),
+        url('#{$icomoon-font-path}/icomoon.ttf?ftsq6') format('truetype'),
+        url('#{$icomoon-font-path}/icomoon.woff?ftsq6') format('woff'),
+        url('#{$icomoon-font-path}/icomoon.svg?ftsq6#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+%icon-font {
+
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'icomoon' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	vertical-align: middle;
+	padding: 0 0.25em;
+	display: inline-block;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+$arrow-right-thin: "\e87a";
+$newspaper: "\e903";
+$book2: "\e908";
+$books: "\e909";
+$file-text: "\e90a";
+$spoon-knife: "\e90b";
+$bin: "\e90c";
+$bookmark: "\e90d";
+$heart: "\e90e";
+$man: "\e90f";
+$woman: "\e910";
+$man-woman: "\e911";
+$circle-down: "\e912";
+$file-pdf: "\e913";
+$file-word: "\e914";
+$file-excel: "\e915";
+$compass: "\e906";
+$at: "\e907";
+$flame: "\f0d2";
+$gift: "\f042";
+$book: "\e900";
+$cross: "\e901";
+$streetsign: "\e029";
+$profile-male: "\e040";
+$profile-female: "\e041";
+$food: "\e902";
+$shield: "\e904";
+$give: "\e905";
+$call: "\e03f";
+$map_pin: "\e052";
+$contact_phone: "\e059";
+$add: "\e06c";
+$link: "\e07b";
+$remove: "\e081";
+$time: "\e08e";
+$iphone: "\e120";
+$edit: "\e15e";
+$eye: "\e1a8";
+$hotel: "\e1d2";
+$local_library: "\e1e3";
+$map: "\e1f3";
+$my_location: "\e1f4";
+$notifications: "\e24a";
+$school: "\e259";
+$account_balance: "\e265";
+$account_circle: "\e268";
+$highlight_remove: "\e29c";
+$loyalty: "\e2ae";
+$translate: "\e2f4";
+$arrow-right: "\e095";
+$search: "\f002";
+$tag: "\f02b";
+$folder-open: "\f07c";
+$twitter: "\f099";
+$rss: "\f09e";
+$globe: "\f0ac";
+$pinterest: "\f0d3";
+$envelope: "\f0e0";
+$bell: "\f0f3";
+$calendar-o: "\f133";
+$youtube: "\f16a";
+$instagram: "\f16d";
+$fax: "\f1ac";
+$child: "\f1ae";
+$life-bouy: "\f1cd";
+$pie-chart: "\f200";
+$line-chart: "\f201";
+$facebook: "\f230";
+
+@mixin ico($font-icon) {
+	content: $font-icon;
+	@extend %icon-font;
+}

@@ -2,74 +2,48 @@
 	align-self: center;
 }
 
-.entry-title > a:not(.btn):after,
-a[href*="thankyou4caring.org"]:before,
-a[href*="maps.google.com"]:before,
-a[href*="tel:"]:before,
-a[href*="mailto:"]:before,
-a[href*="youtu.be"]:before,
-a[href*="youtube.com"]:before,
-a[href*=".doc"]:before,
-a[href*=".docx"]:before,
-a[href*=".xls"]:before,
-a[href*=".xlsx"]:before,
-a[href*=".pdf"]:before {
-	content: '\f015';
-	display: inline-block;
-	font-family: 'FortAwesome';
-	font-weight: normal;
-	font-size: inherit;
-	//line-height: initial;
-	vertical-align: middle;
-	padding: 0 0.3em;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
 .entry-title > a:not(.btn):after {
-	content: '\E5C8';
-	font-family: "Material Icons";
+	@include ico($arrow-right-thin);
 }
 
 a[href*=".doc"]:not(.btn):before,
 a[href*=".docx"]:not(.btn):before {
 	color: #2c5898;
-	content: '\f00f';
+	@include ico($file-word);
 }
 
 a[href*=".xls"]:not(.btn):before,
 a[href*=".xlsx"]:not(.btn):before {
 	color: #207347;
-	content: '\f011';
+	@include ico($file-excel);
 }
 
 a[href*=".pdf"]:not(.btn):before {
 	color: #c01e07;
-	content: '\f010';
+	@include ico($file-pdf);
 }
 
 a[href*="youtu.be"]:before,
 a[href*="youtube.com"]:before {
 	color: #cd201f;
-	content: '\f016';
+
+	@include ico($youtube);
 }
 
 a[href*="maps.google.com"]:before {
-	content: '\f013';
+	@include ico($map_pin);
 }
 
 a[href*="tel:"]:before {
-	content: '\f008';
+	@include ico($call);
 }
 
 a[href*="mailto:"]:before {
-	content: '\f00c';
+	@include ico($envelope);
 }
 
 a[href*="thankyou4caring.org"]:before {
-	color: #F012BE;
-	content: '\E89A';
+	color: #f012be;
 	font-size: 1.5em;
-	font-family: "Material Icons";
+	@include ico($loyalty);
 }

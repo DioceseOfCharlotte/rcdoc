@@ -18,6 +18,30 @@
   .is-animating .tile:first-child {
     animation-play-state: running; }
 
+@font-face {
+  font-family: 'icomoon';
+  src: url("fonts/icomoon.eot?ftsq6");
+  src: url("fonts/icomoon.eot?ftsq6#iefix") format("embedded-opentype"), url("fonts/icomoon.woff2?ftsq6") format("woff2"), url("fonts/icomoon.ttf?ftsq6") format("truetype"), url("fonts/icomoon.woff?ftsq6") format("woff"), url("fonts/icomoon.svg?ftsq6#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+ a[href*="youtu.be"]:before,
+a[href*="youtube.com"]:before, a[href*="maps.google.com"]:before, a[href*="tel:"]:before, a[href*="mailto:"]:before, a[href*="thankyou4caring.org"]:before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  vertical-align: middle;
+  padding: 0 0.25em;
+  display: inline-block;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
 .mdl-card {
   -js-display: flex;
   display: flex;
@@ -367,64 +391,39 @@
 .format-link {
   align-self: center; }
 
-
-a[href*="thankyou4caring.org"]:before,
-a[href*="maps.google.com"]:before,
-a[href*="tel:"]:before,
-a[href*="mailto:"]:before,
-a[href*="youtu.be"]:before,
-a[href*="youtube.com"]:before,
-a[href*=".doc"]:before,
-a[href*=".docx"]:before,
-a[href*=".xls"]:before,
-a[href*=".xlsx"]:before,
-a[href*=".pdf"]:before {
-  content: '\f015';
-  display: inline-block;
-  font-family: 'FortAwesome';
-  font-weight: normal;
-  font-size: inherit;
-  vertical-align: middle;
-  padding: 0 0.3em;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
  {
-  content: '\E5C8';
-  font-family: "Material Icons"; }
+  content: ""; }
 
  {
   color: #2c5898;
-  content: '\f00f'; }
+  content: ""; }
 
  {
   color: #207347;
-  content: '\f011'; }
+  content: ""; }
 
  {
   color: #c01e07;
-  content: '\f010'; }
+  content: ""; }
 
 a[href*="youtu.be"]:before,
 a[href*="youtube.com"]:before {
   color: #cd201f;
-  content: '\f016'; }
+  content: ""; }
 
 a[href*="maps.google.com"]:before {
-  content: '\f013'; }
+  content: ""; }
 
 a[href*="tel:"]:before {
-  content: '\f008'; }
+  content: ""; }
 
 a[href*="mailto:"]:before {
-  content: '\f00c'; }
+  content: ""; }
 
 a[href*="thankyou4caring.org"]:before {
-  color: #F012BE;
-  content: '\E89A';
+  color: #f012be;
   font-size: 1.5em;
-  font-family: "Material Icons"; }
+  content: ""; }
 
 .tile-title {
   top: 45%; }
