@@ -26,7 +26,7 @@
   font-style: normal; }
 
  a[href*="youtu.be"]:before,
-a[href*="youtube.com"]:before, a[href*="maps.google.com"]:before, a[href*="tel:"]:before, a[href*="mailto:"]:before, a[href*="thankyou4caring.org"]:before {
+a[href*="youtube.com"]:before, a[href*="maps.google.com"]:before, a[href*="tel:"]:before, a[href*="mailto:"]:before, a[href*="thankyou4caring.org"]:before, a[href*="catholicnewsherald.com"]:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -418,12 +418,19 @@ a[href*="tel:"]:before {
   content: ""; }
 
 a[href*="mailto:"]:before {
-  content: ""; }
+  content: ""; }
 
 a[href*="thankyou4caring.org"]:before {
   color: #f012be;
   font-size: 1.5em;
   content: ""; }
+
+a[href*="catholicnewsherald.com"]:before {
+  content: "";
+  color: #a22630; }
+
+h2 a.rsswidget:before {
+  content: none; }
 
 .tile-title {
   top: 45%; }

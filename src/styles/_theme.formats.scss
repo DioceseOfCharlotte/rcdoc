@@ -47,3 +47,12 @@ a[href*="thankyou4caring.org"]:before {
 	font-size: 1.5em;
 	@include ico($loyalty);
 }
+
+a[href*="catholicnewsherald.com"]:before {
+	@include ico($newspaper);
+	color: #a22630;
+}
+
+h2 a.rsswidget:before {
+	content: none;
+}
