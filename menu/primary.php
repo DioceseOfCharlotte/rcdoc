@@ -1,7 +1,7 @@
 <?php
 
 if ( has_nav_menu( 'primary' ) ) : ?>
-
+<?php hybrid_get_sidebar( 'header-right' ); ?>
 <!-- Navigation -->
 
 <nav <?php hybrid_attr( 'menu', 'primary' ); ?>>
@@ -19,7 +19,7 @@ if ( has_nav_menu( 'primary' ) ) : ?>
 	));
 	?>
 
-	<?php hybrid_get_sidebar( 'header-right' ); ?>
+
 </nav>
 
 <?php
