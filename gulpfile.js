@@ -12,13 +12,16 @@ var postcss = require('gulp-postcss');
 var babel = require('gulp-babel');
 var oldie = require('oldie');
 var autoPrefixer = require('autoprefixer');
+var sourcemaps = require('gulp-sourcemaps');
 var postcssFlex = require('postcss-flexibility');
+var perfectionist = require('perfectionist');
 
 var $ = gulpLoadPlugins();
 var reload = browserSync.reload;
 
 var SASS_PATHS = [
-	'src/motion-ui/src'
+	'src/motion-ui/src',
+	'src/styles'
 ];
 
 var AUTOPREFIXER_BROWSERS = [
@@ -37,6 +40,9 @@ var AUTOPREFIXER_BROWSERS = [
 var POSTCSS_PLUGINS = [
 	autoPrefixer({
 		browsers: AUTOPREFIXER_BROWSERS
+	}),
+	perfectionist({
+		cascade: false
 	})
 ];
 
@@ -45,7 +51,10 @@ var POSTCSS_IE = [
 		browsers: ['IE 8', 'IE 9']
 	}),
 	postcssFlex,
-	oldie
+	oldie,
+	perfectionist({
+		cascade: false
+	})
 ];
 
 var SOURCESJS = [
@@ -108,7 +117,7 @@ gulp.task('images', function() {
 gulp.task('styles', function() {
 	gulp.src('src/styles/style.scss')
 		// Generate Source Maps
-		.pipe($.sourcemaps.init())
+		.pipe(sourcemaps.init())
 		.pipe($.sass({
 			includePaths: SASS_PATHS,
 			precision: 10,
@@ -117,13 +126,13 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest('.tmp'))
 		.pipe(postcss(POSTCSS_PLUGINS))
 		.pipe($.concat('style.css'))
+		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('./'))
 		.pipe($.if('*.css', $.cssnano()))
 		.pipe($.concat('style.min.css'))
 		.pipe($.size({
 			title: 'styles'
 		}))
-		.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest('./'));
 });
 
@@ -132,12 +141,15 @@ gulp.task('oldie', function() {
 		.pipe(postcss(POSTCSS_IE))
 		.pipe($.concat('oldie.css'))
 		.pipe(gulp.dest('css'))
+		.pipe($.if('*.css', $.cssnano()))
+		.pipe($.concat('oldie.min.css'))
+		.pipe(gulp.dest('css'))
 });
 
 // Concatenate And Minify JavaScript
 gulp.task('scripts', function() {
 	gulp.src(SOURCESJS)
-		.pipe($.sourcemaps.init())
+		.pipe(sourcemaps.init())
 		.pipe(babel({
 			"presets": ["es2015"],
 			"only": [
@@ -145,27 +157,23 @@ gulp.task('scripts', function() {
 			]
 		}))
 		.pipe($.concat('main.js'))
-		.pipe($.sourcemaps.write())
 		.pipe(gulp.dest('js'))
 		.pipe($.concat('main.min.js'))
 		.pipe($.uglify())
 		.pipe($.size({
 			title: 'scripts'
 		}))
-		.pipe($.sourcemaps.write('.'))
+		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('js'))
 });
 
 // Concatenate And Minify JavaScript
 gulp.task('jq_scripts', function() {
 	gulp.src(SOURCESJQ)
-		.pipe($.sourcemaps.init())
-		// .pipe($.babel())
 		.pipe($.concat('jq-main.js'))
 		.pipe(gulp.dest('js'))
 		.pipe($.uglify())
 		.pipe($.concat('jq-main.min.js'))
-		.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest('js'))
 		.pipe($.size({
 			title: 'jq_scripts'

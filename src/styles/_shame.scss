@@ -22,6 +22,15 @@
 	margin: 20px 0;
 }
 
+.entry-content p,
+.entry-content li,
+.archive-description p,
+.archive-description li {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .nav-links {
 	display: flex;
 	justify-content: space-around;
@@ -445,4 +454,58 @@ li > a.rsswidget {
 	&:before {
 		color: inherit!important;
 	}
+}
+
+
+// From JP CSS
+
+.facetwp-facet.facetwp-type-checkboxes {
+	max-height: 100%;
+}
+
+@media screen and (max-width: 51em) {
+	.menu-space.u-bg-1-glass-dark {
+		display: none;
+	}
+}
+
+.card-title.u-text-center.u-py2 {
+	padding-top: 0;
+}
+
+.menu-primary.is-active {
+	padding-top: 70px;
+}
+
+.gallery-icon > img {
+	width: 100%;
+}
+
+.gallery-col-1 {
+	margin-left: -1.5rem;
+	margin-right: -1.5rem;
+}
+
+.u-f-plus.u-text-center.u-pb1 {
+	height: 60px;
+	overflow: hidden;
+}
+
+body.arch .arch-u-1of1-md {
+	max-width: 100%;
+}
+
+h2 > a:not([class]):hover {
+	text-decoration: none;
+}
+
+.u-inline-block.sidebar-header.u-rel {
+	right: 5px;
+	position: absolute;
+	z-index: 4;
+	color: white;
+}
+
+.tile-row {
+	margin-bottom: 3rem;
 }
