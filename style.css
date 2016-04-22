@@ -21,13 +21,6 @@
     -webkit-animation-play-state: running;
             animation-play-state: running; }
 
-@font-face {
-  font-family: 'icomoon';
-  src: url("fonts/icomoon.eot?ftsq6");
-  src: url("fonts/icomoon.eot?ftsq6#iefix") format("embedded-opentype"), url("fonts/icomoon.woff2?ftsq6") format("woff2"), url("fonts/icomoon.ttf?ftsq6") format("truetype"), url("fonts/icomoon.woff?ftsq6") format("woff"), url("fonts/icomoon.svg?ftsq6#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
 .entry-title > a:not(.btn):after, a[href*=".doc"]:not(.btn):before,
 a[href*=".docx"]:not(.btn):before, a[href*=".xls"]:not(.btn):before,
 a[href*=".xlsx"]:not(.btn):before, a[href*=".pdf"]:not(.btn):before, a[href*="youtu.be"]:before,
