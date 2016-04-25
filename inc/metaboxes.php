@@ -344,7 +344,7 @@ function doc_term_color_text( $term_id ) {
 
 function doc_term_color_comp( $term_id, $alpha ) {
 	$term_accent = new Color( doc_term_color_hex( $term_id ) );
-	$comp_color = $term_accent->isDark() ? $term_accent->lighten(20) :$term_accent->darken(20);
+	$comp_color = $term_accent->isDark() ? $term_accent->darken(15) :$term_accent->lighten(20);
 
 	$comp_rgb = implode( ',', hybrid_hex_to_rgb( $comp_color ) );
 	return 'rgba('. $comp_rgb .','. $alpha .')';
