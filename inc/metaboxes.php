@@ -264,6 +264,64 @@ function doc_register_term_metaboxes() {
 		'show_option_none' => true,
 		'options'          => get_tax_icons(),
 	) );
+
+	$doc_term_meta->add_field( array(
+		'name'             => __( 'Page Links To', 'cmb2' ),
+		'desc'             => __( 'Point this content to:', 'cmb2' ),
+		'id'               => $prefix . 'tax_url',
+		'type'             => 'radio_inline',
+		'options'          => array(
+			'standard' => __( 'The original URL', 'cmb2' ),
+			'internal' => __( 'Another page on this site', 'cmb2' ),
+			'custom'   => __( 'A custom URL', 'cmb2' ),
+		),
+	) );
+
+	$doc_term_meta->add_field( array(
+	    'name'        => __( 'Linked page' ),
+	    'id'          => $prefix . 'linked_post',
+		'type'    => 'select',
+		'show_option_none' => true,
+	    'options' => cmb2_get_post_list($post_type = array('cpt_archive','department')),
+	) );
+
+	$doc_term_meta->add_field( array(
+		'name' => __( 'Website URL', 'cmb2' ),
+		'desc' => __( 'http:// or https://', 'cmb2' ),
+		'id'   => $prefix . 'url',
+		'type' => 'text_url',
+		// 'protocols' => array('http', 'https', 'mailto'), // Array of allowed protocols
+		// 'repeatable' => true,
+	) );
+}
+
+
+/**
+ * Gets a number of terms and displays them as options
+ * @param  string       $post_type Taxonomy terms to retrieve. Default is category.
+ * @param  string|array $args     Optional. get_terms optional arguments
+ * @return array                  An array of options that matches the CMB2 options array
+ */
+function cmb2_get_post_list( $post_type = 'post', $args = array() ) {
+
+    $args['post_type'] = $post_type;
+
+	$post_type = $args['post_type'];
+
+    $args = array( 'post_type' => $post_type, 'posts_per_page' => -1 );
+
+
+
+    $posts = query_posts( $args );
+
+	$post_list = array();
+    if ( ! empty( $posts ) ) {
+        foreach ( $posts as $post ) {
+            $post_list[ $post->ID ] = $post->post_title;
+        }
+    }
+
+    return $post_list;
 }
 
 /**

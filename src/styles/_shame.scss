@@ -4,7 +4,6 @@
 }
 
 @include md {
-
 	.mdl-mega-footer--heading-checkbox:checked ~ div,
 	.mdl-mega-footer__heading-checkbox:checked ~ div {
 		display: block;
@@ -22,13 +21,11 @@
 	margin: 20px 0;
 }
 
-.entry-content p,
-.entry-content li,
-.archive-description p,
-.archive-description li {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+article p,
+article li {
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .nav-links {
@@ -209,7 +206,6 @@ li > a.rsswidget {
 }
 
 @include md {
-
 	.is-top .menu-toggle {
 		visibility: hidden;
 	}
@@ -248,9 +244,7 @@ li > a.rsswidget {
 }
 
 .site-header {
-
 	&:after {
-
 		content: "";
 		position: absolute;
 		z-index: -1;
@@ -276,9 +270,7 @@ li > a.rsswidget {
 }
 
 .menu-primary__list li {
-
 	@include md {
-
 		display: inline-block;
 	}
 }
@@ -324,14 +316,12 @@ li > a.rsswidget {
 }
 
 @include md {
-
 	.mdl-mega-footer__drop-down-section {
 		width: 33%;
 	}
 }
 
 @include lg {
-
 	.mdl-mega-footer__drop-down-section,
 	.mdl-mega-footer__drop-down-section:nth-child(3),
 	.mdl-mega-footer__drop-down-section:nth-child(4) {
@@ -356,7 +346,6 @@ li > a.rsswidget {
 }
 
 .mdl-mega-footer__heading-checkbox:checked {
-
 	& + .mdl-mega-footer--heading:after,
 	& ~ .mdl-mega-footer--heading:after {
 		font-family: "Material Icons";
@@ -365,7 +354,6 @@ li > a.rsswidget {
 }
 
 @include md {
-
 	.mdl-mega-footer--heading-checkbox,
 	.mdl-mega-footer__heading-checkbox {
 		display: none;
@@ -378,7 +366,6 @@ li > a.rsswidget {
 
 	.mdl-mega-footer--heading-checkbox:checked,
 	.mdl-mega-footer__heading-checkbox:checked {
-
 		& + .mdl-mega-footer--heading + .mdl-mega-footer--link-list,
 		& + .mdl-mega-footer__heading + .mdl-mega-footer__link-list,
 		& ~ .mdl-mega-footer--link-list,
@@ -405,23 +392,18 @@ li > a.rsswidget {
 	min-height: 300px;
 
 	@include md {
-
 		min-height: 450px;
 	}
 }
 
 .archive-title {
-
 	@include lg {
-
 		font-size: 3.5rem;
 	}
 }
 
 .trail-items {
-
 	@include lg {
-
 		font-size: 1.5rem;
 	}
 }
@@ -440,25 +422,21 @@ li > a.rsswidget {
 	width: 100%;
 }
 
-
 .school_system-macs .school-system-logo {
-	color: #112A57;
+	color: #112a57;
 }
-
 
 [class*="u-bg-1"] a:not(.btn),
 [class*="u-bg-2"] a:not(.btn),
 [class*="u-bg-3"] a:not(.btn) {
-	color: inherit!important;
+	color: inherit !important;
 
 	&:before {
-		color: inherit!important;
+		color: inherit !important;
 	}
 }
 
-
 // From JP CSS
-
 .facetwp-facet.facetwp-type-checkboxes {
 	max-height: 100%;
 }
