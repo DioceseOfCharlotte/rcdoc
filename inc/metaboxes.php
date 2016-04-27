@@ -271,37 +271,36 @@ function doc_register_term_metaboxes() {
 	    'id'          => $prefix . 'linked_post',
 		'type'    => 'select',
 		'show_option_none' => true,
-	    'options' => cmb2_get_post_list($post_type = array('cpt_archive','department')),
+	    'options' => cmb2_get_post_list( $post_type = array( 'cpt_archive', 'department' ) ),
 	) );
 }
 
 
 /**
  * Gets a number of terms and displays them as options
+ *
  * @param  string       $post_type Taxonomy terms to retrieve. Default is category.
  * @param  string|array $args     Optional. get_terms optional arguments
  * @return array                  An array of options that matches the CMB2 options array
  */
 function cmb2_get_post_list( $post_type = 'post', $args = array() ) {
 
-    $args['post_type'] = $post_type;
+	$args['post_type'] = $post_type;
 
 	$post_type = $args['post_type'];
 
-    $args = array( 'post_type' => $post_type, 'posts_per_page' => -1 );
+	$args = array( 'post_type' => $post_type, 'posts_per_page' => -1 );
 
-
-
-    $posts = get_posts( $args );
+	$posts = get_posts( $args );
 
 	$post_list = array();
-    if ( ! empty( $posts ) ) {
-        foreach ( $posts as $post ) {
-            $post_list[ $post->ID ] = $post->post_title;
-        }
-    }
+	if ( ! empty( $posts ) ) {
+		foreach ( $posts as $post ) {
+			$post_list[ $post->ID ] = $post->post_title;
+		}
+	}
 
-    return $post_list;
+	return $post_list;
 }
 
 /**
@@ -382,7 +381,7 @@ function doc_term_color_text( $term_id ) {
 
 function doc_term_color_comp( $term_id, $alpha ) {
 	$term_accent = new Color( doc_term_color_hex( $term_id ) );
-	$comp_color = $term_accent->isDark() ? $term_accent->darken(15) :$term_accent->lighten(20);
+	$comp_color = $term_accent->isDark() ? $term_accent->darken( 15 ) :$term_accent->lighten( 20 );
 
 	$comp_rgb = implode( ',', hybrid_hex_to_rgb( $comp_color ) );
 	return 'rgba('. $comp_rgb .','. $alpha .')';
