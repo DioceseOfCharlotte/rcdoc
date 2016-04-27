@@ -14,7 +14,6 @@
 		<div <?php hybrid_attr( 'entry-content' ); ?>>
 			<?php tha_entry_content_before(); ?>
 			<?php the_content(); ?>
-			<?php get_template_part( 'components/acf-contact' ); ?>
 			<?php tha_entry_content_after(); ?>
 		</div>
 

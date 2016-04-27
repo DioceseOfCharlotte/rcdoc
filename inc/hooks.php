@@ -18,6 +18,13 @@ add_action( 'tha_content_bottom', 'doc_dept_child_posts' );
 add_action( 'tha_content_before', 'doc_archive_desc' );
 add_action( 'tha_entry_bottom', 'doc_view_staff' );
 // add_action( 'tha_content_bottom', 'doc_alias_view_staff' );
+
+
+function doc_contact_info() {
+	get_template_part( 'components/acf-contact' );
+}
+
+
 function doc_view_staff() {
 	if ( is_front_page() || ! is_singular( 'department' ) ) {
 		return;
