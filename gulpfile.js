@@ -124,16 +124,14 @@ gulp.task('styles', function() {
 			onError: console.error.bind(console, 'Sass error:')
 		}))
 		.pipe(gulp.dest('.tmp'))
-		.pipe(postcss(POSTCSS_PLUGINS))
 		.pipe($.concat('style.css'))
-		.pipe(sourcemaps.write('.'))
+		.pipe(postcss(POSTCSS_PLUGINS))
 		.pipe(gulp.dest('./'))
 		.pipe($.if('*.css', $.cssnano()))
 		.pipe($.concat('style.min.css'))
-		.pipe($.size({
-			title: 'styles'
-		}))
-		.pipe(gulp.dest('./'));
+		.pipe($.size({title: 'styles'}))
+		.pipe($.sourcemaps.write('.'))
+		.pipe(gulp.dest('./'))
 });
 
 gulp.task('oldie', function() {

@@ -574,10 +574,6 @@ h2 a.rsswidget:before {
     content: none;
 }
 
-.tile-title {
-    top: 45%;
-}
-
 .tiled-icon {
     font-size: 208px;
     stroke: rgba(54, 71, 79, 0.3);
@@ -1452,7 +1448,7 @@ html .entry-header + .contact-info {
 }
 
 html .school_system-macs .school-system-logo {
-    color: #112A57;
+    color: #112a57;
 }
 
  {

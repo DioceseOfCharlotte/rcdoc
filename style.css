@@ -891,10 +891,6 @@ h2 a.rsswidget:before {
     content: none;
 }
 
-.tile-title {
-    top: 45%;
-}
-
 .tiled-icon {
     font-size: 13rem;
     stroke: rgba(54, 71, 79, 0.3);
@@ -1895,5 +1891,3 @@ body#tinymce {
 body#tinymce .wpview-wrap .gallery-cell {
     display: inline-block;
 }
-
-/*# sourceMappingURL=style.css.map */

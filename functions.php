@@ -85,8 +85,8 @@ function rcdoc_hierarchy_cpts() {
  * Enqueue scripts and styles.
  */
 function rcdoc_scripts() {
-
-	wp_enqueue_style( 'oldie_child', trailingslashit( get_stylesheet_directory_uri() ).'css/oldie.css', array( 'oldie' ) );
+	$suffix = hybrid_get_min_suffix();
+	wp_enqueue_style( 'oldie_child', trailingslashit( get_stylesheet_directory_uri() )."css/oldie{$suffix}.css", array( 'hybrid-parent', 'hybrid-style', 'oldie' ) );
 	wp_style_add_data( 'oldie_child', 'conditional', 'IE' );
 
 	wp_enqueue_style(
