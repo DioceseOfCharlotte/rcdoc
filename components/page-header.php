@@ -11,7 +11,9 @@ if ( is_home() || is_front_page() ) {
 	    echo '<div class="section-row__content tile-row is-animating o-grid u-flex-ja u-pt4">';
 	    foreach ( $terms as $term ) {
 			$term_id = $term->term_id;
-			$term_link = get_term_link( $term );
+			$term_post_link = get_term_meta( $term_id, 'doc_linked_post', true );
+			$term_redirect = get_permalink( $term_post_link );
+			$term_link = $term_post_link ? $term_redirect : get_term_link( $term );
 			$term_icon = get_term_meta( $term_id, 'doc_tax_icon', true );
 	        echo '<div class="tile u-flex-wrap o-cell u-m0 mdl-card u-shadow--2dp shadow-hover" style="' . doc_term_color_style( $term_id, '0.8' ) . '">';
 			echo '<a href="' . esc_url( $term_link ) . '" class="u-flex-col u-flex-jc u-text-center"><div class="tiled-icon" style="color:' . doc_term_color_comp( $term_id, '0.8' ) . ';">';
