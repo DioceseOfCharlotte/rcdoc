@@ -15,7 +15,6 @@ if ( ! is_user_logged_in() ) {
 
 	</header>
 	<aside class="drawer-navigation u-bg-1-dark">
-		<?php hybrid_get_menu( 'logged-in' ); ?>
 		<?php dynamic_sidebar( 'drawer' ); ?>
 		<div class="layout-spacer"></div>
 	</aside>

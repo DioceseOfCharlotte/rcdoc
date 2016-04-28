@@ -9,5 +9,6 @@ if ( ! is_active_sidebar( 'header-right' ) ) {
 	<button href="#" class="js-dropdown dropdown-btn btn-round material-icons u-z4">account_circle</button>
 	<div class="dropdown-right u-br u-right0 u-bg-white u-shadow--3dp u-text-color">
 		<?php dynamic_sidebar( 'header-right' ); ?>
+		<?php hybrid_get_menu( 'logged-in' ); ?>
 	</div>
 </div>

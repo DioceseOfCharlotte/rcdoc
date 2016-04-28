@@ -46,6 +46,10 @@ function rcdoc_setup() {
 		)
 	);
 
+	register_nav_menus(array(
+		'logged-in'   => esc_html__( 'Logged In', 'rcdoc' ),
+	));
+
 	add_filter( 'theme_mod_primary_color', 'rcdoc_primary_color' );
 	add_filter( 'theme_mod_secondary_color', 'rcdoc_secondary_color' );
 	add_filter( 'abe_add_hierarchy_cpts', 'rcdoc_hierarchy_cpts' );
@@ -142,15 +146,15 @@ function abraham_widgets() {
 		'name'          => __( 'Header Right', 'abraham' ),
 		'before_title'  => '<h3 class="h2 widget-title mt0">',
 		'after_title'   => '</h3>',
-		'before_widget' => '<section ' .hybrid_get_attr( 'widgets', 'header-right' ).'>',
+		'before_widget' => '<section id="%1$s" class="widget u-bg-2 u-p2">',
 		'after_widget'  => '</section>',
 	));
 	register_sidebar(array(
 		'id'            => 'footer',
 		'name'          => __( 'Footer', 'abraham' ),
-		'before_widget' => '<section class="widget mdl-mega-footer__drop-down-section u-p2 u-flexed-grow u-list-reset"><div>',
-		'before_title'  => '</div><input class="mdl-mega-footer__heading-checkbox u-1/1" type="checkbox" checked><h2 class="widget-title u-mt0 mdl-mega-footer--heading">',
-		'after_title'   => '</h2><div class="mdl-mega-footer--link-list">',
+		'before_widget' => '<section class="widget mobile-widget__drop-down-section u-p2 u-flexed-grow u-list-reset"><div>',
+		'before_title'  => '</div><input class="mobile-widget__heading-checkbox u-1/1" type="checkbox" checked><h2 class="widget-title u-mt0 mobile-widget__heading">',
+		'after_title'   => '</h2><div class="mobile-widget__link-list">',
 		'after_widget'  => '</div></section>',
 	));
 	register_sidebar(array(
