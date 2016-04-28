@@ -474,6 +474,10 @@ a[href*="catholicnewsherald.com"]:before {
     font-size: 12.8px;
 }
 
+.menu__link.btn:before {
+    content: none;
+}
+
 /**
 * Dropdown content
 */

@@ -221,3 +221,7 @@ body:not(.home) {
 		}
 	}
 }
+
+.menu__link.btn:before {
+	content: none;
+}

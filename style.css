@@ -770,6 +770,10 @@ a[href*="catholicnewsherald.com"]:before {
     }
 }
 
+.menu__link.btn:before {
+    content: none;
+}
+
 /**
 * Dropdown content
 */
