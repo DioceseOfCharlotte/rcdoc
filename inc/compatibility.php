@@ -26,6 +26,8 @@ function query_post_type( $query ) {
         );
 		$query->set( 'meta_query', $meta_query );
 		$query->set( 'post_type', $post_type );
+		$query->set( 'order', 'ASC' );
+	  	$query->set( 'orderby', 'title' );
 		return $query;
 	}
 }
