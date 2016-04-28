@@ -23,7 +23,7 @@ if ( is_home() || is_front_page() ) {
 				include locate_template( 'images/icons/shield.svg' );
 			}
 			echo '</div>';
-			echo '<div class="u-abs tile-title u-left0 u-top0 u-bottom0 u-flex-center u-1of1 u-text-shadow u-text-center u-flex"><h2 class="u-h1 u-heading u-bold u-1of1">' . $term->name . '</h2></div>';
+			echo '<div class="u-abs tile-title u-left0 u-top0 u-bottom0 u-flex-center u-1of1 u-text-shadow u-text-center u-flex"><h2 class="u-h2 u-heading u-bold u-1of1">' . $term->name . '</h2></div>';
 			echo '</div></a>';
 	    }
 	    echo '</div>';
