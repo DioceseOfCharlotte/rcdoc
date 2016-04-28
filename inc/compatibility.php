@@ -14,13 +14,18 @@ add_filter( 'pre_get_posts', 'query_post_type' );
 
 function query_post_type( $query ) {
 	if ( is_admin() || ! $query->is_main_query() ) {
-		return; }
+		return $query; }
 	if ( is_tax( 'agency' ) ) {
-		$post_type = get_query_var( 'post_type' );
-		if ( $post_type ) {
-			$post_type = $post_type;
-		} else { 			$post_type = array( 'department', 'cpt_archive' ); }
-		$query->set( 'post_type',$post_type );
+		$post_type = $query->get( 'post_type' );
+		$meta_query = $query->get('meta_query');
+		$post_type = array( 'department', 'cpt_archive' );
+		$meta_query[] = array(
+			'key'       => 'doc_alias_checkbox',
+			'value'     => 'on',
+			'compare'   => 'NOT EXISTS',
+        );
+		$query->set( 'meta_query', $meta_query );
+		$query->set( 'post_type', $post_type );
 		return $query;
 	}
 }
@@ -34,7 +39,7 @@ function query_post_type( $query ) {
  */
 function doc_post_order( $query ) {
 	if ( is_admin() || ! $query->is_main_query() ) {
-		return; }
+		return $query; }
 	if ( is_post_type_archive( 'department' ) || is_post_type_archive( 'parish' ) || is_post_type_archive( 'school' ) ) {
 		$query->set( 'order', 'ASC' );
 	  	$query->set( 'orderby', 'name' );

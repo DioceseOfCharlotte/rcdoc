@@ -6,7 +6,92 @@
  */
 
 use Mexitek\PHPColors\Color;
+add_action( 'cmb2_admin_init', 'doc_register_term_metaboxes' );
+add_action( 'cmb2_admin_init', 'doc_register_dept_alias' );
 add_action( 'cmb2_admin_init', 'doc_register_stats_upload' );
+
+/**
+ * Register CMB2 Alias Metaboxes.
+ */
+function doc_register_dept_alias() {
+	$prefix = 'doc_alias_';
+
+	/**
+	* Page Colors metabox.
+	*/
+	$doc_dept_alias = new_cmb2_box( array(
+		'id'            => $prefix . 'metabox',
+		'title'         => __( 'Dept Alias', 'cmb2' ),
+		'object_types'  => array( 'department', ),
+		'context'       => 'side',
+		'priority'      => 'low',
+	) );
+
+	$doc_dept_alias->add_field( array(
+		'name' => __( 'Department has a seperate landing page?', 'cmb2' ),
+		'desc' => __( 'Yes. (this page will not be accessed directly.)', 'cmb2' ),
+		'id'   => $prefix . 'checkbox',
+		'type' => 'checkbox',
+	) );
+
+	$doc_dept_alias->add_field( array(
+	    'name'        => __( 'Alias of' ),
+		'desc'             => __( 'The landing page for this dept:', 'cmb2' ),
+	    'id'          => $prefix . 'landing',
+		'type'    => 'select',
+		'show_option_none' => true,
+	    'options' => cmb2_get_post_list( $post_type = array( 'cpt_archive' ) ),
+	) );
+}
+
+
+/**
+ * Register CMB2 Term Metaboxes.
+ */
+function doc_register_term_metaboxes() {
+	$prefix = 'doc_';
+
+	/**
+	* Page Colors metabox.
+	*/
+	$doc_term_meta = new_cmb2_box( array(
+		'id'            => $prefix . 'icon_metabox',
+		'title'         => __( 'Agency Accents', 'cmb2' ),
+		'object_types'     => array( 'term' ),
+		'taxonomies'       => array( 'category', 'agency' ),
+		'context'       => 'side',
+		'priority'      => 'high',
+	) );
+
+	$doc_term_meta->add_field( array(
+		'name'       => __( 'Accent Color', 'cmb2' ),
+		'id'         => $prefix . 'term_color',
+		'type'       => 'colorpicker',
+		'default'    => apply_filters( 'theme_mod_primary_color', '' ),
+		'attributes' => array(
+			'data-colorpicker' => wp_json_encode( array(
+				'palettes' => array( '#34495E', '#2980b9', '#39CCCC', '#16a085', '#FFC107', '#F44336' ),
+			) ),
+		),
+	) );
+
+	$doc_term_meta->add_field( array(
+		'name'       => __( 'Agency Icon', 'cmb2' ),
+		'id'         => $prefix . 'tax_icon',
+		'type'             => 'select',
+		'show_option_none' => true,
+		'options'          => get_tax_icons(),
+	) );
+
+	$doc_term_meta->add_field( array(
+	    'name'        => __( 'Page Links To' ),
+		'desc'             => __( 'Point this content to:', 'cmb2' ),
+	    'id'          => $prefix . 'linked_post',
+		'type'    => 'select',
+		'show_option_none' => true,
+	    'options' => cmb2_get_post_list( $post_type = array( 'cpt_archive', 'department' ) ),
+	) );
+}
 
 
 
@@ -225,55 +310,6 @@ function doc_register_stats_upload() {
 // ) );
 // }
 //
-add_action( 'cmb2_admin_init', 'doc_register_term_metaboxes' );
-
-/**
- * Register CMB2 Metaboxes.
- */
-function doc_register_term_metaboxes() {
-	$prefix = 'doc_';
-
-	/**
-	* Page Colors metabox.
-	*/
-	$doc_term_meta = new_cmb2_box( array(
-		'id'            => $prefix . 'icon_metabox',
-		'title'         => __( 'Icons', 'cmb2' ),
-		'object_types'     => array( 'term' ),
-		'taxonomies'       => array( 'category', 'agency' ),
-		'context'       => 'side',
-		'priority'      => 'high',
-	) );
-
-	$doc_term_meta->add_field( array(
-		'name'       => __( 'Accent Color', 'cmb2' ),
-		'id'         => $prefix . 'term_color',
-		'type'       => 'colorpicker',
-		'default'    => apply_filters( 'theme_mod_primary_color', '' ),
-		'attributes' => array(
-			'data-colorpicker' => wp_json_encode( array(
-				'palettes' => array( '#34495E', '#2980b9', '#39CCCC', '#16a085', '#FFC107', '#F44336' ),
-			) ),
-		),
-	) );
-
-	$doc_term_meta->add_field( array(
-		'name'       => __( 'Agency Icon', 'cmb2' ),
-		'id'         => $prefix . 'tax_icon',
-		'type'             => 'select',
-		'show_option_none' => true,
-		'options'          => get_tax_icons(),
-	) );
-
-	$doc_term_meta->add_field( array(
-	    'name'        => __( 'Page Links To' ),
-		'desc'             => __( 'Point this content to:', 'cmb2' ),
-	    'id'          => $prefix . 'linked_post',
-		'type'    => 'select',
-		'show_option_none' => true,
-	    'options' => cmb2_get_post_list( $post_type = array( 'cpt_archive', 'department' ) ),
-	) );
-}
 
 
 /**
@@ -289,7 +325,17 @@ function cmb2_get_post_list( $post_type = 'post', $args = array() ) {
 
 	$post_type = $args['post_type'];
 
-	$args = array( 'post_type' => $post_type, 'posts_per_page' => -1 );
+	$args = array(
+		'post_type' => $post_type,
+		'posts_per_page' => -1,
+		'meta_query' => array(
+			array(
+			'key'       => 'doc_alias_checkbox',
+			'value'     => 'on',
+			'compare'   => 'NOT EXISTS',
+			)
+		)
+	);
 
 	$posts = get_posts( $args );
 
