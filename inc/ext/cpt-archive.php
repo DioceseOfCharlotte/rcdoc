@@ -64,3 +64,45 @@ function cpt_archive_labels( $args, $type ) {
 
 	return $args;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+add_action( 'cmb2_admin_init', 'doc_register_parent_select' );
+
+/**
+ * Register CMB2 Parent select Metaboxes.
+ */
+function doc_register_parent_select() {
+	$prefix = 'doc_parent_';
+
+	/**
+	* Page Colors metabox.
+	*/
+	$doc_landing_parent = new_cmb2_box( array(
+		'id'            => $prefix . 'metabox',
+		'title'         => __( 'Attributes', 'cmb2' ),
+		'object_types'  => array( 'cpt_archive' ),
+		'context'       => 'side',
+		'priority'      => 'low',
+	) );
+
+	$doc_landing_parent->add_field( array(
+	    'name'        => __( 'Parent' ),
+	    'id'          => $prefix . 'select',
+		'type'    => 'select',
+		'show_option_none' => true,
+	    'options' => cmb2_get_post_list( $post_type = array( 'cpt_archive' ) ),
+	) );
+}

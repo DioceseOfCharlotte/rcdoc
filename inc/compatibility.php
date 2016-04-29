@@ -48,9 +48,21 @@ function doc_post_order( $query ) {
 	  	$query->set( 'post_parent', 0 );
 		return;
 	} elseif ( is_post_type_archive() ) {
-	  	$query->set( 'order', 'ASC' );
-	  	$query->set( 'orderby', 'menu_order' );
-		$query->set( 'post_parent', 0 );
+		global $cptarchives;
+		$post_type = $query->get( 'post_type' );
+		$archive_id = $cptarchives->get_archive_id();
+		$meta_query = $query->get('meta_query');
+		//$post_type = array('cpt_archive', $post_type);
+		$meta_query[] = array(
+			'key'       => 'doc_parent_select',
+			'value'     => $archive_id,
+			'compare'   => '==',
+        );
+		//$query->set( 'meta_query', $meta_query );
+		$query->set( 'post_type', $post_type );
+	  	//$query->set( 'order', 'ASC' );
+	  	//$query->set( 'orderby', 'menu_order' );
+		//$query->set( 'post_parent', 0 );
 	}
 }
 
