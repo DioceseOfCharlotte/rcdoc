@@ -51,7 +51,7 @@ function abraham_custom_header_wp_head() {
 	}
 
 	global $cptarchives;
-	$queried_object = get_queried_object()->term_id;
+	$queried_object = get_queried_object_id();
 	$term_image = get_term_meta( $queried_object, 'image', true );
 	if ( $term_image ) {
 		$bg_image = wp_get_attachment_image_url( $term_image, 'abe-hd' );
