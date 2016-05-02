@@ -32,13 +32,14 @@
     animation-play-state: running;
 }
 
-.entry-title > a:not(.btn):after, a[href*=".doc"]:not(.btn):before,
-a[href*=".docx"]:not(.btn):before, a[href*=".xls"]:not(.btn):before,
-a[href*=".xlsx"]:not(.btn):before, a[href*=".pdf"]:not(.btn):before,
-a[href*="youtu.be"]:before, a[href*="youtube.com"]:before,
-a[href*="maps.google.com"]:before, a[href*="tel:"]:before,
-a[href*="mailto:"]:before, a[href*="thankyou4caring.org"]:before,
-a[href*="catholicnewsherald.com"]:before {
+.entry-title > a:not(.btn):after,
+.entry-title > a[href*="//"]:not([href*="rcdoc.org"]):after,
+a[href*=".doc"]:not(.btn):before, a[href*=".docx"]:not(.btn):before,
+a[href*=".xls"]:not(.btn):before, a[href*=".xlsx"]:not(.btn):before,
+a[href*=".pdf"]:not(.btn):before, a[href*="youtu.be"]:before,
+a[href*="youtube.com"]:before, a[href*="maps.google.com"]:before,
+a[href*="tel:"]:before, a[href*="mailto:"]:before,
+a[href*="thankyou4caring.org"]:before, a[href*="catholicnewsherald.com"]:before {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;
     speak: none;
@@ -122,13 +123,16 @@ a[href*="catholicnewsherald.com"]:before {
 }
 
 .tile {
-    border: 5px solid #36474f;
+    margin: 0.25rem;
     background-image: linear-gradient(335deg, rgba(0, 0, 0, 0.08) 50%, transparent 50%);
-    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: all;
 }
 
-.tile:hover {
-    background-image: linear-gradient(335deg, rgba(0, 0, 0, 0.06) 50%, transparent 50%);
+.tile-link {
+    border: 5px solid #36474f;
+    box-shadow: inset 0 0 1rem 0.7rem rgba(0, 0, 0, 0.2);
 }
 
 .tile {
@@ -848,6 +852,10 @@ a[href*="catholicnewsherald.com"]:before {
     content: "";
 }
 
+.entry-title > a[href*="//"]:not([href*="rcdoc.org"]):after {
+    content: "";
+}
+
 a[href*=".doc"]:not(.btn):before, a[href*=".docx"]:not(.btn):before {
     color: #2c5898;
     content: "";
@@ -907,7 +915,7 @@ h2 a.rsswidget:before {
 
 @media screen and (min-width: 48em) {
     .tile {
-        min-width: 25%;
+        min-width: 23%;
     }
 }
 

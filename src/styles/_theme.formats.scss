@@ -6,6 +6,10 @@
 	@include ico($arrow-right-thin);
 }
 
+.entry-title > a[href*="//"]:not([href*="rcdoc.org"]):after {
+	@include ico($external-link);
+}
+
 a[href*=".doc"]:not(.btn):before,
 a[href*=".docx"]:not(.btn):before {
 	color: #2c5898;

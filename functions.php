@@ -10,6 +10,7 @@
  */
 // require get_stylesheet_directory() . '/inc/html-classes.php';
 // require get_stylesheet_directory() . '/inc/ext/tgmpa.php';
+require get_stylesheet_directory() . '/inc/config.php';
 require get_stylesheet_directory() . '/inc/post-types.php';
 require get_stylesheet_directory() . '/inc/tax.php';
 require get_stylesheet_directory() . '/inc/compatibility.php';

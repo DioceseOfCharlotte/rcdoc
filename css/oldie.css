@@ -109,13 +109,16 @@ a[href*="catholicnewsherald.com"]:before {
 }
 
 .tile {
-    border: 5px solid #36474f;
+    margin: 4px;
     background-image: linear-gradient(335deg, rgba(0, 0, 0, 0.08) 50%, transparent 50%);
-    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: all;
 }
 
-.tile:hover {
-    background-image: linear-gradient(335deg, rgba(0, 0, 0, 0.06) 50%, transparent 50%);
+.tile-link {
+    border: 5px solid #36474f;
+    box-shadow: inset 0 0 1rem 0.7rem rgba(0, 0, 0, 0.2);
 }
 
 .tile {
@@ -532,6 +535,10 @@ a[href*="catholicnewsherald.com"]:before {
 }
 
  {
+    content: "";
+}
+
+ {
     color: #2c5898;
     content: "";
 }
@@ -589,7 +596,7 @@ h2 a.rsswidget:before {
 }
 
 .tile {
-    min-width: 25%;
+    min-width: 23%;
 }
 
 .has-image.section-row {

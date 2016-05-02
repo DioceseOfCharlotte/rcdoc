@@ -15,8 +15,8 @@ if ( is_home() || is_front_page() ) {
 			$term_redirect = get_permalink( $term_post_link );
 			$term_link = $term_post_link ? $term_redirect : get_term_link( $term );
 			$term_icon = get_term_meta( $term_id, 'doc_tax_icon', true );
-	        echo '<div class="tile u-flex-wrap o-cell u-m0 mdl-card u-shadow--2dp shadow-hover" style="' . doc_term_color_style( $term_id, '0.8' ) . '">';
-			echo '<a href="' . esc_url( $term_link ) . '" class="u-flex-col u-flex-jc u-text-center"><div class="tiled-icon" style="color:' . doc_term_color_comp( $term_id, '0.8' ) . ';">';
+	        echo '<div class="tile u-z1 u-flex-wrap o-cell u-br u-flex u-flex-col u-shadow1 shadow-hover" style="background-color:' . doc_term_color_rgb( $term_id, '0.8' ) . ';color:' . doc_term_color_rgb( $term_id, '0.2' ) . '">';
+			echo '<a href="' . esc_url( $term_link ) . '" class="tile-link u-z1 u-br u-flex-col u-flex-jc u-text-center" style="color:' . doc_term_color_text( $term_id ) . ';"><div class="tiled-icon" style="color:' . doc_term_color_comp( $term_id, '0.8' ) . ';">';
 			if ( locate_template( 'images/icons/' . $term_icon . '.svg' ) ) {
 				include locate_template( 'images/icons/' . $term_icon . '.svg' );
 			} else {

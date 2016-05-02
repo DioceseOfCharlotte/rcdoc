@@ -5,14 +5,20 @@
 }
 
 .tile {
-	border: 5px solid #36474f;
+	margin: 0.25rem;
 	background-image: linear-gradient(335deg, rgba(0, 0, 0, 0.08) 50%, transparent 50%);
-	transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
+	transition-duration: $transition-time;
+	transition-timing-function: $animation-curve-default;
+	transition-property: all;
 }
 
-.tile:hover {
-	background-image: linear-gradient(335deg, rgba(0, 0, 0, 0.06) 50%, transparent 50%);
+.tile-link {
+	border: 5px solid #36474f;
+	box-shadow: inset 0 0 1rem .7rem rgba(0, 0, 0, 0.2);
 }
+// .tile:hover {
+// 	background-image: linear-gradient(335deg, rgba(0, 0, 0, 0.06) 50%, transparent 50%);
+// }
 
 .tile {
 	animation-play-state: paused;

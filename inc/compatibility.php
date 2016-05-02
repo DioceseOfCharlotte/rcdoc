@@ -9,28 +9,8 @@ add_post_type_support( 'sc_event', 'theme-layouts' );
 add_action( 'login_enqueue_scripts', 'doc_login_logo' );
 add_filter( 'login_headerurl', 'doc_login_logo_url' );
 add_filter( 'login_headertitle', 'doc_login_logo_url_title' );
-add_action( 'pre_get_posts', 'doc_post_order', 1 );
-add_filter( 'pre_get_posts', 'query_post_type' );
+add_action( 'pre_get_posts', 'doc_custom_queries', 1 );
 
-function query_post_type( $query ) {
-	if ( is_admin() || ! $query->is_main_query() ) {
-		return $query; }
-	if ( is_tax( 'agency' ) ) {
-		$post_type = $query->get( 'post_type' );
-		$meta_query = $query->get('meta_query');
-		$post_type = array( 'department', 'cpt_archive' );
-		$meta_query[] = array(
-			'key'       => 'doc_alias_checkbox',
-			'value'     => 'on',
-			'compare'   => 'NOT EXISTS',
-        );
-		$query->set( 'meta_query', $meta_query );
-		$query->set( 'post_type', $post_type );
-		$query->set( 'order', 'ASC' );
-	  	$query->set( 'orderby', 'title' );
-		return $query;
-	}
-}
 
 /**
  * Register taxonomies.
@@ -39,31 +19,37 @@ function query_post_type( $query ) {
  * @access public
  * @param array $query Main Query.
  */
-function doc_post_order( $query ) {
+function doc_custom_queries( $query ) {
 	if ( is_admin() || ! $query->is_main_query() ) {
 		return $query; }
-	if ( is_post_type_archive( 'department' ) || is_post_type_archive( 'parish' ) || is_post_type_archive( 'school' ) ) {
-		$query->set( 'order', 'ASC' );
-	  	$query->set( 'orderby', 'name' );
-	  	$query->set( 'post_parent', 0 );
-		return;
-	} elseif ( is_post_type_archive() ) {
-		global $cptarchives;
+
+	if ( is_tax( 'agency' ) ) {
 		$post_type = $query->get( 'post_type' );
-		$archive_id = $cptarchives->get_archive_id();
-		$meta_query = $query->get('meta_query');
-		//$post_type = array('cpt_archive', $post_type);
+		$meta_query = $query->get( 'meta_query' );
+		$post_type = doc_home_tiles();
 		$meta_query[] = array(
-			'key'       => 'doc_parent_select',
-			'value'     => $archive_id,
-			'compare'   => '==',
-        );
-		//$query->set( 'meta_query', $meta_query );
+			'key'       => 'doc_alias_checkbox',
+			'value'     => 'on',
+			'compare'   => 'NOT EXISTS',
+		);
+		$query->set( 'meta_query', $meta_query );
 		$query->set( 'post_type', $post_type );
-	  	//$query->set( 'order', 'ASC' );
-	  	//$query->set( 'orderby', 'menu_order' );
-		//$query->set( 'post_parent', 0 );
+		$query->set( 'order', 'ASC' );
+	  	$query->set( 'orderby', 'title' );
+
+	} elseif ( is_post_type_archive() ) {
+
+		$query->set( 'order', 'ASC' );
+		$query->set( 'post_parent', 0 );
+
+		if ( is_post_type_archive( doc_place_cpts() ) ) {
+			$query->set( 'orderby', 'name' );
+		} else {
+			$query->set( 'orderby', 'menu_order' );
+		}
 	}
+
+	return $query;
 }
 
 
