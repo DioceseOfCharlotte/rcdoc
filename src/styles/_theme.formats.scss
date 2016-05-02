@@ -6,7 +6,7 @@
 	@include ico($arrow-right-thin);
 }
 
-.entry-title > a[href*="//"]:not([href*="rcdoc.org"]):after {
+.entry-title > a[href*="//"]:not([href*="rcdoc.info"]):after {
 	@include ico($external-link);
 }
 
