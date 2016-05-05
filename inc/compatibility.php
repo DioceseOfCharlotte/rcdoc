@@ -20,8 +20,8 @@ add_action( 'pre_get_posts', 'doc_custom_queries', 1 );
  * @param array $query Main Query.
  */
 function doc_custom_queries( $query ) {
-	if ( is_admin() || ! $query->is_main_query() ) {
-		return $query; }
+	if ( ! $query->is_main_query() || is_admin() )
+        return;
 
 	if ( is_tax( 'agency' ) ) {
 		$post_type = $query->get( 'post_type' );
@@ -48,8 +48,6 @@ function doc_custom_queries( $query ) {
 			$query->set( 'orderby', 'menu_order' );
 		}
 	}
-
-	return $query;
 }
 
 
