@@ -2,11 +2,21 @@
 	align-self: center;
 }
 
-.entry-title > a:not(.btn):after {
+// .u-list-group {
+//
+// 	> li {
+//
+// 		&:before {
+// 		    @include ico($shield);
+// 		}
+// 	}
+// }
+
+.entry-title > a:after {
 	@include ico($arrow-right-thin);
 }
 
-.entry-title > a[href*="//"]:not([href*="rcdoc.info"]):after {
+.entry-title > a[href*="//"]:not([href*="rcdoc.info"]):not([href*="hgv.test"]):after {
 	@include ico($external-link);
 }
 

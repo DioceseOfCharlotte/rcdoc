@@ -32,8 +32,8 @@
     animation-play-state: running;
 }
 
-.entry-title > a:not(.btn):after,
-.entry-title > a[href*="//"]:not([href*="rcdoc.info"]):after,
+.entry-title > a:after,
+.entry-title > a[href*="//"]:not([href*="rcdoc.info"]):not([href*="hgv.test"]):after,
 a[href*=".doc"]:not(.btn):before, a[href*=".docx"]:not(.btn):before,
 a[href*=".xls"]:not(.btn):before, a[href*=".xlsx"]:not(.btn):before,
 a[href*=".pdf"]:not(.btn):before, a[href*="youtu.be"]:before,
@@ -852,11 +852,11 @@ a[href*="thankyou4caring.org"]:before, a[href*="catholicnewsherald.com"]:before 
     align-self: center;
 }
 
-.entry-title > a:not(.btn):after {
+.entry-title > a:after {
     content: "";
 }
 
-.entry-title > a[href*="//"]:not([href*="rcdoc.info"]):after {
+.entry-title > a[href*="//"]:not([href*="rcdoc.info"]):not([href*="hgv.test"]):after {
     content: "";
 }
 

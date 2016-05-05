@@ -35,10 +35,10 @@
     animation-play-state: running;
 }
 
-a[href*="youtu.be"]:before, a[href*="youtube.com"]:before,
-a[href*="maps.google.com"]:before, a[href*="tel:"]:before,
-a[href*="mailto:"]:before, a[href*="thankyou4caring.org"]:before,
-a[href*="catholicnewsherald.com"]:before {
+.entry-title > a:after, a[href*="youtu.be"]:before,
+a[href*="youtube.com"]:before, a[href*="maps.google.com"]:before,
+a[href*="tel:"]:before, a[href*="mailto:"]:before,
+a[href*="thankyou4caring.org"]:before, a[href*="catholicnewsherald.com"]:before {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;
     speak: none;
@@ -534,7 +534,7 @@ a[href*="catholicnewsherald.com"]:before {
     align-self: center;
 }
 
- {
+.entry-title > a:after {
     content: "";
 }
 
