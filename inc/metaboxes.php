@@ -6,21 +6,19 @@
  */
 
 use Mexitek\PHPColors\Color;
-add_action( 'cmb2_admin_init', 'doc_register_term_metaboxes' );
-add_action( 'cmb2_admin_init', 'doc_register_dept_alias' );
-add_action( 'cmb2_admin_init', 'doc_register_stats_upload' );
+add_action( 'cmb2_admin_init', 'doc_register_metaboxes' );
 
 /**
  * Register CMB2 Alias Metaboxes.
  */
-function doc_register_dept_alias() {
-	$prefix = 'doc_alias_';
+function doc_register_metaboxes() {
+	$prefix = 'doc_';
 
 	/**
-	* Page Colors metabox.
+	* Alias metabox.
 	*/
 	$doc_dept_alias = new_cmb2_box( array(
-		'id'            => $prefix . 'metabox',
+		'id'            => $prefix . 'alias_metabox',
 		'title'         => __( 'Dept Alias', 'cmb2' ),
 		'object_types'  => array( 'department' ),
 		'context'       => 'side',
@@ -30,29 +28,40 @@ function doc_register_dept_alias() {
 	$doc_dept_alias->add_field( array(
 		'name' => __( 'Department has a seperate landing page?', 'cmb2' ),
 		'desc' => __( 'Yes. (this page will not be accessed directly.)', 'cmb2' ),
-		'id'   => $prefix . 'checkbox',
+		'id'   => $prefix . 'alias_checkbox',
 		'type' => 'checkbox',
 	) );
 
 	$doc_dept_alias->add_field( array(
 	    'name'        => __( 'Alias of' ),
 		'desc'             => __( 'The landing page for this dept:', 'cmb2' ),
-	    'id'          => $prefix . 'landing',
+	    'id'          => $prefix . 'alias_landing',
 		'type'    => 'select',
 		'show_option_none' => true,
 	    'options' => cmb2_get_post_list( $post_type = array( 'cpt_archive' ) ),
 	) );
-}
-
-
-/**
- * Register CMB2 Term Metaboxes.
- */
-function doc_register_term_metaboxes() {
-	$prefix = 'doc_';
 
 	/**
-	* Page Colors metabox.
+	* Parent select Metaboxes.
+	*/
+	$doc_landing_parent = new_cmb2_box( array(
+		'id'            => $prefix . 'parent_metabox',
+		'title'         => __( 'Attributes', 'cmb2' ),
+		'object_types'  => array( 'cpt_archive' ),
+		'context'       => 'side',
+		'priority'      => 'low',
+	) );
+
+	$doc_landing_parent->add_field( array(
+	    'name'        => __( 'Parent' ),
+	    'id'          => $prefix . 'parent_select',
+		'type'    => 'select',
+		'show_option_none' => true,
+	    'options' => cmb2_get_post_list( $post_type = array( 'cpt_archive' ) ),
+	) );
+
+	/**
+	* Term Page Colors metabox.
 	*/
 	$doc_term_meta = new_cmb2_box( array(
 		'id'            => $prefix . 'icon_metabox',
@@ -91,21 +100,13 @@ function doc_register_term_metaboxes() {
 		'show_option_none' => true,
 	    'options' => cmb2_get_post_list( $post_type = array( 'cpt_archive', 'department' ) ),
 	) );
-}
-
-
 
 /**
- * Register metaboxes.
- *
- * @since  0.1.0
- * @access public
+ * Register Stats metaboxes.
  */
-function doc_register_stats_upload() {
-	$prefix = 'doc_stats_';
 
 	$doc_stat = new_cmb2_box( array(
-		'id'            => $prefix . 'metabox',
+		'id'            => $prefix . 'stats_metabox',
 		'title'         => __( 'Statistics Report', 'cmb2' ),
 		'object_types'  => array( 'statistics_report' ),
 	) );
@@ -114,21 +115,21 @@ function doc_register_stats_upload() {
 		'name'    => __( 'Report Year', 'cmb2' ),
 		'desc'    => __( 'Enter the year for this Report.', 'cmb2' ),
 		'default' => '201_',
-		'id'      => $prefix . 'report_date',
+		'id'      => $prefix . 'stats_report_date',
 		'type'    => 'text_small',
 	) );
 
 	$doc_stat->add_field( array(
 		'name' => __( 'Report', 'cmb2' ),
 		'desc' => __( 'Upload the document or enter a URL.', 'cmb2' ),
-		'id'   => $prefix . 'report',
+		'id'   => $prefix . 'stats_report',
 		'type' => 'file',
 	) );
 
 	$doc_stat->add_field( array(
 		'name'             => __( 'County', 'cmb2' ),
 		'desc'             => __( 'Select the relevant county or counties. (optional)', 'cmb2' ),
-		'id'               => $prefix . 'county',
+		'id'               => $prefix . 'stats_county',
 		'type'             => 'select',
 		'show_option_none' => true,
 		'repeatable'       => true,
@@ -240,15 +241,18 @@ function doc_register_stats_upload() {
 
 
 /**
- * Gets a number of terms and displays them as options
+ * Gets a list of posts and displays them as options
  *
- * @param  string       $post_type Taxonomy terms to retrieve. Default is category.
- * @param  string|array $args     Optional. get_terms optional arguments
+ * @param  string       $post_type Default is post.
+ * @param  string|array $args     Optional. get_posts optional arguments
  * @return array                  An array of options that matches the CMB2 options array
  */
 function cmb2_get_post_list( $post_type = 'post', $args = array() ) {
 
 	$args['post_type'] = $post_type;
+
+	// $defaults = array( 'post_type' => 'post' );
+    $args = wp_parse_args( $args, array( 'post_type' => 'post' ) );
 
 	$post_type = $args['post_type'];
 
