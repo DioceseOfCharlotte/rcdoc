@@ -87,31 +87,31 @@ gulp.task('lint', function() {
 // Optimize images
 gulp.task('images', function() {
 	gulp.src('src/images/**/*.{svg,png,jpg}')
-		.pipe($.imagemin({
-			progressive: true,
-			interlaced: true,
-			svgoPlugins: [{
-				cleanupIDs: false
-			}, {
-				removeTitle: true
-			}, {
+	.pipe($.imagemin({
+		progressive: true,
+		interlaced: true,
+		svgoPlugins: [{
+                cleanupIDs: true
+            }, {
+                removeTitle: true
+            }, {
 				addClassesToSVGElement: {
 					className: 'v-icon'
 				}
 			}, {
-				removeStyleElement: true
+                removeUselessStrokeAndFill: true
+            }, {
+                cleanupNumericValues: {
+                    floatPrecision: 2
+                }
+            }, {
+				removeNonInheritableGroupAttrs: true
 			}, {
-				cleanupNumericValues: {
-					floatPrecision: 2
-				}
-			}, {
-				removeDimensions: true
-			}]
-		}))
-		.pipe(gulp.dest('images'))
-		.pipe($.size({
-			title: 'images'
-		}))
+                removeDimensions: true
+            }]
+	}))
+	.pipe(gulp.dest('images'))
+	.pipe($.size({title: 'images'}))
 });
 
 // Compile and Automatically Prefix Stylesheets (production)
