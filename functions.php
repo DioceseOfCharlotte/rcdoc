@@ -126,7 +126,7 @@ function rcdoc_scripts() {
 	wp_enqueue_script(
 		'main_scripts',
 		trailingslashit( get_stylesheet_directory_uri() ).'js/main.min.js',
-		false, false, true
+		array('object-fit'), false, true
 	);
 }
 
