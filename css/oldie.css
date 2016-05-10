@@ -35,10 +35,8 @@
     animation-play-state: running;
 }
 
-.entry-title > a:after, a[href*="youtu.be"]:before,
-a[href*="youtube.com"]:before, a[href*="maps.google.com"]:before,
-a[href*="tel:"]:before, a[href*="mailto:"]:before,
-a[href*="thankyou4caring.org"]:before, a[href*="catholicnewsherald.com"]:before {
+.entry-title > a:after, a[href*="thankyou4caring.org"]:before,
+a[href*="catholicnewsherald.com"]:before {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;
     speak: none;
@@ -542,38 +540,6 @@ a[href*="thankyou4caring.org"]:before, a[href*="catholicnewsherald.com"]:before 
     content: "";
 }
 
- {
-    color: #2c5898;
-    content: "";
-}
-
- {
-    color: #207347;
-    content: "";
-}
-
- {
-    color: #c01e07;
-    content: "";
-}
-
-a[href*="youtu.be"]:before, a[href*="youtube.com"]:before {
-    color: #cd201f;
-    content: "";
-}
-
-a[href*="maps.google.com"]:before {
-    content: "";
-}
-
-a[href*="tel:"]:before {
-    content: "";
-}
-
-a[href*="mailto:"]:before {
-    content: "";
-}
-
 a[href*="thankyou4caring.org"]:before {
     color: #f012be;
     font-size: 1.5em;
@@ -761,26 +727,7 @@ h2 a.rsswidget:before {
 html {
     /*! Flickity v1.1.2
 http://flickity.metafizzy.co
----------------------------------------------- *//* draggable *//* ---- previous/next buttons ---- *//* right to left *//* color & size if no SVG - IE8 and Android 2.3 *//* ---- page dots ---- *//* ------------------------------------*
-#CROP
-*------------------------------------ *//**
-* Provide a cropping container in order to display media (usually images)
-* cropped to certain ratios.
-*
-* 1. Set up a positioning context in which the image can sit.
-* 2. This is the crucial part: where the cropping happens.
-*//**
-* A variety of different standard ratios to crop to.
-*
-* We use the `padding` trick to create a fluid-height container (`padding`s set
-* in percentages will track the current width of the element).
-*//**
-* Apply this class to the content (usually `img`) that needs cropping.
-*
-* 1. Positioning to the bottom usually gives consistently better results as
-*    most images’ subjects are toward the bottom of the frame. Of course,
-*    your mileage may vary.
-*/
+---------------------------------------------- *//* draggable *//* ---- previous/next buttons ---- *//* right to left *//* color & size if no SVG - IE8 and Android 2.3 *//* ---- page dots ---- */
 }
 
 html .facetwp-facet .location-wrap, html .facetwp-facet .facetwp-search-wrap {
@@ -1212,35 +1159,6 @@ html li > a.rsswidget {
     font-weight: 400;
 }
 
-html .o-crop {
-    position: relative;
-    /* [1] */
-    display: block;
-    overflow: hidden;
-    /* [2] */
-    width: 100%;
-}
-
-html .o-crop--1x1 {
-    padding-top: 100%;
-}
-
-html .o-crop--4x3 {
-    padding-top: 75%;
-}
-
-html .o-crop--16x9 {
-    padding-top: 56.25%;
-}
-
-html .o-crop__content {
-    position: absolute;
-    top: 0;
-    /* [1] */
-    left: 0;
-    width: 100%;
-}
-
 html .entry {
     box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
     transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
@@ -1504,6 +1422,11 @@ html .u-inline-block.sidebar-header.u-rel {
 
 html .tile-row {
     margin-bottom: 48px;
+}
+
+ {
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
 }
 
 /* Styles specific to the editor. */

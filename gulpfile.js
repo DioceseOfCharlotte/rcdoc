@@ -4,18 +4,27 @@
 
 // 'use strict';
 
-var fs = require('graceful-fs');
+//var fs = require('graceful-fs');
+var path = require('path');
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var gulpLoadPlugins = require('gulp-load-plugins');
+var imagemin = require('gulp-imagemin');
+var svgmin = require('gulp-svgmin');
 var postcss = require('gulp-postcss');
+var preCss = require('precss');
 var babel = require('gulp-babel');
 var oldie = require('oldie');
 var autoPrefixer = require('autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
-var postcssFlex = require('postcss-flexibility');
+var atImport = require("postcss-import");
 var perfectionist = require('perfectionist');
+var postcssFlex = require('postcss-flexibility');
+var postSvg = require('postcss-inline-svg');
+var syntax = require('postcss-scss');
+var styleFmt = require('stylefmt');
+var cssnano = require('gulp-cssnano');
 
 var $ = gulpLoadPlugins();
 var reload = browserSync.reload;
@@ -36,6 +45,14 @@ var AUTOPREFIXER_BROWSERS = [
 	'ios >= 7',
 	'android >= 4.4',
 	'bb >= 10'
+];
+
+var PRECSS_PLUGINS = [
+	atImport,
+	preCss,
+	postSvg({
+		path: './images/icons'
+	})
 ];
 
 var POSTCSS_PLUGINS = [
@@ -86,35 +103,48 @@ gulp.task('lint', function() {
 // ***** Production build tasks ****** //
 // Optimize images
 gulp.task('images', function() {
-	gulp.src('src/images/**/*.{svg,png,jpg}')
-	.pipe($.imagemin({
-		progressive: true,
-		interlaced: true,
-		svgoPlugins: [{
-                cleanupIDs: true
-            }, {
-                removeTitle: true
-            }, {
+	gulp.src('src/images/**/*.svg')
+		.pipe(svgmin({
+			plugins: [{
+				cleanupIDs: true
+			}, {
+				removeTitle: true
+			}, {
+				removeAttrs: {
+					attrs: '(fill|stroke)'
+				}
+			}, {
 				addClassesToSVGElement: {
 					className: 'v-icon'
 				}
 			}, {
-                removeUselessStrokeAndFill: true
-            }, {
-                cleanupNumericValues: {
-                    floatPrecision: 2
-                }
-            }, {
+				removeUselessStrokeAndFill: true
+			}, {
+				cleanupNumericValues: {
+					floatPrecision: 2
+				}
+			}, {
 				removeNonInheritableGroupAttrs: true
 			}, {
-                removeDimensions: true
-            }]
-	}))
-	.pipe(gulp.dest('images'))
-	.pipe($.size({title: 'images'}))
+				removeDimensions: true
+			}]
+		}))
+		.pipe(gulp.dest('images'))
+		.pipe($.size({
+			title: 'images'
+		}))
 });
 
 // Compile and Automatically Prefix Stylesheets (production)
+gulp.task('presass', function() {
+	gulp.src('src/styles/postCSS/index.css')
+		.pipe($.if('*.css', postcss(PRECSS_PLUGINS, {
+			syntax: syntax
+		})))
+		.pipe($.concat('_postcss.scss'))
+		.pipe(gulp.dest('src/styles/'))
+});
+
 gulp.task('styles', function() {
 	gulp.src('src/styles/style.scss')
 		// Generate Source Maps
@@ -130,7 +160,9 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest('./'))
 		.pipe($.if('*.css', $.cssnano()))
 		.pipe($.concat('style.min.css'))
-		.pipe($.size({title: 'styles'}))
+		.pipe($.size({
+			title: 'styles'
+		}))
 		.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest('./'))
 });
@@ -199,7 +231,5 @@ gulp.task('serve', ['scripts', 'styles'], function() {
 
 // Build production files, the default task
 gulp.task('default', function(cb) {
-	runSequence(
-		'styles', ['oldie', 'scripts', 'jq_scripts', 'images'],
-		cb);
+	runSequence('images', ['presass', 'styles'], 'oldie', 'scripts', 'jq_scripts', cb);
 });

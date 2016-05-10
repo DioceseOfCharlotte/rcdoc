@@ -28,3 +28,6 @@ window.onload = function() {
 		}
 	};
 }
+
+
+objectFitImages();

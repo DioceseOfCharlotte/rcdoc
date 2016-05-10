@@ -731,6 +731,9 @@ window.onload = function() {
 	};
 }
 
+
+objectFitImages();
+
 'use strict';
 
 // Off-canvas sidebar
