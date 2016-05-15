@@ -11,13 +11,13 @@
 // 		}
 // 	}
 // }
-.entry-title > a:after {
-	@include ico($arrow-right-thin);
-}
-
-.entry-title > a[href*="//"]:not([href*="rcdoc.info"]):not([href*="hgv.test"]):after {
-	@include ico($external-link);
-}
+// .entry-title > a:after {
+// 	@include ico($arrow-right-thin);
+// }
+//
+// .entry-title > a[href*="//"]:not([href*="rcdoc.info"]):not([href*="hgv.test"]):after {
+// 	@include ico($external-link);
+// }
 
 // a[href*=".doc"]:not(.btn):before,
 // a[href*=".docx"]:not(.btn):before {
@@ -54,16 +54,16 @@
 // 	@include ico($envelope);
 // }
 
-a[href*="thankyou4caring.org"]:before {
-	color    : #f012be;
-	font-size: 1.5em;
-	@include ico($loyalty);
-}
-
-a[href*="catholicnewsherald.com"]:before {
-	@include ico($newspaper);
-	color: #a22630;
-}
+// a[href*="thankyou4caring.org"]:before {
+// 	color    : #f012be;
+// 	font-size: 1.5em;
+// 	@include ico($loyalty);
+// }
+//
+// a[href*="catholicnewsherald.com"]:before {
+// 	@include ico($newspaper);
+// 	color: #a22630;
+// }
 
 h2 a.rsswidget:before {
 	content: none;

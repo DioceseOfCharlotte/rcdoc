@@ -1,0 +1,20 @@
+
+.entry-title > a {
+
+	&:after {
+		margin-left: auto!important;
+		@mixin icon arrow-right;
+	}
+}
+
+.entry-title > a[href*="//"]:not([href*="rcdoc.info"]):not([href*="hgv.test"]):after {
+	@mixin icon external-link;
+}
+
+a[href*="thankyou4caring.org"]:before {
+	@mixin icon loyalty;
+}
+
+a[href*="catholicnewsherald.com"]:before {
+	@mixin icon newspaper;
+}
