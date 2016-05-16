@@ -1006,11 +1006,8 @@ h2 a.rsswidget:before {
     content: " ";
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='v-icon' fill='%23a5b1b1' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M14 4q.422 0 .711.289l7 7Q22 11.578 22 12t-.289.711l-7 7Q14.422 20 14 20q-.43 0-.715-.285T13 19q0-.422.289-.711L18.586 13H3q-.414 0-.707-.293T2 12t.293-.707T3 11h15.586l-5.297-5.289Q13 5.422 13 5q0-.43.285-.715T14 4z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    width: 1em;
-    height: 1em;
     background-position: center;
     display: inline-block;
-    margin: 0 0.2em;
     vertical-align: middle;
 }
 
@@ -1018,11 +1015,8 @@ h2 a.rsswidget:before {
     content: " ";
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28' class='v-icon' fill='%23a5b1b1' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M21.428 16.291v4.584q0 1.704-1.226 2.915Q18.976 25 17.25 25H5.18q-1.727 0-2.953-1.21Q1 22.58 1 20.875V8.958q0-1.704 1.226-2.915 1.225-1.211 2.952-1.21h10.214q.204 0 .334.129.13.129.13.329v.917q0 .2-.13.329-.131.128-.334.129H5.178q-.957 0-1.64.673-.682.673-.68 1.619v11.917q0 .945.68 1.619.682.674 1.64.673H17.25q.958 0 1.64-.673.683-.673.682-1.62v-4.583q0-.2.13-.329.132-.128.334-.129h.929q.203 0 .333.13.13.128.13.328zm5.571-12.375v7.333q0 .373-.276.645-.275.272-.652.272t-.653-.272l-2.554-2.521-9.459 9.338q-.145.143-.333.143-.189 0-.333-.143l-1.654-1.632q-.145-.143-.145-.33 0-.185.145-.328l9.459-9.339-2.554-2.52q-.275-.273-.275-.645t.275-.645Q18.266 3 18.643 3h7.428q.377 0 .653.272.276.273.276.645z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    width: 1em;
-    height: 1em;
     background-position: center;
     display: inline-block;
-    margin: 0 0.2em;
     vertical-align: middle;
 }
 
@@ -1030,11 +1024,8 @@ a[href*="thankyou4caring.org"]:before {
     content: " ";
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='v-icon' fill='%23a5b1b1' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M17.258 15.287q.75-.752.75-1.784 0-1.033-.727-1.76-.728-.729-1.761-.729-1.08 0-1.784.704l-.751.751-.704-.75q-.704-.705-1.784-.705-1.032 0-1.76.728-.729.728-.729 1.76 0 1.08.704 1.785l4.273 4.272zM5.473 6.977q.61 0 1.057-.446.447-.446.446-1.057-.001-.61-.446-1.056-.445-.446-1.057-.446-.612 0-1.056.446-.445.445-.446 1.056 0 .611.446 1.057.446.446 1.056.446zm15.963 4.6q.564.565.564 1.409 0 .844-.564 1.408l-7.042 7.042Q13.83 22 12.986 22t-1.408-.564l-9.014-9.014Q2 11.858 2 11.014V3.972q0-.798.587-1.385T3.972 2h7.042q.845 0 1.408.564z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    width: 1em;
-    height: 1em;
     background-position: center;
     display: inline-block;
-    margin: 0 0.2em;
     vertical-align: middle;
 }
 
@@ -1042,11 +1033,8 @@ a[href*="catholicnewsherald.com"]:before {
     content: " ";
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon-lg icon-newspaper v-icon' version='1' fill='%23a5b1b1' viewBox='0 0 32 32' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M0 4v22a2 2 0 0 0 2 2h26V4zm2 2h24v20H2z' class='news-front'/%3E%3Cpath d='M4 14h10v10H4zm12 8h6v2h-6zm0-4h8v2h-8zm0-4h8v2h-8zM4 10h20v2H4z' class='news-text'/%3E%3Cpath d='M28 7.992v20c3.681.132 3.95-1.38 4-3v-17z' class='news-back'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    width: 1em;
-    height: 1em;
     background-position: center;
     display: inline-block;
-    margin: 0 0.2em;
     vertical-align: middle;
 }
 
