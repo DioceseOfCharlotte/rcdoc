@@ -117,7 +117,7 @@ function meh_row_shortcode( $attr, $content = null ) {
 
 					<?php } elseif ( 'card' === $attr['slide_type'] ) { ?>
 
-						<div class="section-row__content gallery js-flickity" data-flickity-options='{ "wrapAround": true, "autoPlay": true, "freeScroll": true }'>
+						<div class="section-row__content gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
 							<?php include locate_template( '/components/row-slides.php' ); ?>
 						</div>
 						<?php }
