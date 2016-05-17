@@ -1388,7 +1388,7 @@ html .acf-map {
     margin: 20px 0;
 }
 
-html article p, html article li {
+html article p, html article li:not(.gfield) {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
