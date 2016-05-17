@@ -113,6 +113,10 @@
     opacity: 1;
 }
 
+.tile-title h2 {
+    z-index: 1;
+}
+
 .tile {
     -webkit-animation-play-state: paused;
     animation-play-state: paused;

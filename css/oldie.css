@@ -103,6 +103,10 @@
     filter: alpha(opacity=100);
 }
 
+.tile-title h2 {
+    z-index: 1;
+}
+
 .tile {
     animation-play-state: paused;
     animation-fill-mode: both;
