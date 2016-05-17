@@ -14,12 +14,29 @@ add_action( 'init', 'doc_register_taxonomies' );
  * @access public
  */
 function doc_register_taxonomies() {
-	register_extended_taxonomy('school_system', 'school',
-		array(
-			'meta_box' => 'radio',
-			'dashboard_glance' => true,
-		)
-	);
+	register_extended_taxonomy('school_system', 'school', array(
+		'meta_box' => 'radio',
+		'dashboard_glance' => true,
+
+		'capabilities' => array(
+			'manage_terms' => 'manage_options',
+			'edit_terms'   => 'manage_options',
+			'delete_terms' => 'manage_options',
+			'assign_terms' => 'manage_options',
+		),
+	) );
+
+	register_extended_taxonomy('vicariate', 'parish', array(
+		'meta_box' => 'radio',
+		'dashboard_glance' => true,
+
+		'capabilities' => array(
+			'manage_terms' => 'manage_options',
+			'edit_terms'   => 'manage_options',
+			'delete_terms' => 'manage_options',
+			'assign_terms' => 'manage_options',
+		),
+	) );
 
 	register_extended_taxonomy( 'agency', doc_home_tiles(),
 		array(
@@ -34,7 +51,6 @@ function doc_register_taxonomies() {
 	);
 
 	register_extended_taxonomy( 'statistics_type', 'statistics_report', array(
-
 		'meta_box' => 'radio',
 		'dashboard_glance' => true,
 
