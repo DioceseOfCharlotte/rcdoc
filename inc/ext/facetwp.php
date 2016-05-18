@@ -10,6 +10,19 @@ add_action( 'tha_content_before', 'doc_display_facets' );
 add_filter( 'facetwp_indexer_query_args', 'wpdr_facetwp_indexer_query_args' );
 add_filter( 'facetwp_pager_html', 'doc_facetwp_pager_html', 10, 2 );
 
+/**
+ * Get the facet archive posts for adding the class to hybrid_attr_content.
+ */
+function doc_get_facet_cpts() {
+	return array(
+		'document',
+		'parish',
+		'department',
+		'school',
+		'statistics_report',
+	);
+}
+
 function doc_register_doc_category_facets( $facets ) {
 	$facets[] = array(
 		'label'        => 'Document Categories',
