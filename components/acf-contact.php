@@ -18,7 +18,7 @@ if ( has_post_thumbnail() ) {
 
 	ob_start();
 	?>
-	<div class="contact-numbers u-1of1 u-p1 u-mb1 u-flex u-flex-wrap u-flex-jb">
+	<div class="contact-numbers u-p1 u-mb1 u-flex u-flex-wrap u-flex-jb">
 
 		<div class="phone contact-numbers__item u-1of2-md u-inline-block u-spacer16">
 			<?php if ( get_field( 'doc_phone_number' ) ) : ?>
@@ -39,7 +39,7 @@ if ( has_post_thumbnail() ) {
 	echo ob_get_clean();
 
 	ob_start(); ?>
-	<div class="contact-address u-1of1 u-inline-block u-mb1">
+	<div class="contact-address u-inline-block u-mb1">
 		<?php if ( get_field( 'doc_city' ) ) : ?>
 			<a class="contact-link u-flex u-p1" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" href="<?php echo esc_url( $map_link ) ?>" target="_blank">
 				<span class="u-inline-block">
@@ -59,7 +59,7 @@ if ( has_post_thumbnail() ) {
 
 
 
-		<div class="email u-spacer16 u-1of1 u-mb1 u-truncate">
+		<div class="email u-spacer16 u-mb1 u-truncate">
 			<?php if ( get_field( 'doc_email' ) ) : ?>
 				<a class="contact-link u-p1" itemprop="email" href="mailto:<?php the_field( 'doc_email' ); ?>"><?php the_field( 'doc_email' ); ?></a>
 			<?php endif; ?>
