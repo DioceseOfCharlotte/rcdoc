@@ -117,12 +117,6 @@ function rcdoc_scripts() {
 		false, false, true
 	);
 
-	wp_register_script(
-		'jq_scripts',
-		trailingslashit( get_stylesheet_directory_uri() ).'js/jq-main.min.js',
-		array( 'jquery' ), null, true
-	);
-
 	wp_enqueue_script(
 		'main_scripts',
 		trailingslashit( get_stylesheet_directory_uri() ).'js/main.min.js',

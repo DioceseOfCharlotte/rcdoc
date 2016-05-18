@@ -1,18 +1,8 @@
 <?php
 if ( is_post_type_archive( 'department' ) || is_post_type_archive( 'parish' ) || is_post_type_archive( 'school' ) ) : ?>
-<div class="u-1of1 u-p2 u-mb2 u-content-wrap u-text-center">
- 	<?php echo facetwp_display( 'pager' ); ?>
-</div>
-
-<script>
-(function($) {
-    $(document).on('facetwp-loaded', function() {
-        $('html, body').animate({
-            scrollTop: $('#page').offset().top
-        }, 500);
-    });
-})(jQuery);
-</script>
+	<div class="u-1of1 u-p2 u-mb2 u-content-wrap u-text-center">
+	 	<?php echo facetwp_display( 'pager' ); ?>
+	</div>
 
 <?php elseif ( is_singular( 'post' ) ) : // If viewing a single post page. ?>
 
