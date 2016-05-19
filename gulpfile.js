@@ -4,27 +4,34 @@
 
 // 'use strict';
 
-//var fs = require('graceful-fs');
+var fs = require('graceful-fs');
 var path = require('path');
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var gulpLoadPlugins = require('gulp-load-plugins');
+var cssnano = require('gulp-cssnano');
 var imagemin = require('gulp-imagemin');
 var svgmin = require('gulp-svgmin');
 var postcss = require('gulp-postcss');
-var preCss = require('precss');
 var babel = require('gulp-babel');
 var oldie = require('oldie');
 var autoPrefixer = require('autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
-var atImport = require("postcss-import");
 var perfectionist = require('perfectionist');
-var postcssFlex = require('postcss-flexibility');
-var postSvg = require('postcss-inline-svg');
+
+var atImport = require("postcss-import");
+var pcMixins = require("postcss-mixins");
+var pcColor = require('postcss-color-function');
+var pcVars = require("postcss-advanced-variables");
+var pcNested = require("postcss-nested");
+var pcMedia = require("postcss-custom-media");
+var pcProperties = require("postcss-custom-properties");
+var pcFlex = require('postcss-flexibility');
+var pcSvg = require('postcss-inline-svg');
+var pcNoDups = require('postcss-discard-duplicates');
 var syntax = require('postcss-scss');
 var styleFmt = require('stylefmt');
-var cssnano = require('gulp-cssnano');
 
 var $ = gulpLoadPlugins();
 var reload = browserSync.reload;
@@ -49,16 +56,23 @@ var AUTOPREFIXER_BROWSERS = [
 
 var PRECSS_PLUGINS = [
 	atImport,
-	preCss,
-	postSvg({
+	pcProperties,
+	pcVars,
+	pcColor,
+	pcMedia,
+	pcNested,
+	pcMixins,
+	pcSvg({
 		path: './images/icons'
 	})
 ];
 
 var POSTCSS_PLUGINS = [
+	atImport,
 	autoPrefixer({
 		browsers: AUTOPREFIXER_BROWSERS
 	}),
+	//	stylefmt()
 	perfectionist({
 		cascade: false
 	})
@@ -68,11 +82,8 @@ var POSTCSS_IE = [
 	autoPrefixer({
 		browsers: ['IE 8', 'IE 9']
 	}),
-	postcssFlex,
-	oldie,
-	perfectionist({
-		cascade: false
-	})
+	pcFlex,
+	oldie
 ];
 
 var SOURCESJS = [

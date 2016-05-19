@@ -2,69 +2,6 @@
 	align-self: center;
 }
 
-// .u-list-group {
-//
-// 	> li {
-//
-// 		&:before {
-// 		    @include ico($shield);
-// 		}
-// 	}
-// }
-// .entry-title > a:after {
-// 	@include ico($arrow-right-thin);
-// }
-//
-// .entry-title > a[href*="//"]:not([href*="rcdoc.info"]):not([href*="hgv.test"]):after {
-// 	@include ico($external-link);
-// }
-
-// a[href*=".doc"]:not(.btn):before,
-// a[href*=".docx"]:not(.btn):before {
-// 	color: #2c5898;
-// 	@include ico($file-word);
-// }
-//
-// a[href*=".xls"]:not(.btn):before,
-// a[href*=".xlsx"]:not(.btn):before {
-// 	color: #207347;
-// 	@include ico($file-excel);
-// }
-
-// a[href*=".pdf"]:not(.btn):before {
-// 	color: #c01e07;
-// 	@include ico($file-pdf);
-// }
-
-// a[href*="youtu.be"]:before,
-// a[href*="youtube.com"]:before {
-// 	color: #cd201f;
-// 	@include ico($youtube);
-// }
-
-// a[href*="maps.google.com"]:before {
-// 	@include ico($map_pin);
-// }
-
-// a[href*="tel:"]:before {
-// 	@include ico($call);
-// }
-//
-// a[href*="mailto:"]:before {
-// 	@include ico($envelope);
-// }
-
-// a[href*="thankyou4caring.org"]:before {
-// 	color    : #f012be;
-// 	font-size: 1.5em;
-// 	@include ico($loyalty);
-// }
-//
-// a[href*="catholicnewsherald.com"]:before {
-// 	@include ico($newspaper);
-// 	color: #a22630;
-// }
-
 h2 a.rsswidget:before {
 	content: none;
 }

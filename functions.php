@@ -94,11 +94,6 @@ function rcdoc_scripts() {
 	wp_enqueue_style( 'oldie_child', trailingslashit( get_stylesheet_directory_uri() )."css/oldie{$suffix}.css", array( 'hybrid-parent', 'hybrid-style', 'oldie' ) );
 	wp_style_add_data( 'oldie_child', 'conditional', 'IE' );
 
-	wp_enqueue_style(
-		'IcoMoon',
-		'https://i.icomoon.io/public/2f721fbab0/rcdoc/style.css'
-	);
-
 	wp_register_script(
 		'arch-tabs',
 		trailingslashit( get_stylesheet_directory_uri() ).'js/vendors/arch-tabs.js',
@@ -115,12 +110,6 @@ function rcdoc_scripts() {
 		'gsap_scripts',
 		trailingslashit( get_stylesheet_directory_uri() ).'js/vendors/TweenMax.min.js',
 		false, false, true
-	);
-
-	wp_enqueue_script(
-		'main_scripts',
-		trailingslashit( get_stylesheet_directory_uri() ).'js/main.min.js',
-		array('object-fit'), false, true
 	);
 }
 
