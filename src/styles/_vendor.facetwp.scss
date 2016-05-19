@@ -38,21 +38,3 @@ span.facetwp-counter {
 .facetwp-checkbox.checked {
 	font-weight: bold;
 }
-
-.facetwp-checkbox {
-	background: none !important;
-}
-
-.facetwp-checkbox::before {
-	content: "\E835";
-	font-family: "Material Icons";
-	padding-right: 5px;
-	padding-left: 0;
-	vertical-align: top;
-}
-
-.facetwp-checkbox.checked::before {
-	content: "\E834";
-	font-weight: 400;
-	color: #3f51b5;
-}

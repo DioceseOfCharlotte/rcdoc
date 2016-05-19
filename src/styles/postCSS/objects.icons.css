@@ -18,3 +18,35 @@ a[href*="thankyou4caring.org"]:before {
 a[href*="catholicnewsherald.com"]:before {
 	@mixin icon newspaper;
 }
+
+.facetwp-checkbox {
+	background: none !important;
+}
+
+.facetwp-checkbox::before {
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	min-width: 1em;
+	width: 1em;
+	height: 1em;
+	background-color: rgba(245, 245, 245, 0.8);
+	border: 1px solid rgba(183,198,205,.9);
+	padding: 0;
+	margin: 0;
+	background-size: contain;
+	margin-right: .5em;
+	border-radius: 2px;
+}
+
+.facetwp-checkbox.checked::before {
+	background-color: #fff;
+	@mixin icon check, #36474f;
+}
+
+.icon-refresh {
+	background-size: contain;
+	@mixin icon refresh, #36474f;
+	width: 2em;
+	height: 2em;
+}
