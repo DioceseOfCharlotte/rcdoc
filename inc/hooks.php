@@ -128,7 +128,7 @@ function doc_article_hero() {
 }
 
 function doc_nav_toggle() {
-	echo '<button id="side-menu-toggle" class="menu-toggle btn btn-round u-ml-auto u-mr1 u-z4 u-rel" aria-controls="menu-primary-items"><span>=</span></button>';
+	echo '<button id="side-menu-toggle" class="menu-toggle btn btn-round u-ml-auto u-mr1 u-z4 u-rel" aria-controls="menu-primary-items">' . abe_get_svg( 'menu', 'sm' ) . '</button>';
 }
 
 function doc_content_mask() {
