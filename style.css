@@ -834,6 +834,26 @@ h2 a.rsswidget:before {
     content: none;
 }
 
+.taxonomy-agency .card-img {
+    max-height: 371px;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.taxonomy-agency .entry {
+    max-height: 150px;
+    overflow: hidden;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.taxonomy-agency .btn-readmore {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9) 20%, #fff);
+}
+
 .tiled-icon {
     font-size: 13rem;
     stroke: rgba(54, 71, 79, 0.3);

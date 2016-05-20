@@ -5,3 +5,23 @@
 h2 a.rsswidget:before {
 	content: none;
 }
+
+
+.taxonomy-agency {
+
+	.card-img {
+		max-height: 371px;
+		flex-shrink: 0;
+		z-index: 2;
+	}
+
+	.entry {
+		max-height: 150px;
+		overflow: hidden;
+		display: flex;
+	}
+
+	.btn-readmore {
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9) 20%, #fff);
+	}
+}
