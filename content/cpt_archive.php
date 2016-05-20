@@ -10,13 +10,7 @@
 
 	<?php tha_entry_top(); ?>
 
-	<?php
-		get_the_image(array(
-			'image_class' => 'u-br-t u-1of1',
-			'before'             => '<div class="card-img u-overflow-hidden">',
-			'after'              => '</div>',
-		));
-	?>
+	<?php get_template_part( 'components/img', 'thumb' ); ?>
 
 	<div>
 		<header <?php hybrid_attr( 'entry-header' ); ?>>

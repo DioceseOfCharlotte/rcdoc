@@ -732,7 +732,7 @@ window.onload = function() {
 }
 
 
-objectFitImages();
+// objectFitImages();
 
 'use strict';
 

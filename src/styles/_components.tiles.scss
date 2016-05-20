@@ -94,3 +94,11 @@
 		@include mui-queue(0.6s, -0.2s, fade, slide($direction: down));
 	}
 }
+
+.tile:nth-child(odd) {
+	margin-top: 1rem;
+}
+
+.tile {
+	align-self: flex-start;
+}

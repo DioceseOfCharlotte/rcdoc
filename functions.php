@@ -111,6 +111,12 @@ function rcdoc_scripts() {
 		trailingslashit( get_stylesheet_directory_uri() ).'js/vendors/TweenMax.min.js',
 		false, false, true
 	);
+
+	wp_enqueue_script(
+		'main_scripts',
+		trailingslashit( get_stylesheet_directory_uri() ).'js/main.min.js',
+		false, false, true
+	);
 }
 
 /**

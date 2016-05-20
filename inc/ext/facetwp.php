@@ -179,13 +179,10 @@ function doc_facetwp_pager_html( $output, $params ) {
 		$text_page      = __( 'Page', 'fwp' );
 		$text_of        = __( 'of', 'fwp' );
 
-		// "Page 5 of 150"
-		// $output .= '<span class="facetwp-page u-br u-h5 u-p1r-label">' . "$text_page $page $text_of $total_pages</span>";
-		// if ( 3 < $page ) {
-		// $output .= '<a class="facetwp-page u-br u-h5 u-p1 btn first-page" data-page="1"><i class="material-icons">&#xE408;</i> Previous</a>';
+
 		// }
 		if ( $page > 1 ) {
-			$output .= '<a class="facetwp-page u-br u-h5 u-p1 btn" data-page="' . ($page - 1) . '"><i class="material-icons">&#xE408;</i>Previous</a>';
+			$output .= '<a class="facetwp-page u-br u-h5 u-p1 btn" data-page="' . ($page - 1) . '"><span>&larr;</span>Previous</a>';
 		}
 		if ( 1 < ( $page - 10 ) ) {
 			$output .= '<a class="facetwp-page u-br u-h5 u-p1 btn" data-page="' . ($page - 10) . '">' . ($page - 10) . '</a>';
@@ -208,11 +205,8 @@ function doc_facetwp_pager_html( $output, $params ) {
 			$output .= '<a class="facetwp-page u-br u-h5 u-p1 btn" data-page="' . ($page + 10) . '">' . ($page + 10) . '</a>';
 		}
 		if ( $page < $total_pages && $total_pages > 1 ) {
-			$output .= '<a class="facetwp-page u-br u-h5 u-p1 btn" data-page="' . ($page + 1) . '">Next<i class="material-icons">&#xE409;</i></a>';
+			$output .= '<a class="facetwp-page u-br u-h5 u-p1 btn" data-page="' . ($page + 1) . '">Next<span>&rarr;</span></a>';
 		}
-		// if ( $total_pages > ( $page + 2 ) ) {
-		// $output .= '<a class="facetwp-page u-br u-h5 u-p1 last-page btn" data-page="' . $total_pages . '">Next <i class="material-icons">&#xE409;</i></a>';
-		// }
 	}
 
 	return $output;
