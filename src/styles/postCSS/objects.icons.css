@@ -44,9 +44,18 @@ a[href*="catholicnewsherald.com"]:before {
 	@mixin icon check, #36474f;
 }
 
-.icon-refresh {
-	background-size: contain;
-	@mixin icon refresh, #36474f;
-	width: 2em;
-	height: 2em;
+.btn > p {
+	margin: 0!important;
+	padding: 0;
+}
+
+.btn-round a {
+	color: transparent;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	border-radius: 50%;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
