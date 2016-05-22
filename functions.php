@@ -25,7 +25,7 @@ require get_stylesheet_directory() . '/inc/shorts-ui.php';
 require get_stylesheet_directory() . '/inc/metaboxes.php';
 add_action( 'after_setup_theme', 'rcdoc_setup' );
 add_action( 'wp_enqueue_scripts', 'rcdoc_scripts' );
-add_action( 'widgets_init', 'abraham_widgets' );
+add_action( 'widgets_init', 'rcdoc_widgets' );
 add_filter( 'cleaner_gallery_defaults', 'meh_gallery_default_args' );
 
 /**
@@ -122,15 +122,7 @@ function rcdoc_scripts() {
 /**
  * Register sidebars.
  */
-function abraham_widgets() {
-	register_sidebar(array(
-		'id'            => 'primary',
-		'name'          => __( 'Primary', 'abraham' ),
-		'before_title'  => '<div class="u-mtn2 u-mxn2"><h2 class="widget-title">',
-		'after_title'   => '</h2></div>',
-		'before_widget' => '<section class="widget o-cell u-shadow--2dp u-p2 u-list-reset">',
-		'after_widget'  => '</section>',
-	));
+function rcdoc_widgets() {
 	register_sidebar(array(
 		'id'            => 'header-right',
 		'name'          => __( 'Header Right', 'abraham' ),
@@ -140,21 +132,12 @@ function abraham_widgets() {
 		'after_widget'  => '</section>',
 	));
 	register_sidebar(array(
-		'id'            => 'footer',
-		'name'          => __( 'Footer', 'abraham' ),
-		'before_widget' => '<section class="widget mobile-widget__drop-down-section u-p2 u-flexed-grow u-list-reset"><div>',
-		'before_title'  => '</div><input class="mobile-widget__heading-checkbox u-1/1" type="checkbox" checked><h2 class="widget-title u-mt0 mobile-widget__heading">',
-		'after_title'   => '</h2><div class="mobile-widget__link-list">',
-		'after_widget'  => '</div></section>',
-	));
-	register_sidebar(array(
 		'id'            => 'drawer',
 		'name'          => __( 'Drawer Widgets', 'abraham' ),
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 		'before_widget' => '<section class="widget u-p2 u-list-reset %2$s">',
 		'after_widget'  => '</section>',
-		'class'         => '',
 	));
 }
 
