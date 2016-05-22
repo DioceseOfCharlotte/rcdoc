@@ -8,7 +8,7 @@
 add_filter( 'facetwp_facets', 'doc_register_doc_category_facets' );
 add_action( 'tha_content_before', 'doc_display_facets' );
 add_filter( 'facetwp_indexer_query_args', 'wpdr_facetwp_indexer_query_args' );
-add_filter( 'facetwp_pager_html', 'doc_facetwp_pager_html', 10, 2 );
+add_action( 'wp_head', 'fwp_load_more', 99 );
 
 /**
  * Get the facet archive posts for adding the class to hybrid_attr_content.
@@ -161,53 +161,48 @@ function wpdr_facetwp_indexer_query_args( $args ) {
 	return $args;
 }
 
-/**
- * Pager HTML for facets.
- *
- * @since  0.1.0
- * @access public
- * @param array $output The html.
- * @param array $params The params.
- */
-function doc_facetwp_pager_html( $output, $params ) {
-	$output   = '';
-	$page     = $params['page'];
-	$total_pages = $params['total_pages'];
 
-	if ( 1 < $total_pages ) {
-
-		$text_page      = __( 'Page', 'fwp' );
-		$text_of        = __( 'of', 'fwp' );
-
-
-		// }
-		if ( $page > 1 ) {
-			$output .= '<a class="facetwp-page u-br u-h5 u-p1 btn" data-page="' . ($page - 1) . '"><span>&larr;</span>Previous</a>';
+function fwp_load_more() {
+?>
+<script>
+(function($) {
+	$(function() {
+		if ('object' != typeof FWP) {
+			return;
 		}
-		if ( 1 < ( $page - 10 ) ) {
-			$output .= '<a class="facetwp-page u-br u-h5 u-p1 btn" data-page="' . ($page - 10) . '">' . ($page - 10) . '</a>';
-		}
-		for ( $i = 2; $i > 0; $i-- ) {
-			if ( 0 < ( $page - $i ) ) {
-				$output .= '<a class="facetwp-page u-br u-h5 u-p1 btn" data-page="' . ($page - $i) . '">' . ($page - $i) . '</a>';
+
+		wp.hooks.addFilter('facetwp/template_html', function(resp, params) {
+			if (FWP.is_load_more) {
+				FWP.is_load_more = false;
+				$('.facetwp-template').append(params.html);
+				return true;
 			}
-		}
+			return resp;
+		});
 
-		// Current page.
-		$output .= '<a class="facetwp-page u-br u-h5 u-p1 u-bold btn btn1 active" data-page="' . $page . '">' . $page . '</a>';
+		$(document).on('click', '.fwp-load-more', function() {
+			$('.fwp-load-more').html('Loading...');
+			FWP.is_load_more = true;
+			FWP.paged = parseInt(FWP.settings.pager.page) + 1;
+			FWP.soft_refresh = true;
+			FWP.refresh();
+		});
 
-		for ( $i = 1; $i <= 2; $i++ ) {
-			if ( $total_pages >= ( $page + $i ) ) {
-				$output .= '<a class="facetwp-page u-br u-h5 u-p1 btn" data-page="' . ($page + $i) . '">' . ($page + $i) . '</a>';
+		$(document).on('facetwp-loaded', function() {
+			if (FWP.settings.pager.page < FWP.settings.pager.total_pages) {
+				if (! FWP.loaded && 1 > $('.fwp-load-more').length) {
+					$('.facetwp-template').after('<button class="btn-hollow u-mb3 fwp-load-more">More results</button>');
+				}
+				else {
+					$('.fwp-load-more').html('Load more').show();
+				}
 			}
-		}
-		if ( $total_pages > ( $page + 10 ) ) {
-			$output .= '<a class="facetwp-page u-br u-h5 u-p1 btn" data-page="' . ($page + 10) . '">' . ($page + 10) . '</a>';
-		}
-		if ( $page < $total_pages && $total_pages > 1 ) {
-			$output .= '<a class="facetwp-page u-br u-h5 u-p1 btn" data-page="' . ($page + 1) . '">Next<span>&rarr;</span></a>';
-		}
-	}
-
-	return $output;
+			else {
+				$('.fwp-load-more').hide();
+			}
+		});
+	});
+})(jQuery);
+</script>
+<?php
 }
