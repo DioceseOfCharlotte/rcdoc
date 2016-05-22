@@ -13,12 +13,12 @@
 
 	<header class="u-bg-1-light u-flex u-flex-row u-flex-nowrap u-flex-jb u-br-t">
 		<h2 <?php hybrid_attr( 'entry-title' ); ?>>
-			<a class="u-inline-block" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+			<a class="entry-title-link u-1of1" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 		</h2>
 
 		<?php if ( has_term( 'macs', 'school_system' ) ) : ?>
 
-			<div class="u-bg-frost-2 u-p1 school-system-logo u-flex u-flex-center u-flexed-s0"><a href="<?php the_permalink('10073'); ?>"><?php abe_do_svg( 'macs', 'md' ); ?></a></div>
+			<div class="u-bg-frost-2 u-p1 school-system-logo u-flex u-flex-center u-flexed-s0"><a class="btn btn-sm" href="<?php the_permalink('10073'); ?>"><?php abe_do_svg( 'macs', 'md' ); ?></a></div>
 			<?php endif; ?>
 	</header>
 

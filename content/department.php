@@ -12,12 +12,8 @@
 
 	<?php get_template_part( 'components/img', 'thumb' ); ?>
 
-	<div>
-		<header <?php hybrid_attr( 'entry-header' ); ?>>
-			<h2 <?php hybrid_attr( 'entry-title' ); ?>>
-				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-			</h2>
-		</header>
+	<div class="u-1of1">
+		<?php get_template_part( 'components/entry', 'header' ); ?>
 
 		<div <?php hybrid_attr( 'entry-summary' ); ?>>
 			<?php tha_entry_content_before(); ?>
