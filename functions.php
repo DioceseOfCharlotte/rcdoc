@@ -119,26 +119,29 @@ function rcdoc_scripts() {
 	);
 }
 
+
 /**
- * Register sidebars.
+ * Registers sidebars.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
  */
 function rcdoc_widgets() {
-	register_sidebar(array(
-		'id'            => 'header-right',
-		'name'          => __( 'Header Right', 'abraham' ),
-		'before_title'  => '<h3 class="h2 widget-title mt0">',
-		'after_title'   => '</h3>',
-		'before_widget' => '<section id="%1$s" class="widget u-bg-2 u-p2">',
-		'after_widget'  => '</section>',
-	));
-	register_sidebar(array(
-		'id'            => 'drawer',
-		'name'          => __( 'Drawer Widgets', 'abraham' ),
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-		'before_widget' => '<section class="widget u-p2 u-list-reset %2$s">',
-		'after_widget'  => '</section>',
-	));
+	hybrid_register_sidebar(
+		array(
+			'id'          => 'header-right',
+			'name'        => _x( 'Header Right', 'sidebar', 'abraham' ),
+			'description' => __( 'The main sidebar. It is displayed on either the left or right side of the page based on the chosen layout.', 'abraham' ),
+		)
+	);
+	hybrid_register_sidebar(
+		array(
+			'id'          => 'drawer',
+			'name'        => _x( 'Drawer', 'sidebar', 'abraham' ),
+			'description' => __( 'A sidebar located in the footer of the site.', 'abraham' ),
+		)
+	);
 }
 
 function meh_gallery_default_args( $defaults ) {
