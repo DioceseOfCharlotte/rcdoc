@@ -16,20 +16,40 @@
 </div>
 
 <div class="o-cell u-1of2-md u-flex u-flex-jc u-flex-center">
+
 <?php
-the_widget( 'WP_Widget_RSS',
-	array(
-		'title'  => __( '', 'abraham' ),
-		'url'    => esc_url( $attr['feed_url'] ),
-		'items'  => 7,
-		// 'show_summary' => true,
-	),
-	array(
-		'before_widget' => '<section class="rss-widget o-cell u-1of1 mobile-widget__drop-down-section u-p2 u-flexed-grow"><div>',
-		'after_widget'  => '</div></section>',
-		'before_title'  => '</div><input class="mobile-widget__heading-checkbox u-1of1" type="checkbox" checked><h2 class="widget-title u-h2 u-mt0 mobile-widget__heading rss-title">',
-		'after_title'   => '</h2><div class="mobile-widget__link-list u-f-plus u-list-reset">',
-	)
-);
+include_once( ABSPATH . WPINC . '/feed.php' );
+
+// Get a SimplePie feed object from the specified feed source.
+$rss = fetch_feed( esc_url( $attr['feed_url'] ) );
+
+$maxitems = 0;
+
+if ( ! is_wp_error( $rss ) ) :
+
+    // Set Limit on number of items to display.
+    $maxitems = $rss->get_item_quantity( 7 );
+
+    // Build an array of all the items, starting with element 0 (first element).
+    $rss_items = $rss->get_items( 0, $maxitems );
+
+endif;
 ?>
+
+<ul class="u-list-group">
+    <?php if ( $maxitems == 0 ) : ?>
+        <li><?php _e( 'No items', 'my-text-domain' ); ?></li>
+    <?php else : ?>
+
+        <?php foreach ( $rss_items as $item ) : ?>
+            <li>
+                <a href="<?php echo esc_url( $item->get_permalink() ); ?>"
+                    title="<?php printf( __( 'Posted %s', 'my-text-domain' ), $item->get_date('j F Y | g:i a') ); ?>">
+                    <?php echo esc_html( $item->get_title() ); ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</ul>
+
 </div>
