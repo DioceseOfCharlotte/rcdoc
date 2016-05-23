@@ -87,16 +87,10 @@ var POSTCSS_IE = [
 ];
 
 var SOURCESJS = [
-	// ** MDL ** //
-	// Component handler
-	'src/scripts/vendors/mdlComponentHandler.js',
-
 	// ** Vendors ** //
 	'src/scripts/vendors/steer.js',
 	// ** Mine ** //
-	'src/scripts/myjs/Dropdown.js',
-	'src/scripts/myjs/main.js',
-	'src/scripts/es6.js'
+	'src/scripts/main.babel.js'
 ];
 
 // ***** Development tasks ****** //
@@ -190,7 +184,7 @@ gulp.task('scripts', function() {
 		.pipe(babel({
 			"presets": ["es2015"],
 			"only": [
-				"src/scripts/es6.js"
+				"src/scripts/main.babel.js"
 			]
 		}))
 		.pipe($.concat('main.js'))
