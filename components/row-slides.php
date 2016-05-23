@@ -9,8 +9,8 @@ wp_enqueue_script( 'flickity' ); ?>
 
 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-	<div id="post-<?php the_ID(); ?>" class="gallery-cell o-cell u-bg-white u-br u-shadow--3dp">
-		
+	<div id="post-<?php the_ID(); ?>" class="gallery-cell o-cell u-bg-white u-br u-shadow2">
+
 		<header <?php hybrid_attr( 'entry-header' ); ?>>
 			<?php
 			get_the_image(array(

@@ -132,7 +132,9 @@ function rcdoc_widgets() {
 		array(
 			'id'          => 'header-right',
 			'name'        => _x( 'Header Right', 'sidebar', 'abraham' ),
-			'description' => __( 'The main sidebar. It is displayed on either the left or right side of the page based on the chosen layout.', 'abraham' ),
+			'description' => __( 'Add header widgets here.', 'abraham' ),
+			'before_widget' => '<section id="%1$s" class="widget u-bg-2 u-p2 %2$s">',
+			'after_widget'  => '</section>',
 		)
 	);
 	hybrid_register_sidebar(
