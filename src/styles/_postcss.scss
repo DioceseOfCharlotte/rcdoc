@@ -42,6 +42,12 @@ a[href*="catholicnewsherald.com"]:before {
 	width: 1.1em;
 	height: 1.1em;
 }
+a[href*="thankyou4caring.org"],
+a[href*="catholicnewsherald.com"] {
+	display: inline-flex;
+	align-items: center;
+	vertical-align: middle;
+}
 .facetwp-checkbox {
 	background: none !important;
 }

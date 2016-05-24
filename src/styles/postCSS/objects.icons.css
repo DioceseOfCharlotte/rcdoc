@@ -19,6 +19,15 @@ a[href*="catholicnewsherald.com"]:before {
 	@mixin icon newspaper;
 }
 
+
+
+a[href*="thankyou4caring.org"],
+a[href*="catholicnewsherald.com"] {
+	display: inline-flex;
+	align-items: center;
+	vertical-align: middle;
+}
+
 .facetwp-checkbox {
 	background: none !important;
 }
