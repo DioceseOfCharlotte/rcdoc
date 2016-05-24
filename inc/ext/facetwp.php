@@ -23,6 +23,10 @@ function doc_get_facet_cpts() {
 	);
 }
 
+function doc_has_facet() {
+	return is_post_type_archive( doc_get_facet_cpts() );
+}
+
 function doc_register_doc_category_facets( $facets ) {
 	$facets[] = array(
 		'label'        => 'Document Categories',
@@ -163,6 +167,9 @@ function wpdr_facetwp_indexer_query_args( $args ) {
 
 
 function fwp_load_more() {
+	if ( ! doc_has_facet() ) {
+		return;
+	}
 ?>
 <script>
 (function($) {
