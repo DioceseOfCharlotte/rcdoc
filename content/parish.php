@@ -13,7 +13,7 @@
 
 	<header class="u-bg-1-light u-flex u-flex-row u-flex-nowrap u-flex-jb u-br-t">
 		<h2 <?php hybrid_attr( 'entry-title' ); ?>>
-			<a class="entry-title-link u-1of1" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+			<a class="entry-title-link u-1of1 u-inline-flex u-flex-center" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 		</h2>
 	</header>
 
