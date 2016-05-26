@@ -128,20 +128,15 @@ function rcdoc_scripts() {
  * @return void
  */
 function rcdoc_widgets() {
-	hybrid_register_sidebar(
+	register_sidebar(
 		array(
-			'id'          => 'header-right',
-			'name'        => _x( 'Header Right', 'sidebar', 'abraham' ),
-			'description' => __( 'Add header widgets here.', 'abraham' ),
-			'before_widget' => '<section id="%1$s" class="widget u-bg-2 u-p2 %2$s">',
+			'id'          	=> 'header-right',
+			'name'        	=> esc_html__( 'Header Right', 'sidebar', 'abraham' ),
+			'description'   => esc_html__( 'Add widgets here.', 'abraham' ),
+			'before_widget' => '<section id="%1$s" class="widget u-p2 u-bg-2 %2$s">',
 			'after_widget'  => '</section>',
-		)
-	);
-	hybrid_register_sidebar(
-		array(
-			'id'          => 'drawer',
-			'name'        => _x( 'Drawer', 'sidebar', 'abraham' ),
-			'description' => __( 'A sidebar located in the footer of the site.', 'abraham' ),
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
 		)
 	);
 }
