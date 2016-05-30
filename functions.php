@@ -9,7 +9,6 @@
  * Load required theme files.
  */
 // require get_stylesheet_directory() . '/inc/html-classes.php';
-// require get_stylesheet_directory() . '/inc/ext/tgmpa.php';
 require get_stylesheet_directory() . '/inc/config.php';
 require get_stylesheet_directory() . '/inc/post-types.php';
 require get_stylesheet_directory() . '/inc/tax.php';
@@ -25,7 +24,6 @@ require get_stylesheet_directory() . '/inc/shorts-ui.php';
 require get_stylesheet_directory() . '/inc/metaboxes.php';
 add_action( 'after_setup_theme', 'rcdoc_setup' );
 add_action( 'wp_enqueue_scripts', 'rcdoc_scripts' );
-add_action( 'widgets_init', 'rcdoc_widgets' );
 add_filter( 'cleaner_gallery_defaults', 'meh_gallery_default_args' );
 
 /**
@@ -116,28 +114,6 @@ function rcdoc_scripts() {
 		'main_scripts',
 		trailingslashit( get_stylesheet_directory_uri() ).'js/main.min.js',
 		false, false, true
-	);
-}
-
-
-/**
- * Registers sidebars.
- *
- * @since  1.0.0
- * @access public
- * @return void
- */
-function rcdoc_widgets() {
-	register_sidebar(
-		array(
-			'id'          	=> 'header-right',
-			'name'        	=> esc_html__( 'Header Right', 'sidebar', 'abraham' ),
-			'description'   => esc_html__( 'Add widgets here.', 'abraham' ),
-			'before_widget' => '<section id="%1$s" class="widget u-p2 u-bg-2 %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		)
 	);
 }
 

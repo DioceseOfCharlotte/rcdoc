@@ -106,69 +106,6 @@ var domReady = function domReady(callback) {
 	document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
 };
 
-// Off-canvas sidebar
-(function () {
-	'use strict';
-
-	var querySelector = document.querySelector.bind(document);
-
-	var sideNav = querySelector('#menu-primary');
-	var body = document.body;
-	var siteHeader = querySelector('#header');
-	var menuBtn = querySelector('#side-menu-toggle');
-	var contentMask = querySelector('#content-mask');
-
-	function closeMenu() {
-		body.classList.remove('u-overflow-hidden');
-		siteHeader.classList.remove('sidebar-open');
-		sideNav.classList.remove('is-active');
-		contentMask.classList.remove('is-active');
-	}
-
-	function toggleMenu() {
-		body.classList.toggle('u-overflow-hidden');
-		siteHeader.classList.toggle('sidebar-open');
-		sideNav.classList.toggle('is-active');
-		contentMask.classList.toggle('is-active');
-		sideNav.classList.add('has-opened');
-	}
-
-	contentMask.addEventListener('click', closeMenu);
-	menuBtn.addEventListener('click', toggleMenu);
-	sideNav.addEventListener('click', function (event) {
-		if (event.target.nodeName === 'A' || event.target.nodeName === 'LI') {
-			closeMenu();
-		}
-	});
-})();
-
-// Header Right Dropdown Sidebar
-(function () {
-	'use strict';
-
-	var querySelector = document.querySelector.bind(document);
-
-	var dropBtn = querySelector('#js-dropbtn');
-	var dropDown = querySelector('#js-dropdown');
-
-	function closeMenu() {
-		dropDown.classList.remove('is-active');
-		dropBtn.classList.remove('is-active');
-	}
-
-	function toggleMenu() {
-		dropDown.classList.toggle('is-active');
-		dropBtn.classList.toggle('is-active');
-	}
-
-	dropBtn.addEventListener('click', toggleMenu);
-	dropDown.addEventListener('click', function (event) {
-		if (event.target.nodeName === 'A' || event.target.nodeName === 'LI') {
-			closeMenu();
-		}
-	});
-})();
-
 // Steer fix header
 window.onload = function () {
 	// getting the element where the message goes

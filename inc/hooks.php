@@ -5,11 +5,9 @@
  * @package  RCDOC
  */
 
-add_action( 'tha_header_bottom', 'doc_nav_toggle' );
-add_action( 'tha_header_after', 'headspace' );
-add_action( 'tha_header_after', 'doc_primary_menu' );
+//add_action( 'tha_header_after', 'headspace' );
 add_action( 'tha_header_after', 'doc_article_hero' );
-add_action( 'tha_footer_after', 'doc_content_mask' );
+//add_action( 'tha_footer_after', 'doc_content_mask' );
 add_action( 'tha_content_bottom', 'doc_dept_child_posts' );
 add_action( 'tha_content_before', 'doc_archive_desc' );
 
@@ -66,19 +64,11 @@ function headspace() {
 	echo '<div id="head-space" class="head-space u-bg-1-glass-dark u-text-1-dark"></div>';
 }
 
-function doc_primary_menu() {
-	hybrid_get_menu( 'primary' );
-}
-
 function doc_article_hero() {
 	if ( is_front_page() ) {
 		return; }
 
 	echo '<div id="article-hero" class="article-hero u-1of1 u-bg-center u-bg-no-repeat u-bg-cover u-tinted-image u-bg-fixed u-abs u-left0 u-right0"></div>';
-}
-
-function doc_nav_toggle() {
-	echo '<button id="side-menu-toggle" class="menu-toggle btn btn-round u-ml-auto u-mr1 u-z4 u-rel" aria-controls="menu-primary-items">' . abe_get_svg( 'menu', 'sm' ) . '</button>';
 }
 
 function doc_content_mask() {
