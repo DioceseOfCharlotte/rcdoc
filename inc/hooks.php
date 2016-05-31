@@ -5,7 +5,7 @@
  * @package  RCDOC
  */
 
-//add_action( 'tha_header_after', 'headspace' );
+add_action( 'tha_header_after', 'headspace' );
 add_action( 'tha_header_after', 'doc_article_hero' );
 //add_action( 'tha_footer_after', 'doc_content_mask' );
 add_action( 'tha_content_bottom', 'doc_dept_child_posts' );
@@ -61,7 +61,7 @@ function doc_archive_desc() {
 function headspace() {
 	// if ( ! is_front_page() )
 	// return;
-	echo '<div id="head-space" class="head-space u-bg-1-glass-dark u-text-1-dark"></div>';
+	echo '<div id="head-space" class="head-space u-bg-1-glass u-text-1"></div>';
 }
 
 function doc_article_hero() {
