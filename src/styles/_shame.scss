@@ -438,8 +438,15 @@ h2 > a:not([class]):hover {
 }
 
 
+.gallery-cell {
+	width: 90%;
 
-.thumbnail:not(.o-crop__content) {
-    object-fit: cover;
-    font-family: 'object-fit: cover;'
+	@include md {
+		width: 310px;
+	}
 }
+
+// .thumbnail:not(.o-crop__content) {
+//     object-fit: cover;
+//     font-family: 'object-fit: cover;'
+// }

@@ -1003,9 +1003,10 @@ http://flickity.metafizzy.co
     color: white; }
   html .tile-row {
     margin-bottom: 48px; }
-   {
-    object-fit: cover;
-    font-family: 'object-fit: cover;'; }
+  html .gallery-cell {
+    width: 90%; }
+    html .gallery-cell {
+  width: 310px; }
 
 /* Styles specific to the editor. */
 body#tinymce {
