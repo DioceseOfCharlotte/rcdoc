@@ -56,12 +56,12 @@ var AUTOPREFIXER_BROWSERS = [
 
 var PRECSS_PLUGINS = [
 	atImport,
+	pcMixins,
 	pcProperties,
 	pcVars,
 	pcColor,
 	pcMedia,
 	pcNested,
-	pcMixins,
 	pcSvg({
 		path: './images/icons'
 	})

@@ -104,12 +104,12 @@
     transition-property: all;
 }
 
-.tile-link {
+a.tile-link {
     border: 5px solid #36474f;
     box-shadow: inset 0 0 1rem 0.7rem rgba(0, 0, 0, 0.2);
 }
 
-.tile-link:hover {
+a.tile-link:hover {
     opacity: 1;
 }
 
