@@ -1212,6 +1212,10 @@ html .gv-container-no-results {
     padding: 1rem;
 }
 
+html .gform_wrapper ul li.gfield {
+    max-width: 100%;
+}
+
 html #page .gv-grid, html #page .gv-list-container {
     max-width: 100%;
 }
