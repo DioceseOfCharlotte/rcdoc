@@ -11,7 +11,6 @@ h2 a.rsswidget:before {
 
 	.card-img {
 		max-height: 371px;
-		flex-shrink: 0;
 		z-index: 2;
 	}
 
@@ -27,6 +26,9 @@ h2 a.rsswidget:before {
 	opacity: 1!important;
 }
 
+.home .btn-readmore {
+	background: none;
+}
 
 .title-text.u-flex-col {
 	flex-direction: column-reverse;

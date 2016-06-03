@@ -11,7 +11,7 @@
 
 	<?php tha_entry_top(); ?>
 
-	<a class="btn btn-hollow u-1of1" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+	<?php get_template_part( 'components/entry', 'header' ); ?>
 
 	<?php if ( has_excerpt() ) { ?>
 		<div class="entry-summary u-p2">
@@ -19,7 +19,7 @@
 			<?php the_excerpt(); ?>
 			<?php tha_entry_content_after(); ?>
 		</div>
-		<?php } ?>
+	<?php } ?>
 
 		<?php tha_entry_bottom(); ?>
 

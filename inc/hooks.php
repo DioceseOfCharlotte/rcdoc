@@ -51,9 +51,9 @@ function doc_dept_child_posts() {
 function doc_archive_desc() {
 	if ( ! is_paged() && $desc = get_the_archive_description() ) :
 	?>
-		<div <?php hybrid_attr( 'archive-description' ); ?>>
+		<article <?php hybrid_attr( 'archive-description' ); ?>>
 			<?php echo $desc; ?>
-		</div><!-- .archive-description -->
+		</article><!-- .archive-description -->
 	<?php
 	endif;
 }

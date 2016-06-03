@@ -96,12 +96,20 @@
     opacity: 0.7;
 }
 
+.tile-icon .v-icon {
+    vertical-align: top;
+}
+
 .tile {
     margin: 0.25rem;
     background-image: linear-gradient(335deg, rgba(0, 0, 0, 0.08) 50%, transparent 50%);
     transition-duration: 0.3s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-property: all;
+}
+
+.tiled-icon .v-icon {
+    vertical-align: top;
 }
 
 a.tile-link {
@@ -685,9 +693,6 @@ h2 a.rsswidget:before {
 
 .taxonomy-agency .card-img {
     max-height: 371px;
-    -webkit-flex-shrink: 0;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
     z-index: 2;
 }
 
@@ -704,6 +709,10 @@ h2 a.rsswidget:before {
     opacity: 1 !important;
 }
 
+.home .btn-readmore {
+    background: none;
+}
+
 .title-text.u-flex-col {
     -webkit-flex-direction: column-reverse;
     -ms-flex-direction: column-reverse;
@@ -712,6 +721,7 @@ h2 a.rsswidget:before {
 
 .tiled-icon {
     font-size: 13rem;
+    line-height: 1;
     stroke: rgba(54, 71, 79, 0.3);
 }
 
