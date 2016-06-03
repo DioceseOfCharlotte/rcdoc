@@ -712,6 +712,8 @@ http://flickity.metafizzy.co
     background-color: white;
     border-radius: 2px;
     padding: 16px; }
+  html .gform_wrapper ul li.gfield {
+    max-width: 100%; }
   html #page .gv-grid,
   html #page .gv-list-container {
     max-width: 100%; }
