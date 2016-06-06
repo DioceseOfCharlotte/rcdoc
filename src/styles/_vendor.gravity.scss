@@ -2,6 +2,10 @@
 	border-width: 0;
 }
 
+.gv-list-view-content .gv-list-view-content-image:empty {
+	display: none;
+}
+
 .gv-list-view-title {
 	border-bottom-width: 0;
 }

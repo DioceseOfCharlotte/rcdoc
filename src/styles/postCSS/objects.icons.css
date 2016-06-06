@@ -7,7 +7,7 @@
 	}
 }
 
-.entry-title > a[href*="//"]:not([href*="rcdoc.info"]):not([href*="hgv.test"]):after {
+.entry-title > a[href*="//"]:not([href*="rcdoc.info"]):not([href*="rcdoc.dev"]):after {
 	@mixin icon external-link;
 }
 
@@ -19,7 +19,17 @@ a[href*="catholicnewsherald.com"]:before {
 	@mixin icon newspaper;
 }
 
+.icon-office:before {
+	@mixin icon office, #90a4ae;
+}
 
+.icon-parish:before {
+	@mixin icon parishes, #90a4ae;
+}
+
+.icon-school:before {
+	@mixin icon schools, #90a4ae;
+}
 
 a[href*="thankyou4caring.org"],
 a[href*="catholicnewsherald.com"] {

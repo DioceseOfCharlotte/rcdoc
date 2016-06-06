@@ -7,17 +7,13 @@ h2 a.rsswidget:before {
 }
 
 
-.taxonomy-agency {
+.taxonomy-agency .entry {
+	overflow: hidden;
+	display: flex;
+	max-height: 90px;
 
-	.card-img {
-		max-height: 371px;
-		z-index: 2;
-	}
-
-	.entry {
-		max-height: 150px;
-		overflow: hidden;
-		display: flex;
+	@include md {
+		max-height: 120px;
 	}
 }
 
