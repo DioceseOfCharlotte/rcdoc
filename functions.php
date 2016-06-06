@@ -25,7 +25,7 @@ require get_stylesheet_directory() . '/inc/metaboxes.php';
 add_action( 'after_setup_theme', 'rcdoc_setup' );
 add_action( 'wp_enqueue_scripts', 'rcdoc_scripts' );
 add_filter( 'cleaner_gallery_defaults', 'meh_gallery_default_args' );
-
+add_action( 'init', 'doc_arch_posts' );
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  */
@@ -54,6 +54,30 @@ function rcdoc_setup() {
 	add_filter( 'abe_add_hierarchy_cpts', 'rcdoc_hierarchy_cpts' );
 	add_filter( 'abe_add_non_hierarchy_cpts', 'rcdoc_non_hierarchy_cpts' );
 	add_filter( 'arch_add_post_types', 'rcdoc_non_hierarchy_cpts' );
+}
+
+/**
+ * Enables Arch support.
+ */
+function doc_arch_posts() {
+	add_post_type_support( 'vocation', 'arch-post' );
+	add_post_type_support( 'finance', 'arch-post' );
+	add_post_type_support( 'archive_post', 'arch-post' );
+	add_post_type_support( 'bishop', 'arch-post' );
+	add_post_type_support( 'chancery', 'arch-post' );
+	add_post_type_support( 'deacon', 'arch-post' );
+	add_post_type_support( 'development', 'arch-post' );
+	add_post_type_support( 'education', 'arch-post' );
+	add_post_type_support( 'human_resources', 'arch-post' );
+	add_post_type_support( 'hispanic_ministry', 'arch-post' );
+	add_post_type_support( 'housing', 'arch-post' );
+	add_post_type_support( 'info_tech', 'arch-post' );
+	add_post_type_support( 'liturgy', 'arch-post' );
+	add_post_type_support( 'macs', 'arch-post' );
+	add_post_type_support( 'multicultural', 'arch-post' );
+	add_post_type_support( 'planning', 'arch-post' );
+	add_post_type_support( 'tribunal', 'arch-post' );
+	add_post_type_support( 'property', 'arch-post' );
 }
 
 /**

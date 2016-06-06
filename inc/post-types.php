@@ -31,6 +31,7 @@ function doc_register_post_types() {
 		'editor',
 		'author',
 		'thumbnail',
+		'arch-home',
 		'excerpt',
 		'post-formats',
 		'page-attributes',
