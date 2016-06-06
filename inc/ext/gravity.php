@@ -17,6 +17,16 @@ add_filter( 'gform_pre_validation_3', 'populate_dept' );
 add_filter( 'gform_pre_submission_filter_3', 'populate_dept' );
 add_filter( 'gform_admin_pre_render_3', 'populate_dept' );
 
+add_filter( 'gform_pre_render_3', 'populate_parish' );
+add_filter( 'gform_pre_validation_3', 'populate_parish' );
+add_filter( 'gform_pre_submission_filter_3', 'populate_parish' );
+add_filter( 'gform_admin_pre_render_3', 'populate_parish' );
+
+add_filter( 'gform_pre_render_3', 'populate_school' );
+add_filter( 'gform_pre_validation_3', 'populate_school' );
+add_filter( 'gform_pre_submission_filter_3', 'populate_school' );
+add_filter( 'gform_admin_pre_render_3', 'populate_school' );
+
 function populate_dept( $form ) {
 
 	foreach ( $form['fields'] as &$field ) {
@@ -25,7 +35,7 @@ function populate_dept( $form ) {
 			continue;
 		}
 
-		$posts = get_posts( 'numberposts=-1&post_status=publish&post_type=department' );
+		$posts = get_posts( 'numberposts=-1&post_status=publish&post_type=department&orderby=title&order=ASC' );
 
 		$choices = array();
 
@@ -33,7 +43,55 @@ function populate_dept( $form ) {
 			$choices[] = array( 'text' => $post->post_title, 'value' => $post->ID );
 		}
 
-		$field->placeholder = 'Select a Post';
+		$field->placeholder = 'Select a Department';
+		$field->choices     = $choices;
+
+	}
+
+	return $form;
+}
+
+function populate_parish( $form ) {
+
+	foreach ( $form['fields'] as &$field ) {
+
+		if ( 'select' !== $field->type || strpos( $field->cssClass, 'populate-parish' ) === false ) {
+			continue;
+		}
+
+		$posts = get_posts( 'numberposts=-1&post_status=publish&post_type=parish&orderby=title&order=ASC' );
+
+		$choices = array();
+
+		foreach ( $posts as $post ) {
+			$choices[] = array( 'text' => $post->post_title, 'value' => $post->ID );
+		}
+
+		$field->placeholder = 'Select a Parish';
+		$field->choices     = $choices;
+
+	}
+
+	return $form;
+}
+
+function populate_school( $form ) {
+
+	foreach ( $form['fields'] as &$field ) {
+
+		if ( 'select' !== $field->type || strpos( $field->cssClass, 'populate-school' ) === false ) {
+			continue;
+		}
+
+		$posts = get_posts( 'numberposts=-1&post_status=publish&post_type=school&orderby=title&order=ASC' );
+
+		$choices = array();
+
+		foreach ( $posts as $post ) {
+			$choices[] = array( 'text' => $post->post_title, 'value' => $post->ID );
+		}
+
+		$field->placeholder = 'Select a School';
 		$field->choices     = $choices;
 
 	}
