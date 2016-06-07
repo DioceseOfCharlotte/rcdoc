@@ -26,6 +26,7 @@ add_action( 'after_setup_theme', 'rcdoc_setup' );
 add_action( 'wp_enqueue_scripts', 'rcdoc_scripts' );
 add_filter( 'cleaner_gallery_defaults', 'meh_gallery_default_args' );
 add_action( 'init', 'doc_arch_posts' );
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  */
@@ -36,7 +37,7 @@ function rcdoc_setup() {
 	add_theme_support( 'soil-disable-trackbacks' );
 	// add_theme_support('soil-nice-search');
 	add_theme_support( 'soil-google-analytics', 'UA-40566077-9' );
-	add_theme_support('soil-js-to-footer');
+	// add_theme_support('soil-js-to-footer');
 	add_theme_support( 'cleaner-gallery' );
 	add_theme_support(
 		'custom-background',
