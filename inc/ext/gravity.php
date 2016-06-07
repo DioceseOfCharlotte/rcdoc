@@ -11,6 +11,7 @@ add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 add_filter( 'gravityview/extension/search/links_sep', '__return_false' );
 add_filter( 'gravityview/extension/search/links_label', '__return_false' );
 add_filter( 'gravitview_no_entries_text', 'modify_gravitview_no_entries_text', 10, 2 );
+add_filter( 'gravityview/fields/select/output_label', '__return_true' );
 
 add_filter( 'gform_pre_render_3', 'populate_dept' );
 add_filter( 'gform_pre_validation_3', 'populate_dept' );
