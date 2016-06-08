@@ -17,6 +17,7 @@ require get_stylesheet_directory() . '/inc/hooks.php';
 require get_stylesheet_directory() . '/inc/ext/cpt-archive.php';
 require get_stylesheet_directory() . '/inc/ext/wpdr.php';
 require get_stylesheet_directory() . '/inc/custom-header.php';
+require get_stylesheet_directory() . '/inc/custom-background.php';
 require get_stylesheet_directory() . '/inc/ext/gravity.php';
 require get_stylesheet_directory() . '/inc/ext/facetwp.php';
 require get_stylesheet_directory() . '/inc/shortcodes.php';
