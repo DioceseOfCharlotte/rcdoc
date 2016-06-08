@@ -27,6 +27,7 @@ add_filter( 'gform_pre_render_3', 'populate_school' );
 add_filter( 'gform_pre_validation_3', 'populate_school' );
 add_filter( 'gform_pre_submission_filter_3', 'populate_school' );
 add_filter( 'gform_admin_pre_render_3', 'populate_school' );
+//add_filter( 'gform_column_input_3_26_2', 'set_parish_column', 10, 5 );
 
 function populate_dept( $form ) {
 
@@ -118,4 +119,20 @@ function modify_gravitview_no_entries_text( $existing_text, $is_search ) {
 	}
 
 	return $return;
+}
+
+function set_parish_column( $input_info, $field, $column, $value, $form_id ) {
+
+	$posts = get_posts( 'numberposts=-1&post_status=publish&post_type=parish&orderby=title&order=ASC' );
+
+	$choices = array();
+
+	foreach ( $posts as $post ) {
+		$choices[] = array( 'text' => $post->post_title, 'value' => $post->ID );
+	}
+
+	return array(
+		'type' => 'select',
+		'choices' => $choices,
+	);
 }
