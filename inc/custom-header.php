@@ -53,6 +53,7 @@ function abraham_custom_header_wp_head() {
 	global $cptarchives;
 	$queried_object = get_queried_object_id();
 	$term_image = get_term_meta( $queried_object, 'image', true );
+	$bg_image = "";
 	if ( $term_image ) {
 		$bg_image = wp_get_attachment_image_url( $term_image, 'abe-hd' );
 
@@ -65,6 +66,8 @@ function abraham_custom_header_wp_head() {
 	} elseif ( get_header_image() ) {
 		$bg_image = get_header_image();
 	}
-	$style .= ".article-hero{background-image:url({$bg_image});}";
-	echo "\n" . '<style type="text/css" id="custom-header-css">' . trim( $style ) . '</style>' . "\n";
+	if ( $bg_image ) {
+		$style .= ".article-hero{background-image:url({$bg_image});}";
+	}
+		echo "\n" . '<style type="text/css" id="custom-header-css">' . trim( $style ) . '</style>' . "\n";
 }
