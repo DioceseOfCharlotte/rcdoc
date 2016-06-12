@@ -1776,6 +1776,10 @@ html .gallery-cell {
     }
 }
 
+html .site-content {
+    min-height: calc(100vh - 64px);
+}
+
 /* Styles specific to the editor. */
 
 body#tinymce {

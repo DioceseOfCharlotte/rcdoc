@@ -450,3 +450,7 @@ h2 > a:not([class]):hover {
 //     object-fit: cover;
 //     font-family: 'object-fit: cover;'
 // }
+
+.site-content {
+	min-height: calc(100vh - 64px);
+}

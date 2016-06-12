@@ -1040,6 +1040,8 @@ http://flickity.metafizzy.co
     width: 90%; }
     html .gallery-cell {
   width: 310px; }
+  html .site-content {
+    min-height: calc(100vh - 64px); }
 
 /* Styles specific to the editor. */
 body#tinymce {
