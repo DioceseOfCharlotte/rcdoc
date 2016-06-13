@@ -27,7 +27,7 @@
 	?>
 
 	<?php tha_entry_content_before(); ?>
-	<?php get_template_part( 'components/acf-contact' ); ?>
+	<?php get_template_part( 'components/contact-meta' ); ?>
 	<?php tha_entry_content_after(); ?>
 
 	<?php get_template_part( 'components/entry', 'footer' ); ?>
