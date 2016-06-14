@@ -1019,6 +1019,10 @@ a[href*="thankyou4caring.org"], a[href*="catholicnewsherald.com"] {
     top: 0;
 }
 
+.header__menu-toggle > .icon-sm {
+    margin: 0;
+}
+
 html {
     /*! Flickity v1.1.2
 http://flickity.metafizzy.co
