@@ -87,10 +87,10 @@ function doc_arch_posts() {
  * Theme Colors.
  */
 function rcdoc_primary_color( $hex ) {
-	return $hex ? $hex : '2980b9';
+	return $hex ? $hex : '#2980b9';
 }
 function rcdoc_secondary_color( $hex ) {
-	return $hex ? $hex : '16a085';
+	return $hex ? $hex : '#16a085';
 }
 
 /**
