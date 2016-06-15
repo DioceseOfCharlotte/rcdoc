@@ -10,9 +10,10 @@
 
 	<?php tha_entry_top(); ?>
 
+<div class="flag-body u-flex u-flexed-auto">
+
 	<?php get_template_part( 'components/img', 'thumb' ); ?>
 
-	<div class="u-1of1">
 		<?php get_template_part( 'components/entry', 'header' ); ?>
 
 		<?php if ( has_excerpt() ) { ?>
