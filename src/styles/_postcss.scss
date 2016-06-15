@@ -4,73 +4,62 @@
 .entry-title > a:after {
 	margin-left: auto!important;
 	content: " ";
-	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='v-icon' fill='%239aacb5' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M14 4q.422 0 .711.289l7 7Q22 11.578 22 12t-.289.711l-7 7Q14.422 20 14 20q-.43 0-.715-.285T13 19q0-.422.289-.711L18.586 13H3q-.414 0-.707-.293T2 12t.293-.707T3 11h15.586l-5.297-5.289Q13 5.422 13 5q0-.43.285-.715T14 4z'/%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='v-icon' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M14 4q.422 0 .711.289l7 7Q22 11.578 22 12t-.289.711l-7 7Q14.422 20 14 20q-.43 0-.715-.285T13 19q0-.422.289-.711L18.586 13H3q-.414 0-.707-.293T2 12t.293-.707T3 11h15.586l-5.297-5.289Q13 5.422 13 5q0-.43.285-.715T14 4z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
-	vertical-align: middle;
-	min-width: 1.1em;
-	width: 1.1em;
-	height: 1.1em;
 }
 .entry-title > a[href*="//"]:not([href*="rcdoc.info"]):not([href*="rcdoc.dev"]):after {
 	content: " ";
-	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='v-icon' fill='%239aacb5' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6v2H5v12h12v-6h2zM13 3v2h4.586l-7.793 7.793 1.414 1.414L19 6.414V11h2V3h-8z'/%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='v-icon' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6v2H5v12h12v-6h2zM13 3v2h4.586l-7.793 7.793 1.414 1.414L19 6.414V11h2V3h-8z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
-	vertical-align: middle;
-	min-width: 1.1em;
-	width: 1.1em;
-	height: 1.1em;
 }
-a[href*="thankyou4caring.org"]:before {
+a[href*="thankyou4caring.org"]:not([class]):before {
 	content: " ";
-	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='v-icon' fill='%239aacb5' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M17.258 15.287q.75-.752.75-1.784 0-1.033-.727-1.76-.728-.729-1.761-.729-1.08 0-1.784.704l-.751.751-.704-.75q-.704-.705-1.784-.705-1.032 0-1.76.728-.729.728-.729 1.76 0 1.08.704 1.785l4.273 4.272zM5.473 6.977q.61 0 1.057-.446.447-.446.446-1.057-.001-.61-.446-1.056-.445-.446-1.057-.446-.612 0-1.056.446-.445.445-.446 1.056 0 .611.446 1.057.446.446 1.056.446zm15.963 4.6q.564.565.564 1.409 0 .844-.564 1.408l-7.042 7.042Q13.83 22 12.986 22t-1.408-.564l-9.014-9.014Q2 11.858 2 11.014V3.972q0-.798.587-1.385T3.972 2h7.042q.845 0 1.408.564z'/%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='v-icon' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M17.258 15.287q.75-.752.75-1.784 0-1.033-.727-1.76-.728-.729-1.761-.729-1.08 0-1.784.704l-.751.751-.704-.75q-.704-.705-1.784-.705-1.032 0-1.76.728-.729.728-.729 1.76 0 1.08.704 1.785l4.273 4.272zM5.473 6.977q.61 0 1.057-.446.447-.446.446-1.057-.001-.61-.446-1.056-.445-.446-1.057-.446-.612 0-1.056.446-.445.445-.446 1.056 0 .611.446 1.057.446.446 1.056.446zm15.963 4.6q.564.565.564 1.409 0 .844-.564 1.408l-7.042 7.042Q13.83 22 12.986 22t-1.408-.564l-9.014-9.014Q2 11.858 2 11.014V3.972q0-.798.587-1.385T3.972 2h7.042q.845 0 1.408.564z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
-	vertical-align: middle;
-	min-width: 1.1em;
-	width: 1.1em;
-	height: 1.1em;
 }
-a[href*="catholicnewsherald.com"]:before {
+a[href*="catholicnewsherald.com"]:not([class]):before {
 	content: " ";
-	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon-lg icon-newspaper v-icon' version='1' fill='%239aacb5' viewBox='0 0 32 32' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M0 4v22a2 2 0 0 0 2 2h26V4zm2 2h24v20H2z' class='news-front'/%3E%3Cpath d='M4 14h10v10H4zm12 8h6v2h-6zm0-4h8v2h-8zm0-4h8v2h-8zM4 10h20v2H4z' class='news-text'/%3E%3Cpath d='M28 7.992v20c3.681.132 3.95-1.38 4-3v-17z' class='news-back'/%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon-lg icon-newspaper v-icon' version='1' fill='%2390a4ae' viewBox='0 0 32 32' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M0 4v22a2 2 0 0 0 2 2h26V4zm2 2h24v20H2z' class='news-front'/%3E%3Cpath d='M4 14h10v10H4zm12 8h6v2h-6zm0-4h8v2h-8zm0-4h8v2h-8zM4 10h20v2H4z' class='news-text'/%3E%3Cpath d='M28 7.992v20c3.681.132 3.95-1.38 4-3v-17z' class='news-back'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
-	vertical-align: middle;
-	min-width: 1.1em;
-	width: 1.1em;
-	height: 1.1em;
 }
+.show-icons a[href*="/departments/"]:before,
+.show-icons a[href*="/education-vicariate/"]:before,
+.show-icons a[href*="/ev/"]:before,
+.show-icons a[href*="/archive-posts/"]:before,
+.show-icons a[href*="/development/"]:before,
+.show-icons a[href*="/housing/"]:before,
+.show-icons a[href*="/human-resources/"]:before,
+.show-icons a[href*="/it/"]:before,
+.show-icons a[href*="/liturgy-and-worship/"]:before,
+.show-icons a[href*="/planning/"]:before,
+.show-icons a[href*="/tribunal/"]:before,
+.show-icons a[href*="/finance/"]:before,
+.show-icons a[href*="/properties/"]:before,
+.show-icons a[href*="/multicultural/"]:before,
+.show-icons a[href*="/vocations/"]:before,
 .icon-office:before {
 	content: " ";
 	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M2 30h14V2H2v28zm8.75-24.5h3.5V9h-3.5V5.5zm0 7h3.5V16h-3.5v-3.5zm0 7h3.5V23h-3.5v-3.5zm-7-14h3.5V9h-3.5V5.5zm0 7h3.5V16h-3.5v-3.5zm0 7h3.5V23h-3.5v-3.5zm14-8.75H30v1.75H17.75zm0 19.25h3.5v-7h5.25v7H30V14.25H17.75z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
-	vertical-align: middle;
-	min-width: 1.1em;
-	width: 1.1em;
-	height: 1.1em;
 }
+.show-icons a[href*="/parishes/"]:before,
 .icon-parish:before {
 	content: " ";
 	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2390a4ae' class='tile-icon v-icon' viewBox='0 0 44.879002 48' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M44.168 28.832l-9.166-2.688V16.31a.99.99 0 0 0-.71-.95l-10.863-3.186V5.52h3.258a.99.99 0 1 0 0-1.98h-3.26V.99a.99.99 0 1 0-1.98 0v2.55h-3.256a.99.99 0 1 0 0 1.98h3.257v6.607L10.585 15.36a.99.99 0 0 0-.708.95v9.795l-9.17 2.728a.992.992 0 0 0-.708.95V47.01c0 .547.442.99.99.99h14.638v-8.876c0-3.677 3.055-6.667 6.81-6.667 3.756 0 6.812 2.99 6.812 6.667V48h14.64a.99.99 0 0 0 .99-.99V29.78a.99.99 0 0 0-.712-.948zm-21.73-.82c-2.82 0-5.116-2.297-5.116-5.118s2.295-5.118 5.117-5.118 5.117 2.296 5.117 5.118-2.296 5.117-5.118 5.117z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
-	vertical-align: middle;
-	min-width: 1.1em;
-	width: 1.1em;
-	height: 1.1em;
 }
+.show-icons a[href*="/schools/"]:before,
 .icon-school:before {
 	content: " ";
 	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2390a4ae' class='tile-icon v-icon' viewBox='0 0 48 48' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M47.01 44.23H.99a.99.99 0 1 1 0-1.98h46.02a.99.99 0 1 1 0 1.98zm0 3.77H.99a.99.99 0 1 1 0-1.98h46.02a.99.99 0 1 1 0 1.98zm0-25.753H34.996V15.56h.815a.99.99 0 0 0 .31-1.936L24.41 8.296a.994.994 0 0 0-.82 0L11.78 13.67a.99.99 0 0 0 .409 1.89h.815v6.687H.99a.99.99 0 0 0-.99.99v16.606c0 .547.443.99.99.99h18.278V30.53c0-.58.443-1.048.99-1.048h7.484c.547 0 .99.47.99 1.048v10.302H47.01a.99.99 0 0 0 .99-.99V23.237a.99.99 0 0 0-.99-.99zM6.518 37.02a.99.99 0 1 1-1.98 0v-2.81a.99.99 0 1 1 1.98 0v2.81zm0-6.584a.99.99 0 1 1-1.98 0v-2.812a.99.99 0 1 1 1.98 0v2.812zm4.334 6.585c0 .548-.442.99-.99.99s-.99-.442-.99-.99v-2.81a.99.99 0 1 1 1.98 0v2.81zm0-6.584c0 .548-.442.99-.99.99s-.99-.442-.99-.99v-2.812a.99.99 0 1 1 1.98 0v2.812zm4.334 6.585a.99.99 0 1 1-1.98 0v-2.81a.99.99 0 1 1 1.98 0v2.81zm0-6.584a.99.99 0 1 1-1.98 0v-2.812a.99.99 0 1 1 1.98 0v2.812zm5.472-5.402a.99.99 0 1 1-1.98 0v-2.81a.99.99 0 1 1 1.98 0v2.81zm0-6.584a.99.99 0 1 1-1.98 0v-2.813a.99.99 0 1 1 1.98 0v2.813zm4.334 6.584a.99.99 0 1 1-1.98 0v-2.81a.99.99 0 1 1 1.98 0v2.81zm0-6.584a.99.99 0 1 1-1.98 0v-2.813a.99.99 0 1 1 1.98 0v2.813zm4.333 6.584a.99.99 0 1 1-1.98 0v-2.81a.99.99 0 1 1 1.98 0v2.81zm0-6.584a.99.99 0 1 1-1.98 0v-2.813a.99.99 0 0 1 1.98 0v2.813zm5.472 18.57a.99.99 0 1 1-1.98 0v-2.81a.99.99 0 1 1 1.98 0v2.81zm0-6.584a.99.99 0 1 1-1.98 0v-2.812a.99.99 0 1 1 1.98 0v2.812zm4.333 6.585a.99.99 0 1 1-1.98 0v-2.81a.99.99 0 1 1 1.98 0v2.81zm0-6.584a.99.99 0 1 1-1.98 0v-2.812a.99.99 0 1 1 1.98 0v2.812zm4.333 6.585a.988.988 0 1 1-1.978 0v-2.81a.99.99 0 1 1 1.98 0v2.81zm0-6.584a.988.988 0 1 1-1.978 0v-2.812a.99.99 0 1 1 1.98 0v2.812z'/%3E%3Cpath d='M24 10.187a.99.99 0 0 1-.99-.99V.99a.99.99 0 1 1 1.98 0v8.208a.99.99 0 0 1-.99.99z'/%3E%3Cpath d='M23.217 4.366V2.75c.597 0 1.08-.393 1.08-.88 0-.486-.482-.88-1.08-.88H17.81c-.598 0-1.08.394-1.08.88v3.377c0 .486.48.88 1.08.88h5.408c.597 0 1.08-.394 1.08-.88 0-.488-.484-.88-1.08-.88z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
-	vertical-align: middle;
-	min-width: 1.1em;
-	width: 1.1em;
-	height: 1.1em;
 }
 a[href*="thankyou4caring.org"],
 a[href*="catholicnewsherald.com"] {
@@ -102,10 +91,6 @@ a[href*="catholicnewsherald.com"] {
 	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='v-icon' fill='%2336474f' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M8.356 16.423l-4.741-4.975L2 13.13l6.356 6.67L22 5.482 20.397 3.8z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
-	vertical-align: middle;
-	min-width: 1.1em;
-	width: 1.1em;
-	height: 1.1em;
 }
 .btn > p {
 	margin: 0!important;

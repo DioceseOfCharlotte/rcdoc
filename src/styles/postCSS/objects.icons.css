@@ -11,24 +11,41 @@
 	@mixin icon external-link;
 }
 
-a[href*="thankyou4caring.org"]:before {
+a[href*="thankyou4caring.org"]:not([class]):before {
 	@mixin icon loyalty;
 }
 
-a[href*="catholicnewsherald.com"]:before {
+a[href*="catholicnewsherald.com"]:not([class]):before {
 	@mixin icon newspaper;
 }
 
+.show-icons a[href*="/departments/"]:before,
+.show-icons a[href*="/education-vicariate/"]:before,
+.show-icons a[href*="/ev/"]:before,
+.show-icons a[href*="/archive-posts/"]:before,
+.show-icons a[href*="/development/"]:before,
+.show-icons a[href*="/housing/"]:before,
+.show-icons a[href*="/human-resources/"]:before,
+.show-icons a[href*="/it/"]:before,
+.show-icons a[href*="/liturgy-and-worship/"]:before,
+.show-icons a[href*="/planning/"]:before,
+.show-icons a[href*="/tribunal/"]:before,
+.show-icons a[href*="/finance/"]:before,
+.show-icons a[href*="/properties/"]:before,
+.show-icons a[href*="/multicultural/"]:before,
+.show-icons a[href*="/vocations/"]:before,
 .icon-office:before {
-	@mixin icon office, #90a4ae;
+	@mixin icon office;
 }
 
+.show-icons a[href*="/parishes/"]:before,
 .icon-parish:before {
-	@mixin icon parishes, #90a4ae;
+	@mixin icon parishes;
 }
 
+.show-icons a[href*="/schools/"]:before,
 .icon-school:before {
-	@mixin icon schools, #90a4ae;
+	@mixin icon schools;
 }
 
 a[href*="thankyou4caring.org"],
