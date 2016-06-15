@@ -26,6 +26,11 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 	background-repeat: no-repeat;
 	display: inline-block;
 }
+.show-icons a {
+	display: inline-flex;
+	align-items: center;
+	vertical-align: middle;
+}
 .show-icons a[href*="/departments/"]:before,
 .show-icons a[href*="/education-vicariate/"]:before,
 .show-icons a[href*="/ev/"]:before,

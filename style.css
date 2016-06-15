@@ -912,6 +912,16 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
     display: inline-block;
 }
 
+.show-icons a {
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
 .show-icons a[href*="/departments/"]:before,
 .show-icons a[href*="/education-vicariate/"]:before,
 .show-icons a[href*="/ev/"]:before,
