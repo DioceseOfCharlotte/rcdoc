@@ -30,13 +30,6 @@ $doc_mass = get_post_meta( get_the_ID(), 'doc_mass_schedule', true );
 
 </article>
 
-<?php
-if ( is_front_page() || ! is_singular( 'parish' ) ) {
-	return;
-}
-$id = get_the_ID();
-?>
-
 <div class="u-1of1 u-bg-silver u-mb3 u-bg-tint-1 u-px1 u-br u-pt3">
-	   <?php echo do_shortcode( '[gravityview id="10028" search_field="24" search_value="' . $id .'"]' ); ?>
+	   <?php echo do_shortcode( '[gravityview id="10028" search_field="24" search_value="' . get_the_ID() .'"]' ); ?>
 </div>
