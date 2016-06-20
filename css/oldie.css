@@ -496,6 +496,11 @@ h2 a.rsswidget:before {
   background-repeat: no-repeat;
   display: inline-block; }
 
+.show-icons a {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle; }
+
 .show-icons a[href*="/departments/"]:before,
 .show-icons a[href*="/education-vicariate/"]:before,
 .show-icons a[href*="/ev/"]:before,
@@ -720,9 +725,7 @@ http://flickity.metafizzy.co
   html .gv-list-view-title {
     border-bottom-width: 0; }
   html .gv-container-no-results {
-    background-color: white;
-    border-radius: 2px;
-    padding: 16px; }
+    display: none; }
   html .gform_wrapper ul li.gfield {
     max-width: 100%; }
   html #page .gv-grid,

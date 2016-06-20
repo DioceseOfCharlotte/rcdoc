@@ -1232,9 +1232,7 @@ html .gv-list-view-title {
 }
 
 html .gv-container-no-results {
-    background-color: white;
-    border-radius: 2px;
-    padding: 1rem;
+    display: none;
 }
 
 html .gform_wrapper ul li.gfield {
