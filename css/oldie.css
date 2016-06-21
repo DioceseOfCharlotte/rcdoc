@@ -525,7 +525,7 @@ h2 a.rsswidget:before {
 .show-icons a[href*="/parishes/"]:before,
 .icon-parish:before {
   content: " ";
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M2 8v14h8V2zm7 4.976l-1.998.006v5.03L5 17.988v-5.01l-2 .006V11h2V9h2.003l-.006 2H9zM11 8v14h2v-7h1v7h2v-9h1v9h2v-7h1v7h2V12z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M14.44 2v3.852h-3.794V8.71h3.793v5.024L7.89 19.12v2.83L2 28.073V30h11.414v-4.062l2.63-2 2.542 2V30H30v-1.928l-5.81-6.12v-2.833l-6.55-5.386V8.71h3.993V5.852H17.64V2zM16 17.3c2 0 1.89 3 0 2.965-2.098.034-2-2.966 0-2.966z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   display: inline-block; }
 

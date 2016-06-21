@@ -945,7 +945,7 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 
 .show-icons a[href*="/parishes/"]:before, .icon-parish:before {
     content: " ";
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M2 8v14h10V2zm9 5H8v7H6v-7H3v-2h3V8h2v3h3zm2-5v14h1v-9h3v9h1v-7h3v7h1V12z'/%3E%3Cpath d='M15 14h1v8h-1zm4 2h1v6h-1z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M16 2L2 13.737V30h28V13.737zm-2.462 5.69h4.924v6.07h5.862v4.417h-5.862v10.67h-4.924v-10.67H7.676V13.76h5.862z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     display: inline-block;
 }
