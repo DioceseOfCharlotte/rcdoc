@@ -28,6 +28,21 @@ add_filter( 'gform_pre_validation_3', 'populate_school' );
 add_filter( 'gform_pre_submission_filter_3', 'populate_school' );
 add_filter( 'gform_admin_pre_render_3', 'populate_school' );
 
+add_filter( 'gform_pre_render_12', 'populate_parish' );
+add_filter( 'gform_pre_validation_12', 'populate_parish' );
+add_filter( 'gform_pre_submission_filter_12', 'populate_parish' );
+add_filter( 'gform_admin_pre_render_12', 'populate_parish' );
+
+add_filter( 'gform_pre_render_12', 'populate_dept' );
+add_filter( 'gform_pre_validation_12', 'populate_dept' );
+add_filter( 'gform_pre_submission_filter_12', 'populate_dept' );
+add_filter( 'gform_admin_pre_render_12', 'populate_dept' );
+
+add_filter( 'gform_pre_render_12', 'populate_school' );
+add_filter( 'gform_pre_validation_12', 'populate_school' );
+add_filter( 'gform_pre_submission_filter_12', 'populate_school' );
+add_filter( 'gform_admin_pre_render_12', 'populate_school' );
+
 add_filter( 'gravityview/edit_entry/success', 'doc_gv_update_message', 10, 4 );
 add_filter( 'gravityview/edit_entry/cancel_link', 'doc_gv_edit_cancel', 10, 4 );
 //add_filter( 'gform_column_input_3_26_2', 'set_parish_column', 10, 5 );

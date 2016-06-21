@@ -55,7 +55,7 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 .show-icons a[href*="/parishes/"]:before,
 .icon-parish:before {
 	content: " ";
-	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2390a4ae' class='tile-icon v-icon' viewBox='0 0 44.879002 48' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M44.168 28.832l-9.166-2.688V16.31a.99.99 0 0 0-.71-.95l-10.863-3.186V5.52h3.258a.99.99 0 1 0 0-1.98h-3.26V.99a.99.99 0 1 0-1.98 0v2.55h-3.256a.99.99 0 1 0 0 1.98h3.257v6.607L10.585 15.36a.99.99 0 0 0-.708.95v9.795l-9.17 2.728a.992.992 0 0 0-.708.95V47.01c0 .547.442.99.99.99h14.638v-8.876c0-3.677 3.055-6.667 6.81-6.667 3.756 0 6.812 2.99 6.812 6.667V48h14.64a.99.99 0 0 0 .99-.99V29.78a.99.99 0 0 0-.712-.948zm-21.73-.82c-2.82 0-5.116-2.297-5.116-5.118s2.295-5.118 5.117-5.118 5.117 2.296 5.117 5.118-2.296 5.117-5.118 5.117z'/%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M2 8v14h10V2zm9 5H8v7H6v-7H3v-2h3V8h2v3h3zm2-5v14h1v-9h3v9h1v-7h3v7h1V12z'/%3E%3Cpath d='M15 14h1v8h-1zm4 2h1v6h-1z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
 }
