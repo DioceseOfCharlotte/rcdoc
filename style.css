@@ -1335,33 +1335,6 @@ html .gv-widget-letter-links {
     text-align: center;
 }
 
-html .mobile-widget__heading-checkbox:checked ~ div {
-    display: none;
-}
-
-@media screen and (min-width: 48em) {
-    html .mobile-widget__heading-checkbox:checked ~ div {
-        display: block;
-    }
-}
-
-html .mobile-widget__drop-down-section > div:empty {
-    display: none;
-}
-
-html .acf-map {
-    width: 100%;
-    height: 400px;
-    border: #ccc solid 1px;
-    margin: 20px 0;
-}
-
-html article p, html article li:not(.gfield) {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 html .nav-links {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1400,43 +1373,11 @@ html .gv-list-view-content h4 {
     margin: 0;
 }
 
-html .material-icons {
-    vertical-align: middle;
-}
-
-html .mdl-button--mini-fab a {
-    display: block;
-    height: 40px;
-}
-
-html .mdl-card__title {
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-
-html .mdl-card__title-text {
-    width: 100%;
-}
-
-html .meta-nav.mdl-button.mdl-button--fab {
-    background: none;
-    box-shadow: none !important;
-}
-
 html .navigation.pagination {
     padding: 0.5rem;
     width: 100%;
     background: rgba(228, 234, 236, 0.8);
     margin-bottom: 1rem;
-}
-
-html .mdl-card {
-    min-height: auto;
-}
-
-html .contact-map {
-    color: #000 !important;
 }
 
 html .gv-list-view-content {
@@ -1445,34 +1386,6 @@ html .gv-list-view-content {
 
 html .site-header .mdl-layout__drawer-button {
     background-color: transparent;
-}
-
-html #bread, html #heart, html #music {
-    visibility: hidden;
-}
-
-html .rss-widget li {
-    margin-bottom: 0.5em;
-}
-
-html .rss-title img {
-    display: none;
-}
-
-html a.rsswidget {
-    white-space: normal;
-}
-
-html li > a.rsswidget {
-    font-weight: 400;
-}
-
-html .entry {
-    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
-}
-
-html .entry.is-active {
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36);
 }
 
 html .logo-image {
@@ -1522,10 +1435,6 @@ html .entry-header {
     width: 100%;
 }
 
-html .format-aside .permalink {
-    display: none;
-}
-
 html .site-header:after {
     content: "";
     position: absolute;
@@ -1543,12 +1452,6 @@ html .site-header:after {
 
 html .site-header.u-fix:after {
     opacity: 1;
-}
-
-html .type-document, html .type-statistics_report {
-    -webkit-align-self: flex-start;
-    -ms-flex-item-align: start;
-    align-self: flex-start;
 }
 
 @media screen and (min-width: 48em) {

@@ -525,7 +525,7 @@ h2 a.rsswidget:before {
 .show-icons a[href*="/parishes/"]:before,
 .icon-parish:before {
   content: " ";
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M14.44 2v3.852h-3.794V8.71h3.793v5.024L7.89 19.12v2.83L2 28.073V30h11.414v-4.062l2.63-2 2.542 2V30H30v-1.928l-5.81-6.12v-2.833l-6.55-5.386V8.71h3.993V5.852H17.64V2zM16 17.3c2 0 1.89 3 0 2.965-2.098.034-2-2.966 0-2.966z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M16 2L2 13.737V30h28V13.737zm-2.462 5.69h4.924v6.07h5.862v4.417h-5.862v10.67h-4.924v-10.67H7.676V13.76h5.862z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   display: inline-block; }
 
@@ -796,21 +796,6 @@ http://flickity.metafizzy.co
     display: inline-block; }
   html .gv-widget-letter-links {
     text-align: center; }
-  html .mobile-widget__heading-checkbox:checked ~ div {
-    display: none; }
-  html .mobile-widget__heading-checkbox:checked ~ div {
-  display: block; }
-  html .mobile-widget__drop-down-section > div:empty {
-    display: none; }
-  html .acf-map {
-    width: 100%;
-    height: 400px;
-    border: #ccc solid 1px;
-    margin: 20px 0; }
-  html article p {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto; }
   html .nav-links {
     -js-display: flex;
     display: flex;
@@ -829,47 +814,15 @@ http://flickity.metafizzy.co
     display: none; }
   html .gv-list-view-content h4 {
     margin: 0; }
-  html .material-icons {
-    vertical-align: middle; }
-  html .mdl-button--mini-fab a {
-    display: block;
-    height: 40px; }
-  html .mdl-card__title {
-    flex-wrap: wrap; }
-  html .mdl-card__title-text {
-    width: 100%; }
-  html .meta-nav.mdl-button.mdl-button--fab {
-    background: none;
-    box-shadow: none !important; }
   html .navigation.pagination {
     padding: 8px;
     width: 100%;
     background: #e4eaec;
     margin-bottom: 16px; }
-  html .mdl-card {
-    min-height: auto; }
-  html .contact-map {
-    color: #000 !important; }
   html .gv-list-view-content {
     padding: 0; }
   html .site-header .mdl-layout__drawer-button {
     background-color: transparent; }
-  html #bread,
-  html #heart,
-  html #music {
-    visibility: hidden; }
-  html .rss-widget li {
-    margin-bottom: 0.5em; }
-  html .rss-title img {
-    display: none; }
-  html a.rsswidget {
-    white-space: normal; }
-  html li > a.rsswidget {
-    font-weight: 400; }
-  html .entry {
-    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1); }
-  html .entry.is-active {
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36); }
   html .logo-image {
     align-self: flex-start; }
   html .menu-item__link {
@@ -895,8 +848,6 @@ http://flickity.metafizzy.co
     background-image: -webkit-linear-gradient(top, rgba(15, 19, 42, 0.4), transparent); }
   html .entry-header {
     width: 100%; }
-  html .format-aside .permalink {
-    display: none; }
   html .site-header:after {
     content: "";
     position: absolute;
@@ -910,9 +861,6 @@ http://flickity.metafizzy.co
     transition: opacity 0.3s ease-in-out; }
   html .site-header.u-fix:after {
     filter: alpha(opacity=100); }
-  html .type-document,
-  html .type-statistics_report {
-    align-self: flex-start; }
   html .menu-primary__list li {
   display: inline-block; }
   html .widget li,

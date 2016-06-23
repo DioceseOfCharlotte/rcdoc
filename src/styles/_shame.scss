@@ -1,43 +1,5 @@
-.mobile-widget__heading-checkbox:checked ~ div {
-	display: none;
-}
 
-@include md {
-	.mobile-widget__heading-checkbox:checked ~ div {
-		display: block;
-	}
-}
 
-.mobile-widget__drop-down-section > div:empty {
-	display: none;
-}
-
-.acf-map {
-	width: 100%;
-	height: 400px;
-	border: #ccc solid 1px;
-	margin: 20px 0;
-}
-
-article p,
-article li:not(.gfield) {
-	max-width: 800px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-// article {
-// 	h1,
-// 	h2,
-// 	h3,
-// 	h4,
-// 	h5,
-// 	h6 {
-// 		max-width: 825px;
-// 		margin-left: auto;
-// 		margin-right: auto;
-// 	}
-// }
 
 .nav-links {
 	display: flex;
@@ -70,27 +32,6 @@ span.gv-field-label:empty {
 	margin: 0;
 }
 
-.material-icons {
-	vertical-align: middle;
-}
-
-.mdl-button--mini-fab a {
-	display: block;
-	height: 40px;
-}
-
-.mdl-card__title {
-	flex-wrap: wrap;
-}
-
-.mdl-card__title-text {
-	width: 100%;
-}
-
-.meta-nav.mdl-button.mdl-button--fab {
-	background: none;
-	box-shadow: none !important;
-}
 
 .navigation.pagination {
 	padding: 0.5rem;
@@ -99,52 +40,12 @@ span.gv-field-label:empty {
 	margin-bottom: 1rem;
 }
 
-.mdl-card {
-	min-height: auto;
-}
-
-.contact-map {
-	color: #000 !important;
-}
-
 .gv-list-view-content {
 	padding: 0;
 }
 
 .site-header .mdl-layout__drawer-button {
 	background-color: transparent;
-}
-
-#bread,
-#heart,
-#music {
-	visibility: hidden;
-}
-
-.rss-widget li {
-	margin-bottom: 0.5em;
-}
-
-.rss-title img {
-	display: none;
-}
-
-a.rsswidget {
-	white-space: normal;
-}
-
-li > a.rsswidget {
-	font-weight: 400;
-}
-
-
-
-.entry {
-	transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
-}
-
-.entry.is-active {
-	box-shadow: 0 0 8px rgba(0, 0, 0, 0.18), 0 8px 16px rgba(0, 0, 0, 0.36);
 }
 
 .logo-image {
@@ -195,10 +96,6 @@ li > a.rsswidget {
 	width: 100%;
 }
 
-.format-aside .permalink {
-	display: none;
-}
-
 .site-header {
 	&:after {
 		content: "";
@@ -216,13 +113,6 @@ li > a.rsswidget {
 	&.u-fix:after {
 		opacity: 1;
 	}
-}
-
-.type-document,
-.type-statistics_report {
-	align-self: flex-start;
-
-	//min-width: 47%;
 }
 
 .menu-primary__list li {
