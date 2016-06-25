@@ -631,6 +631,8 @@ http://flickity.metafizzy.co
     position: absolute;
     width: 100%;
     height: 100%; }
+  html .flickity-page-dots {
+    max-width: 100%; }
   html .flickity-enabled.is-draggable {
     -webkit-tap-highlight-color: transparent;
     tap-highlight-color: transparent;
