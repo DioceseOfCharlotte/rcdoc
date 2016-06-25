@@ -10,7 +10,7 @@
 <div class="o-cell u-1of2-md u-flex u-flex-col u-flex-jc u-flex-center">
 
 	<?php while ( $query->have_posts() ) : $query->the_post(); ?>
-		<h2 class="u-h1 u-mb2 u-mb4-md u-text-shadow"><?php the_title(); ?></h2>
+		<h2 class="u-h1 u-mb2 u-mb4-md u-text-display u-text-shadow"><?php the_title(); ?></h2>
 		<?php if ( $attr['btn_text'] ) : ?>
 			<a href="<?php the_permalink(); ?>" class="btn btn-big btn-hollow u-bg-white">
 				<?php echo wp_kses_post( $attr['btn_text'] ); ?>
