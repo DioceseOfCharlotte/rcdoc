@@ -633,6 +633,8 @@ http://flickity.metafizzy.co
     height: 100%; }
   html .flickity-page-dots {
     max-width: 100%; }
+  html .flickity-slider > .gallery-item {
+    width: 100%; }
   html .flickity-enabled.is-draggable {
     -webkit-tap-highlight-color: transparent;
     tap-highlight-color: transparent;
@@ -797,6 +799,22 @@ http://flickity.metafizzy.co
     margin-bottom: 16px;
     display: inline-block; }
   html .gv-widget-letter-links {
+    text-align: center; }
+  html .gv-search-clear {
+    color: #20638f;
+    border-color: #20638f;
+    border-radius: 2px;
+    background-color: #ffffff; }
+    html .gv-search-clear:hover {
+      color: #fff;
+      background-color: #20638f;
+      border-color: #20638f; }
+  html .gv-search-horizontal {
+    -js-display: flex;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; }
+  html .gv-widget-search {
     text-align: center; }
   html .nav-links {
     -js-display: flex;
