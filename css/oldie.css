@@ -501,21 +501,21 @@ h2 a.rsswidget:before {
   align-items: center;
   vertical-align: middle; }
 
-.show-icons a[href*="/departments/"]:before,
-.show-icons a[href*="/education-vicariate/"]:before,
-.show-icons a[href*="/ev/"]:before,
-.show-icons a[href*="/archive-posts/"]:before,
-.show-icons a[href*="/development/"]:before,
-.show-icons a[href*="/housing/"]:before,
-.show-icons a[href*="/human-resources/"]:before,
-.show-icons a[href*="/it/"]:before,
-.show-icons a[href*="/liturgy-and-worship/"]:before,
-.show-icons a[href*="/planning/"]:before,
-.show-icons a[href*="/tribunal/"]:before,
-.show-icons a[href*="/finance/"]:before,
-.show-icons a[href*="/properties/"]:before,
-.show-icons a[href*="/multicultural/"]:before,
-.show-icons a[href*="/vocations/"]:before,
+.gv-container a[href*="/departments/"]:before,
+.gv-container a[href*="/education-vicariate/"]:before,
+.gv-container a[href*="/ev/"]:before,
+.gv-container a[href*="/archive-posts/"]:before,
+.gv-container a[href*="/development/"]:before,
+.gv-container a[href*="/housing/"]:before,
+.gv-container a[href*="/human-resources/"]:before,
+.gv-container a[href*="/it/"]:before,
+.gv-container a[href*="/liturgy-and-worship/"]:before,
+.gv-container a[href*="/planning/"]:before,
+.gv-container a[href*="/tribunal/"]:before,
+.gv-container a[href*="/finance/"]:before,
+.gv-container a[href*="/properties/"]:before,
+.gv-container a[href*="/multicultural/"]:before,
+.gv-container a[href*="/vocations/"]:before,
 .icon-office:before {
   content: " ";
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M2 30h14V2H2v28zm8.75-24.5h3.5V9h-3.5V5.5zm0 7h3.5V16h-3.5v-3.5zm0 7h3.5V23h-3.5v-3.5zm-7-14h3.5V9h-3.5V5.5zm0 7h3.5V16h-3.5v-3.5zm0 7h3.5V23h-3.5v-3.5zm14-8.75H30v1.75H17.75zm0 19.25h3.5v-7h5.25v7H30V14.25H17.75z'/%3E%3C/svg%3E");
