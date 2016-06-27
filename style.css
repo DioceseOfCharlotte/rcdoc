@@ -1089,6 +1089,10 @@ html .flickity-page-dots {
     max-width: 100%;
 }
 
+html .flickity-slider > .gallery-item {
+    width: 100%;
+}
+
 html .flickity-enabled.is-draggable {
     -webkit-tap-highlight-color: transparent;
     tap-highlight-color: transparent;
@@ -1336,6 +1340,35 @@ html ul.gravityview-az-filter {
 }
 
 html .gv-widget-letter-links {
+    text-align: center;
+}
+
+html .gv-search-clear {
+    color: #20638f;
+    border-color: #20638f;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+html .gv-search-clear:hover {
+    color: #fff;
+    background-color: #20638f;
+    border-color: #20638f;
+}
+
+html .gv-search-horizontal {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+html .gv-widget-search {
     text-align: center;
 }
 
