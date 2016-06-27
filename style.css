@@ -1638,17 +1638,6 @@ html .school_system-macs .school-system-logo {
     color: #112a57;
 }
 
-html [class*="u-bg-1"] a:not(.btn), html [class*="u-bg-2"] a:not(.btn),
-html [class*="u-bg-3"] a:not(.btn) {
-    color: inherit !important;
-}
-
-html [class*="u-bg-1"] a:not(.btn):before,
-html [class*="u-bg-2"] a:not(.btn):before,
-html [class*="u-bg-3"] a:not(.btn):before {
-    color: inherit !important;
-}
-
 html .facetwp-facet.facetwp-type-checkboxes {
     max-height: 100%;
 }

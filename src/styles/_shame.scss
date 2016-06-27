@@ -265,15 +265,15 @@ span.gv-field-label:empty {
 	color: #112a57;
 }
 
-[class*="u-bg-1"] a:not(.btn),
-[class*="u-bg-2"] a:not(.btn),
-[class*="u-bg-3"] a:not(.btn) {
-	color: inherit !important;
-
-	&:before {
-		color: inherit !important;
-	}
-}
+// [class*="u-bg-1"] a:not(.btn),
+// [class*="u-bg-2"] a:not(.btn),
+// [class*="u-bg-3"] a:not(.btn) {
+// 	color: inherit !important;
+//
+// 	&:before {
+// 		color: inherit !important;
+// 	}
+// }
 
 // From JP CSS
 .facetwp-facet.facetwp-type-checkboxes {
