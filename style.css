@@ -617,70 +617,6 @@ a.tile-link:hover {
     }
 }
 
-/**
-* Dropdown content
-*/
-
-.dropdown-right {
-    -webkit-animation-name: custom-11;
-    animation-name: custom-11;
-    display: none;
-    overflow: hidden;
-    min-width: 200px;
-    position: absolute;
-    text-align: left;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-duration: 0.3s;
-    animation-duration: 0.3s;
-}
-
-@-webkit-keyframes custom-11 {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(20%);
-        transform: translateY(20%);
-    }
-
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-}
-
-@keyframes custom-11 {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(20%);
-        transform: translateY(20%);
-    }
-
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-    }
-}
-
-.dropdown-right > .widgets {
-    background-color: #fff;
-}
-
-.dropdown-right .menu__link {
-    width: 100%;
-    text-align: left;
-}
-
-.is-active.dropdown-right {
-    z-index: 2;
-    display: block;
-}
-
-.is-active.dropdown-right > .widgets {
-    padding: 0.5rem;
-}
-
 .format-link {
     -webkit-align-self: center;
     -ms-flex-item-align: center;
@@ -1069,6 +1005,16 @@ html .flickity-enabled {
     position: relative;
 }
 
+html .gallery-cell {
+    width: 90%;
+}
+
+@media screen and (min-width: 48em) {
+    html .gallery-cell {
+        width: 310px;
+    }
+}
+
 html .flickity-enabled:focus {
     outline: none;
 }
@@ -1372,87 +1318,12 @@ html .gv-widget-search {
     text-align: center;
 }
 
-html .nav-links {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-justify-content: space-around;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-}
-
-html .post-navigation {
-    width: 100%;
-}
-
-html .pagination > .nav-links {
-    max-width: 300px;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    -ms-grid-row-align: center;
-    align-items: center;
-    margin: 0 auto;
+html .school_system-macs .school-system-logo {
+    color: #112a57;
 }
 
 html body {
     background-size: cover;
-}
-
-html .gv-list-view-content-description {
-    width: 100%;
-}
-
-html span.gv-field-label:empty {
-    display: none;
-}
-
-html .gv-list-view-content h4 {
-    margin: 0;
-}
-
-html .navigation.pagination {
-    padding: 0.5rem;
-    width: 100%;
-    background: rgba(228, 234, 236, 0.8);
-    margin-bottom: 1rem;
-}
-
-html .gv-list-view-content {
-    padding: 0;
-}
-
-html .site-header .mdl-layout__drawer-button {
-    background-color: transparent;
-}
-
-html .logo-image {
-    -webkit-align-self: flex-start;
-    -ms-flex-item-align: start;
-    align-self: flex-start;
-}
-
-html .menu-item__link {
-    display: block;
-    padding: 0 24px;
-    line-height: 64px;
-}
-
-html .menu-item {
-    width: 100%;
-}
-
-@media screen and (min-width: 48em) {
-    html .is-top .menu-toggle {
-        visibility: hidden;
-    }
-
-    html .home .is-top ~ .menu-primary {
-        background-color: transparent !important;
-    }
-
-    html .menu-item {
-        width: auto;
-    }
 }
 
 html .site-branding {
@@ -1468,11 +1339,7 @@ html .home .site-header.is-top {
     background-image: -webkit-linear-gradient(top, rgba(15, 19, 42, 0.4), transparent);
 }
 
-html .entry-header {
-    width: 100%;
-}
-
-html .site-header:after {
+html .site-header::after {
     content: "";
     position: absolute;
     z-index: -1;
@@ -1487,115 +1354,8 @@ html .site-header:after {
     transition: opacity 0.3s ease-in-out;
 }
 
-html .site-header.u-fix:after {
+html .site-header.u-fixed::after {
     opacity: 1;
-}
-
-@media screen and (min-width: 48em) {
-    html .menu-primary__list li {
-        display: inline-block;
-    }
-}
-
-html .widget li, html .widget ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-html .widget li > a, html .widget ul > a {
-    width: 100%;
-    text-align: left;
-}
-
-html .mobile-widget__drop-down-section {
-    display: block;
-    position: relative;
-}
-
-html .mobile-widget__heading {
-    position: relative;
-    width: 100%;
-    padding-right: 52px;
-    margin-bottom: 1rem;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-
-html .mobile-widget__heading:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: block;
-    width: 36px;
-    height: 36px;
-    background-size: cover;
-}
-
-@media screen and (min-width: 48em) {
-    html .mobile-widget__drop-down-section {
-        width: 33%;
-    }
-}
-
-@media screen and (min-width: 62em) {
-    html .mobile-widget__drop-down-section,
-    html .mobile-widget__drop-down-section:nth-child(3),
-    html .mobile-widget__drop-down-section:nth-child(4) {
-        width: 24%;
-    }
-}
-
-html .mobile-widget__heading-checkbox {
-    position: absolute;
-    width: 100%;
-    height: 68px;
-    padding: 32px;
-    margin: -16px 0 0;
-    cursor: pointer;
-    z-index: 1;
-    opacity: 0;
-}
-
-html .mobile-widget__heading-checkbox + .mobile-widget__heading:after,
-html .mobile-widget__heading-checkbox ~ .mobile-widget__heading:after {
-    font-family: "Material Icons";
-    content: "\E5CE";
-}
-
-html .mobile-widget__heading-checkbox:checked + .mobile-widget__heading:after,
-html .mobile-widget__heading-checkbox:checked ~ .mobile-widget__heading:after {
-    font-family: "Material Icons";
-    content: "\E5CF";
-}
-
-@media screen and (min-width: 48em) {
-    html .mobile-widget__heading-checkbox {
-        display: none;
-    }
-
-    html .mobile-widget__heading-checkbox + .mobile-widget__heading:after {
-        content: "";
-    }
-
-    html .mobile-widget__heading-checkbox:checked + .mobile-widget__heading + .mobile-widget__link-list,
-    html .mobile-widget__heading-checkbox:checked ~ .mobile-widget__link-list {
-        display: block;
-    }
-
-    html .mobile-widget__heading-checkbox:checked + .mobile-widget__heading:after {
-        content: "";
-    }
-}
-
-html .card-img {
-    max-height: 371px;
-}
-
-html .home .site-footer {
-    background-color: #d4d4cf;
 }
 
 html .article-hero {
@@ -1605,97 +1365,6 @@ html .article-hero {
 @media screen and (min-width: 48em) {
     html .article-hero {
         min-height: 450px;
-    }
-}
-
-@media screen and (min-width: 62em) {
-    html .archive-title {
-        font-size: 3.5rem;
-    }
-}
-
-@media screen and (min-width: 62em) {
-    html .trail-items {
-        font-size: 1.5rem;
-    }
-}
-
-html .wp-embedded-content + p {
-    display: inline-block;
-    vertical-align: top;
-    padding: 0.5rem;
-}
-
-html .contact-numbers__item {
-    min-width: 132px;
-}
-
-html .entry-header + .contact-info {
-    width: 100%;
-}
-
-html .school_system-macs .school-system-logo {
-    color: #112a57;
-}
-
-html .facetwp-facet.facetwp-type-checkboxes {
-    max-height: 100%;
-}
-
-@media screen and (max-width: 51em) {
-    html .menu-space.u-bg-1-glass-dark {
-        display: none;
-    }
-}
-
-html .card-title.u-text-center.u-py2 {
-    padding-top: 0;
-}
-
-html .menu-primary.is-active {
-    padding-top: 70px;
-}
-
-html .gallery-icon > img {
-    width: 100%;
-}
-
-html .gallery-col-1 {
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-}
-
-html .u-f-plus.u-text-center.u-pb1 {
-    height: 60px;
-    overflow: hidden;
-}
-
-html body.arch .arch-u-1of1-md {
-    max-width: 100%;
-}
-
-html h2 > a:not([class]):hover {
-    text-decoration: none;
-}
-
-html .u-inline-block.sidebar-header.u-rel {
-    right: 5px;
-    position: absolute;
-    z-index: 4;
-    color: white;
-}
-
-html .tile-row {
-    margin-bottom: 3rem;
-}
-
-html .gallery-cell {
-    width: 90%;
-}
-
-@media screen and (min-width: 48em) {
-    html .gallery-cell {
-        width: 310px;
     }
 }
 

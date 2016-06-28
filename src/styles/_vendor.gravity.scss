@@ -11,9 +11,6 @@
 }
 
 .gv-container-no-results {
-	// background-color: white;
-	// border-radius: 2px;
-	// padding: 1rem;
 	display: none;
 }
 
@@ -25,6 +22,21 @@
 #page .gv-list-container {
 	max-width: 100%;
 }
+
+// .gv-list-view-content-description {
+// 	width: 100%;
+// }
+//
+// .gv-list-view-content {
+// 	padding: 0;
+// }
+// span.gv-field-label:empty {
+// 	display: none;
+// }
+//
+// .gv-list-view-content h4 {
+// 	margin: 0;
+// }
 
 .entry-content > .gv-grid {
 	background-color: $lighten4;

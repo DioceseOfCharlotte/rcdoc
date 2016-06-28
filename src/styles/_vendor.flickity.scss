@@ -6,6 +6,14 @@ http://flickity.metafizzy.co
 	position: relative;
 }
 
+.gallery-cell {
+	width: 90%;
+
+	@include md {
+		width: 310px;
+	}
+}
+
 .flickity-enabled:focus {
 	outline: none;
 }

@@ -14,12 +14,12 @@ window.onload = function() {
 		up: function(position) {
 			header.classList.add('fadeInDown');
 			header.classList.remove('fadeOutUp');
-			header.classList.add('u-fix');
+			header.classList.add('u-fixed');
 		},
 		down: function(position) {
 			header.classList.add('fadeOutUp');
 			header.classList.remove('fadeInDown');
-			header.classList.remove('u-fix');
+			header.classList.remove('u-fixed');
 		}
 	});
 	window.onscroll = function() {
@@ -29,7 +29,7 @@ window.onload = function() {
 			steer.trigger();
 		}
 		if (y < 1) {
-			header.classList.remove('u-fix');
+			header.classList.remove('u-fixed');
 			header.classList.add('is-top');
 		}
 	};

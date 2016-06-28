@@ -8,7 +8,7 @@
 if ( is_home() || is_front_page() ) {
 	$terms = get_terms( 'agency' );
 	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-	    echo '<div class="section-row__content tile-row u-container is-animating o-grid u-flex-ja u-pt4">';
+	    echo '<div class="section-row__content tile-row u-container is-animating o-grid u-flex-ja u-pt4 u-mb4">';
 	    foreach ( $terms as $term ) {
 			$term_id = $term->term_id;
 			$term_post_link = get_term_meta( $term_id, 'doc_linked_post', true );
