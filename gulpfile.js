@@ -87,8 +87,6 @@ var POSTCSS_IE = [
 ];
 
 var SOURCESJS = [
-	// ** Vendors ** //
-	'src/scripts/vendors/steer.js',
 	// ** Mine ** //
 	'src/scripts/main.babel.js'
 ];

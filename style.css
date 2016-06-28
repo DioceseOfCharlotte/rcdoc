@@ -540,7 +540,7 @@ a.tile-link:hover {
     font-size: 1.5em;
 }
 
-.site-logo, .custom-logo {
+.custom-logo {
     max-height: 4.5em;
     width: auto;
 }
@@ -561,42 +561,6 @@ a.tile-link:hover {
 
 @media screen and (min-width: 48em) {
     .home .site-header.is-top {
-        height: 5.5rem;
-    }
-}
-
-.home .head-space {
-    opacity: 0;
-}
-
-.head-space {
-    height: 3.5rem;
-}
-
-@media screen and (min-width: 48em) {
-    .head-space {
-        height: 4rem;
-    }
-}
-
-@media screen and (min-width: 48em) {
-    .site-header:not(.is-top) ~ .head-space {
-        height: 6.5rem;
-    }
-}
-
-@media screen and (min-width: 48em) {
-    .home .site-header:not(.is-top) ~ .head-space {
-        height: 8rem;
-    }
-}
-
-.home .is-top ~ .head-space {
-    height: 4rem;
-}
-
-@media screen and (min-width: 48em) {
-    .home .is-top ~ .head-space {
         height: 5.5rem;
     }
 }
@@ -1197,6 +1161,10 @@ html #page .gv-grid, html #page .gv-list-container {
     max-width: 100%;
 }
 
+html .gv-container-10028 {
+    padding-top: 1rem;
+}
+
 html .entry-content > .gv-grid {
     background-color: rgba(255, 255, 255, 0.99);
     padding: 1rem;
@@ -1369,7 +1337,24 @@ html .article-hero {
 }
 
 html .site-content {
-    min-height: calc(100vh - 64px);
+    min-height: 100vh;
+    padding-top: 3.5rem;
+}
+
+@media screen and (min-width: 48em) {
+    html .site-content {
+        padding-top: 4rem;
+    }
+}
+
+html .home .site-content {
+    padding-top: 4rem;
+}
+
+@media screen and (min-width: 48em) {
+    html .home .site-content {
+        padding-top: 5.5rem;
+    }
 }
 
 /* Styles specific to the editor. */

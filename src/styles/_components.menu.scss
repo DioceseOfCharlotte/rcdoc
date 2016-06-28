@@ -18,7 +18,6 @@
 	font-size: 1.5em;
 }
 
-.site-logo,
 .custom-logo {
 	max-height: 4.5em;
 	width: auto;
@@ -40,38 +39,6 @@
 	}
 }
 
-.home .head-space {
-	opacity: 0;
-}
-
-.head-space {
-	height: 3.5rem;
-
-	@include md {
-		height: 4rem;
-	}
-}
-
-.site-header:not(.is-top) ~ .head-space {
-	//height: 6rem;
-	@include md {
-		height: 6.5rem;
-	}
-}
-
-.home .site-header:not(.is-top) ~ .head-space {
-	@include md {
-		height: 8rem;
-	}
-}
-
-.home .is-top ~ .head-space {
-	height: 4rem;
-
-	@include md {
-		height: 5.5rem;
-	}
-}
 
 .site-header:not(.is-top),
 body:not(.home) {

@@ -5,7 +5,6 @@
  * @package  RCDOC
  */
 
-add_action( 'tha_header_after', 'headspace' );
 add_action( 'tha_header_after', 'doc_article_hero' );
 add_action( 'tha_content_bottom', 'doc_dept_child_posts' );
 add_action( 'tha_content_before', 'doc_archive_desc' );
@@ -58,12 +57,6 @@ function doc_archive_desc() {
 	endif;
 }
 
-function headspace() {
-	// if ( ! is_front_page() )
-	// return;
-	echo '<div id="head-space" class="head-space u-bg-1-glass u-text-1"></div>';
-}
-
 function doc_article_hero() {
 	if ( is_front_page() ) {
 		return; }
@@ -72,19 +65,11 @@ function doc_article_hero() {
 }
 
 
-
-
-
-
-
-
-// add_action( 'tha_content_while_after', 'doc_alias_view_staff' );
-
 function doc_alias_view_staff() {
 global $cptarchives;
 $id = $cptarchives->get_archive_meta( 'doc_alias_select', true );
 	if ( $GLOBALS['cptarchives'] && $id ) { ?>
-		<div class="u-1of1 u-bg-silver u-px1 u-br u-shadow1 u-mb3 u-pt3">
+		<div class="u-1of1 u-mb3 u-bg-tint-1 u-px1 u-br">
 	<?php echo do_shortcode( '[gravityview id="10028" search_field="21" search_value="' . $id .'"]' ); ?>
 	</div> <?php
 	}
