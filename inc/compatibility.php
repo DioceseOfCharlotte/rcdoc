@@ -21,7 +21,7 @@ add_action( 'pre_get_posts', 'doc_custom_queries', 1 );
  */
 function doc_custom_queries( $query ) {
 	if ( ! $query->is_main_query() || is_admin() )
-        return;
+		return;
 
 	if ( is_tax( 'agency' ) ) {
 		$post_type = $query->get( 'post_type' );
@@ -37,16 +37,10 @@ function doc_custom_queries( $query ) {
 		$query->set( 'order', 'ASC' );
 	  	$query->set( 'orderby', 'title' );
 
-	} elseif ( is_post_type_archive() ) {
-
-		$query->set( 'order', 'ASC' );
-		$query->set( 'post_parent', 0 );
-
-		if ( is_post_type_archive( doc_place_cpts() ) ) {
+	} elseif ( is_post_type_archive( doc_place_cpts() ) ) {
+			$query->set( 'order', 'ASC' );
+			$query->set( 'post_parent', 0 );
 			$query->set( 'orderby', 'name' );
-		} else {
-			$query->set( 'orderby', 'menu_order' );
-		}
 	}
 }
 
