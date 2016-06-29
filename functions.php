@@ -26,6 +26,7 @@ require get_stylesheet_directory() . '/inc/metaboxes.php';
 require get_stylesheet_directory() . '/inc/meta/bb-contact.php';
 add_action( 'after_setup_theme', 'rcdoc_setup' );
 add_action( 'wp_enqueue_scripts', 'rcdoc_scripts' );
+add_filter( 'script_loader_tag', 'abe_defer_scripts', 10, 3 );
 add_filter( 'cleaner_gallery_defaults', 'meh_gallery_default_args' );
 add_action( 'init', 'doc_arch_posts' );
 
@@ -33,24 +34,14 @@ add_action( 'init', 'doc_arch_posts' );
  * Sets up theme defaults and registers support for various WordPress features.
  */
 function rcdoc_setup() {
-	// add_theme_support( 'soil-jquery-cdn' );
-	add_theme_support( 'soil-clean-up' );
-	// add_theme_support('soil-disable-asset-versioning');
-	add_theme_support( 'soil-disable-trackbacks' );
-	// add_theme_support('soil-nice-search');
-	add_theme_support( 'soil-google-analytics', 'UA-40566077-9' );
-	// add_theme_support('soil-js-to-footer');
-	add_theme_support( 'cleaner-gallery' );
-	add_theme_support(
-		'custom-background',
-		array(
-			'default-color' => 'e3e3db',
-		)
-	);
 
-	register_nav_menus(array(
-		'logged-in'   => esc_html__( 'Logged In', 'rcdoc' ),
-	));
+	//add_theme_support( 'soil-google-analytics', 'UA-40566077-9' );
+
+	add_theme_support( 'cleaner-gallery' );
+
+	add_theme_support( 'custom-background',	array( 'default-color' => 'e3e3db' ) );
+
+	register_nav_menus( array( 'logged-in' => esc_html__( 'Logged In', 'rcdoc' ) ) );
 
 	add_filter( 'theme_mod_primary_color', 'rcdoc_primary_color' );
 	add_filter( 'theme_mod_secondary_color', 'rcdoc_secondary_color' );
@@ -147,4 +138,31 @@ function rcdoc_scripts() {
 function meh_gallery_default_args( $defaults ) {
 	$defaults['size']    = 'abe-hd';
 	return $defaults;
+}
+
+
+function abe_defer_scripts( $tag, $handle, $src ) {
+
+	// The handles of the enqueued scripts we want to defer
+	$defer_scripts = array(
+		'admin-bar',
+		'flickity',
+		'main_scripts',
+		'abraham_js',
+		'arch-toggle',
+		'lory',
+		'arch-tabs',
+		'object_fit_js',
+		'devicepx',
+		'jquery-migrate',
+		'gform_gravityforms',
+		'gform_placeholder',
+		'gravityview-fe-view',
+	);
+
+	if ( in_array( $handle, $defer_scripts ) ) {
+		return '<script src="' . $src . '" async defer></script>' . "\n";
+	}
+
+	return $tag;
 }
