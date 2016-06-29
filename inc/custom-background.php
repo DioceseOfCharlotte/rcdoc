@@ -76,7 +76,7 @@ function rcdoc_custom_background_callback() {
 	$style = "background-color: #{$color};";
 
 ?>
-<style type="text/css" id="custom-background-css">body.custom-background,.u-bg-page{ <?php echo trim( $style ); ?> }</style>
+<style id="custom-background-css">body.custom-background,.u-bg-page{ <?php echo trim( $style ); ?> }</style>
 <?php
 
 }

@@ -69,5 +69,5 @@ function abraham_custom_header_wp_head() {
 	if ( $bg_image ) {
 		$style .= ".article-hero{background-image:url({$bg_image});}";
 	}
-		echo "\n" . '<style type="text/css" id="custom-header-css">' . trim( $style ) . '</style>' . "\n";
+		echo "\n" . '<style id="custom-header-css">' . trim( $style ) . '</style>' . "\n";
 }

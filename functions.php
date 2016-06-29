@@ -35,8 +35,6 @@ add_action( 'init', 'doc_arch_posts' );
  */
 function rcdoc_setup() {
 
-	//add_theme_support( 'soil-google-analytics', 'UA-40566077-9' );
-
 	add_theme_support( 'cleaner-gallery' );
 
 	add_theme_support( 'custom-background',	array( 'default-color' => 'e3e3db' ) );
