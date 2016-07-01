@@ -66,11 +66,14 @@ function doc_article_hero() {
 
 
 function doc_alias_view_staff() {
-global $cptarchives;
-$id = $cptarchives->get_archive_meta( 'doc_alias_select', true );
-	if ( $GLOBALS['cptarchives'] && $id ) { ?>
+	global $cptarchives;
+
+	if ( $GLOBALS['cptarchives'] ) {
+		$id = $cptarchives->get_archive_meta( 'doc_alias_select', true );
+		if ( $id ) { ?>
 		<div class="u-1of1 u-mb3 u-bg-tint-1 u-px1 u-br">
-	<?php echo do_shortcode( '[gravityview id="10028" search_field="21" search_value="' . $id .'"]' ); ?>
-	</div> <?php
+			<?php echo do_shortcode( '[gravityview id="10028" search_field="21" search_value="' . $id .'"]' ); ?>
+		</div><?php
+		}
 	}
 }
