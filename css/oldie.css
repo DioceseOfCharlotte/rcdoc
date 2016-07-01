@@ -4,7 +4,7 @@ Theme URI: https://github.com/DioceseOfCharlotte/rcdoc
 Author: Marty Helmick
 Author URI: https://github.com/m-e-h
 Description: Diocese child theme for Abraham.
-Version: 0.8.0
+Version: 0.9.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Template: abraham
@@ -70,7 +70,10 @@ GitHub Theme URI: https://github.com/DioceseOfCharlotte/rcdoc
   background-image: linear-gradient(335deg, rgba(0, 0, 0, 0.08) 50%, transparent 50%);
   transition-duration: 0.3s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: all; }
+  transition-property: all;
+  animation-play-state: paused;
+  animation-fill-mode: both;
+  align-self: flex-start; }
 
 .tiled-icon .v-icon {
   vertical-align: top; }
@@ -83,10 +86,6 @@ a.tile-link {
 
 .tile-title h2 {
   z-index: 1; }
-
-.tile {
-  animation-play-state: paused;
-  animation-fill-mode: both; }
 
 .is-animating .tile {
   animation-play-state: running; }
@@ -223,9 +222,6 @@ a.tile-link {
 
 .tile:first-child {
   margin-top: 16px; }
-
-.tile {
-  align-self: flex-start; }
 
 .site-branding {
   font-size: 16px;

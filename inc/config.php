@@ -5,28 +5,61 @@
  * @package  RCDOC
  */
 
+ add_action( 'init', 'doc_arch_posts' );
+ add_filter( 'script_loader_tag', 'abe_defer_scripts', 10, 3 );
+ add_filter( 'cleaner_gallery_defaults', 'meh_gallery_default_args' );
+
  /**
-  * Post Groups.
+  * Enables Arch support.
   */
- function doc_department_cpts() {
- 	$cpts = array( 'archive_post','bishop', 'deacon', 'development', 'education', 'finance', 'human_resources', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'macs', 'multicultural', 'planning', 'property', 'tribunal', 'vocation' );
- 	return $cpts;
+ function doc_arch_posts() {
+ 	add_post_type_support( 'vocation', 'arch-post' );
+ 	add_post_type_support( 'finance', 'arch-post' );
+ 	add_post_type_support( 'archive_post', 'arch-post' );
+ 	add_post_type_support( 'bishop', 'arch-post' );
+ 	add_post_type_support( 'chancery', 'arch-post' );
+ 	add_post_type_support( 'deacon', 'arch-post' );
+ 	add_post_type_support( 'development', 'arch-post' );
+ 	add_post_type_support( 'education', 'arch-post' );
+ 	add_post_type_support( 'human_resources', 'arch-post' );
+ 	add_post_type_support( 'hispanic_ministry', 'arch-post' );
+ 	add_post_type_support( 'housing', 'arch-post' );
+ 	add_post_type_support( 'info_tech', 'arch-post' );
+ 	add_post_type_support( 'liturgy', 'arch-post' );
+ 	add_post_type_support( 'macs', 'arch-post' );
+ 	add_post_type_support( 'multicultural', 'arch-post' );
+ 	add_post_type_support( 'planning', 'arch-post' );
+ 	add_post_type_support( 'tribunal', 'arch-post' );
+ 	add_post_type_support( 'property', 'arch-post' );
  }
 
-function doc_place_cpts() {
-	$cpts = array(
-		'department',
-		'parish',
-		'school',
-	);
-	return $cpts;
-}
+ function meh_gallery_default_args( $defaults ) {
+ 	$defaults['size']    = 'abe-hd';
+ 	return $defaults;
+ }
 
+ function abe_defer_scripts( $tag, $handle, $src ) {
 
-function doc_home_tiles() {
-	$cpts = array(
-		'department',
-		'cpt_archive',
-	);
-	return array_merge( $cpts, doc_department_cpts() );
-}
+ 	// The handles of the enqueued scripts we want to defer
+ 	$defer_scripts = array(
+ 		'admin-bar',
+ 		'flickity',
+ 		'main_scripts',
+ 		'abraham_js',
+ 		'arch-toggle',
+ 		'arch-tabs',
+ 		'object_fit_js',
+ 		'devicepx',
+ 		'jquery-migrate',
+ 		'gform_gravityforms',
+ 		'gform_placeholder',
+ 		'gravityview-fe-view',
+ 		// 'lory',
+ 	);
+
+ 	if ( in_array( $handle, $defer_scripts ) ) {
+ 		return '<script src="' . $src . '" async defer></script>' . "\n";
+ 	}
+
+ 	return $tag;
+ }
