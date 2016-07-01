@@ -1,14 +1,14 @@
 
 
 
-.entry-title > a:after {
-	margin-left: auto!important;
+.entry-title > a::after {
+	margin-left: auto !important;
 	content: " ";
 	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='v-icon' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M14 4q.422 0 .711.289l7 7Q22 11.578 22 12t-.289.711l-7 7Q14.422 20 14 20q-.43 0-.715-.285T13 19q0-.422.289-.711L18.586 13H3q-.414 0-.707-.293T2 12t.293-.707T3 11h15.586l-5.297-5.289Q13 5.422 13 5q0-.43.285-.715T14 4z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
 }
-.entry-title > a[href*="//"]:not([href*="rcdoc.info"]):not([href*="rcdoc.dev"]):after {
+.entry-title > a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="charlottediocese.dev"])::after {
 	content: " ";
 	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='v-icon' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6v2H5v12h12v-6h2zM13 3v2h4.586l-7.793 7.793 1.414 1.414L19 6.414V11h2V3h-8z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;

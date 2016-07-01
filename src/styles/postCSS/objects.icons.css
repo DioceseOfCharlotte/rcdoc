@@ -1,13 +1,13 @@
 
 .entry-title > a {
 
-	&:after {
-		margin-left: auto!important;
+	&::after {
+		margin-left: auto !important;
 		@mixin icon arrow-right;
 	}
 }
 
-.entry-title > a[href*="//"]:not([href*="rcdoc.info"]):not([href*="rcdoc.dev"]):after {
+.entry-title > a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="charlottediocese.dev"])::after {
 	@mixin icon external-link;
 }
 
