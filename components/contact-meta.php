@@ -79,7 +79,7 @@ if ( has_post_thumbnail() ) {
 		</div>
 
 		<?php if ( $doc_website ) : ?>
-			<div class="website u-text-center u-1of1">
+			<div class="website u-text-center u-1of1 u-mb1">
 				<a class="contact-link u-bg-2 btn" itemprop="url" href="<?= $doc_website ?>" target="_blank">Visit Website <?php abe_do_svg( 'external-link', 'sm' ); ?></a>
 			</div>
 		<?php endif; ?>

@@ -18,7 +18,7 @@
 			<?php tha_entry_content_after(); ?>
 		</div>
 
-		<?php get_template_part( 'components/school', 'footer' ); ?>
+		<?php get_template_part( 'components/entry', 'footer' ); ?>
 
 	<?php tha_entry_bottom(); ?>
 

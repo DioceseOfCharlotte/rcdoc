@@ -20,7 +20,7 @@
 
 <?php endif; ?>
 
-<?php get_template_part( 'components/dept', 'footer' ); ?>
+<?php get_template_part( 'components/entry', 'footer' ); ?>
 
 	<?php tha_entry_bottom(); ?>
 

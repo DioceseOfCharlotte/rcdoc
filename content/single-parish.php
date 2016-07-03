@@ -15,8 +15,9 @@ $doc_mass = get_post_meta( get_the_ID(), 'doc_mass_schedule', true );
 			<?php tha_entry_content_before(); ?>
 			<?php get_template_part( 'components/contact-meta' ); ?>
 			<?php if ( $doc_mass ) : ?>
-				<div class="u-1of1"> <?php
-			 		echo wpautop( $doc_mass ); ?>
+				<div class="u-1of1 u-mb3 u-bg-silver u-br u-pb2 u-px2">
+					<h3><?php esc_html_e( 'Mass Schedule', 'abraham' ); ?></h3>
+					<?php echo wpautop( $doc_mass ); ?>
 				</div>
 			<?php endif; ?>
 
@@ -24,7 +25,7 @@ $doc_mass = get_post_meta( get_the_ID(), 'doc_mass_schedule', true );
 			<?php tha_entry_content_after(); ?>
 		</div>
 
-		<?php get_template_part( 'components/parish', 'footer' ); ?>
+		<?php get_template_part( 'components/entry', 'footer' ); ?>
 
 	<?php tha_entry_bottom(); ?>
 

@@ -8,11 +8,10 @@
 ?>
 <article <?php hybrid_attr( 'post' ); ?>>
 
-	<?php tha_entry_top(); ?>
-
-<div class="flag-body u-flex u-flexed-auto">
-
 	<?php get_template_part( 'components/img', 'thumb' ); ?>
+
+	<div class="flag-body u-flexed-auto">
+		<?php tha_entry_top(); ?>
 
 		<?php get_template_part( 'components/entry', 'header' ); ?>
 
@@ -23,10 +22,10 @@
 			<?php tha_entry_content_after(); ?>
 		</div>
 		<?php } ?>
-	</div>
 
 		<?php get_template_part( 'components/entry', 'footer' ); ?>
 
-<?php tha_entry_bottom(); ?>
+		<?php tha_entry_bottom(); ?>
+	</div>
 
 </article>
