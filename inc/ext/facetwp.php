@@ -7,7 +7,7 @@
 
 add_filter( 'facetwp_facets', 'doc_register_doc_category_facets' );
 add_action( 'tha_content_before', 'doc_display_facets' );
-add_filter( 'facetwp_indexer_query_args', 'wpdr_facetwp_indexer_query_args' );
+//add_filter( 'facetwp_indexer_query_args', 'wpdr_facetwp_indexer_query_args' );
 add_action( 'wp_head', 'fwp_load_more', 99 );
 
 /**
@@ -85,11 +85,11 @@ function doc_register_doc_category_facets( $facets ) {
 	);
 
 	$facets[] = array(
-		"label" => "Proximity Search",
-	    "name" => "proximity_search",
-	    "type" => "proximity",
-	    "source" => "cf/geo_coordinates",
-	    "unit" => "mi"
+		'label' => 'Proximity Search',
+	    'name' => 'proximity_search',
+	    'type' => 'proximity',
+	    'source' => 'cf/geo_coordinates',
+	    'unit' => 'mi',
 	);
 
 	$facets[] = array(
