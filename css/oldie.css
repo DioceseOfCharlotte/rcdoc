@@ -685,6 +685,13 @@ http://flickity.metafizzy.co
     max-width: 100%; }
   html .gv-container-10028 {
     padding-top: 16px; }
+  html .gform_wrapper .description,
+  html .gform_wrapper .gfield_description,
+  html .gform_wrapper .gsection_description,
+  html .gform_wrapper .instruction {
+    font-size: 90%; }
+  html .gform_wrapper ul.gform_fields li.gfield {
+    padding: 8px; }
   html .entry-content > .gv-grid {
     background-color: #ffffff;
     padding: 16px;
