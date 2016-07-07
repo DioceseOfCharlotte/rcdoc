@@ -34,11 +34,11 @@ add_action( 'wp_head', 'wpmu_activate_stylesheet' );
 get_header(); ?>
 
 <div class="content-layout o-grid u-container u-rel">
-
 	<main id="main" class="site-main o-cell o-grid u-m0 u-p0 u-1of1">
+		<article class="u-fit o-cell u-bg-white u-mb3 u-p2 u-p4-md u-1of1 u-br u-shadow2">
+
 		<?php if ( empty( $_GET['key'] ) && empty( $_POST['key'] ) ) { ?>
 
-			<article class="u-fit o-cell u-bg-white u-mb3 u-p2 u-p4-md u-1of1 u-br u-shadow2">
 				<h2><?php _e( 'Activation Key Required' ) ?></h2>
 				<form name="activateform" id="activateform" method="post" action="<?php echo network_site_url( '?page=gf_activation' ); ?>">
 					<p>
@@ -95,7 +95,6 @@ get_header(); ?>
 					?>
 				</article>
 			</main>
-
 		</div>
 		<script type="text/javascript">
 		var key_input = document.getElementById('key');
