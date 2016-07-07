@@ -107,7 +107,6 @@ function doc_register_doc_category_facets( $facets ) {
  * @access public
  */
 function doc_display_facets() {
-	return;
 
 	if ( is_post_type_archive( 'parish' ) ) {
 		echo '<div class="u-1of1 u-px3 u-pb0 u-br u-pt3 u-mb3 u-flex u-flex-wrap u-flex-ja u-bg-2 u-text-color u-shadow3 u-max-center">';
