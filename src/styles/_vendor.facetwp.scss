@@ -17,14 +17,6 @@
 	}
 }
 
-.facetwp-facet-statistics_type.facetwp-type-checkboxes {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-	justify-content: space-around;
-	margin-bottom: 0 !important;
-}
-
 span.facetwp-counter {
 	display: none;
 }
@@ -33,6 +25,10 @@ span.facetwp-counter {
 	margin-bottom: 2rem;
 	min-width: 50px;
 	min-height: 50px;
+}
+
+.facetwp-checkbox {
+	display: inline-block;
 }
 
 .facetwp-checkbox.checked {

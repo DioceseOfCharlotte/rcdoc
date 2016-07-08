@@ -553,19 +553,14 @@ http://flickity.metafizzy.co
     right: 0;
     padding-left: 8px;
     padding-right: 8px; }
-  html .facetwp-facet-statistics_type.facetwp-type-checkboxes {
-    -js-display: flex;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-around;
-    margin-bottom: 0 !important; }
   html span.facetwp-counter {
     display: none; }
    {
     margin-bottom: 32px;
     min-width: 50px;
     min-height: 50px; }
+  html .facetwp-checkbox {
+    display: inline-block; }
   html .facetwp-checkbox.checked {
     font-weight: bold; }
   html .flickity-enabled {

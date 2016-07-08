@@ -50,35 +50,36 @@ function doc_register_doc_category_facets( $facets ) {
 		'name'         => 'department_agency',
 		'type'         => 'dropdown',
 		'source'       => 'tax/agency',
-		'label_any'          => 'All Agencies',
-		'orderby'         => 'display_value',
-		'hierarchical' => 'no',
-	);
-
-	$facets[] = array(
-		'label'        => 'School System',
-		'name'         => 'school_system',
-		'type'         => 'checkboxes',
-		'source'       => 'tax/school_system',
-		'label_any'          => 'All School Systems',
-		'orderby'         => 'display_value',
-		'hierarchical' => 'no',
-		'ghosts'       => 'yes',
-		'preserve_ghosts' => 'yes',
-		'operator'     => 'or',
-	);
-
-	$facets[] = array(
-		'label'        => 'School Grade Levels',
-		'name'         => 'grade_level',
-		'type'         => 'checkboxes',
-		'source'       => 'cf/doc_grade_level',
-		'label_any'    => 'All Grades',
+		'label_any'    => 'All Agencies',
 		'orderby'      => 'display_value',
 		'hierarchical' => 'no',
-		'ghosts'       => 'yes',
-		'preserve_ghosts' => 'yes',
-		'operator'     => 'or',
+	);
+
+	$facets[] = array(
+		'label'        		=> 'School System',
+		'name'         		=> 'school_system',
+		'type'         		=> 'checkboxes',
+		'source'       		=> 'tax/school_system',
+		'label_any'    		=> 'All School Systems',
+		'orderby'      		=> 'display_value',
+		'hierarchical' 		=> 'no',
+		'ghosts'       		=> 'yes',
+		'preserve_ghosts' 	=> 'yes',
+		'operator'     		=> 'or',
+	);
+
+	$facets[] = array(
+		'label'        		=> 'School Grade Levels',
+		'name'         		=> 'grade_level',
+		'type'         		=> 'checkboxes',
+		'source'       		=> 'cf/doc_grade_level',
+		'label_any'    		=> 'All Grades',
+		'orderby'      		=> 'raw_value',
+		'hierarchical' 		=> 'no',
+		'ghosts'       		=> 'yes',
+		'preserve_ghosts' 	=> 'yes',
+		'operator'     		=> 'or',
+		'count' 			=> '20',
 	);
 
 	$facets[] = array(
@@ -95,11 +96,11 @@ function doc_register_doc_category_facets( $facets ) {
 	);
 
 	$facets[] = array(
-		'label' => 'Proximity Search',
-	    'name' => 'proximity_search',
-	    'type' => 'proximity',
-	    'source' => 'cf/geo_coordinates',
-	    'unit' => 'mi',
+		'label' 	=> 'Proximity Search',
+	    'name' 		=> 'proximity_search',
+	    'type' 		=> 'proximity',
+	    'source' 	=> 'cf/geo_coordinates',
+	    'unit' 		=> 'mi',
 	);
 
 	// $facets[] = array(
