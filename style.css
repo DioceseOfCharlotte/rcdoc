@@ -943,6 +943,10 @@ html #page .facetwp-facet:not(.facetwp-type-alpha) {
     min-height: 50px;
 }
 
+html .facetwp-type-checkboxes {
+    margin-bottom: 1rem !important;
+}
+
 html .facetwp-checkbox {
     display: inline-block;
 }

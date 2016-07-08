@@ -559,6 +559,8 @@ http://flickity.metafizzy.co
     margin-bottom: 32px;
     min-width: 50px;
     min-height: 50px; }
+  html .facetwp-type-checkboxes {
+    margin-bottom: 16px !important; }
   html .facetwp-checkbox {
     display: inline-block; }
   html .facetwp-checkbox.checked {
