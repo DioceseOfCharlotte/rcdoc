@@ -10,7 +10,7 @@ add_filter( 'facetwp_facets', 'doc_register_doc_category_facets' );
 add_action( 'tha_content_before', 'doc_display_facets' );
 //add_filter( 'facetwp_indexer_query_args', 'wpdr_facetwp_indexer_query_args' );
 add_action( 'wp_head', 'fwp_load_more', 99 );
-
+add_filter( 'facetwp_proximity_store_distance', '__return_true' );
 /**
  * Get the facet archive posts for adding the class to hybrid_attr_content.
  */
@@ -86,7 +86,6 @@ function doc_register_doc_category_facets( $facets ) {
 		'label'         => 'Department Search',
 		'name'          => 'department_search',
 		'type'          => 'search',
-		'search_engine' => '',
 	);
 
 	$facets[] = array(
@@ -156,8 +155,8 @@ function doc_display_facets() {
 		echo facetwp_display( 'facet', 'proximity_search' );
 		echo facetwp_display( 'facet', 'school_system' );
 		echo facetwp_display( 'facet', 'department_search' );
-		echo '<div class="u-1of1 u-text-center">' .facetwp_display( 'facet', 'grade_level' ). '</div>';
 		echo '<button class="btn btn-round u-bg-frost-4 u-m0 u-m0" onclick="FWP.reset()"><span class="icon-refresh"></span></button>';
+		echo '<div class="u-1of1 u-text-center"><strong>Grade Level</strong>' .facetwp_display( 'facet', 'grade_level' ). '</div>';
 		echo '</div>';
 	}
 }
