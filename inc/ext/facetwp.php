@@ -5,6 +5,7 @@
  * @package  RCDOC
  */
 
+add_filter( 'facetwp_index_row', 'index_serialized_data', 10, 2 );
 add_filter( 'facetwp_facets', 'doc_register_doc_category_facets' );
 add_action( 'tha_content_before', 'doc_display_facets' );
 //add_filter( 'facetwp_indexer_query_args', 'wpdr_facetwp_indexer_query_args' );
@@ -27,8 +28,22 @@ function doc_has_facet() {
 	return is_post_type_archive( doc_get_facet_cpts() );
 }
 
-function doc_register_doc_category_facets( $facets ) {
+function index_serialized_data( $params, $class ) {
+	if ( 'grade_level' == $params['facet_name'] ) {
+		$values = (array) $params['facet_value'];
+		foreach ( $values as $val ) {
+			$params['facet_value'] = $val;
+			$params['facet_display_value'] = $val;
+			$class->insert( $params );
+		}
+		return false; // skip default indexing
+	}
+	return $params;
+}
 
+
+
+function doc_register_doc_category_facets( $facets ) {
 
 	$facets[] = array(
 		'label'        => 'Department Agency',
@@ -47,6 +62,19 @@ function doc_register_doc_category_facets( $facets ) {
 		'source'       => 'tax/school_system',
 		'label_any'          => 'All School Systems',
 		'orderby'         => 'display_value',
+		'hierarchical' => 'no',
+		'ghosts'       => 'yes',
+		'preserve_ghosts' => 'yes',
+		'operator'     => 'or',
+	);
+
+	$facets[] = array(
+		'label'        => 'School Grade Levels',
+		'name'         => 'grade_level',
+		'type'         => 'checkboxes',
+		'source'       => 'cf/doc_grade_level',
+		'label_any'    => 'All Grades',
+		'orderby'      => 'display_value',
 		'hierarchical' => 'no',
 		'ghosts'       => 'yes',
 		'preserve_ghosts' => 'yes',
@@ -127,6 +155,7 @@ function doc_display_facets() {
 		echo facetwp_display( 'facet', 'proximity_search' );
 		echo facetwp_display( 'facet', 'school_system' );
 		echo facetwp_display( 'facet', 'department_search' );
+		echo '<div class="u-1of1 u-text-center">' .facetwp_display( 'facet', 'grade_level' ). '</div>';
 		echo '<button class="btn btn-round u-bg-frost-4 u-m0 u-m0" onclick="FWP.reset()"><span class="icon-refresh"></span></button>';
 		echo '</div>';
 	}
