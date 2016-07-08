@@ -13,11 +13,28 @@ add_action( 'wp', 'custom_maybe_activate_user', 0 );
 
 
 function doc_login_logo() {
-	?>
+	$image = wp_get_attachment_image_url( get_theme_mod( 'custom_logo') ); ?>
 	<style type="text/css">
-	.login h1 a {
-		background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/login-shield.png);
+	#login h1 a {
+		background-image: url(<?php echo $image ?>);
 		padding-bottom: 30px;
+	    -webkit-background-size: 84px;
+	    background-size: 84px;
+	    background-position: center top;
+	    background-repeat: no-repeat;
+	    color: #444;
+	    height: 84px;
+	    font-size: 20px;
+	    font-weight: normal;
+	    line-height: 1.3em;
+	    margin: 0 auto 25px;
+	    padding: 0;
+	    text-decoration: none;
+	    width: 84px;
+	    text-indent: -9999px;
+	    outline: none;
+	    overflow: hidden;
+	    display: block;
 	}
 	</style>
 	<?php }
