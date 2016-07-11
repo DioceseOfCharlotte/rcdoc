@@ -679,7 +679,7 @@ http://flickity.metafizzy.co
   html .gv-list-view-title {
     border-bottom-width: 0; }
   html .gv-container-no-results {
-    display: none; }
+    display: none !important; }
   html .gform_wrapper ul li.gfield {
     max-width: 100%; }
   html #page .gv-grid,

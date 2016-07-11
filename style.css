@@ -1140,7 +1140,7 @@ html .gv-list-view-title {
 }
 
 html .gv-container-no-results {
-    display: none;
+    display: none !important;
 }
 
 html .gform_wrapper ul li.gfield {
