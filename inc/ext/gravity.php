@@ -181,8 +181,8 @@ function set_parish_column( $input_info, $field, $column, $value, $form_id ) {
  * @param $back_link string Url to return to the original entry
  */
 function doc_gv_update_message( $message, $view_id, $entry, $back_link ) {
-    $link = str_replace( 'entry/'.$entry['id'].'/', '', $back_link );
-    return 'Entry Updated. <a href="'.esc_url($link).'">Return to the list</a>';
+	$link = str_replace( 'entry/'.$entry['id'].'/', '', $back_link );
+	return 'Entry Updated. <a href="'.esc_url( $link ).'">Return to the list</a>';
 }
 
 
@@ -195,5 +195,5 @@ function doc_gv_update_message( $message, $view_id, $entry, $back_link ) {
  * since 1.11.1
  */
 function doc_gv_edit_cancel( $back_link, $form, $entry, $view_id ) {
-    return str_replace( 'entry/'.$entry['id'].'/', '', $back_link );
+	return str_replace( 'entry/'.$entry['id'].'/', '', $back_link );
 }
