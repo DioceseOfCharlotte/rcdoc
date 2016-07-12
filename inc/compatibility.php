@@ -6,6 +6,7 @@
 */
 
 add_action( 'admin_menu', 'meh_remove_menu_pages' );
+add_action( 'admin_init', 'meh_remove_jetpack_menu' );
 add_filter( 'login_redirect', create_function( '$url,$query,$user', 'return home_url();' ), 10, 3 );
 add_action( 'login_enqueue_scripts', 'doc_login_logo' );
 add_filter( 'login_headerurl', 'doc_login_logo_url' );
@@ -16,7 +17,6 @@ add_action( 'wp', 'custom_maybe_activate_user', 0 );
 function meh_remove_menu_pages() {
 
 	if ( class_exists( 'Jetpack' ) && ! current_user_can( 'manage_options' ) ) {
-		remove_menu_page( 'jetpack' ); 						//Jetpack*
 		remove_menu_page( 'profile.php' );                   	//profile
 		// remove_menu_page( 'edit.php' );                   	//Posts
 		// remove_menu_page( 'upload.php' );                 	//Media
@@ -28,6 +28,12 @@ function meh_remove_menu_pages() {
 		// remove_menu_page( 'tools.php' );                  	//Tools
 		// remove_menu_page( 'options-general.php' );        	//Settings
 		// remove_menu_page( 'index.php' );                  	//Dashboard
+	}
+}
+
+function meh_remove_jetpack_menu() {
+	if ( class_exists( 'Jetpack' ) && ! current_user_can( 'manage_options' ) ) {
+		remove_menu_page( 'jetpack' ); 						//Jetpack*
 	}
 }
 
