@@ -42,7 +42,7 @@ function doc_login_logo() {
 
 	$image = wp_get_attachment_image_url( get_theme_mod( 'custom_logo' ) ); ?>
 
-		<style id=#login-custom-logo>
+		<style id="login-custom-logo">
 			#login h1 a {
 				background-image: url(<?php echo $image ?>);
 			}
