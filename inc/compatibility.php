@@ -5,16 +5,28 @@
 * @package  RCDOC
 */
 
+add_action( 'admin_menu', 'meh_remove_menu_pages' );
 add_filter( 'login_redirect', create_function( '$url,$query,$user', 'return home_url();' ), 10, 3 );
 add_action( 'login_enqueue_scripts', 'doc_login_logo' );
 add_filter( 'login_headerurl', 'doc_login_logo_url' );
 add_filter( 'login_headertitle', 'doc_login_logo_url_title' );
 add_action( 'wp', 'custom_maybe_activate_user', 0 );
-add_action( 'admin_init', 'doc_rm_jetpack_menu' );
 
-function doc_rm_jetpack_menu() {
+
+function meh_remove_menu_pages() {
+
 	if ( class_exists( 'Jetpack' ) && ! current_user_can( 'manage_options' ) ) {
-		remove_menu_page( 'jetpack' );
+		remove_menu_page( 'jetpack' ); 						//Jetpack*
+		// remove_menu_page( 'edit.php' );                   	//Posts
+		// remove_menu_page( 'upload.php' );                 	//Media
+		// remove_menu_page( 'edit.php?post_type=page' );    	//Pages
+		// remove_menu_page( 'edit-comments.php' );          	//Comments
+		// remove_menu_page( 'themes.php' );                 	//Appearance
+		// remove_menu_page( 'plugins.php' );                	//Plugins
+		// remove_menu_page( 'users.php' );                  	//Users
+		// remove_menu_page( 'tools.php' );                  	//Tools
+		// remove_menu_page( 'options-general.php' );        	//Settings
+		// remove_menu_page( 'index.php' );                  	//Dashboard
 	}
 }
 
