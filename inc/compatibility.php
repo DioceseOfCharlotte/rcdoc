@@ -17,6 +17,7 @@ function meh_remove_menu_pages() {
 
 	if ( class_exists( 'Jetpack' ) && ! current_user_can( 'manage_options' ) ) {
 		remove_menu_page( 'jetpack' ); 						//Jetpack*
+		remove_menu_page( 'profile.php' );                   	//profile
 		// remove_menu_page( 'edit.php' );                   	//Posts
 		// remove_menu_page( 'upload.php' );                 	//Media
 		// remove_menu_page( 'edit.php?post_type=page' );    	//Pages
