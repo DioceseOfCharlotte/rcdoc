@@ -10,7 +10,13 @@ add_action( 'login_enqueue_scripts', 'doc_login_logo' );
 add_filter( 'login_headerurl', 'doc_login_logo_url' );
 add_filter( 'login_headertitle', 'doc_login_logo_url_title' );
 add_action( 'wp', 'custom_maybe_activate_user', 0 );
+add_action( 'admin_init', 'doc_rm_jetpack_menu' );
 
+function doc_rm_jetpack_menu() {
+	if ( class_exists( 'Jetpack' ) && ! current_user_can( 'manage_options' ) ) {
+		remove_menu_page( 'jetpack' );
+	}
+}
 
 function doc_login_logo() {
 	if ( ! has_custom_logo() ) { return; }
