@@ -415,19 +415,17 @@ h2 a.rsswidget:before {
   width: 100%;
   background-color: #ffca3d; }
 
-.entry-title > a:after {
-  margin-left: auto !important;
-  content: " ";
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='v-icon' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M14 4q.422 0 .711.289l7 7Q22 11.578 22 12t-.289.711l-7 7Q14.422 20 14 20q-.43 0-.715-.285T13 19q0-.422.289-.711L18.586 13H3q-.414 0-.707-.293T2 12t.293-.707T3 11h15.586l-5.297-5.289Q13 5.422 13 5q0-.43.285-.715T14 4z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  display: inline-block; }
+/*.entry-title > a {
 
- {
-  content: " ";
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='v-icon' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6v2H5v12h12v-6h2zM13 3v2h4.586l-7.793 7.793 1.414 1.414L19 6.414V11h2V3h-8z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  display: inline-block; }
+	&::after {
+		margin-left: auto !important;
+		@mixin icon arrow-right;
+	}
+}
 
+.entry-title > a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="charlottediocese.dev"])::after {
+	@mixin icon external-link;
+}*/
  {
   content: " ";
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='v-icon' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M17.258 15.287q.75-.752.75-1.784 0-1.033-.727-1.76-.728-.729-1.761-.729-1.08 0-1.784.704l-.751.751-.704-.75q-.704-.705-1.784-.705-1.032 0-1.76.728-.729.728-.729 1.76 0 1.08.704 1.785l4.273 4.272zM5.473 6.977q.61 0 1.057-.446.447-.446.446-1.057-.001-.61-.446-1.056-.445-.446-1.057-.446-.612 0-1.056.446-.445.445-.446 1.056 0 .611.446 1.057.446.446 1.056.446zm15.963 4.6q.564.565.564 1.409 0 .844-.564 1.408l-7.042 7.042Q13.83 22 12.986 22t-1.408-.564l-9.014-9.014Q2 11.858 2 11.014V3.972q0-.798.587-1.385T3.972 2h7.042q.845 0 1.408.564z'/%3E%3C/svg%3E");
@@ -1039,6 +1037,19 @@ http://flickity.metafizzy.co
     padding-top: 64px; }
     html .home .site-content {
   padding-top: 88px; }
+  html .page-numbers {
+    vertical-align: bottom;
+    padding: 8px;
+    color: inherit;
+    display: inline-block;
+    font-size: 28px;
+    font-weight: 400;
+    border-radius: 2px; }
+  html a.page-numbers:hover {
+    background-color: #90a4ae; }
+  html span.page-numbers {
+    font-weight: 600;
+    filter: alpha(opacity=60); }
 
 /* Styles specific to the editor. */
 body#tinymce {

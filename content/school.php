@@ -18,7 +18,7 @@
 
 	<header class="u-bg-1-light u-flex u-flex-row u-flex-nowrap u-flex-jb u-br-t">
 		<h2 <?php hybrid_attr( 'entry-title' ); ?>>
-			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+			<a href="<?php the_permalink(); ?>"><?php the_title(); ?><?php abe_do_svg( 'arrow-right', 'sm' ) ?></a>
 		</h2>
 
 		<?php if ( has_term( 'macs', 'school_system' ) ) : ?>

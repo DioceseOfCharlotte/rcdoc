@@ -1,5 +1,5 @@
 
-.entry-title > a {
+/*.entry-title > a {
 
 	&::after {
 		margin-left: auto !important;
@@ -9,7 +9,7 @@
 
 .entry-title > a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="charlottediocese.dev"])::after {
 	@mixin icon external-link;
-}
+}*/
 
 a[href*="thankyou4caring.org"]:not([class]):before {
 	@mixin icon loyalty;

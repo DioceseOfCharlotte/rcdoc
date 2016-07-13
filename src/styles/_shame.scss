@@ -61,3 +61,22 @@ body {
 		padding-top: 5.5rem;
 	}
 }
+
+.page-numbers {
+	vertical-align: bottom;
+	padding: 0.5rem;
+	color: inherit;
+	display: inline-block;
+	font-size: 1.75rem;
+	font-weight: 400;
+	border-radius: 2px;
+}
+
+a.page-numbers:hover {
+	background-color: rgba(144,164,174,.3);
+}
+
+span.page-numbers {
+    font-weight: 600;
+    opacity: .6;
+}
