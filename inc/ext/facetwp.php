@@ -75,6 +75,7 @@ function doc_register_doc_category_facets( $facets ) {
 		'source'       		=> 'cf/doc_grade_level',
 		'label_any'    		=> 'All Grades',
 		'orderby'      		=> 'display_value',
+		"multiple"  		=> 'yes',
 		'hierarchical' 		=> 'no',
 		'operator'     		=> 'and',
 		'count' 			=> '20',
