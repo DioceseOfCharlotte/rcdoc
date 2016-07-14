@@ -71,14 +71,12 @@ function doc_register_doc_category_facets( $facets ) {
 	$facets[] = array(
 		'label'        		=> 'School Grade Levels',
 		'name'         		=> 'grade_level',
-		'type'         		=> 'checkboxes',
+		'type'         		=> 'fselect',
 		'source'       		=> 'cf/doc_grade_level',
 		'label_any'    		=> 'All Grades',
-		'orderby'      		=> 'raw_value',
+		'orderby'      		=> 'display_value',
 		'hierarchical' 		=> 'no',
-		'ghosts'       		=> 'yes',
-		'preserve_ghosts' 	=> 'yes',
-		'operator'     		=> 'or',
+		'operator'     		=> 'and',
 		'count' 			=> '20',
 	);
 
@@ -153,10 +151,10 @@ function doc_display_facets() {
 	} elseif ( is_post_type_archive( 'school' ) ) {
 		echo '<div class="u-1of1 u-px3 u-pb0 u-br u-pt3 u-mb3 u-flex u-flex-wrap u-flex-ja u-bg-2 u-text-color u-shadow3 u-max-center">';
 		echo facetwp_display( 'facet', 'proximity_search' );
-		echo facetwp_display( 'facet', 'school_system' );
-		echo facetwp_display( 'facet', 'department_search' );
+		echo facetwp_display( 'facet', 'grade_level' );
+		// echo facetwp_display( 'facet', 'school_system' );
+		// echo facetwp_display( 'facet', 'department_search' );
 		echo '<button class="btn btn-round u-bg-frost-4 u-m0 u-m0" onclick="FWP.reset()"><span class="icon-refresh"></span></button>';
-		echo '<div class="u-1of1 u-text-center"><strong>Grade Level</strong>' .facetwp_display( 'facet', 'grade_level' ). '</div>';
 		echo '</div>';
 	}
 }
