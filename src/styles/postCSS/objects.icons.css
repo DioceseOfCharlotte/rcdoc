@@ -105,3 +105,7 @@ a[href*="catholicnewsherald.com"] {
 .header__menu-toggle > .icon-sm {
 	margin: 0;
 }
+
+#page .card-img > a:before {
+	content: none;
+}

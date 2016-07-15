@@ -17,47 +17,6 @@ GitHub Theme URI: https://github.com/DioceseOfCharlotte/rcdoc
   .is-animating .tile:first-child, .is-animating :first-child + * + .tile, .is-animating :first-child + .tile, .is-animating :first-child + * + * + .tile, .is-animating :first-child + * + * + * + .tile, .is-animating :first-child + * + * + * + * + .tile, .is-animating :first-child + * + * + * + * + * + .tile, .is-animating :first-child + * + * + * + * + * + * + .tile, .is-animating :first-child + * + * + * + * + * + * + * + .tile, .is-animating :first-child + * + * + * + * + * + * + * + * + .tile {
     animation-play-state: running; }
 
-.mdl-card {
-  -js-display: flex;
-  display: flex;
-  flex-direction: column;
-  min-height: 200px;
-  overflow: hidden;
-  width: 330px;
-  z-index: 1;
-  position: relative;
-  background: #fff;
-  border-radius: 2px; }
-
-.mdl-card__media {
-  background-color: #ff4081;
-  background-repeat: repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-  background-origin: padding-box;
-  background-attachment: scroll; }
-
-.mdl-card__title {
-  align-items: center;
-  -js-display: flex;
-  display: flex;
-  justify-content: stretch;
-  padding: 16px; }
-
-.mdl-card__title-text {
-  align-self: flex-end;
-  -js-display: flex;
-  display: flex;
-  overflow: hidden; }
-
-.mdl-card--expand {
-  flex-grow: 1; }
-
-.mdl-card__menu {
-  position: absolute;
-  right: 16px;
-  top: 16px; }
-
 .tile-icon {
   max-height: 90px;
   max-width: 90px;
@@ -525,6 +484,9 @@ a[href*="catholicnewsherald.com"] {
 
 .header__menu-toggle > .icon-sm {
   margin: 0; }
+
+#page .card-img > a:before {
+  content: none; }
 
 html {
   /*! Flickity v1.1.2

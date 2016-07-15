@@ -18,7 +18,6 @@ var babel = require('gulp-babel');
 var oldie = require('oldie');
 var autoPrefixer = require('autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
-var perfectionist = require('perfectionist');
 
 var atImport = require("postcss-import");
 var pcMixins = require("postcss-mixins");
@@ -31,7 +30,7 @@ var pcFlex = require('postcss-flexibility');
 var pcSvg = require('postcss-inline-svg');
 var pcNoDups = require('postcss-discard-duplicates');
 var syntax = require('postcss-scss');
-var styleFmt = require('stylefmt');
+var stylefmt = require('gulp-stylefmt');
 
 var $ = gulpLoadPlugins();
 var reload = browserSync.reload;
@@ -71,10 +70,6 @@ var POSTCSS_PLUGINS = [
 	atImport,
 	autoPrefixer({
 		browsers: AUTOPREFIXER_BROWSERS
-	}),
-	//	stylefmt()
-	perfectionist({
-		cascade: false
 	})
 ];
 
@@ -155,6 +150,7 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest('.tmp'))
 		.pipe($.concat('style.css'))
 		.pipe(postcss(POSTCSS_PLUGINS))
+		.pipe(stylefmt())
 		.pipe(gulp.dest('./'))
 		.pipe($.if('*.css', $.cssnano()))
 		.pipe($.concat('style.min.css'))
