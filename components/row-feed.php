@@ -36,15 +36,14 @@ if ( ! is_wp_error( $rss ) ) :
 endif;
 ?>
 
-<ul class="u-list-group">
+<ul class="o-list-group-links">
     <?php if ( $maxitems == 0 ) : ?>
         <li><?php _e( 'No items', 'my-text-domain' ); ?></li>
     <?php else : ?>
 
         <?php foreach ( $rss_items as $item ) : ?>
             <li>
-                <a href="<?php echo esc_url( $item->get_permalink() ); ?>"
-                    title="<?php printf( __( 'Posted %s', 'my-text-domain' ), $item->get_date('j F Y | g:i a') ); ?>">
+                <a href="<?php echo esc_url( $item->get_permalink() ); ?>">
                     <?php echo esc_html( $item->get_title() ); ?>
                 </a>
             </li>
