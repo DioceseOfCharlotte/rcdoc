@@ -1323,6 +1323,7 @@ html .slide-btn > svg {
 }
 
 html .site-main,
+html .arch-row,
 html .o-grid {
 	display: -webkit-flex;
 	display: -ms-flexbox;
