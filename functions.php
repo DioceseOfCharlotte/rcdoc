@@ -14,7 +14,7 @@ require get_stylesheet_directory() . '/inc/compatibility.php';
 require get_stylesheet_directory() . '/inc/hooks.php';
 //require get_stylesheet_directory() . '/inc/tax.php';
 require get_stylesheet_directory() . '/inc/ext/cpt-archive.php';
-require get_stylesheet_directory() . '/inc/ext/wpdr.php';
+//require get_stylesheet_directory() . '/inc/ext/wpdr.php';
 require get_stylesheet_directory() . '/inc/custom-header.php';
 require get_stylesheet_directory() . '/inc/custom-background.php';
 require get_stylesheet_directory() . '/inc/ext/gravity-forms.php';
