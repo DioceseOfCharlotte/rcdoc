@@ -1527,29 +1527,23 @@ html .collapse-toggle.active > .chevron-toggle {
 
 html .collapse {
 	overflow: hidden;
-	height: 100%;
-	max-height: 0;
-	transition: max-height 0.3s ease-out;
+	outline: 0;
+	transition: height 0.3s, padding 0.3s;
 }
 
-html .collapse.active {
-	max-height: 500px;
+html .collapse:not(.active) {
+	overflow: hidden;
+	height: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
 }
 
 html .collapse-wrap {
-	opacity: 0.5;
-	transition: all 0.1s;
+	transition: opacity 0.1s;
 }
 
-html .collapse:not(.active) .collapse-wrap {
-	padding-top: 0;
-	padding-bottom: 0;
-	height: 0;
-}
-
-html .active > .collapse-wrap {
-	height: auto;
-	opacity: 0.9;
+html .collapse:not(.active) > .collapse-wrap {
+	opacity: 0.3;
 }
 
 html .arch .arch-p2 {

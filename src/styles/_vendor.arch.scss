@@ -3,389 +3,383 @@
 */
 
 .frame {
-    position: relative;
-    margin: 0 auto;
-    font-size: 0;
-    line-height: 0;
-    overflow: hidden;
-    white-space: nowrap;
+	position: relative;
+	margin: 0 auto;
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .slide-cell {
-    position: relative;
-    display: inline-block;
+	position: relative;
+	display: inline-block;
 }
 
 .arch-slides {
-    position: relative;
+	position: relative;
 }
 
 .arch-slides .slides {
-    display: block;
+	display: block;
 }
 
 .arch-slides a:not(.btn) {
-    color: inherit;
-    width: auto;
-    font-weight: bold;
+	color: inherit;
+	width: auto;
+	font-weight: bold;
 }
 
 .slide-btn {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-    width: 44px;
-    height: 44px;
-    border: 1px solid #d0d0d0;
-    border-radius: 50%;
-    background: #fff;
-    background: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-                0 1px 10px 0 rgba(0, 0, 0, 0.12),
-                0 2px 4px -1px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 44px;
+	height: 44px;
+	border: 1px solid #d0d0d0;
+	border-radius: 50%;
+	background: #fff;
+	background: rgba(255, 255, 255, 0.85);
+	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+	0 1px 10px 0 rgba(0, 0, 0, 0.12),
+	0 2px 4px -1px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
 }
 
 .slide-btn.next {
-    right: 0.5em;
+	right: 0.5em;
 }
 
 .slide-btn.prev {
-    left: 0.5em;
+	left: 0.5em;
 }
 
 .slide-btn > svg {
-    position: absolute;
-    left: 20%;
-    top: 20%;
-    width: 60%;
-    height: 60%;
+	position: absolute;
+	left: 20%;
+	top: 20%;
+	width: 60%;
+	height: 60%;
 }
 
 @media screen and (max-width: 47em) {
-    .slides .entry-summary {
-        display: none;
-        visibility: hidden;
-    }
+	.slides .entry-summary {
+		display: none;
+		visibility: hidden;
+	}
 }
 
 .site-main, .arch-row, .o-grid {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-    -webkit-flex-flow: row wrap;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
-    -webkit-justify-content: space-around;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	-webkit-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: space-around;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
 }
 
 .content > .archive-header {
-    width: 100%;
+	width: 100%;
 }
 
 .arch.arch .arch-u-1of1 {
-    width: 100%;
-    max-width: 100%;
+	width: 100%;
+	max-width: 100%;
 }
 
 @media screen and (min-width: 48em) {
-    .arch.arch .arch-u-1of1-md {
-        width: 100%;
-        max-width: 100%;
-    }
+	.arch.arch .arch-u-1of1-md {
+		width: 100%;
+		max-width: 100%;
+	}
 
-    .arch .arch-u-1of2-md {
-        width: calc(50% - 1.5rem);
-        max-width: calc(50% - 1.5rem);
-    }
+	.arch .arch-u-1of2-md {
+		width: calc(50% - 1.5rem);
+		max-width: calc(50% - 1.5rem);
+	}
 
-    .arch .arch-u-1of3-md {
-        width: calc(33.33% - 1.5rem);
-        max-width: calc(33.33% - 1.5rem);
-    }
+	.arch .arch-u-1of3-md {
+		width: calc(33.33% - 1.5rem);
+		max-width: calc(33.33% - 1.5rem);
+	}
 
-    .arch .arch-u-2of3-md {
-        width: calc(66.66% - 1.5rem);
-        max-width: calc(66.66% - 1.5rem);
-    }
+	.arch .arch-u-2of3-md {
+		width: calc(66.66% - 1.5rem);
+		max-width: calc(66.66% - 1.5rem);
+	}
 
-    .arch .arch-u-1of4-md {
-        width: calc(25% - 1.5rem);
-        max-width: calc(25% - 1.5rem);
-    }
+	.arch .arch-u-1of4-md {
+		width: calc(25% - 1.5rem);
+		max-width: calc(25% - 1.5rem);
+	}
 
-    .arch .arch-u-3of4-md {
-        width: calc(75% - 1.5rem);
-        max-width: calc(75% - 1.5rem);
-    }
+	.arch .arch-u-3of4-md {
+		width: calc(75% - 1.5rem);
+		max-width: calc(75% - 1.5rem);
+	}
 
-    .arch .arch-u-1of5-md {
-        width: calc(20% - 1.5rem);
-        max-width: calc(20% - 1.5rem);
-    }
+	.arch .arch-u-1of5-md {
+		width: calc(20% - 1.5rem);
+		max-width: calc(20% - 1.5rem);
+	}
 
-    .arch .arch-u-2of5-md {
-        width: calc(40% - 1.5rem);
-        max-width: calc(40% - 1.5rem);
-    }
+	.arch .arch-u-2of5-md {
+		width: calc(40% - 1.5rem);
+		max-width: calc(40% - 1.5rem);
+	}
 
-    .arch .arch-u-3of5-md {
-        width: calc(60% - 1.5rem);
-        max-width: calc(60% - 1.5rem);
-    }
+	.arch .arch-u-3of5-md {
+		width: calc(60% - 1.5rem);
+		max-width: calc(60% - 1.5rem);
+	}
 
-    .arch .arch-u-4of5-md {
-        width: calc(80% - 1.5rem);
-        max-width: calc(80% - 1.5rem);
-    }
+	.arch .arch-u-4of5-md {
+		width: calc(80% - 1.5rem);
+		max-width: calc(80% - 1.5rem);
+	}
 
-    .arch .arch-width-auto-md {
-        width: auto;
-    }
+	.arch .arch-width-auto-md {
+		width: auto;
+	}
 }
 
 .arch .arch-flex {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
 }
 
 .arch .arch-flex-wrap {
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .arch .arch-flex-justify-between {
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
 }
 
 .arch .arch-flex-justify-around {
-    -webkit-justify-content: space-around;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
+	-webkit-justify-content: space-around;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
 }
 
 .arch .arch-flexed-auto {
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
+	-webkit-flex: 1 1 auto;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
 }
 
 .arch .arch-flexed-1 {
-    -webkit-flex: 1 1 0%;
-    -ms-flex: 1 1 0%;
-    flex: 1 1 0%;
+	-webkit-flex: 1 1 0%;
+	-ms-flex: 1 1 0%;
+	flex: 1 1 0%;
 }
 
 /*  TABS */
 
 .tab-content {
-    display: none;
-    visibility: hidden;
+	display: none;
+	visibility: hidden;
 }
 
 .tab-content.is-active {
-    display: block;
-    visibility: visible;
+	display: block;
+	visibility: visible;
 }
 
 .tab-header {
-    display: inline-block;
-    position: relative;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.02);
-    opacity: 0.9;
-    cursor: pointer;
-    vertical-align: middle;
-    text-decoration: none;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+	display: inline-block;
+	position: relative;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.02);
+	opacity: 0.9;
+	cursor: pointer;
+	vertical-align: middle;
+	text-decoration: none;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 
 .tab-header:hover, .tab-header:focus {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .tab-header:before {
-    position: absolute;
-    z-index: -1;
-    right: 50%;
-    bottom: -2px;
-    left: 50%;
-    height: 3px;
-    opacity: 0.2;
-    background: currentColor;
-    content: "";
-    transition: left, right 0.3s;
+	position: absolute;
+	z-index: -1;
+	right: 50%;
+	bottom: -2px;
+	left: 50%;
+	height: 3px;
+	opacity: 0.2;
+	background: currentColor;
+	content: "";
+	transition: left, right 0.3s;
 }
 
 .tab-header.is-active {
-    cursor: default;
+	cursor: default;
 }
 
 .tab-header:hover:before, .tab-header.is-active:before {
-    right: 0;
-    left: 0;
+	right: 0;
+	left: 0;
 }
 
 .tab-header.is-active:before {
-    opacity: 0.7;
+	opacity: 0.7;
 }
 
 /*  Toggles */
 
 .collapse-toggle {
-    display: inline-block;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+	display: inline-block;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    opacity: 1;
-    text-decoration: none;
+	box-sizing: border-box;
+	opacity: 1;
+	text-decoration: none;
 }
 
 .collapse-toggle:hover {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .chevron-toggle {
-    width: 1em;
-    height: 1em;
-    opacity: 0.5;
-    transition: all 0.3s;
+	width: 1em;
+	height: 1em;
+	opacity: 0.5;
+	transition: all 0.3s;
 }
 
 a:hover > .chevron-toggle {
-    opacity: 1;
+	opacity: 1;
 }
 
 .collapse-toggle.active > .chevron-toggle {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
 }
 
 .collapse {
-    overflow: hidden;
-    height: 100%;
-    max-height: 0;
-    transition: max-height 0.3s ease-out;
+	overflow: hidden;
+	outline: 0;
+	transition: height 0.3s, padding 0.3s;
 }
 
-.collapse.active {
-    max-height: 500px;
+.collapse:not(.active) {
+	overflow: hidden;
+	height: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
 }
 
 .collapse-wrap {
-    opacity: 0.5;
-    transition: all 0.1s;
+	transition: opacity 0.1s;
 }
 
-.collapse:not(.active) .collapse-wrap {
-    padding-top: 0;
-    padding-bottom: 0;
-    height: 0;
-}
-
-.active > .collapse-wrap {
-    height: auto;
-    opacity: 0.9;
+.collapse:not(.active) > .collapse-wrap {
+	opacity: 0.3;
 }
 
 .arch .arch-p2 {
-    padding: 1rem;
+	padding: 1rem;
 }
 
 .arch .arch-px2 {
-    padding-right: 1rem;
-    padding-left: 1rem;
+	padding-right: 1rem;
+	padding-left: 1rem;
 }
 
 .arch .arch-py1 {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 }
 
 .arch .arch-pt1 {
-    padding-top: 0.5rem;
+	padding-top: 0.5rem;
 }
 
 .arch .arch-pb3 {
-    padding-bottom: 1.5rem;
+	padding-bottom: 1.5rem;
 }
 
 .arch .arch-f-plus {
-    font-size: 1.1rem;
+	font-size: 1.1rem;
 }
 
 .arch .arch-text-center {
-    text-align: center;
+	text-align: center;
 }
 
 .arch .arch-overflow-hidden {
-    overflow: hidden;
+	overflow: hidden;
 }
 
 .o-crop {
-    position: relative;
-    display: block;
-    overflow: hidden;
-    width: 100%;
+	position: relative;
+	display: block;
+	overflow: hidden;
+	width: 100%;
 }
 
 .o-crop--1x1 {
-    padding-top: 100%;
+	padding-top: 100%;
 }
 
 .o-crop--4x3 {
-    padding-top: 75%;
+	padding-top: 75%;
 }
 
 .o-crop--16x9 {
-    padding-top: 56.25%;
+	padding-top: 56.25%;
 }
 
 .o-crop__content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 
 .cta-content {
-    z-index: 1;
-    margin-left: 4rem;
-    bottom: 2rem;
-    color: #fff;
-    position: absolute;
-    white-space: initial;
-    font-size: 1rem;
-    line-height: 1.5;
+	z-index: 1;
+	margin-left: 4rem;
+	bottom: 2rem;
+	color: #fff;
+	position: absolute;
+	white-space: initial;
+	font-size: 1rem;
+	line-height: 1.5;
 }
 
 .cta-text {
-    z-index: 1;
-    max-width: 80%;
+	z-index: 1;
+	max-width: 80%;
 }
 
 .arch-grad-overlay:after {
-    background: linear-gradient(rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.6) 100%);
-    content: "";
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+	background: linear-gradient(rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.6) 100%);
+	content: "";
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 
 .arch .flag-body > header + * {
-    padding-top: 0;
+	padding-top: 0;
 }
