@@ -383,3 +383,8 @@ a:hover > .chevron-toggle {
 .arch .flag-body > header + * {
 	padding-top: 0;
 }
+
+.arch-no-title .arch-grad-overlay:after {
+	background: none;
+	content: none;	
+}

@@ -956,6 +956,9 @@ http://flickity.metafizzy.co
     width: 100%; }
   html .arch .flag-body > header + * {
     padding-top: 0; }
+  html .arch-no-title .arch-grad-overlay:after {
+    background: none;
+    content: none; }
   html .school_system-macs .school-system-logo {
     color: #112a57; }
   html body {
