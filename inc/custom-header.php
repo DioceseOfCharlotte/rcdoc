@@ -57,11 +57,11 @@ function abraham_custom_header_wp_head() {
 	if ( $term_image ) {
 		$bg_image = wp_get_attachment_image_url( $term_image, 'abe-hd' );
 
-	} elseif ( $GLOBALS['cptarchives'] && has_post_thumbnail( $cptarchives->get_archive_id() ) ) {
-		$bg_image = wp_get_attachment_image_url( get_post_thumbnail_id( $cptarchives->get_archive_id() ), 'abe-hd' );
-
 	} elseif ( has_post_thumbnail() ) {
 		$bg_image = wp_get_attachment_image_url( get_post_thumbnail_id(), 'abe-hd' );
+
+	} elseif ( $GLOBALS['cptarchives'] && has_post_thumbnail( $cptarchives->get_archive_id() ) ) {
+		$bg_image = wp_get_attachment_image_url( get_post_thumbnail_id( $cptarchives->get_archive_id() ), 'abe-hd' );
 
 	} elseif ( get_header_image() ) {
 		$bg_image = get_header_image();
