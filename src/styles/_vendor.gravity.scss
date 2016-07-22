@@ -34,9 +34,37 @@
 	font-size: 90%;
 }
 
+.gform_wrapper .gform_page_footer {
+	text-align: center;
+}
 .gform_wrapper ul.gform_fields li.gfield {
 	padding: 0.5rem;
 }
+
+.gform_save_link {
+	float: right;
+	font-weight: normal;
+}
+
+.gform_wrapper .gf_page_steps {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+	padding-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.gform_wrapper .gf_step {
+    margin: 0;
+    padding: .5rem;
+    height: auto;
+    text-align: center;
+}
+
+.gform_wrapper .gf_step_clear {
+    display: none;
+}
+
 // .gv-list-view-content-description {
 // 	width: 100%;
 // }

@@ -1137,8 +1137,40 @@ html .gform_wrapper .instruction {
 	font-size: 90%;
 }
 
+html .gform_wrapper .gform_page_footer {
+	text-align: center;
+}
+
 html .gform_wrapper ul.gform_fields li.gfield {
 	padding: 0.5rem;
+}
+
+html .gform_save_link {
+	float: right;
+	font-weight: normal;
+}
+
+html .gform_wrapper .gf_page_steps {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-justify-content: space-around;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+	font-weight: bold;
+	padding-top: 2.5rem;
+	margin-bottom: 1.5rem;
+}
+
+html .gform_wrapper .gf_step {
+	margin: 0;
+	padding: .5rem;
+	height: auto;
+	text-align: center;
+}
+
+html .gform_wrapper .gf_step_clear {
+	display: none;
 }
 
 html .entry-content > .gv-grid {
