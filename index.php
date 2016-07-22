@@ -19,6 +19,8 @@ get_header(); ?>
 	<?php
 endif; ?>
 
+	<?php tha_content_before(); ?>
+	
 	<main <?php hybrid_attr( 'content' ); ?>>
 
 		<?php if ( have_posts() ) : ?>
