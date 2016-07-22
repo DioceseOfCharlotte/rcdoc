@@ -16,7 +16,7 @@ add_action( 'wp', 'custom_maybe_activate_user', 0 );
 
 function meh_remove_menu_pages() {
 
-	if ( class_exists( 'Jetpack' ) && ! current_user_can( 'manage_options' ) ) {
+	if ( ! current_user_can( 'manage_options' ) ) {
 		remove_menu_page( 'profile.php' );                   	//profile
 	}
 }

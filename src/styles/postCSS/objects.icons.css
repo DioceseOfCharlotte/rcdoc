@@ -44,6 +44,14 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 	@mixin icon office;
 }
 
+.gform_save_link::before {
+	@mixin icon backup;
+
+	width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+}
+
 .show-icons a[href*="/parishes/"]:before,
 .icon-parish:before {
 	@mixin icon parishes;
