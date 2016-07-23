@@ -50,7 +50,11 @@ function rcdoc_setup() {
  * Enqueue scripts and styles.
  */
 function rcdoc_scripts() {
+
 	$suffix = hybrid_get_min_suffix();
+
+	wp_enqueue_style( 'rcdoc_fonts', 'https://fonts.googleapis.com/css?family=Cormorant:500' );
+
 	wp_enqueue_style( 'oldie_child', trailingslashit( get_stylesheet_directory_uri() )."css/oldie{$suffix}.css", array( 'hybrid-parent', 'hybrid-style', 'oldie' ) );
 	wp_style_add_data( 'oldie_child', 'conditional', 'IE' );
 

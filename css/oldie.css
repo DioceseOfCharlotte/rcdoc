@@ -17,6 +17,11 @@ GitHub Theme URI: https://github.com/DioceseOfCharlotte/rcdoc
   .is-animating .tile:first-child, .is-animating :first-child + * + .tile, .is-animating :first-child + .tile, .is-animating :first-child + * + * + .tile, .is-animating :first-child + * + * + * + .tile, .is-animating :first-child + * + * + * + * + .tile, .is-animating :first-child + * + * + * + * + * + .tile, .is-animating :first-child + * + * + * + * + * + * + .tile, .is-animating :first-child + * + * + * + * + * + * + * + .tile, .is-animating :first-child + * + * + * + * + * + * + * + * + .tile {
     animation-play-state: running; }
 
+.u-text-display,
+.u-text-display > a {
+  font-family: Cormorant, serif;
+  font-weight: 500; }
+
 .tile-icon {
   max-height: 90px;
   max-width: 90px;
