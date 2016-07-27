@@ -88,7 +88,7 @@ function rcdoc_scripts() {
 function abe_display_font() {
 	$font_dir = trailingslashit( get_stylesheet_directory_uri() ) . 'fonts/';
 
-	echo '<link rel="preload" href="' . $font_dir . 'cormorant-medium-webfont.woff2" as="font" type="font/woff2" crossorigin>'; ?>
+	echo '<link rel="preload" href="' . $font_dir . 'cormorant-regular-webfont.woff2" as="font" type="font/woff2" crossorigin>'; ?>
 
 	<style type="text/css">
 		@font-face {
