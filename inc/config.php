@@ -6,7 +6,7 @@
  */
 
 	add_action( 'init', 'doc_arch_posts' );
-	//add_filter( 'script_loader_tag', 'abe_defer_scripts', 10, 3 );
+	add_filter( 'script_loader_tag', 'abe_defer_scripts', 10, 3 );
 	add_filter( 'cleaner_gallery_defaults', 'meh_gallery_default_args' );
 
 	/**
