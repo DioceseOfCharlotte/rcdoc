@@ -26,6 +26,7 @@ require get_stylesheet_directory() . '/inc/shorts-ui.php';
 require get_stylesheet_directory() . '/inc/metaboxes.php';
 add_action( 'after_setup_theme', 'rcdoc_setup' );
 add_action( 'wp_enqueue_scripts', 'rcdoc_scripts' );
+add_action( 'wp_head', 'abe_display_font' );
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -53,7 +54,7 @@ function rcdoc_scripts() {
 
 	$suffix = hybrid_get_min_suffix();
 
-	wp_enqueue_style( 'rcdoc_fonts', 'https://fonts.googleapis.com/css?family=Cormorant:500' );
+	//wp_enqueue_style( 'rcdoc_fonts', 'https://fonts.googleapis.com/css?family=Cormorant:500' );
 
 	wp_enqueue_style( 'oldie_child', trailingslashit( get_stylesheet_directory_uri() )."css/oldie{$suffix}.css", array( 'hybrid-parent', 'hybrid-style', 'oldie' ) );
 	wp_style_add_data( 'oldie_child', 'conditional', 'IE' );
@@ -75,7 +76,46 @@ function rcdoc_scripts() {
 		trailingslashit( get_stylesheet_directory_uri() ).'js/main.min.js',
 		false, false, true
 	);
+
+	wp_enqueue_script(
+		'font_loader',
+		'https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.24/webfontloader.js',
+		false, false, true
+	);
+	wp_add_inline_script( 'font_loader', 'WebFont.load({google:{families: ["Cormorant:400,500,500i,600,600i,700","Roboto:400,400i,500,700"]}});' );
 }
+
+function abe_display_font() {
+	$font_dir = trailingslashit( get_stylesheet_directory_uri() ) . 'fonts/';
+
+	echo '<link rel="preload" href="' . $font_dir . 'cormorant-medium-webfont.woff2" as="font" type="font/woff2" crossorigin>'; ?>
+
+	<style type="text/css">
+		@font-face {
+			font-family: 'Cormorant';
+			font-style: normal;
+			font-weight: 400;
+			src: url('<?= $font_dir ?>cormorant-regular-webfont.woff2') format('woff2'),
+			url('<?= $font_dir ?>cormorant-regular-webfont.woff') format('woff');
+		}
+		.u-text-display,.u-text-display>a,.u-dropcap::first-letter {
+			font-family: Cormorant, serif;
+			font-weight: normal;
+		}
+		.wf-active body {
+			font-family: Roboto, sans-serif;
+			font-weight: 400;
+		}
+		.wf-active .u-text-display,.wf-active .u-text-display>a {
+			font-family: Cormorant, serif;
+			font-weight: 600;
+		}
+		.wf-active .u-dropcap::first-letter {
+			font-family: Cormorant, serif;
+			font-weight: 700;
+		}
+	</style>
+<?php }
 
 /**
  * Theme Colors.
