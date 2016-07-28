@@ -82,7 +82,7 @@ function rcdoc_scripts() {
 		'https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.24/webfontloader.js',
 		false, false, true
 	);
-	wp_add_inline_script( 'font_loader', 'WebFont.load({google:{families: ["Cormorant+Upright:400,500,600,700","Roboto:400,400i,500,700"]}});' );
+	wp_add_inline_script( 'font_loader', 'WebFont.load({google:{families: ["Cormorant+Upright:400,500,600,700","Roboto:300,300i,400,400i,500,700"]}});' );
 }
 
 function abe_display_font() {
