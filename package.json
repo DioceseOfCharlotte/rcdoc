@@ -40,7 +40,7 @@
     "postcss-nested": "^1.0.0",
     "postcss-scss": "^0.1.9",
     "run-sequence": "^1.2.2",
-    "stylefmt": "^4.2.0",
+    "stylefmt": "^4.2.1",
     "stylelint": "^7.0.3",
     "stylelint-config-standard": "^11.0.0"
   },
