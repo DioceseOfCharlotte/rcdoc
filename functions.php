@@ -82,37 +82,37 @@ function rcdoc_scripts() {
 		'https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.24/webfontloader.js',
 		false, false, true
 	);
-	wp_add_inline_script( 'font_loader', 'WebFont.load({google:{families: ["Cormorant:400,500,500i,600,600i,700","Roboto:400,400i,500,700"]}});' );
+	wp_add_inline_script( 'font_loader', 'WebFont.load({google:{families: ["Cormorant+Upright:400,500,600,700","Roboto:400,400i,500,700"]}});' );
 }
 
 function abe_display_font() {
 	$font_dir = trailingslashit( get_stylesheet_directory_uri() ) . 'fonts/';
 
-	echo '<link rel="preload" href="' . $font_dir . 'cormorant-regular-webfont.woff2" as="font" type="font/woff2" crossorigin>'; ?>
+	echo '<link rel="preload" href="' . $font_dir . 'cormorantupright-medium-webfont.woff2" as="font" type="font/woff2" crossorigin>'; ?>
 
 	<style type="text/css">
 		@font-face {
-			font-family: 'Cormorant';
+			font-family: 'Cormorant Upright';
 			font-style: normal;
-			font-weight: 400;
-			src: url('<?= $font_dir ?>cormorant-regular-webfont.woff2') format('woff2'),
-			url('<?= $font_dir ?>cormorant-regular-webfont.woff') format('woff');
+			font-weight: 500;
+			src:url('<?= $font_dir ?>cormorantupright-medium-webfont.woff2') format('woff2'),
+				url('<?= $font_dir ?>cormorantupright-medium-webfont.woff') format('woff');
 		}
 		.u-text-display,.u-text-display>a,.u-dropcap::first-letter {
-			font-family: Cormorant, serif;
-			font-weight: normal;
+			font-family: Cormorant Upright, serif;
+			font-weight: 500;
 		}
 		.wf-active body {
 			font-family: Roboto, sans-serif;
 			font-weight: 400;
 		}
 		.wf-active .u-text-display,.wf-active .u-text-display>a {
-			font-family: Cormorant, serif;
-			font-weight: 600;
+			font-family: Cormorant Upright, serif;
+			font-weight: 500;
 		}
 		.wf-active .u-dropcap::first-letter {
-			font-family: Cormorant, serif;
-			font-weight: 700;
+			font-family: Cormorant Upright, serif;
+			font-weight: 600;
 		}
 	</style>
 <?php }
