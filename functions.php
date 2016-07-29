@@ -57,7 +57,7 @@ function rcdoc_scripts() {
 	wp_enqueue_style( 'oldie_child', trailingslashit( get_stylesheet_directory_uri() )."css/oldie{$suffix}.css", array( 'hybrid-parent', 'hybrid-style', 'oldie' ) );
 	wp_style_add_data( 'oldie_child', 'conditional', 'IE' );
 
-	wp_enqueue_style( 'rcdoc_google_font', 'https://fonts.googleapis.com/css?family=Cormorant+Upright:400,500,600,700|Roboto:300,300i,400,400i,500,500i,700' );
+	wp_enqueue_style( 'rcdoc_google_font', 'https://fonts.googleapis.com/css?family=Cormorant+Upright:400,500,600,700|Roboto:300,400,500,700' );
 
 	wp_register_script(
 		'arch-tabs',
@@ -93,24 +93,33 @@ function rcdoc_scripts() {
 }
 
 function abe_display_font() {
-	$font_dir = trailingslashit( get_stylesheet_directory_uri() ) . 'fonts/';
+	$font_dir = trailingslashit( get_stylesheet_directory_uri() ) . 'fonts/'; ?>
 
-	echo '<link rel="preload" href="' . $font_dir . 'cormorantupright-medium-webfont.woff2" as="font" type="font/woff2" crossorigin>'; ?>
+	<link rel="preload" href="<?= $font_dir ?>cormorantupright-medium-webfont.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="<?= $font_dir ?>roboto-regular-webfont.woff2" as="font" type="font/woff2" crossorigin>
 
 	<style type="text/css">
 		@font-face {
-			font-family: 'Cormorant Fallback';
+			font-family: 'CormorantFB';
 			font-style: normal;
 			font-weight: 500;
 			src:url('<?= $font_dir ?>cormorantupright-medium-webfont.woff2') format('woff2'),
 				url('<?= $font_dir ?>cormorantupright-medium-webfont.woff') format('woff');
 		}
+		@font-face {
+		    font-family: 'RobotoFB';
+		    src: url('<?= $font_dir ?>roboto-regular-webfont.woff2') format('woff2'),
+		         url('<?= $font_dir ?>roboto-regular-webfont.woff') format('woff');
+		    font-weight: 400;
+		    font-style: normal;
+
+		}
 		body {
-			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", "Helvetica Neue", Arial, sans-serif;
+			font-family: RobotoFB, sans-serif;
 			font-weight: 400;
 		}
 		.u-text-display,.u-text-display>a,.u-dropcap::first-letter {
-			font-family: "Cormorant Fallback", serif;
+			font-family: CormorantFB, serif;
 			font-weight: 500;
 		}
 		.fontB body {
