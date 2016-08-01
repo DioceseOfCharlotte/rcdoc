@@ -64,3 +64,16 @@ function custom_maybe_activate_user() {
 
 	exit();
 }
+
+function doc_omnisearch_add_providers() {
+    //Make sure Omnisearch class exists
+    if ( class_exists( 'Jetpack_Omnisearch_Posts' ) ) {
+	//Add new post types using the post type slug
+        new Jetpack_Omnisearch_Posts( 'vocation' );
+        new Jetpack_Omnisearch_Posts( 'education' );
+        new Jetpack_Omnisearch_Posts( 'development' );
+		new Jetpack_Omnisearch_Posts( 'human_resources' );
+    }
+}
+//Hook your function to the 'omnisearch_add_providers' hook
+add_action('omnisearch_add_providers', 'doc_omnisearch_add_providers');
