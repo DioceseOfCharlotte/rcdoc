@@ -12,6 +12,7 @@ add_action( 'login_enqueue_scripts', 'doc_login_logo' );
 add_filter( 'login_headerurl', 'doc_login_logo_url' );
 add_filter( 'login_headertitle', 'doc_login_logo_url_title' );
 add_action( 'wp', 'custom_maybe_activate_user', 0 );
+add_action('omnisearch_add_providers', 'doc_omnisearch_add_providers');
 
 
 function meh_remove_menu_pages() {
@@ -65,6 +66,7 @@ function custom_maybe_activate_user() {
 	exit();
 }
 
+//Jetpack_Omnisearch
 function doc_omnisearch_add_providers() {
     //Make sure Omnisearch class exists
     if ( class_exists( 'Jetpack_Omnisearch_Posts' ) ) {
@@ -75,5 +77,3 @@ function doc_omnisearch_add_providers() {
 		new Jetpack_Omnisearch_Posts( 'human_resources' );
     }
 }
-//Hook your function to the 'omnisearch_add_providers' hook
-add_action('omnisearch_add_providers', 'doc_omnisearch_add_providers');
