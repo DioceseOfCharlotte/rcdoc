@@ -167,10 +167,10 @@ function doc_display_facets() {
  * @access public
  * @param array $args Post status Private.
  */
-function wpdr_facetwp_indexer_query_args( $args ) {
-	$args['post_status'] = array( 'publish', 'private' );
-	return $args;
-}
+// function wpdr_facetwp_indexer_query_args( $args ) {
+// 	$args['post_status'] = array( 'publish', 'private' );
+// 	return $args;
+// }
 
 
 function fwp_load_more() {

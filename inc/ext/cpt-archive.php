@@ -51,16 +51,5 @@ function cpt_archive_labels( $args, $type ) {
 		$args['taxonomies']   = array( 'agency' );
 	}
 
-	if ( 'document' === $type ) {
-		$args['menu_icon'] = 'dashicons-media-document';
-		$args['supports']  = array(
-			'title',
-			'author',
-			'revisions',
-			'excerpt',
-			'archive',
-		);
-	}
-
 	return $args;
 }
