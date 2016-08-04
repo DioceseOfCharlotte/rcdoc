@@ -1,8 +1,8 @@
 <?php
 /**
- * Single Parish Template.
+ * Single Document Template.
  *
- * @package  RCDOC
+ * @package  doc-post-types
  */
 ?>
 
@@ -16,7 +16,7 @@
 			<?php $doc = get_post_meta( get_the_ID(), 'dpt_document_id', true ); ?>
 			<?php $doc_link = wp_get_attachment_url( $doc ); ?>
 
-			<?php if ( current_user_can( 'read_post' ) ) : ?>
+			<?php if ( current_user_can( 'read_post', get_the_ID() ) ) : ?>
 
 				<?php if ( $doc ) : ?>
 
