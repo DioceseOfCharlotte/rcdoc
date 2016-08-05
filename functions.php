@@ -25,6 +25,7 @@ require get_stylesheet_directory() . '/inc/shortcodes.php';
 require get_stylesheet_directory() . '/inc/shorts-ui.php';
 require get_stylesheet_directory() . '/inc/metaboxes.php';
 add_action( 'after_setup_theme', 'rcdoc_setup' );
+add_action( 'widgets_init', 'doc_widgets_init' );
 add_action( 'wp_enqueue_scripts', 'rcdoc_scripts' );
 add_action( 'wp_head', 'abe_display_font' );
 
@@ -45,6 +46,21 @@ function rcdoc_setup() {
 	add_filter( 'abe_add_hierarchy_cpts', 'rcdoc_hierarchy_cpts' );
 	add_filter( 'abe_add_non_hierarchy_cpts', 'rcdoc_non_hierarchy_cpts' );
 	add_filter( 'arch_add_post_types', 'rcdoc_non_hierarchy_cpts' );
+}
+
+/**
+ * Register widget area.
+ */
+function doc_widgets_init() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Employee Sidebar', 'doc' ),
+		'id'            => 'employee-sidebar',
+		'description'   => esc_html__( 'Add widgets here.', 'doc' ),
+		'before_widget' => '<section id="%1$s" class="widget u-p2 u-mb3 u-bg-frost-1 u-br %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title u-px1 u-text-display">',
+		'after_title'   => '</h3>',
+	) );
 }
 
 /**
