@@ -1330,6 +1330,14 @@ html .gv-widget-search {
 	text-align: center;
 }
 
+html .gv-search input {
+	width: 100%;
+}
+
+html .gv-widget-search .gv-search-box.gv-search-box-submit {
+	width: auto;
+}
+
 html .frame {
 	position: relative;
 	margin: 0 auto;
