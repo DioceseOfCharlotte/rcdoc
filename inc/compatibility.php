@@ -7,13 +7,16 @@
 
 add_action( 'admin_menu', 'meh_remove_menu_pages' );
 add_action( 'admin_init', 'meh_remove_jetpack_menu' );
-add_filter( 'login_redirect', create_function( '$url,$query,$user', 'return home_url();' ), 10, 3 );
+add_filter('login_redirect', 'doc_login_redirect', 10, 3 );
 add_action( 'login_enqueue_scripts', 'doc_login_logo' );
 add_filter( 'login_headerurl', 'doc_login_logo_url' );
 add_filter( 'login_headertitle', 'doc_login_logo_url_title' );
 add_action( 'wp', 'custom_maybe_activate_user', 0 );
 add_action('omnisearch_add_providers', 'doc_omnisearch_add_providers');
 
+function doc_login_redirect( $url, $request, $user ) {
+	return $request;
+}
 
 function meh_remove_menu_pages() {
 
