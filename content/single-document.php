@@ -20,16 +20,14 @@
 
 				<?php if ( $doc ) : ?>
 
+					<div class="u-text-right new-tab-link u-1of1 u-mb2"><a class="u-link" href="<?php echo $doc_link ?>" target="_blank" rel="noopener">View this document in a new tab <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class=" u-ml1 v-icon u-f-plus"><path d="M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6v2H5v12h12v-6h2zM13 3v2h4.586l-7.793 7.793 1.414 1.414L19 6.414V11h2V3h-8z"/></svg></a></div>
+
 				<object data='<?php echo $doc_link ?>#pagemode=bookmarks'
 				        type='application/pdf'
 				        width='100%'
 				        height='600px'>
 					<h4 class="u-1of1 u-text-center">Please download the <strong><?php the_title(); ?></strong> to view it.</h4>
 				</object>
-
-				<div class="u-1of1 u-text-center u-p2">
-					<a class="btn btn-hollow" href="<?php echo $doc_link ?>" download><svg xmlns="http://www.w3.org/2000/svg" width="1.4em" height="1.4em" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/><path fill="none" d="M0 0h24v24H0z"/></svg> Download <?php the_title(); ?></a>
-				</div>
 
 				<?php else : ?>
 
