@@ -549,6 +549,12 @@ body:not(.home) .site-branding {
 	flex-direction: column-reverse;
 }
 
+@media screen and (min-width: 48em) {
+	.doc-embed {
+		height: 80vh;
+	}
+}
+
 .tiled-icon {
 	font-size: 13rem;
 	line-height: 1;

@@ -12,3 +12,9 @@
 .title-text.u-flex-col {
 	flex-direction: column-reverse;
 }
+
+.doc-embed {
+	@include md {
+		height: 80vh;
+	}
+}
