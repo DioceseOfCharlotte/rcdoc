@@ -16,7 +16,7 @@
 			<?php $doc = get_post_meta( get_the_ID(), 'dpt_document_id', true ); ?>
 			<?php $doc_link = wp_get_attachment_url( $doc ); ?>
 
-			<?php if ( current_user_can( 'read_post', get_the_ID() ) ) : ?>
+			<?php if ( members_can_current_user_view_post( get_the_ID() ) ) : ?>
 
 				<?php if ( $doc ) : ?>
 
