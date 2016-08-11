@@ -1115,6 +1115,10 @@ html .gv-list-view {
 	}
 }
 
+html .gv-grid .staff-list p {
+	margin-bottom: 0.5em;
+}
+
 html .gv-list-view-content .gv-list-view-content-image:empty {
 	display: none;
 }

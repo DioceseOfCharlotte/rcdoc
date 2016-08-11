@@ -64,6 +64,12 @@ add_filter( 'gform_pre_validation_11', 'populate_school' );
 add_filter( 'gform_pre_submission_filter_11', 'populate_school' );
 add_filter( 'gform_admin_pre_render_11', 'populate_school' );
 
+// IT Request
+
+add_filter( 'gform_pre_render_14', 'populate_parish' );
+add_filter( 'gform_pre_validation_14', 'populate_parish' );
+add_filter( 'gform_pre_submission_filter_14', 'populate_parish' );
+add_filter( 'gform_admin_pre_render_14', 'populate_parish' );
 
 
 //add_filter( 'gform_column_input_3_26_2', 'set_parish_column', 10, 5 );
