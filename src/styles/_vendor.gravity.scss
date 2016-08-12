@@ -13,9 +13,9 @@
 		margin: 0 .75rem 1.5rem;
 	}
 
-	// @include lg {
-	// 	max-width: calc(33% - 1.5rem);
-	// }
+	@include lg {
+		max-width: calc(33% - 1.5rem);
+	}
 }
 
 .gv-grid .staff-list p {

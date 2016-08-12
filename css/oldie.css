@@ -650,6 +650,8 @@ http://flickity.metafizzy.co
     html .gv-list-view {
   max-width: calc(50% - 1.5rem);
   margin: 0 12px 24px; }
+    html .gv-list-view {
+  max-width: calc(33% - 1.5rem); }
   html .gv-grid .staff-list p {
     margin-bottom: 0.5em; }
   html .gv-list-view-content .gv-list-view-content-image:empty {
