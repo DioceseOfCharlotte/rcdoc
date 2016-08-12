@@ -1,16 +1,16 @@
 .gv-list-view {
 	border-width: 0;
 	border-radius: 0.2rem;
-	margin: 0 .5rem .75rem;
+	margin: 0 0.5rem 0.75rem;
 	width: 100%;
 	background: #fff;
 	position: relative;
 	padding: 0.5rem;
-	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 
 	@include md {
 		max-width: calc(50% - 1.5rem);
-		margin: 0 .75rem 1.5rem;
+		margin: 0 0.75rem 1.5rem;
 	}
 
 	@include lg {
@@ -31,15 +31,15 @@
 }
 
 .gv-search-box-links a {
-    padding: 0.5rem;
-    display: inline-block;
-    box-shadow: none;
+	padding: 0.5rem;
+	display: inline-block;
+	box-shadow: none;
 }
 
 .entry.type-gravityview {
-    background-color: transparent;
-    box-shadow: none;
-    margin: 0;
+	background-color: transparent;
+	box-shadow: none;
+	margin: 0;
 }
 
 .gv-container-no-results {
@@ -78,6 +78,7 @@
 .gform_wrapper .gform_page_footer {
 	text-align: center;
 }
+
 .gform_wrapper ul.gform_fields li.gfield {
 	padding: 0.5rem;
 }
@@ -88,22 +89,22 @@
 }
 
 .gform_wrapper .gf_page_steps {
-    display: flex;
-    justify-content: space-around;
-    font-weight: bold;
+	display: flex;
+	justify-content: space-around;
+	font-weight: bold;
 	padding-top: 2.5rem;
-    margin-bottom: 1.5rem;
+	margin-bottom: 1.5rem;
 }
 
 .gform_wrapper .gf_step {
-    margin: 0;
-    padding: .5rem;
-    height: auto;
-    text-align: center;
+	margin: 0;
+	padding: 0.5rem;
+	height: auto;
+	text-align: center;
 }
 
 .gform_wrapper .gf_step_clear {
-    display: none;
+	display: none;
 }
 
 // .gv-list-view-content-description {
@@ -233,7 +234,7 @@ ul.gravityview-az-filter {
 }
 
 .gv-search input {
-    width: 100%;
+	width: 100%;
 }
 
 .gv-widget-search .gv-search-box.gv-search-box-submit {
