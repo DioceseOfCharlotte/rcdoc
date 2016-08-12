@@ -18,6 +18,13 @@
 	}
 }
 
+.gv-datatables-container {
+    background-color: #fff;
+    padding: $space3;
+    margin: $space3;
+	box-shadow: $shadow-1;
+    border-radius: $base-radius;
+}
 .gv-grid .staff-list p {
 	margin-bottom: 0.5em;
 }

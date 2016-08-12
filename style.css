@@ -40,7 +40,7 @@ GitHub Theme URI: https://github.com/DioceseOfCharlotte/rcdoc
 	-webkit-animation-play-state: running;
 	animation-play-state: running;
 }
-
+/* Box Shadows */
 .tile-icon {
 	max-height: 90px;
 	max-width: 90px;
@@ -1119,6 +1119,14 @@ html .gv-list-view {
 	html .gv-list-view {
 		max-width: calc(33% - 1.5rem);
 	}
+}
+
+html .gv-datatables-container {
+	background-color: #fff;
+	padding: 1.5rem;
+	margin: 1.5rem;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+	border-radius: 2px;
 }
 
 html .gv-grid .staff-list p {

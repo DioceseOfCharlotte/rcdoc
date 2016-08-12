@@ -17,6 +17,7 @@ GitHub Theme URI: https://github.com/DioceseOfCharlotte/rcdoc
   .is-animating .tile:first-child, .is-animating :first-child + * + .tile, .is-animating :first-child + .tile, .is-animating :first-child + * + * + .tile, .is-animating :first-child + * + * + * + .tile, .is-animating :first-child + * + * + * + * + .tile, .is-animating :first-child + * + * + * + * + * + .tile, .is-animating :first-child + * + * + * + * + * + * + .tile, .is-animating :first-child + * + * + * + * + * + * + * + .tile, .is-animating :first-child + * + * + * + * + * + * + * + * + .tile {
     animation-play-state: running; }
 
+/* Box Shadows */
 .tile-icon {
   max-height: 90px;
   max-width: 90px;
@@ -652,6 +653,12 @@ http://flickity.metafizzy.co
   margin: 0 12px 24px; }
     html .gv-list-view {
   max-width: calc(33% - 1.5rem); }
+  html .gv-datatables-container {
+    background-color: #fff;
+    padding: 24px;
+    margin: 24px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 2px; }
   html .gv-grid .staff-list p {
     margin-bottom: 0.5em; }
   html .gv-list-view-content .gv-list-view-content-image:empty {
