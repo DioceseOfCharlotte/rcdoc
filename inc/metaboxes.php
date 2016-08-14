@@ -287,16 +287,27 @@ function cmb2_get_post_list( $post_type = 'post', $args = array() ) {
  */
 function get_tax_icons( $icon_options = array() ) {
 
-	$icons = wp_get_theme( get_template() )->get_files( 'svg', 2 );
+	$icon_options = array(
+		'book',
+		'book-closed',
+		'c-charities',
+		'globe',
+		'graph',
+		'pulpit',
+		'script',
+		'shield',
+	);
 
-	foreach ( $icons as &$icon ) {
-		$is_icon = basename( $icon );
-		$icon_name = basename( $icon, '.svg' );
-		if ( locate_template( 'images/icons/' . $is_icon ) ) {
-			$icon_options[ $icon_name ] = $icon_name;
-		}
-	}
-	unset( $icon );
+	// $icons = wp_get_theme( get_template() )->get_files( 'svg', 2 );
+	//
+	// foreach ( $icons as &$icon ) {
+	// 	$is_icon = basename( $icon );
+	// 	$icon_name = basename( $icon, '.svg' );
+	// 	if ( locate_template( 'images/tax-icons/' . $is_icon ) ) {
+	// 		$icon_options[ $icon_name ] = $icon_name;
+	// 	}
+	// }
+	// unset( $icon );
 
 	return $icon_options;
 
