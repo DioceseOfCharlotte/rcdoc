@@ -12,7 +12,6 @@ add_action( 'login_enqueue_scripts', 'doc_login_logo' );
 add_filter( 'login_headerurl', 'doc_login_logo_url' );
 add_filter( 'login_headertitle', 'doc_login_logo_url_title' );
 add_action( 'wp', 'custom_maybe_activate_user', 0 );
-add_action('omnisearch_add_providers', 'doc_omnisearch_add_providers');
 
 function doc_login_redirect( $url, $request, $user ) {
 	return $request;
@@ -67,16 +66,4 @@ function custom_maybe_activate_user() {
 	require_once( $template_path );
 
 	exit();
-}
-
-//Jetpack_Omnisearch
-function doc_omnisearch_add_providers() {
-    //Make sure Omnisearch class exists
-    if ( class_exists( 'Jetpack_Omnisearch_Posts' ) ) {
-	//Add new post types using the post type slug
-        new Jetpack_Omnisearch_Posts( 'vocation' );
-        new Jetpack_Omnisearch_Posts( 'education' );
-        new Jetpack_Omnisearch_Posts( 'development' );
-		new Jetpack_Omnisearch_Posts( 'human_resources' );
-    }
 }
