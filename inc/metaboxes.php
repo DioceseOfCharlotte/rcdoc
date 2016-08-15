@@ -17,29 +17,29 @@ function doc_register_metaboxes() {
 	/**
 	* Alias metabox.
 	*/
-	$doc_dept_alias = new_cmb2_box( array(
-		'id'            => $prefix . 'alias_metabox',
-		'title'         => __( 'Dept Alias', 'cmb2' ),
-		'object_types'  => array( 'department' ),
-		'context'       => 'side',
-		'priority'      => 'low',
-	) );
-
-	$doc_dept_alias->add_field( array(
-		'name' => __( 'Department has a seperate landing page?', 'cmb2' ),
-		'desc' => __( 'Yes. (this page will not be accessed directly.)', 'cmb2' ),
-		'id'   => $prefix . 'alias_checkbox',
-		'type' => 'checkbox',
-	) );
-
-	$doc_dept_alias->add_field( array(
-	    'name'        => __( 'Alias of' ),
-		'desc'             => __( 'The landing page for this dept:', 'cmb2' ),
-	    'id'          => $prefix . 'alias_landing',
-		'type'    => 'select',
-		'show_option_none' => true,
-	    'options' => cmb2_get_post_list( $post_type = array( 'cpt_archive' ) ),
-	) );
+	// $doc_dept_alias = new_cmb2_box( array(
+	// 	'id'            => $prefix . 'alias_metabox',
+	// 	'title'         => __( 'Dept Alias', 'cmb2' ),
+	// 	'object_types'  => array( 'department' ),
+	// 	'context'       => 'side',
+	// 	'priority'      => 'low',
+	// ) );
+	//
+	// $doc_dept_alias->add_field( array(
+	// 	'name' => __( 'Department has a seperate landing page?', 'cmb2' ),
+	// 	'desc' => __( 'Yes. (this page will not be accessed directly.)', 'cmb2' ),
+	// 	'id'   => $prefix . 'alias_checkbox',
+	// 	'type' => 'checkbox',
+	// ) );
+	//
+	// $doc_dept_alias->add_field( array(
+	//     'name'        => __( 'Alias of' ),
+	// 	'desc'             => __( 'The landing page for this dept:', 'cmb2' ),
+	//     'id'          => $prefix . 'alias_landing',
+	// 	'type'    => 'select',
+	// 	'show_option_none' => true,
+	//     'options' => cmb2_get_post_list( $post_type = array( 'cpt_archive' ) ),
+	// ) );
 
 	/**
 	* Parent select Metaboxes.
