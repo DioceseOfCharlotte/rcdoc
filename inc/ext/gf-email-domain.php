@@ -174,6 +174,16 @@ class GWEmailDomainControl extends GW_Email_Domain_Validator { }
 						'stleocatholic.com',
 						'stmichaelsgastonia.org',
 						'spxschool.com',
+						//MACS
+						'stmarkcatholic.net',
+						'ctkchs.org',
+						'stgabrielschool.net',
+						'stannschool.net',
+						'charlottecatholic.com',
+						'htcms.net',
+						'stmatthewschool.net',
+						'olaschool.net',
+						'stpatrickschool.net',
 						),
 
 						'validation_message' => __( '<p class="u-regular">Please use your <strong>@charlottediocese.org</strong> email account. <strong>%s</strong> domains are not eligible for registration.</p><p class="u-italic u-regular">If you have a special circumstance please submit an <a href="/it/">IT Service Request</a>.</p>' ),
