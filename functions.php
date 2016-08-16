@@ -12,7 +12,6 @@
 require get_stylesheet_directory() . '/inc/config.php';
 require get_stylesheet_directory() . '/inc/compatibility.php';
 require get_stylesheet_directory() . '/inc/hooks.php';
-require get_stylesheet_directory() . '/inc/tax.php';
 require get_stylesheet_directory() . '/inc/ext/cpt-archive.php';
 require get_stylesheet_directory() . '/inc/bb-metaboxes.php';
 require get_stylesheet_directory() . '/inc/custom-header.php';
