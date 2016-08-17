@@ -52,16 +52,16 @@ function abraham_custom_header_wp_head() {
 
 	global $cptarchives;
 	$queried_object_id = get_queried_object_id();
-	$term_image = get_term_meta( $queried_object_id, 'image', true );
 	$post_image = get_post_meta( $queried_object_id, 'header_image', true );
 	$archive_image = $cptarchives->get_archive_meta( 'header_image', true );
+	$term_image = get_term_meta( $queried_object_id, 'image', true );
 	$bg_image = "";
 
-	if ( $GLOBALS['cptarchives'] && $archive_image ) {
-		$bg_image = wp_get_attachment_image_url( $archive_image, 'abe-hd-lg' );
-
-	} elseif ( $post_image ) {
+	if ( $post_image ) {
 		$bg_image = wp_get_attachment_image_url( $post_image, 'abe-hd-lg' );
+
+	} elseif ( $GLOBALS['cptarchives'] && $archive_image ) {
+		$bg_image = wp_get_attachment_image_url( $archive_image, 'abe-hd-lg' );
 
 	} elseif ( $term_image ) {
 		$bg_image = wp_get_attachment_image_url( $term_image, 'abe-hd-lg' );
