@@ -28,8 +28,8 @@ if ( ! class_exists( 'Doc_Post_Options' ) ) {
 			   'cpt_archive',
 		   	);
 
-			if ( ! in_array( $post_type, $doc_po, true ) )
-				return;
+			if ( ! in_array( $post_type, $doc_po, true ) ) {
+				return; }
 
 			$butterbean->register_manager(
 				'doc_accents',
@@ -42,7 +42,7 @@ if ( ! class_exists( 'Doc_Post_Options' ) ) {
 				   'cpt_archive',
 			   	),
 				'context'   => 'normal',
-				'priority'  => 'high'
+				'priority'  => 'high',
 				)
 			);
 
@@ -52,7 +52,7 @@ if ( ! class_exists( 'Doc_Post_Options' ) ) {
 				'doc_post_colors',
 				array(
 					'label' => 'Colors',
-					'icon'  => 'dashicons-art'
+					'icon'  => 'dashicons-art',
 				)
 			);
 
@@ -73,19 +73,6 @@ if ( ! class_exists( 'Doc_Post_Options' ) ) {
 					'label'       => 'Secondary color',
 				)
 			);
-
-			// $manager->register_control(
-			// 	new ButterBean_Control_FlatPickr(
-			// 		$manager,
-			// 		'be_event_start',
-			// 		array(
-			// 			'type'        => 'flatpickr',
-			// 			'section'     => 'doc_post_colors',
-			// 			'label'       => 'Start Date',
-			// 			'description' => 'Example description.'
-			// 		)
-			// 	)
-			// );
 
 			$manager->register_setting(
 				'doc_page_primary_color',
