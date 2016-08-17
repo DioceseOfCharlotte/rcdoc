@@ -7,7 +7,7 @@
 
 add_action( 'admin_menu', 'meh_remove_menu_pages' );
 add_action( 'admin_init', 'meh_remove_jetpack_menu' );
-add_filter('login_redirect', 'doc_login_redirect', 10, 3 );
+add_filter( 'login_redirect', 'doc_login_redirect', 10, 3 );
 add_action( 'login_enqueue_scripts', 'doc_login_logo' );
 add_filter( 'login_headerurl', 'doc_login_logo_url' );
 add_filter( 'login_headertitle', 'doc_login_logo_url_title' );
