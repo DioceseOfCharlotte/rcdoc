@@ -168,7 +168,7 @@ class GWEmailDomainControl extends GW_Email_Domain_Validator { }
 						'bmhs.us',
 						'immac.org',
 						'ihm-school.com',
-						'oldsch.org',
+						'olgsch.org',
 						'ourladyofmercyschool.org',
 						'salisburycatholic.org',
 						'stleocatholic.com',
