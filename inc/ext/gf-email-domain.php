@@ -186,6 +186,6 @@ class GWEmailDomainControl extends GW_Email_Domain_Validator { }
 						'stpatrickschool.net',
 						),
 
-						'validation_message' => __( '<p class="u-regular">Please use your <strong>@charlottediocese.org</strong> email account. <strong>%s</strong> domains are not eligible for registration.</p><p class="u-italic u-regular">If you have a special circumstance please submit an <a href="/it/">IT Service Request</a>.</p>' ),
+						'validation_message' => __( '<p class="u-regular">Please use your <strong>@charlottediocese.org</strong>, your official parish or school email account. <strong>%s</strong> domains are not eligible for registration.</p><p class="u-italic u-regular">If you have a special circumstance please submit an <a href="/it/">IT Service Request</a>.</p>' ),
 						'mode' => 'limit',
 					) );
