@@ -29,6 +29,7 @@ function doc_arch_posts() {
 	add_post_type_support( 'macs', 'arch-post' );
 	add_post_type_support( 'multicultural', 'arch-post' );
 	add_post_type_support( 'planning', 'arch-post' );
+	add_post_type_support( 'schools_office', 'arch-post' );
 	add_post_type_support( 'tribunal', 'arch-post' );
 	add_post_type_support( 'property', 'arch-post' );
 }

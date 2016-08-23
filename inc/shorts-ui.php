@@ -162,7 +162,7 @@ function meh_add_shortcake() {
 				'label'    => 'Select Pages to Display',
 				'attr'     => 'page',
 				'type'     => 'post_select',
-				'query'    => array( 'post_type' => array( 'page', 'cpt_archive', 'department', 'archive_post', 'bishop', 'chancery', 'deacon', 'development', 'education', 'finance', 'human_resources', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'tribunal', 'vocation' ) ),
+				'query'    => array( 'post_type' => array( 'page', 'cpt_archive', 'department', 'archive_post', 'bishop', 'chancery', 'deacon', 'development', 'education', 'finance', 'human_resources', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'schools_office', 'tribunal', 'vocation' ) ),
 				'multiple' => true,
 			),
 			array(

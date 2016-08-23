@@ -46,7 +46,7 @@ function meh_row_shortcode( $attr, $content = null ) {
 	$pages = $attr['page'];
 
 	$args = array(
-		'post_type' => array( 'page', 'cpt_archive', 'department', 'archive_post', 'bishop', 'chancery', 'deacon', 'development', 'education', 'finance', 'human_resources', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'tribunal', 'vocation' ),
+		'post_type' => array( 'page', 'cpt_archive', 'department', 'archive_post', 'bishop', 'chancery', 'deacon', 'development', 'education', 'finance', 'human_resources', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'schools_office', 'tribunal', 'vocation' ),
 		'post__in'  => explode( ',', $pages ),
 		'orderby'   => 'post__in',
 	);
