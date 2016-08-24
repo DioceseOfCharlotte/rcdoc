@@ -25,12 +25,24 @@
 	box-shadow: $shadow-1;
     border-radius: $base-radius;
 }
+
 .gv-grid .staff-list p {
 	margin-bottom: 0.5em;
 }
 
 .gv-list-view-content .gv-list-view-content-image:empty {
 	display: none;
+}
+
+.type-gravityview>.entry-content {
+    padding: 0.5rem;
+}
+
+.gv-edit-entry-wrapper {
+	background-color: #fff;
+	padding: 1.5rem;
+	border-radius: 0.2rem;
+	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
 .gv-list-view-title {
