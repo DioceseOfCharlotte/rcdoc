@@ -6,6 +6,7 @@
  */
 
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+add_filter( 'gform_predefined_choices', 'doc_update_us_states' );
 
 add_filter( 'gform_pre_render_3', 'populate_dept' );
 add_filter( 'gform_pre_validation_3', 'populate_dept' );
@@ -168,4 +169,12 @@ function set_parish_column( $input_info, $field, $column, $value, $form_id ) {
 		'type' => 'select',
 		'choices' => $choices,
 	);
+}
+
+function doc_update_us_states( $choices ) {
+    foreach ( $choices['U.S. States'] as &$state ) {
+        $state .= '|' . GF_Fields::get( 'address' )->get_us_state_code( $state );
+    }
+
+    return $choices;
 }
