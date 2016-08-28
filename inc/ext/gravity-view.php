@@ -6,6 +6,7 @@
  */
 
 add_post_type_support( 'gravityview', 'theme-layouts' );
+add_action( 'hybrid_register_layouts', 'doc_gv_layouts' );
 add_filter( 'gravityview/widget/enable_custom_class', '__return_true' );
 add_filter( 'gravityview/extension/search/links_sep', '__return_false' );
 add_filter( 'gravityview/extension/search/links_label', '__return_false' );
@@ -15,6 +16,28 @@ add_filter( 'gravitview_no_entries_text', 'modify_gravitview_no_entries_text', 1
 add_filter( 'gravityview/edit_entry/success', 'doc_gv_update_message', 10, 4 );
 add_filter( 'gravityview/edit_entry/cancel_link', 'doc_gv_edit_cancel', 10, 4 );
 
+function doc_gv_layouts() {
+
+	hybrid_register_layout('1-card-row', array(
+		'label'            => _x('1-card-row', 'theme layout', 'abraham'),
+		'is_global_layout' => false,
+		'post_types'       => array('gravityview'),
+		'image'            => hybrid_locate_theme_file( 'images/list.svg'),
+	));
+	hybrid_register_layout('2-card-row', array(
+		'label'            => _x('2-card-row', 'theme layout', 'abraham'),
+		'is_global_layout' => false,
+		'post_types'       => array('gravityview'),
+		'image'            => hybrid_locate_theme_file( 'images/2-card-row.svg'),
+	));
+	hybrid_register_layout('3-card-row', array(
+		'label'            => _x('3-card-row', 'theme layout', 'abraham'),
+		'is_global_layout' => false,
+		'post_types'       => array('gravityview'),
+		'image'            => hybrid_locate_theme_file( 'images/3-card-row.svg'),
+	));
+
+}
 /**
  * Modify the text displayed when there are no entries.
  *
