@@ -5,7 +5,7 @@
  * @package  RCDOC
  */
 
-if ( is_home() || is_front_page() ) {
+if ( ! is_home() && is_front_page() ) {
 	$terms = get_terms( 'agency' );
 	if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
 	    echo '<div class="section-row__content tile-row u-container is-animating o-grid u-flex-ja u-pt4 u-mb4">';

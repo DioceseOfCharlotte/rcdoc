@@ -937,7 +937,7 @@ html .gallery-cell {
 
 @media screen and (min-width: 48em) {
 	html .gallery-cell {
-		width: 310px;
+		width: 450px;
 	}
 }
 
