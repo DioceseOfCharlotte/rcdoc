@@ -75,7 +75,7 @@ function doc_register_doc_category_facets( $facets ) {
 		'source'       		=> 'cf/doc_grade_level',
 		'label_any'    		=> 'All Grades',
 		'orderby'      		=> 'display_value',
-		"multiple"  		=> 'yes',
+		'multiple' 			=> 'yes',
 		'hierarchical' 		=> 'no',
 		'operator'     		=> 'and',
 		'count' 			=> '20',
@@ -88,9 +88,10 @@ function doc_register_doc_category_facets( $facets ) {
 	);
 
 	$facets[] = array(
-		'label' => 'Title Alpha',
-		'name'  => 'title_alpha',
-		'type'  => 'alpha',
+		'label'		=> 'Title Alpha',
+		'name'		=> 'title_alpha',
+		'type' 		=> 'alpha',
+		'source' 	=> 'post_title',
 	);
 
 	$facets[] = array(
