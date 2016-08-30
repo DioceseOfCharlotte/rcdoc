@@ -22,7 +22,8 @@ function doc_login_redirect( $url, $request, $user ) {
 function meh_remove_menu_pages() {
 
 	if ( ! current_user_can( 'manage_options' ) ) {
-		remove_menu_page( 'profile.php' );                   	//profile
+		remove_menu_page( 'profile.php' );
+		remove_menu_page( 'optimus-bulk-optimizer' );
 	}
 }
 
