@@ -4,7 +4,7 @@
  *
  * @package rcdoc
  */
-
+use Mexitek\PHPColors\Color;
 /**
  * Load required theme files.
  */
@@ -165,4 +165,71 @@ function rcdoc_hierarchy_cpts() {
 	   'school',
 	   );
 	return $cpts;
+}
+
+
+
+
+
+/**
+ * Return style for using in html.
+ *
+ * @param  [type] $post_id [description]
+ * @param  string $alpha   [description]
+ * @return [type]          [description]
+ */
+function doc_post_color_style( $post_id, $alpha = '1' ) {
+	$style = '';
+	$style .= 'background-color:';
+	$style .= doc_post_color_rgb( $post_id, $alpha );
+	$style .= ';color:';
+	$style .= doc_post_color_text( $post_id );
+	$style .= ';';
+	return $style;
+}
+
+/**
+ * [doc_post_color_hex description]
+ *
+ * @param  [type] $post_id [description]
+ * @return [type]          [description]
+ */
+function doc_post_color_hex( $post_id ) {
+	$post_id = get_the_ID();
+	$post_accent = get_post_meta( $post_id, 'arch_primary_color', true );
+	$hex_color = $post_accent ? trim( $post_accent, '#' ) : get_theme_mod( 'primary_color', '' );
+	return "#{$hex_color}";
+}
+
+/**
+ * [doc_post_color_rgb description]
+ *
+ * @param  [type] $post_id [description]
+ * @param  [type] $alpha   [description]
+ * @return [type]          [description]
+ */
+function doc_post_color_rgb( $post_id, $alpha ) {
+	$doc_hex = doc_post_color_hex( $post_id );
+	$doc_rgb = implode( ',', hybrid_hex_to_rgb( $doc_hex ) );
+	return 'rgba('. $doc_rgb .','. $alpha .')';
+}
+
+/**
+ * [doc_post_color_text description]
+ *
+ * @param  [type] $post_id [description]
+ * @return [type]          [description]
+ */
+function doc_post_color_text( $post_id ) {
+	$post_accent = new Color( doc_post_color_hex( $post_id ) );
+	$text_color = $post_accent->isDark() ? 'fff':'333';
+	return "#{$text_color}";
+}
+
+function doc_post_color_comp( $post_id, $alpha ) {
+	$post_accent = new Color( doc_post_color_hex( $post_id ) );
+	$comp_color = $post_accent->isDark() ? $post_accent->darken( 15 ) :$post_accent->lighten( 20 );
+
+	$comp_rgb = implode( ',', hybrid_hex_to_rgb( $comp_color ) );
+	return 'rgba('. $comp_rgb .','. $alpha .')';
 }
