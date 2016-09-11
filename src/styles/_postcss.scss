@@ -1,16 +1,15 @@
 
 
-
 /*.entry-title > a {
 
-	&::after {
-		margin-left: auto !important;
-		@mixin icon arrow-right;
-	}
+&::after {
+margin-left: auto !important;
+@mixin icon arrow-right;
+}
 }
 
 .entry-title > a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="charlottediocese.dev"])::after {
-	@mixin icon external-link;
+@mixin icon external-link;
 }*/
 a[href*="thankyou4caring.org"]:not([class]):before {
 	content: " ";
@@ -57,8 +56,8 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 	display: inline-block;
 
 	width: 1.5em;
-    height: 1.5em;
-    vertical-align: middle;
+	height: 1.5em;
+	vertical-align: middle;
 }
 .show-icons a[href*="/parishes/"]:before,
 .icon-parish:before {

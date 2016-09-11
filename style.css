@@ -728,14 +728,14 @@ body:not(.home) .site-branding {
 }
 /*.entry-title > a {
 
-	&::after {
-		margin-left: auto !important;
-		@mixin icon arrow-right;
-	}
+&::after {
+margin-left: auto !important;
+@mixin icon arrow-right;
+}
 }
 
 .entry-title > a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="charlottediocese.dev"])::after {
-	@mixin icon external-link;
+@mixin icon external-link;
 }*/
 a[href*="thankyou4caring.org"]:not([class]):before {
 	content: " ";

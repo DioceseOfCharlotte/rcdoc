@@ -41,9 +41,7 @@
 	border-radius: 50%;
 	background: #fff;
 	background: rgba(255, 255, 255, 0.85);
-	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-	0 1px 10px 0 rgba(0, 0, 0, 0.12),
-	0 2px 4px -1px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 	cursor: pointer;
 }
 
@@ -70,7 +68,9 @@
 	}
 }
 
-.site-main, .arch-row, .o-grid {
+.site-main,
+.arch-row,
+.o-grid {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
@@ -210,7 +210,8 @@
 	backface-visibility: hidden;
 }
 
-.tab-header:hover, .tab-header:focus {
+.tab-header:hover,
+.tab-header:focus {
 	text-decoration: none;
 }
 
@@ -231,7 +232,8 @@
 	cursor: default;
 }
 
-.tab-header:hover:before, .tab-header.is-active:before {
+.tab-header:hover:before,
+.tab-header.is-active:before {
 	right: 0;
 	left: 0;
 }
@@ -386,5 +388,5 @@ a:hover > .chevron-toggle {
 
 .arch-no-title .arch-grad-overlay:after {
 	background: none;
-	content: none;	
+	content: none;
 }
