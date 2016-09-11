@@ -27,17 +27,17 @@ $maxitems = 0;
 
 if ( ! is_wp_error( $rss ) ) :
 
-    // Set Limit on number of items to display.
-    $maxitems = $rss->get_item_quantity( 7 );
+	// Set Limit on number of items to display.
+	$maxitems = $rss->get_item_quantity( 7 );
 
-    // Build an array of all the items, starting with element 0 (first element).
-    $rss_items = $rss->get_items( 0, $maxitems );
+	// Build an array of all the items, starting with element 0 (first element).
+	$rss_items = $rss->get_items( 0, $maxitems );
 
 endif;
 ?>
 
 <ul class="o-list-group-links">
-    <?php if ( $maxitems == 0 ) : ?>
+    <?php if ( 0 == $maxitems ) : ?>
         <li><?php _e( 'No items', 'my-text-domain' ); ?></li>
     <?php else : ?>
 

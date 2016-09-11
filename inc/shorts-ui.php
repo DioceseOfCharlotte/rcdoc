@@ -212,6 +212,6 @@ function meh_add_shortcake() {
 function shorts_scripts() {
 	wp_enqueue_script(
 		'shorts_scripts',
-		trailingslashit( get_stylesheet_directory_uri() ).'js/mehShorts.js'
+		trailingslashit( get_stylesheet_directory_uri() ) . 'js/mehShorts.js'
 	);
 }

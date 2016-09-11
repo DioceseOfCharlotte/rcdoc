@@ -172,9 +172,9 @@ function set_parish_column( $input_info, $field, $column, $value, $form_id ) {
 }
 
 function doc_update_us_states( $choices ) {
-    foreach ( $choices['U.S. States'] as &$state ) {
-        $state .= '|' . GF_Fields::get( 'address' )->get_us_state_code( $state );
-    }
+	foreach ( $choices['U.S. States'] as &$state ) {
+		$state .= '|' . GF_Fields::get( 'address' )->get_us_state_code( $state );
+	}
 
-    return $choices;
+	return $choices;
 }

@@ -55,7 +55,7 @@ function abraham_custom_header_wp_head() {
 	$post_image = get_post_meta( $queried_object_id, 'header_image', true );
 	$archive_image = $cptarchives->get_archive_meta( 'header_image', true );
 	$term_image = get_term_meta( $queried_object_id, 'image', true );
-	$bg_image = "";
+	$bg_image = '';
 
 	if ( $post_image ) {
 		$bg_image = wp_get_attachment_image_url( $post_image, 'abe-hd-lg' );

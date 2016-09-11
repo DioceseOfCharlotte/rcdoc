@@ -71,7 +71,7 @@ get_header(); ?>
 			?>
 			<h2><?php _e( 'An error occurred during the activation' ); ?></h2>
 								<?php
-								echo '<p>'.$result->get_error_message().'</p>';
+								echo '<p>' . $result->get_error_message() . '</p>';
 		}
 	} else {
 		extract( $result );

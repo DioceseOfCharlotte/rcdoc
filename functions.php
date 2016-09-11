@@ -69,33 +69,33 @@ function rcdoc_scripts() {
 
 	$suffix = hybrid_get_min_suffix();
 
-	wp_enqueue_style( 'oldie_child', trailingslashit( get_stylesheet_directory_uri() )."css/oldie{$suffix}.css", array( 'hybrid-parent', 'hybrid-style', 'oldie' ) );
+	wp_enqueue_style( 'oldie_child', trailingslashit( get_stylesheet_directory_uri() ) . "css/oldie{$suffix}.css", array( 'hybrid-parent', 'hybrid-style', 'oldie' ) );
 	wp_style_add_data( 'oldie_child', 'conditional', 'IE' );
 
 	wp_enqueue_style( 'rcdoc_google_font', 'https://fonts.googleapis.com/css?family=Cormorant+Upright:400,500,600,700|Roboto:300,400,500,700' );
 
 	wp_register_script(
 		'arch-tabs',
-		trailingslashit( get_stylesheet_directory_uri() ).'js/vendors/arch-tabs.js',
+		trailingslashit( get_stylesheet_directory_uri() ) . 'js/vendors/arch-tabs.js',
 		false, false, true
 	);
 
 	wp_register_script(
 		'flickity',
-		trailingslashit( get_stylesheet_directory_uri() ).'js/vendors/flickity.pkgd.min.js',
+		trailingslashit( get_stylesheet_directory_uri() ) . 'js/vendors/flickity.pkgd.min.js',
 		false, false, true
 	);
 
 	wp_enqueue_script(
 		'font_face',
-		trailingslashit( get_stylesheet_directory_uri() ).'js/vendors/fontfaceobserver.js',
+		trailingslashit( get_stylesheet_directory_uri() ) . 'js/vendors/fontfaceobserver.js',
 		false, false, true
 	);
 	wp_add_inline_script( 'font_face', 'var fontA = new FontFaceObserver("Cormorant Upright", {weight: 500});var fontB = new FontFaceObserver("Roboto");fontA.load().then(function () {document.documentElement.className += " fontA";});fontB.load().then(function () {document.documentElement.className += " fontB";});' );
 
 	wp_enqueue_script(
 		'main_scripts',
-		trailingslashit( get_stylesheet_directory_uri() ).'js/main.min.js',
+		trailingslashit( get_stylesheet_directory_uri() ) . 'js/main.min.js',
 		false, false, true
 	);
 }
@@ -211,7 +211,7 @@ function doc_post_color_hex( $post_id ) {
 function doc_post_color_rgb( $post_id, $alpha ) {
 	$doc_hex = doc_post_color_hex( $post_id );
 	$doc_rgb = implode( ',', hybrid_hex_to_rgb( $doc_hex ) );
-	return 'rgba('. $doc_rgb .','. $alpha .')';
+	return 'rgba(' . $doc_rgb . ',' . $alpha . ')';
 }
 
 /**
@@ -231,5 +231,5 @@ function doc_post_color_comp( $post_id, $alpha ) {
 	$comp_color = $post_accent->isDark() ? $post_accent->darken( 15 ) :$post_accent->lighten( 20 );
 
 	$comp_rgb = implode( ',', hybrid_hex_to_rgb( $comp_color ) );
-	return 'rgba('. $comp_rgb .','. $alpha .')';
+	return 'rgba(' . $comp_rgb . ',' . $alpha . ')';
 }

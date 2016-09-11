@@ -8,6 +8,6 @@ function doc_post_class( $classes ) {
 
 	if ( is_post_type_archive( $directory_posts ) ) {
 				$classes[] = 'u-1of2-md';
-			}
+	}
 		return $classes;
 }

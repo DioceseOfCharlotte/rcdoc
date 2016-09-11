@@ -19,22 +19,22 @@ add_filter( 'gravityview/edit_entry/cancel_link', 'doc_gv_edit_cancel', 10, 4 );
 function doc_gv_layouts() {
 
 	hybrid_register_layout('1-card-row', array(
-		'label'            => _x('1-card-row', 'theme layout', 'abraham'),
+		'label'            => _x( '1-card-row', 'theme layout', 'abraham' ),
 		'is_global_layout' => false,
-		'post_types'       => array('gravityview'),
-		'image'            => hybrid_locate_theme_file( 'images/list.svg'),
+		'post_types'       => array( 'gravityview' ),
+		'image'            => hybrid_locate_theme_file( 'images/list.svg' ),
 	));
 	hybrid_register_layout('2-card-row', array(
-		'label'            => _x('2-card-row', 'theme layout', 'abraham'),
+		'label'            => _x( '2-card-row', 'theme layout', 'abraham' ),
 		'is_global_layout' => false,
-		'post_types'       => array('gravityview'),
-		'image'            => hybrid_locate_theme_file( 'images/2-card-row.svg'),
+		'post_types'       => array( 'gravityview' ),
+		'image'            => hybrid_locate_theme_file( 'images/2-card-row.svg' ),
 	));
 	hybrid_register_layout('3-card-row', array(
-		'label'            => _x('3-card-row', 'theme layout', 'abraham'),
+		'label'            => _x( '3-card-row', 'theme layout', 'abraham' ),
 		'is_global_layout' => false,
-		'post_types'       => array('gravityview'),
-		'image'            => hybrid_locate_theme_file( 'images/3-card-row.svg'),
+		'post_types'       => array( 'gravityview' ),
+		'image'            => hybrid_locate_theme_file( 'images/3-card-row.svg' ),
 	));
 
 }
@@ -66,8 +66,8 @@ function modify_gravitview_no_entries_text( $existing_text, $is_search ) {
  * @param $back_link string Url to return to the original entry
  */
 function doc_gv_update_message( $message, $view_id, $entry, $back_link ) {
-	$link = str_replace( 'entry/'.$entry['id'].'/', '', $back_link );
-	return 'Entry Updated. <a href="'.esc_url( $link ).'">Return to the list</a>';
+	$link = str_replace( 'entry/' . $entry['id'] . '/', '', $back_link );
+	return 'Entry Updated. <a href="' . esc_url( $link ) . '">Return to the list</a>';
 }
 
 /**
@@ -78,5 +78,5 @@ function doc_gv_update_message( $message, $view_id, $entry, $back_link ) {
  * since 1.11.1
  */
 function doc_gv_edit_cancel( $back_link, $form, $entry, $view_id ) {
-	return str_replace( 'entry/'.$entry['id'].'/', '', $back_link );
+	return str_replace( 'entry/' . $entry['id'] . '/', '', $back_link );
 }

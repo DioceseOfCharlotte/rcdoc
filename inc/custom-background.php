@@ -61,7 +61,7 @@ function rcdoc_custom_background_callback() {
 	$image = get_background_image();
 
 	// If there's an image, just call the normal WordPress callback. We won't do anything here.
-	if ( !empty( $image ) && is_front_page() ) {
+	if ( ! empty( $image ) && is_front_page() ) {
 		_custom_background_cb();
 		return;
 	}
@@ -70,8 +70,8 @@ function rcdoc_custom_background_callback() {
 	$color = get_background_color();
 
 	// If no background color, return.
-	if ( empty( $color ) )
-		return;
+	if ( empty( $color ) ) {
+		return; }
 
 	$style = "background-color: #{$color};";
 

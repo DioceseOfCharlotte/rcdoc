@@ -68,7 +68,7 @@ class GW_Email_Domain_Validator {
 			$has_match    = $full_match || $suffix_match;
 			if ( $mode == 'ban' && $has_match ) {
 				return false;
-			} else if ( $mode == 'limit' && $has_match ) {
+			} elseif ( $mode == 'limit' && $has_match ) {
 				return true;
 			}
 		}
@@ -185,7 +185,6 @@ class GWEmailDomainControl extends GW_Email_Domain_Validator { }
 						'olaschool.net',
 						'stpatrickschool.net',
 						),
-
 						'validation_message' => __( '<p class="u-regular">Please use your <strong>@charlottediocese.org</strong>, your official parish or school email account. <strong>%s</strong> domains are not eligible for registration.</p><p class="u-italic u-regular">If you have a special circumstance please submit an <a href="/it/">IT Service Request</a>.</p>' ),
 						'mode' => 'limit',
 					) );

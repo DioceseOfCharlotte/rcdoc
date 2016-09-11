@@ -14,4 +14,4 @@ if ( ! is_paged() || is_post_type_archive( doc_get_facet_cpts() ) ) {
 		)
 	); ?>
 </div>
-<?php endif; ?>
+<?php endif;

@@ -5,8 +5,6 @@
  * @package  RCDOC
  */
 
-
-
 $doc_street = get_post_meta( get_the_ID(), 'doc_street', true );
 $doc_street_2 = get_post_meta( get_the_ID(), 'doc_street_2', true );
 $doc_city = get_post_meta( get_the_ID(), 'doc_city', true );
@@ -53,7 +51,7 @@ if ( has_post_thumbnail() ) {
 
 	ob_start(); ?>
 	<div class="contact-address u-inline-block u-p1 u-mb1">
-		<?php if ($doc_city ) : ?>
+		<?php if ( $doc_city ) : ?>
 			<a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" href="<?php echo esc_url( $map_link ) ?>" target="_blank">
 				<span class="u-inline-block">
 					<span itemprop="streetAddress">

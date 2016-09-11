@@ -22,7 +22,7 @@ function doc_alias_view_staff() {
 		$id = $cptarchives->get_archive_meta( 'doc_alias_select', true );
 		if ( $id ) { ?>
 		<div class="u-1of1 u-mb3 u-bg-tint-1 u-px1 u-br">
-			<?php echo do_shortcode( '[gravityview id="10028" search_field="21" search_value="' . $id .'"]' ); ?>
+			<?php echo do_shortcode( '[gravityview id="10028" search_field="21" search_value="' . $id . '"]' ); ?>
 		</div><?php
 		}
 	}

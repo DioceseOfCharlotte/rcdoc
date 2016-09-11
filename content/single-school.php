@@ -25,5 +25,5 @@
 </article>
 
 <div class="u-1of1 u-mb3 u-bg-tint-1 u-px1 u-br">
-	   <?php echo do_shortcode( '[gravityview id="10028" search_field="25" search_value="' . get_the_ID() .'"]' ); ?>
+		<?php echo do_shortcode( '[gravityview id="10028" search_field="25" search_value="' . get_the_ID() . '"]' ); ?>
 </div>

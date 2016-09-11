@@ -6,4 +6,4 @@
  */
 
 ?>
-<?php get_template_part( 'content/department' ); ?>
+<?php get_template_part( 'content/department' );
