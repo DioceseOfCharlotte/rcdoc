@@ -809,6 +809,15 @@ http://flickity.metafizzy.co
     width: 100%; }
   html .gv-widget-search .gv-search-box.gv-search-box-submit {
     width: auto; }
+  html .gv-list-view-content p:last-child {
+    margin-bottom: 0; }
+  html div[class*='gv-field-'] {
+    margin-bottom: 1em; }
+  html .gform_wrapper .field_description_below .gfield_description {
+    padding: 0;
+    filter: alpha(opacity=90); }
+  html .gfield_label {
+    margin: 0; }
   html .frame {
     position: relative;
     margin: 0 auto;

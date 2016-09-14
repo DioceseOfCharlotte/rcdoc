@@ -126,21 +126,6 @@
 	display: none;
 }
 
-// .gv-list-view-content-description {
-// 	width: 100%;
-// }
-//
-// .gv-list-view-content {
-// 	padding: 0;
-// }
-// span.gv-field-label:empty {
-// 	display: none;
-// }
-//
-// .gv-list-view-content h4 {
-// 	margin: 0;
-// }
-
 .entry-content > .gv-grid {
 	background-color: $lighten4;
 	padding: 1rem;
@@ -258,4 +243,22 @@ ul.gravityview-az-filter {
 
 .gv-widget-search .gv-search-box.gv-search-box-submit {
 	width: auto;
+}
+
+// 9-14-16
+.gv-list-view-content p:last-child {
+	margin-bottom: 0;
+}
+
+div[class*='gv-field-'] {
+	margin-bottom: 1em;
+}
+
+.gform_wrapper .field_description_below .gfield_description {
+    padding: 0;
+    opacity: .9;
+}
+
+.gfield_label {
+    margin: 0;
 }
