@@ -6,10 +6,8 @@ body {
 	background-size: cover;
 }
 
-.site-branding {
-	transition-duration: $transition-time;
-	transition-timing-function: $animation-curve-default;
-	transition-property: font-size;
+.site-branding a {
+    transition-timing-function: cubic-bezier(0, 1.11, 0.58, 1);
 }
 
 .home .site-header.is-top {
