@@ -29,7 +29,7 @@ if ( has_post_thumbnail() ) {
 
 	ob_start();
 	?>
-	<div class="contact-numbers u-p1 u-mb1 u-flex u-flex-wrap u-flex-jb">
+	<div class="contact-numbers u-mb1 u-flex u-flex-wrap u-flex-jb">
 
 		<div class="phone contact-numbers__item u-1of2-md u-inline-block u-spacer16">
 			<?php if ( $doc_phone ) : ?>
@@ -50,7 +50,7 @@ if ( has_post_thumbnail() ) {
 	echo ob_get_clean();
 
 	ob_start(); ?>
-	<div class="contact-address u-inline-block u-p1 u-mb1">
+	<div class="contact-address u-inline-block u-mb1">
 		<?php if ( $doc_city ) : ?>
 			<a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" href="<?php echo esc_url( $map_link ) ?>" target="_blank">
 				<span class="u-inline-block">
@@ -70,15 +70,17 @@ if ( has_post_thumbnail() ) {
 
 
 
-		<div class="email u-spacer16 u-p1 u-mb1 u-truncate">
+		<div class="email u-spacer16 u-mb1 u-truncate">
 			<?php if ( $doc_email ) : ?>
 				<a itemprop="email" href="mailto:<?= $doc_email ?>"><?= $doc_email ?></a>
 			<?php endif; ?>
 		</div>
 
 		<?php if ( $doc_website ) : ?>
+			<?php $obj = get_post_type_object( get_post_type() );
+			$single_name = $obj->labels->singular_name; ?>
 			<div class="website u-text-center u-1of1 u-mb1">
-				<a class="contact-link u-bg-2 btn" itemprop="url" href="<?= $doc_website ?>" target="_blank">Visit Website <?php abe_do_svg( 'external-link', 'sm' ); ?></a>
+				<a class="contact-link u-bg-2 btn" itemprop="url" href="<?= $doc_website ?>" target="_blank"><?= $single_name ?> Website <?php abe_do_svg( 'external-link', 'sm' ); ?></a>
 			</div>
 		<?php endif; ?>
 
