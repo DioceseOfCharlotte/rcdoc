@@ -41,10 +41,6 @@ function rcdoc_setup() {
 
 	add_filter( 'theme_mod_primary_color', 'rcdoc_primary_color' );
 	add_filter( 'theme_mod_secondary_color', 'rcdoc_secondary_color' );
-
-	add_filter( 'abe_add_hierarchy_cpts', 'rcdoc_hierarchy_cpts' );
-	add_filter( 'abe_add_non_hierarchy_cpts', 'rcdoc_non_hierarchy_cpts' );
-	add_filter( 'arch_add_post_types', 'rcdoc_non_hierarchy_cpts' );
 }
 
 /**
@@ -148,27 +144,6 @@ function rcdoc_primary_color( $hex ) {
 function rcdoc_secondary_color( $hex ) {
 	return $hex ? $hex : '#16a085';
 }
-
-/**
- * Post Groups.
- */
-function rcdoc_non_hierarchy_cpts() {
-	$cpts = array( 'arch','archive_post','bishop', 'chancery', 'deacon', 'development', 'education', 'finance', 'human_resources', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'macs', 'multicultural', 'planning', 'property', 'schools_office', 'tribunal', 'vocation' );
-	return $cpts;
-}
-function rcdoc_hierarchy_cpts() {
-	$cpts = array(
-	   'page',
-	   'cpt_archive',
-	   'department',
-	   'parish',
-	   'school',
-	   );
-	return $cpts;
-}
-
-
-
 
 
 /**

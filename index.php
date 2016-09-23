@@ -20,7 +20,7 @@ get_header(); ?>
 endif; ?>
 
 	<?php tha_content_before(); ?>
-	
+
 	<main <?php hybrid_attr( 'content' ); ?>>
 
 		<?php if ( have_posts() ) : ?>
@@ -39,7 +39,7 @@ endif; ?>
 
 		<?php endif; ?>
 
-		<?php if ( is_singular( abe_non_hierarchy_cpts() ) || is_singular( abe_hierarchy_cpts() ) ) {
+		<?php if ( is_singular() ) {
 			get_template_part( 'components/post', 'children' );
 		} ?>
 
