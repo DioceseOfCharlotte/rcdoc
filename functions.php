@@ -53,7 +53,7 @@ function doc_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'doc' ),
 		'before_widget' => '<section id="%1$s" class="widget u-p2 u-mb3 u-bg-frost-1 u-br %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget-title u-px1 u-text-display u-opacity u-text-center">',
+		'before_title'  => '<h3 class="widget-title u-px1 u-text-display u-border-b u-opacity u-bg-white u-b-grey">',
 		'after_title'   => '</h3>',
 	) );
 }

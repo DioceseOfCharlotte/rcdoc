@@ -32,17 +32,14 @@ if ( ! is_active_sidebar( 'secondary' ) ) {
 
 		<?php $current_user = wp_get_current_user(); ?>
 
-			<div class="employee-section u-bg-silver u-border u-m1 u-mb2 u-br">
-				<div class="u-border-b u-flex u-flex-center u-p1">
+			<div class="employee-section u-overflow-hidden u-bg-silver u-m05 u-mb2 u-br">
+				<div class="u-flex u-flex-center u-bg-2-light u-mb2">
+
+					<h5 class="u-h5 u-mr-auto u-ml-auto u-text-display"><em class="u-opacity">Logged in as: </em><?php echo $current_user->display_name ?></h5>
+
 					<div class="u-f-plus">
-
-					<?php if ( current_user_can( 'upload_files' ) ) : ?>
-						<a class="btn u-block u-opacity u-p1" href="<?php echo admin_url(); ?>" title="Dashboard"><svg id="i-options" xmlns="http://www.w3.org/2000/svg" class="icon-line" viewBox="0 0 32 32"><path d="M28 6 L4 6 M28 16 L4 16 M28 26 L4 26 M24 3 L24 9 M8 13 L8 19 M20 23 L20 29" /></svg></a>
-					<?php endif; ?>
-
 						<a class="btn u-block u-opacity u-p1" href="<?php echo wp_logout_url( home_url() ); ?>" title="Logout"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em"><path d="M16 17v2c0 1.105-.895 2-2 2H5c-1.105 0-2-.895-2-2V5c0-1.105.895-2 2-2h9c1.105 0 2 .895 2 2v2h-2V5H5v14h9v-2h2zm2.5-10.5l-1.414 1.414L20.172 11H10v2h10.172l-3.086 3.086L18.5 17.5 24 12l-5.5-5.5z"/></svg></a>
 					</div>
-					<h4 class="u-h4 u-mr-auto u-ml-auto u-text-1-dark u-text-display"><em class="u-f-plus u-opacity">Logged in as: </em><?php echo $current_user->display_name ?></h4>
 
 				</div>
 				<?php dynamic_sidebar( 'employee-sidebar' ); ?>

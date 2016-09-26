@@ -1080,7 +1080,8 @@ http://flickity.metafizzy.co
   html .site-header.u-fixed:after {
     filter: alpha(opacity=100); }
   html .article-hero {
-    min-height: 300px; }
+    min-height: 300px;
+    box-shadow: inset 0 -3px 10px 2px rgba(0, 0, 0, 0.2); }
     html .article-hero {
   min-height: 450px; }
   html .site-content {
@@ -1120,8 +1121,6 @@ http://flickity.metafizzy.co
     background-color: #20638f; }
   html #page .site-footer.u-bg-2 {
     background-color: #16a085; }
-  html .article-hero {
-    box-shadow: inset 0 -3px 10px 2px rgba(0, 0, 0, 0.2); }
   html #content.widecolumn {
     background-color: white;
     text-align: center;
