@@ -216,13 +216,20 @@ a.tile-link {
  {
   font-size: 12.8px; }
 
+.archive .type-department,
 .taxonomy-agency .entry {
   overflow: hidden;
   -js-display: flex;
   display: flex;
-  max-height: 90px; }
-  .taxonomy-agency .entry {
-  max-height: 120px; }
+  max-height: 100px; }
+  .archive .type-department,
+    .taxonomy-agency .entry {
+  max-height: 130px; }
+
+.taxonomy-agency .thumbnail,
+.archive .type-department > .thumbnail {
+  width: 130px;
+  max-width: 33.33%; }
 
 .title-text.u-flex-col {
   flex-direction: column-reverse; }
@@ -1052,6 +1059,8 @@ http://flickity.metafizzy.co
     background-size: cover; }
   html .site-branding a {
     transition-timing-function: cubic-bezier(0, 1.11, 0.58, 1); }
+    html .site-branding a > * {
+      transition: none; }
   html .home .site-header.is-top {
     transition: none;
     background: linear-gradient(to bottom, #0f132a, transparent);
@@ -1096,6 +1105,80 @@ http://flickity.metafizzy.co
   html span.page-numbers {
     font-weight: 600;
     filter: alpha(opacity=60); }
+  html .singular-page.layout-1-column-wide article {
+    background-color: transparent; }
+  html nav.navigation.pagination {
+    width: 100%;
+    text-align: center;
+    font-size: 17.6px;
+    font-weight: bold; }
+  html .login-links a {
+    display: inline-block; }
+  html .section-row.u-bg-white {
+    background-color: #ffffff; }
+  html #page .section-row.u-bg-1-glass-dark {
+    background-color: #20638f; }
+  html #page .site-footer.u-bg-2 {
+    background-color: #16a085; }
+  html .article-hero {
+    box-shadow: inset 0 -3px 10px 2px rgba(0, 0, 0, 0.2); }
+  html #content.widecolumn {
+    background-color: white;
+    text-align: center;
+    padding: 24px; }
+  html .singular-department-10416 .site-main {
+    -js-display: flex;
+    display: flex;
+    flex-direction: column-reverse; }
+  html .arch-no-title .o-crop--16x9 {
+    padding-top: 0; }
+  html .arch-no-title .o-crop__content {
+    position: relative; }
+  html .entry-summary #loginform {
+    display: none; }
+  html .singular-gravityview .gv-container-no-results {
+    display: block !important; }
+  html .members-access-error {
+    background-color: #fff;
+    border-radius: .2rem;
+    padding: 16px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2); }
+  html .layout-2-card-row .gv-list-view {
+  max-width: calc(50% - 1.5rem); }
+  html .layout-3-card-row .gv-list-view {
+  max-width: calc(33% - 1.5rem); }
+  html .layout-1-card-row .gv-list-view {
+    max-width: 100%;
+    padding: 48px;
+    text-align: center; }
+  html .gv-search {
+    -js-display: flex;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap; }
+  html .gv-search > label {
+    padding: 0 8px; }
+  html .gv-widget-search .gv-search-box.gv-search-box-submit {
+    align-self: center; }
+  html .media-img > a {
+    background: none; }
+  html .gv-widget-search p {
+    margin-bottom: 0; }
+  html .gv-widget-search {
+    align-items: center; }
+  html .list-count tbody {
+    counter-reset: section; }
+  html .list-count table.gfield_list_container {
+    margin-left: 32px !important; }
+  html .list-count .gfield_list_group .gfield_list_cell:first-child:before {
+    counter-increment: section;
+    content: "Mass " counter(section) ": ";
+    position: absolute;
+    margin-left: -64px;
+    line-height: 40px;
+    font-weight: 600; }
 
 /* Styles specific to the editor. */
 body#tinymce {

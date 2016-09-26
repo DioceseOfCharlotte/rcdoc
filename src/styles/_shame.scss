@@ -8,6 +8,10 @@ body {
 
 .site-branding a {
     transition-timing-function: cubic-bezier(0, 1.11, 0.58, 1);
+
+	> * {
+		transition: none;
+	}
 }
 
 .home .site-header.is-top {
@@ -37,6 +41,7 @@ body {
 
 .article-hero {
 	min-height: 300px;
+	box-shadow: inset 0 -3px 10px 2px rgba(0,0,0,0.20);
 
 	@include md {
 		min-height: 450px;
@@ -77,4 +82,136 @@ a.page-numbers:hover {
 span.page-numbers {
 	font-weight: 600;
 	opacity: .6;
+}
+
+
+// Jetpack edit-css
+
+// img.thumbnail.u-1of3.u-of-cover {
+// 	width: 100%;
+// 	max-width: calc(33.33% - 1.5rem);
+// }
+
+.singular-page.layout-1-column-wide article {
+	background-color: transparent;
+}
+
+nav.navigation.pagination {
+	width: 100%;
+	text-align: center;
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
+.login-links a {
+	display: inline-block;
+}
+
+.section-row.u-bg-white {
+	background-color: rgba(255,255,255,0.9);
+}
+
+#page .section-row.u-bg-1-glass-dark {
+	background-color: rgba(32,99,143,0.95);
+}
+
+#page .site-footer.u-bg-2 {
+	background-color: rgba(22,160,133,0.95);
+}
+
+#content.widecolumn {
+	background-color: white;
+	text-align: center;
+	padding: 1.5rem;
+}
+
+.singular-department-10416 .site-main {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.arch-no-title .o-crop--16x9 {
+	padding-top: 0;
+}
+
+.arch-no-title .o-crop__content {
+	position: relative;
+}
+
+
+
+.entry-summary #loginform {
+	display: none;
+}
+
+.singular-gravityview .gv-container-no-results {
+	display: block !important;
+}
+
+.members-access-error {
+	background-color: #fff;
+	border-radius: .2rem;
+	padding: 1rem;
+	box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+}
+
+@media screen and (min-width: 62em) {
+	.layout-2-card-row .gv-list-view {
+		max-width: calc(50% - 1.5rem);
+	}
+
+	.layout-3-card-row .gv-list-view {
+		max-width: calc(33% - 1.5rem);
+	}
+}
+
+.layout-1-card-row .gv-list-view {
+	max-width: 100%;
+	padding: 3rem;
+	text-align: center;
+}
+
+.gv-search {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+}
+
+.gv-search > label {
+	padding: 0 .5rem;
+}
+
+.gv-widget-search .gv-search-box.gv-search-box-submit {
+	align-self: center;
+}
+
+.media-img>a {
+	background: none;
+}
+
+.gv-widget-search p {
+	margin-bottom: 0;
+}
+
+.gv-widget-search {
+	align-items: center;
+}
+
+.list-count tbody {
+	counter-reset: section;
+}
+
+.list-count table.gfield_list_container {
+	margin-left: 2rem !important;
+}
+
+.list-count .gfield_list_group .gfield_list_cell:first-child::before {
+	counter-increment: section;
+	content: "Mass " counter(section) ": ";
+	position: absolute;
+	margin-left: -4rem;
+	line-height: 2.5rem;
+	font-weight: 600;
 }

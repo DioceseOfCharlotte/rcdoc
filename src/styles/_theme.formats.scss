@@ -1,12 +1,19 @@
 
+.archive .type-department,
 .taxonomy-agency .entry {
 	overflow: hidden;
 	display: flex;
-	max-height: 90px;
+	max-height: 100px;
 
 	@include md {
-		max-height: 120px;
+		max-height: 130px;
 	}
+}
+
+.taxonomy-agency .thumbnail,
+.archive .type-department>.thumbnail {
+	width: 130px;
+	max-width: 33.33%;
 }
 
 .title-text.u-flex-col {
