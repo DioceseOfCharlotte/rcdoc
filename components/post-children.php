@@ -12,9 +12,20 @@ $args = array(
 	'orderby'                => 'menu_order',
 );
 
+$document_args = array(
+	'post_parent'            => get_the_ID(),
+	'post_type'              => 'document',
+	'order'                  => 'ASC',
+	'orderby'                => 'title',
+);
+
 $args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 
-$query = new WP_Query( $args );
+if ( get_post_type() == 'document' ) {
+	$query = new WP_Query( $document_args );
+} else {
+	$query = new WP_Query( $args );
+}
 
 // Pagination fix.
 $temp_query = $wp_query;
