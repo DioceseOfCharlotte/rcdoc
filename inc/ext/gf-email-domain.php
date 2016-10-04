@@ -144,7 +144,7 @@ class GWEmailDomainControl extends GW_Email_Domain_Validator { }
 						'stjosephrcc.org',
 						'stjosephbryson.org',
 						'saintjosephcatholic.org',
-						'stleocatholic.com',
+						'stleocatholic.org',
 						'stlukechurch.net',
 						'saintmargaretmarycatholic.org',
 						'stmargaretofscotlandmv.org',
