@@ -118,7 +118,7 @@ function abe_display_font() {
 		    font-style: normal;
 
 		}
-		body {
+		body, .u-text-read {
 			font-family: RobotoFB, sans-serif;
 			font-weight: 400;
 		}
@@ -126,7 +126,7 @@ function abe_display_font() {
 			font-family: CormorantFB, serif;
 			font-weight: 500;
 		}
-		.fontB body {
+		.fontB body, .fontB .u-text-read {
 			font-family: Roboto, sans-serif;
 		}
 		.fontA .u-text-display,.fontA .u-text-display>a,.fontA .u-dropcap::first-letter {
