@@ -8,12 +8,10 @@ use Mexitek\PHPColors\Color;
 /**
  * Load required theme files.
  */
-// require get_stylesheet_directory() . '/inc/html-classes.php';
 require get_stylesheet_directory() . '/inc/config.php';
 require get_stylesheet_directory() . '/inc/compatibility.php';
 require get_stylesheet_directory() . '/inc/hooks.php';
 require get_stylesheet_directory() . '/inc/ext/cpt-archive.php';
-// require get_stylesheet_directory() . '/inc/bb-metaboxes.php';
 require get_stylesheet_directory() . '/inc/custom-header.php';
 require get_stylesheet_directory() . '/inc/custom-background.php';
 require get_stylesheet_directory() . '/inc/ext/gravity-forms.php';
@@ -99,21 +97,21 @@ function rcdoc_scripts() {
 function abe_display_font() {
 	$font_dir = trailingslashit( get_stylesheet_directory_uri() ) . 'fonts/'; ?>
 
-	<link rel="preload" href="<?= $font_dir ?>cormorantupright-medium-webfont.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="<?= $font_dir ?>roboto-regular-webfont.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="<?php echo $font_dir ?>cormorantupright-medium-webfont.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="<?php echo $font_dir ?>roboto-regular-webfont.woff2" as="font" type="font/woff2" crossorigin>
 
 	<style type="text/css">
 		@font-face {
 			font-family: 'CormorantFB';
 			font-style: normal;
 			font-weight: 500;
-			src:url('<?= $font_dir ?>cormorantupright-medium-webfont.woff2') format('woff2'),
-				url('<?= $font_dir ?>cormorantupright-medium-webfont.woff') format('woff');
+			src:url('<?php echo $font_dir ?>cormorantupright-medium-webfont.woff2') format('woff2'),
+				url('<?php echo $font_dir ?>cormorantupright-medium-webfont.woff') format('woff');
 		}
 		@font-face {
 		    font-family: 'RobotoFB';
-		    src: url('<?= $font_dir ?>roboto-regular-webfont.woff2') format('woff2'),
-		         url('<?= $font_dir ?>roboto-regular-webfont.woff') format('woff');
+		    src: url('<?php echo $font_dir ?>roboto-regular-webfont.woff2') format('woff2'),
+		         url('<?php echo $font_dir ?>roboto-regular-webfont.woff') format('woff');
 		    font-weight: 400;
 		    font-style: normal;
 

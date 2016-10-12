@@ -18,7 +18,7 @@
 
 	<header class="u-flex u-flex-row u-flex-nowrap u-border-b u-b-silver u-flex-jb u-br-t">
 		<h2 <?php hybrid_attr( 'entry-title' ); ?>>
-			<a href="<?php the_permalink(); ?>" class="u-text-color"><?php the_title(); ?><?php abe_do_svg( 'arrow-right', 'sm' ) ?></a>
+			<a href="<?php the_permalink(); ?>" class="u-text-color"><?php the_title(); ?><?php abe_do_svg( 'arrow-right' ) ?></a>
 		</h2>
 	</header>
 

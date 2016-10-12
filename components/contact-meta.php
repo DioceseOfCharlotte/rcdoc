@@ -31,16 +31,16 @@ if ( has_post_thumbnail() ) {
 	?>
 	<div class="contact-numbers u-mb1 u-flex u-flex-wrap u-flex-jb">
 
-		<div class="phone contact-numbers__item u-1of2-md u-inline-block u-spacer16">
+		<div class="phone contact-numbers__item u-inline-block u-spacer16">
 			<?php if ( $doc_phone ) : ?>
-				<a href="tel:<?= $doc_phone ?>" itemprop="telephone"><?= $doc_phone ?></a>
+				<a href="tel:<?php echo $doc_phone ?>" itemprop="telephone"><?php echo $doc_phone ?></a>
 			<?php endif; ?>
 		</div>
 
 
-		<div class="fax contact-numbers__item u-1of2-md u-inline-block u-spacer16">
+		<div class="fax contact-numbers__item u-inline-block u-spacer16">
 			<?php if ( $doc_fax ) : ?>
-				<span class="contact-fax u-inline-block u-opacity" itemprop="faxNumber"><span class="u-bold u-mr1">FAX</span><?= $doc_fax ?></span>
+				<span class="contact-fax u-inline-block u-opacity" itemprop="faxNumber"><span class="u-bold u-mr1">FAX</span><?php echo $doc_fax ?></span>
 			<?php endif; ?>
 		</div>
 
@@ -55,13 +55,13 @@ if ( has_post_thumbnail() ) {
 			<a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" href="<?php echo esc_url( $map_link ) ?>" target="_blank">
 				<span class="u-inline-block">
 					<span itemprop="streetAddress">
-						<?= $doc_street ?><br>
+						<?php echo $doc_street ?><br>
 						<?php if ( $doc_street_2 ) { ?>
-							<?= $doc_street_2 ?><br>
+							<?php echo $doc_street_2 ?><br>
 							<?php } ?>
 						</span>
-						<span itemprop="addressLocality"><?= $doc_city ?>, <?= $doc_state ?></span>
-						<span itemprop="postalCode"><?= $doc_zip ?></span>
+						<span itemprop="addressLocality"><?php echo $doc_city ?>, <?php echo $doc_state ?></span>
+						<span itemprop="postalCode"><?php echo $doc_zip ?></span>
 					</span>
 				</a>
 			<?php endif; ?>
@@ -72,15 +72,15 @@ if ( has_post_thumbnail() ) {
 
 		<div class="email u-spacer16 u-mb1 u-truncate">
 			<?php if ( $doc_email ) : ?>
-				<a itemprop="email" href="mailto:<?= $doc_email ?>"><?= $doc_email ?></a>
+				<a itemprop="email" href="mailto:<?php echo $doc_email ?>"><?php echo $doc_email ?></a>
 			<?php endif; ?>
 		</div>
 
-		<?php if ( $doc_website ) : ?>
+		<?php if ( 'parish' === get_post_type( get_the_ID() ) ) : ?>
 			<?php $obj = get_post_type_object( get_post_type() );
 			$single_name = $obj->labels->singular_name; ?>
 			<div class="website u-text-center u-1of1 u-mb1">
-				<a class="contact-link u-bg-2 btn" itemprop="url" href="<?= $doc_website ?>" target="_blank"><?= $single_name ?> Website <?php abe_do_svg( 'external-link', 'sm' ); ?></a>
+				<a class="contact-link u-inline-flex u-bg-2 btn" itemprop="url" href="<?php echo $doc_website ?>" target="_blank"><?php echo $single_name ?> Website <?php abe_do_svg( 'external-link', '1.2em' ); ?></a>
 			</div>
 		<?php endif; ?>
 
