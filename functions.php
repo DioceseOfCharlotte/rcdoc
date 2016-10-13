@@ -31,7 +31,7 @@ add_action( 'wp_head', 'abe_display_font' );
  */
 function rcdoc_setup() {
 
-	add_theme_support( 'arch-builder' );
+	//add_theme_support( 'arch-builder' );
 
 	add_theme_support( 'cleaner-gallery' );
 

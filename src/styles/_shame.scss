@@ -1,3 +1,10 @@
+// body:not(.arch):not(.singular) article {
+// 	@media (min-width: 48em) {
+// 		width: calc(50% - 2rem);
+// 		max-width: calc(50% - 2rem);
+// 	}
+// }
+
 .contact-link.u-inline-flex {
     min-width: 150px;
     justify-content: space-around;
