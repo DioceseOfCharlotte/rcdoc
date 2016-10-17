@@ -1,6 +1,6 @@
 
 .archive .type-department,
-.taxonomy-agency .entry {
+.taxonomy-agency article {
 	overflow: hidden;
 	display: flex;
 	max-height: 100px;
@@ -13,6 +13,7 @@
 .taxonomy-agency .thumbnail,
 .archive .type-department>.thumbnail {
 	width: 130px;
+	height: 130px;
 	max-width: 33.33%;
 }
 

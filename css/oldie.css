@@ -217,18 +217,19 @@ a.tile-link {
   font-size: 12.8px; }
 
 .archive .type-department,
-.taxonomy-agency .entry {
+.taxonomy-agency article {
   overflow: hidden;
   -js-display: flex;
   display: flex;
   max-height: 100px; }
   .archive .type-department,
-    .taxonomy-agency .entry {
+    .taxonomy-agency article {
   max-height: 130px; }
 
 .taxonomy-agency .thumbnail,
 .archive .type-department > .thumbnail {
   width: 130px;
+  height: 130px;
   max-width: 33.33%; }
 
 .title-text.u-flex-col {

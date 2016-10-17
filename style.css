@@ -529,7 +529,7 @@ body:not(.home) .site-branding {
 }
 
 .archive .type-department,
-.taxonomy-agency .entry {
+.taxonomy-agency article {
 	overflow: hidden;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -539,7 +539,7 @@ body:not(.home) .site-branding {
 
 @media screen and (min-width: 48em) {
 	.archive .type-department,
-	.taxonomy-agency .entry {
+	.taxonomy-agency article {
 		max-height: 130px;
 	}
 }
@@ -547,6 +547,7 @@ body:not(.home) .site-branding {
 .taxonomy-agency .thumbnail,
 .archive .type-department > .thumbnail {
 	width: 130px;
+	height: 130px;
 	max-width: 33.33%;
 }
 
