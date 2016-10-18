@@ -8,6 +8,7 @@
 
 add_filter( 'script_loader_tag', 'abe_defer_scripts', 10, 3 );
 add_filter( 'cleaner_gallery_defaults', 'meh_gallery_default_args' );
+add_action( 'login_footer', 'doc_login_footer' );
 
 function meh_gallery_default_args( $defaults ) {
 	$defaults['size']    = 'abe-hd';
@@ -38,4 +39,8 @@ function abe_defer_scripts( $tag, $handle, $src ) {
 	}
 
 	return $tag;
+}
+
+function doc_login_footer() {
+	 echo '<div class=login-links><a href="/registration/">Create an account</a></div>';
 }
