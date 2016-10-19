@@ -889,6 +889,11 @@ http://flickity.metafizzy.co
 	/* right to left */
 	/* color & size if no SVG - IE8 and Android 2.3 */
 	/* ---- page dots ---- */
+	/**
+* Slider specific styles
+*/
+	/*  TABS */
+	/*  Toggles */
 }
 
 html .facetwp-facet .location-wrap,
@@ -1109,19 +1114,6 @@ html .gv-list-view {
 	position: relative;
 	padding: 0.5rem;
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-
-@media screen and (min-width: 48em) {
-	html .gv-list-view {
-		max-width: calc(50% - 1.5rem);
-		margin: 0 0.75rem 1.5rem;
-	}
-}
-
-@media screen and (min-width: 62em) {
-	html .gv-list-view {
-		max-width: calc(33% - 1.5rem);
-	}
 }
 
 html .gv-datatables-container {
@@ -1391,6 +1383,391 @@ html .gform_wrapper .field_description_below .gfield_description {
 
 html .gfield_label {
 	margin: 0;
+}
+
+html .frame {
+	position: relative;
+	margin: 0 auto;
+	font-size: 0;
+	line-height: 0;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+html .slide-cell {
+	position: relative;
+	display: inline-block;
+}
+
+html .arch-slides {
+	position: relative;
+}
+
+html .arch-slides .slides {
+	display: block;
+}
+
+html .arch-slides a:not(.btn) {
+	color: inherit;
+	width: auto;
+	font-weight: bold;
+}
+
+html .slide-btn {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 44px;
+	height: 44px;
+	border: 1px solid #d0d0d0;
+	border-radius: 50%;
+	background: #fff;
+	background: rgba(255, 255, 255, 0.85);
+	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+}
+
+html .slide-btn.next {
+	right: 0.5em;
+}
+
+html .slide-btn.prev {
+	left: 0.5em;
+}
+
+html .slide-btn > svg {
+	position: absolute;
+	left: 20%;
+	top: 20%;
+	width: 60%;
+	height: 60%;
+}
+
+@media screen and (max-width: 47em) {
+	html .slides .entry-summary {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+html .site-main,
+html .arch-row,
+html .o-grid {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	-webkit-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: space-around;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+}
+
+html .content > .archive-header {
+	width: 100%;
+}
+
+html .arch.arch .arch-u-1of1 {
+	width: 100%;
+	max-width: 100%;
+}
+
+@media screen and (min-width: 48em) {
+	html .arch.arch .arch-u-1of1-md {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	html .arch .arch-u-1of2-md {
+		width: calc(50% - 1.5rem);
+		max-width: calc(50% - 1.5rem);
+	}
+
+	html .arch .arch-u-1of3-md {
+		width: calc(33.33% - 1.5rem);
+		max-width: calc(33.33% - 1.5rem);
+	}
+
+	html .arch .arch-u-2of3-md {
+		width: calc(66.66% - 1.5rem);
+		max-width: calc(66.66% - 1.5rem);
+	}
+
+	html .arch .arch-u-1of4-md {
+		width: calc(25% - 1.5rem);
+		max-width: calc(25% - 1.5rem);
+	}
+
+	html .arch .arch-u-3of4-md {
+		width: calc(75% - 1.5rem);
+		max-width: calc(75% - 1.5rem);
+	}
+
+	html .arch .arch-u-1of5-md {
+		width: calc(20% - 1.5rem);
+		max-width: calc(20% - 1.5rem);
+	}
+
+	html .arch .arch-u-2of5-md {
+		width: calc(40% - 1.5rem);
+		max-width: calc(40% - 1.5rem);
+	}
+
+	html .arch .arch-u-3of5-md {
+		width: calc(60% - 1.5rem);
+		max-width: calc(60% - 1.5rem);
+	}
+
+	html .arch .arch-u-4of5-md {
+		width: calc(80% - 1.5rem);
+		max-width: calc(80% - 1.5rem);
+	}
+
+	html .arch .arch-width-auto-md {
+		width: auto;
+	}
+}
+
+html .arch .arch-flex {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+html .arch .arch-flex-wrap {
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+html .arch .arch-flex-justify-between {
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+html .arch .arch-flex-justify-around {
+	-webkit-justify-content: space-around;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+}
+
+html .arch .arch-flexed-auto {
+	-webkit-flex: 1 1 auto;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+}
+
+html .arch .arch-flexed-1 {
+	-webkit-flex: 1 1 0%;
+	-ms-flex: 1 1 0%;
+	flex: 1 1 0%;
+}
+
+html .tab-content {
+	display: none;
+	visibility: hidden;
+}
+
+html .tab-content.is-active {
+	display: block;
+	visibility: visible;
+}
+
+html .tab-header {
+	display: inline-block;
+	position: relative;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.02);
+	opacity: 0.9;
+	cursor: pointer;
+	vertical-align: middle;
+	text-decoration: none;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+html .tab-header:hover,
+html .tab-header:focus {
+	text-decoration: none;
+}
+
+html .tab-header:before {
+	position: absolute;
+	z-index: -1;
+	right: 50%;
+	bottom: -2px;
+	left: 50%;
+	height: 3px;
+	opacity: 0.2;
+	background: currentColor;
+	content: "";
+	transition: left, right 0.3s;
+}
+
+html .tab-header.is-active {
+	cursor: default;
+}
+
+html .tab-header:hover:before,
+html .tab-header.is-active:before {
+	right: 0;
+	left: 0;
+}
+
+html .tab-header.is-active:before {
+	opacity: 0.7;
+}
+
+html .collapse-toggle {
+	display: inline-block;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	box-sizing: border-box;
+	opacity: 1;
+	text-decoration: none;
+}
+
+html .collapse-toggle:hover {
+	text-decoration: none;
+}
+
+html .chevron-toggle {
+	width: 1em;
+	height: 1em;
+	opacity: 0.5;
+	transition: all 0.3s;
+}
+
+html a:hover > .chevron-toggle {
+	opacity: 1;
+}
+
+html .collapse-toggle.active > .chevron-toggle {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+html .collapse {
+	overflow: hidden;
+	outline: 0;
+	transition: height 0.3s, padding 0.3s;
+}
+
+html .collapse:not(.active) {
+	overflow: hidden;
+	height: 0 !important;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+html .collapse-wrap {
+	transition: opacity 0.1s;
+}
+
+html .collapse:not(.active) > .collapse-wrap {
+	opacity: 0.3;
+}
+
+html .arch .arch-p2 {
+	padding: 1rem;
+}
+
+html .arch .arch-px2 {
+	padding-right: 1rem;
+	padding-left: 1rem;
+}
+
+html .arch .arch-py1 {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
+html .arch .arch-pt1 {
+	padding-top: 0.5rem;
+}
+
+html .arch .arch-pb3 {
+	padding-bottom: 1.5rem;
+}
+
+html .arch .arch-f-plus {
+	font-size: 1.1rem;
+}
+
+html .arch .arch-text-center {
+	text-align: center;
+}
+
+html .arch .arch-overflow-hidden {
+	overflow: hidden;
+}
+
+html .o-crop {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	width: 100%;
+}
+
+html .o-crop--1x1 {
+	padding-top: 100%;
+}
+
+html .o-crop--4x3 {
+	padding-top: 75%;
+}
+
+html .o-crop--16x9 {
+	padding-top: 56.25%;
+}
+
+html .o-crop__content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+html .cta-content {
+	z-index: 1;
+	margin-left: 4rem;
+	bottom: 2rem;
+	color: #fff;
+	position: absolute;
+	white-space: initial;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+html .cta-text {
+	z-index: 1;
+	max-width: 80%;
+}
+
+html .arch-grad-overlay:after {
+	background: linear-gradient(rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.6) 100%);
+	content: "";
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+html .arch .flag-body > header + * {
+	padding-top: 0;
+}
+
+html .arch-no-title .arch-grad-overlay:after {
+	background: none;
+	content: none;
 }
 
 html .contact-link.u-inline-flex {

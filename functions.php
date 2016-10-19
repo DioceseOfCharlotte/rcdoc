@@ -66,13 +66,13 @@ function rcdoc_scripts() {
 	wp_enqueue_style( 'oldie_child', trailingslashit( get_stylesheet_directory_uri() ) . "css/oldie{$suffix}.css", array( 'hybrid-parent', 'hybrid-style', 'oldie' ) );
 	wp_style_add_data( 'oldie_child', 'conditional', 'IE' );
 
-	wp_enqueue_style( 'rcdoc_google_font', 'https://fonts.googleapis.com/css?family=Cormorant+Upright:400,500,600,700|Roboto:300,400,500,700' );
+	wp_enqueue_style( 'rcdoc_google_font', 'https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i,500,600,700|Source+Sans+Pro:300,400,400i,600,600i,700' );
 
-	wp_register_script(
-		'arch-tabs',
-		trailingslashit( get_stylesheet_directory_uri() ) . 'js/vendors/arch-tabs.js',
-		false, false, true
-	);
+	// wp_register_script(
+	// 	'arch-tabs',
+	// 	trailingslashit( get_stylesheet_directory_uri() ) . 'js/vendors/arch-tabs.js',
+	// 	false, false, true
+	// );
 
 	wp_register_script(
 		'flickity',
@@ -85,7 +85,7 @@ function rcdoc_scripts() {
 		trailingslashit( get_stylesheet_directory_uri() ) . 'js/vendors/fontfaceobserver.js',
 		false, false, true
 	);
-	wp_add_inline_script( 'font_face', 'var fontA = new FontFaceObserver("Cormorant Upright", {weight: 500});var fontB = new FontFaceObserver("Roboto");fontA.load().then(function () {document.documentElement.className += " fontA";});fontB.load().then(function () {document.documentElement.className += " fontB";});' );
+	wp_add_inline_script( 'font_face', 'var fontA = new FontFaceObserver("Cormorant Garamond");var fontB = new FontFaceObserver("Source Sans Pro");fontA.load().then(function () {document.documentElement.className += " fontA";});fontB.load().then(function () {document.documentElement.className += " fontB";});' );
 
 	wp_enqueue_script(
 		'main_scripts',
@@ -97,38 +97,38 @@ function rcdoc_scripts() {
 function abe_display_font() {
 	$font_dir = trailingslashit( get_stylesheet_directory_uri() ) . 'fonts/'; ?>
 
-	<link rel="preload" href="<?php echo $font_dir ?>cormorantupright-medium-webfont.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="<?php echo $font_dir ?>roboto-regular-webfont.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="<?php echo $font_dir ?>cormorant-garamond-regular.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="<?php echo $font_dir ?>SourceSansPro-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
 	<style type="text/css">
 		@font-face {
 			font-family: 'CormorantFB';
 			font-style: normal;
-			font-weight: 500;
-			src:url('<?php echo $font_dir ?>cormorantupright-medium-webfont.woff2') format('woff2'),
-				url('<?php echo $font_dir ?>cormorantupright-medium-webfont.woff') format('woff');
+			font-weight: 400;
+			src:url('<?php echo $font_dir ?>cormorant-garamond-regular.woff2') format('woff2'),
+				url('<?php echo $font_dir ?>cormorant-garamond-regular.woff') format('woff');
 		}
 		@font-face {
-		    font-family: 'RobotoFB';
-		    src: url('<?php echo $font_dir ?>roboto-regular-webfont.woff2') format('woff2'),
-		         url('<?php echo $font_dir ?>roboto-regular-webfont.woff') format('woff');
+		    font-family: 'Source Sans ProFB';
+		    src: url('<?php echo $font_dir ?>SourceSansPro-Regular.woff2') format('woff2'),
+		         url('<?php echo $font_dir ?>SourceSansPro-Regular.woff') format('woff');
 		    font-weight: 400;
 		    font-style: normal;
 
 		}
 		body, .u-text-read {
-			font-family: RobotoFB, sans-serif;
+			font-family: "Source Sans ProFB", sans-serif;
 			font-weight: 400;
 		}
 		.u-text-display,.u-text-display>a,.u-dropcap::first-letter {
 			font-family: CormorantFB, serif;
-			font-weight: 500;
+			font-weight: 400;
 		}
 		.fontB body, .fontB .u-text-read {
-			font-family: Roboto, sans-serif;
+			font-family: "Source Sans Pro", sans-serif;
 		}
 		.fontA .u-text-display,.fontA .u-text-display>a,.fontA .u-dropcap::first-letter {
-			font-family: "Cormorant Upright", serif;
+			font-family: "Cormorant Garamond", serif;
 		}
 	</style>
 <?php }
