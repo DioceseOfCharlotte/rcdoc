@@ -24,7 +24,6 @@ require get_stylesheet_directory() . '/inc/metaboxes.php';
 add_action( 'after_setup_theme', 'rcdoc_setup' );
 add_action( 'widgets_init', 'doc_widgets_init' );
 add_action( 'wp_enqueue_scripts', 'rcdoc_scripts' );
-add_action( 'wp_head', 'abe_display_font' );
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -66,8 +65,6 @@ function rcdoc_scripts() {
 	wp_enqueue_style( 'oldie_child', trailingslashit( get_stylesheet_directory_uri() ) . "css/oldie{$suffix}.css", array( 'hybrid-parent', 'hybrid-style', 'oldie' ) );
 	wp_style_add_data( 'oldie_child', 'conditional', 'IE' );
 
-	wp_enqueue_style( 'rcdoc_google_font', 'https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i,500,600,700|Source+Sans+Pro:300,400,400i,600,600i,700' );
-
 	// wp_register_script(
 	// 	'arch-tabs',
 	// 	trailingslashit( get_stylesheet_directory_uri() ) . 'js/vendors/arch-tabs.js',
@@ -81,57 +78,11 @@ function rcdoc_scripts() {
 	);
 
 	wp_enqueue_script(
-		'font_face',
-		trailingslashit( get_stylesheet_directory_uri() ) . 'js/vendors/fontfaceobserver.js',
-		false, false, true
-	);
-	wp_add_inline_script( 'font_face', 'var fontA = new FontFaceObserver("Cormorant Garamond");var fontB = new FontFaceObserver("Source Sans Pro");fontA.load().then(function () {document.documentElement.className += " fontA";});fontB.load().then(function () {document.documentElement.className += " fontB";});' );
-
-	wp_enqueue_script(
 		'main_scripts',
 		trailingslashit( get_stylesheet_directory_uri() ) . 'js/main.min.js',
 		false, false, true
 	);
 }
-
-function abe_display_font() {
-	$font_dir = trailingslashit( get_stylesheet_directory_uri() ) . 'fonts/'; ?>
-
-	<link rel="preload" href="<?php echo $font_dir ?>cormorant-garamond-regular.woff2" as="font" type="font/woff2" crossorigin>
-	<link rel="preload" href="<?php echo $font_dir ?>SourceSansPro-Regular.woff2" as="font" type="font/woff2" crossorigin>
-
-	<style type="text/css">
-		@font-face {
-			font-family: 'CormorantFB';
-			font-style: normal;
-			font-weight: 400;
-			src:url('<?php echo $font_dir ?>cormorant-garamond-regular.woff2') format('woff2'),
-				url('<?php echo $font_dir ?>cormorant-garamond-regular.woff') format('woff');
-		}
-		@font-face {
-		    font-family: 'Source Sans ProFB';
-		    src: url('<?php echo $font_dir ?>SourceSansPro-Regular.woff2') format('woff2'),
-		         url('<?php echo $font_dir ?>SourceSansPro-Regular.woff') format('woff');
-		    font-weight: 400;
-		    font-style: normal;
-
-		}
-		body, .u-text-read {
-			font-family: "Source Sans ProFB", sans-serif;
-			font-weight: 400;
-		}
-		.u-text-display,.u-text-display>a,.u-dropcap::first-letter {
-			font-family: CormorantFB, serif;
-			font-weight: 400;
-		}
-		.fontB body, .fontB .u-text-read {
-			font-family: "Source Sans Pro", sans-serif;
-		}
-		.fontA .u-text-display,.fontA .u-text-display>a,.fontA .u-dropcap::first-letter {
-			font-family: "Cormorant Garamond", serif;
-		}
-	</style>
-<?php }
 
 /**
  * Theme Colors.
