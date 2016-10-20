@@ -391,12 +391,9 @@ margin-left: auto !important;
 .entry-title > a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="charlottediocese.dev"])::after {
 @mixin icon external-link;
 }*/
- {
-  content: " ";
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='v-icon' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M17.258 15.287q.75-.752.75-1.784 0-1.033-.727-1.76-.728-.729-1.761-.729-1.08 0-1.784.704l-.751.751-.704-.75q-.704-.705-1.784-.705-1.032 0-1.76.728-.729.728-.729 1.76 0 1.08.704 1.785l4.273 4.272zM5.473 6.977q.61 0 1.057-.446.447-.446.446-1.057-.001-.61-.446-1.056-.445-.446-1.057-.446-.612 0-1.056.446-.445.445-.446 1.056 0 .611.446 1.057.446.446 1.056.446zm15.963 4.6q.564.565.564 1.409 0 .844-.564 1.408l-7.042 7.042Q13.83 22 12.986 22t-1.408-.564l-9.014-9.014Q2 11.858 2 11.014V3.972q0-.798.587-1.385T3.972 2h7.042q.845 0 1.408.564z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  display: inline-block; }
-
+/*a[href*="thankyou4caring.org"]:not([class]):before {
+	@mixin icon loyalty;
+}*/
  {
   content: " ";
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon-lg icon-newspaper v-icon' version='1' fill='%2390a4ae' viewBox='0 0 32 32' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M0 4v22a2 2 0 0 0 2 2h26V4zm2 2h24v20H2z' class='news-front'/%3E%3Cpath d='M4 14h10v10H4zm12 8h6v2h-6zm0-4h8v2h-8zm0-4h8v2h-8zM4 10h20v2H4z' class='news-text'/%3E%3Cpath d='M28 7.992v20c3.681.132 3.95-1.38 4-3v-17z' class='news-back'/%3E%3C/svg%3E");
@@ -452,7 +449,6 @@ margin-left: auto !important;
   background-repeat: no-repeat;
   display: inline-block; }
 
-a[href*="thankyou4caring.org"],
 a[href*="catholicnewsherald.com"] {
   display: inline-flex;
   align-items: center;

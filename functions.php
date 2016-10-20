@@ -65,12 +65,6 @@ function rcdoc_scripts() {
 	wp_enqueue_style( 'oldie_child', trailingslashit( get_stylesheet_directory_uri() ) . "css/oldie{$suffix}.css", array( 'hybrid-parent', 'hybrid-style', 'oldie' ) );
 	wp_style_add_data( 'oldie_child', 'conditional', 'IE' );
 
-	// wp_register_script(
-	// 	'arch-tabs',
-	// 	trailingslashit( get_stylesheet_directory_uri() ) . 'js/vendors/arch-tabs.js',
-	// 	false, false, true
-	// );
-
 	wp_register_script(
 		'flickity',
 		trailingslashit( get_stylesheet_directory_uri() ) . 'js/vendors/flickity.pkgd.min.js',

@@ -11,9 +11,9 @@ margin-left: auto !important;
 @mixin icon external-link;
 }*/
 
-a[href*="thankyou4caring.org"]:not([class]):before {
+/*a[href*="thankyou4caring.org"]:not([class]):before {
 	@mixin icon loyalty;
-}
+}*/
 
 a[href*="catholicnewsherald.com"]:not([class]):before {
 	@mixin icon newspaper;
@@ -62,7 +62,6 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 	@mixin icon schools;
 }
 
-a[href*="thankyou4caring.org"],
 a[href*="catholicnewsherald.com"] {
 	display: inline-flex;
 	align-items: center;

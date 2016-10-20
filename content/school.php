@@ -18,11 +18,7 @@ $title_link = $doc_website ? $doc_website : get_permalink();
 	    <div class="u-abs u-bottom0 u-left0 u-p2"><em><?php echo round( $distance, 2 ); ?> miles</em></div>
 	<?php }	?>
 
-	<header class="u-flex u-flex-row u-flex-nowrap u-border-b u-b-silver u-flex-jb u-br-t">
-		<h2 <?php hybrid_attr( 'entry-title' ); ?>>
-			<a href="<?php echo $title_link; ?>" class="u-text-color"><?php the_title(); ?><?php abe_do_svg( 'external-link', 'sm' ) ?></a>
-		</h2>
-	</header>
+	<?php get_template_part( 'components/entry', 'header' ); ?>
 
 		<?php
 			get_the_image(array(

@@ -11,13 +11,11 @@ get_header(); ?>
 
 <div <?php hybrid_attr( 'grid' ); ?>>
 
-	<?php
-	if ( ! is_paged() && $desc = get_the_archive_description() ) : ?>
+	<?php if ( ! is_paged() && $desc = get_the_archive_description() ) : ?>
 		<article <?php hybrid_attr( 'archive-description' ); ?>>
 			<?php echo $desc; ?>
 		</article><!-- .archive-description -->
-	<?php
-endif; ?>
+	<?php endif; ?>
 
 	<?php tha_content_before(); ?>
 
