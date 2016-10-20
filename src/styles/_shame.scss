@@ -5,10 +5,46 @@
 // 	}
 // }
 
+.entry-summary .gv-list-view,
+.employee-list .gv-list-view {
+	max-width: calc(33.33% - 1.5rem);
+}
+
 .contact-link.u-inline-flex {
     min-width: 150px;
     justify-content: space-around;
     align-items: center;
+}
+
+em.u-f-minus.u-text-read.u-normal.u-opacity {
+	font-size: .6em;
+	font-style: normal;
+}
+
+.o-list-steps li:before {
+	border: 1px solid #a2b5be;
+	background: none;
+	color: inherit;
+	min-width: 2.5em;
+	height: 2.5em;
+	text-align: center;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.singular-document-11713 .document_category-chapter,
+.singular-document-11713 .document_category-appendix {
+	display: none;
+}
+
+.layout-3-card-row .entry-content {
+	padding: 0;
+}
+
+.layout-3-card-row article {
+	background: none;
+	box-shadow: none;
 }
 
 .school_system-macs .school-system-logo {

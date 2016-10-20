@@ -1770,6 +1770,11 @@ html .arch-no-title .arch-grad-overlay:after {
 	content: none;
 }
 
+html .entry-summary .gv-list-view,
+html .employee-list .gv-list-view {
+	max-width: calc(33.33% - 1.5rem);
+}
+
 html .contact-link.u-inline-flex {
 	min-width: 150px;
 	-webkit-justify-content: space-around;
@@ -1778,6 +1783,43 @@ html .contact-link.u-inline-flex {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
+}
+
+html em.u-f-minus.u-text-read.u-normal.u-opacity {
+	font-size: .6em;
+	font-style: normal;
+}
+
+html .o-list-steps li:before {
+	border: 1px solid #a2b5be;
+	background: none;
+	color: inherit;
+	min-width: 2.5em;
+	height: 2.5em;
+	text-align: center;
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+html .singular-document-11713 .document_category-chapter,
+html .singular-document-11713 .document_category-appendix {
+	display: none;
+}
+
+html .layout-3-card-row .entry-content {
+	padding: 0;
+}
+
+html .layout-3-card-row article {
+	background: none;
+	box-shadow: none;
 }
 
 html .school_system-macs .school-system-logo {
