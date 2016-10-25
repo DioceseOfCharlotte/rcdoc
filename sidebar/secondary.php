@@ -15,11 +15,24 @@ if ( ! is_active_sidebar( 'secondary' ) ) {
 
 
 		<header class="off-canvas__header u-flex u-flex-wrap u-bg-2-light u-shadow1">
-			<div class="off-canvas__title u-1of1 u-flex u-bg-2 u-flex-center u-p1 u-mb1">
+			<div class="off-canvas__title u-1of1 u-flex u-flex-wrap u-bg-2 u-flex-jc u-flex-center u-p1 u-mb1">
 				<button class="js-menu-hide off-canvas__hide u-z1 btn-round u-h3 u-inline-flex">
 					<?php abe_do_svg( 'arrow-left', 'sm' ); ?>
 				</button>
 				<h2 class="u-h4 u-m0 u-text-display u-inline-block u-flexed-auto u-text-center"><a class="opacity-hover" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
+
+				<div class="site-address-info u-flex-jc u-f-minus">
+					<div class="contact-address u-block">
+						<a class="contact-link u-flex u-normal" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" href="http://maps.google.com/maps?z=16&amp;q=1123+S+Church+St,+Charlotte,+NC+28203" target="_blank">
+							<span class="u-inline-block">
+								<div itemprop="streetAddress">1123 South Church Street</div>
+								<div><span itemprop="addressLocality">Charlotte, NC</span><span itemprop="postalCode"> 28203</span></div>
+							</span>
+						</a>
+					</div>
+				<a class="contact-link u-inline-block u-normal" href="tel:704-370-6299" itemprop="telephone">(704) 370-6299</a>
+				</div>
+
 			</div>
 			<?php get_search_form(); ?>
 		</header>
