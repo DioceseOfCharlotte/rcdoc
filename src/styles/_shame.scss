@@ -6,11 +6,12 @@
 // }
 
 .site-header {
-	position: absolute;
+	position: fixed;
 }
 
-.site-header.fadeInDown {
-	position: fixed;
+.home .site-header.is-top,
+.home .site-header:not(.fadeInDown) {
+	position: absolute;
 }
 
 .entry-summary .gv-list-view,
