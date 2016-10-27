@@ -18,7 +18,11 @@ $title_link = $doc_website ? $doc_website : get_permalink();
 	    <div class="u-abs u-bottom0 u-left0 u-p2"><em><?php echo round( $distance, 2 ); ?> miles</em></div>
 	<?php }	?>
 
-	<?php get_template_part( 'components/entry', 'header' ); ?>
+	<header <?php hybrid_attr( 'entry-header' ); ?>>
+		<h2 <?php hybrid_attr( 'entry-title' ); ?>>
+			<a href="<?php echo $title_link ?>" rel="bookmark" itemprop="url"><?php the_title(); ?><?php abe_do_svg( 'arrow-right', '1em' ) ?></a>
+		</h2>
+	</header>
 
 		<?php
 			get_the_image(array(
