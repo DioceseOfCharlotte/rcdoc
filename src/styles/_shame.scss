@@ -5,6 +5,14 @@
 // 	}
 // }
 
+.site-header {
+	position: absolute;
+}
+
+.site-header.fadeInDown {
+	position: fixed;
+}
+
 .entry-summary .gv-list-view,
 .employee-list .gv-list-view {
 	max-width: calc(33.33% - 1.5rem);

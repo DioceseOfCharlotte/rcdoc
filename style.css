@@ -875,11 +875,6 @@ a[href*="catholicnewsherald.com"] {
 	content: none;
 }
 
-.arch-flag > .thumbnail {
-	max-width: 33.33%;
-	width: 100%;
-}
-
 html {
 	/*! Flickity v1.1.2
 http://flickity.metafizzy.co
@@ -1768,6 +1763,14 @@ html .arch .flag-body > header + * {
 html .arch-no-title .arch-grad-overlay:after {
 	background: none;
 	content: none;
+}
+
+html .site-header {
+	position: absolute;
+}
+
+html .site-header.fadeInDown {
+	position: fixed;
 }
 
 html .entry-summary .gv-list-view,

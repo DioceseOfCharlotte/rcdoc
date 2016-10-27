@@ -1045,6 +1045,10 @@ http://flickity.metafizzy.co
   html .arch-no-title .arch-grad-overlay:after {
     background: none;
     content: none; }
+  html .site-header {
+    position: absolute; }
+  html .site-header.fadeInDown {
+    position: fixed; }
   html .entry-summary .gv-list-view,
   html .employee-list .gv-list-view {
     max-width: calc(33.33% - 1.5rem); }

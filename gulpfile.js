@@ -2,45 +2,40 @@
  * MEH gulp
  */
 
-// 'use strict';
+ 'use strict';
 
-var fs = require('graceful-fs');
-var path = require('path');
-var gulp = require('gulp');
-var runSequence = require('run-sequence');
-var browserSync = require('browser-sync');
-var gulpLoadPlugins = require('gulp-load-plugins');
-var cssnano = require('gulp-cssnano');
-var imagemin = require('gulp-imagemin');
-var svgmin = require('gulp-svgmin');
-var postcss = require('gulp-postcss');
-var babel = require('gulp-babel');
-var oldie = require('oldie');
-var autoPrefixer = require('autoprefixer');
-var sourcemaps = require('gulp-sourcemaps');
+ const fs = require('graceful-fs');
+ const path = require('path');
+ const gulp = require('gulp');
+ const browserSync = require('browser-sync');
+ const runSequence = require('run-sequence');
 
-var atImport = require("postcss-import");
-var pcMixins = require("postcss-mixins");
-var pcColor = require('postcss-color-function');
-var pcVars = require("postcss-advanced-variables");
-var pcNested = require("postcss-nested");
-var pcMedia = require("postcss-custom-media");
-var pcProperties = require("postcss-custom-properties");
-var pcFlex = require('postcss-flexibility');
-var pcSvg = require('postcss-inline-svg');
-var pcNoDups = require('postcss-discard-duplicates');
-var syntax = require('postcss-scss');
-var stylefmt = require('gulp-stylefmt');
+ const autoPrefixer = require('autoprefixer');
+ const atImport = require("postcss-import");
+ const pcMixins = require("postcss-mixins");
+ const pcColor = require('postcss-color-function');
+ const pcVars = require("postcss-simple-vars");
+ const pcNested = require("postcss-nested");
+ const pcMedia = require("postcss-custom-media");
+ const pcProperties = require("postcss-custom-properties");
+ const pcCalc = require('postcss-calc');
+ const pcSvg = require('postcss-inline-svg');
 
-var $ = gulpLoadPlugins();
-var reload = browserSync.reload;
 
-var SASS_PATHS = [
+ const pcFlex = require('postcss-flexibility');
+ const pcNoDups = require('postcss-discard-duplicates');
+ const syntax = require('postcss-scss');
+ const oldie = require('oldie');
+
+ const $ = require('gulp-load-plugins')();
+ const reload = browserSync.reload;
+
+const SASS_PATHS = [
 	'src/motion-ui/src',
 	'src/styles'
 ];
 
-var AUTOPREFIXER_BROWSERS = [
+const AUTOPREFIXER_BROWSERS = [
 	'ie >= 10',
 	'ie_mob >= 10',
 	'last 2 ff versions',
@@ -53,7 +48,7 @@ var AUTOPREFIXER_BROWSERS = [
 	'bb >= 10'
 ];
 
-var PRECSS_PLUGINS = [
+const PRECSS_PLUGINS = [
 	atImport,
 	pcMixins,
 	pcProperties,
@@ -66,14 +61,14 @@ var PRECSS_PLUGINS = [
 	})
 ];
 
-var POSTCSS_PLUGINS = [
+const POSTCSS_PLUGINS = [
 	atImport,
 	autoPrefixer({
 		browsers: AUTOPREFIXER_BROWSERS
 	})
 ];
 
-var POSTCSS_IE = [
+const POSTCSS_IE = [
 	autoPrefixer({
 		browsers: ['IE 8', 'IE 9']
 	}),
@@ -81,23 +76,23 @@ var POSTCSS_IE = [
 	oldie
 ];
 
-var SOURCESJS = [
+const SOURCESJS = [
 	// ** Mine ** //
 	'src/scripts/main.babel.js'
 ];
 
 // ***** Development tasks ****** //
 // Lint JavaScript
-gulp.task('lint', function() {
+gulp.task('lint', () => {
 	gulp.src('src/scripts/*.js')
 		.pipe(xo())
 });
 
 // ***** Production build tasks ****** //
 // Optimize images
-gulp.task('images', function() {
+gulp.task('images', () => {
 	gulp.src('src/images/**/*.svg')
-		.pipe(svgmin({
+		.pipe($.svgmin({
 			plugins: [{
 				cleanupIDs: true
 			}, {
@@ -129,19 +124,19 @@ gulp.task('images', function() {
 });
 
 // Compile and Automatically Prefix Stylesheets (production)
-gulp.task('presass', function() {
+gulp.task('presass', () => {
 	gulp.src('src/styles/postCSS/index.css')
-		.pipe($.if('*.css', postcss(PRECSS_PLUGINS, {
+		.pipe($.if('*.css', $.postcss(PRECSS_PLUGINS, {
 			syntax: syntax
 		})))
 		.pipe($.concat('_postcss.scss'))
 		.pipe(gulp.dest('src/styles/'))
 });
 
-gulp.task('styles', function() {
+gulp.task('styles', () => {
 	gulp.src('src/styles/style.scss')
 		// Generate Source Maps
-		.pipe(sourcemaps.init())
+		.pipe($.sourcemaps.init())
 		.pipe($.sass({
 			includePaths: SASS_PATHS,
 			precision: 10,
@@ -149,8 +144,8 @@ gulp.task('styles', function() {
 		}))
 		.pipe(gulp.dest('.tmp'))
 		.pipe($.concat('style.css'))
-		.pipe(postcss(POSTCSS_PLUGINS))
-		.pipe(stylefmt())
+		.pipe($.postcss(POSTCSS_PLUGINS))
+		.pipe($.stylefmt())
 		.pipe(gulp.dest('./'))
 		.pipe($.if('*.css', $.cssnano()))
 		.pipe($.concat('style.min.css'))
@@ -161,9 +156,9 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest('./'))
 });
 
-gulp.task('oldie', function() {
+gulp.task('oldie', () => {
 	gulp.src('.tmp/style.css')
-		.pipe(postcss(POSTCSS_IE))
+		.pipe($.postcss(POSTCSS_IE))
 		.pipe($.concat('oldie.css'))
 		.pipe(gulp.dest('css'))
 		.pipe($.if('*.css', $.cssnano()))
@@ -172,10 +167,10 @@ gulp.task('oldie', function() {
 });
 
 // Concatenate And Minify JavaScript
-gulp.task('scripts', function() {
+gulp.task('scripts', () => {
 	gulp.src(SOURCESJS)
-		.pipe(sourcemaps.init())
-		.pipe(babel({
+		.pipe($.sourcemaps.init())
+		.pipe($.babel({
 			"presets": ["es2015"],
 			"only": [
 				"src/scripts/main.babel.js"
@@ -188,7 +183,7 @@ gulp.task('scripts', function() {
 		.pipe($.size({
 			title: 'scripts'
 		}))
-		.pipe(sourcemaps.write('.'))
+		.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest('js'))
 });
 
@@ -196,12 +191,11 @@ gulp.task('scripts', function() {
  * Defines the list of resources to watch for changes.
  */
 // Build and serve the output
-gulp.task('serve', ['scripts', 'styles'], function() {
-	browserSync.init({
-		// proxy: "local.wordpress.dev"
+gulp.task('serve', ['scripts', 'styles'], () => {
+	$.browserSync.init({
+		proxy: "local.wordpress.dev"
 		// proxy: "local.wordpress-trunk.dev"
-		proxy: 'rcdoc.dev'
-			// proxy: "127.0.0.1:8080/wordpress/"
+		// proxy: "127.0.0.1:8080/wordpress/"
 	});
 
 	gulp.watch(['*/**/*.php'], reload);
@@ -211,6 +205,6 @@ gulp.task('serve', ['scripts', 'styles'], function() {
 });
 
 // Build production files, the default task
-gulp.task('default', function(cb) {
+gulp.task('default', cb => {
 	runSequence('images', ['presass', 'styles'], 'oldie', 'scripts', cb);
 });
