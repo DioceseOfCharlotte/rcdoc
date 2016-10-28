@@ -762,7 +762,6 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
-	vertical-align: middle;
 }
 
 .gv-container a[href*="/departments/"]:before,
@@ -820,7 +819,6 @@ a[href*="catholicnewsherald.com"] {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
-	vertical-align: middle;
 }
 
 .facetwp-checkbox {

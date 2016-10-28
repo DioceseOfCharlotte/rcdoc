@@ -23,7 +23,6 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 .show-icons a {
 	display: inline-flex;
 	align-items: center;
-	vertical-align: middle;
 }
 .gv-container a[href*="/departments/"]:before,
 .gv-container a[href*="/education-vicariate/"]:before,
@@ -73,7 +72,6 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 a[href*="catholicnewsherald.com"] {
 	display: inline-flex;
 	align-items: center;
-	vertical-align: middle;
 }
 .facetwp-checkbox {
 	background: none !important;

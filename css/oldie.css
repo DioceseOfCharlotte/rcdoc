@@ -402,8 +402,7 @@ margin-left: auto !important;
 
 .show-icons a {
   display: inline-flex;
-  align-items: center;
-  vertical-align: middle; }
+  align-items: center; }
 
 .gv-container a[href*="/departments/"]:before,
 .gv-container a[href*="/education-vicariate/"]:before,
@@ -451,8 +450,7 @@ margin-left: auto !important;
 
 a[href*="catholicnewsherald.com"] {
   display: inline-flex;
-  align-items: center;
-  vertical-align: middle; }
+  align-items: center; }
 
 .facetwp-checkbox {
   background: none !important; }
