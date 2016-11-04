@@ -50,7 +50,7 @@ function doc_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'doc' ),
 		'before_widget' => '<section id="%1$s" class="widget u-p2 u-mb2 u-bg-frost-1 u-br %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget-title u-px1 u-text-display u-border-b u-opacity u-bg-white u-b-grey">',
+		'before_title'  => '<h3 class="widget-title u-p05 u-m05 u-br u-shadow1 u-text-display u-bg-white">',
 		'after_title'   => '</h3>',
 	) );
 }
