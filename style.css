@@ -1782,6 +1782,24 @@ html .home .site-header:not(.fadeInDown) {
 	position: absolute;
 }
 
+html .archive-department article {
+	max-height: 130px;
+}
+
+html .archive-department article {
+	overflow: hidden;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	max-height: 100px;
+}
+
+html .archive-department article .thumbnail {
+	width: 130px;
+	height: 130px;
+	max-width: 33.33%;
+}
+
 html .contact-link.u-inline-flex {
 	min-width: 150px;
 	-webkit-justify-content: space-around;
@@ -1790,11 +1808,6 @@ html .contact-link.u-inline-flex {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
-}
-
-html em.u-f-minus.u-text-read.u-normal.u-opacity {
-	font-size: .6em;
-	font-style: normal;
 }
 
 html .o-list-steps li:before {
@@ -1870,14 +1883,8 @@ html .site-header.u-fixed::after {
 }
 
 html .article-hero {
-	min-height: 300px;
+	min-height: 55vh;
 	box-shadow: inset 0 -3px 10px 2px rgba(0, 0, 0, 0.2);
-}
-
-@media screen and (min-width: 48em) {
-	html .article-hero {
-		min-height: 450px;
-	}
 }
 
 html .site-content {
