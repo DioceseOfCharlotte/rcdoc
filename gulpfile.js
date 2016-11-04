@@ -37,15 +37,13 @@ const SASS_PATHS = [
 
 const AUTOPREFIXER_BROWSERS = [
 	'ie >= 10',
-	'ie_mob >= 10',
 	'last 2 ff versions',
 	'last 2 chrome versions',
 	'last 2 edge versions',
 	'last 2 safari versions',
 	'last 2 opera versions',
 	'ios >= 7',
-	'android >= 4.4',
-	'bb >= 10'
+	'android >= 4.4'
 ];
 
 const PRECSS_PLUGINS = [

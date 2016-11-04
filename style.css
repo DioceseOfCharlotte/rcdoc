@@ -1109,6 +1109,13 @@ html .gv-list-view {
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
+@media screen and (min-width: 48em) {
+	html .entry-summary .gv-list-view,
+	html .employee-list .gv-list-view {
+		max-width: calc(33.33% - 1.5rem);
+	}
+}
+
 html .gv-datatables-container {
 	background-color: #fff;
 	padding: 1.5rem;
@@ -1178,6 +1185,9 @@ html .gv-list-container {
 	-ms-flex-align: stretch;
 	align-items: stretch;
 	list-style: none;
+	-webkit-justify-content: space-around;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
 }
 
 html .gv-container-10028 {
@@ -1770,11 +1780,6 @@ html .site-header {
 html .home .site-header.is-top,
 html .home .site-header:not(.fadeInDown) {
 	position: absolute;
-}
-
-html .entry-summary .gv-list-view,
-html .employee-list .gv-list-view {
-	max-width: calc(33.33% - 1.5rem);
 }
 
 html .contact-link.u-inline-flex {
