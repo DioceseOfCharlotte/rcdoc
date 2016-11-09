@@ -78,12 +78,12 @@ a[href*="catholicnewsherald.com"] {
 	width: 1em;
 	height: 1em;
 	background-color: rgba(245, 245, 245, 0.8);
-	border: 1px solid rgba(183,198,205,.9);
+	border: 0.0625rem solid rgba(183,198,205,.9);
 	padding: 0;
 	margin: 0;
 	background-size: contain;
 	margin-right: .5em;
-	border-radius: 2px;
+	border-radius: .2rem;
 }
 
 .facetwp-checkbox.checked::before {

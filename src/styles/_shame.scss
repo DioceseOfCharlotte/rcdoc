@@ -1,9 +1,4 @@
-// body:not(.arch):not(.singular) article {
-// 	@media (min-width: 48em) {
-// 		width: calc(50% - 2rem);
-// 		max-width: calc(50% - 2rem);
-// 	}
-// }
+
 
 .site-header {
 	position: fixed;
@@ -14,23 +9,6 @@
 	position: absolute;
 }
 
-.archive-department article {
-	max-height: 130px;
-}
-
-.archive-department article {
-	overflow: hidden;
-	display: -ms-flexbox;
-	display: flex;
-	max-height: 100px;
-}
-
-.archive-department article .thumbnail {
-	width: 130px;
-	height: 130px;
-	max-width: 33.33%;
-}
-
 .contact-link.u-inline-flex {
 	min-width: 150px;
 	justify-content: space-around;
@@ -38,7 +16,7 @@
 }
 
 .o-list-steps li:before {
-	border: 1px solid #a2b5be;
+	border: 0.0625rem solid #a2b5be;
 	background: none;
 	color: inherit;
 	min-width: 2.5em;
@@ -135,7 +113,7 @@ body {
 	display: inline-block;
 	font-size: 1.75rem;
 	font-weight: 400;
-	border-radius: 2px;
+	border-radius: 0.125rem;
 }
 
 a.page-numbers:hover {

@@ -4,7 +4,7 @@ Theme URI: https://github.com/DioceseOfCharlotte/rcdoc
 Author: Marty Helmick
 Author URI: https://github.com/m-e-h
 Description: Diocese child theme for Abraham.
-Version: 0.9.3
+Version: 0.9.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Template: abraham
@@ -217,19 +217,22 @@ a.tile-link {
   font-size: 12.8px; }
 
 .archive .type-department,
-.taxonomy-agency article {
+.taxonomy-agency article,
+.archive-department article {
   overflow: hidden;
   -js-display: flex;
   display: flex;
   max-height: 100px; }
   .archive .type-department,
-    .taxonomy-agency article {
-  max-height: 130px; }
+    .taxonomy-agency article,
+    .archive-department article {
+  max-height: 114px; }
 
 .taxonomy-agency .thumbnail,
+.archive-department article .thumbnail,
 .archive .type-department > .thumbnail {
-  width: 130px;
-  height: 130px;
+  width: 114px;
+  height: 114px;
   max-width: 33.33%; }
 
 .title-text.u-flex-col {
@@ -468,7 +471,7 @@ a[href*="catholicnewsherald.com"] {
   margin: 0;
   background-size: contain;
   margin-right: .5em;
-  border-radius: 2px; }
+  border-radius: .2rem; }
 
 .facetwp-checkbox.checked:before {
   background-color: #fff;
@@ -649,7 +652,7 @@ http://flickity.metafizzy.co
     background: #fff;
     position: relative;
     padding: 8px;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+    box-shadow: 0 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.14), 0 0.1875rem 0.0625rem -2px rgba(0, 0, 0, 0.2), 0 0.0625rem 0.3125rem 0 rgba(0, 0, 0, 0.12); }
   html .gv-list-view-content {
     -js-display: flex;
     display: flex; }
@@ -661,7 +664,7 @@ http://flickity.metafizzy.co
     padding: 24px;
     margin: 24px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-    border-radius: 2px; }
+    border-radius: 0.125rem; }
   html .gv-grid .staff-list p {
     margin-bottom: 0.5em; }
   html .gv-list-view-content .gv-list-view-content-image:empty {
@@ -672,7 +675,7 @@ http://flickity.metafizzy.co
     background-color: #fff;
     padding: 24px;
     border-radius: 0.2rem;
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 0.25rem 0.3125rem 0 rgba(0, 0, 0, 0.14), 0 0.0625rem 0.625rem 0 rgba(0, 0, 0, 0.12), 0 0.125rem 0.25rem -1px rgba(0, 0, 0, 0.2); }
   html .gv-list-view-title {
     border-bottom-width: 0; }
   html .gv-search-box-links a {
@@ -731,7 +734,7 @@ http://flickity.metafizzy.co
     background-color: #ffffff;
     padding: 16px;
     border-radius: 0.2rem;
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 0.25rem 0.3125rem 0 rgba(0, 0, 0, 0.14), 0 0.0625rem 0.625rem 0 rgba(0, 0, 0, 0.12), 0 0.125rem 0.25rem -1px rgba(0, 0, 0, 0.2); }
   html .gv-widgets-header {
     margin-bottom: 16px; }
   html .gv-grid.gv-list-view-content {
@@ -758,7 +761,7 @@ http://flickity.metafizzy.co
     padding: 8px;
     font-size: 16px;
     font-weight: normal;
-    border-radius: 2px;
+    border-radius: 0.125rem;
     font-family: inherit;
     margin-right: 4px;
     border: 1px solid transparent;
@@ -796,7 +799,7 @@ http://flickity.metafizzy.co
   html .gv-search-clear {
     color: #20638f;
     border-color: #20638f;
-    border-radius: 2px;
+    border-radius: 0.125rem;
     background-color: #ffffff; }
     html .gv-search-clear:hover {
       color: #fff;
@@ -1054,17 +1057,6 @@ http://flickity.metafizzy.co
     position: fixed; }
   html .home .site-header.is-top {
     position: absolute; }
-  html .archive-department article {
-    max-height: 130px; }
-  html .archive-department article {
-    overflow: hidden;
-    -js-display: flex;
-    display: flex;
-    max-height: 100px; }
-  html .archive-department article .thumbnail {
-    width: 130px;
-    height: 130px;
-    max-width: 33.33%; }
   html .contact-link.u-inline-flex {
     min-width: 150px;
     justify-content: space-around;
@@ -1134,7 +1126,7 @@ http://flickity.metafizzy.co
     display: inline-block;
     font-size: 28px;
     font-weight: 400;
-    border-radius: 2px; }
+    border-radius: 0.125rem; }
   html a.page-numbers:hover {
     background-color: #90a4ae; }
   html span.page-numbers {
