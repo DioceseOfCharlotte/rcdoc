@@ -6,7 +6,7 @@
  */
 
 add_filter( 'facetwp_index_row', 'index_serialized_data', 10, 2 );
-add_filter( 'facetwp_facets', 'doc_register_doc_category_facets' );
+//add_filter( 'facetwp_facets', 'doc_register_doc_category_facets' );
 add_action( 'tha_content_before', 'doc_display_facets' );
 //add_filter( 'facetwp_indexer_query_args', 'wpdr_facetwp_indexer_query_args' );
 add_action( 'wp_head', 'fwp_load_more', 99 );
@@ -82,9 +82,10 @@ function doc_register_doc_category_facets( $facets ) {
 	);
 
 	$facets[] = array(
-		'label'         => 'Department Search',
-		'name'          => 'department_search',
-		'type'          => 'search',
+		'label'         	=> 'Department Search',
+		'name'         	 	=> 'department_search',
+		'type'          	=> 'search',
+		'search_engine'  	=> 'default',
 	);
 
 	$facets[] = array(
