@@ -18,6 +18,14 @@
 
 	<?php get_template_part( 'components/entry', 'header' ); ?>
 
+	<?php $parent_id = wp_get_post_parent_id(); ?>
+
+	<?php if ( $parent_id ) : ?>
+
+		<div class="u-1of1 u-text-center"><a class="u-text-grey-sub mission-of u-normal u-italic" href="<?php the_permalink( $parent_id ); ?>">A Mission of <?php echo get_the_title( $parent_id ); ?></a></div>
+
+	<?php endif; ?>
+
 	<?php
 	get_the_image(array(
 		'size'               => 'thumbnail',

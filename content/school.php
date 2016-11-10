@@ -40,6 +40,7 @@ $title_link = $doc_website ? $doc_website : get_permalink();
 		<?php if ( has_term( 'macs', 'school_system' ) ) : ?>
 
 			<a class="btn macs-logo u-abs u-bottom0 u-right0" href="<?php the_permalink( '10073' ); ?>"><?php abe_do_svg( 'macs', '3em', '5em' ); ?></a>
+
 		<?php endif; ?>
 
 <?php get_template_part( 'components/entry', 'footer' ); ?>
