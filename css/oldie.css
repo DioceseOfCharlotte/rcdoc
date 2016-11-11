@@ -226,13 +226,13 @@ a.tile-link {
   .archive .type-department,
     .taxonomy-agency article,
     .archive-department article {
-  max-height: 114px; }
+  max-height: 100px; }
 
 .taxonomy-agency .thumbnail,
 .archive-department article .thumbnail,
 .archive .type-department > .thumbnail {
-  width: 114px;
-  height: 114px;
+  width: 100px;
+  height: 100px;
   max-width: 33.33%; }
 
 .title-text.u-flex-col {
