@@ -198,15 +198,8 @@ a.tile-link {
   max-height: 4.5em;
   width: auto; }
 
-.site-header {
-  height: 56px; }
-  .site-header {
-  height: 64px; }
-
 .home .site-header.is-top {
-  height: 64px; }
-  .home .site-header.is-top {
-  height: 88px; }
+  padding-bottom: 16px; }
 
  {
   height: 0;
@@ -1091,9 +1084,9 @@ http://flickity.metafizzy.co
       transition: none; }
   html .home .site-header.is-top {
     transition: none;
-    background: linear-gradient(to bottom, #0f132a, transparent);
+    background: linear-gradient(to bottom, #0f132a, #0f132a, transparent);
     background-color: transparent !important;
-    background-image: -webkit-linear-gradient(top, rgba(15, 19, 42, 0.4), transparent); }
+    background-image: -webkit-linear-gradient(top, rgba(15, 19, 42, 0.75), rgba(15, 19, 42, 0.55), transparent); }
   html .site-header:after {
     content: "";
     position: absolute;
