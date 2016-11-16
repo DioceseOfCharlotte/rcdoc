@@ -1,26 +1,29 @@
 
 
-.site-branding {
-	font-size: 1rem;
-	align-items: center;
-	max-height: 100%;
+// .site-branding {
+// 	//font-size: 1rem;
+// 	align-items: center;
+// 	//max-height: 100%;
+//
+// 	// @include xs {
+// 	// 	font-size: 3vw;
+// 	// }
+// }
 
-	@include xs {
-		font-size: 3vw;
-	}
-}
-
-.site-title {
-	font-size: 2em;
-}
-
+// .site-title {
+// 	font-size: 2em;
+// }
+//
 .site-description {
-	font-size: 1.5em;
+	opacity: 0;
+	//transform: translateY(-2rem);
+	transition: opacity .2s;
 }
 
 .custom-logo {
-	max-height: 4.5em;
+	height: 2.5rem;
 	width: auto;
+	transition: height .2s linear;
 }
 
 // .site-header {
@@ -32,12 +35,18 @@
 // }
 
 .home .site-header.is-top {
-	padding-bottom: 1rem;
+	padding-bottom: 2rem;
 	// height: 4rem;
 
-	// @include md {
-	// 	height: 5.5rem;
-	// }
+	.custom-logo {
+		height: 3.5rem;
+	}
+
+	.site-description {
+		opacity: 1;
+		//transform: translateY(0);
+		transition: opacity 0.2s linear;
+	}
 }
 
 .site-header:not(.is-top),
@@ -47,12 +56,13 @@ body:not(.home) {
 		opacity: 0;
 		overflow: hidden;
 	}
-
-	.site-branding {
-		font-size: 0.8rem;
-
-		@include xs {
-			font-size: 3vw;
-		}
-	}
 }
+
+	// .site-branding {
+	// 	font-size: 0.8rem;
+	//
+	// 	@include xs {
+	// 		font-size: 3vw;
+	// 	}
+	// }
+//}

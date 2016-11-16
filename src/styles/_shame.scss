@@ -51,16 +51,16 @@ body {
 	background-size: cover;
 }
 
-.site-branding a {
-	transition-timing-function: cubic-bezier(0, 1.11, 0.58, 1);
-
-	> * {
-		transition: none;
-	}
-}
+// .site-branding a {
+// 	transition-timing-function: cubic-bezier(0, 1.11, 0.58, 1);
+//
+// 	> * {
+// 		transition: none;
+// 	}
+// }
 
 .home .site-header.is-top {
-	transition: none;
+	//transition: none;
 	background: linear-gradient(to bottom, rgba(15, 19, 42, 0.75), rgba(15, 19, 42, 0.55), rgba(0, 0, 0, 0));
 	background-color: transparent !important;
 	background-image: -webkit-linear-gradient(top, rgba(15, 19, 42, 0.75), rgba(15, 19, 42, 0.55), rgba(0, 0, 0, 0));

@@ -462,35 +462,28 @@ a.tile-link:hover {
 	margin-top: 1rem;
 }
 
-.site-branding {
-	font-size: 1rem;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-	max-height: 100%;
-}
-
-@media screen and (max-width: 34em) {
-	.site-branding {
-		font-size: 3vw;
-	}
-}
-
-.site-title {
-	font-size: 2em;
-}
-
 .site-description {
-	font-size: 1.5em;
+	opacity: 0;
+	transition: opacity 0.2s;
 }
 
 .custom-logo {
-	max-height: 4.5em;
+	height: 2.5rem;
 	width: auto;
+	transition: height 0.2s linear;
 }
 
 .home .site-header.is-top {
-	padding-bottom: 1rem;
+	padding-bottom: 2rem;
+}
+
+.home .site-header.is-top .custom-logo {
+	height: 3.5rem;
+}
+
+.home .site-header.is-top .site-description {
+	opacity: 1;
+	transition: opacity 0.2s linear;
 }
 
 .site-header:not(.is-top) .site-description,
@@ -498,18 +491,6 @@ body:not(.home) .site-description {
 	height: 0;
 	opacity: 0;
 	overflow: hidden;
-}
-
-.site-header:not(.is-top) .site-branding,
-body:not(.home) .site-branding {
-	font-size: 0.8rem;
-}
-
-@media screen and (max-width: 34em) {
-	.site-header:not(.is-top) .site-branding,
-	body:not(.home) .site-branding {
-		font-size: 3vw;
-	}
 }
 
 .archive .type-department,
@@ -913,6 +894,26 @@ html .facetwp-checkbox {
 
 html .facetwp-checkbox.checked {
 	font-weight: bold;
+}
+
+html .fs-label-wrap {
+	min-height: 2.5rem;
+	max-width: 100%;
+	border-radius: 0.2rem !important;
+	border-width: 0 !important;
+	line-height: 1.5;
+	background-color: rgba(52, 58, 64, 0.1);
+	color: #343a40;
+	margin: 0;
+	vertical-align: baseline;
+	font-size: inherit;
+	font-family: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+	box-shadow: inset 0 0 0 0.063rem rgba(52, 58, 64, 0.1);
+	transition-duration: 0.16s;
+	transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+	transition-property: color, background-color, box-shadow;
 }
 
 html .flickity-enabled {
@@ -1827,16 +1828,7 @@ html body {
 	background-size: cover;
 }
 
-html .site-branding a {
-	transition-timing-function: cubic-bezier(0, 1.11, 0.58, 1);
-}
-
-html .site-branding a > * {
-	transition: none;
-}
-
 html .home .site-header.is-top {
-	transition: none;
 	background: linear-gradient(to bottom, rgba(15, 19, 42, 0.75), rgba(15, 19, 42, 0.55), transparent);
 	background-color: transparent !important;
 	background-image: -webkit-linear-gradient(top, rgba(15, 19, 42, 0.75), rgba(15, 19, 42, 0.55), transparent);
