@@ -22,7 +22,7 @@
 
 	<?php if ( $parent_id ) : ?>
 
-		<div class="u-1of1 u-text-center"><a class="u-text-grey-sub mission-of u-normal u-italic" href="<?php the_permalink( $parent_id ); ?>">A Mission of <?php echo get_the_title( $parent_id ); ?></a></div>
+		<div class="u-1of1 u-text-center"><span class="u-text-grey-sub mission-of u-normal u-italic">A Mission of <a class="u-text-grey-sub" href="<?php the_permalink( $parent_id ); ?>"> <?php echo get_the_title( $parent_id ); ?></a></span></div>
 
 	<?php endif; ?>
 
