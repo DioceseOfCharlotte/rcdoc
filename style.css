@@ -722,16 +722,10 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 	background-repeat: no-repeat;
 	display: inline-block;
 }
-
-.show-icons a {
-	display: -webkit-inline-flex;
-	display: -ms-inline-flexbox;
+/*.show-icons a {
 	display: inline-flex;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
 	align-items: center;
-}
-
+}*/
 .gv-container a[href*="/departments/"]:before,
 .gv-container a[href*="/education-vicariate/"]:before,
 .gv-container a[href*="/ev/"]:before,
@@ -779,16 +773,10 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 	background-repeat: no-repeat;
 	display: inline-block;
 }
-
-a[href*="catholicnewsherald.com"] {
-	display: -webkit-inline-flex;
-	display: -ms-inline-flexbox;
+/*a[href*="catholicnewsherald.com"] {
 	display: inline-flex;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
 	align-items: center;
-}
-
+}*/
 .facetwp-checkbox {
 	background: none !important;
 }

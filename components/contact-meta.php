@@ -20,68 +20,60 @@ $map_link = 'http://maps.google.com/maps?z=16&q=' . $address;
 
 $width = 'u-1of1';
 if ( has_post_thumbnail() ) {
-	$width = 'u-2of3';
+	$width = 'u-3of4';
 }
 ?>
 
 <div class="contact-info u-inline-block <?php echo $width ?> u-align-middle u-p1 u-h6">
-	<?php
 
-	ob_start();
-	?>
-	<div class="contact-numbers u-mb1 u-flex u-flex-wrap u-flex-jb">
+<?php ob_start(); ?>
+	<div class="contact-wrapper u-mb1 u-flex u-flex-wrap u-flex-jb">
 
-		<div class="phone contact-numbers__item u-inline-block u-spacer16">
+<div class="contact-numbers">
+		<div class="phone contact-numbers__item">
 			<?php if ( $doc_phone ) : ?>
-				<a href="tel:<?php echo $doc_phone ?>" itemprop="telephone"><?php echo $doc_phone ?></a>
+				<a class="contact-phone u-inline-block" href="tel:<?php echo $doc_phone ?>" itemprop="telephone"><?php abe_do_svg( 'call' ); ?><?php echo $doc_phone ?></a>
 			<?php endif; ?>
 		</div>
-
-
-		<div class="fax contact-numbers__item u-inline-block u-spacer16">
+		<div class="fax contact-numbers__item">
 			<?php if ( $doc_fax ) : ?>
 				<span class="contact-fax u-inline-block u-opacity" itemprop="faxNumber"><span class="u-bold u-mr1">FAX</span><?php echo $doc_fax ?></span>
 			<?php endif; ?>
 		</div>
-
-	</div>
-
-	<?php
-	echo ob_get_clean();
-
-	ob_start(); ?>
-	<div class="contact-address u-inline-block u-mb1">
+</div>
+	<div class="contact-address-wrap">
 		<?php if ( $doc_city ) : ?>
-			<a itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" href="<?php echo esc_url( $map_link ) ?>" target="_blank">
-				<span class="u-inline-block">
+			<a class="contact-address u-inline-block" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" href="<?php echo esc_url( $map_link ) ?>" target="_blank">
+				<?php abe_do_svg( 'map_pin' ); ?>
 					<span itemprop="streetAddress">
 						<?php echo $doc_street ?><br>
 						<?php if ( $doc_street_2 ) { ?>
 							<?php echo $doc_street_2 ?><br>
 							<?php } ?>
 						</span>
-						<span itemprop="addressLocality"><?php echo $doc_city ?>, <?php echo $doc_state ?></span>
+						<span class="u-ml1" itemprop="addressLocality"><?php echo $doc_city ?>, <?php echo $doc_state ?></span>
 						<span itemprop="postalCode"><?php echo $doc_zip ?></span>
-					</span>
 				</a>
 			<?php endif; ?>
+		</div>
 		</div>
 		<?php echo ob_get_clean(); ?>
 
 
-
-		<div class="email u-spacer16 u-mb1 u-truncate">
+<?php ob_start(); ?>
+		<p class="email u-truncate">
 			<?php if ( $doc_email ) : ?>
-				<a itemprop="email" href="mailto:<?php echo $doc_email ?>"><?php echo $doc_email ?></a>
+				<a class="contact-mail" itemprop="email" href="mailto:<?php echo $doc_email ?>"><?php abe_do_svg( 'mail' ); ?><?php echo $doc_email ?></a>
 			<?php endif; ?>
-		</div>
-
+		</p>
+<?php echo ob_get_clean(); ?>
+<?php ob_start(); ?>
 		<?php if ( 'parish' === get_post_type( get_the_ID() ) ) : ?>
 			<?php $obj = get_post_type_object( get_post_type() );
 			$single_name = $obj->labels->singular_name; ?>
-			<div class="website u-text-center u-1of1 u-mb1">
-				<a class="contact-link u-inline-flex u-bg-2 btn" itemprop="url" href="<?php echo $doc_website ?>" target="_blank"><?php echo $single_name ?> Website <?php abe_do_svg( 'external-link', '1.2em' ); ?></a>
-			</div>
+			<p class="website">
+				<a class="contact-link u-inline-block" itemprop="url" href="<?php echo $doc_website ?>" target="_blank"><?php abe_do_svg( 'external-link', '1.2em' ); ?><?php echo $doc_website ?></a>
+			</p>
 		<?php endif; ?>
-
+<?php echo ob_get_clean(); ?>
 	</div>

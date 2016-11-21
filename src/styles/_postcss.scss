@@ -20,10 +20,10 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 	background-repeat: no-repeat;
 	display: inline-block;
 }
-.show-icons a {
+/*.show-icons a {
 	display: inline-flex;
 	align-items: center;
-}
+}*/
 .gv-container a[href*="/departments/"]:before,
 .gv-container a[href*="/education-vicariate/"]:before,
 .gv-container a[href*="/ev/"]:before,
@@ -69,10 +69,10 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 	background-repeat: no-repeat;
 	display: inline-block;
 }
-a[href*="catholicnewsherald.com"] {
+/*a[href*="catholicnewsherald.com"] {
 	display: inline-flex;
 	align-items: center;
-}
+}*/
 .facetwp-checkbox {
 	background: none !important;
 }

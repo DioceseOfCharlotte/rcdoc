@@ -19,10 +19,10 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 	@mixin icon newspaper;
 }
 
-.show-icons a {
+/*.show-icons a {
 	display: inline-flex;
 	align-items: center;
-}
+}*/
 
 .gv-container a[href*="/departments/"]:before,
 .gv-container a[href*="/education-vicariate/"]:before,
@@ -61,10 +61,10 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 	@mixin icon schools;
 }
 
-a[href*="catholicnewsherald.com"] {
+/*a[href*="catholicnewsherald.com"] {
 	display: inline-flex;
 	align-items: center;
-}
+}*/
 
 .facetwp-checkbox {
 	background: none !important;
