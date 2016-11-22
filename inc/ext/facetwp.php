@@ -150,14 +150,14 @@ function doc_display_facets() {
 		echo '<div class="u-1of1 u-px3 u-pb0 u-br u-pt3 u-mb3 u-flex u-flex-wrap u-flex-ja u-bg-2 u-text-color u-shadow3 u-max-center">';
 		echo facetwp_display( 'facet', 'proximity_search' );
 		echo facetwp_display( 'facet', 'department_search' );
-		echo '<button class="btn btn-round u-bg-frost-4 u-m0 u-m0" onclick="FWP.reset()"><span class="icon-refresh"></span></button>';
+		echo '<button class="btn btn-round u-bg-frost-4 u-m0 u-m0" onclick="FWP.reset()"><i class="fa fa-refresh"></i></button>';
 		echo '<div class="u-1of1 u-text-center">' . facetwp_display( 'facet', 'title_alpha' ) . '</div>';
 		echo '</div>';
 	} elseif ( is_post_type_archive( 'department' ) ) {
 		echo '<div class="u-1of1 u-px3 u-pb0 u-br u-pt3 u-mb3 u-flex u-flex-wrap u-flex-ja u-bg-2 u-text-color u-shadow3 u-max-center">';
 		echo facetwp_display( 'facet', 'department_agency' );
 		echo facetwp_display( 'facet', 'department_search' );
-		echo '<button class="btn btn-round u-bg-frost-4 u-m0 u-m0" onclick="FWP.reset()"><span class="icon-refresh"></span></button>';
+		echo '<button class="btn btn-round u-bg-frost-4 u-m0 u-m0" onclick="FWP.reset()"><i class="fa fa-refresh"></i></button>';
 		echo '<div class="u-1of1 u-text-center">' . facetwp_display( 'facet', 'title_alpha' ) . '</div>';
 		echo '</div>';
 	} elseif ( is_post_type_archive( 'school' ) ) {
@@ -166,7 +166,7 @@ function doc_display_facets() {
 		echo facetwp_display( 'facet', 'grade_level' );
 		// echo facetwp_display( 'facet', 'school_system' );
 		// echo facetwp_display( 'facet', 'department_search' );
-		echo '<button class="btn btn-round u-bg-frost-4 u-m0 u-m0" onclick="FWP.reset()"><span class="icon-refresh"></span></button>';
+		echo '<button class="btn btn-round u-bg-frost-4 u-m0 u-m0" onclick="FWP.reset()"><i class="fa fa-refresh"></i></button>';
 		echo '</div>';
 	}
 }

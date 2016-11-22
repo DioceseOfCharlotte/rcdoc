@@ -9,17 +9,17 @@ if ( ! is_active_sidebar( 'secondary' ) ) {
 	return;
 }
 ?>
-<aside class="js-off-canvas off-canvas u-fix u-left0 u-top0 u-1of1 u-height100 if-admin-bar u-overflow-hidden">
-	<nav class="js-off-canvas-container off-canvas__container u-rel u-bg-white u-height100 u-flex u-flex-col u-shadow3">
+<aside class="js-side-nav side-nav u-fix u-left0 u-top0 u-1of1 u-height100 if-admin-bar u-overflow-hidden">
+	<nav class="js-side-nav-container side-nav__container u-rel u-bg-white u-height100 u-flex u-flex-col u-shadow3">
 
 
 
-		<header class="off-canvas__header u-flex u-flex-wrap u-bg-2-light u-shadow1">
-			<div class="off-canvas__title u-1of1 u-flex u-flex-wrap u-bg-2 u-flex-jc u-flex-center u-p1 u-mb1">
-				<button class="js-menu-hide off-canvas__hide u-z1 btn-round u-h3 u-inline-flex">
+		<header class="side-nav__header u-flex u-flex-wrap u-bg-2-light u-shadow1">
+			<div class="side-nav__title u-1of1 u-flex u-flex-wrap u-bg-2 u-flex-jc u-flex-center u-p1 u-mb1">
+				<button class="js-menu-hide side-nav__hide u-z1 btn-round u-h3 u-inline-flex">
 					<?php abe_do_svg( 'arrow-left', 'sm' ); ?>
 				</button>
-				<h2 class="u-h4 u-m0 u-text-display u-inline-block u-flexed-auto u-text-center"><a class="opacity-hover" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
+				<h2 class="u-h4 u-m0 u-text-display u-inline-block u-flexed-auto u-text-center"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
 
 				<div class="site-address-info u-flex-jc u-f-minus">
 					<div class="contact-address u-block">
@@ -37,7 +37,7 @@ if ( ! is_active_sidebar( 'secondary' ) ) {
 			<?php get_search_form(); ?>
 		</header>
 
-    <div class="off-canvas__content u-py2 u-flexed-1 ">
+    <div class="side-nav__content u-py2 u-flexed-1 ">
 
 		<?php dynamic_sidebar( 'secondary' ); ?>
 

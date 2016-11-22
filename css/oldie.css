@@ -372,31 +372,48 @@ a.tile-link {
   width: 100%;
   background-color: #ffca3d; }
 
+/* FontAwesome Variables */
 /*.entry-title > a {
 
 &::after {
 margin-left: auto !important;
-@mixin icon arrow-right;
+@mixin fa arrow-right;
 }
-}
-
-.entry-title > a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="charlottediocese.dev"])::after {
-@mixin icon external-link;
-}*/
-/*a[href*="thankyou4caring.org"]:not([class]):before {
-	@mixin icon loyalty;
 }*/
  {
-  content: " ";
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon-lg icon-newspaper v-icon' version='1' fill='%2390a4ae' viewBox='0 0 32 32' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M0 4v22a2 2 0 0 0 2 2h26V4zm2 2h24v20H2z' class='news-front'/%3E%3Cpath d='M4 14h10v10H4zm12 8h6v2h-6zm0-4h8v2h-8zm0-4h8v2h-8zM4 10h20v2H4z' class='news-text'/%3E%3Cpath d='M28 7.992v20c3.681.132 3.95-1.38 4-3v-17z' class='news-back'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  display: inline-block; }
+  content: "\f08e";
+  font-family: FontAwesome !important;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9em;
+  font-weight: normal !important;
+  font-style: normal !important;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 0.8em;
+  filter: alpha(opacity=60); }
+
+/*a[href*="thankyou4caring.org"]:not([class]):before {
+@mixin fa loyalty;
+}*/
+ {
+  content: "\f1ea";
+  font-family: FontAwesome !important;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9em;
+  font-weight: normal !important;
+  font-style: normal !important;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 /*.show-icons a {
-	display: inline-flex;
-	align-items: center;
+display: inline-flex;
+align-items: center;
 }*/
-.gv-container a[href*="/departments/"]:before,
+/*.gv-container a[href*="/departments/"]:before,
 .gv-container a[href*="/education-vicariate/"]:before,
 .gv-container a[href*="/ev/"]:before,
 .gv-container a[href*="/archive-posts/"]:before,
@@ -412,19 +429,19 @@ margin-left: auto !important;
 .gv-container a[href*="/multicultural/"]:before,
 .gv-container a[href*="/vocations/"]:before,
 .icon-office:before {
-  content: " ";
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M2 30h14V2H2v28zm8.75-24.5h3.5V9h-3.5V5.5zm0 7h3.5V16h-3.5v-3.5zm0 7h3.5V23h-3.5v-3.5zm-7-14h3.5V9h-3.5V5.5zm0 7h3.5V16h-3.5v-3.5zm0 7h3.5V23h-3.5v-3.5zm14-8.75H30v1.75H17.75zm0 19.25h3.5v-7h5.25v7H30V14.25H17.75z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  display: inline-block; }
-
+@mixin icon office;
+}*/
 .gform_save_link:before {
-  content: " ";
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='v-icon' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M16.852 3.539c4.651 2.388 6.486 8.125 4.107 12.794-2.379 4.668-8.083 6.51-12.746 4.122a9.423 9.423 0 0 1-4.568-5.227l1.94-1.223a7.27 7.27 0 0 0 3.646 4.466c3.562 1.83 7.917.416 9.74-3.16a7.276 7.276 0 0 0-3.136-9.788c-3.563-1.83-7.918-.416-9.74 3.16L8.32 9.835l-5.858 3.659L2 6.58l2.107 1.081c2.39-4.692 8.13-6.486 12.745-4.122zm-5.16 9.301a1.186 1.186 0 0 1-.343-.843c0-.083.036-.143.048-.226h-.012l1.148-5.714 1.148 5.714 3.585 3.79-5.325-2.519.024-.023a1.343 1.343 0 0 1-.273-.179z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle; }
+  content: "\f1da";
+  font-family: FontAwesome !important;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9em;
+  font-weight: normal !important;
+  font-style: normal !important;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 .show-icons a[href*="/parishes/"]:before,
 .icon-parish:before {
@@ -440,10 +457,6 @@ margin-left: auto !important;
   background-repeat: no-repeat;
   display: inline-block; }
 
-/*a[href*="catholicnewsherald.com"] {
-	display: inline-flex;
-	align-items: center;
-}*/
 .facetwp-checkbox {
   background: none !important; }
 
@@ -459,15 +472,21 @@ margin-left: auto !important;
   padding: 0;
   margin: 0;
   background-size: contain;
-  margin-right: .5em;
-  border-radius: .2rem; }
+  margin-right: 0.5em;
+  border-radius: 0.2rem; }
 
 .facetwp-checkbox.checked:before {
-  background-color: #fff;
-  content: " ";
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='v-icon' fill='%2336474f' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M8.356 16.423l-4.741-4.975L2 13.13l6.356 6.67L22 5.482 20.397 3.8z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  display: inline-block; }
+  content: "\f00c";
+  font-family: FontAwesome !important;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9em;
+  font-weight: normal !important;
+  font-style: normal !important;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff; }
 
 .btn > p {
   margin: 0 !important;

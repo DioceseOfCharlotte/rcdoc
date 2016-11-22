@@ -3,28 +3,30 @@
 
 &::after {
 margin-left: auto !important;
-@mixin icon arrow-right;
+@mixin fa arrow-right;
 }
-}
-
-.entry-title > a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="charlottediocese.dev"])::after {
-@mixin icon external-link;
 }*/
 
+p a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="catholicnewsherald.com"]):not([href*="charlottediocese.dev"])::after {
+	@mixin fa $external-link;
+	font-size: 0.8em;
+	opacity: 0.6;
+}
+
 /*a[href*="thankyou4caring.org"]:not([class]):before {
-	@mixin icon loyalty;
+@mixin fa loyalty;
 }*/
 
 a[href*="catholicnewsherald.com"]:not([class]):before {
-	@mixin icon newspaper;
+	@mixin fa $newspaper-o;
 }
 
 /*.show-icons a {
-	display: inline-flex;
-	align-items: center;
+display: inline-flex;
+align-items: center;
 }*/
 
-.gv-container a[href*="/departments/"]:before,
+/*.gv-container a[href*="/departments/"]:before,
 .gv-container a[href*="/education-vicariate/"]:before,
 .gv-container a[href*="/ev/"]:before,
 .gv-container a[href*="/archive-posts/"]:before,
@@ -40,15 +42,11 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 .gv-container a[href*="/multicultural/"]:before,
 .gv-container a[href*="/vocations/"]:before,
 .icon-office:before {
-	@mixin icon office;
-}
+@mixin icon office;
+}*/
 
 .gform_save_link::before {
-	@mixin icon backup;
-
-	width: 1.5em;
-	height: 1.5em;
-	vertical-align: middle;
+	@mixin fa $history;
 }
 
 .show-icons a[href*="/parishes/"]:before,
@@ -60,11 +58,6 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 .icon-school:before {
 	@mixin icon schools;
 }
-
-/*a[href*="catholicnewsherald.com"] {
-	display: inline-flex;
-	align-items: center;
-}*/
 
 .facetwp-checkbox {
 	background: none !important;
@@ -82,13 +75,13 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 	padding: 0;
 	margin: 0;
 	background-size: contain;
-	margin-right: .5em;
-	border-radius: .2rem;
+	margin-right: 0.5em;
+	border-radius: 0.2rem;
 }
 
 .facetwp-checkbox.checked::before {
+	@mixin fa $check;
 	background-color: #fff;
-	@mixin icon check, #36474f;
 }
 
 .btn > p {
