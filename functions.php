@@ -62,8 +62,8 @@ function rcdoc_scripts() {
 
 	$suffix = hybrid_get_min_suffix();
 
-	wp_enqueue_style( 'oldie_child', trailingslashit( get_stylesheet_directory_uri() ) . "css/oldie{$suffix}.css", array( 'hybrid-parent', 'hybrid-style', 'oldie' ) );
-	wp_style_add_data( 'oldie_child', 'conditional', 'IE' );
+	wp_enqueue_style( 'oldie-child', trailingslashit( get_stylesheet_directory_uri() ) . "css/oldie{$suffix}.css", array( 'abe-style', 'hybrid-style', 'oldie' ) );
+	wp_style_add_data( 'oldie-child', 'conditional', 'IE' );
 
 	wp_register_script(
 		'flickity',
@@ -72,7 +72,7 @@ function rcdoc_scripts() {
 	);
 
 	wp_enqueue_script(
-		'main_scripts',
+		'main-scripts',
 		trailingslashit( get_stylesheet_directory_uri() ) . 'js/main.min.js',
 		false, false, true
 	);
