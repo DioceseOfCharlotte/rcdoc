@@ -18,7 +18,7 @@
 
 	<?php get_template_part( 'components/entry', 'header' ); ?>
 
-	<?php $parent_id = wp_get_post_parent_id(); ?>
+	<?php $parent_id = wp_get_post_parent_id( get_the_ID() ); ?>
 
 	<?php if ( $parent_id ) : ?>
 

@@ -2,33 +2,36 @@
  * MEH gulp
  */
 
- 'use strict';
+'use strict';
 
- const fs = require('graceful-fs');
- const path = require('path');
- const gulp = require('gulp');
- const browserSync = require('browser-sync');
- const runSequence = require('run-sequence');
+const fs = require('graceful-fs');
+const path = require('path');
+const gulp = require('gulp');
+const rev = require('gulp-rev');
+const ignore = require('gulp-ignore');
+const browserSync = require('browser-sync');
+const runSequence = require('run-sequence');
 
- const autoPrefixer = require('autoprefixer');
- const atImport = require("postcss-import");
- const pcMixins = require("postcss-mixins");
- const pcColor = require('postcss-color-function');
- const pcVars = require("postcss-simple-vars");
- const pcNested = require("postcss-nested");
- const pcMedia = require("postcss-custom-media");
- const pcProperties = require("postcss-custom-properties");
- const pcCalc = require('postcss-calc');
- const pcSvg = require('postcss-inline-svg');
+const autoPrefixer = require('autoprefixer');
+const atImport = require("postcss-import");
+const pcMixins = require("postcss-mixins");
+const pcColor = require('postcss-color-function');
+const pcNested = require("postcss-nested");
+const pcMedia = require("postcss-custom-media");
+const pcProperties = require("postcss-custom-properties");
+const pcSvg = require('postcss-inline-svg');
+const pcSvar = require('postcss-simple-vars');
+const pcStrip = require('postcss-strip-units');
+
+const $ = require('gulp-load-plugins')();
+const reload = browserSync.reload;
 
 
- const pcFlex = require('postcss-flexibility');
- const pcNoDups = require('postcss-discard-duplicates');
- const syntax = require('postcss-scss');
- const oldie = require('oldie');
+// To be removed
+const pcFlex = require('postcss-flexibility');
+const syntax = require('postcss-scss');
+const oldie = require('oldie');
 
- const $ = require('gulp-load-plugins')();
- const reload = browserSync.reload;
 
 const SASS_PATHS = [
 	'src/motion-ui/src',
@@ -37,6 +40,7 @@ const SASS_PATHS = [
 
 const AUTOPREFIXER_BROWSERS = [
 	'ie >= 10',
+	'ie_mob >= 10',
 	'last 2 ff versions',
 	'last 2 chrome versions',
 	'last 2 edge versions',
@@ -48,9 +52,10 @@ const AUTOPREFIXER_BROWSERS = [
 
 const PRECSS_PLUGINS = [
 	atImport,
-	pcMixins,
 	pcProperties,
-	pcVars,
+	pcStrip,
+	pcMixins,
+	pcSvar,
 	pcColor,
 	pcMedia,
 	pcNested,
@@ -79,12 +84,6 @@ const SOURCESJS = [
 	'src/scripts/main.babel.js'
 ];
 
-// ***** Development tasks ****** //
-// Lint JavaScript
-gulp.task('lint', () => {
-	gulp.src('src/scripts/*.js')
-		.pipe(xo())
-});
 
 // ***** Production build tasks ****** //
 // Optimize images
@@ -145,12 +144,18 @@ gulp.task('styles', () => {
 		.pipe($.postcss(POSTCSS_PLUGINS))
 		.pipe($.stylefmt())
 		.pipe(gulp.dest('./'))
+		.pipe($.sourcemaps.write('.'))
+		.pipe(gulp.dest('./'))
 		.pipe($.if('*.css', $.cssnano()))
-		.pipe($.concat('style.min.css'))
+		.pipe(ignore.exclude('*.map'))
+		.pipe(rev())
+		.pipe(gulp.dest('./'))
 		.pipe($.size({
 			title: 'styles'
 		}))
-		.pipe($.sourcemaps.write('.'))
+		.pipe(rev.manifest({
+			merge: true
+		}))
 		.pipe(gulp.dest('./'))
 });
 
@@ -169,20 +174,23 @@ gulp.task('scripts', () => {
 	gulp.src(SOURCESJS)
 		.pipe($.sourcemaps.init())
 		.pipe($.babel({
-			"presets": ["es2015"],
-			"only": [
-				"src/scripts/main.babel.js"
-			]
+			"presets": ["es2015"]
 		}))
 		.pipe($.concat('main.js'))
 		.pipe(gulp.dest('js'))
-		.pipe($.concat('main.min.js'))
-		.pipe($.uglify())
+		.pipe($.sourcemaps.write('.'))
+		.pipe(gulp.dest('js'))
+		.pipe($.if('*.js', $.uglify()))
+		.pipe(ignore.exclude('*.map'))
+		.pipe(rev())
+		.pipe(gulp.dest('js'))
 		.pipe($.size({
 			title: 'scripts'
 		}))
-		.pipe($.sourcemaps.write('.'))
-		.pipe(gulp.dest('js'))
+		.pipe(rev.manifest({
+			merge: true
+		}))
+		.pipe(gulp.dest('./'))
 });
 
 /**
@@ -192,8 +200,8 @@ gulp.task('scripts', () => {
 gulp.task('serve', ['scripts', 'styles'], () => {
 	$.browserSync.init({
 		proxy: "local.wordpress.dev"
-		// proxy: "local.wordpress-trunk.dev"
-		// proxy: "127.0.0.1:8080/wordpress/"
+			// proxy: "local.wordpress-trunk.dev"
+			// proxy: "127.0.0.1:8080/wordpress/"
 	});
 
 	gulp.watch(['*/**/*.php'], reload);

@@ -56,26 +56,44 @@ function doc_widgets_init() {
 }
 
 /**
+ * Append Hash to assets filename to purge the browser cache when changed.
+ */
+function get_child_asset_rev( $filename ) {
+
+	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+		return $filename;
+	}
+
+	// Cache the decoded manifest so that we only read it in once.
+	static $manifest = null;
+	if ( null === $manifest ) {
+		$manifest_path = trailingslashit( get_stylesheet_directory() ) . 'rev-manifest.json';
+		$manifest = file_exists( $manifest_path ) ? json_decode( file_get_contents( $manifest_path ), true ) : [];
+	}
+
+	// If the manifest contains the requested file, return the hashed name.
+	if ( array_key_exists( $filename, $manifest ) ) {
+		return $manifest[ $filename ];
+	}
+
+	// File hash wasn't found.
+	return $filename;
+}
+
+/**
  * Enqueue scripts and styles.
  */
 function rcdoc_scripts() {
 
 	$suffix = hybrid_get_min_suffix();
 
-	wp_enqueue_style( 'oldie-child', trailingslashit( get_stylesheet_directory_uri() ) . "css/oldie{$suffix}.css", array( 'abe-style', 'hybrid-style', 'oldie' ) );
+	wp_register_style( 'rcdoc-style', trailingslashit( get_stylesheet_directory_uri() ) . get_child_asset_rev( 'style.css' ) );
+
+	wp_enqueue_style( 'oldie-child', trailingslashit( get_stylesheet_directory_uri() ) . "css/oldie{$suffix}.css", array( 'abe-style', 'rcdoc-style', 'oldie' ) );
 	wp_style_add_data( 'oldie-child', 'conditional', 'IE' );
 
-	wp_register_script(
-		'flickity',
-		trailingslashit( get_stylesheet_directory_uri() ) . 'js/vendors/flickity.pkgd.min.js',
-		false, false, true
-	);
-
-	wp_enqueue_script(
-		'main-scripts',
-		trailingslashit( get_stylesheet_directory_uri() ) . 'js/main.min.js',
-		false, false, true
-	);
+	// Scripts.
+	wp_enqueue_script( 'main-script', trailingslashit( get_stylesheet_directory_uri() ) . 'js/' . get_child_asset_rev( 'main.js' ), false, false, true );
 }
 
 /**
