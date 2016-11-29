@@ -1220,6 +1220,17 @@ http://flickity.metafizzy.co
     margin-left: -64px;
     line-height: 40px;
     font-weight: 600; }
+  html .intro-paragraph, html .u-lead {
+    font-size: 20px;
+    letter-spacing: .02em; }
+  html .js-houdini .collapse.active {
+    overflow-y: auto; }
+  html .archive-document .archive-description {
+    -js-display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around; }
 
 /* Styles specific to the editor. */
 body#tinymce {

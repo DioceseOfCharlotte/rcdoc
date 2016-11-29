@@ -249,7 +249,18 @@ nav.navigation.pagination {
 }
 
 
+.intro-paragraph, .u-lead {
+	font-size: 1.25rem;
+	letter-spacing: .02em;
+}
 
-// .taxonomy-agency .o-cell {
-// 	display: flex;
-// }
+.js-houdini .collapse.active {
+	overflow-y: auto;
+}
+
+.archive-document .archive-description {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+}

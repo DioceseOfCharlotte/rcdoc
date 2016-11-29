@@ -7,7 +7,7 @@ margin-left: auto !important;
 }
 }*/
 
-p a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="catholicnewsherald.com"]):not([href*="charlottediocese.dev"])::after {
+p a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="catholicnewsherald.com"]):not([href*="wpengine.netdna-ssl.com"]):not([href*="charlottediocese.dev"])::after {
 	@mixin fa $external-link;
 	font-size: 0.8em;
 	opacity: 0.6;

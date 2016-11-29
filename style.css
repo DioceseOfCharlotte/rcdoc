@@ -710,7 +710,7 @@ margin-left: auto !important;
 @mixin fa arrow-right;
 }
 }*/
-p a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="catholicnewsherald.com"]):not([href*="charlottediocese.dev"])::after {
+p a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="catholicnewsherald.com"]):not([href*="wpengine.netdna-ssl.com"]):not([href*="charlottediocese.dev"])::after {
 	content: "\f08e";
 	font-family: FontAwesome !important;
 	display: -webkit-inline-flex;
@@ -2049,6 +2049,31 @@ html .list-count .gfield_list_group .gfield_list_cell:first-child::before {
 	margin-left: -4rem;
 	line-height: 2.5rem;
 	font-weight: 600;
+}
+
+html .intro-paragraph,
+html .u-lead {
+	font-size: 1.25rem;
+	letter-spacing: 0.02em;
+}
+
+html .js-houdini .collapse.active {
+	overflow-y: auto;
+}
+
+html .archive-document .archive-description {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-justify-content: space-around;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
 }
 /* Styles specific to the editor. */
 body#tinymce {
