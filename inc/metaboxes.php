@@ -15,33 +15,6 @@ function doc_register_metaboxes() {
 	$prefix = 'doc_';
 
 	/**
-	* Alias metabox.
-	*/
-	// $doc_dept_alias = new_cmb2_box( array(
-	// 	'id'            => $prefix . 'alias_metabox',
-	// 	'title'         => __( 'Dept Alias', 'cmb2' ),
-	// 	'object_types'  => array( 'department' ),
-	// 	'context'       => 'side',
-	// 	'priority'      => 'low',
-	// ) );
-	//
-	// $doc_dept_alias->add_field( array(
-	// 	'name' => __( 'Department has a seperate landing page?', 'cmb2' ),
-	// 	'desc' => __( 'Yes. (this page will not be accessed directly.)', 'cmb2' ),
-	// 	'id'   => $prefix . 'alias_checkbox',
-	// 	'type' => 'checkbox',
-	// ) );
-	//
-	// $doc_dept_alias->add_field( array(
-	//     'name'        => __( 'Alias of' ),
-	// 	'desc'             => __( 'The landing page for this dept:', 'cmb2' ),
-	//     'id'          => $prefix . 'alias_landing',
-	// 	'type'    => 'select',
-	// 	'show_option_none' => true,
-	//     'options' => cmb2_get_post_list( $post_type = array( 'cpt_archive' ) ),
-	// ) );
-
-	/**
 	* Parent select Metaboxes.
 	*/
 	$doc_landing_parent = new_cmb2_box( array(
@@ -101,142 +74,6 @@ function doc_register_metaboxes() {
 	    'options' => cmb2_get_post_list( $post_type = array( 'cpt_archive', 'department' ) ),
 	) );
 
-/**
- * Register Stats metaboxes.
- */
-
-	$doc_stat = new_cmb2_box( array(
-		'id'            => $prefix . 'stats_metabox',
-		'title'         => __( 'Statistics Report', 'cmb2' ),
-		'object_types'  => array( 'statistics_report' ),
-	) );
-
-	$doc_stat->add_field( array(
-		'name'    => __( 'Report Year', 'cmb2' ),
-		'desc'    => __( 'Enter the year for this Report.', 'cmb2' ),
-		'default' => '201_',
-		'id'      => $prefix . 'stats_report_date',
-		'type'    => 'text_small',
-	) );
-
-	$doc_stat->add_field( array(
-		'name' => __( 'Report', 'cmb2' ),
-		'desc' => __( 'Upload the document or enter a URL.', 'cmb2' ),
-		'id'   => $prefix . 'stats_report',
-		'type' => 'file',
-	) );
-
-	$doc_stat->add_field( array(
-		'name'             => __( 'County', 'cmb2' ),
-		'desc'             => __( 'Select the relevant county or counties. (optional)', 'cmb2' ),
-		'id'               => $prefix . 'stats_county',
-		'type'             => 'select',
-		'show_option_none' => true,
-		'repeatable'       => true,
-		'options'          => array(
-		'alamance' => 'Alamance',
-		'alexander' => 'Alexander',
-		'alleghany' => 'Alleghany',
-		'anson' => 'Anson',
-		'ashe' => 'Ashe',
-		'avery' => 'Avery',
-		'beaufort' => 'Beaufort',
-		'bertie' => 'Bertie',
-		'bladen' => 'Bladen',
-		'brunswick' => 'Brunswick',
-		'buncombe' => 'Buncombe',
-		'burke' => 'Burke',
-		'cabarrus' => 'Cabarrus',
-		'caldwell' => 'Caldwell',
-		'camden' => 'Camden',
-		'cartere' => 'Cartere',
-		'caswell' => 'Caswell',
-		'catawba' => 'Catawba',
-		'chatham' => 'Chatham',
-		'cherokee' => 'Cherokee',
-		'chowan' => 'Chowan',
-		'clay' => 'Clay',
-		'cleveland' => 'Cleveland',
-		'columbus' => 'Columbus',
-		'craven' => 'Craven',
-		'cumberland' => 'Cumberland',
-		'currituck' => 'Currituck',
-		'dare' => 'Dare',
-		'davidson' => 'Davidson',
-		'davie' => 'Davie',
-		'duplin' => 'Duplin',
-		'durham' => 'Durham',
-		'edgecombe' => 'Edgecombe',
-		'forsyth' => 'Forsyth',
-		'franklin' => 'Franklin',
-		'gaston' => 'Gaston',
-		'gates' => 'Gates',
-		'graham' => 'Graham',
-		'granville' => 'Granville',
-		'greene' => 'Greene',
-		'guilford' => 'Guilford',
-		'halifax' => 'Halifax',
-		'harnett' => 'Harnett',
-		'haywood' => 'Haywood',
-		'henderson' => 'Henderson',
-		'hertford' => 'Hertford',
-		'hoke' => 'Hoke',
-		'hyde' => 'Hyde',
-		'iredell' => 'Iredell',
-		'jackson' => 'Jackson',
-		'johnston' => 'Johnston',
-		'jones' => 'Jones',
-		'lee' => 'Lee',
-		'lenoir' => 'Lenoir',
-		'lincoln' => 'Lincoln',
-		'macon' => 'Macon',
-		'madison' => 'Madison',
-		'martin' => 'Martin',
-		'mcdowell' => 'McDowell',
-		'mecklenburg' => 'Mecklenburg',
-		'mitchell' => 'Mitchell',
-		'montgomery' => 'Montgomery',
-		'moore' => 'Moore',
-		'nash' => 'Nash',
-		'new-hanover' => 'New Hanover',
-		'northampton' => 'Northampton',
-		'onslow' => 'Onslow',
-		'orange' => 'Orange',
-		'pamlico' => 'Pamlico',
-		'pasquotank' => 'Pasquotank',
-		'pender' => 'Pender',
-		'perquimans' => 'Perquimans',
-		'person' => 'Person',
-		'pitt' => 'Pitt',
-		'polk' => 'Polk',
-		'randolph' => 'Randolph',
-		'richmond' => 'Richmond',
-		'robeson' => 'Robeson',
-		'rockingham' => 'Rockingham',
-		'rowan' => 'Rowan',
-		'rutherford' => 'Rutherford',
-		'sampson' => 'Sampson',
-		'scotland' => 'Scotland',
-		'stanly' => 'Stanly',
-		'stokes' => 'Stokes',
-		'surry' => 'Surry',
-		'swain' => 'Swain',
-		'transylvania' => 'Transylvania',
-		'tyrrell' => 'Tyrrell',
-		'union' => 'Union',
-		'vance' => 'Vance',
-		'wake' => 'Wake',
-		'warren' => 'Warren',
-		'washington' => 'Washington',
-		'watauga' => 'Watauga',
-		'wayne' => 'Wayne',
-		'wilkes' => 'Wilkes',
-		'wilson' => 'Wilson',
-		'yadkin' => 'Yadkin',
-		'yancey' => 'Yancey',
-		),
-	) );
-
 }
 
 
@@ -252,7 +89,7 @@ function cmb2_get_post_list( $post_type = 'post', $args = array() ) {
 	$args['post_type'] = $post_type;
 
 	// $defaults = array( 'post_type' => 'post' );
-    $args = wp_parse_args( $args, array( 'post_type' => 'post' ) );
+	$args = wp_parse_args( $args, array( 'post_type' => 'post' ) );
 
 	$post_type = $args['post_type'];
 
@@ -352,7 +189,7 @@ function doc_term_color_hex( $term_id ) {
 function doc_term_color_rgb( $term_id, $alpha ) {
 	$doc_hex = doc_term_color_hex( $term_id );
 	$doc_rgb = implode( ',', hybrid_hex_to_rgb( $doc_hex ) );
-	return 'rgba('. $doc_rgb .','. $alpha .')';
+	return 'rgba(' . $doc_rgb . ',' . $alpha . ')';
 }
 
 /**
@@ -372,5 +209,5 @@ function doc_term_color_comp( $term_id, $alpha ) {
 	$comp_color = $term_accent->isDark() ? $term_accent->darken( 15 ) :$term_accent->lighten( 20 );
 
 	$comp_rgb = implode( ',', hybrid_hex_to_rgb( $comp_color ) );
-	return 'rgba('. $comp_rgb .','. $alpha .')';
+	return 'rgba(' . $comp_rgb . ',' . $alpha . ')';
 }

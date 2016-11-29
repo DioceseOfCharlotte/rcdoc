@@ -6,7 +6,7 @@
 */
 
 add_action( 'admin_menu', 'meh_remove_menu_pages' );
-add_action( 'admin_init', 'meh_remove_plugins_menu' );
+//add_action( 'admin_init', 'meh_remove_plugins_menu' );
 add_action( 'wp', 'custom_maybe_activate_user', 0 );
 add_filter( 'wpseo_metabox_prio', function() { return 'low'; } );
 
@@ -20,11 +20,11 @@ function meh_remove_menu_pages() {
 	}
 }
 
-function meh_remove_plugins_menu() {
-	if ( class_exists( 'Jetpack' ) && ! current_user_can( 'manage_options' ) ) {
-		remove_menu_page( 'jetpack' );
-	}
-}
+// function meh_remove_plugins_menu() {
+// 	if ( class_exists( 'Jetpack' ) && ! current_user_can( 'manage_options' ) ) {
+// 		remove_menu_page( 'jetpack' );
+// 	}
+// }
 
 
 
