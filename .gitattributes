@@ -7,17 +7,13 @@
 *.gif binary
 *.ico binary
 
-/*.json         	export-ignore
+/package.json    	export-ignore
+/*.map          	export-ignore
 /gulpfile.js    	export-ignore
-/gulpfile.babel.js  export-ignore
 /.git               export-ignore
 /.gitignore     	export-ignore
 /.gitattributes     export-ignore
-/assets/src         export-ignore
+/src         		export-ignore
 /composer.lock  	export-ignore
+/yarn.lock  		export-ignore
 /.editorconfig  	export-ignore
-
-
-# Denote all files that are truly binary and should not be modified.
-*.woff binary
-*.woff2 binary
