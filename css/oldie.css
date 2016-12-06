@@ -694,10 +694,13 @@ http://flickity.metafizzy.co
     margin-bottom: -8px;
     padding: 8px;
     margin-top: auto; }
-    html .u-bg-silver.gv-field-3-custom * + * {
-      margin-top: 4px; }
+     {
+      margin-top: 4px;
+      padding-top: 4px;
+      border-top: 1px solid #adb5bd; }
     html .u-bg-silver.gv-field-3-custom p {
-      margin: 0; }
+      margin: 0;
+      flex: 1; }
   html .entry-summary .gv-list-view,
     html .employee-list .gv-list-view {
   max-width: calc(33.33% - 1.5rem); }

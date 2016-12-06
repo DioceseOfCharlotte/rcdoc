@@ -1145,12 +1145,17 @@ html .u-bg-silver.gv-field-3-custom {
 	margin-top: auto;
 }
 
-html .u-bg-silver.gv-field-3-custom * + * {
+html .u-bg-silver.gv-field-3-custom > * + div:not(:empty) {
 	margin-top: 0.25rem;
+	padding-top: 0.25rem;
+	border-top: 1px solid #adb5bd;
 }
 
 html .u-bg-silver.gv-field-3-custom p {
 	margin: 0;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
 }
 
 @media screen and (min-width: 48em) {
