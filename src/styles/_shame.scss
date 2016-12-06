@@ -127,11 +127,6 @@ span.page-numbers {
 
 // Jetpack edit-css
 
-// img.thumbnail.u-1of3.u-of-cover {
-// 	width: 100%;
-// 	max-width: calc(33.33% - 1.5rem);
-// }
-
 .singular-page.layout-1-column-wide article {
 	background-color: transparent;
 }
@@ -170,8 +165,6 @@ nav.navigation.pagination {
 	position: relative;
 }
 
-
-
 .entry-summary #loginform {
 	display: none;
 }
@@ -186,68 +179,6 @@ nav.navigation.pagination {
 	padding: 1rem;
 	box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
 }
-
-@media screen and (min-width: 62em) {
-	.layout-2-card-row .gv-list-view {
-		max-width: calc(50% - 1.5rem);
-	}
-
-	.layout-3-card-row .gv-list-view {
-		max-width: calc(33% - 1.5rem);
-	}
-}
-
-.layout-1-card-row .gv-list-view {
-	max-width: 100%;
-	padding: 3rem;
-	text-align: center;
-}
-
-.gv-search {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: flex-end;
-	flex-wrap: wrap;
-}
-
-.gv-search > label {
-	padding: 0 .5rem;
-}
-
-.gv-widget-search .gv-search-box.gv-search-box-submit {
-	align-self: center;
-}
-
-.media-img>a {
-	background: none;
-}
-
-.gv-widget-search p {
-	margin-bottom: 0;
-}
-
-.gv-widget-search {
-	align-items: center;
-}
-
-.list-count tbody {
-	counter-reset: section;
-}
-
-.list-count table.gfield_list_container {
-	margin-left: 2rem !important;
-}
-
-.list-count .gfield_list_group .gfield_list_cell:first-child::before {
-	counter-increment: section;
-	content: "Mass " counter(section) ": ";
-	position: absolute;
-	margin-left: -4rem;
-	line-height: 2.5rem;
-	font-weight: 600;
-}
-
 
 .intro-paragraph, .u-lead {
 	font-size: 1.25rem;

@@ -2,14 +2,6 @@
 
 /* FontAwesome Variables */
 
-/*.entry-title > a {
-
-&::after {
-margin-left: auto !important;
-@mixin fa arrow-right;
-}
-}*/
-
 p a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="catholicnewsherald.com"]):not([href*="wpengine.netdna-ssl.com"]):not([href*="charlottediocese.dev"])::after {
 	content: "\f08e";
 	font-family: FontAwesome !important;
@@ -25,10 +17,6 @@ p a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="catholicnewshera
 	opacity: 0.6;
 }
 
-/*a[href*="thankyou4caring.org"]:not([class]):before {
-@mixin fa loyalty;
-}*/
-
 a[href*="catholicnewsherald.com"]:not([class]):before {
 	content: "\f1ea";
 	font-family: FontAwesome !important;
@@ -41,30 +29,6 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
-/*.show-icons a {
-display: inline-flex;
-align-items: center;
-}*/
-
-/*.gv-container a[href*="/departments/"]:before,
-.gv-container a[href*="/education-vicariate/"]:before,
-.gv-container a[href*="/ev/"]:before,
-.gv-container a[href*="/archive-posts/"]:before,
-.gv-container a[href*="/development/"]:before,
-.gv-container a[href*="/housing/"]:before,
-.gv-container a[href*="/human-resources/"]:before,
-.gv-container a[href*="/it/"]:before,
-.gv-container a[href*="/liturgy-and-worship/"]:before,
-.gv-container a[href*="/planning/"]:before,
-.gv-container a[href*="/tribunal/"]:before,
-.gv-container a[href*="/finance/"]:before,
-.gv-container a[href*="/properties/"]:before,
-.gv-container a[href*="/multicultural/"]:before,
-.gv-container a[href*="/vocations/"]:before,
-.icon-office:before {
-@mixin icon office;
-}*/
 
 .gform_save_link::before {
 	content: "\f1da";
@@ -85,6 +49,8 @@ align-items: center;
 	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M16 2L2 13.737V30h28V13.737zm-2.462 5.69h4.924v6.07h5.862v4.417h-5.862v10.67h-4.924v-10.67H7.676V13.76h5.862z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
+	width: 1em;
+	height: 1em;
 }
 
 .show-icons a[href*="/schools/"]:before,
@@ -93,6 +59,8 @@ align-items: center;
 	background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2390a4ae' class='tile-icon v-icon' viewBox='0 0 48 48' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M47.01 44.23H.99a.99.99 0 1 1 0-1.98h46.02a.99.99 0 1 1 0 1.98zm0 3.77H.99a.99.99 0 1 1 0-1.98h46.02a.99.99 0 1 1 0 1.98zm0-25.753H34.996V15.56h.815a.99.99 0 0 0 .31-1.936L24.41 8.296a.994.994 0 0 0-.82 0L11.78 13.67a.99.99 0 0 0 .409 1.89h.815v6.687H.99a.99.99 0 0 0-.99.99v16.606c0 .547.443.99.99.99h18.278V30.53c0-.58.443-1.048.99-1.048h7.484c.547 0 .99.47.99 1.048v10.302H47.01a.99.99 0 0 0 .99-.99V23.237a.99.99 0 0 0-.99-.99zM6.518 37.02a.99.99 0 1 1-1.98 0v-2.81a.99.99 0 1 1 1.98 0v2.81zm0-6.584a.99.99 0 1 1-1.98 0v-2.812a.99.99 0 1 1 1.98 0v2.812zm4.334 6.585c0 .548-.442.99-.99.99s-.99-.442-.99-.99v-2.81a.99.99 0 1 1 1.98 0v2.81zm0-6.584c0 .548-.442.99-.99.99s-.99-.442-.99-.99v-2.812a.99.99 0 1 1 1.98 0v2.812zm4.334 6.585a.99.99 0 1 1-1.98 0v-2.81a.99.99 0 1 1 1.98 0v2.81zm0-6.584a.99.99 0 1 1-1.98 0v-2.812a.99.99 0 1 1 1.98 0v2.812zm5.472-5.402a.99.99 0 1 1-1.98 0v-2.81a.99.99 0 1 1 1.98 0v2.81zm0-6.584a.99.99 0 1 1-1.98 0v-2.813a.99.99 0 1 1 1.98 0v2.813zm4.334 6.584a.99.99 0 1 1-1.98 0v-2.81a.99.99 0 1 1 1.98 0v2.81zm0-6.584a.99.99 0 1 1-1.98 0v-2.813a.99.99 0 1 1 1.98 0v2.813zm4.333 6.584a.99.99 0 1 1-1.98 0v-2.81a.99.99 0 1 1 1.98 0v2.81zm0-6.584a.99.99 0 1 1-1.98 0v-2.813a.99.99 0 0 1 1.98 0v2.813zm5.472 18.57a.99.99 0 1 1-1.98 0v-2.81a.99.99 0 1 1 1.98 0v2.81zm0-6.584a.99.99 0 1 1-1.98 0v-2.812a.99.99 0 1 1 1.98 0v2.812zm4.333 6.585a.99.99 0 1 1-1.98 0v-2.81a.99.99 0 1 1 1.98 0v2.81zm0-6.584a.99.99 0 1 1-1.98 0v-2.812a.99.99 0 1 1 1.98 0v2.812zm4.333 6.585a.988.988 0 1 1-1.978 0v-2.81a.99.99 0 1 1 1.98 0v2.81zm0-6.584a.988.988 0 1 1-1.978 0v-2.812a.99.99 0 1 1 1.98 0v2.812z'/%3E%3Cpath d='M24 10.187a.99.99 0 0 1-.99-.99V.99a.99.99 0 1 1 1.98 0v8.208a.99.99 0 0 1-.99.99z'/%3E%3Cpath d='M23.217 4.366V2.75c.597 0 1.08-.393 1.08-.88 0-.486-.482-.88-1.08-.88H17.81c-.598 0-1.08.394-1.08.88v3.377c0 .486.48.88 1.08.88h5.408c.597 0 1.08-.394 1.08-.88 0-.488-.484-.88-1.08-.88z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
+	width: 1em;
+	height: 1em;
 }
 
 .facetwp-checkbox {
@@ -131,18 +99,7 @@ align-items: center;
 
 .btn > p {
 	margin: 0!important;
-	padding: 0;
-}
-
-.btn-round a {
-	color: transparent;
-	width: 100%;
-	height: 100%;
-	display: inline-block;
-	border-radius: 50%;
-	position: absolute;
-	left: 0;
-	top: 0;
+	padding: 0!important;
 }
 
 .header__menu-toggle > .icon-sm {

@@ -503,7 +503,7 @@ body:not(.home) .site-description {
 	max-height: 6.25rem;
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 40em) {
 	.archive .type-department,
 	.taxonomy-agency article,
 	.archive-department article {
@@ -525,7 +525,7 @@ body:not(.home) .site-description {
 	flex-direction: column-reverse;
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 40em) {
 	.doc-embed {
 		height: 80vh;
 	}
@@ -542,7 +542,7 @@ body:not(.home) .site-description {
 	stroke-linejoin: round;
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 40em) {
 	.tile {
 		min-width: 23%;
 	}
@@ -703,13 +703,6 @@ body:not(.home) .site-description {
 	background-color: rgba(255, 202, 61, 0.8);
 }
 /* FontAwesome Variables */
-/*.entry-title > a {
-
-&::after {
-margin-left: auto !important;
-@mixin fa arrow-right;
-}
-}*/
 p a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="catholicnewsherald.com"]):not([href*="wpengine.netdna-ssl.com"]):not([href*="charlottediocese.dev"])::after {
 	content: "\f08e";
 	font-family: FontAwesome !important;
@@ -728,9 +721,7 @@ p a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="catholicnewshera
 	font-size: 0.8em;
 	opacity: 0.6;
 }
-/*a[href*="thankyou4caring.org"]:not([class]):before {
-@mixin fa loyalty;
-}*/
+
 a[href*="catholicnewsherald.com"]:not([class]):before {
 	content: "\f1ea";
 	font-family: FontAwesome !important;
@@ -747,28 +738,7 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-/*.show-icons a {
-display: inline-flex;
-align-items: center;
-}*/
-/*.gv-container a[href*="/departments/"]:before,
-.gv-container a[href*="/education-vicariate/"]:before,
-.gv-container a[href*="/ev/"]:before,
-.gv-container a[href*="/archive-posts/"]:before,
-.gv-container a[href*="/development/"]:before,
-.gv-container a[href*="/housing/"]:before,
-.gv-container a[href*="/human-resources/"]:before,
-.gv-container a[href*="/it/"]:before,
-.gv-container a[href*="/liturgy-and-worship/"]:before,
-.gv-container a[href*="/planning/"]:before,
-.gv-container a[href*="/tribunal/"]:before,
-.gv-container a[href*="/finance/"]:before,
-.gv-container a[href*="/properties/"]:before,
-.gv-container a[href*="/multicultural/"]:before,
-.gv-container a[href*="/vocations/"]:before,
-.icon-office:before {
-@mixin icon office;
-}*/
+
 .gform_save_link::before {
 	content: "\f1da";
 	font-family: FontAwesome !important;
@@ -792,6 +762,8 @@ align-items: center;
 	background-image: url("data:image/svg+xml;charset=utf-8, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%2390a4ae' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M16 2L2 13.737V30h28V13.737zm-2.462 5.69h4.924v6.07h5.862v4.417h-5.862v10.67h-4.924v-10.67H7.676V13.76h5.862z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
+	width: 1em;
+	height: 1em;
 }
 
 .show-icons a[href*="/schools/"]:before,
@@ -800,6 +772,8 @@ align-items: center;
 	background-image: url("data:image/svg+xml;charset=utf-8, %3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2390a4ae' class='tile-icon v-icon' viewBox='0 0 48 48' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M47.01 44.23H0.99a0.99.99 0 1 1 0-1.98h46.02a0.99.99 0 1 1 0 1.98zm0 3.77H0.99a0.99.99 0 1 1 0-1.98h46.02a0.99.99 0 1 1 0 1.98zm0-25.753H34.996V15.56h0.815a0.99.99 0 0 0 0.31-1.936L24.41 8.296a0.994.994 0 0 0-0.82 0L11.78 13.67a0.99.99 0 0 0 0.49 1.89h0.815v6.687H0.99a0.99.99 0 0 0-0.99.99v16.66c0 0.547.443.99.99.99h18.278V30.53c0-0.58.443-1.048.99-1.048h7.484c0.547 0 0.99.47.99 1.048v10.32H47.01a0.99.99 0 0 0 0.99-0.99V23.237a0.99.99 0 0 0-0.99-0.99zM6.518 37.02a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.812a0.99.99 0 1 1 1.98 0v2.812zm4.334 6.585c0 0.548-0.442.99-0.99.99s-0.99-0.442-0.99-0.99v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584c0 0.548-0.442.99-0.99.99s-0.99-0.442-0.99-0.99v-2.812a0.99.99 0 1 1 1.98 0v2.812zm4.334 6.585a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.812a0.99.99 0 1 1 1.98 0v2.812zm5.472-5.42a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.813a0.99.99 0 1 1 1.98 0v2.813zm4.334 6.584a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.813a0.99.99 0 1 1 1.98 0v2.813zm4.333 6.584a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.813a0.99.99 0 0 1 1.98 0v2.813zm5.472 18.57a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.812a0.99.99 0 1 1 1.98 0v2.812zm4.333 6.585a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.812a0.99.99 0 1 1 1.98 0v2.812zm4.333 6.585a0.988.988 0 1 1-1.978 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.988.988 0 1 1-1.978 0v-2.812a0.99.99 0 1 1 1.98 0v2.812z'/%3E%3Cpath d='M24 10.187a0.99.99 0 0 1-0.99-0.99V0.99a0.99.99 0 1 1 1.98 0v8.28a0.99.99 0 0 1-0.99.99z'/%3E%3Cpath d='M23.217 4.366V2.75c0.597 0 1.08-0.393 1.08-0.88 0-0.486-0.482-0.88-1.08-0.88H17.81c-0.598 0-1.08.394-1.08.88v3.377c0 0.486.48.88 1.08.88h5.48c0.597 0 1.08-0.394 1.08-0.88 0-0.488-0.484-0.88-1.08-0.88z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
+	width: 1em;
+	height: 1em;
 }
 
 .facetwp-checkbox {
@@ -842,18 +816,7 @@ align-items: center;
 
 .btn > p {
 	margin: 0 !important;
-	padding: 0;
-}
-
-.btn-round a {
-	color: transparent;
-	width: 100%;
-	height: 100%;
-	display: inline-block;
-	border-radius: 50%;
-	position: absolute;
-	left: 0;
-	top: 0;
+	padding: 0 !important;
 }
 
 .header__menu-toggle > .icon-sm {
@@ -946,7 +909,7 @@ html .gallery-cell {
 	width: 90%;
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 40em) {
 	html .gallery-cell {
 		width: 450px;
 	}
@@ -1158,11 +1121,93 @@ html .u-bg-silver.gv-field-3-custom p {
 	flex: 1;
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 40em) {
 	html .entry-summary .gv-list-view,
 	html .employee-list .gv-list-view {
 		max-width: calc(33.33% - 1.5rem);
 	}
+}
+
+@media screen and (min-width: 40em) {
+	html .layout-2-card-row .gv-list-view {
+		max-width: calc(50% - 1.5rem);
+	}
+
+	html .layout-3-card-row .gv-list-view {
+		max-width: calc(50% - 1.5rem);
+	}
+}
+
+@media screen and (min-width: 64em) {
+	html .layout-3-card-row .gv-list-view {
+		max-width: calc(33% - 1.5rem);
+	}
+}
+
+html .layout-1-card-row .gv-list-view {
+	max-width: 100%;
+	padding: 3rem;
+	text-align: center;
+}
+
+html .gv-search {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-justify-content: flex-end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+html .gv-search > label {
+	padding: 0 0.5rem;
+}
+
+html .gv-widget-search .gv-search-box.gv-search-box-submit {
+	-webkit-align-self: center;
+	-ms-flex-item-align: center;
+	-ms-grid-row-align: center;
+	align-self: center;
+}
+
+html .media-img > a {
+	background: none;
+}
+
+html .gv-widget-search p {
+	margin-bottom: 0;
+}
+
+html .gv-widget-search {
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+html .list-count tbody {
+	counter-reset: section;
+}
+
+html .list-count table.gfield_list_container {
+	margin-left: 2rem !important;
+}
+
+html .list-count .gfield_list_group .gfield_list_cell:first-child::before {
+	counter-increment: section;
+	content: "Mass " counter(section) ": ";
+	position: absolute;
+	margin-left: -4rem;
+	line-height: 2.5rem;
+	font-weight: 600;
 }
 
 html .gv-datatables-container {
@@ -1916,7 +1961,7 @@ html .site-content {
 	padding-top: 3.5rem;
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 40em) {
 	html .site-content {
 		padding-top: 4rem;
 	}
@@ -1926,7 +1971,7 @@ html .home .site-content {
 	padding-top: 4rem;
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 40em) {
 	html .home .site-content {
 		padding-top: 5.5rem;
 	}
@@ -2006,82 +2051,6 @@ html .members-access-error {
 	border-radius: 0.2rem;
 	padding: 1rem;
 	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-}
-
-@media screen and (min-width: 62em) {
-	html .layout-2-card-row .gv-list-view {
-		max-width: calc(50% - 1.5rem);
-	}
-
-	html .layout-3-card-row .gv-list-view {
-		max-width: calc(33% - 1.5rem);
-	}
-}
-
-html .layout-1-card-row .gv-list-view {
-	max-width: 100%;
-	padding: 3rem;
-	text-align: center;
-}
-
-html .gv-search {
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-flex-direction: row;
-	-ms-flex-direction: row;
-	flex-direction: row;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-justify-content: flex-end;
-	-ms-flex-pack: end;
-	justify-content: flex-end;
-	-webkit-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-}
-
-html .gv-search > label {
-	padding: 0 0.5rem;
-}
-
-html .gv-widget-search .gv-search-box.gv-search-box-submit {
-	-webkit-align-self: center;
-	-ms-flex-item-align: center;
-	-ms-grid-row-align: center;
-	align-self: center;
-}
-
-html .media-img > a {
-	background: none;
-}
-
-html .gv-widget-search p {
-	margin-bottom: 0;
-}
-
-html .gv-widget-search {
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-}
-
-html .list-count tbody {
-	counter-reset: section;
-}
-
-html .list-count table.gfield_list_container {
-	margin-left: 2rem !important;
-}
-
-html .list-count .gfield_list_group .gfield_list_cell:first-child::before {
-	counter-increment: section;
-	content: "Mass " counter(section) ": ";
-	position: absolute;
-	margin-left: -4rem;
-	line-height: 2.5rem;
-	font-weight: 600;
 }
 
 html .intro-paragraph,

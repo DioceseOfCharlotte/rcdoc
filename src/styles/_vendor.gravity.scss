@@ -47,6 +47,73 @@
 	}
 }
 
+@include md {
+	.layout-2-card-row .gv-list-view {
+		max-width: calc(50% - 1.5rem);
+	}
+
+	.layout-3-card-row .gv-list-view {
+		max-width: calc(50% - 1.5rem);
+	}
+}
+
+@include lg {
+	.layout-3-card-row .gv-list-view {
+		max-width: calc(33% - 1.5rem);
+	}
+}
+
+.layout-1-card-row .gv-list-view {
+	max-width: 100%;
+	padding: 3rem;
+	text-align: center;
+}
+
+.gv-search {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+}
+
+.gv-search > label {
+	padding: 0 .5rem;
+}
+
+.gv-widget-search .gv-search-box.gv-search-box-submit {
+	align-self: center;
+}
+
+.media-img>a {
+	background: none;
+}
+
+.gv-widget-search p {
+	margin-bottom: 0;
+}
+
+.gv-widget-search {
+	align-items: center;
+}
+
+.list-count tbody {
+	counter-reset: section;
+}
+
+.list-count table.gfield_list_container {
+	margin-left: 2rem !important;
+}
+
+.list-count .gfield_list_group .gfield_list_cell:first-child::before {
+	counter-increment: section;
+	content: "Mass " counter(section) ": ";
+	position: absolute;
+	margin-left: -4rem;
+	line-height: 2.5rem;
+	font-weight: 600;
+}
+
 .gv-datatables-container {
 	background-color: #fff;
 	padding: $space3;
