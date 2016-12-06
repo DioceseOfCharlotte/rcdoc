@@ -62,7 +62,7 @@ if ( has_post_thumbnail() ) {
 <?php ob_start(); ?>
 		<p class="email u-truncate">
 			<?php if ( $doc_email ) : ?>
-				<a class="contact-mail" itemprop="email" href="mailto:<?php echo $doc_email ?>"><?php echo $doc_email ?></a>
+				<a class="contact-mail" itemprop="email" href="mailto:<?php echo antispambot( $doc_email, 1 ) ?>"><?php echo antispambot( $doc_email ) ?></a>
 			<?php endif; ?>
 		</p>
 <?php echo ob_get_clean(); ?>

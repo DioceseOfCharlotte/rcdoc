@@ -1123,6 +1123,34 @@ html .gv-list-view-content {
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
+	height: 100%;
+}
+
+html .gv-list-view-content-description {
+	width: 100%;
+	padding: 0;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+html .u-bg-silver.gv-field-3-custom {
+	margin-left: -0.5rem;
+	margin-right: -0.5rem;
+	margin-bottom: -0.5rem;
+	padding: 0.5rem;
+	margin-top: auto;
+}
+
+html .u-bg-silver.gv-field-3-custom * + * {
+	margin-top: 0.25rem;
+}
+
+html .u-bg-silver.gv-field-3-custom p {
+	margin: 0;
 }
 
 @media screen and (min-width: 48em) {

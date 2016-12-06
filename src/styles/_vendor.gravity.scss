@@ -11,6 +11,30 @@
 
 .gv-list-view-content {
 	display: flex;
+	height: 100%;
+}
+
+.gv-list-view-content-description {
+	width: 100%;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.u-bg-silver.gv-field-3-custom {
+	margin-left: -0.5rem;
+	margin-right: -0.5rem;
+	margin-bottom: -0.5rem;
+	padding: 0.5rem;
+	margin-top: auto;
+
+	* + * {
+		margin-top: 0.25rem;
+	}
+
+	p {
+		margin: 0;
+	}
 }
 
 .entry-summary .gv-list-view,
@@ -36,7 +60,7 @@
 	display: none;
 }
 
-.type-gravityview>.entry-content {
+.type-gravityview > .entry-content {
 	padding: 0.5rem;
 }
 
@@ -257,10 +281,10 @@ div[class*='gv-field-'] {
 }
 
 .gform_wrapper .field_description_below .gfield_description {
-    padding: 0;
-    opacity: .9;
+	padding: 0;
+	opacity: 0.9;
 }
 
 .gfield_label {
-    margin: 0;
+	margin: 0;
 }

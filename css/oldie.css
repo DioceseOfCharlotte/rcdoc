@@ -680,7 +680,24 @@ http://flickity.metafizzy.co
     box-shadow: 0 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.14), 0 0.1875rem 0.0625rem -2px rgba(0, 0, 0, 0.2), 0 0.0625rem 0.3125rem 0 rgba(0, 0, 0, 0.12); }
   html .gv-list-view-content {
     -js-display: flex;
-    display: flex; }
+    display: flex;
+    height: 100%; }
+  html .gv-list-view-content-description {
+    width: 100%;
+    padding: 0;
+    -js-display: flex;
+    display: flex;
+    flex-direction: column; }
+  html .u-bg-silver.gv-field-3-custom {
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-bottom: -8px;
+    padding: 8px;
+    margin-top: auto; }
+    html .u-bg-silver.gv-field-3-custom * + * {
+      margin-top: 4px; }
+    html .u-bg-silver.gv-field-3-custom p {
+      margin: 0; }
   html .entry-summary .gv-list-view,
     html .employee-list .gv-list-view {
   max-width: calc(33.33% - 1.5rem); }
