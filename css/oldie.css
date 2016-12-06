@@ -711,7 +711,7 @@ http://flickity.metafizzy.co
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     border-radius: 0.125rem; }
   html .gv-grid .staff-list p {
-    margin-bottom: 0.5em; }
+    margin-bottom: 8px; }
   html .gv-list-view-content .gv-list-view-content-image:empty {
     display: none; }
   html .type-gravityview > .entry-content {
@@ -864,7 +864,7 @@ http://flickity.metafizzy.co
   html .gv-list-view-content p:last-child {
     margin-bottom: 0; }
   html div[class*='gv-field-'] {
-    margin-bottom: 1em; }
+    margin-bottom: 8px; }
   html .gform_wrapper .field_description_below .gfield_description {
     padding: 0;
     filter: alpha(opacity=90); }

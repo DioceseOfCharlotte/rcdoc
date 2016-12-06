@@ -1174,7 +1174,7 @@ html .gv-datatables-container {
 }
 
 html .gv-grid .staff-list p {
-	margin-bottom: 0.5em;
+	margin-bottom: 0.5rem;
 }
 
 html .gv-list-view-content .gv-list-view-content-image:empty {
@@ -1425,7 +1425,7 @@ html .gv-list-view-content p:last-child {
 }
 
 html div[class*='gv-field-'] {
-	margin-bottom: 1em;
+	margin-bottom: 0.5rem;
 }
 
 html .gform_wrapper .field_description_below .gfield_description {
