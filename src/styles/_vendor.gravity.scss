@@ -21,24 +21,24 @@
 	flex-direction: column;
 }
 
-.u-bg-silver.gv-field-3-custom {
-	margin-left: -0.5rem;
-	margin-right: -0.5rem;
-	margin-bottom: -0.5rem;
-	padding: 0.5rem;
-	margin-top: auto;
-
-	> * + div:not(:empty) {
-		margin-top: 0.25rem;
-		padding-top: 0.25rem;
-		border-top: 1px solid #adb5bd;
-	}
-
-	p {
-		margin: 0;
-		flex: 1;
-	}
-}
+// .u-bg-silver.gv-field-3-custom {
+// 	margin-left: -0.5rem;
+// 	margin-right: -0.5rem;
+// 	margin-bottom: -0.5rem;
+// 	padding: 0.5rem;
+// 	margin-top: auto;
+//
+// 	> * + div:not(:empty) {
+// 		margin-top: 0.25rem;
+// 		padding-top: 0.25rem;
+// 		border-top: 1px solid #adb5bd;
+// 	}
+//
+// 	p {
+// 		margin: 0;
+// 		flex: 1;
+// 	}
+// }
 
 .entry-summary .gv-list-view,
 .employee-list .gv-list-view {
