@@ -67,7 +67,7 @@ if ( has_post_thumbnail() ) {
 		</p>
 <?php echo ob_get_clean(); ?>
 <?php ob_start(); ?>
-		<?php if ( 'parish' === get_post_type( get_the_ID() ) ) : ?>
+		<?php if ( $doc_website ) : ?>
 			<?php $obj = get_post_type_object( get_post_type() );
 			$single_name = $obj->labels->singular_name; ?>
 			<p class="website">
