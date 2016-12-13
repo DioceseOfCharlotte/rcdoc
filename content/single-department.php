@@ -22,11 +22,8 @@
 
 <?php get_template_part( 'components/entry', 'footer' ); ?>
 
-	<?php tha_entry_bottom(); ?>
+<?php tha_entry_bottom(); ?>
+
+<?php get_template_part( 'components/staff', 'cards' ); ?>
 
 </article>
-
-
-<div class="employee-list u-1of1 u-mb3 u-bg-tint-1 u-px1 u-br">
-		<?php echo do_shortcode( '[gravityview id="10028" search_field="21" search_value="' . get_the_ID() . '"]' ); ?>
-</div>
