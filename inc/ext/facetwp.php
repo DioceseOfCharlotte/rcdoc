@@ -6,9 +6,7 @@
  */
 
 add_filter( 'facetwp_index_row', 'index_serialized_data', 10, 2 );
-//add_filter( 'facetwp_facets', 'doc_register_doc_category_facets' );
 add_action( 'tha_content_before', 'doc_display_facets' );
-//add_filter( 'facetwp_indexer_query_args', 'wpdr_facetwp_indexer_query_args' );
 add_action( 'wp_head', 'fwp_load_more', 99 );
 add_filter( 'facetwp_proximity_store_distance', '__return_true' );
 add_shortcode( 'facet_refresh', 'doc_facet_refresh' );
@@ -48,94 +46,6 @@ function index_serialized_data( $params, $class ) {
 		return false; // skip default indexing
 	}
 	return $params;
-}
-
-
-
-function doc_register_doc_category_facets( $facets ) {
-
-	$facets[] = array(
-		'label'        => 'Department Agency',
-		'name'         => 'department_agency',
-		'type'         => 'dropdown',
-		'source'       => 'tax/agency',
-		'label_any'    => 'All Agencies',
-		'orderby'      => 'display_value',
-		'hierarchical' => 'no',
-	);
-
-	$facets[] = array(
-		'label'        		=> 'School System',
-		'name'         		=> 'school_system',
-		'type'         		=> 'checkboxes',
-		'source'       		=> 'tax/school_system',
-		'label_any'    		=> 'All School Systems',
-		'orderby'      		=> 'display_value',
-		'hierarchical' 		=> 'no',
-		'ghosts'       		=> 'yes',
-		'preserve_ghosts' 	=> 'yes',
-		'operator'     		=> 'or',
-	);
-
-	$facets[] = array(
-		'label'        		=> 'School Grade Levels',
-		'name'         		=> 'grade_level',
-		'type'         		=> 'fselect',
-		'source'       		=> 'cf/doc_grade_level',
-		'label_any'    		=> 'All Grades',
-		'orderby'      		=> 'display_value',
-		'multiple' 			=> 'yes',
-		'hierarchical' 		=> 'no',
-		'operator'     		=> 'and',
-		'count' 			=> '20',
-	);
-
-	$facets[] = array(
-		'label'         	=> 'Department Search',
-		'name'         	 	=> 'department_search',
-		'type'          	=> 'search',
-		'search_engine'  	=> 'default',
-	);
-
-	$facets[] = array(
-		'label'		=> 'Title Alpha',
-		'name'		=> 'title_alpha',
-		'type' 		=> 'alpha',
-		'source' 	=> 'post_title',
-	);
-
-	$facets[] = array(
-		'label' 	=> 'Proximity Search',
-	    'name' 		=> 'proximity_search',
-	    'type' 		=> 'proximity',
-	    'source' 	=> 'cf/geo_coordinates',
-	    'unit' 		=> 'mi',
-	);
-
-	// $facets[] = array(
-	// 	'label'        => 'Statistics Type',
-	// 	'name'         => 'statistics_type',
-	// 	'type'         => 'checkboxes',
-	// 	'source'       => 'tax/statistics_type',
-	// 	'label_any'          => 'All Reports',
-	// 	'orderby'         => 'display_value',
-	// 	'hierarchical' => 'no',
-	// 	'ghosts'       => 'yes',
-	// 	'preserve_ghosts' => 'yes',
-	// 	'operator'     => 'or',
-	// );
-	//
-	// $facets[] = array(
-	// 	'label'        => 'Statistics Date',
-	// 	'name'         => 'statistics_year',
-	// 	'type'         => 'dropdown',
-	// 	'source'       => 'cf/doc_stats_report_date',
-	// 	'label_any'          => 'All Dates',
-	// 	'orderby'         => 'display_value',
-	// 	'hierarchical' => 'no',
-	// );
-
-	return $facets;
 }
 
 /**

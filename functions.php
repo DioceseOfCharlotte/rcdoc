@@ -8,19 +8,17 @@ use Mexitek\PHPColors\Color;
 /**
  * Load required theme files.
  */
-require get_stylesheet_directory() . '/inc/config.php';
-require get_stylesheet_directory() . '/inc/compatibility.php';
-require get_stylesheet_directory() . '/inc/hooks.php';
-require get_stylesheet_directory() . '/inc/ext/cpt-archive.php';
-require get_stylesheet_directory() . '/inc/custom-header.php';
-require get_stylesheet_directory() . '/inc/custom-background.php';
-require get_stylesheet_directory() . '/inc/ext/gravity-forms.php';
-require get_stylesheet_directory() . '/inc/ext/gravity-view.php';
-require get_stylesheet_directory() . '/inc/ext/gf-email-domain.php';
-require get_stylesheet_directory() . '/inc/ext/facetwp.php';
-require get_stylesheet_directory() . '/inc/shortcodes.php';
-require get_stylesheet_directory() . '/inc/shorts-ui.php';
-require get_stylesheet_directory() . '/inc/metaboxes.php';
+require_once get_theme_file_path( 'inc/config.php' );
+require_once get_theme_file_path( 'inc/compatibility.php' );
+require_once get_theme_file_path( 'inc/hooks.php' );
+require_once get_theme_file_path( 'inc/ext/cpt-archive.php' );
+require_once get_theme_file_path( 'inc/ext/gravity-forms.php' );
+require_once get_theme_file_path( 'inc/ext/gravity-view.php' );
+require_once get_theme_file_path( 'inc/ext/gf-email-domain.php' );
+require_once get_theme_file_path( 'inc/ext/facetwp.php' );
+require_once get_theme_file_path( 'inc/shortcodes.php' );
+require_once get_theme_file_path( 'inc/shorts-ui.php' );
+require_once get_theme_file_path( 'inc/metaboxes.php' );
 add_action( 'after_setup_theme', 'rcdoc_setup' );
 add_action( 'widgets_init', 'doc_widgets_init' );
 add_action( 'wp_enqueue_scripts', 'rcdoc_scripts' );
@@ -56,44 +54,11 @@ function doc_widgets_init() {
 }
 
 /**
- * Append Hash to assets filename to purge the browser cache when changed.
- */
-function get_child_asset_rev( $filename ) {
-
-	if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-		return $filename;
-	}
-
-	// Cache the decoded manifest so that we only read it in once.
-	static $manifest = null;
-	if ( null === $manifest ) {
-		$manifest_path = trailingslashit( get_stylesheet_directory() ) . 'rev-manifest.json';
-		$manifest = file_exists( $manifest_path ) ? json_decode( file_get_contents( $manifest_path ), true ) : [];
-	}
-
-	// If the manifest contains the requested file, return the hashed name.
-	if ( array_key_exists( $filename, $manifest ) ) {
-		return $manifest[ $filename ];
-	}
-
-	// File hash wasn't found.
-	return $filename;
-}
-
-/**
  * Enqueue scripts and styles.
  */
 function rcdoc_scripts() {
-
-	$suffix = hybrid_get_min_suffix();
-
-	wp_register_style( 'rcdoc-style', trailingslashit( get_stylesheet_directory_uri() ) . get_child_asset_rev( 'style.css' ) );
-
-	wp_enqueue_style( 'oldie-child', trailingslashit( get_stylesheet_directory_uri() ) . "css/oldie{$suffix}.css", array( 'abe-style', 'rcdoc-style', 'oldie' ) );
-	wp_style_add_data( 'oldie-child', 'conditional', 'IE' );
-
 	// Scripts.
-	wp_enqueue_script( 'main-script', trailingslashit( get_stylesheet_directory_uri() ) . 'js/' . get_child_asset_rev( 'main.js' ), false, false, true );
+	wp_enqueue_script( 'main-script', get_theme_file_uri( 'js/' . get_child_asset_rev( 'main.js' ) ), false, false, true );
 }
 
 /**
