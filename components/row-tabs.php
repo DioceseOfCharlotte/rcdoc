@@ -23,7 +23,7 @@ wp_enqueue_script( 'arch-tabs' ); ?>
 
 			<?php $counter++; ?>
 
-			<div data-index="<?php echo $counter ?>" class="tab-header u-p2 u-text-center u-flexed-auto u-f-plus"><?php the_title(); ?></div>
+			<div data-index="<?php echo $counter ?>" class="tab-header btn u-text-center u-flexed-auto u-f-plus"><?php the_title(); ?></div>
 
 		<?php endwhile; ?>
 
@@ -36,7 +36,7 @@ wp_enqueue_script( 'arch-tabs' ); ?>
 
 		<?php $counter++; ?>
 
-		<div class="tab-content u-p2 tab<?php the_ID(); ?>" data-index="<?php echo $counter ?>">
+		<div class="tab-content u-p tab<?php the_ID(); ?>" data-index="<?php echo $counter ?>">
 
 			<?php the_content(); ?>
 
