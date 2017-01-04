@@ -28,9 +28,9 @@ const reload = browserSync.reload;
 
 
 // To be removed
-const pcFlex = require('postcss-flexibility');
+//const pcFlex = require('postcss-flexibility');
 const syntax = require('postcss-scss');
-const oldie = require('oldie');
+//const oldie = require('oldie');
 
 
 const SASS_PATHS = [
@@ -71,13 +71,13 @@ const POSTCSS_PLUGINS = [
 	})
 ];
 
-const POSTCSS_IE = [
-	autoPrefixer({
-		browsers: ['IE 8', 'IE 9']
-	}),
-	pcFlex,
-	oldie
-];
+// const POSTCSS_IE = [
+// 	autoPrefixer({
+// 		browsers: ['IE 8', 'IE 9']
+// 	}),
+// 	pcFlex,
+// 	oldie
+// ];
 
 const SOURCESJS = [
 	// ** Mine ** //
@@ -159,15 +159,15 @@ gulp.task('styles', () => {
 		.pipe(gulp.dest('./'))
 });
 
-gulp.task('oldie', () => {
-	gulp.src('.tmp/style.css')
-		.pipe($.postcss(POSTCSS_IE))
-		.pipe($.concat('oldie.css'))
-		.pipe(gulp.dest('css'))
-		.pipe($.if('*.css', $.cssnano()))
-		.pipe($.concat('oldie.min.css'))
-		.pipe(gulp.dest('css'))
-});
+// gulp.task('oldie', () => {
+// 	gulp.src('.tmp/style.css')
+// 		.pipe($.postcss(POSTCSS_IE))
+// 		.pipe($.concat('oldie.css'))
+// 		.pipe(gulp.dest('css'))
+// 		.pipe($.if('*.css', $.cssnano()))
+// 		.pipe($.concat('oldie.min.css'))
+// 		.pipe(gulp.dest('css'))
+// });
 
 // Concatenate And Minify JavaScript
 gulp.task('scripts', () => {
@@ -212,5 +212,5 @@ gulp.task('serve', ['scripts', 'styles'], () => {
 
 // Build production files, the default task
 gulp.task('default', cb => {
-	runSequence('images', ['presass', 'styles'], 'oldie', 'scripts', cb);
+	runSequence('images', ['presass', 'styles'], 'scripts', cb);
 });
