@@ -703,19 +703,29 @@ body:not(.home) .site-description {
 	background-color: rgba(255, 202, 61, 0.8);
 }
 /* FontAwesome Variables */
+.o-list-group.bullet-cross > li::before {
+	content: " ";
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%2390a4ae' width='1em' height='1em'%3E%3Cpath d='M5.979 10.974v5.021h7.041v11.99h5.042v-11.99h6.958v-5.021h-6.958V4.016H13.02v6.958H5.979z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+
+.o-list-group.bullet-heart > li::before {
+	content: " ";
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%2390a4ae' width='1em' height='1em'%3E%3Cpath d='M22.65 2.75c-2.943 0-5.476 2.424-6.65 4.955-1.173-2.531-3.707-4.955-6.65-4.955C5.293 2.75 2 6.084 2 10.192 2 18.548 10.326 20.739 16 29c5.365-8.21 14-10.719 14-18.808 0-4.108-3.293-7.442-7.35-7.442z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+
 p a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="catholicnewsherald.com"]):not([href*="wpengine.netdna-ssl.com"]):not([href*="charlottediocese.dev"])::after {
-	content: "\f08e";
-	font-family: FontAwesome !important;
-	display: -webkit-inline-flex;
-	display: -ms-inline-flexbox;
-	display: inline-flex;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-	font-size: 0.9em;
-	font-weight: normal !important;
-	font-style: normal !important;
-	text-rendering: auto;
+	content: "\f07f";
+	font-family: 'icomeh' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-size: 0.8em;
@@ -723,35 +733,27 @@ p a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="catholicnewshera
 }
 
 a[href*="catholicnewsherald.com"]:not([class]):before {
-	content: "\f1ea";
-	font-family: FontAwesome !important;
-	display: -webkit-inline-flex;
-	display: -ms-inline-flexbox;
-	display: inline-flex;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-	font-size: 0.9em;
-	font-weight: normal !important;
-	font-style: normal !important;
-	text-rendering: auto;
+	content: "\e904";
+	font-family: 'icomeh' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
 .gform_save_link::before {
-	content: "\f1da";
-	font-family: FontAwesome !important;
-	display: -webkit-inline-flex;
-	display: -ms-inline-flexbox;
-	display: inline-flex;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-	font-size: 0.9em;
-	font-weight: normal !important;
-	font-style: normal !important;
-	text-rendering: auto;
+	content: "\e962";
+	font-family: 'icomeh' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -769,7 +771,7 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 .show-icons a[href*="/schools/"]:before,
 .icon-school:before {
 	content: " ";
-	background-image: url("data:image/svg+xml;charset=utf-8, %3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2390a4ae' class='tile-icon v-icon' viewBox='0 0 48 48' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M47.01 44.23H0.99a0.99.99 0 1 1 0-1.98h46.02a0.99.99 0 1 1 0 1.98zm0 3.77H0.99a0.99.99 0 1 1 0-1.98h46.02a0.99.99 0 1 1 0 1.98zm0-25.753H34.996V15.56h0.815a0.99.99 0 0 0 0.31-1.936L24.41 8.296a0.994.994 0 0 0-0.82 0L11.78 13.67a0.99.99 0 0 0 0.49 1.89h0.815v6.687H0.99a0.99.99 0 0 0-0.99.99v16.66c0 0.547.443.99.99.99h18.278V30.53c0-0.58.443-1.048.99-1.048h7.484c0.547 0 0.99.47.99 1.048v10.32H47.01a0.99.99 0 0 0 0.99-0.99V23.237a0.99.99 0 0 0-0.99-0.99zM6.518 37.02a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.812a0.99.99 0 1 1 1.98 0v2.812zm4.334 6.585c0 0.548-0.442.99-0.99.99s-0.99-0.442-0.99-0.99v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584c0 0.548-0.442.99-0.99.99s-0.99-0.442-0.99-0.99v-2.812a0.99.99 0 1 1 1.98 0v2.812zm4.334 6.585a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.812a0.99.99 0 1 1 1.98 0v2.812zm5.472-5.42a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.813a0.99.99 0 1 1 1.98 0v2.813zm4.334 6.584a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.813a0.99.99 0 1 1 1.98 0v2.813zm4.333 6.584a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.813a0.99.99 0 0 1 1.98 0v2.813zm5.472 18.57a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.812a0.99.99 0 1 1 1.98 0v2.812zm4.333 6.585a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.812a0.99.99 0 1 1 1.98 0v2.812zm4.333 6.585a0.988.988 0 1 1-1.978 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.988.988 0 1 1-1.978 0v-2.812a0.99.99 0 1 1 1.98 0v2.812z'/%3E%3Cpath d='M24 10.187a0.99.99 0 0 1-0.99-0.99V0.99a0.99.99 0 1 1 1.98 0v8.28a0.99.99 0 0 1-0.99.99z'/%3E%3Cpath d='M23.217 4.366V2.75c0.597 0 1.08-0.393 1.08-0.88 0-0.486-0.482-0.88-1.08-0.88H17.81c-0.598 0-1.08.394-1.08.88v3.377c0 0.486.48.88 1.08.88h5.48c0.597 0 1.08-0.394 1.08-0.88 0-0.488-0.484-0.88-1.08-0.88z'/%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml;charset=utf-8, %3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2390a4ae' class='tile-icon v-icon' viewBox='0 0 48 48' stroke='%23fff' stroke-width='0' width='1em' height='1em'%3E%3Cpath d='M47.01 44.23H0.99a0.99.99 0 1 1 0-1.98h46.02a0.99.99 0 1 1 0 1.98zm0 3.77H0.99a0.99.99 0 1 1 0-1.98h46.02a0.99.99 0 1 1 0 1.98zm0-25.753H34.996V15.56h0.815a0.99.99 0 0 0 0.31-1.936L24.41 8.296a0.994.994 0 0 0-0.82 0L11.78 13.67a0.99.99 0 0 0 0.409 1.89h0.815v6.687H0.99a0.99.99 0 0 0-0.99.99v16.606c0 0.547.443.99.99.99h18.278V30.53c0-0.58.443-1.048.99-1.048h7.484c0.547 0 0.99.47.99 1.048v10.302H47.01a0.99.99 0 0 0 0.99-0.99V23.237a0.99.99 0 0 0-0.99-0.99zM6.518 37.02a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.812a0.99.99 0 1 1 1.98 0v2.812zm4.334 6.585c0 0.548-0.442.99-0.99.99s-0.99-0.442-0.99-0.99v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584c0 0.548-0.442.99-0.99.99s-0.99-0.442-0.99-0.99v-2.812a0.99.99 0 1 1 1.98 0v2.812zm4.334 6.585a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.812a0.99.99 0 1 1 1.98 0v2.812zm5.472-5.402a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.813a0.99.99 0 1 1 1.98 0v2.813zm4.334 6.584a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.813a0.99.99 0 1 1 1.98 0v2.813zm4.333 6.584a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.813a0.99.99 0 0 1 1.98 0v2.813zm5.472 18.57a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.812a0.99.99 0 1 1 1.98 0v2.812zm4.333 6.585a0.99.99 0 1 1-1.98 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.99.99 0 1 1-1.98 0v-2.812a0.99.99 0 1 1 1.98 0v2.812zm4.333 6.585a0.988.988 0 1 1-1.978 0v-2.81a0.99.99 0 1 1 1.98 0v2.81zm0-6.584a0.988.988 0 1 1-1.978 0v-2.812a0.99.99 0 1 1 1.98 0v2.812z'/%3E%3Cpath d='M24 10.187a0.99.99 0 0 1-0.99-0.99V0.99a0.99.99 0 1 1 1.98 0v8.208a0.99.99 0 0 1-0.99.99z'/%3E%3Cpath d='M23.217 4.366V2.75c0.597 0 1.08-0.393 1.08-0.88 0-0.486-0.482-0.88-1.08-0.88H17.81c-0.598 0-1.08.394-1.08.88v3.377c0 0.486.48.88 1.08.88h5.408c0.597 0 1.08-0.394 1.08-0.88 0-0.488-0.484-0.88-1.08-0.88z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
 	width: 1em;
@@ -797,18 +799,14 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 }
 
 .facetwp-checkbox.checked::before {
-	content: "\f00c";
-	font-family: FontAwesome !important;
-	display: -webkit-inline-flex;
-	display: -ms-inline-flexbox;
-	display: inline-flex;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-	font-size: 0.9em;
-	font-weight: normal !important;
-	font-style: normal !important;
-	text-rendering: auto;
+	content: "\ea10";
+	font-family: 'icomeh' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: #fff;
@@ -2067,5 +2065,3 @@ body#tinymce {
 body#tinymce .wpview-wrap .gallery-cell {
 	display: inline-block;
 }
-
-/*# sourceMappingURL=style.css.map */

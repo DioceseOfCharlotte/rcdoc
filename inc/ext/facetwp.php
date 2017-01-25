@@ -14,7 +14,7 @@ add_shortcode( 'facet_refresh', 'doc_facet_refresh' );
 
 // Refresh Button Shortcode
 function doc_facet_refresh() {
-	return '<button class="btn btn-round u-bg-frost-4 u-h3 u-m0 u-m0" onclick="FWP.reset()"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg></button>';
+	return '<button class="btn btn-round facet-reset u-bg-frost-4 u-h3 u-m0 u-m0" onclick="FWP.reset()"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg></button>';
 }
 
 
@@ -56,18 +56,11 @@ function index_serialized_data( $params, $class ) {
  */
 function doc_display_facets() {
 
-	if ( is_post_type_archive( 'parish' ) ) {
-		echo '<div class="u-1of1 u-px3 u-pb0 u-br u-pt3 u-mb3 u-flex u-flex-wrap u-flex-ja u-bg-2 u-shadow3 u-max-center">';
-		echo facetwp_display( 'facet', 'proximity_search' );
-		echo facetwp_display( 'facet', 'department_search' );
-		echo '<button class="btn btn-round u-bg-frost-4 u-m0 u-m0" onclick="FWP.reset()"><i class="fa fa-refresh"></i></button>';
-		echo '<div class="u-1of1 u-text-center">' . facetwp_display( 'facet', 'title_alpha' ) . '</div>';
-		echo '</div>';
-	} elseif ( is_post_type_archive( 'department' ) ) {
+	if ( is_post_type_archive( 'department' ) ) {
 		echo '<div class="u-1of1 u-px3 u-pb0 u-br u-pt3 u-mb3 u-flex u-flex-wrap u-flex-ja u-bg-2 u-shadow3 u-max-center">';
 		echo facetwp_display( 'facet', 'department_agency' );
 		echo facetwp_display( 'facet', 'department_search' );
-		echo '<button class="btn btn-round u-bg-frost-4 u-m0 u-m0" onclick="FWP.reset()"><i class="fa fa-refresh"></i></button>';
+		echo doc_facet_refresh();
 		echo '<div class="u-1of1 u-text-center">' . facetwp_display( 'facet', 'title_alpha' ) . '</div>';
 		echo '</div>';
 	} elseif ( is_post_type_archive( 'school' ) ) {
@@ -76,7 +69,7 @@ function doc_display_facets() {
 		echo facetwp_display( 'facet', 'grade_level' );
 		// echo facetwp_display( 'facet', 'school_system' );
 		// echo facetwp_display( 'facet', 'department_search' );
-		echo '<button class="btn btn-round u-bg-frost-4 u-m0 u-m0" onclick="FWP.reset()"><i class="fa fa-refresh"></i></button>';
+		echo doc_facet_refresh();
 		echo '</div>';
 	}
 }

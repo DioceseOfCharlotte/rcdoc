@@ -1,16 +1,33 @@
 
+
+
+.o-list-group.bullet-cross > li::before {
+	content: " ";
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%2390a4ae' width='1em' height='1em'%3E%3Cpath d='M5.979 10.974v5.021h7.041v11.99h5.042v-11.99h6.958v-5.021h-6.958V4.016H13.02v6.958H5.979z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+
+.o-list-group.bullet-heart > li::before {
+	content: " ";
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%2390a4ae' width='1em' height='1em'%3E%3Cpath d='M22.65 2.75c-2.943 0-5.476 2.424-6.65 4.955-1.173-2.531-3.707-4.955-6.65-4.955C5.293 2.75 2 6.084 2 10.192 2 18.548 10.326 20.739 16 29c5.365-8.21 14-10.719 14-18.808 0-4.108-3.293-7.442-7.35-7.442z'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+
+
 p a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="catholicnewsherald.com"]):not([href*="wpengine.netdna-ssl.com"]):not([href*="charlottediocese.dev"])::after {
-	@mixin fa $external-link;
+	@mixin fi $fi-link-external;
 	font-size: 0.8em;
 	opacity: 0.6;
 }
 
 a[href*="catholicnewsherald.com"]:not([class]):before {
-	@mixin fa $newspaper-o;
+	@mixin fi $fi-newspaper;
 }
 
 .gform_save_link::before {
-	@mixin fa $history;
+	@mixin fi $fi-floppy-disk;
 }
 
 .show-icons a[href*="/parishes/"]:before,
@@ -44,7 +61,7 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 }
 
 .facetwp-checkbox.checked::before {
-	@mixin fa $check;
+	@mixin fi $fi-checkmark;
 	background-color: #fff;
 }
 

@@ -133,7 +133,7 @@ gulp.task('presass', () => {
 gulp.task('styles', () => {
 	gulp.src('src/styles/style.scss')
 		// Generate Source Maps
-		.pipe($.sourcemaps.init())
+		//.pipe($.sourcemaps.init())
 		.pipe($.sass({
 			includePaths: SASS_PATHS,
 			precision: 10,
@@ -144,7 +144,7 @@ gulp.task('styles', () => {
 		.pipe($.postcss(POSTCSS_PLUGINS))
 		.pipe($.stylefmt())
 		.pipe(gulp.dest('./'))
-		.pipe($.sourcemaps.write('.'))
+		//.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest('./'))
 		.pipe($.if('*.css', $.cssnano()))
 		.pipe(ignore.exclude('*.map'))
@@ -172,13 +172,13 @@ gulp.task('styles', () => {
 // Concatenate And Minify JavaScript
 gulp.task('scripts', () => {
 	gulp.src(SOURCESJS)
-		.pipe($.sourcemaps.init())
+		//.pipe($.sourcemaps.init())
 		.pipe($.babel({
 			"presets": ["es2015"]
 		}))
 		.pipe($.concat('main.js'))
 		.pipe(gulp.dest('js'))
-		.pipe($.sourcemaps.write('.'))
+		//.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest('js'))
 		.pipe($.if('*.js', $.uglify()))
 		.pipe(ignore.exclude('*.map'))

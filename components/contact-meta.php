@@ -37,7 +37,7 @@ if ( has_post_thumbnail() ) {
 		</div>
 		<div class="fax contact-numbers__item">
 			<?php if ( $doc_fax ) : ?>
-				<span class="contact-fax u-inline-block" itemprop="faxNumber"><i class="u-opacity fa fa-fax" aria-hidden="true"></i> <?php echo $doc_fax ?></span>
+				<span class="contact-fax u-inline-block" itemprop="faxNumber"><?php abe_do_svg( 'fax', '1em' ) ?> <?php echo $doc_fax ?></span>
 			<?php endif; ?>
 		</div>
 </div>
