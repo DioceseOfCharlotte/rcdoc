@@ -728,8 +728,8 @@ p a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="catholicnewshera
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font-size: 0.8em;
-	opacity: 0.6;
+	font-size: 0.9em;
+	opacity: 0.8;
 }
 
 a[href*="catholicnewsherald.com"]:not([class]):before {

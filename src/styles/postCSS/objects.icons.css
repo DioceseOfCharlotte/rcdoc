@@ -18,8 +18,8 @@
 
 p a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="catholicnewsherald.com"]):not([href*="wpengine.netdna-ssl.com"]):not([href*="charlottediocese.dev"])::after {
 	@mixin fi $fi-link-external;
-	font-size: 0.8em;
-	opacity: 0.6;
+	font-size: 0.9em;
+	opacity: 0.8;
 }
 
 a[href*="catholicnewsherald.com"]:not([class]):before {
