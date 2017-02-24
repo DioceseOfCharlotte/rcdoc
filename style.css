@@ -1069,6 +1069,21 @@ html .flickity-prev-next-button {
 	border: 1px solid #d0d0d0;
 }
 
+html h2.gsection_title {
+	border-bottom: 0 !important;
+}
+
+@media screen and (min-width: 40em) {
+	html .gfield.u-inline-block {
+		width: calc(50% - 8px);
+	}
+}
+
+html .gfield.gsection.u-hr {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
 html .gv-list-view {
 	border-width: 0;
 	border-radius: 0.2rem;
@@ -1078,13 +1093,6 @@ html .gv-list-view {
 	position: relative;
 	padding: 0.5rem;
 	box-shadow: 0 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.14), 0 0.1875rem 0.0625rem -2px rgba(0, 0, 0, 0.2), 0 0.0625rem 0.3125rem 0 rgba(0, 0, 0, 0.12);
-}
-
-html .gv-list-view-content {
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	height: 100%;
 }
 
 html .gv-list-view-content-description {
@@ -1457,6 +1465,42 @@ html .gform_wrapper .field_description_below .gfield_description {
 
 html .gfield_label {
 	margin: 0;
+}
+
+html .gravityflow_workflow_wrap *,
+html .gravityflow_workflow_wrap {
+	font-size: 0.9rem;
+}
+
+html .gravityflow_workflow_wrap .postbox-container .button,
+html #postbox-container-1 {
+	font-size: 0.8rem;
+}
+
+html .gravityflow_workflow_wrap .postbox h3,
+html .gravityflow_workflow_wrap h3 {
+	font-size: 1.2rem;
+	margin: 10px;
+}
+
+html #gform_18 ::-webkit-input-placeholder {
+	color: #7c8b94;
+	opacity: 1;
+}
+
+html #gform_18 :-ms-input-placeholder {
+	color: #7c8b94;
+	opacity: 1;
+}
+
+html #gform_18 ::-moz-placeholder {
+	color: #7c8b94;
+	opacity: 1;
+}
+
+html #gform_18 :-moz-placeholder {
+	color: #7c8b94;
+	opacity: 1;
 }
 
 html .frame {

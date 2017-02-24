@@ -1,3 +1,18 @@
+h2.gsection_title {
+	border-bottom: 0 !important;
+}
+
+@include md {
+	.gfield.u-inline-block {
+    	width: calc(50% - 8px);
+	}
+}
+
+.gfield.gsection.u-hr {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 .gv-list-view {
 	border-width: 0;
 	border-radius: 0.2rem;
@@ -9,10 +24,10 @@
 	box-shadow: 0 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.14), 0 0.1875rem 0.0625rem -2px rgba(0, 0, 0, 0.2), 0 0.0625rem 0.3125rem 0 rgba(0, 0, 0, 0.12);
 }
 
-.gv-list-view-content {
-	display: flex;
-	height: 100%;
-}
+// .gv-list-view-content {
+// 	display: flex;
+// 	height: 100%;
+// }
 
 .gv-list-view-content-description {
 	width: 100%;
@@ -357,4 +372,41 @@ div[class*='gv-field-'] {
 
 .gfield_label {
 	margin: 0;
+}
+
+// Gravityflow
+.gravityflow_workflow_wrap *,
+.gravityflow_workflow_wrap {
+    font-size: 0.9rem;
+}
+
+.gravityflow_workflow_wrap .postbox-container .button,
+#postbox-container-1 {
+    font-size: 0.8rem;
+}
+
+.gravityflow_workflow_wrap .postbox h3,
+.gravityflow_workflow_wrap h3 {
+    font-size: 1.2rem;
+    margin: 10px;
+}
+
+#gform_18 ::-webkit-input-placeholder {
+	color: #7c8b94;
+	opacity: 1;
+}
+
+#gform_18 :-ms-input-placeholder {
+	color: #7c8b94;
+	opacity: 1;
+}
+
+#gform_18 ::-moz-placeholder {
+	color: #7c8b94;
+	opacity: 1;
+}
+
+#gform_18 :-moz-placeholder {
+	color: #7c8b94;
+	opacity: 1;
 }
