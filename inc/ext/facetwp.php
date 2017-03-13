@@ -6,7 +6,7 @@
  */
 
 add_filter( 'facetwp_index_row', 'index_serialized_data', 10, 2 );
-add_action( 'tha_content_before', 'doc_display_facets' );
+// add_action( 'tha_content_before', 'doc_display_facets' );
 add_action( 'wp_head', 'fwp_load_more', 99 );
 add_filter( 'facetwp_proximity_store_distance', '__return_true' );
 add_shortcode( 'facet_refresh', 'doc_facet_refresh' );
