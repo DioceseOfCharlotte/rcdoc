@@ -33,13 +33,13 @@
 		<?php get_template_part( 'components/contact-meta' ); ?>
 		<?php tha_entry_content_after(); ?>
 
-		<?php if ( has_term( 'macs', 'school_system' ) ) : ?>
+		<!-- <?php if ( has_term( 'macs', 'school_system' ) ) : ?>
 
 			<a class="btn macs-logo u-abs u-bottom0 u-right0" href="<?php the_permalink( '10073' ); ?>"><?php abe_do_svg( 'macs', '3em', '5em' ); ?></a>
 
-		<?php endif; ?>
+		<?php endif; ?> -->
 
-<?php get_template_part( 'components/entry', 'footer' ); ?>
+<?php get_template_part( 'components/contact', 'footer' ); ?>
 
 <?php tha_entry_bottom(); ?>
 
