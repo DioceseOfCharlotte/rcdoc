@@ -127,6 +127,7 @@ class GWEmailDomainControl extends GW_Email_Domain_Validator { }
 						'saintcharlesborromeo.org',
 						'stdorothys.org',
 						'stehc.org',
+						'steugene.com',
 						'steugene.org',
 						'stfrancisofassisi-jefferson.org',
 						'stfrancislenoir.com',

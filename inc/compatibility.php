@@ -20,12 +20,6 @@ function meh_remove_menu_pages() {
 	}
 }
 
-// function meh_remove_plugins_menu() {
-// 	if ( class_exists( 'Jetpack' ) && ! current_user_can( 'manage_options' ) ) {
-// 		remove_menu_page( 'jetpack' );
-// 	}
-// }
-
 
 
 	/**
