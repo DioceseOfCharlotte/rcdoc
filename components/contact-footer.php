@@ -19,15 +19,15 @@ $distance = facetwp_get_distance();
 ?>
 
 <footer <?php hybrid_attr( 'entry-footer' ); ?>>
-<div class="u-border-t u-b-grey u-1of1 u-h6 u-flex u-flex-wrap">
+<div class="u-1of1 u-h6 u-flex u-py05 u-pt0 u-flex-wrap">
 <?php if ( $doc_email ) : ?>
-	<a href="mailto:<?php echo antispambot( $doc_email, 1 ) ?>" target="_blank" rel="noopener noreferrer" class="no-pseudo btn"><?php abe_do_svg( 'mail', '1em' ) ?> Email</a>
+	<a href="mailto:<?php echo antispambot( $doc_email, 1 ) ?>" target="_blank" rel="noopener noreferrer" class="no-pseudo btn btn-hollow u-ml05"><?php abe_do_svg( 'mail', '1em' ) ?> Email</a>
 <?php endif; ?>
 <?php if ( $doc_website ) : ?>
-	<a href="<?php echo $doc_website ?>" target="_blank" rel="noopener noreferrer" class="no-pseudo btn"><?php abe_do_svg( 'globe', '1em' ) ?> Website</a>
+	<a href="<?php echo $doc_website ?>" target="_blank" rel="noopener noreferrer" class="no-pseudo btn btn-hollow u-ml05"><?php abe_do_svg( 'globe', '1em' ) ?> Website</a>
 <?php endif; ?>
 <?php if ( $doc_city ) : ?>
-	<a href="<?php echo esc_url( $dir_link ) ?>" target="_blank" rel="noopener noreferrer" class="no-pseudo btn">
+	<a href="<?php echo esc_url( $dir_link ) ?>" target="_blank" rel="noopener noreferrer" class="no-pseudo btn btn-hollow u-ml05">
 		<?php abe_do_svg( 'car', '1em' ) ?> Directions
 		<?php $distance = facetwp_get_distance();
 		if ( false !== $distance ) { ?>
