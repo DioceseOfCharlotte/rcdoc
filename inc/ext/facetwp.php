@@ -119,7 +119,7 @@ function fwp_load_more() {
 		$(document).on('facetwp-loaded', function() {
 			if (FWP.settings.pager.page < FWP.settings.pager.total_pages) {
 				if (! FWP.loaded && 1 > $('.fwp-load-more').length) {
-					$('.facetwp-template').after('<button class="btn-hollow u-mb3 fwp-load-more">More results</button>');
+					$('.facetwp-template').after('<button class="btn u-bg-2 u-mb3 fwp-load-more">More results</button>');
 				}
 				else {
 					$('.fwp-load-more').html('Load more').show();
