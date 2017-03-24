@@ -5,7 +5,7 @@
  * @package  RCDOC
  */
 
-add_action( 'tha_header_after', 'doc_article_hero' );
+//add_action( 'tha_header_after', 'doc_article_hero' );
 
 function doc_article_hero() {
 	if ( is_front_page() ) {

@@ -32,6 +32,7 @@ if ( ! is_home() && is_front_page() ) {
 ?>
 
 <div <?php hybrid_attr( 'archive-header' ); ?>>
+<?php get_template_part( 'components/header', 'image' ); ?>
 
 	<?php hybrid_get_menu( 'breadcrumbs' ); ?>
 
