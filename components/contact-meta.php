@@ -26,7 +26,6 @@ if ( has_post_thumbnail() ) {
 
 <div class="contact-info u-inline-block <?php echo $width ?> u-align-middle u-p1 u-h6">
 
-<?php ob_start(); ?>
 	<div class="contact-wrapper u-flex u-flex-wrap u-flex-jb">
 
 <div class="contact-numbers u-mb05">
@@ -56,23 +55,4 @@ if ( has_post_thumbnail() ) {
 			<?php endif; ?>
 		</div>
 		</div>
-		<?php echo ob_get_clean(); ?>
-
-
-<!-- <?php ob_start(); ?>
-		<p class="email u-truncate">
-			<?php if ( $doc_email ) : ?>
-				<a class="contact-mail" itemprop="email" href="mailto:<?php echo antispambot( $doc_email, 1 ) ?>"><?php echo antispambot( $doc_email ) ?></a>
-			<?php endif; ?>
-		</p>
-<?php echo ob_get_clean(); ?>
-<?php ob_start(); ?>
-		<?php if ( $doc_website ) : ?>
-			<?php $obj = get_post_type_object( get_post_type() );
-			$single_name = $obj->labels->singular_name; ?>
-			<p class="website">
-				<a class="contact-link u-inline-block" itemprop="url" href="<?php echo $doc_website ?>" target="_blank"><?php echo $doc_website ?></a>
-			</p>
-		<?php endif; ?>
-<?php echo ob_get_clean(); ?> -->
-	</div>
+</div>

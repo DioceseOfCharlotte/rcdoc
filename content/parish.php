@@ -9,8 +9,6 @@
 
 <article <?php hybrid_attr( 'post' ); ?>>
 
-	<?php tha_entry_top(); ?>
-
 	<?php get_template_part( 'components/entry', 'header' ); ?>
 
 	<?php $parent_id = wp_get_post_parent_id( get_the_ID() ); ?>
@@ -30,12 +28,8 @@
 	));
 	?>
 
-	<?php tha_entry_content_before(); ?>
 	<?php get_template_part( 'components/contact-meta' ); ?>
-	<?php tha_entry_content_after(); ?>
 
 	<?php get_template_part( 'components/contact', 'footer' ); ?>
-
-	<?php tha_entry_bottom(); ?>
 
 </article>

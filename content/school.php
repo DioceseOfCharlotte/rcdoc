@@ -11,8 +11,6 @@
 
 <article <?php hybrid_attr( 'post' ); ?>>
 
-	<?php tha_entry_top(); ?>
-
 	<?php $distance = facetwp_get_distance();
 	if ( false !== $distance ) { ?>
 	    <div class="u-abs u-bottom0 u-left0 u-p2"><em><?php echo round( $distance, 2 ); ?> miles</em></div>
@@ -29,18 +27,8 @@
 			));
 		?>
 
-		<?php tha_entry_content_before(); ?>
 		<?php get_template_part( 'components/contact-meta' ); ?>
-		<?php tha_entry_content_after(); ?>
-
-		<!-- <?php if ( has_term( 'macs', 'school_system' ) ) : ?>
-
-			<a class="btn macs-logo u-abs u-bottom0 u-right0" href="<?php the_permalink( '10073' ); ?>"><?php abe_do_svg( 'macs', '3em', '5em' ); ?></a>
-
-		<?php endif; ?> -->
 
 <?php get_template_part( 'components/contact', 'footer' ); ?>
-
-<?php tha_entry_bottom(); ?>
 
 </article>

@@ -10,7 +10,6 @@ use Mexitek\PHPColors\Color;
  */
 require_once get_theme_file_path( 'inc/config.php' );
 require_once get_theme_file_path( 'inc/compatibility.php' );
-require_once get_theme_file_path( 'inc/hooks.php' );
 require_once get_theme_file_path( 'inc/ext/cpt-archive.php' );
 require_once get_theme_file_path( 'inc/ext/gravity-forms.php' );
 require_once get_theme_file_path( 'inc/ext/gravity-view.php' );
@@ -31,8 +30,6 @@ function rcdoc_setup() {
 	//add_theme_support( 'arch-builder' );
 
 	add_theme_support( 'cleaner-gallery' );
-
-	add_theme_support( 'custom-background',	array( 'default-color' => 'f7ede7' ) );
 
 	add_filter( 'theme_mod_primary_color', 'rcdoc_primary_color' );
 	add_filter( 'theme_mod_secondary_color', 'rcdoc_secondary_color' );
@@ -133,4 +130,41 @@ function doc_post_color_comp( $post_id, $alpha ) {
 
 	$comp_rgb = implode( ',', hybrid_hex_to_rgb( $comp_color ) );
 	return 'rgba(' . $comp_rgb . ',' . $alpha . ')';
+}
+
+
+function abe_custom_header_image( $size = 'large' ) {
+
+	global $cptarchives;
+	$queried_object_id = get_queried_object_id();
+	$post_image = get_post_meta( $queried_object_id, 'header_image', true );
+
+	if ( $GLOBALS['cptarchives'] ) {
+		$archive_image = $cptarchives->get_archive_meta( 'header_image', true );
+	}
+
+	$term_image = get_term_meta( $queried_object_id, 'image', true );
+	$bg_image = '';
+
+	if ( $post_image ) {
+		$bg_image = wp_get_attachment_image_url( $post_image, $size );
+
+	} elseif ( $GLOBALS['cptarchives'] && $archive_image ) {
+		$bg_image = wp_get_attachment_image_url( $archive_image, $size );
+
+	} elseif ( $term_image ) {
+		$bg_image = wp_get_attachment_image_url( $term_image, $size );
+
+	} elseif ( $GLOBALS['cptarchives'] && has_post_thumbnail( $cptarchives->get_archive_id() ) ) {
+		$bg_image = wp_get_attachment_image_url( get_post_thumbnail_id( $cptarchives->get_archive_id() ), $size );
+
+	} elseif ( has_post_thumbnail() ) {
+		$bg_image = wp_get_attachment_image_url( get_post_thumbnail_id(), $size );
+
+	} elseif ( get_header_image() ) {
+		$bg_image = get_header_image();
+	}
+	if ( $bg_image ) {
+		return $bg_image;
+	}
 }
