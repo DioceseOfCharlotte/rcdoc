@@ -31,6 +31,7 @@ function rcdoc_setup() {
 
 	add_theme_support( 'cleaner-gallery' );
 
+	add_filter( 'theme_mod_background_color', 'rcdoc_background_color' );
 	add_filter( 'theme_mod_primary_color', 'rcdoc_primary_color' );
 	add_filter( 'theme_mod_secondary_color', 'rcdoc_secondary_color' );
 }
@@ -61,6 +62,9 @@ function rcdoc_scripts() {
 /**
  * Theme Colors.
  */
+function rcdoc_background_color( $hex ) {
+	return $hex ? $hex : '#f7ede7';
+}
 function rcdoc_primary_color( $hex ) {
 	return $hex ? $hex : '#2980b9';
 }
