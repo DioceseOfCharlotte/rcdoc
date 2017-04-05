@@ -10,10 +10,7 @@ $doc_pid = get_the_ID();
 
 <article <?php hybrid_attr( 'post' ); ?>>
 
-	<?php tha_entry_top(); ?>
-
 	<div <?php hybrid_attr( 'entry-content' ); ?>>
-		<?php tha_entry_content_before(); ?>
 		<?php get_template_part( 'components/contact-meta' ); ?>
 		<?php if ( $doc_mass ) : ?>
 			<div class="u-1of1 u-mb3 u-bg-silver u-br u-pb2 u-px2">
@@ -27,12 +24,9 @@ $doc_pid = get_the_ID();
 		<?php } ?>
 
 		<?php the_content(); ?>
-		<?php tha_entry_content_after(); ?>
 	</div>
 
 	<?php get_template_part( 'components/entry', 'footer' ); ?>
-
-	<?php tha_entry_bottom(); ?>
 
 	<?php get_template_part( 'components/staff', 'cards' ); ?>
 
