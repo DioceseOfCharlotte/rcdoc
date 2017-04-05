@@ -1898,9 +1898,7 @@ html body {
 }
 
 html .home .site-header.is-top {
-	background: linear-gradient(to bottom, rgba(15, 19, 42, 0.75), rgba(15, 19, 42, 0.55), transparent);
 	background-color: transparent !important;
-	background-image: -webkit-linear-gradient(top, rgba(15, 19, 42, 0.75), rgba(15, 19, 42, 0.55), transparent);
 }
 
 html .site-header::after {
