@@ -34,7 +34,7 @@ if ( ! is_home() && is_front_page() ) {
 <div <?php hybrid_attr( 'archive-header' ); ?>>
 
 
-	<?php hybrid_get_menu( 'breadcrumbs' ); ?>
+	<?php get_template_part( 'components/breadcrumbs' ); ?>
 
 	<h1 <?php hybrid_attr( 'archive-title' ); ?>>
 		<?php
