@@ -496,7 +496,6 @@ body:not(.home) .site-description {
 .archive .type-department,
 .taxonomy-agency article,
 .archive-department article {
-	overflow: hidden;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;

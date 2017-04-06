@@ -1,19 +1,4 @@
 
-
-// .site-branding {
-// 	//font-size: 1rem;
-// 	align-items: center;
-// 	//max-height: 100%;
-//
-// 	// @include xs {
-// 	// 	font-size: 3vw;
-// 	// }
-// }
-
-// .site-title {
-// 	font-size: 2em;
-// }
-//
 .site-description {
 	opacity: 0;
 	//transform: translateY(-2rem);
@@ -25,14 +10,6 @@
 	width: auto;
 	transition: height .2s linear;
 }
-
-// .site-header {
-// 	height: 3.5rem;
-//
-// 	@include md {
-// 		height: 4rem;
-// 	}
-// }
 
 .home .site-header.is-top {
 	padding-bottom: 2rem;
@@ -57,12 +34,3 @@ body:not(.home) {
 		overflow: hidden;
 	}
 }
-
-	// .site-branding {
-	// 	font-size: 0.8rem;
-	//
-	// 	@include xs {
-	// 		font-size: 3vw;
-	// 	}
-	// }
-//}
