@@ -5,23 +5,8 @@
  * @package  RCDOC
  */
 
-add_filter( 'body_class', 'doc_ip_body_classes' );
 add_action( 'admin_menu', 'meh_remove_menu_pages' );
 add_action( 'wp', 'custom_maybe_activate_user', 0 );
-
-/**
- * Use jetpack protect IP whitelist to add bodyclass.
- */
-function doc_ip_body_classes( $classes ) {
-	if ( is_admin() || ! function_exists( 'jetpack_protect_get_ip' ) ) {
-		return $classes; }
-
-	$ip = jetpack_protect_get_ip();
-	if ( false !== Jetpack_Protect_Module::ip_is_whitelisted( $ip ) ) {
-		$classes[] = 'doc-ip';
-	}
-	return $classes;
-}
 
 function meh_remove_menu_pages() {
 
@@ -30,8 +15,6 @@ function meh_remove_menu_pages() {
 		remove_menu_page( 'tools.php' );
 	}
 }
-
-
 
 	/**
 	 * Gravity Forms Custom Activation Template
