@@ -1,0 +1,30 @@
+@import "a.colors";
+@import "a.defaults";
+
+/*@import "motion-ui";*/
+
+@import "settings.vars";
+@import 'settings.icons';
+@import 'objects.icons';
+
+/*@import "components.tiles";*/
+@import "components.menu";
+@import "theme.formats";
+@import "page.home";
+@import "vendor.facetwp";
+@import "vendor.flickity";
+@import "vendor.gravity";
+@import "vendor.arch";
+@import "shame";
+
+/* Styles specific to the editor. */
+body#tinymce {
+	min-height: 50px;
+	margin: 0 auto !important;
+	padding: 1.5rem 1.5rem 0 !important;
+	border: none !important;
+}
+
+body#tinymce .wpview-wrap .gallery-cell {
+	display: inline-block;
+}

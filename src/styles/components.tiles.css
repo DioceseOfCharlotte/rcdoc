@@ -36,15 +36,11 @@ a.tile-link {
 	z-index: 1;
 }
 
-// .tile:hover {
-// 	background-image: linear-gradient(335deg, rgba(0, 0, 0, 0.06) 50%, transparent 50%);
-// }
-
 .is-animating .tile {
 	animation-play-state: running;
 }
 
-@include mui-series {
+/*@include mui-series {
 
 	.tile:nth-child(1) {
 		@include mui-queue(0.6s, -0.2s, fade, slide($direction: down));
@@ -89,7 +85,7 @@ a.tile-link {
 	.tile:nth-child(10) {
 		@include mui-queue(0.6s, -0.2s, fade, slide($direction: down));
 	}
-}
+}*/
 
 .tile:nth-child(odd) {
 	margin-top: 1rem;

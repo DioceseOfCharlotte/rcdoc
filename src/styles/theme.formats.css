@@ -1,11 +1,10 @@
-
 .archive .type-department,
 .taxonomy-agency article,
 .archive-department article {
 	display: flex;
 	max-height: 6.25rem;
 
-	@include md {
+	@media (--md) {
 		max-height: 6.25rem;
 	}
 }
@@ -23,7 +22,7 @@
 }
 
 .doc-embed {
-	@include md {
+	@media (--md) {
 		height: 80vh;
 	}
 }

@@ -1,4 +1,4 @@
-.tiled-icon {
+/*.tiled-icon {
 	font-size: 13rem;
 	line-height: 1;
 	stroke: rgba(54, 71, 79, 0.3);
@@ -10,9 +10,68 @@
 }
 
 .tile {
-	@include md {
+	@media (--md) {
 		min-width: 23%;
 	}
+}*/
+/*
+.tile-link {
+	transform: scale(1);
+}
+
+.tile-link:hover {
+	transform: scale(1.01);
+}*/
+
+/*.tile * {
+	backface-visibility: hidden;
+}*/
+
+/*.tiled-icon {
+filter: blur(3px);
+transition: inherit;
+transition-property: filter;
+}
+
+.tile-link:hover .tiled-icon {
+filter: blur(0);
+}*/
+
+/*.tiled-icon>.v-icon {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}*/
+
+/*.tile {
+	min-height: 250px;
+}
+
+.tiled-icon {
+	min-height: 250px;
+	display: flex;
+	align-items: center;
+}*/
+
+.tiled-icon {
+	line-height: 1;
+	stroke: rgba(54, 71, 79, 0.3);
+	min-height: 1rem;
+	display: inline-block;
+	flex-shrink: 0;
+}
+
+.tiled-icon > .v-icon {
+	stroke-width: 1%;
+	stroke-linejoin: round;
+	width: 5rem;
+	height: 5rem;
+}
+
+.tile-title {
+    flex: 1;
+    min-height: 100%;
+	align-self: stretch;
 }
 
 .has-image.section-row {
@@ -56,7 +115,7 @@
 		position: absolute;
 		top: 0;
 		width: 100%;
-		background-color: rgba($color1, 0.8);
+		background-color: color($color1 a(0.8));
 	}
 }
 
@@ -72,7 +131,7 @@
 		position: absolute;
 		top: 0;
 		width: 100%;
-		background-color: rgba($color2, 0.8);
+		background-color: color($color2 a(0.8));
 	}
 }
 
@@ -88,7 +147,7 @@
 		position: absolute;
 		top: 0;
 		width: 100%;
-		background-color: rgba($color3, 0.8);
+		background-color: color($color3 a(0.8));
 	}
 }
 
@@ -104,7 +163,7 @@
 		position: absolute;
 		top: 0;
 		width: 100%;
-		background-color: rgba(lighten($color1, 10), 0.8);
+		background-color: color($color1-light a(0.8));
 	}
 }
 
@@ -120,7 +179,7 @@
 		position: absolute;
 		top: 0;
 		width: 100%;
-		background-color: rgba(lighten($color2, 10), 0.8);
+		background-color: color($color2-light a(0.8));
 	}
 }
 
@@ -136,7 +195,7 @@
 		position: absolute;
 		top: 0;
 		width: 100%;
-		background-color: rgba(lighten($color3, 10), 0.8);
+		background-color: color($color3-light a(0.8));
 	}
 }
 
@@ -152,7 +211,7 @@
 		position: absolute;
 		top: 0;
 		width: 100%;
-		background-color: rgba(darken($color1, 10), 0.8);
+		background-color: color($color1-dark a(0.8));
 	}
 }
 
@@ -168,7 +227,7 @@
 		position: absolute;
 		top: 0;
 		width: 100%;
-		background-color: rgba(darken($color2, 10), 0.8);
+		background-color: color($color2-dark a(0.8));
 	}
 }
 
@@ -184,6 +243,6 @@
 		position: absolute;
 		top: 0;
 		width: 100%;
-		background-color: rgba(darken($color3, 10), 0.8);
+		background-color: color($color3-dark a(0.8));
 	}
 }

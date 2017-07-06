@@ -1,0 +1,81 @@
+ /* --------------------------------------------------------------
+ # Defaults
+ -------------------------------------------------------------- */
+$base-font-size: 1rem;
+$base-line-height: 1.6;
+$base-background-color: #fff;
+$base-radius: 0.125rem;
+$base-opacity: 0.7;
+$sans-serif: $root-font-family;
+$container: 74em;
+$container-wide: 84em;
+$jumbo: 3rem;
+$h1: 2.5rem;
+$h2: 2rem;
+$h3: 1.5rem;
+$h4: 1.25rem;
+$h5: 1rem;
+$h6: 0.875rem;
+$heading-line-height: 1.25;
+$heading-font-family: $root-font-family;
+$heading-font-weight: 700;
+
+/* --------------------------------------------------------------
+ # Colors
+ -------------------------------------------------------------- */
+$color1: $color-1;
+$color1-light: $color-1-light;
+$color1-dark: $color-1-dark;
+$color2: $color-2;
+$color2-light: $color-2-light;
+$color2-dark: $color-2-dark;
+$color3: $yellow5;
+$color3-light: $yellow3;
+$color3-dark: $yellow7;
+$color-grey: $gray4;
+$color-grey-dark: $gray8;
+$color-grey-light: $gray2;
+$color-black: #111;
+$color-white: $white;
+$darken1: $color-tint-1;
+$darken2: $color-tint-2;
+$darken3: $color-tint-3;
+$darken4: $color-tint-4;
+$lighten1: $color-frost-1;
+$lighten2: $color-frost-2;
+$lighten3: $color-frost-3;
+$lighten4: $color-frost-4;
+$color-text-white: $white;
+$text-muted: $color-tint-3;
+$color-links: $color1-dark;
+$color-links-hover: $color1;
+$opacity: $base-opacity;
+
+/* --------------------------------------------------------------
+ # Alerts
+ -------------------------------------------------------------- */
+$color-error: $color-warning;
+$color-valid: $color-success;
+$color-warning: $yellow5;
+$color-information: $color-info;
+
+/* --------------------------------------------------------------
+ # Spacing
+ -------------------------------------------------------------- */
+$space1: 0.5rem;
+$space2: 1rem;
+$space3: 1.5rem;
+$space4: 3rem;
+$gutter: $space3;
+$paragraph-margin-bottom: $space2;
+$heading-margin-bottom: $space1;
+$list-margin-bottom: $space2;
+
+/* --------------------------------------------------------------
+ # Animation
+ -------------------------------------------------------------- */
+$animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);
+$animation-curve-linear-out-slow-in: cubic-bezier(0, 0, 0.2, 1);
+$animation-curve-fast-out-linear-in: cubic-bezier(0.4, 0, 1, 1);
+$animation-curve-default: cubic-bezier(0.4, 0, 0.2, 1);
+$transition-time: 0.3s;

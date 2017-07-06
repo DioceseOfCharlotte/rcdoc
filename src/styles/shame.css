@@ -49,15 +49,7 @@ body {
 	background-size: cover;
 }
 
-// .site-branding a {
-// 	transition-timing-function: cubic-bezier(0, 1.11, 0.58, 1);
-//
-// 	> * {
-// 		transition: none;
-// 	}
-// }
 .home .site-header.is-top {
-	//transition: none;
 	background-color: transparent !important;
 }
 
@@ -80,14 +72,14 @@ body {
 
 .article-hero {
 	min-height: 55vh;
-	box-shadow: inset 0 -3px 10px 2px rgba(0, 0, 0, 0.20);
+	box-shadow: inset 0 -3px 10px 2px rgba(0, 0, 0, 0.2);
 }
 
 .site-content {
 	min-height: 100vh;
 	padding-top: 3.5rem;
 
-	@include md {
+	@media (--md) {
 		padding-top: 4rem;
 	}
 }
@@ -95,7 +87,7 @@ body {
 .home .site-content {
 	padding-top: 4rem;
 
-	@include md {
+	@media (--md) {
 		padding-top: 5.5rem;
 	}
 }
@@ -111,15 +103,14 @@ body {
 }
 
 a.page-numbers:hover {
-	background-color: rgba(144, 164, 174, .3);
+	background-color: rgba(144, 164, 174, 0.3);
 }
 
 span.page-numbers {
 	font-weight: 600;
-	opacity: .6;
+	opacity: 0.6;
 }
 
-// Jetpack edit-css
 .singular-page.layout-1-column-wide article {
 	background-color: transparent;
 }
@@ -168,15 +159,15 @@ nav.navigation.pagination {
 
 .members-access-error {
 	background-color: #fff;
-	border-radius: .2rem;
+	border-radius: 0.2rem;
 	padding: 1rem;
-	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2);
+	box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
 }
 
 .intro-paragraph,
 .u-lead {
 	font-size: 1.25rem;
-	letter-spacing: .02em;
+	letter-spacing: 0.02em;
 }
 
 .js-houdini .collapse.active {

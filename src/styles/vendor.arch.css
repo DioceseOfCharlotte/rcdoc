@@ -71,17 +71,9 @@
 .site-main,
 .arch-row,
 .o-grid {
-	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
-	-webkit-align-items: stretch;
-	-ms-flex-align: stretch;
 	align-items: stretch;
-	-webkit-flex-flow: row wrap;
-	-ms-flex-flow: row wrap;
 	flex-flow: row wrap;
-	-webkit-justify-content: space-around;
-	-ms-flex-pack: distribute;
 	justify-content: space-around;
 }
 
@@ -94,7 +86,7 @@
 	max-width: 100%;
 }
 
-@media screen and (min-width: 48em) {
+@media (min-width: 48em) {
 	.arch.arch .arch-u-1of1-md {
 		width: 100%;
 		max-width: 100%;
@@ -151,38 +143,26 @@
 }
 
 .arch .arch-flex {
-	display: -webkit-flex;
-	display: -ms-flexbox;
 	display: flex;
 }
 
 .arch .arch-flex-wrap {
-	-webkit-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
 }
 
 .arch .arch-flex-justify-between {
-	-webkit-justify-content: space-between;
-	-ms-flex-pack: justify;
 	justify-content: space-between;
 }
 
 .arch .arch-flex-justify-around {
-	-webkit-justify-content: space-around;
-	-ms-flex-pack: distribute;
 	justify-content: space-around;
 }
 
 .arch .arch-flexed-auto {
-	-webkit-flex: 1 1 auto;
-	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
 }
 
 .arch .arch-flexed-1 {
-	-webkit-flex: 1 1 0%;
-	-ms-flex: 1 1 0%;
 	flex: 1 1 0%;
 }
 
@@ -241,60 +221,6 @@
 .tab-header.is-active:before {
 	opacity: 0.7;
 }
-
-/*  Toggles */
-
-// .collapse-toggle {
-// 	display: inline-block;
-// 	display: -webkit-flex;
-// 	display: -ms-flexbox;
-// 	display: flex;
-// 	border-top: 1px solid rgba(0, 0, 0, 0.1);
-// 	box-sizing: border-box;
-// 	opacity: 1;
-// 	text-decoration: none;
-// }
-//
-// .collapse-toggle:hover {
-// 	text-decoration: none;
-// }
-//
-// .chevron-toggle {
-// 	width: 1em;
-// 	height: 1em;
-// 	opacity: 0.5;
-// 	transition: all 0.3s;
-// }
-//
-// a:hover > .chevron-toggle {
-// 	opacity: 1;
-// }
-//
-// .collapse-toggle.active > .chevron-toggle {
-// 	-webkit-transform: rotate(180deg);
-// 	transform: rotate(180deg);
-// }
-//
-// .collapse {
-// 	overflow: hidden;
-// 	outline: 0;
-// 	transition: height 0.3s, padding 0.3s;
-// }
-//
-// .collapse:not(.active) {
-// 	overflow: hidden;
-// 	height: 0 !important;
-// 	padding-top: 0 !important;
-// 	padding-bottom: 0 !important;
-// }
-//
-// .collapse-wrap {
-// 	transition: opacity 0.1s;
-// }
-//
-// .collapse:not(.active) > .collapse-wrap {
-// 	opacity: 0.3;
-// }
 
 .arch .arch-p2 {
 	padding: 1rem;

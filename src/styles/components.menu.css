@@ -1,19 +1,16 @@
-
 .site-description {
 	opacity: 0;
-	//transform: translateY(-2rem);
-	transition: opacity .2s;
+	transition: opacity 0.2s;
 }
 
 .custom-logo {
 	height: 2.5rem;
 	width: auto;
-	transition: height .2s linear;
+	transition: height 0.2s linear;
 }
 
 .home .site-header.is-top {
 	padding-bottom: 2rem;
-	// height: 4rem;
 
 	.custom-logo {
 		height: 3.5rem;
@@ -21,7 +18,6 @@
 
 	.site-description {
 		opacity: 1;
-		//transform: translateY(0);
 		transition: opacity 0.2s linear;
 	}
 }
