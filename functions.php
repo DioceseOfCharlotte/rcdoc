@@ -56,7 +56,7 @@ function doc_widgets_init() {
  */
 function rcdoc_scripts() {
 	// Scripts.
-	wp_enqueue_script( 'main-script', get_theme_file_uri( 'js/' . get_child_asset_rev( 'main.js' ) ), false, false, true );
+	wp_enqueue_script( 'child-script', get_theme_file_uri( 'js/' . get_child_asset_rev( 'main.js' ) ), false, false, true );
 }
 
 /**

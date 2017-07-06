@@ -13,30 +13,37 @@ const browserSync = require('browser-sync');
 const runSequence = require('run-sequence');
 
 const autoPrefixer = require('autoprefixer');
-const atImport = require("postcss-import");
-const pcMixins = require("postcss-mixins");
+const pcImport = require('postcss-import');
+const pcMixins = require('postcss-mixins');
 const pcColor = require('postcss-color-function');
-const pcNested = require("postcss-nested");
-const pcMedia = require("postcss-custom-media");
-const pcProperties = require("postcss-custom-properties");
-const pcSvg = require('postcss-inline-svg');
+const pcNested = require('postcss-nested');
+const pcMedia = require('postcss-custom-media');
 const pcSvar = require('postcss-simple-vars');
 const pcStrip = require('postcss-strip-units');
+const pcSpec = require('postcss-increase-specificity');
+const pcDisComments = require('postcss-discard-comments');
+const pcDisEmpty = require('postcss-discard-empty');
+const context = require('postcss-plugin-context');
 
 const $ = require('gulp-load-plugins')();
 const reload = browserSync.reload;
 
-
-// To be removed
-//const pcFlex = require('postcss-flexibility');
-const syntax = require('postcss-scss');
-//const oldie = require('oldie');
-
-
-const SASS_PATHS = [
-	'src/motion-ui/src',
-	'src/styles'
-];
+const BANNER = [
+	'/*',
+	'Theme Name: RCDOC',
+	'Theme URI: https://github.com/DioceseOfCharlotte/rcdoc',
+	'Author: Marty Helmick',
+	'Author URI: https://github.com/m-e-h',
+	'Description:  Diocese child theme for Abraham.',
+	'Version: 1.0.0',
+	'License: GNU General Public License v2 or later',
+	'License URI: http://www.gnu.org/licenses/gpl-2.0.html',
+	'Template: abraham',
+	'Text Domain: rcdoc',
+	'GitHub Theme URI: https://github.com/DioceseOfCharlotte/rcdoc',
+	'*/',
+  	'\n'
+].join('\n');
 
 const AUTOPREFIXER_BROWSERS = [
 	'ie >= 10',
@@ -50,45 +57,37 @@ const AUTOPREFIXER_BROWSERS = [
 	'android >= 4.4'
 ];
 
-const PRECSS_PLUGINS = [
-	atImport,
-	pcProperties,
-	pcStrip,
+const POSTCSS_PLUGINS = [
+	pcImport,
 	pcMixins,
 	pcSvar,
+	context({ pcSpec: pcSpec({ repeat: 1 }) }),
+	pcStrip,
 	pcColor,
 	pcMedia,
 	pcNested,
-	pcSvg({
-		path: './images/icons'
-	})
-];
-
-const POSTCSS_PLUGINS = [
-	atImport,
+	pcDisComments,
+	pcDisEmpty,
 	autoPrefixer({
 		browsers: AUTOPREFIXER_BROWSERS
 	})
 ];
 
-// const POSTCSS_IE = [
-// 	autoPrefixer({
-// 		browsers: ['IE 8', 'IE 9']
-// 	}),
-// 	pcFlex,
-// 	oldie
-// ];
-
 const SOURCESJS = [
-	// ** Mine ** //
 	'src/scripts/main.babel.js'
 ];
 
+// ***** Development tasks ****** //
+// Lint JavaScript
+gulp.task('lint', () => {
+	gulp.src('src/scripts/*.js')
+		.pipe(xo())
+});
 
 // ***** Production build tasks ****** //
 // Optimize images
 gulp.task('images', () => {
-	gulp.src('src/images/**/*.svg')
+	gulp.src('src/images/icons/*.svg')
 		.pipe($.svgmin({
 			plugins: [{
 				cleanupIDs: true
@@ -114,37 +113,21 @@ gulp.task('images', () => {
 				removeDimensions: true
 			}]
 		}))
-		.pipe(gulp.dest('images'))
+		.pipe(gulp.dest('./images/icons'))
 		.pipe($.size({
 			title: 'images'
 		}))
 });
 
-// Compile and Automatically Prefix Stylesheets (production)
-gulp.task('presass', () => {
-	gulp.src('src/styles/postCSS/index.css')
-		.pipe($.if('*.css', $.postcss(PRECSS_PLUGINS, {
-			syntax: syntax
-		})))
-		.pipe($.concat('_postcss.scss'))
-		.pipe(gulp.dest('src/styles/'))
-});
-
 gulp.task('styles', () => {
-	gulp.src('src/styles/style.scss')
-		// Generate Source Maps
-		//.pipe($.sourcemaps.init())
-		.pipe($.sass({
-			includePaths: SASS_PATHS,
-			precision: 10,
-			onError: console.error.bind(console, 'Sass error:')
-		}))
-		.pipe(gulp.dest('.tmp'))
-		.pipe($.concat('style.css'))
+	gulp.src('src/styles/index.css')
+		.pipe($.sourcemaps.init())
 		.pipe($.postcss(POSTCSS_PLUGINS))
+		.pipe($.concat('style.css'))
 		.pipe($.stylefmt())
+		.pipe($.header(BANNER))
 		.pipe(gulp.dest('./'))
-		//.pipe($.sourcemaps.write('.'))
+		.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest('./'))
 		.pipe($.if('*.css', $.cssnano()))
 		.pipe(ignore.exclude('*.map'))
@@ -159,26 +142,16 @@ gulp.task('styles', () => {
 		.pipe(gulp.dest('./'))
 });
 
-// gulp.task('oldie', () => {
-// 	gulp.src('.tmp/style.css')
-// 		.pipe($.postcss(POSTCSS_IE))
-// 		.pipe($.concat('oldie.css'))
-// 		.pipe(gulp.dest('css'))
-// 		.pipe($.if('*.css', $.cssnano()))
-// 		.pipe($.concat('oldie.min.css'))
-// 		.pipe(gulp.dest('css'))
-// });
-
 // Concatenate And Minify JavaScript
 gulp.task('scripts', () => {
 	gulp.src(SOURCESJS)
-		//.pipe($.sourcemaps.init())
+		.pipe($.sourcemaps.init())
 		.pipe($.babel({
 			"presets": ["es2015"]
 		}))
 		.pipe($.concat('main.js'))
 		.pipe(gulp.dest('js'))
-		//.pipe($.sourcemaps.write('.'))
+		.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest('js'))
 		.pipe($.if('*.js', $.uglify()))
 		.pipe(ignore.exclude('*.map'))
@@ -205,12 +178,12 @@ gulp.task('serve', ['scripts', 'styles'], () => {
 	});
 
 	gulp.watch(['*/**/*.php'], reload);
-	gulp.watch(['src/**/*.{scss,css}'], ['styles', reload]);
-	gulp.watch(['src/**/*.js'], ['lint', 'scripts']);
+	gulp.watch(['src/styles/**/*.{scss,css}'], ['styles', reload]);
+	gulp.watch(['src/scripts/**/*.js'], ['lint', 'scripts']);
 	gulp.watch(['src/images/**/*'], reload);
 });
 
 // Build production files, the default task
 gulp.task('default', cb => {
-	runSequence('images', ['presass', 'styles'], 'scripts', cb);
+	runSequence('images', 'styles', 'scripts', cb);
 });
