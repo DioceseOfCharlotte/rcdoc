@@ -19,7 +19,7 @@ $doc_pid = get_the_ID();
 			</div>
 		<?php endif; ?>
 
-		<?php if ( current_user_can( 'edit_parishs' ) ) { ?>
+		<?php if ( user_can_update_parish() ) { ?>
 		<a class="btn btn-hollow" href="<?php echo esc_url( site_url( '/' ) ); ?>parish-info/?page=gravityflow-submit&id=19&doc_pid=<?php echo $doc_pid; ?>" target="blank" rel="noopener"><?php abe_do_svg( 'edit', 'sm' ); ?> Edit Parish info</a>
 		<?php } ?>
 
