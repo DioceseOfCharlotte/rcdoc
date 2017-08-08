@@ -6,6 +6,12 @@
  */
 $doc_mass = get_post_meta( get_the_ID(), 'doc_mass_schedule', true );
 $doc_pid = get_the_ID();
+
+if ( ! function_exists( 'user_can_update_parish' ) ) {
+	function user_can_update_parish() {
+		return false;
+	}
+}
 ?>
 
 <article <?php hybrid_attr( 'post' ); ?>>
