@@ -14,6 +14,7 @@ require_once get_theme_file_path( 'inc/ext/cpt-archive.php' );
 require_once get_theme_file_path( 'inc/ext/gravity-forms.php' );
 require_once get_theme_file_path( 'inc/ext/gravity-view.php' );
 require_once get_theme_file_path( 'inc/ext/gf-email-domain.php' );
+require_once get_theme_file_path( 'inc/ext/jetpack.php' );
 require_once get_theme_file_path( 'inc/ext/facetwp.php' );
 require_once get_theme_file_path( 'inc/shortcodes.php' );
 require_once get_theme_file_path( 'inc/shorts-ui.php' );
