@@ -18,7 +18,9 @@ if ( is_user_logged_in() ) : ?>
 </div>
 
 <div class="side-head-bottom u-1of1">
-	<a class="btn btn-sm" href="<?php the_permalink($parish_id); ?>" rel="bookmark"><?php abe_do_svg( 'parishes', '1em' ) ?><?= get_the_title($parish_id); ?></a>
+	<?php if ( get_users_parish_id() ) { ?>
+		<a class="btn btn-sm" href="<?php the_permalink($parish_id); ?>" rel="bookmark"><?php abe_do_svg( 'parishes', '1em' ) ?><?= get_the_title($parish_id); ?></a>
+	<?php } ?>
 </div>
 <?php else : ?>
 
