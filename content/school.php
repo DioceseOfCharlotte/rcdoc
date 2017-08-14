@@ -11,11 +11,6 @@
 
 <article <?php hybrid_attr( 'post' ); ?>>
 
-	<?php $distance = facetwp_get_distance();
-	if ( false !== $distance ) { ?>
-	    <div class="u-abs u-bottom0 u-left0 u-p2"><em><?php echo round( $distance, 2 ); ?> miles</em></div>
-	<?php }	?>
-
 	<?php get_template_part( 'components/entry', 'header' ); ?>
 
 		<?php
@@ -27,8 +22,8 @@
 			));
 		?>
 
-		<?php get_template_part( 'components/contact-meta' ); ?>
+		<?php get_template_part( 'components/contact', 'meta' ); ?>
 
-<?php get_template_part( 'components/contact', 'footer' ); ?>
+		<?php get_template_part( 'components/contact', 'footer' ); ?>
 
 </article>

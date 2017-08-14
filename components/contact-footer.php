@@ -29,8 +29,7 @@ $distance = facetwp_get_distance();
 <?php if ( $doc_city ) : ?>
 	<a href="<?php echo esc_url( $dir_link ) ?>" target="_blank" rel="noopener noreferrer" class="no-pseudo btn btn-sm btn-hollow u-mr05">
 		<?php abe_do_svg( 'car', '1em' ) ?> Directions
-		<?php $distance = facetwp_get_distance();
-		if ( false !== $distance ) { ?>
+		<?php if ( false !== $distance ) { ?>
 			<span class="u-text-link">&nbsp;<?php echo round( $distance, 2 ); ?> miles</span>
 		<?php }	?>
 	</a>

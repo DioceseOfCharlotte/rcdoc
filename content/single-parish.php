@@ -26,7 +26,9 @@ if ( ! function_exists( 'user_can_update_parish' ) ) {
 		<?php endif; ?>
 
 		<?php if ( user_can_update_parish() ) { ?>
-		<a class="btn btn-hollow" href="<?php echo esc_url( site_url( '/' ) ); ?>parish-info/?page=gravityflow-submit&id=19&doc_pid=<?php echo $doc_pid; ?>" target="blank" rel="noopener"><?php abe_do_svg( 'edit', 'sm' ); ?> Edit Parish info</a>
+			<div class="o-alert icon-info u-p1 u-bg-info u-currentcolor_a u-text-wrap u-br u-mb u-border">
+				<a class="btn" href="<?php echo esc_url( site_url( '/' ) ); ?>parish-info/?page=gravityflow-submit&id=19&doc_pid=<?php echo $doc_pid; ?>" target="blank" rel="noopener"><?php abe_do_svg( 'edit', 'sm' ); ?> Edit Parish info</a>
+			</div>
 		<?php } ?>
 
 		<?php the_content(); ?>
