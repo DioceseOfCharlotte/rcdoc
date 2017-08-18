@@ -77,34 +77,40 @@ function meh_row_shortcode( $attr, $content = null ) {
 
 				<div class="section-row__content o-grid u-max-width <?php echo esc_html( $direction ) ?>">
 					<?php include locate_template( '/components/row-tabs.php' ); ?>
+					<?php wp_reset_postdata(); ?>
 				</div>
 
 			<?php elseif ( 'links' === $attr['row_type'] ) : ?>
 
 				<div class="section-row__content o-grid u-max-width <?php echo esc_html( $direction ) ?>">
 					<?php include locate_template( '/components/row-links.php' ); ?>
+					<?php wp_reset_postdata(); ?>
 				</div>
 
 			<?php elseif ( 'feed' === $attr['row_type'] ) : ?>
 
 				<div class="section-row__content o-grid u-max-width <?php echo esc_html( $direction ) ?>">
 					<?php include locate_template( '/components/row-feed.php' ); ?>
+					<?php wp_reset_postdata(); ?>
 				</div>
 
 			<?php elseif ( 'tiles' === $attr['row_type'] ) : ?>
 
 				<div id="tile-row" class="section-row__content tile-row is-animating o-grid u-flex-ja">
 					<?php include locate_template( '/components/row-tiles.php' ); ?>
+					<?php wp_reset_postdata(); ?>
 				</div>
 
 			<?php elseif ( 'cta' === $attr['row_type'] ) : ?>
 				<div class="section-row__content <?php echo esc_html( $direction ) ?> o-grid u-max-width <?php echo esc_attr( $attr['text_color'] ); ?>">
 					<?php include locate_template( '/components/row-callout.php' ); ?>
+					<?php wp_reset_postdata(); ?>
 				</div>
 			<?php elseif ( 'cards' === $attr['row_type'] ) : ?>
 
 				<div class="section-row__content o-grid u-max-width">
 					<?php include locate_template( '/components/row-cards.php' ); ?>
+					<?php wp_reset_postdata(); ?>
 				</div>
 
 			<?php elseif ( 'slides' === $attr['row_type'] ) : ?>
@@ -113,12 +119,14 @@ function meh_row_shortcode( $attr, $content = null ) {
 
 					<div class="section-row__content flickity-slides js-flickity" data-flickity-options='{ "wrapAround": true }'>
 						<?php include locate_template( '/components/row-photoslides.php' ); ?>
+						<?php wp_reset_postdata(); ?>
 					</div>
 
 					<?php } elseif ( 'card' === $attr['slide_type'] ) { ?>
 
 						<div class="section-row__content flickity-slides js-flickity" data-flickity-options='{ "wrapAround": true }'>
 							<?php include locate_template( '/components/row-slides.php' ); ?>
+							<?php wp_reset_postdata(); ?>
 						</div>
 						<?php }
 					endif; ?>
