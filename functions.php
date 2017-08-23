@@ -173,9 +173,3 @@ function abe_custom_header_image( $size = 'large' ) {
 		return $bg_image;
 	}
 }
-
-add_action( 'abe_sidenav_after', 'doc_loggedin_nav' );
-
-function doc_loggedin_nav() {
-	get_template_part( 'sidebar/loggedin-sidebar' );
-}
