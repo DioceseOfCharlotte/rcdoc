@@ -5,8 +5,7 @@
  * @package  RCDOC
  */
 
-add_filter( 'facetwp_index_row', 'index_serialized_data', 10, 2 );
-// add_action( 'tha_content_before', 'doc_display_facets' );
+add_filter( 'facetwp_index_row', 'doc_index_serialized_data', 10, 2 );
 add_action( 'wp_head', 'fwp_load_more', 99 );
 add_filter( 'facetwp_proximity_store_distance', '__return_true' );
 add_shortcode( 'facet_refresh', 'doc_facet_refresh' );
@@ -35,7 +34,7 @@ function doc_has_facet() {
 	return is_post_type_archive( doc_get_facet_cpts() );
 }
 
-function index_serialized_data( $params, $class ) {
+function doc_index_serialized_data( $params, $class ) {
 	if ( 'grade_level' == $params['facet_name'] ) {
 		$values = (array) $params['facet_value'];
 		foreach ( $values as $val ) {
