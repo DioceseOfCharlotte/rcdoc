@@ -14,10 +14,27 @@ add_action( 'init', 'meh_add_shortcodes' );
  * @access public
  */
 function meh_add_shortcodes() {
-	add_shortcode( 'doc_login_form', 'abe_login_shortcode' );
-	add_shortcode( 'doc-personal-link', 'doc_personal_link_shortcode' );
-	add_shortcode( 'doc_logged_in_header', 'doc_logged_in_header_shortcode' );
-	add_shortcode( 'meh_row', 'meh_row_shortcode' );
+add_shortcode( 'meh_field', 'meh_shortcode_field' );
+add_shortcode( 'doc_login_form', 'abe_login_shortcode' );
+add_shortcode( 'doc-personal-link', 'doc_personal_link_shortcode' );
+add_shortcode( 'doc_logged_in_header', 'doc_logged_in_header_shortcode' );
+add_shortcode( 'meh_row', 'meh_row_shortcode' );
+}
+
+// Shortcode to get post_meta.
+function meh_shortcode_field( $atts ) {
+	extract( shortcode_atts(
+		array(
+			'post_id' => NULL,
+		), $atts));
+
+	if ( ! isset( $atts[0] ) )
+		return;
+
+	$field = esc_attr( $atts[0] );
+	global $post;
+	$post_id = ( NULL === $post_id) ? $post->ID : $post_id;
+	return get_post_meta( $post_id, $field, true );
 }
 
 function doc_login_shortcode() {
