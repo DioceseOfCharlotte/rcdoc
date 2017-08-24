@@ -15,7 +15,7 @@ add_action( 'init', 'meh_add_shortcodes' );
  */
 function meh_add_shortcodes() {
 add_shortcode( 'meh_field', 'meh_shortcode_field' );
-add_shortcode( 'doc_login_form', 'abe_login_shortcode' );
+add_shortcode( 'doc_login_form', 'doc_login_shortcode' );
 add_shortcode( 'doc-personal-link', 'doc_personal_link_shortcode' );
 add_shortcode( 'doc_logged_in_header', 'doc_logged_in_header_shortcode' );
 add_shortcode( 'meh_row', 'meh_row_shortcode' );
