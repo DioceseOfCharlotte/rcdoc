@@ -70,6 +70,7 @@ function doc_personal_link_shortcode( $atts ) {
 	$atts = shortcode_atts(
 		array(
 			'type' => '',
+			'class' => '',
 		),
 		$atts, 'doc-personal-link'
 	);
@@ -94,7 +95,7 @@ function doc_personal_link_shortcode( $atts ) {
 		return;
 	}
 
-	return '<a class="btn" href="' . get_permalink( $post_id ) . '">' . abe_get_svg( $atts['type'], '1em' ) . '&nbsp' . get_the_title( $post_id ) . '</a>';
+	return '<a class="btn doc-place-link ' . $atts['class'] . '" href="' . get_permalink( $post_id ) . '">' . abe_get_svg( $atts['type'], '1em' ) . '&nbsp' . get_the_title( $post_id ) . '</a>';
 }
 add_shortcode( 'doc-personal-link', 'doc_personal_link_shortcode' );
 
