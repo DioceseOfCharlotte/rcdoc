@@ -5,13 +5,7 @@
  * @package  RCDOC
  */
 $doc_mass = get_post_meta( get_the_ID(), 'doc_mass_schedule', true );
-$doc_pid = get_the_ID();
-
-if ( ! function_exists( 'user_can_update_parish' ) ) {
-	function user_can_update_parish() {
-		return false;
-	}
-}
+$post_id = get_the_ID();
 ?>
 
 <article <?php hybrid_attr( 'post' ); ?>>
@@ -25,13 +19,15 @@ if ( ! function_exists( 'user_can_update_parish' ) ) {
 			</div>
 		<?php endif; ?>
 
-		<?php if ( user_can_update_parish() ) { ?>
-			<div class="o-alert icon-info u-p1 u-bg-info u-currentcolor_a u-text-wrap u-br u-mb u-border">
-				<a class="btn" href="<?php echo esc_url( site_url( '/' ) ); ?>parish-info/?page=gravityflow-submit&id=19&doc_pid=<?php echo $doc_pid; ?>" target="blank" rel="noopener"><?php abe_do_svg( 'edit', 'sm' ); ?> Edit Parish info</a>
-			</div>
+		<?php the_content(); ?>
+
+		<?php if ( is_active_sidebar( 'parish' ) ) { ?>
+			<aside <?php hybrid_attr( 'sidebar', 'parish' ); ?>>
+				<?php dynamic_sidebar( 'parish' ); ?>
+			</aside>
 		<?php } ?>
 
-		<?php the_content(); ?>
+
 	</div>
 
 	<?php get_template_part( 'components/entry', 'footer' ); ?>
