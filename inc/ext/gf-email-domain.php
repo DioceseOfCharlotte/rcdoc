@@ -102,6 +102,7 @@ class GWEmailDomainControl extends GW_Email_Domain_Validator { }
 						'holyfamilyclemmons.com',
 						'holyinfantreidsville.org',
 						'holyspiritnc.org',
+						'icwnc.com',
 						'immaculateconceptionchurch.com',
 						'stjohnwaynesville.org',
 						'ihmchurch.org',
