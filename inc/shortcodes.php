@@ -84,6 +84,9 @@ function doc_personal_link_shortcode( $atts ) {
 	if ( 'parish' === $atts['type'] ) {
 		$post_id = get_users_parish_post();
 
+	} elseif ( 'mission' === $atts['type'] ) {
+		$post_id = get_users_mission_post();
+
 	} elseif ( 'school' === $atts['type'] ) {
 		$post_id = get_users_school_post();
 
