@@ -129,7 +129,7 @@ function doc_get_parish_address( $post_id = 0 ) {
 	$doc_zip    = get_post_meta( $post_id, 'doc_zip', true );
 
 	if ( $doc_street ) {
-		$doc_address = $doc_street . '<br>' . $doc_city . ',' . $doc_state . ' ' . $doc_zip;
+		$doc_address = $doc_street . '<br>' . $doc_city . ', ' . $doc_state . ' ' . $doc_zip;
 	}
 
 	return $doc_address;
