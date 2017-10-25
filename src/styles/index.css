@@ -28,3 +28,63 @@ body#tinymce {
 body#tinymce .wpview-wrap .gallery-cell {
 	display: inline-block;
 }
+
+@media print {
+	.singular-planning-11363 .archive-header,
+	.singular-planning-11363 .gf_page_steps,
+	.singular-planning-11363 .gform_page_footer,
+	.singular-planning-11363 .u-bg-info.u-currentcolor_a.u-text-wrap.u-br.u-mb3.u-border,
+	.singular-planning-11363 a,
+	.singular-planning-11363 img {
+		display: none !important;
+	}
+
+	.gform_wrapper {
+		margin: 0;
+	}
+
+	.entry-content,
+	#content,
+	.entry {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	.gform_wrapper * {
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Liberation Sans", sans-serif !important;
+		font-size: 12pt;
+		line-height: 1.3 !important;
+		border: none;
+	}
+
+	.gform_wrapper strong {
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		font-size: 13pt;
+		font-style: italic !important;
+		color: #616161 !important;
+	}
+
+	.gform_wrapper .gform_title {
+		text-align: center;
+		font: 16pt Georgia, "Times New Roman", Times, serif !important;
+	}
+
+	.gform_wrapper td[colspan][style] {
+		font: 16pt Georgia, "Times New Roman", Times, serif !important;
+		padding-top: 32px !important;
+	}
+
+	.site,
+	.o-grid,
+	main,
+	article,
+	body,
+	table,
+	tr {
+		display: block !important;
+	}
+
+	td {
+		display: inline-block !important;
+	}
+}
