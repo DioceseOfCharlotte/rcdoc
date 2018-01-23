@@ -180,3 +180,11 @@ nav.navigation.pagination {
 	align-items: center;
 	justify-content: space-around;
 }
+
+.u-ws-normal {
+	white-space: normal;
+}
+
+.u-mobile-max {
+	max-width: 300px;
+}
