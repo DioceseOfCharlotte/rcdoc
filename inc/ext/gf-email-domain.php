@@ -117,6 +117,7 @@ class GWEmailDomainControl extends GW_Email_Domain_Validator { }
 						'olr-nc.org',
 						'queenoftheapostles.org',
 						'salisburycatholic.org',
+						'salisburycatholicschool.org',
 						'sacredheartcatholicchurchbrevardnc.org',
 						'standrew-sacredheart.org',
 						'staloysiushickory.org',
