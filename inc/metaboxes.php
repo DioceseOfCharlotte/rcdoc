@@ -17,62 +17,76 @@ function doc_register_metaboxes() {
 	/**
 	* Parent select Metaboxes.
 	*/
-	$doc_landing_parent = new_cmb2_box( array(
-		'id'            => $prefix . 'parent_metabox',
-		'title'         => __( 'Attributes', 'cmb2' ),
-		'object_types'  => array( 'cpt_archive' ),
-		'context'       => 'side',
-		'priority'      => 'low',
-	) );
+	$doc_landing_parent = new_cmb2_box(
+		array(
+			'id'           => $prefix . 'parent_metabox',
+			'title'        => __( 'Attributes', 'cmb2' ),
+			'object_types' => array( 'cpt_archive' ),
+			'context'      => 'side',
+			'priority'     => 'low',
+		)
+	);
 
-	$doc_landing_parent->add_field( array(
-	    'name'        => __( 'Parent' ),
-	    'id'          => $prefix . 'parent_select',
-		'type'    => 'select',
-		'show_option_none' => true,
-	    'options' => cmb2_get_post_list( $post_type = array( 'cpt_archive' ) ),
-	) );
+	$doc_landing_parent->add_field(
+		array(
+			'name'             => __( 'Parent' ),
+			'id'               => $prefix . 'parent_select',
+			'type'             => 'select',
+			'show_option_none' => true,
+			'options'          => cmb2_get_post_list( $post_type = array( 'cpt_archive' ) ),
+		)
+	);
 
 	/**
 	* Term Page Colors metabox.
 	*/
-	$doc_term_meta = new_cmb2_box( array(
-		'id'            => $prefix . 'icon_metabox',
-		'title'         => __( 'Agency Accents', 'cmb2' ),
-		'object_types'     => array( 'term' ),
-		'taxonomies'       => array( 'category', 'agency' ),
-		'context'       => 'side',
-		'priority'      => 'high',
-	) );
+	$doc_term_meta = new_cmb2_box(
+		array(
+			'id'           => $prefix . 'icon_metabox',
+			'title'        => __( 'Agency Accents', 'cmb2' ),
+			'object_types' => array( 'term' ),
+			'taxonomies'   => array( 'category', 'agency' ),
+			'context'      => 'side',
+			'priority'     => 'high',
+		)
+	);
 
-	$doc_term_meta->add_field( array(
-		'name'       => __( 'Accent Color', 'cmb2' ),
-		'id'         => $prefix . 'term_color',
-		'type'       => 'colorpicker',
-		'default'    => apply_filters( 'theme_mod_primary_color', '' ),
-		'attributes' => array(
-			'data-colorpicker' => wp_json_encode( array(
-				'palettes' => array( '#34495E', '#2980b9', '#39CCCC', '#16a085', '#FFC107', '#F44336' ),
-			) ),
-		),
-	) );
+	$doc_term_meta->add_field(
+		array(
+			'name'       => __( 'Accent Color', 'cmb2' ),
+			'id'         => $prefix . 'term_color',
+			'type'       => 'colorpicker',
+			'default'    => apply_filters( 'theme_mod_primary_color', '' ),
+			'attributes' => array(
+				'data-colorpicker' => wp_json_encode(
+					array(
+						'palettes' => array( '#34495E', '#2980b9', '#39CCCC', '#16a085', '#FFC107', '#F44336' ),
+					)
+				),
+			),
+		)
+	);
 
-	$doc_term_meta->add_field( array(
-		'name'       => __( 'Agency Icon', 'cmb2' ),
-		'id'         => $prefix . 'tax_icon',
-		'type'             => 'select',
-		'show_option_none' => true,
-		'options'          => get_tax_icons(),
-	) );
+	$doc_term_meta->add_field(
+		array(
+			'name'             => __( 'Agency Icon', 'cmb2' ),
+			'id'               => $prefix . 'tax_icon',
+			'type'             => 'select',
+			'show_option_none' => true,
+			'options'          => get_tax_icons(),
+		)
+	);
 
-	$doc_term_meta->add_field( array(
-	    'name'        => __( 'Page Links To' ),
-		'desc'             => __( 'Point this content to:', 'cmb2' ),
-	    'id'          => $prefix . 'linked_post',
-		'type'    => 'select',
-		'show_option_none' => true,
-	    'options' => cmb2_get_post_list( $post_type = array( 'cpt_archive', 'department' ) ),
-	) );
+	$doc_term_meta->add_field(
+		array(
+			'name'             => __( 'Page Links To' ),
+			'desc'             => __( 'Point this content to:', 'cmb2' ),
+			'id'               => $prefix . 'linked_post',
+			'type'             => 'select',
+			'show_option_none' => true,
+			'options'          => cmb2_get_post_list( $post_type = array( 'cpt_archive', 'department' ) ),
+		)
+	);
 
 }
 
@@ -94,13 +108,13 @@ function cmb2_get_post_list( $post_type = 'post', $args = array() ) {
 	$post_type = $args['post_type'];
 
 	$args = array(
-		'post_type' => $post_type,
+		'post_type'      => $post_type,
 		'posts_per_page' => -1,
-		'meta_query' => array(
+		'meta_query'     => array(
 			array(
-			'key'       => 'doc_alias_checkbox',
-			'value'     => 'on',
-			'compare'   => 'NOT EXISTS',
+				'key'     => 'doc_alias_checkbox',
+				'value'   => 'on',
+				'compare' => 'NOT EXISTS',
 			),
 		),
 	);
@@ -158,7 +172,7 @@ function get_tax_icons( $icon_options = array() ) {
  * @return [type]          [description]
  */
 function doc_term_color_style( $term_id, $alpha = '1' ) {
-	$style = '';
+	$style  = '';
 	$style .= 'background-color:';
 	$style .= doc_term_color_rgb( $term_id, $alpha );
 	$style .= ';color:';
@@ -175,7 +189,7 @@ function doc_term_color_style( $term_id, $alpha = '1' ) {
  */
 function doc_term_color_hex( $term_id ) {
 	$term_accent = get_term_meta( $term_id, 'doc_term_color', true );
-	$hex_color = $term_accent ? trim( $term_accent, '#' ) : get_theme_mod( 'primary_color', '' );
+	$hex_color   = $term_accent ? trim( $term_accent, '#' ) : get_theme_mod( 'primary_color', '' );
 	return "#{$hex_color}";
 }
 
@@ -200,13 +214,13 @@ function doc_term_color_rgb( $term_id, $alpha ) {
  */
 function doc_term_color_text( $term_id ) {
 	$term_accent = new Color( doc_term_color_hex( $term_id ) );
-	$text_color = $term_accent->isDark() ? 'fff':'333';
+	$text_color  = $term_accent->isDark() ? 'fff' : '333';
 	return "#{$text_color}";
 }
 
 function doc_term_color_comp( $term_id, $alpha ) {
 	$term_accent = new Color( doc_term_color_hex( $term_id ) );
-	$comp_color = $term_accent->isDark() ? $term_accent->darken( 15 ) :$term_accent->lighten( 20 );
+	$comp_color  = $term_accent->isDark() ? $term_accent->darken( 15 ) : $term_accent->lighten( 20 );
 
 	$comp_rgb = implode( ',', hybrid_hex_to_rgb( $comp_color ) );
 	return 'rgba(' . $comp_rgb . ',' . $alpha . ')';

@@ -18,6 +18,26 @@ add_filter( 'gravityview/edit_entry/cancel_link', 'doc_gv_edit_cancel', 10, 4 );
 
 add_action( 'init', 'smcs_register_shortcodes' );
 
+add_action( 'gravityview/edit_entry/after_update', 'doc_update_vicariate', 10, 3 );
+
+function doc_update_vicariate( $form, $entry_id, $gv_entry ) {
+
+	if ( '3' != $form['id'] ) {
+		return;
+	}
+
+	$name_prefix = $gv_entry->entry['1.2'];
+	$name_first  = $gv_entry->entry['1.3'];
+	$name_last   = $gv_entry->entry['1.6'];
+	$name_suffix = $gv_entry->entry['1.8'];
+
+	$term_id    = $gv_entry->entry['28'];
+	$meta_key   = 'doc_vicar_forane';
+	$meta_value = "{$name_prefix} {$name_first} {$name_last} {$name_suffix}";
+
+	update_term_meta( $term_id, $meta_key, $meta_value );
+}
+
 function smcs_register_shortcodes() {
 	add_shortcode( 'get_parish_meta', 'doc_get_parish_meta_shortcode' );
 	add_shortcode( 'get_parish_address', 'doc_get_parish_address_shortcode' );
@@ -27,24 +47,30 @@ function smcs_register_shortcodes() {
 
 function doc_gv_layouts() {
 
-	hybrid_register_layout('1-card-row', array(
-		'label'            => _x( '1-card-row', 'theme layout', 'abraham' ),
-		'is_global_layout' => false,
-		'post_types'       => array( 'gravityview' ),
-		'image'            => hybrid_locate_theme_file( 'images/list.svg' ),
-	));
-	hybrid_register_layout('2-card-row', array(
-		'label'            => _x( '2-card-row', 'theme layout', 'abraham' ),
-		'is_global_layout' => false,
-		'post_types'       => array( 'gravityview' ),
-		'image'            => hybrid_locate_theme_file( 'images/2-card-row.svg' ),
-	));
-	hybrid_register_layout('3-card-row', array(
-		'label'            => _x( '3-card-row', 'theme layout', 'abraham' ),
-		'is_global_layout' => false,
-		'post_types'       => array( 'gravityview' ),
-		'image'            => hybrid_locate_theme_file( 'images/3-card-row.svg' ),
-	));
+	hybrid_register_layout(
+		'1-card-row', array(
+			'label'            => _x( '1-card-row', 'theme layout', 'abraham' ),
+			'is_global_layout' => false,
+			'post_types'       => array( 'gravityview' ),
+			'image'            => hybrid_locate_theme_file( 'images/list.svg' ),
+		)
+	);
+	hybrid_register_layout(
+		'2-card-row', array(
+			'label'            => _x( '2-card-row', 'theme layout', 'abraham' ),
+			'is_global_layout' => false,
+			'post_types'       => array( 'gravityview' ),
+			'image'            => hybrid_locate_theme_file( 'images/2-card-row.svg' ),
+		)
+	);
+	hybrid_register_layout(
+		'3-card-row', array(
+			'label'            => _x( '3-card-row', 'theme layout', 'abraham' ),
+			'is_global_layout' => false,
+			'post_types'       => array( 'gravityview' ),
+			'image'            => hybrid_locate_theme_file( 'images/3-card-row.svg' ),
+		)
+	);
 
 }
 /**
