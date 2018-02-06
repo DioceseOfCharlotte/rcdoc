@@ -5,46 +5,40 @@
  * @package  RCDOC
  */
 
-add_post_type_support( 'gravityview', 'theme-layouts' );
+add_action( 'init', 'rcdoc_register_gv_shortcodes' );
 add_action( 'hybrid_register_layouts', 'doc_gv_layouts' );
+add_action( 'gravityview/edit_entry/after_update', 'doc_update_vicariate', 10, 3 );
+
 add_filter( 'gravityview/widget/enable_custom_class', '__return_true' );
 add_filter( 'gravityview/extension/search/links_sep', '__return_false' );
 add_filter( 'gravityview/extension/search/links_label', '__return_false' );
 add_filter( 'gravityview/fields/select/output_label', '__return_true' );
-add_filter( 'gravitview_no_entries_text', 'modify_gravitview_no_entries_text', 10, 2 );
 
-add_filter( 'gravityview/edit_entry/success', 'doc_gv_update_message', 10, 4 );
-add_filter( 'gravityview/edit_entry/cancel_link', 'doc_gv_edit_cancel', 10, 4 );
+// add_filter( 'gravitview_no_entries_text', 'modify_gravitview_no_entries_text', 10, 2 );
+// add_filter( 'gravityview/edit_entry/success', 'doc_gv_update_message', 10, 4 );
+// add_filter( 'gravityview/edit_entry/cancel_link', 'doc_gv_edit_cancel', 10, 4 );
 
-add_action( 'init', 'smcs_register_shortcodes' );
+function rcdoc_register_gv_shortcodes() {
+	add_shortcode( 'get_parish_meta', 'doc_get_parish_meta_shortcode' );
+	add_shortcode( 'get_parish_address', 'doc_get_parish_address_shortcode' );
+	add_shortcode( 'doc_get_parish_staff', 'doc_get_parish_staff_shortcode' );
+}
 
-add_action( 'gravityview/edit_entry/after_update', 'doc_update_vicariate', 10, 3 );
-
+// Update the the term meta for the Vicariate Taxonomy
 function doc_update_vicariate( $form, $entry_id, $gv_entry ) {
 
 	if ( '3' != $form['id'] ) {
 		return;
 	}
 
-	$name_prefix = $gv_entry->entry['1.2'];
-	$name_first  = $gv_entry->entry['1.3'];
-	$name_last   = $gv_entry->entry['1.6'];
-	$name_suffix = $gv_entry->entry['1.8'];
-
 	$term_id    = $gv_entry->entry['28'];
 	$meta_key   = 'doc_vicar_forane';
-	$meta_value = "{$name_prefix} {$name_first} {$name_last} {$name_suffix}";
+	$meta_value = "{$gv_entry->entry['1.2']} {$gv_entry->entry['1.3']} {$gv_entry->entry['1.6']} {$gv_entry->entry['1.8']}";
 
 	update_term_meta( $term_id, $meta_key, $meta_value );
 }
 
-function smcs_register_shortcodes() {
-	add_shortcode( 'get_parish_meta', 'doc_get_parish_meta_shortcode' );
-	add_shortcode( 'get_parish_address', 'doc_get_parish_address_shortcode' );
-
-	add_shortcode( 'doc_get_parish_staff', 'doc_get_parish_staff_shortcode' );
-}
-
+add_post_type_support( 'gravityview', 'theme-layouts' );
 function doc_gv_layouts() {
 
 	hybrid_register_layout(
@@ -73,51 +67,6 @@ function doc_gv_layouts() {
 	);
 
 }
-/**
- * Modify the text displayed when there are no entries.
- *
- * @param array $existing_text The existing "No Entries" text.
- * @param bool  $is_search  Is the current page a search result, or just a multiple entries screen.
- */
-function modify_gravitview_no_entries_text( $existing_text, $is_search ) {
-
-	$return = $existing_text;
-
-	if ( $is_search ) {
-		$return = 'Sorry, but nothing matched your search. Perhaps try again with some different keywords.';
-	} else {
-		$return = '';
-	}
-
-	return $return;
-}
-
-/**
- * Change the update entry success message, including the link
- *
- * @param $message string The message itself
- * @param $view_id int View ID
- * @param $entry array The Gravity Forms entry object
- * @param $back_link string Url to return to the original entry
- */
-function doc_gv_update_message( $message, $view_id, $entry, $back_link ) {
-	$link = str_replace( 'entry/' . $entry['id'] . '/', '', $back_link );
-	return 'Entry Updated. <a href="' . esc_url( $link ) . '">Return to the list</a>';
-}
-
-/**
- * Customise the cancel button link
- *
- * @param $back_link string
- *
- * since 1.11.1
- */
-function doc_gv_edit_cancel( $back_link, $form, $entry, $view_id ) {
-	return str_replace( 'entry/' . $entry['id'] . '/', '', $back_link );
-}
-
-
-
 
 // Add Shortcode [get_parish_address id="1234"]
 function doc_get_parish_address_shortcode( $atts ) {
@@ -188,25 +137,45 @@ function doc_get_parish_meta( $post_id = '0', $parish_meta ) {
 	return $doc_meta;
 }
 
+/**
+ * Modify the text displayed when there are no entries.
+ *
+ * @param array $existing_text The existing "No Entries" text.
+ * @param bool  $is_search  Is the current page a search result, or just a multiple entries screen.
+ */
+function modify_gravitview_no_entries_text( $existing_text, $is_search ) {
 
-// add_action( 'gravityview/edit_entry/after_update', 'sm_update_family_admin', 10, 3 );
+	$return = $existing_text;
 
-// function sm_update_family_admin( $form, $entry_id, $gv_entry ) {
+	if ( $is_search ) {
+		$return = 'Sorry, but nothing matched your search. Perhaps try again with some different keywords.';
+	} else {
+		$return = '';
+	}
 
-// 	$member_user = sm_get_group_admin();
+	return $return;
+}
 
-// 	$member_userdata = array(
-// 		'ID'         => $member_user,
-// 		'user_email' => $gv_entry->entry['3'],
-// 		'first_name' => $gv_entry->entry['4.3'],
-// 		'last_name'  => $gv_entry->entry['4.6'],
-// 	);
+/**
+ * Change the update entry success message, including the link
+ *
+ * @param $message string The message itself
+ * @param $view_id int View ID
+ * @param $entry array The Gravity Forms entry object
+ * @param $back_link string Url to return to the original entry
+ */
+function doc_gv_update_message( $message, $view_id, $entry, $back_link ) {
+	$link = str_replace( 'entry/' . $entry['id'] . '/', '', $back_link );
+	return 'Entry Updated. <a href="' . esc_url( $link ) . '">Return to the list</a>';
+}
 
-// 	wp_update_user( $member_userdata );
-
-// 	$user_id = $gv_entry->entry['3'];
-// 	$parish_value = $gv_entry->entry['8'];
-
-
-// 	update_user_meta( $user_id, 'doc_parish', $meta_value );
-// }
+/**
+ * Customise the cancel button link
+ *
+ * @param $back_link string
+ *
+ * since 1.11.1
+ */
+function doc_gv_edit_cancel( $back_link, $form, $entry, $view_id ) {
+	return str_replace( 'entry/' . $entry['id'] . '/', '', $back_link );
+}
