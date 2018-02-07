@@ -21,6 +21,7 @@ add_filter( 'gravityview/fields/select/output_label', '__return_true' );
 function rcdoc_register_gv_shortcodes() {
 	add_shortcode( 'get_parish_meta', 'doc_get_parish_meta_shortcode' );
 	add_shortcode( 'get_parish_address', 'doc_get_parish_address_shortcode' );
+	add_shortcode( 'get_parish_mailing', 'doc_get_parish_mailing_shortcode' );
 	add_shortcode( 'doc_get_parish_staff', 'doc_get_parish_staff_shortcode' );
 }
 
@@ -83,6 +84,21 @@ function doc_get_parish_address_shortcode( $atts ) {
 	return doc_get_parish_address( $atts['id'] );
 }
 
+// Add Shortcode [get_parish_mailing id="1234"]
+function doc_get_parish_mailing_shortcode( $atts ) {
+
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'id' => '0',
+		),
+		$atts,
+		'get_parish_mailing'
+	);
+
+	return doc_get_parish_mailing( $atts['id'] );
+}
+
 // Add Shortcode [get_parish_staff id="1234"]
 function doc_get_parish_staff_shortcode( $atts ) {
 
@@ -98,7 +114,7 @@ function doc_get_parish_staff_shortcode( $atts ) {
 	return get_post_meta( $atts['id'], 'staff_member', true );
 }
 
-// Add Shortcode [get_parish_address id="1234"]
+// Add Shortcode [get_parish_meta id="1234" meta="doc_street"]
 function doc_get_parish_meta_shortcode( $atts ) {
 
 	// Attributes
@@ -116,6 +132,8 @@ function doc_get_parish_meta_shortcode( $atts ) {
 
 function doc_get_parish_address( $post_id = 0 ) {
 
+	$post_id = $post_id ?: get_the_ID();
+
 	$doc_address = '';
 
 	$doc_street = get_post_meta( $post_id, 'doc_street', true );
@@ -128,6 +146,26 @@ function doc_get_parish_address( $post_id = 0 ) {
 	}
 
 	return $doc_address;
+}
+
+function doc_get_parish_mailing( $post_id = 0 ) {
+
+	$post_id = $post_id ?: get_the_ID();
+
+	$doc_mailing = '';
+
+	$doc_street = get_post_meta( $post_id, 'doc_mail_street', true );
+	$doc_city   = get_post_meta( $post_id, 'doc_mail_city', true );
+	$doc_state  = get_post_meta( $post_id, 'doc_mail_state', true );
+	$doc_zip    = get_post_meta( $post_id, 'doc_mail_zip', true );
+
+	if ( $doc_street ) {
+		$doc_mailing = $doc_street . '<br>' . $doc_city . ', ' . $doc_state . ' ' . $doc_zip;
+	} else {
+		$doc_mailing = doc_get_parish_address( $post_id );
+	}
+
+	return $doc_mailing;
 }
 
 function doc_get_parish_meta( $post_id = '0', $parish_meta ) {
