@@ -90,13 +90,20 @@ function doc_get_parish_mailing_shortcode( $atts ) {
 	// Attributes
 	$atts = shortcode_atts(
 		array(
-			'id' => '0',
+			'id'        => '0',
+			'parish_id' => '',
 		),
 		$atts,
 		'get_parish_mailing'
 	);
 
-	return doc_get_parish_mailing( $atts['id'] );
+	$post_id = $atts['id'];
+
+	if ( ! empty($atts['parish_id']) ) {
+		$post_id = get_parish_post( $atts['parish_id'] );
+	}
+
+	return doc_get_parish_mailing( $post_id );
 }
 
 // Add Shortcode [get_parish_staff id="1234"]
