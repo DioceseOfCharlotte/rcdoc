@@ -1,9 +1,5 @@
 .DS_Store
 
-# Sass cache
-/.sass-cache
-/.vscode
-
 # Development files
 /node_modules
 
@@ -11,4 +7,8 @@
 .tmp
 *.map
 composer.lock
+yarn.lock
+package-lock.json
 vendor
+/.sass-cache
+/.vscode
