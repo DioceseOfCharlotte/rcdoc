@@ -8,6 +8,7 @@
 add_action( 'init', 'rcdoc_register_gv_shortcodes' );
 add_action( 'hybrid_register_layouts', 'doc_gv_layouts' );
 add_action( 'gravityview/edit_entry/after_update', 'doc_update_vicariate', 10, 3 );
+add_action( 'gravityview/edit_entry/after_update', 'doc_update_parish_staff', 10, 3 );
 
 add_filter( 'gravityview/widget/enable_custom_class', '__return_true' );
 add_filter( 'gravityview/extension/search/links_sep', '__return_false' );
@@ -37,6 +38,25 @@ function doc_update_vicariate( $form, $entry_id, $gv_entry ) {
 	$meta_value = "{$gv_entry->entry['1.2']} {$gv_entry->entry['1.3']} {$gv_entry->entry['1.6']} {$gv_entry->entry['1.8']}";
 
 	update_term_meta( $term_id, $meta_key, $meta_value );
+}
+
+// Update the Parish main staff
+function doc_update_parish_staff( $form, $entry_id, $gv_entry ) {
+
+	if ( '14' != $form['id'] ) {
+		return;
+	}
+
+	$post_id  = $gv_entry->entry['89'];
+	$pcc_name = "{$gv_entry->entry['15.2']} {$gv_entry->entry['15.3']} {$gv_entry->entry['15.4']} {$gv_entry->entry['15.6']} {$gv_entry->entry['15.8']}";
+	$fcc_name = "{$gv_entry->entry['25.2']} {$gv_entry->entry['25.3']} {$gv_entry->entry['25.4']} {$gv_entry->entry['25.6']} {$gv_entry->entry['25.8']}";
+	$dre_name = "{$gv_entry->entry['29.2']} {$gv_entry->entry['29.3']} {$gv_entry->entry['29.4']} {$gv_entry->entry['29.6']} {$gv_entry->entry['29.8']}";
+	$ym_name  = "{$gv_entry->entry['32.2']} {$gv_entry->entry['32.3']} {$gv_entry->entry['32.4']} {$gv_entry->entry['32.6']} {$gv_entry->entry['32.8']}";
+
+	update_post_meta( $post_id, 'doc_pcc', $pcc_name );
+	update_post_meta( $post_id, 'doc_fcc', $fcc_name );
+	update_post_meta( $post_id, 'doc_dre', $dre_name );
+	update_post_meta( $post_id, 'doc_ym', $ym_name );
 }
 
 add_post_type_support( 'gravityview', 'theme-layouts' );
@@ -99,7 +119,7 @@ function doc_get_parish_mailing_shortcode( $atts ) {
 
 	$post_id = $atts['id'];
 
-	if ( ! empty($atts['parish_id']) ) {
+	if ( ! empty( $atts['parish_id'] ) ) {
 		$post_id = get_parish_post( $atts['parish_id'] );
 	}
 
