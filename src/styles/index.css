@@ -17,6 +17,8 @@
 @import "vendor.arch";
 @import "shame";
 
+@import "media.print";
+
 /* Styles specific to the editor. */
 body#tinymce {
 	min-height: 50px;

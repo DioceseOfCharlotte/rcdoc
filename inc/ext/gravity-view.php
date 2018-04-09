@@ -133,12 +133,19 @@ function doc_get_parish_staff_shortcode( $atts ) {
 	$atts = shortcode_atts(
 		array(
 			'id' => '0',
+			'parish_id' => '',
 		),
 		$atts,
 		'doc_get_parish_staff'
 	);
 
-	return get_post_meta( $atts['id'], 'staff_member', true );
+	$post_id = $atts['id'];
+
+	if ( ! empty( $atts['parish_id'] ) ) {
+		$post_id = get_parish_post( $atts['parish_id'] );
+	}
+
+	return get_post_meta( $post_id, 'staff_member', true );
 }
 
 // Add Shortcode [get_parish_meta id="1234" meta="doc_street"]

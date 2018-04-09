@@ -1,0 +1,114 @@
+/* labels */
+.layout-2-card-row .gv-diy-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.layout-2-card-row .gv-diy-view {
+	width: 100%;
+	max-width: calc(50% - 1rem);
+	background-color: #fff;
+	margin: 0 0.25rem 0.5rem;
+	padding: 0.5rem;
+	vertical-align: top;
+}
+
+/* Parish Dir Page */
+.layout-1-column .gv-diy-view {
+	background-color: #fff;
+	max-width: 8.5in;
+	margin: 0 auto 1px;
+	padding: 2.5rem;
+}
+
+.u-pre-line {
+	white-space: pre-line;
+}
+
+@media print {
+	body,
+	main,
+	article,
+	#page {
+		margin: 0 !important;
+	}
+
+	.gv-grid.gv-widgets-header,
+	.post-edit-link,
+	.singular-gravityview.layout-2-card-row .archive-header,
+	.singular-gravityview.layout-1-column .archive-header,
+	picture {
+		display: none !important;
+	}
+
+	div[class*="gv-field-"] {
+		margin-bottom: 0;
+	}
+
+	.layout-2-card-row .gv-diy-container {
+		width: 8.1875in;
+		display: block;
+		margin: 0 auto;
+		//display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		outline: 1px dotted #eee;
+	}
+
+	.layout-2-card-row .gv-diy-view {
+		width: 100%;
+		display: inline-block;
+		background-color: #fff;
+		margin: 0;
+		padding: 5px 0 0 5px;
+		height: 1in;
+		max-width: 4in;
+		box-sizing: border-box;
+		outline: 1px dotted #eee;
+		border-radius: 6px;
+		font-size: 11pt;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.layout-2-card-row .gv-diy-view * {
+		line-height: 1.3;
+		font-size: 11pt;
+	}
+
+	.layout-2-card-row .gv-diy-container::before,
+	.layout-2-card-row .gv-diy-container::after {
+		content: "";
+		display: table;
+	}
+
+	.layout-2-card-row .gv-diy-container::after {
+		clear: both;
+	}
+
+	.layout-2-card-row .gv-diy-view:nth-child(odd) {
+		float: left;
+	}
+	.layout-2-card-row .gv-diy-view:nth-child(even) {
+		float: right;
+	}
+	.layout-2-card-row .gv-diy-view:nth-child(20n) {
+		page-break-after: always;
+		/* margin-bottom: 0.5in; */
+	}
+
+	@page {
+		size: 8.5in 11in;
+		margin-top: 0.5in !important;
+		margin-bottom: 0.5in !important;
+		margin-left: 0px !important;
+		margin-right: 0px !important;
+	}
+
+	.layout-1-column .gv-diy-view {
+		height: 10in;
+		padding-top: 0;
+		margin-bottom: 0;
+	}
+
+}
