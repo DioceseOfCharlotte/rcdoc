@@ -24,6 +24,7 @@ function rcdoc_register_gv_shortcodes() {
 	add_shortcode( 'get_parish_address', 'doc_get_parish_address_shortcode' );
 	add_shortcode( 'get_parish_mailing', 'doc_get_parish_mailing_shortcode' );
 	add_shortcode( 'doc_get_parish_staff', 'doc_get_parish_staff_shortcode' );
+	add_shortcode( 'get_primary_staff', 'doc_get_primary_staff_shortcode' );
 }
 
 // Update the the term meta for the Vicariate Taxonomy
@@ -33,7 +34,12 @@ function doc_update_vicariate( $form, $entry_id, $gv_entry ) {
 		return;
 	}
 
-	$term_id    = $gv_entry->entry['28'];
+	if ( ! $gv_entry->entry['28'] ) {
+		return;
+	}
+
+	$term_id = $gv_entry->entry['28'];
+
 	$meta_key   = 'doc_vicar_forane';
 	$meta_value = "{$gv_entry->entry['1.2']} {$gv_entry->entry['1.3']} {$gv_entry->entry['1.6']} {$gv_entry->entry['1.8']}";
 
@@ -132,7 +138,7 @@ function doc_get_parish_staff_shortcode( $atts ) {
 	// Attributes
 	$atts = shortcode_atts(
 		array(
-			'id' => '0',
+			'id'        => '0',
 			'parish_id' => '',
 		),
 		$atts,
@@ -250,4 +256,140 @@ function doc_gv_update_message( $message, $view_id, $entry, $back_link ) {
  */
 function doc_gv_edit_cancel( $back_link, $form, $entry, $view_id ) {
 	return str_replace( 'entry/' . $entry['id'] . '/', '', $back_link );
+}
+
+
+
+
+
+
+/**
+ * Add clergy to post meta
+ */
+add_action( 'gravityview/edit_entry/after_update', 'doc_update_member_contact', 10, 3 );
+function doc_update_member_contact( $form, $entry_id, $gv_entry ) {
+
+	if ( '3' != $form['id'] ) {
+		return;
+	}
+
+	$agency_id = $gv_entry->entry['21'];
+	$parish_id = $gv_entry->entry['24'];
+	$school_id = $gv_entry->entry['25'];
+
+	$agency_title = $gv_entry->entry['23'];
+	$parish_title = $gv_entry->entry['19'];
+	$school_title = $gv_entry->entry['27'];
+
+	$display_order = $gv_entry->entry['26'] ?: '100';
+	$c_approved    = $gv_entry->entry['7.1'];
+	$c_type        = $gv_entry->entry['8'];
+	$c_status      = $gv_entry->entry['13'];
+	$c_prefix      = $gv_entry->entry['1.2'];
+	$c_first       = $gv_entry->entry['1.3'];
+	$c_middle      = $gv_entry->entry['1.4'];
+	$c_last        = $gv_entry->entry['1.6'];
+	$c_suffix      = $gv_entry->entry['1.8'];
+	$comma_suffix  = $c_suffix ? ", {$c_suffix}" : '';
+	$c_full        = "{$c_prefix} {$c_first} {$c_last}{$comma_suffix}";
+
+	if ( 'Priest' == $c_type || 'Deacon' == $c_type ) {
+		$post_id = $parish_id;
+		$c_title = $parish_title;
+	} elseif ( 'Principal' == $c_type ) {
+		$post_id = $school_id;
+		$c_title = $school_title;
+	} else {
+		$post_id = $agency_id;
+		$c_title = $agency_title;
+	}
+
+	if ( ! $c_approved || ! $post_id ) {
+		return;
+	}
+
+	$meta_key = 'doc_primary_staff';
+
+	$updated_entry = array(
+		'order'  => $display_order,
+		'type'   => $c_type,
+		'title'  => $c_title,
+		'status' => $c_status,
+		'prefix' => $c_prefix,
+		'last'   => $c_last,
+		'name'   => $c_full,
+	);
+
+	$meta_value = get_post_meta( $post_id, $meta_key, true );
+
+	$prev_post_id = gform_get_meta( $entry_id, 'prev_post_id' );
+
+	if ( ! isset( $meta_value[ $entry_id ] ) ) {
+
+		$meta_value[ $entry_id ] = [];
+	}
+
+	$meta_value[ $entry_id ] = $updated_entry;
+
+	update_post_meta( $post_id, $meta_key, $meta_value );
+
+	if ( $prev_post_id != $post_id ) {
+		$meta_value = get_post_meta( $prev_post_id, $meta_key, true );
+
+		if ( isset( $meta_value[ $entry_id ] ) ) {
+			unset( $meta_value[ $entry_id ] );
+		}
+
+		update_post_meta( $prev_post_id, $meta_key, $meta_value );
+		gform_update_meta( $entry_id, 'prev_post_id', $post_id );
+	}
+}
+
+
+
+function doc_get_primary_staff( $post_id = 0 ) {
+
+	$post_id = $post_id ?: get_the_ID();
+
+	$staff_members = get_post_meta( $post_id, 'doc_primary_staff', true );
+
+	if ( empty( $staff_members ) ) {
+		return;
+	}
+
+	$staff_list = '<div class="staff-list">';
+
+	foreach ( $staff_members as $member ) {
+		$staff_list .= "<div class='type-{$member['type']} list-order-{$member['order']}'>";
+		$staff_list .= "<span class='staff-title'>{$member['title']}: </span>";
+		$staff_list .= "<span class='staff-name'>{$member['name']}</span>";
+		$staff_list .= '</div>';
+	}
+
+	$staff_list .= '</div>';
+
+	return $staff_list;
+
+}
+
+// Add Shortcode [get_primary_staff id="1234"]
+function doc_get_primary_staff_shortcode( $atts ) {
+
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'id'        => get_the_ID(),
+			'parish_id' => '',
+		),
+		$atts,
+		'get_primary_staff'
+	);
+
+	$post_id = $atts['id'];
+
+	if ( ! empty( $atts['parish_id'] ) ) {
+		$post_id = get_parish_post( $atts['parish_id'] );
+	}
+
+	return doc_get_primary_staff( $post_id );
 }
