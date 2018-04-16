@@ -345,8 +345,6 @@ function doc_update_member_contact( $form, $entry_id, $gv_entry ) {
 	}
 }
 
-
-
 function doc_get_primary_staff( $post_id = 0 ) {
 
 	$post_id = $post_id ?: get_the_ID();
@@ -356,6 +354,12 @@ function doc_get_primary_staff( $post_id = 0 ) {
 	if ( empty( $staff_members ) ) {
 		return;
 	}
+
+	usort(
+		$staff_members, function( $a, $b ) {
+			return $a['order'] <=> $b['order'];
+		}
+	);
 
 	$staff_list = '<div class="staff-list">';
 
@@ -369,7 +373,6 @@ function doc_get_primary_staff( $post_id = 0 ) {
 	$staff_list .= '</div>';
 
 	return $staff_list;
-
 }
 
 // Add Shortcode [get_primary_staff id="1234"]
