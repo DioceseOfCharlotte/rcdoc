@@ -118,6 +118,7 @@ function doc_get_parish_mailing_shortcode( $atts ) {
 		array(
 			'id'        => '0',
 			'parish_id' => '',
+			'fallback'  => false,
 		),
 		$atts,
 		'get_parish_mailing'
@@ -160,14 +161,15 @@ function doc_get_parish_meta_shortcode( $atts ) {
 	// Attributes
 	$atts = shortcode_atts(
 		array(
-			'id'   => '0',
-			'meta' => '',
+			'id'    => '0',
+			'meta'  => '',
+			'label' => false,
 		),
 		$atts,
 		'get_parish_meta'
 	);
 
-	return doc_get_parish_meta( $atts['id'], $atts['meta'] );
+	return doc_get_parish_meta( $atts['id'], $atts['meta'], $atts['label'] );
 }
 
 function doc_get_parish_address( $post_id = 0 ) {
@@ -188,9 +190,10 @@ function doc_get_parish_address( $post_id = 0 ) {
 	return $doc_address;
 }
 
-function doc_get_parish_mailing( $post_id = 0 ) {
+function doc_get_parish_mailing( $post_id = 0, $fallback = false ) {
 
-	$post_id = $post_id ?: get_the_ID();
+	$post_id     = $post_id ?: get_the_ID();
+	$doc_address = doc_get_parish_address( $post_id );
 
 	$doc_mailing = '';
 
@@ -200,17 +203,30 @@ function doc_get_parish_mailing( $post_id = 0 ) {
 	$doc_zip    = get_post_meta( $post_id, 'doc_mail_zip', true );
 
 	if ( $doc_street ) {
-		$doc_mailing = $doc_street . '<br>' . $doc_city . ', ' . $doc_state . ' ' . $doc_zip;
+		$doc_mailing = "{$doc_street}<br>{$doc_city}, {$doc_state} {$doc_zip}";
+	} elseif ( $fallback && $doc_address ) {
+		$doc_mailing = $doc_address;
+	} elseif ( $doc_address && ! $fallback ) {
+		$doc_mailing = '<span class="address-reference">Same as physical address</span>';
 	} else {
-		$doc_mailing = doc_get_parish_address( $post_id );
+		return;
 	}
 
 	return $doc_mailing;
 }
 
-function doc_get_parish_meta( $post_id = '0', $parish_meta ) {
+function doc_get_parish_meta( $post_id = '0', $parish_meta, $label = false ) {
 
-	$doc_meta = get_post_meta( $post_id, $parish_meta, true );
+	$doc_get_meta = get_post_meta( $post_id, $parish_meta, true );
+
+	if ( '' == trim( $doc_get_meta ) ) {
+		return;
+	}
+
+	$doc_meta  = "<div class='p-meta_wrap {$parish_meta}-wrap'>";
+	$doc_meta .= $label ? "<span class='p-meta__label {$parish_meta}__label'>{$label}</span>" : '';
+	$doc_meta .= $doc_get_meta;
+	$doc_meta .= '</div>';
 
 	return $doc_meta;
 }
