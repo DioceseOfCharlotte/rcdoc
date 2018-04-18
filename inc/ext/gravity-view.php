@@ -290,9 +290,10 @@ function doc_update_member_contact( $form, $entry_id, $gv_entry ) {
 		return;
 	}
 
-	$agency_id = $gv_entry->entry['21'];
-	$parish_id = $gv_entry->entry['24'];
-	$school_id = $gv_entry->entry['25'];
+	$agency_id  = $gv_entry->entry['21'];
+	$parish_id  = $gv_entry->entry['24'];
+	$mission_id = $gv_entry->entry['29'];
+	$school_id  = $gv_entry->entry['25'];
 
 	$agency_title = $gv_entry->entry['23'];
 	$parish_title = $gv_entry->entry['19'];
@@ -327,7 +328,7 @@ function doc_update_member_contact( $form, $entry_id, $gv_entry ) {
 
 	$meta_key = 'doc_primary_staff';
 
-	$updated_entry = array(
+	$new_values = [
 		'order'  => $display_order,
 		'type'   => $c_type,
 		'title'  => $c_title,
@@ -335,30 +336,23 @@ function doc_update_member_contact( $form, $entry_id, $gv_entry ) {
 		'prefix' => $c_prefix,
 		'last'   => $c_last,
 		'name'   => $c_full,
-	);
+	];
 
-	$meta_value = get_post_meta( $post_id, $meta_key, true );
+	$args = [
+		'post_meta_key' => 'doc_primary_staff',
+		'gf_meta_key'   => 'prev_post_id',
+		'new_values'    => $new_values,
+	];
+	$mission_args = [
+		'post_meta_key' => 'doc_primary_staff',
+		'gf_meta_key'   => 'prev_mission_id',
+		'new_values'    => $new_values,
+	];
 
-	$prev_post_id = gform_get_meta( $entry_id, 'prev_post_id' );
+	form_update_post_meta( $post_id, $entry_id, $args );
 
-	if ( ! isset( $meta_value[ $entry_id ] ) ) {
-
-		$meta_value[ $entry_id ] = [];
-	}
-
-	$meta_value[ $entry_id ] = $updated_entry;
-
-	update_post_meta( $post_id, $meta_key, $meta_value );
-
-	if ( $prev_post_id != $post_id ) {
-		$meta_value = get_post_meta( $prev_post_id, $meta_key, true );
-
-		if ( isset( $meta_value[ $entry_id ] ) ) {
-			unset( $meta_value[ $entry_id ] );
-		}
-
-		update_post_meta( $prev_post_id, $meta_key, $meta_value );
-		gform_update_meta( $entry_id, 'prev_post_id', $post_id );
+	if ( $mission_id ) {
+		form_update_post_meta( $mission_id, $entry_id, $mission_args );
 	}
 }
 
@@ -443,4 +437,48 @@ function doc_get_mission_shortcode( $atts ) {
 	$parent_title = get_the_title( $parent_id );
 
 	return "<div class='parish-mission u-text-center u-mb1'>A Mission of <strong>{$parent_title}</strong></div>";
+}
+
+
+
+
+function form_update_post_meta( $post_id = 0, $entry_id = 0, $args = [] ) {
+
+	if ( ! $post_id || ! $entry_id ) {
+		return false;
+	}
+
+	$defaults = [
+		'post_meta_key' => '',
+		'gf_meta_key'   => '',
+		'new_values'    => [],
+	];
+
+	$args = apply_filters( 'get_the_image_args', $args );
+
+	$args = wp_parse_args( $args, $defaults );
+
+	$meta_value = get_post_meta( $post_id, $args['post_meta_key'], true );
+
+	$prev_post_id = gform_get_meta( $entry_id, $args['gf_meta_key'] );
+
+	if ( ! isset( $meta_value[ $entry_id ] ) ) {
+
+		$meta_value[ $entry_id ] = [];
+	}
+
+	$meta_value[ $entry_id ] = $args['new_values'];
+
+	update_post_meta( $post_id, $args['post_meta_key'], $meta_value );
+
+	if ( $prev_post_id != $post_id ) {
+		$meta_value = get_post_meta( $prev_post_id, $args['post_meta_key'], true );
+
+		if ( isset( $meta_value[ $entry_id ] ) ) {
+			unset( $meta_value[ $entry_id ] );
+		}
+
+		update_post_meta( $prev_post_id, $args['post_meta_key'], $meta_value );
+		gform_update_meta( $entry_id, $args['gf_meta_key'], $post_id );
+	}
 }
