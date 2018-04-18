@@ -454,7 +454,7 @@ function form_update_post_meta( $post_id = 0, $entry_id = 0, $args = [] ) {
 		'new_values'    => [],
 	];
 
-	$args = apply_filters( 'get_the_image_args', $args );
+	$args = apply_filters( 'form_update_post_meta_args', $args );
 
 	$args = wp_parse_args( $args, $defaults );
 
