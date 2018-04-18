@@ -25,6 +25,7 @@ function rcdoc_register_gv_shortcodes() {
 	add_shortcode( 'get_parish_mailing', 'doc_get_parish_mailing_shortcode' );
 	add_shortcode( 'doc_get_parish_staff', 'doc_get_parish_staff_shortcode' );
 	add_shortcode( 'get_primary_staff', 'doc_get_primary_staff_shortcode' );
+	add_shortcode( 'doc_get_mission', 'doc_get_mission_shortcode' );
 }
 
 // Update the the term meta for the Vicariate Taxonomy
@@ -411,4 +412,35 @@ function doc_get_primary_staff_shortcode( $atts ) {
 	}
 
 	return doc_get_primary_staff( $post_id );
+}
+
+
+// Add Shortcode [doc_get_mission id="1234"]
+function doc_get_mission_shortcode( $atts ) {
+
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'id'        => get_the_ID(),
+			'parish_id' => '',
+		),
+		$atts,
+		'doc_get_mission'
+	);
+
+	$post_id = $atts['id'];
+
+	if ( ! empty( $atts['parish_id'] ) ) {
+		$post_id = get_parish_post( $atts['parish_id'] );
+	}
+
+	$parent_id = wp_get_post_parent_id( $post_id );
+
+	if ( ! $parent_id ) {
+		return;
+	}
+
+	$parent_title = get_the_title( $parent_id );
+
+	return "<div class='parish-mission u-text-center u-mb1'>A Mission of <strong>{$parent_title}</strong></div>";
 }
