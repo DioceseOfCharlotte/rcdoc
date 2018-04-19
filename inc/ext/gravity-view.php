@@ -9,6 +9,7 @@ add_action( 'init', 'rcdoc_register_gv_shortcodes' );
 add_action( 'hybrid_register_layouts', 'doc_gv_layouts' );
 add_action( 'gravityview/edit_entry/after_update', 'doc_update_vicariate', 10, 3 );
 add_action( 'gravityview/edit_entry/after_update', 'doc_update_parish_staff', 10, 3 );
+add_action( 'gravityview/edit_entry/after_update', 'doc_update_member_contact', 10, 3 );
 
 add_filter( 'gravityview/widget/enable_custom_class', '__return_true' );
 add_filter( 'gravityview/extension/search/links_sep', '__return_false' );
@@ -275,87 +276,6 @@ function doc_gv_edit_cancel( $back_link, $form, $entry, $view_id ) {
 	return str_replace( 'entry/' . $entry['id'] . '/', '', $back_link );
 }
 
-
-
-
-
-
-/**
- * Add clergy to post meta
- */
-add_action( 'gravityview/edit_entry/after_update', 'doc_update_member_contact', 10, 3 );
-function doc_update_member_contact( $form, $entry_id, $gv_entry ) {
-
-	if ( '3' != $form['id'] ) {
-		return;
-	}
-
-	$agency_id  = $gv_entry->entry['21'];
-	$parish_id  = $gv_entry->entry['24'];
-	$mission_id = $gv_entry->entry['29'];
-	$school_id  = $gv_entry->entry['25'];
-
-	$agency_title = $gv_entry->entry['23'];
-	$parish_title = $gv_entry->entry['19'];
-	$school_title = $gv_entry->entry['27'];
-
-	$display_order = $gv_entry->entry['26'] ?: '100';
-	$c_approved    = $gv_entry->entry['7.1'];
-	$c_type        = $gv_entry->entry['8'];
-	$c_status      = $gv_entry->entry['13'];
-	$c_prefix      = $gv_entry->entry['1.2'];
-	$c_first       = $gv_entry->entry['1.3'];
-	$c_middle      = $gv_entry->entry['1.4'];
-	$c_last        = $gv_entry->entry['1.6'];
-	$c_suffix      = $gv_entry->entry['1.8'];
-	$comma_suffix  = $c_suffix ? ", {$c_suffix}" : '';
-	$c_full        = "{$c_prefix} {$c_first} {$c_last}{$comma_suffix}";
-
-	if ( 'Priest' == $c_type || 'Deacon' == $c_type ) {
-		$post_id = $parish_id;
-		$c_title = $parish_title;
-	} elseif ( 'Principal' == $c_type ) {
-		$post_id = $school_id;
-		$c_title = $school_title;
-	} else {
-		$post_id = $agency_id;
-		$c_title = $agency_title;
-	}
-
-	if ( ! $c_approved || ! $post_id ) {
-		return;
-	}
-
-	$meta_key = 'doc_primary_staff';
-
-	$new_values = [
-		'order'  => $display_order,
-		'type'   => $c_type,
-		'title'  => $c_title,
-		'status' => $c_status,
-		'prefix' => $c_prefix,
-		'last'   => $c_last,
-		'name'   => $c_full,
-	];
-
-	$args = [
-		'post_meta_key' => 'doc_primary_staff',
-		'gf_meta_key'   => 'prev_post_id',
-		'new_values'    => $new_values,
-	];
-	$mission_args = [
-		'post_meta_key' => 'doc_primary_staff',
-		'gf_meta_key'   => 'prev_mission_id',
-		'new_values'    => $new_values,
-	];
-
-	form_update_post_meta( $post_id, $entry_id, $args );
-
-	if ( $mission_id ) {
-		form_update_post_meta( $mission_id, $entry_id, $mission_args );
-	}
-}
-
 function doc_get_primary_staff( $post_id = 0 ) {
 
 	$post_id = $post_id ?: get_the_ID();
@@ -439,12 +359,86 @@ function doc_get_mission_shortcode( $atts ) {
 	return "<div class='parish-mission u-text-center u-mb1'>A Mission of <strong>{$parent_title}</strong></div>";
 }
 
+/**
+ * Add clergy to post meta
+ */
+function doc_update_member_contact( $form, $entry_id, $gv_entry ) {
 
+	if ( '3' != $form['id'] ) {
+		return;
+	}
 
+	$agency_id  = $gv_entry->entry['21'];
+	$parish_id  = $gv_entry->entry['24'];
+	$mission_id = $gv_entry->entry['29'];
+	$school_id  = $gv_entry->entry['25'];
+
+	$agency_title = $gv_entry->entry['23'];
+	$parish_title = $gv_entry->entry['19'];
+	$school_title = $gv_entry->entry['27'];
+
+	$display_order = $gv_entry->entry['26'] ?: '100';
+	$c_approved    = $gv_entry->entry['7.1'];
+	$c_type        = $gv_entry->entry['8'];
+	$c_status      = $gv_entry->entry['13'];
+	$c_prefix      = $gv_entry->entry['1.2'];
+	$c_first       = $gv_entry->entry['1.3'];
+	$c_middle      = $gv_entry->entry['1.4'];
+	$c_last        = $gv_entry->entry['1.6'];
+	$c_suffix      = $gv_entry->entry['1.8'];
+	$comma_suffix  = $c_suffix ? ", {$c_suffix}" : '';
+	$c_full        = "{$c_prefix} {$c_first} {$c_last}{$comma_suffix}";
+
+	if ( 'Priest' == $c_type || 'Deacon' == $c_type ) {
+		$post_id = $parish_id;
+		$c_title = $parish_title;
+	} elseif ( 'Principal' == $c_type ) {
+		$post_id = $school_id;
+		$c_title = $school_title;
+	} else {
+		$post_id = $agency_id;
+		$c_title = $agency_title;
+	}
+
+	$meta_key = 'doc_primary_staff';
+
+	$new_values = [
+		'order'  => $display_order,
+		'type'   => $c_type,
+		'title'  => $c_title,
+		'status' => $c_status,
+		'prefix' => $c_prefix,
+		'last'   => $c_last,
+		'name'   => $c_full,
+	];
+
+	$args = [
+		'post_meta_key' => 'doc_primary_staff',
+		'gf_meta_key'   => 'prev_post_id',
+		'new_values'    => $new_values,
+	];
+	$mission_args = [
+		'post_meta_key' => 'doc_primary_staff',
+		'gf_meta_key'   => 'prev_mission_id',
+		'new_values'    => $new_values,
+	];
+
+	$prev_post_id = gform_get_meta( $entry_id, $args['gf_meta_key'] );
+
+	if ( ! $c_approved && ! $prev_post_id ) {
+		return;
+	}
+
+	form_update_post_meta( $post_id, $entry_id, $args );
+
+	if ( $mission_id ) {
+		form_update_post_meta( $mission_id, $entry_id, $mission_args );
+	}
+}
 
 function form_update_post_meta( $post_id = 0, $entry_id = 0, $args = [] ) {
 
-	if ( ! $post_id || ! $entry_id ) {
+	if ( ! $entry_id ) {
 		return false;
 	}
 
