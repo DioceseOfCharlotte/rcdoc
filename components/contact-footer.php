@@ -39,6 +39,11 @@ $distance = facetwp_get_distance();
 	<a class="btn btn-sm macs-logo u-py0 u-ml-auto" href="<?php the_permalink( '10073' ); ?>"><?php abe_do_svg( 'macs', '2.5em', '5em' ); ?></a>
 
 <?php endif; ?>
+<?php if ( has_term( 'yes', 'special_needs' ) ) : ?>
+
+	<a class="btn btn-sm uni-access u-py0 u-ml-auto" href="<?php the_permalink( '10073' ); ?>"><?php abe_do_svg( 'universal-access', '2.5em', '5em' ); ?></a>
+
+<?php endif; ?>
 </div>
 
 	<?php abe_edit_link() ?>

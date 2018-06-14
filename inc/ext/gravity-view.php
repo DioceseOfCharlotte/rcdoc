@@ -11,10 +11,10 @@ add_action( 'gravityview/edit_entry/after_update', 'doc_update_vicariate', 10, 3
 add_action( 'gravityview/edit_entry/after_update', 'doc_update_parish_staff', 10, 3 );
 add_action( 'gravityview/edit_entry/after_update', 'doc_update_member_contact', 10, 3 );
 
-add_filter( 'gravityview/widget/enable_custom_class', '__return_true' );
-add_filter( 'gravityview/extension/search/links_sep', '__return_false' );
-add_filter( 'gravityview/extension/search/links_label', '__return_false' );
-add_filter( 'gravityview/fields/select/output_label', '__return_true' );
+// add_filter( 'gravityview/widget/enable_custom_class', '__return_true' );
+// add_filter( 'gravityview/extension/search/links_sep', '__return_false' );
+// add_filter( 'gravityview/extension/search/links_label', '__return_false' );
+// add_filter( 'gravityview/fields/select/output_label', '__return_true' );
 
 // add_filter( 'gravitview_no_entries_text', 'modify_gravitview_no_entries_text', 10, 2 );
 // add_filter( 'gravityview/edit_entry/success', 'doc_gv_update_message', 10, 4 );
@@ -387,7 +387,7 @@ function doc_update_member_contact( $form, $entry_id, $gv_entry ) {
 	$c_last        = $gv_entry->entry['1.6'];
 	$c_suffix      = $gv_entry->entry['1.8'];
 	$comma_suffix  = $c_suffix ? ", {$c_suffix}" : '';
-	$c_full        = "{$c_prefix} {$c_first} {$c_last}{$comma_suffix}";
+	$c_full        = "{$c_prefix} {$c_first} {$c_middle} {$c_last}{$comma_suffix}";
 
 	if ( 'Priest' == $c_type || 'Deacon' == $c_type ) {
 		$post_id = $parish_id;

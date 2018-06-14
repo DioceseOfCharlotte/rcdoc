@@ -9,7 +9,7 @@ const path = require('path');
 const gulp = require('gulp');
 const rev = require('gulp-rev');
 const ignore = require('gulp-ignore');
-const browserSync = require('browser-sync');
+const browserSync = require('browser-sync').create();
 const runSequence = require('run-sequence');
 
 const autoPrefixer = require('autoprefixer');
@@ -171,8 +171,8 @@ gulp.task('scripts', () => {
  */
 // Build and serve the output
 gulp.task('serve', ['scripts', 'styles'], () => {
-	$.browserSync.init({
-		proxy: "local.wordpress.dev"
+	browserSync.init({
+		proxy: "charlottediocese.test"
 			// proxy: "local.wordpress-trunk.dev"
 			// proxy: "127.0.0.1:8080/wordpress/"
 	});

@@ -13,7 +13,7 @@ h2.gsection_title {
 	padding: 0 !important;
 }
 
-.gv-list-view {
+.gv-list-view:not(.gv-list-container) {
 	border-width: 0;
 	border-radius: 0.2rem;
 	margin: 0 0.5rem 0.75rem;
@@ -383,4 +383,42 @@ div[class*='gv-field-'] {
 #gform_18 :-moz-placeholder {
 	color: #7c8b94;
 	opacity: 1;
+}
+
+
+
+.p-meta__label {
+    font-weight: bolder;
+}
+
+.address-reference {
+    font-style: italic;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.u-no-link,
+.u-no-link > a {
+    box-shadow: none;
+    color: inherit;
+		font-weight: normal;
+}
+
+.u-no-link:before,
+.u-no-link > a:before {
+    content: none;
+}
+
+.parish-mission {
+    font-style: italic;
+}
+
+
+.staff-title,
+.p-meta__label {
+    font-weight: normal;
+    min-width: 220px;
+    display: inline-block;
+    font-style: italic;
+    opacity: .8;
 }

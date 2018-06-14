@@ -13,14 +13,14 @@ GitHub Theme URI: https://github.com/DioceseOfCharlotte/rcdoc
 */
 
 .o-list-group.bullet-cross > li::before {
-	content: " ";
+	content: ' ';
 	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%2390a4ae' width='1em' height='1em'%3E%3Cpath d='M5.979 10.974v5.021h7.041v11.99h5.042v-11.99h6.958v-5.021h-6.958V4.016H13.02v6.958H5.979z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
 }
 
 .o-list-group.bullet-heart > li::before {
-	content: " ";
+	content: ' ';
 	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%2390a4ae' width='1em' height='1em'%3E%3Cpath d='M22.65 2.75c-2.943 0-5.476 2.424-6.65 4.955-1.173-2.531-3.707-4.955-6.65-4.955C5.293 2.75 2 6.084 2 10.192 2 18.548 10.326 20.739 16 29c5.365-8.21 14-10.719 14-18.808 0-4.108-3.293-7.442-7.35-7.442z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
@@ -41,7 +41,7 @@ p a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="catholicnewshera
 	opacity: 0.8;
 }
 
-a[href*="catholicnewsherald.com"]:not([class]):before {
+a[href*='catholicnewsherald.com']:not([class]):before {
 	content: "\e904";
 	font-family: 'icomeh' !important;
 	speak: none;
@@ -67,7 +67,7 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.show-icons a[href*="/parishes/"]:before,
+.show-icons a[href*='/parishes/']:before,
 .icon-parish:before {
 	content: " ";
 	background-image: svg-load(parishes.svg, fill=#90a4ae, stroke=#fff, stroke-width="0", width=1em, height=1em);
@@ -77,7 +77,7 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 	height: 1em;
 }
 
-.show-icons a[href*="/schools/"]:before,
+.show-icons a[href*='/schools/']:before,
 .icon-school:before {
 	content: " ";
 	background-image: svg-load(schools.svg, fill=#90a4ae, stroke=#fff, stroke-width="0", width=1em, height=1em);
@@ -92,7 +92,7 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 }
 
 .facetwp-checkbox::before {
-	content: "";
+	content: '';
 	display: inline-block;
 	vertical-align: middle;
 	min-width: 1em;
@@ -610,7 +610,7 @@ h2.gsection_title {
 	padding: 0 !important;
 }
 
-.gv-list-view {
+.gv-list-view:not(.gv-list-container) {
 	border-width: 0;
 	border-radius: 0.2rem;
 	margin: 0 0.5rem 0.75rem;
@@ -1026,6 +1026,41 @@ div[class*='gv-field-'] {
 #gform_18 :-moz-placeholder {
 	color: #7c8b94;
 	opacity: 1;
+}
+
+.p-meta__label {
+	font-weight: bolder;
+}
+
+.address-reference {
+	font-style: italic;
+	font-size: 0.9rem;
+	opacity: 0.9;
+}
+
+.u-no-link,
+.u-no-link > a {
+	box-shadow: none;
+	color: inherit;
+	font-weight: normal;
+}
+
+.u-no-link:before,
+.u-no-link > a:before {
+	content: none;
+}
+
+.parish-mission {
+	font-style: italic;
+}
+
+.staff-title,
+.p-meta__label {
+	font-weight: normal;
+	min-width: 220px;
+	display: inline-block;
+	font-style: italic;
+	opacity: 0.8;
 }
 
 .frame {
@@ -1623,7 +1658,7 @@ nav.navigation.pagination {
 		display: none !important;
 	}
 
-	div[class*="gv-field-"] {
+	div[class*='gv-field-'] {
 		margin-bottom: 0;
 	}
 
@@ -1664,7 +1699,7 @@ nav.navigation.pagination {
 
 	.layout-2-card-row .gv-diy-container::before,
 	.layout-2-card-row .gv-diy-container::after {
-		content: "";
+		content: '';
 		display: table;
 	}
 

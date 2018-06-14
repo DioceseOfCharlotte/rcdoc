@@ -1,28 +1,25 @@
-
-
-
 .o-list-group.bullet-cross > li::before {
-	content: " ";
+	content: ' ';
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%2390a4ae' width='1em' height='1em'%3E%3Cpath d='M5.979 10.974v5.021h7.041v11.99h5.042v-11.99h6.958v-5.021h-6.958V4.016H13.02v6.958H5.979z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
 }
 
 .o-list-group.bullet-heart > li::before {
-	content: " ";
+	content: ' ';
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%2390a4ae' width='1em' height='1em'%3E%3Cpath d='M22.65 2.75c-2.943 0-5.476 2.424-6.65 4.955-1.173-2.531-3.707-4.955-6.65-4.955C5.293 2.75 2 6.084 2 10.192 2 18.548 10.326 20.739 16 29c5.365-8.21 14-10.719 14-18.808 0-4.108-3.293-7.442-7.35-7.442z'/%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	display: inline-block;
 }
 
-
 p a[href*="//"]:not([href*="charlottediocese.org"]):not([href*="catholicnewsherald.com"]):not([href*="wpengine.netdna-ssl.com"]):not([href*="charlottediocese.dev"])::after {
 	@mixin fi $fi-link-external;
+
 	font-size: 0.9em;
 	opacity: 0.8;
 }
 
-a[href*="catholicnewsherald.com"]:not([class]):before {
+a[href*='catholicnewsherald.com']:not([class]):before {
 	@mixin fi $fi-newspaper;
 }
 
@@ -30,12 +27,12 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 	@mixin fi $fi-floppy-disk;
 }
 
-.show-icons a[href*="/parishes/"]:before,
+.show-icons a[href*='/parishes/']:before,
 .icon-parish:before {
 	@mixin icon parishes;
 }
 
-.show-icons a[href*="/schools/"]:before,
+.show-icons a[href*='/schools/']:before,
 .icon-school:before {
 	@mixin icon schools;
 }
@@ -45,14 +42,14 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 }
 
 .facetwp-checkbox::before {
-	content: "";
+	content: '';
 	display: inline-block;
 	vertical-align: middle;
 	min-width: 1em;
 	width: 1em;
 	height: 1em;
 	background-color: rgba(245, 245, 245, 0.8);
-	border: 0.0625rem solid rgba(183,198,205,.9);
+	border: 0.0625rem solid rgba(183, 198, 205, 0.9);
 	padding: 0;
 	margin: 0;
 	background-size: contain;
@@ -62,12 +59,13 @@ a[href*="catholicnewsherald.com"]:not([class]):before {
 
 .facetwp-checkbox.checked::before {
 	@mixin fi $fi-checkmark;
+
 	background-color: #fff;
 }
 
 .btn > p {
-	margin: 0!important;
-	padding: 0!important;
+	margin: 0 !important;
+	padding: 0 !important;
 }
 
 .header__menu-toggle > .icon-sm {
