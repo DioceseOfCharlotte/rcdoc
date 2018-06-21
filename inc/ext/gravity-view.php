@@ -10,6 +10,7 @@ add_action( 'hybrid_register_layouts', 'doc_gv_layouts' );
 add_action( 'gravityview/edit_entry/after_update', 'doc_update_vicariate', 10, 3 );
 add_action( 'gravityview/edit_entry/after_update', 'doc_update_parish_staff', 10, 3 );
 add_action( 'gravityview/edit_entry/after_update', 'doc_update_member_contact', 10, 3 );
+add_post_type_support( 'gravityview', 'theme-layouts' );
 
 // add_filter( 'gravityview/widget/enable_custom_class', '__return_true' );
 // add_filter( 'gravityview/extension/search/links_sep', '__return_false' );
@@ -67,7 +68,6 @@ function doc_update_parish_staff( $form, $entry_id, $gv_entry ) {
 	update_post_meta( $post_id, 'doc_ym', $ym_name );
 }
 
-add_post_type_support( 'gravityview', 'theme-layouts' );
 function doc_gv_layouts() {
 
 	hybrid_register_layout(
@@ -373,6 +373,19 @@ function doc_update_member_contact( $form, $entry_id, $gv_entry ) {
 	$mission_id = $gv_entry->entry['29'];
 	$school_id  = $gv_entry->entry['25'];
 
+	$adv_string = $gv_entry->entry['30'];
+
+	// Remove brackets.
+	$adv_string = trim( $adv_string, '[]' );
+
+	$post_ids = array_map(
+		function( $adv_string_id ) {
+			// Remove quotes around IDs.
+			return trim( $adv_string_id, '"' );
+		},
+		explode( ',', $adv_string )
+	);
+
 	$agency_title = $gv_entry->entry['23'];
 	$parish_title = $gv_entry->entry['19'];
 	$school_title = $gv_entry->entry['27'];
@@ -400,6 +413,8 @@ function doc_update_member_contact( $form, $entry_id, $gv_entry ) {
 		$c_title = $agency_title;
 	}
 
+	$c_title = $c_title ?: $c_type;
+
 	$meta_key = 'doc_primary_staff';
 
 	$new_values = [
@@ -412,14 +427,19 @@ function doc_update_member_contact( $form, $entry_id, $gv_entry ) {
 		'name'   => $c_full,
 	];
 
-	$args = [
+	$args          = [
 		'post_meta_key' => 'doc_primary_staff',
 		'gf_meta_key'   => 'prev_post_id',
 		'new_values'    => $new_values,
 	];
-	$mission_args = [
+	$mission_args  = [
 		'post_meta_key' => 'doc_primary_staff',
 		'gf_meta_key'   => 'prev_mission_id',
+		'new_values'    => $new_values,
+	];
+	$advocate_args = [
+		'post_meta_key' => 'doc_advocates',
+		'gf_meta_key'   => 'prev_advocate_id',
 		'new_values'    => $new_values,
 	];
 
@@ -429,10 +449,19 @@ function doc_update_member_contact( $form, $entry_id, $gv_entry ) {
 		return;
 	}
 
-	form_update_post_meta( $post_id, $entry_id, $args );
+	if ( $post_id && ! is_array( $post_id ) ) {
+		form_update_post_meta( $post_id, $entry_id, $args );
+	}
 
 	if ( $mission_id ) {
 		form_update_post_meta( $mission_id, $entry_id, $mission_args );
+	}
+
+	if ( 'Advocate' == $c_type ) {
+
+		if ( $post_ids ) {
+			form_update_post_meta_array( $post_ids, $entry_id, $advocate_args );
+		}
 	}
 }
 
@@ -474,5 +503,72 @@ function form_update_post_meta( $post_id = 0, $entry_id = 0, $args = [] ) {
 
 		update_post_meta( $prev_post_id, $args['post_meta_key'], $meta_value );
 		gform_update_meta( $entry_id, $args['gf_meta_key'], $post_id );
+	}
+}
+
+function form_update_post_meta_array( $post_ids = 0, $entry_id = 0, $args = [] ) {
+
+	if ( ! $entry_id ) {
+		return false;
+	}
+
+	$defaults = [
+		'post_meta_key' => '',
+		'gf_meta_key'   => '',
+		'new_values'    => [],
+	];
+
+	$args = apply_filters( 'form_update_post_meta_args', $args );
+
+	$args = wp_parse_args( $args, $defaults );
+
+	if ( is_array( $post_ids ) ) {
+
+		foreach ( $post_ids as $a_post ) {
+
+			$meta_value = get_post_meta( $a_post, $args['post_meta_key'], false );
+
+			if ( ! isset( $meta_value[ $entry_id ] ) ) {
+				$meta_value[ $entry_id ] = $args['new_values'];
+			}
+
+			$meta_value[ $entry_id ] = $args['new_values'];
+
+			update_post_meta( $a_post, $args['post_meta_key'], $meta_value );
+
+		}
+
+		$prev_post_id = gform_get_meta( $entry_id, $args['gf_meta_key'] );
+		$removed_ids  = $prev_post_id ? array_diff( $prev_post_id, $post_ids ) : '';
+
+		//var_dump( $prev_post_id );
+
+		if ( is_array( $removed_ids ) ) {
+
+			foreach ( $removed_ids as $removed_id ) {
+
+				$meta_value = get_post_meta( $removed_id, $args['post_meta_key'], true );
+				//var_dump( $meta_value[ $entry_id ] );
+				if ( isset( $meta_value[ $entry_id ] ) ) {
+					unset( $meta_value[ $entry_id ] );
+				}
+
+				update_post_meta( $removed_id, $args['post_meta_key'], $meta_value );
+			}
+
+		} elseif ( $removed_ids ) {
+
+			$meta_value = get_post_meta( $removed_ids, $args['post_meta_key'], true );
+
+			if ( isset( $meta_value[ $entry_id ] ) ) {
+				unset( $meta_value[ $entry_id ] );
+			}
+
+			update_post_meta( $removed_ids, $args['post_meta_key'], $meta_value );
+
+		}
+
+		gform_update_meta( $entry_id, $args['gf_meta_key'], $post_ids );
+
 	}
 }
