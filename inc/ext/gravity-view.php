@@ -306,8 +306,6 @@ function doc_get_advocates( $post_id = 0 ) {
 		return;
 	}
 
-	var_dump( is_object( $staff_members ) );
-
 	$staff_list = '<div class="staff-list">';
 
 	foreach ( $staff_members as $staff_member ) {
