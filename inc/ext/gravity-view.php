@@ -27,6 +27,7 @@ function rcdoc_register_gv_shortcodes() {
 	add_shortcode( 'get_parish_mailing', 'doc_get_parish_mailing_shortcode' );
 	add_shortcode( 'doc_get_parish_staff', 'doc_get_parish_staff_shortcode' );
 	add_shortcode( 'get_primary_staff', 'doc_get_primary_staff_shortcode' );
+	add_shortcode( 'get_advocates', 'doc_get_advocates_shortcode' );
 	add_shortcode( 'doc_get_mission', 'doc_get_mission_shortcode' );
 }
 
@@ -265,17 +266,6 @@ function doc_gv_update_message( $message, $view_id, $entry, $back_link ) {
 	return 'Entry Updated. <a href="' . esc_url( $link ) . '">Return to the list</a>';
 }
 
-/**
- * Customise the cancel button link
- *
- * @param $back_link string
- *
- * since 1.11.1
- */
-function doc_gv_edit_cancel( $back_link, $form, $entry, $view_id ) {
-	return str_replace( 'entry/' . $entry['id'] . '/', '', $back_link );
-}
-
 function doc_get_primary_staff( $post_id = 0 ) {
 
 	$post_id = $post_id ?: get_the_ID();
@@ -304,6 +294,54 @@ function doc_get_primary_staff( $post_id = 0 ) {
 	$staff_list .= '</div>';
 
 	return $staff_list;
+}
+
+function doc_get_advocates( $post_id = 0 ) {
+
+	$post_id = $post_id ?: get_the_ID();
+
+	$staff_members = get_post_meta( $post_id, 'doc_advocates', true );
+
+	if ( empty( $staff_members ) ) {
+		return;
+	}
+
+	var_dump( is_object( $staff_members ) );
+
+	$staff_list = '<div class="staff-list">';
+
+	foreach ( $staff_members as $staff_member ) {
+		$staff_list .= "<div class='type-{$staff_member['type']} list-order-{$staff_member['order']}'>";
+		$staff_list .= "<span class='staff-title'>{$staff_member['title']}: </span>";
+		$staff_list .= "<span class='staff-name'>{$staff_member['name']}</span>";
+		$staff_list .= '</div>';
+	}
+
+	$staff_list .= '</div>';
+
+	return $staff_list;
+}
+
+// Add Shortcode [get_advocates id="1234"]
+function doc_get_advocates_shortcode( $atts ) {
+
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'id'        => get_the_ID(),
+			'parish_id' => '',
+		),
+		$atts,
+		'get_advocates'
+	);
+
+	$post_id = $atts['id'];
+
+	if ( ! empty( $atts['parish_id'] ) ) {
+		$post_id = get_parish_post( $atts['parish_id'] );
+	}
+
+	return doc_get_advocates( $post_id );
 }
 
 // Add Shortcode [get_primary_staff id="1234"]
@@ -477,9 +515,7 @@ function form_update_post_meta( $post_id = 0, $entry_id = 0, $args = [] ) {
 		'new_values'    => [],
 	];
 
-	$args = apply_filters( 'form_update_post_meta_args', $args );
-
-	$args = wp_parse_args( $args, $defaults );
+	$args = $args ?: $defaults;
 
 	$meta_value = get_post_meta( $post_id, $args['post_meta_key'], true );
 
@@ -518,18 +554,16 @@ function form_update_post_meta_array( $post_ids = 0, $entry_id = 0, $args = [] )
 		'new_values'    => [],
 	];
 
-	$args = apply_filters( 'form_update_post_meta_args', $args );
-
-	$args = wp_parse_args( $args, $defaults );
+	$args = $args ?: $defaults;
 
 	if ( is_array( $post_ids ) ) {
 
 		foreach ( $post_ids as $a_post ) {
 
-			$meta_value = get_post_meta( $a_post, $args['post_meta_key'], false );
+			$meta_value = get_post_meta( $a_post, $args['post_meta_key'], true );
 
 			if ( ! isset( $meta_value[ $entry_id ] ) ) {
-				$meta_value[ $entry_id ] = $args['new_values'];
+				$meta_value[ $entry_id ] = [];
 			}
 
 			$meta_value[ $entry_id ] = $args['new_values'];
@@ -541,21 +575,17 @@ function form_update_post_meta_array( $post_ids = 0, $entry_id = 0, $args = [] )
 		$prev_post_id = gform_get_meta( $entry_id, $args['gf_meta_key'] );
 		$removed_ids  = $prev_post_id ? array_diff( $prev_post_id, $post_ids ) : '';
 
-		//var_dump( $prev_post_id );
-
 		if ( is_array( $removed_ids ) ) {
 
 			foreach ( $removed_ids as $removed_id ) {
 
 				$meta_value = get_post_meta( $removed_id, $args['post_meta_key'], true );
-				//var_dump( $meta_value[ $entry_id ] );
 				if ( isset( $meta_value[ $entry_id ] ) ) {
 					unset( $meta_value[ $entry_id ] );
 				}
 
 				update_post_meta( $removed_id, $args['post_meta_key'], $meta_value );
 			}
-
 		} elseif ( $removed_ids ) {
 
 			$meta_value = get_post_meta( $removed_ids, $args['post_meta_key'], true );
