@@ -276,22 +276,28 @@ function doc_get_primary_staff( $post_id = 0 ) {
 		return;
 	}
 
-	usort(
-		$staff_members, function( $a, $b ) {
-			return $a['order'] <=> $b['order'];
+	$staff_list = '';
+
+	if ( is_array( $staff_members ) ) {
+
+		usort(
+			$staff_members, function( $a, $b ) {
+				return $a['order'] <=> $b['order'];
+			}
+		);
+
+		$staff_list = '<div class="staff-list">';
+
+		foreach ( $staff_members as $member ) {
+			$staff_list .= "<div class='type-{$member['type']} list-order-{$member['order']}'>";
+			$staff_list .= "<span class='staff-title'>{$member['title']}: </span>";
+			$staff_list .= "<span class='staff-name'>{$member['name']}</span>";
+			$staff_list .= '</div>';
 		}
-	);
 
-	$staff_list = '<div class="staff-list">';
-
-	foreach ( $staff_members as $member ) {
-		$staff_list .= "<div class='type-{$member['type']} list-order-{$member['order']}'>";
-		$staff_list .= "<span class='staff-title'>{$member['title']}: </span>";
-		$staff_list .= "<span class='staff-name'>{$member['name']}</span>";
 		$staff_list .= '</div>';
-	}
 
-	$staff_list .= '</div>';
+	}
 
 	return $staff_list;
 }
@@ -303,19 +309,31 @@ function doc_get_advocates( $post_id = 0 ) {
 	$staff_members = get_post_meta( $post_id, 'doc_advocates', true );
 
 	if ( empty( $staff_members ) ) {
-		return;
+		return false;
 	}
 
-	$staff_list = '<div class="staff-list">';
+	$staff_list = '';
 
-	foreach ( $staff_members as $staff_member ) {
-		$staff_list .= "<div class='type-{$staff_member['type']} list-order-{$staff_member['order']}'>";
-		$staff_list .= "<span class='staff-title'>{$staff_member['title']}: </span>";
-		$staff_list .= "<span class='staff-name'>{$staff_member['name']}</span>";
+	if ( is_array( $staff_members ) ) {
+
+		// usort(
+		// 	$staff_members, function( $a, $b ) {
+		// 		return $a['order'] <=> $b['order'];
+		// 	}
+		// );
+
+		$staff_list = '<div class="staff-list">';
+
+		foreach ( $staff_members as $staff_member ) {
+			$staff_list .= "<div class='type-{$staff_member['type']} list-order-{$staff_member['order']}'>";
+			$staff_list .= "<span class='staff-title'>{$staff_member['title']}: </span>";
+			$staff_list .= "<span class='staff-name'>{$staff_member['name']}</span>";
+			$staff_list .= '</div>';
+		}
+
 		$staff_list .= '</div>';
-	}
 
-	$staff_list .= '</div>';
+	}
 
 	return $staff_list;
 }
