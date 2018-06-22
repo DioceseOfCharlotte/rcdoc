@@ -13,6 +13,7 @@ require_once get_theme_file_path( 'inc/compatibility.php' );
 require_once get_theme_file_path( 'inc/ext/cpt-archive.php' );
 require_once get_theme_file_path( 'inc/ext/gravity-forms.php' );
 require_once get_theme_file_path( 'inc/ext/gravity-view.php' );
+require_once get_theme_file_path( 'inc/ext/gv-actions.php' );
 require_once get_theme_file_path( 'inc/ext/gf-email-domain.php' );
 require_once get_theme_file_path( 'inc/ext/jetpack.php' );
 require_once get_theme_file_path( 'inc/ext/facetwp.php' );
