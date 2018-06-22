@@ -250,7 +250,7 @@ function doc_get_advocates( $post_id = 0 ) {
 
 		foreach ( $staff_members as $staff_member ) {
 			$staff_list .= "<div class='type-{$staff_member['type']} list-order-{$staff_member['order']}'>";
-			$staff_list .= "<span class='staff-title'>{$staff_member['title']}: </span>";
+			$staff_list .= '<span class="staff-title">Advocate: </span>';
 			$staff_list .= "<span class='staff-name'>{$staff_member['name']}</span>";
 			$staff_list .= '</div>';
 		}
