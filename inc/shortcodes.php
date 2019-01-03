@@ -14,26 +14,49 @@ add_action( 'init', 'meh_add_shortcodes' );
  * @access public
  */
 function meh_add_shortcodes() {
-add_shortcode( 'meh_field', 'meh_shortcode_field' );
-add_shortcode( 'doc_login_form', 'doc_login_shortcode' );
-add_shortcode( 'doc-personal-link', 'doc_personal_link_shortcode' );
-add_shortcode( 'doc_logged_in_header', 'doc_logged_in_header_shortcode' );
-add_shortcode( 'meh_row', 'meh_row_shortcode' );
+	add_shortcode( 'meh_field', 'meh_shortcode_field' );
+	add_shortcode( 'doc_login_form', 'doc_login_shortcode' );
+	add_shortcode( 'doc-personal-link', 'doc_personal_link_shortcode' );
+	add_shortcode( 'doc_logged_in_header', 'doc_logged_in_header_shortcode' );
+	add_shortcode( 'meh_row', 'meh_row_shortcode' );
+	add_shortcode( 'email-front', 'email_front_shortcode' );
+}
+
+// Add Shortcode
+function email_front_shortcode( $atts, $content = null ) {
+
+	// Attributes
+	$atts = shortcode_atts(
+		array(
+			'email' => '',
+			'back'  => 'charlottediocese.org',
+		),
+		$atts,
+		'email-front'
+	);
+
+	return basename( strtolower( do_shortcode( $content ) ), "@{$atts['back']}" );
+
 }
 
 // Shortcode to get post_meta.
 function meh_shortcode_field( $atts ) {
-	extract( shortcode_atts(
-		array(
-			'post_id' => NULL,
-		), $atts));
+	extract(
+		shortcode_atts(
+			array(
+				'post_id' => null,
+			),
+			$atts
+		)
+	);
 
-	if ( ! isset( $atts[0] ) )
+	if ( ! isset( $atts[0] ) ) {
 		return;
+	}
 
 	$field = esc_attr( $atts[0] );
 	global $post;
-	$post_id = ( NULL === $post_id) ? $post->ID : $post_id;
+	$post_id = ( null === $post_id ) ? $post->ID : $post_id;
 	return get_post_meta( $post_id, $field, true );
 }
 
@@ -41,10 +64,10 @@ function doc_login_shortcode() {
 
 	$args = array(
 		'form_id' => 'abe-loginform',
-		'echo' => false,
+		'echo'    => false,
 	);
 
-	$form = wp_login_form( $args );
+	$form  = wp_login_form( $args );
 	$form .= '<p><a href="' . wp_lostpassword_url() . '" title="Lost Password">Lost your password?</a></p><a href="/registration/">Create an account</a>';
 
 	return $form;
@@ -69,10 +92,11 @@ function doc_personal_link_shortcode( $atts ) {
 	// Attributes
 	$atts = shortcode_atts(
 		array(
-			'type' => '',
+			'type'  => '',
 			'class' => '',
 		),
-		$atts, 'doc-personal-link'
+		$atts,
+		'doc-personal-link'
 	);
 
 	if ( ! isset( $atts['type'] ) ) {
@@ -110,28 +134,32 @@ add_shortcode( 'doc-personal-link', 'doc_personal_link_shortcode' );
  * @param  array $content = null.
  */
 function meh_row_shortcode( $attr, $content = null ) {
-	$attr = shortcode_atts(array(
-		'row_type'        => '',
-		'slide_type'      => '',
-		'cta'             => '',
-		'btn_text'        => '',
-		'row_color'       => '',
-		'text_color'      => '',
-		'bg_image'        => '',
-		'blur_image'      => '',
-		'glass_color'     => '',
-		'overlay'         => '',
-		'row_intro'       => '',
-		'page'            => '',
-		'icon_file'       => '',
-		'feed_url'        => '',
-		'direction'       => '',
-		'js_id'           => '',
-	), $attr, 'meh_row');
+	$attr = shortcode_atts(
+		array(
+			'row_type'    => '',
+			'slide_type'  => '',
+			'cta'         => '',
+			'btn_text'    => '',
+			'row_color'   => '',
+			'text_color'  => '',
+			'bg_image'    => '',
+			'blur_image'  => '',
+			'glass_color' => '',
+			'overlay'     => '',
+			'row_intro'   => '',
+			'page'        => '',
+			'icon_file'   => '',
+			'feed_url'    => '',
+			'direction'   => '',
+			'js_id'       => '',
+		),
+		$attr,
+		'meh_row'
+	);
 
 	$pages = $attr['page'];
 
-	$args = array(
+	$args  = array(
 		'post_type' => array( 'page', 'cpt_archive', 'department', 'archive_post', 'bishop', 'chancery', 'deacon', 'development', 'education', 'finance', 'human_resources', 'hispanic_ministry', 'housing', 'info_tech', 'liturgy', 'multicultural', 'planning', 'property', 'schools_office', 'tribunal', 'vocation' ),
 		'post__in'  => explode( ',', $pages ),
 		'orderby'   => 'post__in',
@@ -139,11 +167,13 @@ function meh_row_shortcode( $attr, $content = null ) {
 	$query = new WP_Query( $args );
 	ob_start(); ?>
 
-	<?php if ( $attr['direction'] ) :
+	<?php
+	if ( $attr['direction'] ) :
 		$direction = esc_attr( $attr['direction'] );
 	else :
 		$direction = '';
-	endif; ?>
+	endif;
+	?>
 
 	<?php if ( $attr['bg_image'] ) : ?>
 		<section id="<?php echo esc_attr( $attr['js_id'] ); ?>" class="<?php echo esc_attr( $attr['row_color'] ); ?> section-row u-relative <?php echo esc_attr( $attr['text_color'] ); ?> u-1of1 u-py3 u-py4-md u-bg-cover u-bg-fixed <?php echo esc_attr( $attr['overlay'] ); ?>" style="background-image: url(<?php echo wp_kses_post( wp_get_attachment_url( $attr['bg_image'] ) ); ?>)">
@@ -161,21 +191,21 @@ function meh_row_shortcode( $attr, $content = null ) {
 
 			<?php if ( 'tabs' === $attr['row_type'] ) : ?>
 
-				<div class="section-row__content o-grid u-max-width <?php echo esc_html( $direction ) ?>">
+				<div class="section-row__content o-grid u-max-width <?php echo esc_html( $direction ); ?>">
 					<?php include locate_template( '/components/row-tabs.php' ); ?>
 					<?php wp_reset_postdata(); ?>
 				</div>
 
 			<?php elseif ( 'links' === $attr['row_type'] ) : ?>
 
-				<div class="section-row__content o-grid u-max-width <?php echo esc_html( $direction ) ?>">
+				<div class="section-row__content o-grid u-max-width <?php echo esc_html( $direction ); ?>">
 					<?php include locate_template( '/components/row-links.php' ); ?>
 					<?php wp_reset_postdata(); ?>
 				</div>
 
 			<?php elseif ( 'feed' === $attr['row_type'] ) : ?>
 
-				<div class="section-row__content o-grid u-max-width <?php echo esc_html( $direction ) ?>">
+				<div class="section-row__content o-grid u-max-width <?php echo esc_html( $direction ); ?>">
 					<?php include locate_template( '/components/row-feed.php' ); ?>
 					<?php wp_reset_postdata(); ?>
 				</div>
@@ -188,7 +218,7 @@ function meh_row_shortcode( $attr, $content = null ) {
 				</div>
 
 			<?php elseif ( 'cta' === $attr['row_type'] ) : ?>
-				<div class="section-row__content <?php echo esc_html( $direction ) ?> o-grid u-max-width <?php echo esc_attr( $attr['text_color'] ); ?>">
+				<div class="section-row__content <?php echo esc_html( $direction ); ?> o-grid u-max-width <?php echo esc_attr( $attr['text_color'] ); ?>">
 					<?php include locate_template( '/components/row-callout.php' ); ?>
 					<?php wp_reset_postdata(); ?>
 				</div>
@@ -214,8 +244,10 @@ function meh_row_shortcode( $attr, $content = null ) {
 							<?php include locate_template( '/components/row-slides.php' ); ?>
 							<?php wp_reset_postdata(); ?>
 						</div>
-						<?php }
-					endif; ?>
+						<?php
+}
+					endif;
+?>
 
 				</section>
 

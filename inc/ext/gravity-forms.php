@@ -6,13 +6,13 @@
  */
 
  add_filter( 'gform_field_value_abe_post_title', 'abe_post_title_population' );
- function abe_post_title_population( $value ) {
-	 if ( is_archive() ) {
-		 return get_the_archive_title();
-	 } elseif ( ! hybrid_is_plural() ) {
-		 return get_the_title();
-	 }
- }
+function abe_post_title_population( $value ) {
+	if ( is_archive() ) {
+		return get_the_archive_title();
+	} elseif ( ! hybrid_is_plural() ) {
+		return get_the_title();
+	}
+}
 
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 add_filter( 'gform_predefined_choices', 'doc_update_us_states' );
@@ -104,7 +104,10 @@ function populate_dept( $form ) {
 		$choices = array();
 
 		foreach ( $posts as $post ) {
-			$choices[] = array( 'text' => $post->post_title, 'value' => $post->ID );
+			$choices[] = array(
+				'text'  => $post->post_title,
+				'value' => $post->ID,
+			);
 		}
 
 		$field->placeholder = 'Select a Department';
@@ -128,9 +131,11 @@ function populate_parish( $form ) {
 		$choices = array();
 
 		foreach ( $posts as $post ) {
-			$choices[] = array( 'text' => $post->post_title, 'value' => $post->ID );
+			$choices[] = array(
+				'text'  => $post->post_title,
+				'value' => $post->ID,
+			);
 		}
-
 
 		$field->placeholder = 'Select a Parish';
 		$field->choices     = $choices;
@@ -153,7 +158,10 @@ function populate_school( $form ) {
 		$choices = array();
 
 		foreach ( $posts as $post ) {
-			$choices[] = array( 'text' => $post->post_title, 'value' => $post->ID );
+			$choices[] = array(
+				'text'  => $post->post_title,
+				'value' => $post->ID,
+			);
 		}
 
 		$field->placeholder = 'Select a School';
@@ -172,11 +180,14 @@ function set_parish_column( $input_info, $field, $column, $value, $form_id ) {
 	$choices = array();
 
 	foreach ( $posts as $post ) {
-		$choices[] = array( 'text' => $post->post_title, 'value' => $post->ID );
+		$choices[] = array(
+			'text'  => $post->post_title,
+			'value' => $post->ID,
+		);
 	}
 
 	return array(
-		'type' => 'select',
+		'type'    => 'select',
 		'choices' => $choices,
 	);
 }
@@ -188,3 +199,5 @@ function doc_update_us_states( $choices ) {
 
 	return $choices;
 }
+
+
