@@ -35,7 +35,7 @@ const BANNER = [
 	'Author: Marty Helmick',
 	'Author URI: https://github.com/m-e-h',
 	'Description:  Diocese child theme for Abraham.',
-	'Version: 1.0.0',
+	'Version: 1.2.0',
 	'License: GNU General Public License v2 or later',
 	'License URI: http://www.gnu.org/licenses/gpl-2.0.html',
 	'Template: abraham',

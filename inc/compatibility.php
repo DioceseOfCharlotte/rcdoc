@@ -6,7 +6,6 @@
  */
 
 add_action( 'admin_menu', 'meh_remove_menu_pages' );
-add_action( 'wp', 'custom_maybe_activate_user', 0 );
 
 function meh_remove_menu_pages() {
 
@@ -16,22 +15,6 @@ function meh_remove_menu_pages() {
 	}
 }
 
-	/**
-	 * Gravity Forms Custom Activation Template
-	 * http://gravitywiz.com/customizing-gravity-forms-user-registration-activation-page
-	 */
-function custom_maybe_activate_user() {
-
-	$template_path    = STYLESHEETPATH . '/content/activate.php';
-	$is_activate_page = isset( $_GET['page'] ) && $_GET['page'] == 'gf_activation';
-
-	if ( ! file_exists( $template_path ) || ! $is_activate_page ) {
-		return; }
-
-	require_once( $template_path );
-
-	exit();
-}
 add_filter( 'gform_column_input_23_2_2', 'doc_track_column', 10, 5 );
 function doc_track_column( $input_info, $field, $column, $value, $form_id ) {
 	return array(
