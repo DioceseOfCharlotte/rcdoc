@@ -41,14 +41,15 @@ function cpt_archive_labels( $args, $type ) {
 	);
 
 	if ( 'cpt_archive' === $type ) {
-		$args['labels']   = $cpt_archive_labels;
-		$args['supports'] = array(
+		$args['labels']              = $cpt_archive_labels;
+		$args['supports']            = array(
 			'author',
 			'thumbnail',
 			'theme-layouts',
 			'custom-header',
 		);
-		$args['taxonomies']   = array( 'agency' );
+		$args['taxonomies']          = array( 'agency' );
+		$args['exclude_from_search'] = false;
 	}
 
 	return $args;
