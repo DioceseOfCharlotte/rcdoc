@@ -82,7 +82,7 @@ function doc_logged_in_header_shortcode() {
 
 	$current_user = wp_get_current_user();
 
-	$header_content = '<div class="side-head-top u-flex u-flex-wrap u-flex-center"><div class="u-mx1 u-round u-text-center">' . get_avatar( $current_user->ID, 38 ) . '</div><p class="u-m0 u-h5 u-text-display">' . $current_user->display_name . '</p><div class="u-f-plus u-ml-auto"><a class="btn u-block u-opacity u-p1" href="' . wp_logout_url( home_url() ) . '" title="Logout"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em"><path d="M16 17v2c0 1.105-.895 2-2 2H5c-1.105 0-2-.895-2-2V5c0-1.105.895-2 2-2h9c1.105 0 2 .895 2 2v2h-2V5H5v14h9v-2h2zm2.5-10.5l-1.414 1.414L20.172 11H10v2h10.172l-3.086 3.086L18.5 17.5 24 12l-5.5-5.5z"/></svg></a></div></div>';
+	$header_content = '<div class="side-head-top u-flex u-flex-wrap u-flex-center"><div class="u-mx1 u-round u-text-center">' . get_avatar( $current_user->ID, 38 ) . '</div><p class="u-m0 u-h5 u-text-display">' . $current_user->display_name . '</p><div class="u-f-plus u-ml-auto"><a class="btn u-block u-opacity u-p1" href="' . wp_logout_url( home_url() ) . '" title="Logout"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em"><path d="M16 17v2c0 1.105-.895 2-2 2H5c-1.105 0-2-.895-2-2V5c0-1.105.895-2 2-2h9c1.105 0 2 .895 2 2v2h-2V5H5v14h9v-2h2zm2.5-10.5l-1.414 1.414L20.172 11H10v2h10.172l-3.086 3.086L18.5 17.5 24 12l-5.5-5.5z"/></svg><span class="screen-reader-text">Log Out</span></a></div></div>';
 
 	return $header_content;
 }

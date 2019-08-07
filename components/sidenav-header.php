@@ -13,7 +13,7 @@ if ( is_user_logged_in() ) : ?>
 <h5 class="u-h5 u-text-display"><em class="u-opacity">Logged in as: </em><?php echo $current_user->display_name ?></h5>
 
 <div class="u-f-plus">
-	<a class="btn u-block u-opacity u-p1" href="<?php echo wp_logout_url( home_url() ); ?>" title="Logout"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em"><path d="M16 17v2c0 1.105-.895 2-2 2H5c-1.105 0-2-.895-2-2V5c0-1.105.895-2 2-2h9c1.105 0 2 .895 2 2v2h-2V5H5v14h9v-2h2zm2.5-10.5l-1.414 1.414L20.172 11H10v2h10.172l-3.086 3.086L18.5 17.5 24 12l-5.5-5.5z"/></svg></a>
+	<a class="btn u-block u-opacity u-p1" href="<?php echo wp_logout_url( home_url() ); ?>" title="Logout"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em"><path d="M16 17v2c0 1.105-.895 2-2 2H5c-1.105 0-2-.895-2-2V5c0-1.105.895-2 2-2h9c1.105 0 2 .895 2 2v2h-2V5H5v14h9v-2h2zm2.5-10.5l-1.414 1.414L20.172 11H10v2h10.172l-3.086 3.086L18.5 17.5 24 12l-5.5-5.5z"/></svg><span class="screen-reader-text">Log Out</span></a>
 </div>
 </div>
 
