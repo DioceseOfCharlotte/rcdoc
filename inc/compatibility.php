@@ -15,6 +15,15 @@ function meh_remove_menu_pages() {
 	}
 }
 
+add_filter( 'redirect_canonical', 'abe_disable_redirect_canonical' );
+
+function abe_disable_redirect_canonical( $redirect_url ) {
+	if ( is_singular( 'archive_post' ) ) {
+		$redirect_url = false;
+	}
+	return $redirect_url;
+}
+
 add_filter( 'gform_column_input_23_2_2', 'doc_track_column', 10, 5 );
 function doc_track_column( $input_info, $field, $column, $value, $form_id ) {
 	return array(
