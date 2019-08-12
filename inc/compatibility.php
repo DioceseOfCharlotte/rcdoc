@@ -18,7 +18,7 @@ function meh_remove_menu_pages() {
 add_filter( 'redirect_canonical', 'abe_disable_redirect_canonical' );
 
 function abe_disable_redirect_canonical( $redirect_url ) {
-	if ( is_singular( 'archive_post' ) ) {
+	if ( is_paged() ) {
 		$redirect_url = false;
 	}
 	return $redirect_url;
