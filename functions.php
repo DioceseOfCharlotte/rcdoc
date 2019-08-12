@@ -57,6 +57,9 @@ function doc_widgets_init() {
  * Enqueue scripts and styles.
  */
 function rcdoc_scripts() {
+	// Disable core block styles.
+	wp_dequeue_style( 'wp-block-library' );
+
 	// Scripts.
 	wp_enqueue_script( 'child-script', get_theme_file_uri( 'js/' . get_child_asset_rev( 'main.js' ) ), false, false, true );
 }
