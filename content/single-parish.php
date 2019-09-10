@@ -5,14 +5,13 @@
  * @package  RCDOC
  */
 $doc_mass = get_post_meta( get_the_ID(), 'doc_mass_schedule', true );
-$post_id = get_the_ID();
+$post_id  = get_the_ID();
 ?>
 
 <article <?php hybrid_attr( 'post' ); ?>>
 
 	<div <?php hybrid_attr( 'entry-content' ); ?>>
 		<?php get_template_part( 'components/contact-meta' ); ?>
-		<?php get_template_part( 'components/contact', 'footer' ); ?>
 		<?php if ( $doc_mass ) : ?>
 			<div class="u-1of1 u-mb3 u-bg-silver u-br u-pb2 u-px2">
 				<h3><?php esc_html_e( 'Mass Schedule', 'abraham' ); ?></h3>

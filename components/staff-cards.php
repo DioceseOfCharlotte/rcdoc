@@ -23,7 +23,7 @@ if ( is_singular( 'department' ) ) {
 $post_id = get_the_ID();
 ?>
 
-<div class="u-1of1 u-p u-h5 u-br employee-list">
+<div class="u-1of1 u-px1 u-pb u-rel employee-list">
 	<?php
 	echo do_shortcode( "[gravityview id='10028' search_field='{$gv_select}' search_value='{$post_id}']" );
 	// echo doc_get_primary_staff();

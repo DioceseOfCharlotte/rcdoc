@@ -14,7 +14,7 @@ $doc_email    = get_post_meta( get_the_ID(), 'doc_email', true );
 $doc_website  = get_post_meta( get_the_ID(), 'doc_website', true );
 $address      = $doc_street . '+' . $doc_city . '+' . $doc_state . '+' . $doc_zip;
 $map_link     = 'https://maps.google.com/maps/place/' . $address;
-$dir_link     = 'https://maps.google.com/maps/dir/' . $address;
+$dir_link     = 'https://maps.google.com/maps/dir//' . $address;
 $distance     = facetwp_get_distance();
 $doc_grades   = get_post_meta( get_the_ID(), 'doc_grade_level', true );
 
