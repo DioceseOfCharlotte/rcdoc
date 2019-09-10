@@ -64,5 +64,4 @@ $doc_grades   = get_post_meta( get_the_ID(), 'doc_grade_level', true );
 <?php endif; ?>
 </div>
 
-	<?php abe_edit_link(); ?>
 </footer><!-- .entry-footer -->

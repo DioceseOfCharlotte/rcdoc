@@ -20,16 +20,18 @@
 	<?php endif; ?>
 
 	<?php
-	get_the_image(array(
-		'size'               => 'thumbnail',
-		'image_class'        => 'u-1of1',
-		'before'             => '<div class="media-img u-inline-block u-align-middle u-1of3 u-overflow-hidden">',
-		'after'              => '</div>',
-	));
+	get_the_image(
+		array(
+			'size'        => 'thumbnail',
+			'image_class' => 'u-1of1',
+			'before'      => '<div class="media-img u-inline-block u-align-middle u-1of3 u-overflow-hidden">',
+			'after'       => '</div>',
+		)
+	);
 	?>
 
 	<?php get_template_part( 'components/contact-meta' ); ?>
 
 	<?php get_template_part( 'components/contact', 'footer' ); ?>
-
+	<?php abe_edit_link(); ?>
 </article>
