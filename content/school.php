@@ -25,5 +25,6 @@
 		<?php get_template_part( 'components/contact', 'meta' ); ?>
 
 		<?php get_template_part( 'components/contact', 'footer' ); ?>
+		<?php abe_edit_link(); ?>
 
 </article>

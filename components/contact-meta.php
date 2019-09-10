@@ -20,7 +20,7 @@ $map_link     = 'https://maps.google.com/maps/place/' . $address;
 $dir_link     = 'https://maps.google.com/maps/dir//' . $address;
 $width        = 'u-1of1';
 
-if ( has_post_thumbnail() ) {
+if ( has_post_thumbnail() && ! is_single() ) {
 	$width = 'u-3of4';
 }
 ?>
@@ -28,7 +28,7 @@ if ( has_post_thumbnail() ) {
 <div class="contact-info u-inline-block <?php echo $width; ?> u-align-middle u-p1 u-h6">
 	<div class="contact-wrapper u-flex u-flex-wrap u-flex-jb">
 
-		<?php if ( $doc_website ) : ?>
+		<?php if ( $doc_website && is_single() ) : ?>
 			<div class="u-1of1 u-text-center u-mb u-italic">
 				<a href="<?php echo $doc_website; ?>" target="_blank" rel="noopener noreferrer" class="website-link"><?php echo $doc_website; ?></a>
 			</div>
@@ -45,7 +45,7 @@ if ( has_post_thumbnail() ) {
 					<span class="contact-fax u-inline-block" itemprop="faxNumber"><?php abe_do_svg( 'fax', '1em' ); ?> <?php echo $doc_fax; ?></span>
 				<?php endif; ?>
 			</div>
-			<?php if ( $doc_email ) : ?>
+			<?php if ( $doc_email && is_single() ) : ?>
 				<a href="mailto:<?php echo antispambot( $doc_email, 1 ); ?>" target="_blank" rel="noopener noreferrer" class="no-pseudo btn btn-sm btn-hollow u-mt05"><?php abe_do_svg( 'mail', '1em' ); ?> Email</a>
 			<?php endif; ?>
 		</div>
@@ -62,9 +62,11 @@ if ( has_post_thumbnail() ) {
 					<span class="u-ml1" itemprop="addressLocality"><?php echo $doc_city; ?>, <?php echo $doc_state; ?></span>
 					<span itemprop="postalCode"><?php echo $doc_zip; ?></span>
 				</a>
-				<a href="<?php echo esc_url( $dir_link ); ?>" target="_blank" rel="noopener noreferrer" class="no-pseudo btn btn-sm btn-hollow u-mt05">
-					<?php abe_do_svg( 'car', '1em' ); ?> Directions
-				</a>
+				<?php if ( is_single() ) { ?>
+					<a href="<?php echo esc_url( $dir_link ); ?>" target="_blank" rel="noopener noreferrer" class="no-pseudo btn btn-sm btn-hollow u-mt05">
+						<?php abe_do_svg( 'car', '1em' ); ?> Directions
+					</a>
+				<?php } ?>
 			<?php endif; ?>
 		</div>
 
