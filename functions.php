@@ -29,6 +29,8 @@ add_action( 'wp_enqueue_scripts', 'rcdoc_scripts' );
  */
 function rcdoc_setup() {
 
+	add_theme_support( 'wp-block-styles' );
+	add_theme_support( 'responsive-embeds' );
 	//add_theme_support( 'arch-builder' );
 
 	add_theme_support( 'cleaner-gallery' );
@@ -58,7 +60,7 @@ function doc_widgets_init() {
  */
 function rcdoc_scripts() {
 	// Disable core block styles.
-	wp_dequeue_style( 'wp-block-library' );
+	//wp_dequeue_style( 'wp-block-library' );
 
 	// Scripts.
 	wp_enqueue_script( 'child-script', get_theme_file_uri( 'js/' . get_child_asset_rev( 'main.js' ) ), false, false, true );
