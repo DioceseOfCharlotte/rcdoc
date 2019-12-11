@@ -22,7 +22,7 @@ add_theme_support(
 	'featured-content', array(
 		'filter'     => 'rcdoc_get_featured_posts',
 		'max_posts'  => 4,
-		'post_types' => array( 'post', 'page' ),
+		'post_types' => array( 'post', 'page', 'arch' ),
 	)
 );
 
